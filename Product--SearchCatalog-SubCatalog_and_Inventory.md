@@ -120,7 +120,7 @@
       {
         uuid: <string>,
         name: <string>,
-        itemCount: <num>,
+        item_count: <num>,
       },
       ...
     ],
@@ -128,7 +128,7 @@
       {
         uuid: <string>,
         name: <string>,
-        itemCount: <num>,
+        item_count: <num>,
       },
       ...
     ],
