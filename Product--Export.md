@@ -1,14 +1,26 @@
 ### URL
 
-### 
+???? I'm not 100% certain these URLs will not change ????
 
-??????????
+GET /products/items/?csv-export=true
+GET /products/sku/?csv-export=true
+GET /products/sku/search/?csv-export=true
+
 
 ### By Item UUID Request
 
 ```json
 {
   items: [<uuid>, <uuid>, ...]
+}
+
+```
+
+### By Sku UUID Request
+
+```json
+{
+  skus: [<uuid>, <uuid>, ...]
 }
 
 ```
@@ -34,7 +46,9 @@
 
 ```json
 {
-  uuid: <export record uuid>,
+  export: {
+    uuid: <export record uuid>,
+  }
 }
 ```
 

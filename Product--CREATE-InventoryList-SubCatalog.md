@@ -1,12 +1,7 @@
-### Changes to discuss:
-
-1. URL
-
 ### URL
 
-### 
-
-??????????
+POST /products/inventory-lists/
+POST /products/catalogs/
 
 ### Request
 

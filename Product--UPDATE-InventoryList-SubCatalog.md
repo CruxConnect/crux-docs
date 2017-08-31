@@ -1,12 +1,7 @@
-### Changes to discuss:
-
-1. URL
-
 ### URL
 
-### 
-
-??????????
+PATCH /products/inventory-lists/<inventory-list-uuid>
+PATCH /products/catalogs/<catalog-uuid>
 
 ### Request
 
