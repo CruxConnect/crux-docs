@@ -1,7 +1,9 @@
 ### URL
 
+```
 PATCH /products/inventory-lists/<inventory-list-uuid>
 PATCH /products/catalogs/<catalog-uuid>
+```
 
 ### Request
 
@@ -9,7 +11,7 @@ PATCH /products/catalogs/<catalog-uuid>
 {
   name: <string>,
   description: <string>,
-  retailers: [<uuid>,<uuid>], // in the case of sub-catalog
+  retailer_uuids: [<uuid>,<uuid>], // in the case of sub-catalog
 }
 ```
 

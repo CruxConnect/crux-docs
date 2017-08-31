@@ -1,14 +1,16 @@
 ### URLs
 
+```
 POST /products/inventory-lists/<inventory-list-uuid>/add-items
 POST /products/inventory-lists/<inventory-list-uuid>/add-skus
 POST /products/inventory-lists/<inventory-list-uuid>/add-skus-by-search
+```
 
 ### By Item UUID Request
 
 ```json
 {
-  items: [<uuid>, <uuid>, ...]
+  item_uuids: [<uuid>, <uuid>, ...]
 }
 ```
 
@@ -16,7 +18,7 @@ POST /products/inventory-lists/<inventory-list-uuid>/add-skus-by-search
 
 ```json
 {
-  skus: [<uuid>, <uuid>, ...]
+  sku_uuids: [<uuid>, <uuid>, ...]
 }
 ```
 

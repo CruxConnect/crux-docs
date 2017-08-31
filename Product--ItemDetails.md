@@ -1,6 +1,8 @@
 ### URL
 
-GET /api/items/\<item\_uuid\>
+```
+GET /api/items/<item-uuid>
+```
 
 ### Request
 
@@ -10,7 +12,7 @@ empty body
 
 ### Response
 
-Note: inventory\_list is same as sub\_catalog
+Note: `inventory_list` is same as `sub_catalog`
 
 ```json
 {

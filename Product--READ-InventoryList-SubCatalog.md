@@ -1,7 +1,9 @@
 ### URL
 
+```
 GET /products/inventory-lists/
 GET /products/catalogs/
+```
 
 ### Request
 

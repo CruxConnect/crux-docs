@@ -1,6 +1,8 @@
 ### URL
 
+```
 GET /products/skus/search/
+```
 
 ### Request
 

@@ -1,17 +1,19 @@
 ### URL
 
-???? I'm not 100% certain these URLs will not change ????
+???? I'm not 100% certain these URLs will not change! ????
 
+```
 GET /products/items/?csv-export=true
 GET /products/sku/?csv-export=true
 GET /products/sku/search/?csv-export=true
+```
 
 
 ### By Item UUID Request
 
 ```json
 {
-  items: [<uuid>, <uuid>, ...]
+  item_uuids: [<uuid>, <uuid>, ...]
 }
 
 ```
@@ -20,7 +22,7 @@ GET /products/sku/search/?csv-export=true
 
 ```json
 {
-  skus: [<uuid>, <uuid>, ...]
+  sku_uuids: [<uuid>, <uuid>, ...]
 }
 
 ```
