@@ -6,9 +6,10 @@ POST /api/order/fees/
 
 ### Request
 
+(Required fields: `sku`, `quantity`)
+
 ```json
 {
-  (Required:)
   skus: [
     {
       sku_id: <string>,
@@ -16,7 +17,6 @@ POST /api/order/fees/
     },
     ...
   ],
-  (Optional:)
   address: {
     name: <string>,
     business_name: <string>,
