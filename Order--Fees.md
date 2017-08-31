@@ -2,11 +2,11 @@
 
 ### 
 
-POST /api/order/fees/
+POST /api/orders/fees/
 
 ### Request
 
-(Required fields: `sku`, `quantity`)
+(Required fields: `sku_id`, `quantity`)
 
 ```json
 {
@@ -40,3 +40,9 @@ POST /api/order/fees/
   per_order_fee: .99,
 }
 ```
+
+### Status Code: 
+200 OK
+
+### Error Status Codes:
+400 Bad Request
