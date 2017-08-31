@@ -6,16 +6,18 @@ POST /api/orders/tracking/\<order\_uuid\>/
 
 ### Request
 
+(Required fields: `sku`, `quantity`)
+
 ```json
 {
   "tracking": <string>,
   "ship_cost": <num>,
   "carrier": <string>,
   "method": <string>,
-  "skus": {
-    "CHOCO77": <num>,
-    "WONKAWILLY1": <num>,
-  },
+  "skus": [{
+    "sku_id": "CHOCO77",
+    "quantity": <num>
+  }],
   "weight": <num>,
   "line_item_uuid": <uuid>,
 }
@@ -25,6 +27,10 @@ POST /api/orders/tracking/\<order\_uuid\>/
 ### Response
 
 ```json
-status: 200 level
 ```
 
+### Status Code: 
+204 No Content
+
+### Error Status Codes:
+400 Bad Request
