@@ -12,7 +12,21 @@
 ### Request
 
 ```json
-{  filters: {    supplier: [<uuid>, <uuid>, ...],    category: <uuid>,    price: { min: <num>, max: <num>},    pricing_type: [<uuid>, <uuid>, ...],    shipping_cost: [<uuid>, <uuid>, ...],    shipping_origin: [<uuid>, <uuid>, ...],    product_codes: [<uuid>, <uuid>, ...],  },  search_term: <string>,  sort: <string>,  start: <num>,  limit: <num>,}
+{
+  filters: {
+    supplier: [<uuid>, <uuid>, ...],
+    category: <uuid>,
+    price: { min: <num>, max: <num>},
+    pricing_type: [<uuid>, <uuid>, ...],
+    shipping_cost: [<uuid>, <uuid>, ...],
+    shipping_origin: [<uuid>, <uuid>, ...],
+    product_codes: [<uuid>, <uuid>, ...],
+  },
+  search_term: <string>,
+  sort: <string>,
+  start: <num>,
+  limit: <num>,
+}
 ```
 
 ### Response

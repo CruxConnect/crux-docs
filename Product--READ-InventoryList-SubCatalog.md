@@ -29,6 +29,14 @@ empty body
         "name": <string>,
       },
       "num_skus": <int>,
+      images_from_recently_added_items: [
+        // returns no more than 4
+        {
+          uuid: <image-uuid>,
+          url: <string>,
+          width: <int>,
+          height: <int>
+      ]
       ?? What sku information is wanted / needed ??
     }
   ],
