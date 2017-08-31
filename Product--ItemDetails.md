@@ -1,14 +1,6 @@
-### 
-
-### Changes to discuss:
-
-1. URL
-
 ### URL
 
-### 
-
-GET /api/??????????/\<item\_uuid\>
+GET /api/items/\<item\_uuid\>
 
 ### Request
 
@@ -103,4 +95,3 @@ Note: inventory\_list is same as sub\_catalog
   ]
 }
 ```
-

@@ -1,12 +1,7 @@
-### Changes to discuss:
-
-1. URL
-
 ### URL
 
-### 
-
-??????????
+GET /products/inventory-lists/
+GET /products/catalogs/
 
 ### Request
 
@@ -18,23 +13,32 @@ empty body
 
 ```json
 {
-  lists: [
+  [
     {
+      "uuid": <string>,
       "name": <string>,
       "description": <string>,
-      "date_created": <datestring>,
-      "created_user": {
+      "datetime_created": <datestring>,
+      "created_by_user": {
         "uuid": <uuid>,
         "name": <string>,
       },
-      "date_last_modified": <datestring>,
-      "last_modified_user": {
+      "datetime_modified": <datestring>,
+      "last_modified_by_user": {
         "uuid": <uuid>,
         "name": <string>,
       },
       "num_skus": <int>,
+      images_from_recently_added_items: [
+        // returns no more than 4
+        {
+          uuid: <image-uuid>,
+          url: <string>,
+          width: <int>,
+          height: <int>
+      ]
+      ?? What sku information is wanted / needed ??
     }
-    <list>,<list>,...
   ],
 }
 ```

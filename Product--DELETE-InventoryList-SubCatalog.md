@@ -1,12 +1,7 @@
-### Changes to discuss:
-
-1. URL
-
 ### URL
 
-### 
-
-DELETE ??????????/\<list\_uuid\>/
+DELETE /products/inventory-lists/<list-uuid>
+DELETE /products/catalogs/<list-uuid>
 
 ### Request
 
@@ -19,4 +14,3 @@ empty body
 ```json
 status: 200 level
 ```
-
