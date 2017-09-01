@@ -15,7 +15,7 @@ POST /api/orders/tracking/\<order\_uuid\>/
   "carrier": <string>,
   "method": <string>,
   "weight": <num>,
-  "line_item_uuids": [{
+  "line_items": [{
     "line_item_uuid": <uuid>, 
     "quantity": <num>}, 
   }]
