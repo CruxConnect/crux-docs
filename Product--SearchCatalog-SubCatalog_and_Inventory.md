@@ -59,7 +59,7 @@
   },
   sort: {
     key: 'key', // relevance, title, price, sku_variants, item_id, supplier, last_updated
-    direction: <enum(asc/des)>, // ascending, descending
+    direction: <enum(asc/desc)>, // ascending, descending
   },
   filters: {
     list_id: <uuid>,
