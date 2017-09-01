@@ -1,7 +1,9 @@
 ### URL
 
+```
 POST /products/inventory-lists/
 POST /products/catalogs/
+```
 
 ### Request
 
