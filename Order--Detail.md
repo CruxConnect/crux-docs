@@ -2,7 +2,7 @@
 
 ### 
 
-GET /api/order/\<uuid\>/
+GET /api/orders/\<order_uuid\>/
 
 ### Request
 
@@ -78,3 +78,8 @@ empty body
 
 ```
 
+### Status Code: 
+200 OK
+
+### Error Status Codes:
+404 Not Found
