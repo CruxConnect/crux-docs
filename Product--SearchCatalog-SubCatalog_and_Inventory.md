@@ -37,6 +37,7 @@
     {
       uuid: <string>,
       item_id: <string>,
+      name: <string>,
       image: <url>,
       supplier: {
         uuid: <string>,
@@ -56,9 +57,9 @@
     limit: num
     total: num
   },
-  sort: { // provide list + relevance
-    key: <string>,
-    dir: <desc/asc>,
+  sort: {
+    key: 'key', // relevance, title, price, sku_variants, item_id, supplier, last_updated
+    dir: 'dir', // ascending, descending
   },
   filters: {
     list_id: <uuid>,
@@ -71,7 +72,7 @@
     ],
     categories: [ // breadcrumbs + one layer
       {
-        uuid: <string>,
+        uuid: <string>, // root
         name: <string>,
         children: [
           {
