@@ -1,6 +1,6 @@
 ###  URL
 
-### 
+###
 
 POST /api/orders/tracking/\<order\_uuid\>/
 
@@ -16,8 +16,8 @@ POST /api/orders/tracking/\<order\_uuid\>/
   "method": <string>,
   "weight": <num>,
   "line_items": [{
-    "line_item_uuid": <uuid>, 
-    "quantity": <num>}, 
+    "line_item_uuid": <uuid>,
+    "quantity": <num>},
   }]
 }
 
@@ -28,7 +28,7 @@ POST /api/orders/tracking/\<order\_uuid\>/
 ```json
 ```
 
-### Status Code: 
+### Status Code:
 204 No Content
 
 ### Error Status Codes:
