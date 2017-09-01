@@ -6,7 +6,7 @@ POST /api/orders/tracking/\<order\_uuid\>/
 
 ### Request
 
-(Required fields: `sku`, `quantity`)
+(Required fields: `tracking`, `line_item_uuids`)
 
 ```json
 {
@@ -14,12 +14,11 @@ POST /api/orders/tracking/\<order\_uuid\>/
   "ship_cost": <num>,
   "carrier": <string>,
   "method": <string>,
-  "skus": [{
-    "sku_id": "CHOCO77",
-    "quantity": <num>
-  }],
   "weight": <num>,
-  "line_item_uuid": <uuid>,
+  "line_items": [{
+    "line_item_uuid": <uuid>, 
+    "quantity": <num>}, 
+  }]
 }
 
 ```
