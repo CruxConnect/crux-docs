@@ -1,6 +1,6 @@
 ###  URL
 
-### 
+###
 
 GET /api/orders/\<order_uuid\>/
 
@@ -78,7 +78,7 @@ empty body
 
 ```
 
-### Status Code: 
+### Status Code:
 200 OK
 
 ### Error Status Codes:

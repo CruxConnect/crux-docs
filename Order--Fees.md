@@ -1,6 +1,6 @@
 ###  URL
 
-### 
+###
 
 POST /api/orders/fees/
 
@@ -41,7 +41,7 @@ POST /api/orders/fees/
 }
 ```
 
-### Status Code: 
+### Status Code:
 200 OK
 
 ### Error Status Codes:
