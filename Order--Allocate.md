@@ -1,6 +1,6 @@
 ###  URL
 
-### 
+###
 
 PUT /api/orders/allocation/\<order\_uuid\>/
 

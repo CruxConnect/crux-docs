@@ -1,6 +1,6 @@
 ### URL
 
-### 
+###
 
 GET /api/orders/
 
