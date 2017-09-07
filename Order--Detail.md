@@ -48,6 +48,7 @@ empty body
   line_items: [
     {
       uuid: <uuid>,
+      item_uuid: <uuid>,
       sku_uuid: <uuid>,
       sku_id: <string>,
       sku_name: <string>,
