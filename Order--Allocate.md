@@ -6,6 +6,8 @@ PUT /api/orders/allocation/\<order\_uuid\>/
 
 ### Request
 
+(Required fields: `line_items`)
+
 Note: Must include all line items on order. accepted + rejected + backordered must = qty ordered
 
 ```json
@@ -28,6 +30,11 @@ Note: Must include all line items on order. accepted + rejected + backordered mu
 ### Response
 
 ```json
-status: 200 level
+status: 204 No Content
 ```
 
+### Status Code:
+204 No Content
+
+### Error Status Codes:
+404 Not Found

@@ -6,9 +6,11 @@ POST /api/order/create/
 
 ### Request
 
+(Required fields: `skus`, `address`, `shipping_carrier`, `shipping_method`, `purchase_order_id`)
+(Optional fields: `notes`)
+
 ```json
 {
-  (Required:)
   skus: [
     {
       sku_id: <string>,
@@ -27,7 +29,6 @@ POST /api/order/create/
   }
   shipping_carrier: <string>,
   shipping_method: <string>,
-  (Optional:)
   purchase_order_id: <string>,
   notes: <string>,
 }
@@ -101,3 +102,8 @@ POST /api/order/create/
 }
 
 ```
+### Status Code:
+201 Created
+
+### Error Status Codes:
+400 Bad Request
