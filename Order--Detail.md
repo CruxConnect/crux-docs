@@ -49,6 +49,7 @@ empty body
     {
       uuid: <uuid>,
       item_uuid: <uuid>,
+      item_name: <string>,
       sku_uuid: <uuid>,
       sku_id: <string>,
       sku_name: <string>,
