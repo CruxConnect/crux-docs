@@ -17,8 +17,8 @@ Note: `inventory_list` is same as `sub_catalog`
 ```json
 {
   title: <string>,
-  MAP_range: { min: <num>, max: <num> },
-  MSRP_range: { min: <num>, max: <num> },
+  minimum_advertised_price_range: { min: <num>, max: <num> },
+  msrp_range: { min: <num>, max: <num> },
   cost_range: { min: <num>, max: <num> },
   item_id: <string>,
   images: [
@@ -53,8 +53,8 @@ Note: `inventory_list` is same as `sub_catalog`
     {
       uuid: <string>,
       title: <string>, // derived attribute name
-      MAP: <num>,
-      MSRP: <num>,
+      minimum_advertised_price: <num>,
+      msrp: <num>,
         price_scheme: {
           uuid: <uuid>,
           price_tiers: [
