@@ -55,11 +55,18 @@ Note: `inventory_list` is same as `sub_catalog`
       title: <string>, // derived attribute name
       map: <num>,
       msrp: <num>,
-        pricing: [
-          { minimum_tier_quantity: <num>, cost: <num> },
-          { minimum_tier_quantity: <num>, cost: <num> },
-          ...
-        ],
+        price_scheme: {
+          uuid: <uuid>,
+          price_tiers: [
+            { 
+              minimum_tier_quantity: <num>,
+              cost: <num>,
+              shipping_cost: <num>,
+              shipping_cost_is_estimate: <bool>
+            },
+            ...
+          ],
+        }
       images: [ // image list is ordered
         { url: <string>, height: <num>, width: <num> },
         ...

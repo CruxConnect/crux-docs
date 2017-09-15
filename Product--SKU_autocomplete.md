@@ -25,12 +25,20 @@ endpoint very fast.
       uuid: <uuid>,
       sku_id: <string>,
       name: <string>,
-      pricing: [
+      number_of_units_bundled: <num>,  // i.e., case_pack info
+      price_scheme: {
         // same as item detail
-        { minimum_tier_quantity: <num>, cost: <num> },
-        { minimum_tier_quantity: <num>, cost: <num> },
-        ...
-      ],
+        uuid: <uuid>,
+        price_tiers: [
+          {
+            minimum_tier_quantity: <num>,
+            cost: <num>,
+            shipping_cost: <num>,
+            shipping_cost_is_estimate: <bool>
+          },
+          ...
+        ]
+      }
       images: [{ <image info> }, ...]
     },
     <sku>,<sku>,...
