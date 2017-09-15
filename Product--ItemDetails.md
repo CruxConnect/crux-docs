@@ -17,9 +17,9 @@ Note: `inventory_list` is same as `sub_catalog`
 ```json
 {
   title: <string>,
-  map: { min: <num>, max: <num> },
-  msrp: { min: <num>, max: <num> },
-  price: { min: <num>, max: <num> },
+  map_range: { min: <num>, max: <num> },
+  msrp_range: { min: <num>, max: <num> },
+  cost_range: { min: <num>, max: <num> },
   item_id: <string>,
   images: [
     { url: <string>, height: <num>, width: <num> },
