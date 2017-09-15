@@ -25,8 +25,8 @@ endpoint very fast.
       uuid: <uuid>,
       sku_id: <string>,
       name: <string>,
+      number_of_units_bundled: <num>, // basically case_pack info
       pricing: [
-        // same as item detail
         { minimum_tier_quantity: <num>, cost: <num> },
         { minimum_tier_quantity: <num>, cost: <num> },
         ...
