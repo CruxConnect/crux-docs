@@ -25,8 +25,6 @@ Note: `inventory_list` is same as `sub_catalog`
     { url: <string>, height: <num>, width: <num> },
     ...
   ],
-  inventory_lists: [ {uuid: <string>, name: <string> }, {uuid: <string>, name: <string> }, ... ],
-  sub_catalogs: [ {uuid: <string>, name: <string> }, {uuid: <string>, name: <string> }, ... ],
   description: <string>,
   categories: [ {uuid: <string>, name: <string> }, {uuid: <string>, name: <string> }, ... ],
   manufacturer: <string>,
@@ -53,20 +51,24 @@ Note: `inventory_list` is same as `sub_catalog`
     {
       uuid: <string>,
       title: <string>, // derived attribute name
+      // inventory_lists only returned for retailers
+      inventory_lists: [ {uuid: <string>, name: <string> }, {uuid: <string>, name: <string> }, ... ],
+      // catalogs only returned for suppliers
+      catalogs: [ {uuid: <string>, name: <string> }, {uuid: <string>, name: <string> }, ... ],
       minimum_advertised_price: <num>,
       msrp: <num>,
-        price_scheme: {
-          uuid: <uuid>,
-          price_tiers: [
-            { 
-              minimum_tier_quantity: <num>,
-              cost: <num>,
-              shipping_cost: <num>,
-              shipping_cost_is_estimate: <bool>
-            },
-            ...
-          ],
-        }
+      price_scheme: {
+        uuid: <uuid>,
+        price_tiers: [
+          { 
+            minimum_tier_quantity: <num>,
+            cost: <num>,
+            shipping_cost: <num>,
+            shipping_cost_is_estimate: <bool>
+          },
+          ...
+        ],
+      }
       images: [ // image list is ordered
         { url: <string>, height: <num>, width: <num> },
         ...
