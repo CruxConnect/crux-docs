@@ -19,8 +19,6 @@ POST /data-integration/imports
     hour_stop: <string integer>, 1-23,
   },
   source: <string>,
-  last_edit: <date-time in UTC>,
-  uuid: <string>,
 }
 ```
 
