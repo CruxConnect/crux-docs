@@ -1,3 +1,5 @@
+## This endpoint is no longer in MVP
+
 ### URL
 
 ```
