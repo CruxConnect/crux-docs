@@ -14,7 +14,7 @@ empty body
 {
   uuid: <export record uuid>,
   status: <enum(pending,complete,???),
-  url: <string>,
+  url: <string>,  // optional: if status is complete, returns URL; if not, url will be <null>
 }
 ```
 
