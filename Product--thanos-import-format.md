@@ -29,7 +29,7 @@ the last line specifying the item level information will be used.
 
     custom_attribute.[N].name CharField(128)
     custom_attribute.[N].value CharField(256)
-    custom_attribute.[N].type one_of(str, int, float, bool)
+    custom_attribute.[N].type (one_of: str, int, float, bool)
 
     # duplicate urls across sku or item will reference the same ProductImage
     product_images_for_item (comma separated urls)
@@ -39,23 +39,26 @@ the last line specifying the item level information will be used.
 #######################
 
     sku_id CharField(256) [**REQUIRED**]
-    restrictions one_of('tmpunavail', 'discontd')
+    // todo-jan31: consider longer words
+    restrictions (one_of: 'tmpunavail', 'discontd')
+    // todo-jan31: consider refurbished instead of refurb
+    condition (one of: 'new', 'used', 'refurb')
     quantity_in_stock (int >= 0)
     quantity_on_backorder (int >= 0)
     number_of_units_bundled (int >= 1)
-    minimum_advertised_price float
-    msrp float
+    minimum_advertised_price (float)
+    msrp (float)
 
     # measurements
-    weight float (kg)
-    length float (meters)
-    width float (meters)
-    height float (meters)
+    weight (float [kg])
+    length (float [meters])
+    width (float [meters])
+    height (float [meters])
 
-    package_weight float (kg)
-    package_length float (meters)
-    package_width float (meters)
-    package_height float (meters)
+    package_weight (float [kg])
+    package_length (float [meters])
+    package_width (float [meters])
+    package_height (float [meters])
 
     # identifiers
     upca CharField(12)
@@ -65,11 +68,10 @@ the last line specifying the item level information will be used.
     asin CharField(10)
     mpn CharField(128)
 
-    refurbished (bool)
 
     distinguishing_attribute.[N].name CharField(128)
     distinguishing_attribute.[N].value CharField(256)
-    distinguishing_attribute.[N].type one_of(str, int, float, bool)
+    distinguishing_attribute.[N].type (one_of: str, int, float, bool)
 
     # This will generate a new price tier for the specified catalog
     pricing.[N].catalog <uuid>
