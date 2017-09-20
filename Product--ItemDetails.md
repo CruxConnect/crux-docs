@@ -27,6 +27,7 @@ Note: `inventory_list` is same as `sub_catalog`
   ],
   description: <string>,
   categories: [ {uuid: <string>, name: <string> }, {uuid: <string>, name: <string> }, ... ],
+  // todo-jan31: consider distributor?
   manufacturer: <string>,
   brand: <string>,
   origin_country: <string>,
@@ -34,6 +35,7 @@ Note: `inventory_list` is same as `sub_catalog`
   fba_certified: <bool>,
   marketplace_restrictions: <string>,
   warranty: <string>,
+  // todo-jan31: consider return_policy_category and standard policy types
   return_policy: <string>,
   last_updated: <date>,
   supplier: {
@@ -50,12 +52,17 @@ Note: `inventory_list` is same as `sub_catalog`
   skus: [
     {
       uuid: <string>,
-      title: <string>, // derived attribute name
+      sku_id: <string>,
+      // derived attribute name: "<distinguishing_att_values> | ... | <num_units>u | <condition>"
+      // todo-oct31: title should remove anything that is redundant across all skus
+      title: <string>, 
       // inventory_lists only returned for retailers
       inventory_lists: [ {uuid: <string>, name: <string> }, {uuid: <string>, name: <string> }, ... ],
       // catalogs only returned for suppliers
       catalogs: [ {uuid: <string>, name: <string> }, {uuid: <string>, name: <string> }, ... ],
       minimum_advertised_price: <num>,
+      // todo-jan31: use full word 'refurbished'
+      condition: (enum: new, used, refurb),
       msrp: <num>,
       price_scheme: {
         uuid: <uuid>,
@@ -90,15 +97,16 @@ Note: `inventory_list` is same as `sub_catalog`
           width: <num>,
         },
       },
-      product_codes: [ // SKU ID -- ENSURE THIS IS FIRST
-        { name: <string>, code: <string> },
-        { name: <string>, code: <string> },
-        { name: <string>, code: <string> },
+      product_codes: [
+        // todo-jan31: consider breaking out isbn into isbn10 and isbn13
+        { <name>: code <string> },
+        { <name>: code <string> },
+        { <name>: code <string> },
         ...
       ],
       distinquishing_attributes: [
-        { name: <string>, value: <string> },
-        { name: <string>, value: <string> },
+        { <name>: <value> },
+        { <name>: <value> },
         ...
       ],
     },
