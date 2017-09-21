@@ -1,6 +1,6 @@
 ### URL
 
-GET /api/export/\<uuid\>/
+GET /api/data/export/\<uuid\>/
 
 ### Request
 
