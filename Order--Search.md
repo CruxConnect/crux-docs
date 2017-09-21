@@ -2,7 +2,7 @@
 
 ###
 
-GET /api/orders/
+POST /api/orders/
 
 ### Request
 
