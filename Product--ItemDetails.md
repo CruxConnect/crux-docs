@@ -45,8 +45,8 @@ Note: `inventory_list` is same as `sub_catalog`
     contact_email: <string>,
   },
   custom_attributes: {
-    { name: <string>, value: <string> },
-    { name: <string>, value: <string> },
+    <name>: <value>,
+    <name>: <value>,
     ...
   },
   skus: [
