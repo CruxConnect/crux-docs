@@ -21,7 +21,7 @@ Note: `inventory_list` is same as `sub_catalog`
   msrp_range: { min: <num>, max: <num> },
   cost_range: { min: <num>, max: <num> },
   item_id: <string>,
-  images: [
+  product_images: [
     { url: <string>, height: <num>, width: <num> },
     ...
   ],
@@ -64,19 +64,16 @@ Note: `inventory_list` is same as `sub_catalog`
       // todo-jan31: use full word 'refurbished'
       condition: (enum: new, used, refurb),
       msrp: <num>,
-      price_scheme: {
-        uuid: <uuid>,
-        price_tiers: [
-          { 
-            minimum_tier_quantity: <num>,
-            cost: <num>,
-            shipping_cost: <num>,
-            shipping_cost_is_estimate: <bool>
-          },
-          ...
-        ],
-      }
-      images: [ // image list is ordered
+      price_tiers: [
+        { 
+          minimum_tier_quantity: <num>,
+          cost: <num>,
+          shipping_cost: <num>,
+          shipping_cost_is_estimate: <bool>
+        },
+        ...
+      ],
+      product_images: [ // image list is ordered
         { url: <string>, height: <num>, width: <num> },
         ...
       ],
