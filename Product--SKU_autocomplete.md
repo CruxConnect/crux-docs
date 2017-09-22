@@ -8,11 +8,13 @@ GET /products/skus/search/
 
 ```json
 {
-  partial: <string>,
+  partial: <string>, // the sku_id
 }
 ```
 
 ### Response
+
+For now, this does partial autocomplete matches only on the `sku_id` field.
 
 By only returning information already indexed in elasticsearch, we can avoid
 having to hit the DB again after searching elasticsearch.  That will keep this
@@ -24,14 +26,14 @@ endpoint very fast.
     {
       uuid: <uuid>,
       sku_id: <string>,
-      name: <string>,
+      title: <string>,
       number_of_units_bundled: <num>, // basically case_pack info
-      pricing: [
+      price_tiers: [
         { minimum_tier_quantity: <num>, cost: <num> },
         { minimum_tier_quantity: <num>, cost: <num> },
         ...
       ],
-      images: [{ <image info> }, ...]
+      product_images: [{ <image info> }, ...]
     },
     <sku>,<sku>,...
   ]
