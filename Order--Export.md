@@ -35,6 +35,7 @@ POST /api/orders/export/
 2. Create a catalog export file (all item/sku details in “thanos” format)
 3. Put that file on s3
 4. update the \<Export\> record with the s3 url and a status
+5. email the requestion account notifying them of a complete export
 
 ```json
 {
