@@ -7,7 +7,7 @@ POST /api/order/create/
 ### Request
 
 (Required fields: `skus`, `address`, `shipping_carrier`, `shipping_method`, `purchase_order_id`)
-(Optional fields: `notes`)
+(Optional fields: `notes`, `address.business_name`, `address.address2` )
 
 ```json
 {
