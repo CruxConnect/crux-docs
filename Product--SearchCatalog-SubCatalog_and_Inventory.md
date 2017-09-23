@@ -1,13 +1,12 @@
 ### Changes to discuss:
 
-1. URL
-2. list\_id filter item
+1. list\_id filter item
 
 ### URL
 
-###
-
-??????????
+```
+POST /products/items/search/
+```
 
 ### Request
 
