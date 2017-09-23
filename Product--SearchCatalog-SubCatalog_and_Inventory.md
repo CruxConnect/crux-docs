@@ -1,11 +1,8 @@
 ### Changes to discuss:
 
-1. URL
 2. list\_id filter item
 
 ### URL
-
-###
 
 Search Items:
   GET /api/items/<item-uuid>
