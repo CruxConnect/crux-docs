@@ -57,8 +57,8 @@ POST /products/items/search/
     direction: <enum(asc/desc)>, // ascending, descending
   },
   filters: {
-    inventory_lists: [{uuid: <uuid>},  {uuid: <uuid>} ...]
-    catalog_uuids: [{uuid: <uuid>},  {uuid: <uuid>} ...]
+    inventory_lists: [{uuid: <uuid>},  {uuid: <uuid>} ...]  // do counts need to be included?
+    catalogs: [{uuid: <uuid>},  {uuid: <uuid>} ...]  // do counts need to be included?
     supplier: [ // everything
       {
         uuid: <string>,
