@@ -1,13 +1,8 @@
-### Changes to discuss:
-
-1. URL
-2. list\_id filter item
-
 ### URL
 
-###
-
-??????????
+```
+POST /products/items/search/
+```
 
 ### Request
 
@@ -62,7 +57,8 @@
     direction: <enum(asc/desc)>, // ascending, descending
   },
   filters: {
-    list_id: <uuid>,
+    inventory_lists: [{uuid: <uuid>},  {uuid: <uuid>} ...]  // do counts need to be included?
+    catalogs: [{uuid: <uuid>},  {uuid: <uuid>} ...]  // do counts need to be included?
     supplier: [ // everything
       {
         uuid: <string>,

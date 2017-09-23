@@ -1,7 +1,7 @@
 ### URL
 
 ```
-GET /products/skus/search/
+POST /products/skus/search/completion/
 ```
 
 ### Request
