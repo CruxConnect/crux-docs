@@ -7,7 +7,11 @@
 
 ###
 
-??????????
+Search Items:
+  GET /api/items/<item-uuid>
+
+Search Inventory List:
+  GET /api/product/<item-uuid>
 
 ### Request
 
@@ -48,6 +52,7 @@
         max: <num>,
       },
       sku_count: <num>,
+      included_sku_count: <num>,  // Only for Inventory
       last_updated: <date>,
     },
     ...
