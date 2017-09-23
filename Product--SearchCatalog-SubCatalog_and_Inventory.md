@@ -1,7 +1,3 @@
-### Changes to discuss:
-
-1. list\_id filter item
-
 ### URL
 
 ```
@@ -61,7 +57,8 @@ POST /products/items/search/
     direction: <enum(asc/desc)>, // ascending, descending
   },
   filters: {
-    list_id: <uuid>,
+    inventory_lists: [{uuid: <uuid>},  {uuid: <uuid>} ...]
+    catalog_uuids: [{uuid: <uuid>},  {uuid: <uuid>} ...]
     supplier: [ // everything
       {
         uuid: <string>,
