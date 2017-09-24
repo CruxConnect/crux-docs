@@ -5,10 +5,10 @@
 ### URL
 
 Search Items:
-  GET /api/products/items/
+  GET /api/products/items/search/
 
 Search Inventory List:
-  GET /api/products/inventory-lists/<uuid>/
+  GET /api/products/inventory-lists/<uuid>/search/
 
 ### Request
 
