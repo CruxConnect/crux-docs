@@ -49,7 +49,7 @@ a filter (if uuids) or facets (if using a name).
     {
       uuid: <string>,
       item_id: <string>,
-      name: <string>,
+      title: <string>,
       image: <url>,
       supplier: {
         uuid: <string>,
