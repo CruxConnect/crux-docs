@@ -4,23 +4,40 @@
 POST /products/items/search/
 ```
 
+For now, searching of specific inventory lists and catalogs will be done with
+a filter (if uuids) or facets (if using a name).
+
 ### Request
 
 ```json
 {
-  filters: {
-    supplier: [<uuid>, <uuid>, ...],
-    category: <uuid>,
-    price: { min: <num>, max: <num>},
-    pricing_type: [<uuid>, <uuid>, ...],
-    shipping_cost: [<uuid>, <uuid>, ...],
-    shipping_origin: [<uuid>, <uuid>, ...],
-    product_codes: [<uuid>, <uuid>, ...],
-  },
   search_term: <string>,
-  sort: <string>,
-  start: <num>,
-  limit: <num>,
+  filters: {
+    supplier_uuids: [<uuid>, <uuid>, ...],
+    price: { min: <num>, max: <num>, type: ['bundle', 'unit']},
+    minimum_tier_quantity: { min: <num>, max: <num> },
+    shipping_cost_type: ['free', 'fixed', 'variable'],
+    shipping_origin_country: [<2-letter-country-code>, ...],
+    quantity_in_stock: { min: <num>, max: <num> },
+    product_codes: {'name': ['value', ...]}, ...},
+    category: <uuid>,  // Not yet available
+  },
+  // Any facet available in apps.products.search.item.ItemSearch
+  // All possible values are implied in ItemSearch (need to fill in when we know)
+  facets: {
+    supplier_name: [<name>, <name>, ...],
+    bundle_type: ['single', 'case_pack', ...],
+    cost_per_unit: [<range name>, <range name>, ...]
+    price_range: [as defined by ItemSearch'],
+    condition: ['new', 'used', 'refurb'],
+    inventory_lists: [name, name, ...],
+    catalogs: [name, name, ...],
+  }
+  sort: <string or dict>, // 'field', '-field', or {'field': {"order": "asc", "mode": "avg"}}
+  pagination: {
+    start: <num>,
+    limit: <num>,
+  }
 }
 ```
 
@@ -50,41 +67,33 @@ POST /products/items/search/
   pagination: {
     start: <record num>
     limit: num
-    total: num
+    total_item_count: <num>,
   },
-  sort: {
-    key: 'key', // relevance, title, price, sku_variants, item_id, supplier, last_updated
-    direction: <enum(asc/desc)>, // ascending, descending
-  },
-  filters: {
-    inventory_lists: [{uuid: <uuid>},  {uuid: <uuid>} ...]  // do counts need to be included?
-    catalogs: [{uuid: <uuid>},  {uuid: <uuid>} ...]  // do counts need to be included?
-    supplier: [ // everything
-      {
-        uuid: <string>,
-        name: <name>,
-        item_count: <num>,
+  sort: <str or dict> // whatever was passed in for sort or default
+  facets: {
+    supplier_name: {
+      <name>: {
+        count: <num>,
+        selected: <bool>,
       }
-    ],
+      ...
+    },
+    // categories is not supported ATM
     categories: [ // breadcrumbs + one layer
       {
-        uuid: <string>, // root
-        name: <string>,
+        name: <string>, // root
         children: [
           {
-            uuid: <string>,
             name: <string>,
             children:[
               {
-                uuid: <string>,
                 name: <string>,
-                item_count: <num>,
+                count: <num>,
                 children: null,
               },
               {
-                uuid: <string>,
                 name: <string>,
-                item_count: <num>,
+                count: <num>,
                 children: null
               },
             ],
@@ -92,43 +101,31 @@ POST /products/items/search/
         ],
       },
     ],
-    price: { // everything
-      type: [
-        {
-          uuid: <string>,
-          name: <string>,
-          item_count: <num>
-        }
-      ],
-      range: { // may display price range of shown items
-        low: <num>,
-        high: <num>,
-      }
+    price: {
+      <name>: {
+        count: <num>,
+        selected: <bool>,
+      },
+      ...
     },
-    shipping_cost: [ // everything
-      {
-        uuid: <string>,
-        name: <string>,
-        item_count: <num>
+    shipping_cost: {
+      <name>: {
+        count: <num>,
+        selected: <bool>,
       },
       ...
-    ],
-    shipping_origin: [ // everything
-      {
-        uuid: <string>,
-        name: <string>,
-        item_count: <num>,
+    },
+    // Same pattern for all facets
+    shipping_origin ...
+    product_codes ...
+    inventory_lists: {
+      <name>: {
+        count: <num>,
+        selected: <bool>,
       },
       ...
-    ],
-    product_codes: [ // everything
-      {
-        uuid: <string>,
-        name: <string>,
-        item_count: <num>,
-      },
-      ...
-    ],
+    }
+    catalogs: // same form as inventory_lists
   }
 }
 ```
