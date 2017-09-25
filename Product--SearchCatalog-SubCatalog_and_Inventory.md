@@ -33,7 +33,7 @@ a filter (if uuids) or facets (if using a name).
     inventory_lists: [name, name, ...],
     catalogs: [name, name, ...],
   }
-  sort: <string or dict>, // 'field', '-field', or {'field': {"order": "asc", "mode": "avg"}}
+  sort: [<string or dict>, ...], // string='field' or '-field', dict={'field': {"order": "asc", "mode": "avg"}}, sku and pricing accessed via dot notation like this 'skus.quantity_in_stock' and 'skus.price_tiers.minimum_tier_quantity'
   pagination: {
     start: <num>,
     limit: <num>,
@@ -69,7 +69,7 @@ a filter (if uuids) or facets (if using a name).
     limit: num
     total_item_count: <num>,
   },
-  sort: <str or dict> // whatever was passed in for sort or default
+  sort: [<str or dict>, ...] // whatever was passed in for sort or default
   facets: {
     supplier_name: {
       <name>: {
