@@ -2,7 +2,7 @@
 
 ###
 
-POST /api/orders/supplier/\<supplier\_uuid\>/?created_after=&created_before&
+POST /api/orders/supplier/\<supplier\_uuid\>/?created_after=2017-03-01 10:30:00.00&created_before&2017-03-01 10:45:00.00
 
 ### Request
 
