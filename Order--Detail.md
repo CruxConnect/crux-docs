@@ -21,7 +21,8 @@ empty body
   purchase_order_id: <string>,
   notes: <string>,
   fees: {
-    shipping: <number>,
+    estimated_shipping_cost: <number>,
+    drop_ship_fee: <number>,
     order_fee: <number>,
   },
   retailer: {

@@ -37,7 +37,7 @@ POST /api/orders/fees/
  {
   estimated_shipping_cost: 30,
   drop_ship_fee: 5,
-  per_order_fee: .99,
+  order_fee: .99,
 }
 ```
 
