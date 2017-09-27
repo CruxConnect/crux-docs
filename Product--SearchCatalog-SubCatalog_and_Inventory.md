@@ -93,7 +93,7 @@ if request body is empty, then the backend will response will be based on
       { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
       ...
     ],
-    product_codes: [
+    product_idenfitiers: [
       { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
       ...
     ]
