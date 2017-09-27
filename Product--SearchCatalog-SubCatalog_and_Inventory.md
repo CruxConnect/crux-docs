@@ -65,7 +65,8 @@ if request body is empty, then the backend will response will be based on
         min: <num>,
         max: <num>,
       },
-      sku_count: <num>,  
+      sku_count: <num>,
+      included_sku_count: <num>,  // used in inventory list, can be 0 or not provided for catalog
       last_updated: <date>,
     },
     ...
