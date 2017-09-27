@@ -9,31 +9,32 @@ a filter (if uuids) or facets (if using a name).
 
 ### Request
 
-```json
+```js
 {
   search_term: <string>,
   filters: {
-    supplier_uuids: [<uuid>, <uuid>, ...],
-    price: { min: <num>, max: <num>, type: ['bundle', 'unit']},
+    cost_per_unit: { min: <num>, max: <num>},
     minimum_tier_quantity: { min: <num>, max: <num> },
-    shipping_cost_type: ['free', 'fixed', 'variable'],
-    shipping_origin_country: [<2-letter-country-code>, ...],
     quantity_in_stock: { min: <num>, max: <num> },
-    product_codes: {'name': ['value', ...]}, ...},
     category: <uuid>,  // Not yet available
   },
+
   // Any facet available in apps.products.search.item.ItemSearch
   // All possible values are implied in ItemSearch (need to fill in when we know)
+
   facets: {
-    supplier_name: [<name>, <name>, ...],
-    bundle_type: ['single', 'case_pack', ...],
-    cost_per_unit: [<range name>, <range name>, ...]
+    supplier_name: [ <uuid>, <uuid>, ...],
+    shipping_cost_type: [<uuid>, <uuid>, ...], // 'free', 'fixed', 'variable'
+    shipping_origin_country: [<uuid>, <uuid>, ...], // Country Name in title case
+    bundle_type: [<uuid>, <uuid>, ...],  // 'Single Unit', 'Case Pack'
+    cost_per_unit: [<uuid>, <uuid>, ...]
     price_range: [as defined by ItemSearch'],
-    condition: ['new', 'used', 'refurb'],
-    inventory_lists: [name, name, ...],
-    catalogs: [name, name, ...],
-  }
-  sort: [<string or dict>, ...], // string='field' or '-field', dict={'field': {"order": "asc", "mode": "avg"}}, sku and pricing accessed via dot notation like this 'skus.quantity_in_stock' and 'skus.price_tiers.minimum_tier_quantity'
+    product_codes: [<uuid>, <uuid>, ...] // 'UPC', 'ASIN', 'EAN ... most official
+    condition: [<uuid>, <uuid>, ...], // New, Used, Refurbished, ...
+    inventory_lists: [<uuid>, <uuid>, ...],
+    catalogs: [<uuid>, <uuid>, ...],
+  },
+  sort: [<string or dict>, ...], // string='field' or '-field', dict={'field': {"order": "asc", "mode": "avg"}}, sku and pricing accessed via dot notation like this 'skus.quantity_in_stock' and 'skus.price_tiers.minimum_tier_quantity'.  
   pagination: {
     start: <num>,
     limit: <num>,
@@ -43,23 +44,28 @@ a filter (if uuids) or facets (if using a name).
 
 ### Response
 
+if request body is empty, then the backend will response will be based on
+  - pagination: { start: 0, limit: 50, total_results: <equal to all items>}
+  - sort: item.title, ascending
+  - category: Root + one layer
+
 ```json
 {
   items: [
     {
       uuid: <string>,
       item_id: <string>,
-      title: <string>,
-      image: <url>,
+      title: <string>,  // was title
+      image: [{ url: <string>, heigth: <num>, width: <num>}],
       supplier: {
         uuid: <string>,
         name: <string>,
       }
-      price_range: {
+      cost_range: { // was price_range
         min: <num>,
         max: <num>,
       },
-      sku_count: <num>,
+      sku_count: <num>,  
       last_updated: <date>,
     },
     ...
@@ -71,27 +77,53 @@ a filter (if uuids) or facets (if using a name).
   },
   sort: [<str or dict>, ...] // whatever was passed in for sort or default
   facets: {
-    supplier_name: {
-      <name>: {
-        count: <num>,
-        selected: <bool>,
-      }
+    supplier: [
+      { uuid: <string>, name: <string>, count: <num>, selected: <bool>},
       ...
-    },
+    ],
+    price: [
+      { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
+      ...
+    ],
+    shipping_cost: [
+      { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
+      ...
+    ],
+    shipping_origin: [
+      { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
+      ...
+    ],
+    product_codes: [
+      { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
+      ...
+    ]
+    inventory_lists: [
+      { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
+      ...
+    ]
+    catalogs: [
+      { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
+      ...
+    ],
+
     // categories is not supported ATM
     categories: [ // breadcrumbs + one layer
       {
-        name: <string>, // root
+        uuid: <string>,
+        name: <string>,
         children: [
           {
+            uuid: <string>,
             name: <string>,
             children:[
               {
+                uuid: <string>,
                 name: <string>,
                 count: <num>,
                 children: null,
               },
               {
+                uuid: <string>,
                 name: <string>,
                 count: <num>,
                 children: null
@@ -101,31 +133,6 @@ a filter (if uuids) or facets (if using a name).
         ],
       },
     ],
-    price: {
-      <name>: {
-        count: <num>,
-        selected: <bool>,
-      },
-      ...
-    },
-    shipping_cost: {
-      <name>: {
-        count: <num>,
-        selected: <bool>,
-      },
-      ...
-    },
-    // Same pattern for all facets
-    shipping_origin ...
-    product_codes ...
-    inventory_lists: {
-      <name>: {
-        count: <num>,
-        selected: <bool>,
-      },
-      ...
-    }
-    catalogs: // same form as inventory_lists
   }
 }
 ```
