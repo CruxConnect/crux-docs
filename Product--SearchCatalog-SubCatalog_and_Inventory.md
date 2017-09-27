@@ -56,7 +56,7 @@ if request body is empty, then the backend will response will be based on
       uuid: <string>,
       item_id: <string>,
       title: <string>,  // was title
-      image: [{ url: <string>, heigth: <num>, width: <num>}],
+      product_images: [{ url: <string>, heigth: <num>, width: <num>}], // was image
       supplier: {
         uuid: <string>,
         name: <string>,
@@ -81,7 +81,7 @@ if request body is empty, then the backend will response will be based on
       { uuid: <string>, name: <string>, count: <num>, selected: <bool>},
       ...
     ],
-    cost: [
+    cost: [ // was price
       { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
       ...
     ],
