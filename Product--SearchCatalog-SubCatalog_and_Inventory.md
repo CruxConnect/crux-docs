@@ -71,6 +71,7 @@ if request body is empty, then the backend will response will be based on
     limit: num
     total_item_count: <num>,
   },
+  search_term: <string>,
   sort: [<str or dict>, ...] // whatever was passed in for sort or default
   filters: {
     cost_per_unit: { min: <num>, max: <num>},
