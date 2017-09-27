@@ -23,13 +23,13 @@ a filter (if uuids) or facets (if using a name).
   // All possible values are implied in ItemSearch (need to fill in when we know)
 
   facets: {
-    supplier_name: [ <uuid>, <uuid>, ...],
+    supplier: [ <uuid>, <uuid>, ...],
     shipping_cost_type: [<uuid>, <uuid>, ...], // 'free', 'fixed', 'variable'
     shipping_origin_country: [<uuid>, <uuid>, ...], // Country Name in title case
     bundle_type: [<uuid>, <uuid>, ...],  // 'Single Unit', 'Case Pack'
     cost_per_unit: [<uuid>, <uuid>, ...]
     price_range: [as defined by ItemSearch'],
-    product_codes: [<uuid>, <uuid>, ...] // 'UPC', 'ASIN', 'EAN ... most official
+    product_identifiers: [<uuid>, <uuid>, ...] // 'UPC', 'ASIN', 'EAN ... most official
     condition: [<uuid>, <uuid>, ...], // New, Used, Refurbished, ...
     inventory_lists: [<uuid>, <uuid>, ...],
     catalogs: [<uuid>, <uuid>, ...],
@@ -81,7 +81,7 @@ if request body is empty, then the backend will response will be based on
       { uuid: <string>, name: <string>, count: <num>, selected: <bool>},
       ...
     ],
-    price: [
+    cost: [
       { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
       ...
     ],
