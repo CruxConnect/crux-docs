@@ -16,6 +16,7 @@ a filter (if uuids) or facets (if using a name).
     cost_per_unit: { min: <num>, max: <num>},
     minimum_tier_quantity: { min: <num>, max: <num> },
     quantity_in_stock: { min: <num>, max: <num> },
+    number_of_item_images: { min: <num>, max: <num> },
   },
   facets: {
     supplier: [ <uuid>, <uuid>, ...],
@@ -71,6 +72,12 @@ if request body is empty, then the backend will response will be based on
     total_item_count: <num>,
   },
   sort: [<str or dict>, ...] // whatever was passed in for sort or default
+  filters: {
+    cost_per_unit: { min: <num>, max: <num>},
+    minimum_tier_quantity: { min: <num>, max: <num> },
+    quantity_in_stock: { min: <num>, max: <num> },
+    number_of_item_images: { min: <num>, max: <num> },
+  },  
   facets: {
     supplier: [
       { uuid: <string>, name: <string>, count: <num>, selected: <bool>},
