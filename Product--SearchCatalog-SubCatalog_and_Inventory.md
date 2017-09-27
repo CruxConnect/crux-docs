@@ -16,23 +16,17 @@ a filter (if uuids) or facets (if using a name).
     cost_per_unit: { min: <num>, max: <num>},
     minimum_tier_quantity: { min: <num>, max: <num> },
     quantity_in_stock: { min: <num>, max: <num> },
-    category: <uuid>,  // Not yet available
   },
-
-  // Any facet available in apps.products.search.item.ItemSearch
-  // All possible values are implied in ItemSearch (need to fill in when we know)
-
   facets: {
     supplier: [ <uuid>, <uuid>, ...],
     shipping_cost_type: [<uuid>, <uuid>, ...], // 'free', 'fixed', 'variable'
     shipping_origin_country: [<uuid>, <uuid>, ...], // Country Name in title case
     bundle_type: [<uuid>, <uuid>, ...],  // 'Single Unit', 'Case Pack'
-    cost_per_unit: [<uuid>, <uuid>, ...]
-    price_range: [as defined by ItemSearch'],
     product_identifiers: [<uuid>, <uuid>, ...] // 'UPC', 'ASIN', 'EAN ... most official
     condition: [<uuid>, <uuid>, ...], // New, Used, Refurbished, ...
     inventory_lists: [<uuid>, <uuid>, ...],
     catalogs: [<uuid>, <uuid>, ...],
+    categories: [<uuid>, ...], 
   },
   sort: [<string or dict>, ...], // string='field' or '-field', dict={'field': {"order": "asc", "mode": "avg"}}, sku and pricing accessed via dot notation like this 'skus.quantity_in_stock' and 'skus.price_tiers.minimum_tier_quantity'.  
   pagination: {
@@ -82,19 +76,23 @@ if request body is empty, then the backend will response will be based on
       { uuid: <string>, name: <string>, count: <num>, selected: <bool>},
       ...
     ],
-    cost: [ // was price
+    shipping_cost_type: [
       { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
       ...
     ],
-    shipping_cost: [
+    shipping_origin_country: [
       { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
       ...
     ],
-    shipping_origin: [
+    bundle_type: [
       { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
       ...
-    ],
-    product_idenfitiers: [
+    ]
+    product_identifiers: [
+      { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
+      ...
+    ]
+    condition: [
       { uuid: <string>, name: <string>, count: <num>, selected: <bool> },
       ...
     ]
@@ -107,7 +105,6 @@ if request body is empty, then the backend will response will be based on
       ...
     ],
 
-    // categories is not supported ATM
     categories: [ // breadcrumbs + one layer
       {
         uuid: <string>,
