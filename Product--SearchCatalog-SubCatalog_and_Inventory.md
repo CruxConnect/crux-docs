@@ -43,7 +43,7 @@ if request body is empty, then the backend will response will be based on
   - sort: item.title, ascending
   - category: Root + one layer
 
-```json
+```js
 {
   items: [
     {
