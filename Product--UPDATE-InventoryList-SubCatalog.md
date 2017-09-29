@@ -7,11 +7,11 @@ PATCH /products/catalogs/<catalog-uuid>
 
 ### Request
 
-```json
+```js
 {
   name: <string>,
   description: <string>,
-  retailer_uuids: [<uuid>,<uuid>], // in the case of sub-catalog
+  retailers: [<uuid>,<uuid>], // in the case of sub-catalog
 }
 ```
 
