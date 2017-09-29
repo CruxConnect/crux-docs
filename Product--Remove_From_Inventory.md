@@ -3,7 +3,7 @@
 ```
 POST /products/inventory-lists/<inventory-list-uuid>/remove-items
 POST /products/inventory-lists/<inventory-list-uuid>/remove-skus
-POST /products/inventory-lists/<inventory-list-uuid>/remove-skus-by-search
+POST /products/inventory-lists/<inventory-list-uuid>/remove-items-by-search
 ```
 
 ### By Item UUID Request
