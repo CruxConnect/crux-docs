@@ -14,7 +14,7 @@ empty body
 
 Note: `inventory_list` is same as `sub_catalog`
 
-```json
+```js
 {
   title: <string>,
   minimum_advertised_price_range: { min: <num>, max: <num> },
