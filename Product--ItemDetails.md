@@ -1,12 +1,12 @@
 ### URL
 
 ```
-GET /api/items/<item-uuid>
+GET /products/items/<item-uuid>/
 ```
 
 ### Request
 
-```json
+```js
 empty body
 ```
 
