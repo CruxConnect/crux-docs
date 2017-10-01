@@ -10,7 +10,7 @@ POST /products/inventory-lists/<inventory-list-uuid>/remove-items-by-search
 
 ```json
 {
-  item_uuids: [<uuid>, <uuid>, ...]
+  uuids: [<uuid>, <uuid>, ...]
 }
 ```
 
@@ -18,7 +18,7 @@ POST /products/inventory-lists/<inventory-list-uuid>/remove-items-by-search
 
 ```json
 {
-  sku_uuids: [<uuid>, <uuid>, ...]
+  uuids: [<uuid>, <uuid>, ...]
 }
 ```
 
