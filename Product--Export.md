@@ -1,43 +1,23 @@
 ### URL
 
-???? I'm not 100% certain these URLs will not change! ????
-
 ```
-GET /products/items/?csv-export=true
-GET /products/sku/?csv-export=true
-GET /products/sku/search/?csv-export=true
+GET /products/items/export/
+GET /products/item/search/export/
 ```
-
 
 ### By Item UUID Request
 
 ```json
 {
-  item_uuids: [<uuid>, <uuid>, ...]
+  uuids: [<uuid>, <uuid>, ...]
 }
-
-```
-
-### By Sku UUID Request
-
-```json
-{
-  sku_uuids: [<uuid>, <uuid>, ...]
-}
-
-```
 
 ### By Search Request
 
-```json
-{
-  inventory_id: <uuid>,
-  search_term: <string>,
-  filters: {
-    // See filters object on catalog search request
-  },
-}
-```
+See search request
+
+If exporting inventory_list then provide it as parameter in inventory_list
+facet.  Same with catalog.
 
 ### Response
 
