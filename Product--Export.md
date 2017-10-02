@@ -2,7 +2,7 @@
 
 ```
 GET /products/items/export/
-GET /products/item/search/export/
+GET /products/items/search/export/
 ```
 
 ### By Item UUID Request
