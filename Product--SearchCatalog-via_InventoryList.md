@@ -1,7 +1,7 @@
 ### URL
 
 ```
-POST /products/inventory-lists/<uuid>/search/
+POST /products/inventory-lists/<uuid>/item-search/
 ```
 
 Searches a specific inventory list and returns a few results in the context of
