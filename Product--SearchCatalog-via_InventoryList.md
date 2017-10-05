@@ -14,7 +14,6 @@ except:
   auto-injected).
 * Returns `included_sku_count` which is the number of skus found in _that_
   inventory list that are also in the item.
-* [There was one more thing]
 
 ### Request
 
