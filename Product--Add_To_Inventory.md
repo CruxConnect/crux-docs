@@ -3,7 +3,7 @@
 ```
 POST /products/inventory-lists/<inventory-list-uuid>/add-items
 POST /products/inventory-lists/<inventory-list-uuid>/add-skus
-POST /products/inventory-lists/<inventory-list-uuid>/add-skus-by-search
+POST /products/inventory-lists/<inventory-list-uuid>/add-items-by-search
 ```
 
 ### By Item UUID Request
