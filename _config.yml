@@ -34,3 +34,5 @@ types:
   - put
   - delete
   - post
+
+theme: jekyll-theme-cayman
