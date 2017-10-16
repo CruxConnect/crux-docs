@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+		<link rel="stylesheet" href="/css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script src="/js/main.js"></script>
+		<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Search - Thanos Docs</title>
+<meta property="og:title" content="Search" />
+<meta name="description" content="API documentation for project codenamed thanos" />
+<meta property="og:description" content="API documentation for project codenamed thanos" />
+<link rel="canonical" href="http://localhost:4000/search/" />
+<meta property="og:url" content="http://localhost:4000/search/" />
+<meta property="og:site_name" content="Thanos Docs" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "WebPage",
+"headline": "Search",
+"description": "API documentation for project codenamed thanos",
+"url": "http://localhost:4000/search/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+		
+	</head>
+	<body>
+		<header>
+			<h1>
+				<a href="/"><img src="/images/logo.svg" height="40" alt="Thanos Docs logo"></a>
+				<button type="button" class="open-nav" id="open-nav"></button>
+			</h1>
+
+			<form action="/search/" method="get">
+				<input type="text" name="q" id="search-input" placeholder="Search">
+				<input type="submit" value="Search" style="display: none;">
+			</form>
+
+			<div id="sidebar" class="sidebar">
+	
+	
+		
+	
+		
+			<section>
+				<h6>Documentation</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#documentationgetting_started">
+								Getting Started
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#documentationauthentication">
+								Authentication
+								
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#documentationerrors">
+								Errors
+								
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+		
+			<section>
+				<h6>APIs</h6>
+				<ul>
+					
+					
+						<li>
+							<a href="/#apibooks_list">
+								/books
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apibooks_add">
+								/books
+								<span class="endpoint post"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apibooks_get">
+								/books/:id
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apibooks_update">
+								/books/:id
+								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a href="/#apibooks_delete">
+								/books/:id
+								<span class="endpoint delete"></span>
+							</a>
+						</li>
+					
+				</ul>
+			</section>
+		
+	
+</div>
+
+
+		</header>
+		<div class="main">
+			<div class="search-page">
+	<h2>Search Results</h2>
+	
+	<p><span id="search-process">Loading</span> results <span id="search-query-container" style="display: none;">for "<strong id="search-query"></strong>"</span></p>
+	<ul id="search-results"></ul>
+</div>
+
+<script>
+	window.data = {
+		
+			
+				
+					
+						
+						
+						"api-books-add": {
+							"id": "api-books-add",
+							"title": "/books",
+							"category": "api",
+							"description": "Create Book",
+		  				"type": "post",
+							"url": "/#apibooks_add",
+							"content": "title\n  The title for the book\n  score\n  The book’s score between 0 and 5\n\n\nThe book will automatically be added to your reading list\n\nAdds a book to your collection.\n\n$.post(\"http://api.myapp.com/books/\", {\n  \"token\": \"YOUR_APP_KEY\",\n  \"title\": \"The Book Thief\",\n  \"score\": 4.3\n}, function(data) {\n  alert(data);\n});"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-books-delete": {
+							"id": "api-books-delete",
+							"title": "/books/:id",
+							"category": "api",
+							"description": "Deletes a book",
+		  				"type": "delete",
+							"url": "/#apibooks_delete",
+							"content": "Deletes a book in your collection.\n\n$.ajax({\n  \"url\": \"http://api.myapp.com/books/3\",\n  \"type\": \"DELETE\",\n  \"data\": {\n    \"token\": \"YOUR_APP_KEY\"\n  },\n  \"success\": function(data) {\n    alert(data);\n  }\n});"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-books-get": {
+							"id": "api-books-get",
+							"title": "/books/:id",
+							"category": "api",
+							"description": "Get Book",
+		  				"type": "get",
+							"url": "/#apibooks_get",
+							"content": "Returns a specific book from your collection\n\n$.get(\"http://api.myapp.com/books/3\", {\n  token: \"YOUR_APP_KEY\",\n}, function(data) {\n  alert(data);\n});"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-books-list": {
+							"id": "api-books-list",
+							"title": "/books",
+							"category": "api",
+							"description": "List all books",
+		  				"type": "get",
+							"url": "/#apibooks_list",
+							"content": "offset\n  Offset the results by this amount\n  limit\n  Limit the number of books returned\n\n\nThis call will return a maximum of 100 books\n\nLists all the photos you have access to. You can paginate by using the parameters listed above.\n\n$.get(\"http://api.myapp.com/books/\", { \"token\": \"YOUR_APP_KEY\"}, function(data) {\n  alert(data);\n});\n\n\n\nr = requests.get(\"http://api.myapp.com/books/\", token=\"YOUR_APP_KEY\")\nprint r.text\n\n\n\nvar request = require(\"request\");\nrequest(\"http://api.myapp.com/books?token=YOUR_APP_KEY\", function (error, response, body) {\n  if (!error &amp;&amp; response.statusCode == 200) {\n    console.log(body);\n  }\n});\n\n\n\ncurl http://sampleapi.readme.com/orders?key=YOUR_APP_KEY"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-books-update": {
+							"id": "api-books-update",
+							"title": "/books/:id",
+							"category": "api",
+							"description": "Update Book",
+		  				"type": "put",
+							"url": "/#apibooks_update",
+							"content": "title\n  The title for the book\n  score\n  The book’s score between 0 and 5\n\n\nUpdate an existing book in your collection.\n\n$.ajax({\n  \"url\": \"http://api.myapp.com/books/3\",\n  \"type\": \"PUT\",\n  \"data\": {\n    \"token\": \"YOUR_APP_KEY\",\n    \"score\": 5.0,\n    \"title\": \"The Book Stealer\"\n  },\n  \"success\": function(data) {\n    alert(data);\n  }\n});"
+						}
+						
+					
+				
+			
+		
+			
+				
+					
+						,
+						
+						"documentation-authentication": {
+							"id": "documentation-authentication",
+							"title": "Authentication",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "/#documentationauthentication",
+							"content": "You need to be authenticated for all API requests. You can generate an API key in your developer dashboard.\n\nAdd the API key to all requests as a GET parameter.\n\nNothing will work unless you include this API key"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"documentation-errors": {
+							"id": "documentation-errors",
+							"title": "Errors",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "/#documentationerrors",
+							"content": "Code\n      Name\n      Description\n    \n  \n  \n    \n      200\n      OK\n      Success\n    \n    \n      201\n      Created\n      Creation Successful\n    \n    \n      400\n      Bad Request\n      We could not process that action\n    \n    \n      403\n      Forbidden\n      We couldn’t authenticate you\n    \n  \n\n\nAll errors will return JSON in the following format:\n\n{\n  \"error\": true,\n  \"message\": \"error message here\"\n}"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"documentation-getting-started": {
+							"id": "documentation-getting-started",
+							"title": "Getting Started",
+							"category": "documentation",
+							"description": "",
+		  				"type": "",
+							"url": "/#documentationgetting_started",
+							"content": "Welcome to our API.\n\nThis API document is designed for those interested in developing for our platform.\n\nThis API is still under development and will evolve.\n\nYou’ll succeed if you do this.\n\nHere’s some useful information.\n\nSomething may not happen if you try and do this.\n\nSomething bad will happen if you do this."
+						}
+						
+					
+				
+			
+		
+			
+		
+	};
+</script>
+<script src="/js/lunr.min.js"></script>
+<script src="/js/search.js"></script>
+
+		</div>
+		<script>
+			document.getElementById("open-nav").addEventListener("click", function () {
+				document.body.classList.toggle("nav-open");
+			});
+		</script>
+	</body>
+</html>
