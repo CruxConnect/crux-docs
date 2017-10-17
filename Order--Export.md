@@ -6,7 +6,7 @@ POST /api/orders/export/
 
 ### By UUID Request
 
-```json
+```js
 {
   uuids: [<uuid>, <uuid>, ...]
 }
@@ -14,7 +14,7 @@ POST /api/orders/export/
 
 ### By Search Request
 
-```json
+```js
 // All are optional
 {
     end_date: "2017-08-03T06:00:00.000Z",
@@ -37,7 +37,7 @@ POST /api/orders/export/
 4. update the \<Export\> record with the s3 url and a status
 5. email the requestion account notifying them of a complete export
 
-```json
+```js
 {
   uuid: <export record uuid>,
 }

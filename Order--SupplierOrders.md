@@ -8,13 +8,13 @@ POST /api/orders/supplier/\<supplier\_uuid\>/?created_after=2017-03-01 10:30:00.
 
 (Required fields: `created_after`, `created_before` Notes: Date format must be `%Y-%m-%d %H:%M:%S.%f`)
 
-```json
+```js
 
 ```
 
 ### Response
 
-```json
+```js
 {
   "uuid": <string>,
   "status": <num>,

@@ -9,7 +9,7 @@ POST /api/order/create/
 (Required fields: `skus`, `address`, `shipping_carrier`, `shipping_method`, `purchase_order_id`)
 (Optional fields: `notes`, `address.business_name`, `address.address2` )
 
-```json
+```js
 {
   skus: [
     {
@@ -36,7 +36,7 @@ POST /api/order/create/
 
 ### Response
 
-```json
+```js
 // same as order detail response
 {
   uuid: <uuid>,

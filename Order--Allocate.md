@@ -10,7 +10,7 @@ PUT /api/orders/allocation/\<order\_uuid\>/
 
 Note: Must include all line items on order. accepted + rejected + backordered must = qty ordered
 
-```json
+```js
 {
   line_items: [
     {
@@ -29,7 +29,7 @@ Note: Must include all line items on order. accepted + rejected + backordered mu
 
 ### Response
 
-```json
+```js
 status: 204 No Content
 ```
 

@@ -7,7 +7,7 @@ GET /products/items/search/export/
 
 ### By Item UUID Request
 
-```json
+```js
 {
   uuids: [<uuid>, <uuid>, ...]
 }
@@ -26,7 +26,7 @@ facet.  Same with catalog.
 3. Put that file on s3
 4. update the \<Export\> record with the s3 url and a status
 
-```json
+```js
 {
   export: {
     uuid: <export record uuid>,

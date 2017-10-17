@@ -7,7 +7,7 @@ GET /products/catalogs/
 
 ### Request
 
-```json
+```js
 empty body
 ```
 

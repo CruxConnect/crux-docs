@@ -8,7 +8,7 @@ POST /api/orders/tracking/\<order\_uuid\>/
 
 (Required fields: `tracking`, `line_item_uuids`)
 
-```json
+```js
 {
   "tracking": <string>,
   "ship_cost": <num>,
@@ -25,7 +25,7 @@ POST /api/orders/tracking/\<order\_uuid\>/
 
 ### Response
 
-```json
+```js
 ```
 
 ### Status Code:

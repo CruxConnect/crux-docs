@@ -8,7 +8,7 @@ POST /products/inventory-lists/<inventory-list-uuid>/remove-items-by-search
 
 ### By Item UUID Request
 
-```json
+```js
 {
   item_uuids: [<uuid>, <uuid>, ...]
 }
@@ -16,7 +16,7 @@ POST /products/inventory-lists/<inventory-list-uuid>/remove-items-by-search
 
 ### By SKU UUID Request
 
-```json
+```js
 {
   sku_uuids: [<uuid>, <uuid>, ...]
 }
@@ -24,12 +24,12 @@ POST /products/inventory-lists/<inventory-list-uuid>/remove-items-by-search
 
 ### By Search Request
 
-```json
+```js
 See search request
 ```
 
 ### Response
 
-```json
+```js
 status: 200 level
 ```
