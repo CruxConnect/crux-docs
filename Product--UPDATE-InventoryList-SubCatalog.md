@@ -7,7 +7,7 @@ PATCH /products/catalogs/<catalog-uuid>
 
 ### Request
 
-```json
+```js
 {
   name: <string>,
   description: <string>,
@@ -17,7 +17,7 @@ PATCH /products/catalogs/<catalog-uuid>
 
 ### Response
 
-```json
+```js
 status: 200 level
 ```
 

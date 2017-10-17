@@ -6,7 +6,7 @@ GET /api/notifications/
 
 ### Request
 
-```json
+```js
 {
   "start": 0,
   "limit": 10,
@@ -15,7 +15,7 @@ GET /api/notifications/
 
 ### Response
 
-```json
+```js
 [
   {
     "uuid": "<uuid>",

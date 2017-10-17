@@ -8,7 +8,7 @@ POST /api/orders/fees/
 
 (Required fields: `sku_id`, `quantity`)
 
-```json
+```js
 {
   skus: [
     {
@@ -33,7 +33,7 @@ POST /api/orders/fees/
 
 ### Response
 
-```json
+```js
  {
   estimated_shipping_cost: 30,
   drop_ship_fee: 5,

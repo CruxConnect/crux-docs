@@ -6,7 +6,7 @@ POST /products/skus/search/completion/
 
 ### Request
 
-```json
+```js
 {
   partial: <string>, // the sku_id
 }
@@ -20,7 +20,7 @@ By only returning information already indexed in elasticsearch, we can avoid
 having to hit the DB again after searching elasticsearch.  That will keep this
 endpoint very fast.
 
-```json
+```js
 {
   skus: [
     {

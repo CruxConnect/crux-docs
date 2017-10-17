@@ -6,13 +6,13 @@ GET /api/orders/\<order_uuid\>/
 
 ### Request
 
-```json
+```js
 empty body
 ```
 
 ### Response
 
-```json
+```js
 {
   uuid: <uuid>,
   status: <string>,

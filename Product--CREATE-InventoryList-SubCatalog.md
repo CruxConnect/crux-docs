@@ -7,7 +7,7 @@ POST /products/catalogs/
 
 ### Request
 
-```json
+```js
 {
   name: <string>,
   description: <string>,
@@ -17,7 +17,7 @@ POST /products/catalogs/
 
 ### Response
 
-```json
+```js
 status: 200 level
 ```
 

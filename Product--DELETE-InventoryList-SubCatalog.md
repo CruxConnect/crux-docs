@@ -7,12 +7,12 @@ DELETE /products/catalogs/<list-uuid>
 
 ### Request
 
-```json
+```js
 empty body
 ```
 
 ### Response
 
-```json
+```js
 status: 204 no content
 ```

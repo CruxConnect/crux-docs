@@ -4,13 +4,13 @@ GET /api/data/export/\<uuid\>/
 
 ### Request
 
-```json
+```js
 empty body
 ```
 
 ### Response
 
-```json
+```js
 {
   uuid: <export record uuid>,
   status: <enum(pending,complete,???),

@@ -6,7 +6,7 @@ POST /api/orders/supplier/<supplier_uuid>
 
 ### Request
 
-```json
+```js
 {
     "created_after": "2017-08-03T06:00:00.000Z",
     "created_before": "2017-07-31T06:00:00.000Z"
@@ -15,7 +15,7 @@ POST /api/orders/supplier/<supplier_uuid>
 
 ### Response
 
-```json
+```js
 {
   uuid: <uuid>,
   status: <string>,

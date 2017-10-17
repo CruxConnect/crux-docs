@@ -6,7 +6,7 @@ POST /api/orders/
 
 ### Request
 
-```json
+```js
 {
   "start": 0,
   "limit": 25,
@@ -27,7 +27,7 @@ POST /api/orders/
 
 ### Response
 
-```json
+```js
 {
   "orders": [
     { ...see order detail },
