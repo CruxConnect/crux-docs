@@ -80,9 +80,6 @@ the last line specifying the item level information will be used.
     pricing.[N].shipping_cost (float)
     pricing.[N].shipping_cost_is_estimate (bool)
 
-    # Or, an existing price scheme may be specified like this:
-    catalog--price_scheme (<catalogX-uuid>,<price_schemeX-uuid>;<catalogY-uuid>,<price_schemeY>;... [semi-colon separated comma separated pairs])
-
     # duplicate urls across sku or item will reference the same ProductImage
     product_images_for_sku (comma separated urls) [in future will support uuids]
 
