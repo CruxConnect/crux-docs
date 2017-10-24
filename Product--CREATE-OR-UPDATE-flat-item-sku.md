@@ -39,10 +39,10 @@ data and a warning is returned indicating exactly what happened.
 status: 202 Accepted
 {
     "warning": {
-        "message": "Some fields contained bad data. Bad data was removed and remaining fields successfully submitted.
+        "message": "Some fields contained bad data. Bad data was removed and remaining fields successfully submitted."
         "detail": {
             'isbn': ["Invalid ISBN 'B0052P23YY': Only numbers allowed."],
-            'asin': ["Invalid ASIN '182741000850': Wrong length", 'Ensure this field has no more than 10 characters.']
+            'asin': ["Invalid ASIN '182741000850': Wrong length", "Ensure this field has no more than 10 characters."]
         }
     }
     "accepted": {
