@@ -15,6 +15,7 @@ collections:
   api:
     title: APIs
     position: 2
+    type: api
 gems:
   - jekyll-sitemap
   - jekyll-seo-tag
@@ -35,3 +36,4 @@ types:
   - put
   - delete
   - post
+  - patch

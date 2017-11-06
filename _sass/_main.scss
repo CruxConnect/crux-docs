@@ -175,6 +175,9 @@ dl dd:after {
 		padding: 0 0 0 10px;
 		margin: 0;
 		list-style: none;
+    &.api{
+      padding: 0
+    }
 	}
 
 	h6 {
@@ -197,6 +200,10 @@ dl dd:after {
 			text-decoration: none;
 		}
 	}
+  .endpoint {
+    display: inline-block;
+    width: 3.5em;
+  }
 }
 
 .endpoint {
@@ -210,6 +217,7 @@ h3 .endpoint {
 	font-size: 19px;
 }
 
+.endpoint.PUT,
 .endpoint.put {
 	color: #7E57C2;
 	&:after {
@@ -217,6 +225,7 @@ h3 .endpoint {
 	}
 }
 
+.endpoint.DELETE,
 .endpoint.delete {
 	color: #FF7043;
 	&:after {
@@ -224,6 +233,7 @@ h3 .endpoint {
 	}
 }
 
+.endpoint.GET,
 .endpoint.get {
 	color: #66BB6A;
 	&:after {
@@ -231,6 +241,7 @@ h3 .endpoint {
 	}
 }
 
+.endpoint.POST,
 .endpoint.post {
 	color: #42A5F5;
 	&:after {
@@ -238,6 +249,13 @@ h3 .endpoint {
 	}
 }
 
+.endpoint.PATCH,
+.endpoint.patch {
+	color: #EA526F;
+	&:after {
+		content: "PATCH";
+	}
+}
 .main {
 	margin: 0 0 0 210px;
 	border-left: 1px solid #eee;

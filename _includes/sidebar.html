@@ -4,13 +4,13 @@
 		{% if collection.label != "posts" %}
 			<section>
 				<h6>{{ collection.title }}</h6>
-				<ul>
+				<ul {% if collection.type %}class="{{ collection.type }}"{% endif %}>
 					{% assign sorted_docs = collection.docs | sort: "position" %}
 					{% for doc in sorted_docs %}
 						<li>
 							<a href="{% if page.url != '/' %}/{% endif %}#{{ doc.id | replace: '/', '' | replace: '.', ''}}">
-								{{ doc.title }}
 								{% if doc.type %}<span class="endpoint {{ doc.type }}"></span>{% endif %}
+								{{ doc.title }}
 							</a>
 						</li>
 					{% endfor %}
