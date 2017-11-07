@@ -3,18 +3,14 @@ title: Errors
 position: 3
 ---
 
-| Code | Name        | Description                      |
-|------|-------------|----------------------------------|
-| 200  | OK          | Success                          |
-| 201  | Created     | Creation Successful              |
-| 400  | Bad Request | We could not process that action |
-| 403  | Forbidden   | We couldn't authenticate you     |
-
-All errors will return JSON in the following format:
-
-~~~ json
-{
-  "error": true,
-  "message": "error message here"
-}
-~~~
+| Code | Name                   | Meaning                                                                      |
+|------|-------------------------------------------------------------------------------------------------------|
+| 200  | OK                     | The API call was received and response is provided                           |
+| 201  | Created                | The API call was received and something was created                          |
+| 204  | No Content             | The API call was received and we are performing the requested action         |
+| 400  | Bad Request            | Generally, something required for the request is missing                     |
+| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
+| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
+| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
+| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
+| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |

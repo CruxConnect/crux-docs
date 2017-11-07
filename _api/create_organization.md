@@ -1,0 +1,189 @@
+---
+title: /api/organizations/
+name: Create Organization
+position: 0.94
+type: post
+description: Create Organization allows you to create an organization
+right_code: |
+  ~~~ json
+  {
+    "name": "The A Team 1q2GDqjA4QRPQOyHtXmJV6TfIORlfT7c",
+    "domain": "bar",
+    "org_type": "SUPPLIER"
+  }
+  ~~~
+  {: title="Request" }
+
+  ~~~ json
+  {
+    "uuid": "2edfcd9a-1a9c-4b86-813b-878c0fc1a718",
+    "name": "The A Team hDeqn0LuufvDPp7CXQrjxUDPqpYicqHK",
+    "org_type": "SUPPLIER",
+    "status": "PENDING",
+    "created_date": "2017-11-06T23:27:22.137407Z",
+    "active_date": null,
+    "account_manager": null
+  }
+  ~~~
+  {: title="Response" }
+
+---
+Create a new Organization if one by the same name and/or type doesn't already exist. This may be used by Retailers or Suppliers. Providing a username and password is optional as you can pass in the Authenitcation Token you received at login.
+
+URL Endpoint: /api/organizations/
+
+### Request Parameters:
+
+name
+: (string) Name of the Organization
+
+domain
+: (string) Domain of the Organization
+
+org_type
+: (string) Organization Type defines if the organization is a "RETAILER" or a "SUPPLIER"
+
+### Response Parameters:
+
+uuid
+: (string) Universal Unique Identifier for an Organization
+
+name
+: (string) Name of the Organization
+
+org_type
+: (string) Organization Type defines if the organization is a "RETAILER" or a "SUPPLIER"
+
+status
+: (string) Status for the Organization, which can be "PENDING", "ACTIVE", or "DEACTIVATED"
+
+created_date
+: (string) Created Date; the Date when the Organization was Created within our system
+
+active_date
+: (string) Active Date; the Date when the Organization becomes Active. This is initially empty, but eventually contains this date
+
+account_manager
+: (object) Account Manager object which initially empty, but eventually contains a uuid and an organization user
+
+| Code | Name                   | Meaning                                                                      |
+|------|-------------------------------------------------------------------------------------------------------|
+| 201  | Created                | The API call was received and the organization was created                   |
+| 400  | Bad Request            | Generally, something required for the request is missing                     |
+| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
+| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
+| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
+| 409  | Conflict               | The org_type and/or name provided already exists on your account             |
+| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+
+
+~~~ bash
+curl -X "POST" "https://stable.projectthanos.com/api/organizations/" \
+     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Content-Type: application/json; charset=utf-8' \
+     -d $'{
+  "name": "The A Team 1q2GDqjA4QRPQOyHtXmJV6TfIORlfT7c",
+  "org_type": "SUPPLIER",
+  "domain": "bar"
+}'
+
+~~~
+{: title="Curl" }
+
+~~~ bash
+http --json POST 'https://stable.projectthanos.com/api/organizations/' \
+    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Content-Type':'application/json; charset=utf-8' \
+    name="The A Team 1q2GDqjA4QRPQOyHtXmJV6TfIORlfT7c" \
+    org_type="SUPPLIER" \
+    domain="bar"
+
+~~~
+{: title="HTTPie" }
+
+~~~ python
+# Install the Python Requests library:
+# `pip install requests`
+
+import requests
+import json
+
+
+def send_request():
+    # Create Organization
+    # POST https://stable.projectthanos.com/api/organizations/
+
+    try:
+        response = requests.post(
+            url="https://stable.projectthanos.com/api/organizations/",
+            headers={
+                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Content-Type": "application/json; charset=utf-8",
+            },
+            data=json.dumps(    name="The A Team 1q2GDqjA4QRPQOyHtXmJV6TfIORlfT7c" \
+    org_type="SUPPLIER" \
+    domain="bar")
+        )
+        print('Response HTTP Status Code: {status_code}'.format(
+            status_code=response.status_code))
+        print('Response HTTP Response Body: {content}'.format(
+            content=response.content))
+    except requests.exceptions.RequestException:
+        print('HTTP Request failed')
+
+~~~
+{: title="Python (requests)" }
+
+~~~ javascript
+// request Create Organization 
+(function(callback) {
+    'use strict';
+        
+    const httpTransport = require('https');
+    const responseEncoding = 'utf8';
+    const httpOptions = {
+        hostname: 'stable.projectthanos.com',
+        port: '443',
+        path: '/api/organizations/',
+        method: 'POST',
+        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+    };
+    httpOptions.headers['User-Agent'] = 'node ' + process.version;
+ 
+
+    const request = httpTransport.request(httpOptions, (res) => {
+        let responseBufs = [];
+        let responseStr = '';
+        
+        res.on('data', (chunk) => {
+            if (Buffer.isBuffer(chunk)) {
+                responseBufs.push(chunk);
+            }
+            else {
+                responseStr = responseStr + chunk;            
+            }
+        }).on('end', () => {
+            responseStr = responseBufs.length > 0 ? 
+                Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
+            
+            callback(null, res.statusCode, res.headers, responseStr);
+        });
+        
+    })
+    .setTimeout(0)
+    .on('error', (error) => {
+        callback(error);
+    });
+    request.write("{\"name\":\"The A Team 1q2GDqjA4QRPQOyHtXmJV6TfIORlfT7c\",\"domain\":\"bar\",\"org_type\":\"SUPPLIER\"}")
+    request.end();
+    
+
+})((error, statusCode, headers, body) => {
+    console.log('ERROR:', error); 
+    console.log('STATUS:', statusCode);
+    console.log('HEADERS:', JSON.stringify(headers));
+    console.log('BODY:', body);
+});
+
+~~~
+{: title="Node.js" }
