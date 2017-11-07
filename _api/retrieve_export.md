@@ -6,9 +6,11 @@ type: get
 description: Retrieve a previously requested Export
 right_code: |
   ~~~ json
-  {}
+  {
+    "uuid": "2b409e66-0f95-4175-b568-f05b7db7e5b2"
+  }
   ~~~
-  {: title="Request" }
+  {: title="Response" }
 
 
 ---
@@ -36,6 +38,7 @@ curl "https://stable.projectthanos.com/api/data/export/232497cc-95eb-4ffd-a084-e
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
+'
 
 ~~~
 {: title="Curl" }
