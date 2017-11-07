@@ -22,6 +22,15 @@ html {
   .sidebar a {
     padding: 10px 0; }
 
+  .sidebar .api a {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2.5em;
+    grid-gap: .25em; }
+    .sidebar .api a span {
+      display: inline-block;
+      overflow: hidden;
+      overflow-wrap: break-word; }
+
   body .main {
     margin: 45px 0 0 0; } }
 body {
@@ -118,7 +127,8 @@ dl dt {
   float: left;
   font-weight: bold;
   position: relative;
-  top: 20px; }
+  top: 20px;
+  overflow-wrap: break-word; }
 
 dl dd {
   margin-left: 30%;
@@ -152,6 +162,8 @@ dl dd:after {
     padding: 0 0 0 10px;
     margin: 0;
     list-style: none; }
+    .sidebar ul.api {
+      padding: 0; }
   .sidebar h6 {
     padding: 0;
     margin: 0 0 5px 0; }
@@ -165,7 +177,7 @@ dl dd:after {
     overflow: hidden;
     padding: 2px 0; }
     .sidebar a.active {
-      color: #2196F3;
+      font-weight: bold;
       text-decoration: none; }
 
 .endpoint {
@@ -177,28 +189,63 @@ h3 .endpoint {
   padding: 4px 6px;
   font-size: 19px; }
 
+.endpoint.PUT,
 .endpoint.put {
   color: #7E57C2; }
+  .endpoint.PUT:after,
   .endpoint.put:after {
     content: "PUT"; }
 
+.endpoint.DELETE,
 .endpoint.delete {
   color: #FF7043; }
+  .endpoint.DELETE:after,
   .endpoint.delete:after {
     content: "DELETE"; }
 
-.endpoint.get {
-  color: #66BB6A; }
-  .endpoint.get:after {
-    content: "GET"; }
+.endpoint.GET:after,
+.endpoint.get:after {
+  content: "GET"; }
 
-.endpoint.post {
-  color: #42A5F5; }
-  .endpoint.post:after {
-    content: "POST"; }
+.sidebar .api a {
+  padding-left: .25em;
+  border-left-width: .25em;
+  border-left-style: solid;
+  margin-bottom: 1px; }
+
+.GET, .get {
+  color: #66BB6A;
+  border-color: #66BB6A; }
+
+.POST, .post {
+  color: #42A5F5;
+  border-color: #42A5F5; }
+
+.PUT, .put {
+  color: #7E57C2;
+  border-color: #7E57C2; }
+
+.PATCH, .patch {
+  color: #EA526F;
+  border-color: #EA526F; }
+
+.DELETE, .delete {
+  color: #FF7043;
+  border-color: #FF7043; }
+
+.endpoint.POST:after,
+.endpoint.post:after {
+  content: "POST"; }
+
+.endpoint.PATCH,
+.endpoint.patch {
+  color: #EA526F; }
+  .endpoint.PATCH:after,
+  .endpoint.patch:after {
+    content: "PATCH"; }
 
 .main {
-  margin: 0 0 0 210px;
+  margin: 0 0 0 300px;
   border-left: 1px solid #eee; }
   .main h6 {
     font-size: 1.01em;
@@ -379,19 +426,24 @@ header {
     flex-direction: row;
     -webkit-align-items: center;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.075); }
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+    padding: 1em; }
     header h1 img {
-      height: 26px;
-      margin: 0 18px; }
+      height: 26px; }
   header .open-nav {
     background-image: url(/images/menu.svg);
     background-color: transparent;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 1em;
+    background-position: .25em 50%;
     border: 0;
-    position: absolute;
     border-radius: 2px;
-    cursor: pointer; }
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+    padding: .25em .5em .25em 1.5em; }
     header .open-nav:focus {
       outline: none;
       background-color: rgba(0, 0, 0, 0.05); }
@@ -400,13 +452,15 @@ header {
   @media (min-width: 700px) {
     header {
       background-color: transparent;
-      width: 210px;
+      width: 300px;
       right: auto;
       bottom: auto; }
       header .open-nav {
         display: none; }
       header h1 {
-        box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1); } }
+        box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1); }
+      header .api .title {
+        display: none; } }
 
 #search-input {
   -webkit-appearance: none;

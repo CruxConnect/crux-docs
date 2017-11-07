@@ -1,5 +1,6 @@
 ---
 title: /books/:id
+name: Update Book
 position: 1.4
 type: put
 description: Update Book

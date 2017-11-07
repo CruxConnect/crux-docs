@@ -1,5 +1,6 @@
 ---
 title: /books
+name: List all books
 position: 1.0
 type: get
 description: List all books

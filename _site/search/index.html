@@ -30,7 +30,7 @@
 		<header>
 			<h1>
 				<a href="/"><img src="/images/logo.svg" height="40" alt="Thanos Docs logo"></a>
-				<button type="button" class="open-nav" id="open-nav"></button>
+				<button type="button" class="open-nav" id="open-nav">Menu</button>
 			</h1>
 
 			<form action="/search/" method="get">
@@ -45,27 +45,42 @@
 	
 		
 			<section>
-				<h6>Documentation</h6>
-				<ul>
+				<h6>
+          Documentation
+          
+        </h6>
+				<ul >
 					
 					
 						<li>
-							<a href="/#documentationgetting_started">
-								Getting Started
+							<a
+								
+                href="/#documentationgetting_started"
+              >
+								<span class="title">Getting Started</span>
+								
 								
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#documentationauthentication">
-								Authentication
+							<a
+								
+                href="/#documentationauthentication"
+              >
+								<span class="title">Authentication</span>
+								
 								
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#documentationerrors">
-								Errors
+							<a
+								
+                href="/#documentationerrors"
+              >
+								<span class="title">Errors</span>
+								
 								
 							</a>
 						</li>
@@ -76,41 +91,81 @@
 	
 		
 			<section>
-				<h6>APIs</h6>
-				<ul>
+				<h6>
+          APIs
+          
+            <span class="endpoint GET"></span>
+            <span class="endpoint POST"></span>
+            <span class="endpoint PUT"></span>
+            <span class="endpoint PATCH"></span>
+            <span class="endpoint DELETE"></span>
+          
+        </h6>
+				<ul class="api">
 					
 					
 						<li>
-							<a href="/#apibooks_list">
-								/books
+							<a
+								class="get"
+                href="/#apiget_billing_transactions_list"
+              >
+								<span class="title">/api/organizations/transactions/</span>
+								<span class="name">Get Billing Transactions List</span>
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apibooks_add">
-								/books
+							<a
+								class="get"
+                href="/#apibooks_list"
+              >
+								<span class="title">/books</span>
+								<span class="name">List all books</span>
+								<span class="endpoint get"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a
+								class="post"
+                href="/#apibooks_add"
+              >
+								<span class="title">/books</span>
+								<span class="name">Create Book</span>
 								<span class="endpoint post"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apibooks_get">
-								/books/:id
+							<a
+								class="get"
+                href="/#apibooks_get"
+              >
+								<span class="title">/books/:id</span>
+								<span class="name">Get Book</span>
 								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apibooks_update">
-								/books/:id
+							<a
+								class="put"
+                href="/#apibooks_update"
+              >
+								<span class="title">/books/:id</span>
+								<span class="name">Update Book</span>
 								<span class="endpoint put"></span>
 							</a>
 						</li>
 					
 						<li>
-							<a href="/#apibooks_delete">
-								/books/:id
+							<a
+								class="delete"
+                href="/#apibooks_delete"
+              >
+								<span class="title">/books/:id</span>
+								<span class="name">Delete a book</span>
 								<span class="endpoint delete"></span>
 							</a>
 						</li>
@@ -180,7 +235,7 @@
 							"description": "Get Book",
 		  				"type": "get",
 							"url": "/#apibooks_get",
-							"content": "Returns a specific book from your collection\n\n$.get(\"http://api.myapp.com/books/3\", {\n  token: \"YOUR_APP_KEY\",\n}, function(data) {\n  alert(data);\n});"
+							"content": "Returns a specific book from your collection\n\n$.get(\"http://api.myapp.com/books/3\", {\n  token: \"YOUR_APP_KEY\",\n}, function(data) {\n  alert(data);\n});\n\n\nit t"
 						}
 						
 					
@@ -215,6 +270,23 @@
 		  				"type": "put",
 							"url": "/#apibooks_update",
 							"content": "title\n  The title for the book\n  score\n  The book’s score between 0 and 5\n\n\nUpdate an existing book in your collection.\n\n$.ajax({\n  \"url\": \"http://api.myapp.com/books/3\",\n  \"type\": \"PUT\",\n  \"data\": {\n    \"token\": \"YOUR_APP_KEY\",\n    \"score\": 5.0,\n    \"title\": \"The Book Stealer\"\n  },\n  \"success\": function(data) {\n    alert(data);\n  }\n});"
+						}
+						
+					
+				
+			
+				
+					
+						,
+						
+						"api-get-billing-transactions-list": {
+							"id": "api-get-billing-transactions-list",
+							"title": "/api/organizations/transactions/",
+							"category": "api",
+							"description": "Get the Billing Transactions List for your account",
+		  				"type": "get",
+							"url": "/#apiget_billing_transactions_list",
+							"content": "Get the Billing Transactions List for your account. This provides details for all billing transactions on your account. Your username and password are optional as you can send your authorization token to receive this information.\n\nURL Endpoint: /api/organizations/transactions/\n\nResponse Parameters:\n\n\n  statement_date\n  (string) The Statement Date parameter is a date of when the statement was given\n  payment_date\n  (string) The Payment Date parameter is a date of when the payment posted on the billing transaction\n  transaction_id\n  (string) The Transaction Identifier parameter is an id number for the billing transaction\n  total\n  (number) The Total parameter is the total amount on the billing transaction\n  status\n  (string) The Status parameter is the status for the billing transaction\n\n\n\n  \n    \n      Code\n      Name\n      Meaning\n    \n  \n  \n    \n      200\n      OK\n      The API call was received and response is provided\n    \n    \n      400\n      Bad Request\n      Generally, something required for the request is missing\n    \n    \n      401\n      Unauthorized\n      Generally, the username or password is incorrect\n    \n    \n      403\n      Permission Denied\n      Generally, the user does not have permission to perform the requested action\n    \n    \n      404\n      Not Found\n      Generally, the call is not sent to the correct URL\n    \n    \n      415\n      Unsupported Media Type\n      Generally, this is a syntax problem\n    \n  \n\n\ncurl \"https://stable.projectthanos.com/api/organizations/transactions/\" \\\n     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'\n\n\n\n\nhttp GET 'https://stable.projectthanos.com/api/organizations/transactions/' \\\n    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'\n\n\n\n\n# Install the Python Requests library:\n# `pip install requests`\n\nimport requests\n\n\ndef send_request():\n    # Get Billing Transactions List\n    # GET https://stable.projectthanos.com/api/organizations/transactions/\n\n    try:\n        response = requests.get(\n            url=\"https://stable.projectthanos.com/api/organizations/transactions/\",\n            headers={\n                \"Authorization\": \"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b\",\n            },\n        )\n        print('Response HTTP Status Code: {status_code}'.format(\n            status_code=response.status_code))\n        print('Response HTTP Response Body: {content}'.format(\n            content=response.content))\n    except requests.exceptions.RequestException:\n        print('HTTP Request failed')\n\n\n\n\n// request Get Billing Transactions List\n(function(callback) {\n    'use strict';\n\n    const httpTransport = require('https');\n    const responseEncoding = 'utf8';\n    const httpOptions = {\n        hostname: 'stable.projectthanos.com',\n        port: '443',\n        path: '/api/organizations/transactions/',\n        method: 'GET',\n        headers: {\"Authorization\":\"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b\"}\n    };\n    httpOptions.headers['User-Agent'] = 'node ' + process.version;\n\n\n    const request = httpTransport.request(httpOptions, (res) =&gt; {\n        let responseBufs = [];\n        let responseStr = '';\n\n        res.on('data', (chunk) =&gt; {\n            if (Buffer.isBuffer(chunk)) {\n                responseBufs.push(chunk);\n            }\n            else {\n                responseStr = responseStr + chunk;\n            }\n        }).on('end', () =&gt; {\n            responseStr = responseBufs.length &gt; 0 ?\n                Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;\n\n            callback(null, res.statusCode, res.headers, responseStr);\n        });\n\n    })\n    .setTimeout(0)\n    .on('error', (error) =&gt; {\n        callback(error);\n    });\n    request.write(\"\")\n    request.end();\n\n\n})((error, statusCode, headers, body) =&gt; {\n    console.log('ERROR:', error);\n    console.log('STATUS:', statusCode);\n    console.log('HEADERS:', JSON.stringify(headers));\n    console.log('BODY:', body);\n});"
 						}
 						
 					

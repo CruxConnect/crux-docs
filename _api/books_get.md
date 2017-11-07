@@ -1,5 +1,6 @@
 ---
 title: /books/:id
+name: Get Book
 position: 1.3
 type: get
 description: Get Book
@@ -33,3 +34,4 @@ $.get("http://api.myapp.com/books/3", {
 });
 ~~~
 {: title="jQuery" }
+ it t 

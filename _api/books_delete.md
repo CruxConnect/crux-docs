@@ -1,5 +1,6 @@
 ---
 title: /books/:id
+name: Delete a book
 position: 1.5
 type: delete
 description: Deletes a book
