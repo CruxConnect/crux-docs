@@ -1,15 +1,10 @@
 ---
 title: /api/organizations/transactions/
 name: Get Billing Transactions List
-position: 0
+position: 1.00
 type: get
 description: Get the Billing Transactions List for your account
 right_code: |
-  ~~~ json
-
-  ~~~
-  {: title="Request" }
-
   ~~~ json
   [
     {

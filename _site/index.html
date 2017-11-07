@@ -118,17 +118,6 @@
 					
 						<li>
 							<a
-								class="get"
-                href="#apiget_billing_transactions_list"
-              >
-								<span class="title">/api/organizations/transactions/</span>
-								<span class="name">Get Billing Transactions List</span>
-								<span class="endpoint get"></span>
-							</a>
-						</li>
-					
-						<li>
-							<a
 								class="post"
                 href="#apireset_password"
               >
@@ -300,6 +289,17 @@
 								<span class="title">/api/notifications/notification-settings/</span>
 								<span class="name">Update Notification Settings</span>
 								<span class="endpoint put"></span>
+							</a>
+						</li>
+					
+						<li>
+							<a
+								class="get"
+                href="#apiget_billing_transactions_list"
+              >
+								<span class="title">/api/organizations/transactions/</span>
+								<span class="name">Get Billing Transactions List</span>
+								<span class="endpoint get"></span>
 							</a>
 						</li>
 					
@@ -1017,205 +1017,6 @@ and password, although they are not required in subsequent calls.</p>
   </span><span class="nt">"supplier_uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nt">"org_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RETAILER"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
-
-				</section>
-			
-		</section>
-	
-		<section class="doc-content">
-			<section class="left-docs">
-				<h3>
-					<a id="apiget_billing_transactions_list">
-						
-							<span class="endpoint get"></span>
-						
-						/api/organizations/transactions/
-					</a>
-				</h3>
-				
-					<p class="description">Get the Billing Transactions List for your account</p>
-				
-
-				<p>Get the Billing Transactions List for your account. This provides details for all billing transactions on your account. Your username and password are optional as you can send your authorization token to receive this information.</p>
-
-<p>URL Endpoint: /api/organizations/transactions/</p>
-
-<h3 id="response-parameters">Response Parameters:</h3>
-
-<h6>Parameters</h6><dl>
-  <dt>statement_date</dt>
-  <dd>(string) The Statement Date parameter is a date of when the statement was given</dd>
-  <dt>payment_date</dt>
-  <dd>(string) The Payment Date parameter is a date of when the payment posted on the billing transaction</dd>
-  <dt>transaction_id</dt>
-  <dd>(string) The Transaction Identifier parameter is an id number for the billing transaction</dd>
-  <dt>total</dt>
-  <dd>(number) The Total parameter is the total amount on the billing transaction</dd>
-  <dt>status</dt>
-  <dd>(string) The Status parameter is the status for the billing transaction</dd>
-</dl>
-
-<table>
-  <thead>
-    <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Meaning</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>OK</td>
-      <td>The API call was received and response is provided</td>
-    </tr>
-    <tr>
-      <td>400</td>
-      <td>Bad Request</td>
-      <td>Generally, something required for the request is missing</td>
-    </tr>
-    <tr>
-      <td>401</td>
-      <td>Unauthorized</td>
-      <td>Generally, the username or password is incorrect</td>
-    </tr>
-    <tr>
-      <td>403</td>
-      <td>Permission Denied</td>
-      <td>Generally, the user does not have permission to perform the requested action</td>
-    </tr>
-    <tr>
-      <td>404</td>
-      <td>Not Found</td>
-      <td>Generally, the call is not sent to the correct URL</td>
-    </tr>
-    <tr>
-      <td>415</td>
-      <td>Unsupported Media Type</td>
-      <td>Generally, this is a syntax problem</td>
-    </tr>
-  </tbody>
-</table>
-
-<div title="Curl" class="language-bash highlighter-rouge"><pre class="highlight"><code>curl <span class="s2">"https://stable.projectthanos.com/api/organizations/transactions/"</span> <span class="se">\</span>
-     -H <span class="s1">'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'</span>
-
-</code></pre>
-</div>
-
-<div title="HTTPie" class="language-bash highlighter-rouge"><pre class="highlight"><code>http GET <span class="s1">'https://stable.projectthanos.com/api/organizations/transactions/'</span> <span class="se">\</span>
-    <span class="s1">'Authorization'</span>:<span class="s1">'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'</span>
-
-</code></pre>
-</div>
-
-<div title="Python (requests)" class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Install the Python Requests library:</span>
-<span class="c"># `pip install requests`</span>
-
-<span class="kn">import</span> <span class="nn">requests</span>
-
-
-<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
-    <span class="c"># Get Billing Transactions List</span>
-    <span class="c"># GET https://stable.projectthanos.com/api/organizations/transactions/</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="n">url</span><span class="o">=</span><span class="s">"https://stable.projectthanos.com/api/organizations/transactions/"</span><span class="p">,</span>
-            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
-                <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"</span><span class="p">,</span>
-            <span class="p">},</span>
-        <span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
-    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
-
-</code></pre>
-</div>
-
-<div title="Node.js" class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// request Get Billing Transactions List</span>
-<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s1">'use strict'</span><span class="p">;</span>
-
-    <span class="kr">const</span> <span class="nx">httpTransport</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'https'</span><span class="p">);</span>
-    <span class="kr">const</span> <span class="nx">responseEncoding</span> <span class="o">=</span> <span class="s1">'utf8'</span><span class="p">;</span>
-    <span class="kr">const</span> <span class="nx">httpOptions</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">hostname</span><span class="p">:</span> <span class="s1">'stable.projectthanos.com'</span><span class="p">,</span>
-        <span class="na">port</span><span class="p">:</span> <span class="s1">'443'</span><span class="p">,</span>
-        <span class="na">path</span><span class="p">:</span> <span class="s1">'/api/organizations/transactions/'</span><span class="p">,</span>
-        <span class="na">method</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span><span class="s2">"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"</span><span class="p">}</span>
-    <span class="p">};</span>
-    <span class="nx">httpOptions</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">'User-Agent'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'node '</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">version</span><span class="p">;</span>
-
-
-    <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">httpTransport</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">httpOptions</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="kd">let</span> <span class="nx">responseBufs</span> <span class="o">=</span> <span class="p">[];</span>
-        <span class="kd">let</span> <span class="nx">responseStr</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-
-        <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="nx">isBuffer</span><span class="p">(</span><span class="nx">chunk</span><span class="p">))</span> <span class="p">{</span>
-                <span class="nx">responseBufs</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">chunk</span><span class="p">);</span>
-            <span class="p">}</span>
-            <span class="k">else</span> <span class="p">{</span>
-                <span class="nx">responseStr</span> <span class="o">=</span> <span class="nx">responseStr</span> <span class="o">+</span> <span class="nx">chunk</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'end'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-            <span class="nx">responseStr</span> <span class="o">=</span> <span class="nx">responseBufs</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span>
-                <span class="nx">Buffer</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">responseBufs</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="nx">responseEncoding</span><span class="p">)</span> <span class="p">:</span> <span class="nx">responseStr</span><span class="p">;</span>
-
-            <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">,</span> <span class="nx">res</span><span class="p">.</span><span class="nx">headers</span><span class="p">,</span> <span class="nx">responseStr</span><span class="p">);</span>
-        <span class="p">});</span>
-
-    <span class="p">})</span>
-    <span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">callback</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
-    <span class="p">});</span>
-    <span class="nx">request</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
-    <span class="nx">request</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
-
-
-<span class="p">})((</span><span class="nx">error</span><span class="p">,</span> <span class="nx">statusCode</span><span class="p">,</span> <span class="nx">headers</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'ERROR:'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'STATUS:'</span><span class="p">,</span> <span class="nx">statusCode</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'HEADERS:'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">headers</span><span class="p">));</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'BODY:'</span><span class="p">,</span> <span class="nx">body</span><span class="p">);</span>
-<span class="p">});</span>
-
-</code></pre>
-</div>
-
-
-			</section>
-
-			
-				<section class="right-code">
-					<div title="Request" class="language-json highlighter-rouge"><pre class="highlight"><code><span class="w">
-</span></code></pre>
-</div>
-
-<div title="Response" class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"statement_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-06"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"payment_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-06"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.00"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paid"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"statement_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-06"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"payment_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-06"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"456789101"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.99"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paid"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
 </span></code></pre>
 </div>
 
@@ -16390,6 +16191,201 @@ and password, although they are not required in subsequent calls.</p>
   </span><span class="nt">"notification_frequency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daily"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"daf247dc-68c3-4ab8-93fc-024ae471bb91"</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+				</section>
+			
+		</section>
+	
+		<section class="doc-content">
+			<section class="left-docs">
+				<h3>
+					<a id="apiget_billing_transactions_list">
+						
+							<span class="endpoint get"></span>
+						
+						/api/organizations/transactions/
+					</a>
+				</h3>
+				
+					<p class="description">Get the Billing Transactions List for your account</p>
+				
+
+				<p>Get the Billing Transactions List for your account. This provides details for all billing transactions on your account. Your username and password are optional as you can send your authorization token to receive this information.</p>
+
+<p>URL Endpoint: /api/organizations/transactions/</p>
+
+<h3 id="response-parameters">Response Parameters:</h3>
+
+<h6>Parameters</h6><dl>
+  <dt>statement_date</dt>
+  <dd>(string) The Statement Date parameter is a date of when the statement was given</dd>
+  <dt>payment_date</dt>
+  <dd>(string) The Payment Date parameter is a date of when the payment posted on the billing transaction</dd>
+  <dt>transaction_id</dt>
+  <dd>(string) The Transaction Identifier parameter is an id number for the billing transaction</dd>
+  <dt>total</dt>
+  <dd>(number) The Total parameter is the total amount on the billing transaction</dd>
+  <dt>status</dt>
+  <dd>(string) The Status parameter is the status for the billing transaction</dd>
+</dl>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>200</td>
+      <td>OK</td>
+      <td>The API call was received and response is provided</td>
+    </tr>
+    <tr>
+      <td>400</td>
+      <td>Bad Request</td>
+      <td>Generally, something required for the request is missing</td>
+    </tr>
+    <tr>
+      <td>401</td>
+      <td>Unauthorized</td>
+      <td>Generally, the username or password is incorrect</td>
+    </tr>
+    <tr>
+      <td>403</td>
+      <td>Permission Denied</td>
+      <td>Generally, the user does not have permission to perform the requested action</td>
+    </tr>
+    <tr>
+      <td>404</td>
+      <td>Not Found</td>
+      <td>Generally, the call is not sent to the correct URL</td>
+    </tr>
+    <tr>
+      <td>415</td>
+      <td>Unsupported Media Type</td>
+      <td>Generally, this is a syntax problem</td>
+    </tr>
+  </tbody>
+</table>
+
+<div title="Curl" class="language-bash highlighter-rouge"><pre class="highlight"><code>curl <span class="s2">"https://stable.projectthanos.com/api/organizations/transactions/"</span> <span class="se">\</span>
+     -H <span class="s1">'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'</span>
+
+</code></pre>
+</div>
+
+<div title="HTTPie" class="language-bash highlighter-rouge"><pre class="highlight"><code>http GET <span class="s1">'https://stable.projectthanos.com/api/organizations/transactions/'</span> <span class="se">\</span>
+    <span class="s1">'Authorization'</span>:<span class="s1">'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'</span>
+
+</code></pre>
+</div>
+
+<div title="Python (requests)" class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Install the Python Requests library:</span>
+<span class="c"># `pip install requests`</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+
+<span class="k">def</span> <span class="nf">send_request</span><span class="p">():</span>
+    <span class="c"># Get Billing Transactions List</span>
+    <span class="c"># GET https://stable.projectthanos.com/api/organizations/transactions/</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="s">"https://stable.projectthanos.com/api/organizations/transactions/"</span><span class="p">,</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"</span><span class="p">,</span>
+            <span class="p">},</span>
+        <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Status Code: {status_code}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Response HTTP Response Body: {content}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'HTTP Request failed'</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<div title="Node.js" class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// request Get Billing Transactions List</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s1">'use strict'</span><span class="p">;</span>
+
+    <span class="kr">const</span> <span class="nx">httpTransport</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'https'</span><span class="p">);</span>
+    <span class="kr">const</span> <span class="nx">responseEncoding</span> <span class="o">=</span> <span class="s1">'utf8'</span><span class="p">;</span>
+    <span class="kr">const</span> <span class="nx">httpOptions</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">hostname</span><span class="p">:</span> <span class="s1">'stable.projectthanos.com'</span><span class="p">,</span>
+        <span class="na">port</span><span class="p">:</span> <span class="s1">'443'</span><span class="p">,</span>
+        <span class="na">path</span><span class="p">:</span> <span class="s1">'/api/organizations/transactions/'</span><span class="p">,</span>
+        <span class="na">method</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Authorization"</span><span class="p">:</span><span class="s2">"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"</span><span class="p">}</span>
+    <span class="p">};</span>
+    <span class="nx">httpOptions</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">'User-Agent'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'node '</span> <span class="o">+</span> <span class="nx">process</span><span class="p">.</span><span class="nx">version</span><span class="p">;</span>
+
+
+    <span class="kr">const</span> <span class="nx">request</span> <span class="o">=</span> <span class="nx">httpTransport</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">httpOptions</span><span class="p">,</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">responseBufs</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="kd">let</span> <span class="nx">responseStr</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+
+        <span class="nx">res</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="nx">isBuffer</span><span class="p">(</span><span class="nx">chunk</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nx">responseBufs</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">chunk</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">responseStr</span> <span class="o">=</span> <span class="nx">responseStr</span> <span class="o">+</span> <span class="nx">chunk</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'end'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">responseStr</span> <span class="o">=</span> <span class="nx">responseBufs</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span>
+                <span class="nx">Buffer</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">responseBufs</span><span class="p">).</span><span class="nx">toString</span><span class="p">(</span><span class="nx">responseEncoding</span><span class="p">)</span> <span class="p">:</span> <span class="nx">responseStr</span><span class="p">;</span>
+
+            <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">res</span><span class="p">.</span><span class="nx">statusCode</span><span class="p">,</span> <span class="nx">res</span><span class="p">.</span><span class="nx">headers</span><span class="p">,</span> <span class="nx">responseStr</span><span class="p">);</span>
+        <span class="p">});</span>
+
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">callback</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="nx">request</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+    <span class="nx">request</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+
+
+<span class="p">})((</span><span class="nx">error</span><span class="p">,</span> <span class="nx">statusCode</span><span class="p">,</span> <span class="nx">headers</span><span class="p">,</span> <span class="nx">body</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'ERROR:'</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'STATUS:'</span><span class="p">,</span> <span class="nx">statusCode</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'HEADERS:'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">headers</span><span class="p">));</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'BODY:'</span><span class="p">,</span> <span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre>
+</div>
+
+
+			</section>
+
+			
+				<section class="right-code">
+					<div title="Response" class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"statement_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-06"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"payment_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-06"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.00"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paid"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"statement_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-06"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"payment_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-06"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"456789101"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.99"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paid"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
 </span></code></pre>
 </div>
 
