@@ -12,9 +12,29 @@ collections:
   documentation:
     title: Documentation
     position: 1
-  api:
-    title: APIs
+  login:
+    title: Login
     position: 2
+    type: api
+  organization:
+    title: Organization
+    position: 3
+    type: api
+  billing:
+    title: Billing
+    position: 4
+    type: api
+  product:
+    title: Product
+    position: 5
+    type: api
+  ordering:
+    title: Ordering
+    position: 6
+    type: api
+  data:
+    title: Data
+    position: 7
     type: api
 gems:
   - jekyll-sitemap
