@@ -28,8 +28,6 @@ right_code: |
 ---
 Get the Billing Transactions List for your account. This provides details for all billing transactions on your account. Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/organizations/transactions/
-
 ### Response Parameters:
 
 statement_date

@@ -20,15 +20,6 @@ right_code: |
       },
       {
         "uuid": "1ba7a1e7-0eb3-46ae-875f-67d65caa94fa"
-      },
-      {
-        "uuid": "a6391aa5-e889-4fbf-b7db-45bf3bc8feb6"
-      },
-      {
-        "uuid": "697d3dda-c086-4190-a8c5-3527fc52afc5"
-      },
-      {
-        "uuid": "0e5cc9bd-2c0e-4c81-8451-f3ee4e2c1627"
       }
     ],
     "created": "2017-10-23T18:28:19.509589Z",
@@ -41,8 +32,6 @@ right_code: |
 
 ---
 Get the Details of a particular Inventory List you have access to. Your username and password are optional as you can send your authorization token to receive this information.
-
-URL Endpoint: /api/products/inventory-lists/\<inventory_list_uuid\>/
 
 ### Response Parameters:
 

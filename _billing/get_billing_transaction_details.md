@@ -19,8 +19,6 @@ right_code: |
 ---
 Get the Billing Transaction Details for a specific transaction on your account. The response includes details on the particular transaction_id you provide. Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/organizations/transactions/\<transaction_id\>/
-
 ### Response Parameters:
 
 statement_date

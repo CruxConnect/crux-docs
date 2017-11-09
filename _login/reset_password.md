@@ -22,8 +22,6 @@ right_code: |
 ---
 Should you need to reset your password, you may initiate the process via this call. This is to be used in conjunction with the "Validate Password Reset" and "Create New Password" API calls.
 
-URL Endpoint: /api/organizations/reset-password/
-
 ### Request Parameters:
 
 email

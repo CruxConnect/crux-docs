@@ -31,8 +31,6 @@ right_code: |
 ---
 Create an Inventory Lists for your account. This Inventory List eventually will hold all of the SKUs you would like grouped together, at your discretion. To add SKUs to an Inventory List see "Add SKUs" and similarly, to add items to an Inventory List see "Add Items". To Create this Inventory list simply provide your authenticiation token you received at login, with the name and description parameters filled out. Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/products/inventory-lists/
-
 ### Request Parameters:
 
 name
@@ -139,10 +137,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Create Inventory List - Retailer 
+// request Create Inventory List - Retailer
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -153,26 +151,26 @@ def send_request():
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
@@ -180,10 +178,10 @@ def send_request():
     });
     request.write("{\"name\":\"New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS\",\"description\":\"The Description for the New Test Inventory List Name\"}")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

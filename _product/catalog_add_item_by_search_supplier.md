@@ -34,8 +34,6 @@ right_code: |
 ---
 Add Items to an existing Catalog by Search. This allows you to add Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully add them to the indicated Catalog. Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/products/catalogs/\<catalog_uuid\>/add-items-by-search/
-
 ### Request Parameters:
 
 filters

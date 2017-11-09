@@ -20,36 +20,9 @@ right_code: |
       },
       {
         "uuid": "1ba7a1e7-0eb3-46ae-875f-67d65caa94fa"
-      },
-      {
-        "uuid": "a6391aa5-e889-4fbf-b7db-45bf3bc8feb6"
-      },
-      {
-        "uuid": "697d3dda-c086-4190-a8c5-3527fc52afc5"
-      },
-      {
-        "uuid": "0e5cc9bd-2c0e-4c81-8451-f3ee4e2c1627"
-      },
-      {
-        "uuid": "45d9c4a6-0bf0-4fa6-95df-c421ddba16e5"
-      },
-      {
-        "uuid": "995f5edd-7457-4661-9072-e5e9632d8b21"
-      },
-      {
-        "uuid": "5bd06e80-64ae-4150-bff9-fd3b8896c41c"
-      },
-      {
-        "uuid": "f0b82bb2-0b12-42bf-b7e4-7195ccfb21ab"
-      },
-      {
-        "uuid": "85e575bf-a1c1-4341-80a8-1bdcb9f7aff5"
-      },
-      {
-        "uuid": "99b95146-c484-425a-81e0-378d2fea4b61"
       }
     ],
-    "num_skus": 12,
+    "num_skus": 3,
     "default_shipping_cost": null,
     "retailer": {
       "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
@@ -65,8 +38,6 @@ right_code: |
 
 ---
 Get the Details of a particular Catalog you have access to. Your username and password are optional as you can send your authorization token to receive this information.
-
-URL Endpoint: /api/products/catalogs/\<catalog_uuid\>/
 
 ### Response Parameters:
 

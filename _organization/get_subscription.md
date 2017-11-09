@@ -34,8 +34,6 @@ right_code: |
 ---
 Get Subscription details for your organization including the plan name, available add-ons, plan features, and next bill plan. Providing a username and password is optional as you can pass in the Authenitcation Token you received at login.
 
-URL Endpoint: /api/organizations/subscription/
-
 ### Response Parameters:
 
 plan_name

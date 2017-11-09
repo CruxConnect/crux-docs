@@ -19,8 +19,6 @@ right_code: |
 ---
 Update Notification Settings allows you to update a single Notification's settings. By providing the uuid for the notification with the location, frequency, and "enabled" you may update a Notification. Providing your username and password is optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/notifications/notification-settings/
-
 ### Request Parameters:
 
 uuid

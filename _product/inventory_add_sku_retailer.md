@@ -15,11 +15,8 @@ right_code: |
   ~~~
   {: title="Request" }
 
-
 ---
 Add SKUs to an existing Inventory List for your account. This allows you to add SKUs to an Inventory List. By providing your inventory_list_uuid and a list of sku_uuids, you can successfully add them to the indicated Inventory List. Your username and password are optional as you can send your authorization token to receive this information.
-
-URL Endpoint: /api/products/inventory-lists/\<inventory_list_uuid\>/add-skus/
 
 ### Request Parameters:
 

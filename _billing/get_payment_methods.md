@@ -20,8 +20,6 @@ right_code: |
 ---
 Get Payment Methods available on your account. This returns the Payment Methods that are currently on your account. If you have removed any Payment Methods prior to this call, they will not appear in the list. Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/organizations/payment-methods/
-
 ### Response Parameters:
 
 card_last_four

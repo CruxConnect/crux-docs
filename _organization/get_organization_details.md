@@ -34,8 +34,6 @@ right_code: |
 ---
 Get the Details about your Organization including the uuid, name, organization type, status, date created, date activated, and account manager. Sending the username and password is not required on this call as you can send in your authorization token.
 
-URL Endpoint: /api/organizations/
-
 ### Response Parameters:
 
 #### Organization Object:
@@ -122,10 +120,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Organization Details 
+// request Get Organization Details
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -136,26 +134,26 @@ def send_request():
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
@@ -163,10 +161,10 @@ def send_request():
     });
     request.write("")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

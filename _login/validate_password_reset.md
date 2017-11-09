@@ -16,8 +16,6 @@ right_code: |
 ---
 This API call requires that you have first requested to reset your password ("Reset Password" API call). Validate that the password reset was requested on the email address provided. By sending a GET request with the email address an email is sent to you with the "reset token". That "reset token" can then be used with the "Complete Password Reset" API call
 
-URL Endpoint: /api/organizations/complete-password/
-
 ### Request Parameters:
 
 email

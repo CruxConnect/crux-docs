@@ -89,97 +89,15 @@ right_code: |
           }
         }
       },
-      "supplier": {
-        "uuid": "f2ee86d6-7384-4144-bc35-428cd8e02c16",
-        "organization": {
-          "uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
-          "name": "Flynn Ltd",
-          "org_type": "SUPPLIER",
-          "status": "ACTIVE",
-          "created_date": "2017-10-23T18:20:34.550292Z",
-          "active_date": null,
-          "account_manager": {
-            "uuid": "2af84944-a24f-4235-9600-0babb2a1edae",
-            "org_user": {
-              "uuid": "a29097ef-9b76-435c-98b7-c39abc3bce71",
-              "person": {
-                "uuid": "0cfaed72-6264-4bbe-835a-0a7b9b1c1f38",
-                "first_name": "Nicholas",
-                "last_name": "Flores",
-                "email": "bergnatasha@yahoo.com",
-                "phone": "807.208.6076"
-              },
-              "status": "ACTIVE"
-            }
-          }
-        }
-      },
       "status": "ACTIVE",
       "merchandise_manager": null
     },
-    {
-      "uuid": "9c72c388-8102-4e56-b59f-02c1cb9a0bf2",
-      "retailer": {
-        "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c",
-        "organization": {
-          "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
-          "name": "projectthanos",
-          "org_type": "RETAILER",
-          "status": "ACTIVE",
-          "created_date": "2017-10-23T18:20:43.336669Z",
-          "active_date": null,
-          "account_manager": {
-            "uuid": "ad61c73e-790d-4e42-921c-b1d7ccc97217",
-            "org_user": {
-              "uuid": "817979d4-9d67-4675-a9db-73ac99d9eec7",
-              "person": {
-                "uuid": "6baf482d-a380-4084-a439-a67b8752f63c",
-                "first_name": "Jennifer",
-                "last_name": "Garrett",
-                "email": "uking@clark-davis.info",
-                "phone": "01443719956"
-              },
-              "status": "ACTIVE"
-            }
-          }
-        }
-      },
-      "supplier": {
-        "uuid": "9ff4ca63-7a46-4eee-a4fb-859e201460c8",
-        "organization": {
-          "uuid": "62bd2059-2f70-4cd5-9944-ba9969fe5f06",
-          "name": "projectzuul",
-          "org_type": "SUPPLIER",
-          "status": "ACTIVE",
-          "created_date": "2017-10-23T18:20:49.207815Z",
-          "active_date": null,
-          "account_manager": {
-            "uuid": "16caddfe-9f3a-4e75-aac4-7dc28cbde377",
-            "org_user": {
-              "uuid": "af10130c-ec32-4ed9-a1fb-c36fcebe5581",
-              "person": {
-                "uuid": "d40c16b6-d911-482a-88ca-defb7362f09c",
-                "first_name": "James",
-                "last_name": "Hill",
-                "email": "richardmccoy@anderson.com",
-                "phone": "(363)251-2110x061"
-              },
-              "status": "ACTIVE"
-            }
-          }
-        }
-      },
-      "status": "ACTIVE",
-      "merchandise_manager": null
-    }
   ]
   ~~~
   {: title="Response" }
 
 ---
 Get all of the direct Relationships specific to your account. These Relationships show what suppliers and/or retailers are available to you with related information such as account managers and contact information. Your username and password are optional as you can send your authorization token to receive this information.
-
-URL Endpoint: /api/organizations/relationships/
 
 ### Response Parameters:
 
@@ -332,10 +250,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Relationships 
+// request Get Relationships
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -346,26 +264,26 @@ def send_request():
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
@@ -373,10 +291,10 @@ def send_request():
     });
     request.write("{}")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

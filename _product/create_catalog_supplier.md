@@ -35,8 +35,6 @@ right_code: |
 ---
 Create a new Catalog for Retailers to access. Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/products/catalogs/
-
 ### Request Parameters:
 
 name

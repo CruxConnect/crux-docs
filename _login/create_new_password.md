@@ -17,8 +17,6 @@ right_code: |
 ---
 This API call requires that you have first requested to reset your password ("Reset Password" API call) and validated that request ("Validate Reset Password" API call). To create a new password, you provide the "reset token" that you received from the "Reset Password" API call and provide the password you'd like to use.
 
-URL Endpoint: /api/organizations/complete-password/
-
 ### Request Parameters:
 
 password

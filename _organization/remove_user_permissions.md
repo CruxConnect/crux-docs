@@ -19,7 +19,6 @@ right_code: |
 ---
 Remove User Permissions allows you to provide a user uuid and remove permissions if roles change within an organization. Simply provide the organization uuid, user uuid, and the permissions list indicating which permissions you wish to remove. Your username and password are optional as you can send your authorization token to perform this API call.
 
-URL Endpoint: /api/organizations/users/permissions/\<user_uuid\>/
 
 ### Request Parameters:
 
@@ -97,10 +96,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Remove User Permissions 
+// request Remove User Permissions
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -111,26 +110,26 @@ def send_request():
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
@@ -138,10 +137,10 @@ def send_request():
     });
     request.write("{\"permission_uuids\":[\"2a0295b6-dd74-4239-9988-24fcdb1adcea\",\"05a46c58-9d13-4912-9167-7effc2cc7482\"]}")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

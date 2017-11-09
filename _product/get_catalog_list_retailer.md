@@ -21,36 +21,9 @@ right_code: |
         },
         {
           "uuid": "1ba7a1e7-0eb3-46ae-875f-67d65caa94fa"
-        },
-        {
-          "uuid": "a6391aa5-e889-4fbf-b7db-45bf3bc8feb6"
-        },
-        {
-          "uuid": "697d3dda-c086-4190-a8c5-3527fc52afc5"
-        },
-        {
-          "uuid": "0e5cc9bd-2c0e-4c81-8451-f3ee4e2c1627"
-        },
-        {
-          "uuid": "45d9c4a6-0bf0-4fa6-95df-c421ddba16e5"
-        },
-        {
-          "uuid": "995f5edd-7457-4661-9072-e5e9632d8b21"
-        },
-        {
-          "uuid": "5bd06e80-64ae-4150-bff9-fd3b8896c41c"
-        },
-        {
-          "uuid": "f0b82bb2-0b12-42bf-b7e4-7195ccfb21ab"
-        },
-        {
-          "uuid": "85e575bf-a1c1-4341-80a8-1bdcb9f7aff5"
-        },
-        {
-          "uuid": "99b95146-c484-425a-81e0-378d2fea4b61"
         }
       ],
-      "num_skus": 12,
+      "num_skus": 3,
       "default_shipping_cost": null,
       "retailer": {
         "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
@@ -75,18 +48,9 @@ right_code: |
         },
         {
           "uuid": "fef4cf62-fc52-4a22-8485-dbc1dc5d7e88"
-        },
-        {
-          "uuid": "9e95995a-53e1-4462-9ec4-571408a06211"
-        },
-        {
-          "uuid": "0cf678be-7dd1-47e3-852c-e80942d5566b"
-        },
-        {
-          "uuid": "11205f2d-e111-430c-9c8b-69df37e489e9"
         }
       ],
-      "num_skus": 6,
+      "num_skus": 3,
       "default_shipping_cost": null,
       "retailer": {
         "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
@@ -111,30 +75,9 @@ right_code: |
         },
         {
           "uuid": "2925cf50-5382-4c12-b54c-0017411e20df"
-        },
-        {
-          "uuid": "538de9db-4a88-48b2-8b29-95d806bf3e06"
-        },
-        {
-          "uuid": "379274d5-835b-4f5e-92ef-63adddfeb9c4"
-        },
-        {
-          "uuid": "76302a53-d895-4711-b527-f13794690787"
-        },
-        {
-          "uuid": "4fc3e083-0828-4842-b647-13bcf7564dac"
-        },
-        {
-          "uuid": "cffa8102-51d5-4b6a-a847-15ecd542840c"
-        },
-        {
-          "uuid": "634fb2e9-f0c5-4da2-b4f9-1e701b109bf0"
-        },
-        {
-          "uuid": "260a181a-331e-4e4f-9a57-510048a5d3f2"
         }
       ],
-      "num_skus": 10,
+      "num_skus": 3,
       "default_shipping_cost": null,
       "retailer": {
         "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
@@ -151,8 +94,6 @@ right_code: |
 
 ---
 Get the List of Catalogs you have access to. Your username and password are optional as you can send your authorization token to receive this information.
-
-URL Endpoint: /api/products/catalogs/
 
 ### Response Parameters:
 

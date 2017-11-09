@@ -28,8 +28,6 @@ right_code: |
 ---
 Provide a username and password to receive your authentication token and various account-related data. The purpose of the authentication token is to allow you to fetch account-related info without using your username and password. Prior to making other account-related calls, login to get your authentication token.
 
-URL Endpoint: /api/organizations/user-login/
-
 ### Request Parameters:
 
 username
