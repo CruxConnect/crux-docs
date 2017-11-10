@@ -37,24 +37,6 @@ right_code: |
             "shipping_cost_is_estimate": true,
             "minimum_tier_quantity": 16,
             "cost": 49.99
-          },
-          {
-            "shipping_cost": 1.99,
-            "shipping_cost_is_estimate": true,
-            "minimum_tier_quantity": 2,
-            "cost": 100.12
-          },
-          {
-            "shipping_cost": 0.99,
-            "shipping_cost_is_estimate": true,
-            "minimum_tier_quantity": 4,
-            "cost": 75.6
-          },
-          {
-            "shipping_cost": 0,
-            "shipping_cost_is_estimate": true,
-            "minimum_tier_quantity": 16,
-            "cost": 49.99
           }
         ],
         "product_images": [
@@ -127,8 +109,6 @@ right_code: |
 
 ---
 SKU Autocomplete allows you to search for a SKU without having the complete sku_id or sku_uuid. You can provide a partial sku_id or sku_uuid and you receive a list of results that are close if not an exact match for the SKU you're searching for.
-
-URL Endpoint: /api/products/skus/search/completion/
 
 ### Response Parameters:
 

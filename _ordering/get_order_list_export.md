@@ -20,8 +20,6 @@ right_code: |
 ---
 Get an Export of the Order List via an email to your email address on file. This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. We also provide an Export uuid in response to this call.
 
-URL Endpoint: /api/orders/export/
-
 ### Response Parameters:
 
 uuid

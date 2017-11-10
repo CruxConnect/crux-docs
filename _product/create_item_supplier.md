@@ -73,8 +73,6 @@ right_code: |
 ---
 Create Items allows you to create (add) an item in a Supplier account. By providing  Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/products/items/
-
 ### Request Parameters:
 
 item_id

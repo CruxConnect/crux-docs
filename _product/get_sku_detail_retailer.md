@@ -65,24 +65,6 @@ right_code: |
         "cost": 49.99,
         "shipping_cost": 0,
         "minimum_tier_quantity": 16
-      },
-      {
-        "shipping_cost_is_estimate": true,
-        "cost": 100.12,
-        "shipping_cost": 1.99,
-        "minimum_tier_quantity": 2
-      },
-      {
-        "shipping_cost_is_estimate": true,
-        "cost": 75.6,
-        "shipping_cost": 0.99,
-        "minimum_tier_quantity": 4
-      },
-      {
-        "shipping_cost_is_estimate": true,
-        "cost": 49.99,
-        "shipping_cost": 0,
-        "minimum_tier_quantity": 16
       }
     ],
     "product_images": [
@@ -133,10 +115,6 @@ right_code: |
       {
         "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",
         "name": "The accessible motion inventory list"
-      },
-      {
-        "uuid": "044a84c9-624f-49f1-bb31-29da46dd8aa9",
-        "name": "The aching hook inventory list"
       }
     ],
     "created": "2017-10-23T18:25:36.448007Z",
@@ -153,8 +131,6 @@ right_code: |
 
 ---
 Get Details about a SKU. There is a varying amount of data provided with each SKUs. The Response Parameters listed below are potential attributes of SKUs that may be returned to you. Your username and password are optional as you can send your authorization token to receive this information.
-
-URL Endpoint: /api/products/skus/\<sku_uuid\>/
 
 ### Response Parameters:
 

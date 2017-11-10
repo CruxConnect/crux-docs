@@ -10,11 +10,13 @@ right_code: |
     "skus": [
       {
         "quantity": "23",
-        "sku_id": ""
+        "sku_id": "HHL59hE",
+        "supplier_id": "12347k-lk8s97-asdlfk-098sdf"
       },
       {
         "quantity": "478",
-        "sku_id": ""
+        "sku_id": "wZtMF91H2tIQ8RU",
+        "supplier_id": "12347k-lk8s97-asdlfk-098sdf"
       }
     ],
     "purchase_order_id": "po-SHJ7ffBu",
@@ -114,8 +116,6 @@ right_code: |
 
 ---
 Create an Order on your account. By providing the SKU(s), quantity ordered, destination, etc. you may create an order for fulfillment. Your username and password are optional as you can send your authorization token to receive this information.
-
-URL Endpoint: /api/orders/create/
 
 ### Request Parameters:
 

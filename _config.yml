@@ -32,8 +32,8 @@ collections:
     title: Ordering
     position: 6
     type: api
-  data:
-    title: Data
+  export:
+    title: Export
     position: 7
     type: api
 gems:

@@ -10,11 +10,13 @@ right_code: |
     "skus": [
       {
         "quantity": 5,
-        "sku_id": ""
+        "sku_id": "12345e-47a",
+        "supplier_id": "25432a-fus814-as79asf-askjlu"
       },
       {
         "quantity": 3,
-        "sku_id": ""
+        "sku_id": "224315f-53a",
+        "supplier_id": "25432a-fus814-as79asf-askjlu"
       }
     ]
   }
@@ -23,17 +25,15 @@ right_code: |
 
   ~~~ json
   {
-    "estimated_shipping_cost": 0,
-    "drop_ship_fee": 0,
-    "order_fee": 0
+    "estimated_shipping_cost": 27.37,
+    "drop_ship_fee": 5.00,
+    "order_fee": 47.50
   }
   ~~~
   {: title="Response" }
 
 ---
 Before placing an order, use this call to return the total Fees for the Order. This may be used a number of ways. Perhaps you would like to make sure you are charging enough for an order and would like a "sanity check" on the price before committing to the potential buyer. This API call allows you to get the full, all-inclusive price for the Order.
-
-URL Endpoint: /api/orders/fees
 
 ### Request Parameters:
 
@@ -49,6 +49,9 @@ sku_id
 
 quantity
 : (number) The Quantity ordered of the SKU ID
+
+supplier_id
+: (string) The Supplier ID is the Identifier for the supplier. This is used to help determine the origin of the sku_id.
 
 #### Optional:
 

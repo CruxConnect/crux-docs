@@ -124,8 +124,6 @@ right_code: |
 ---
 Get the Details for a specified Order. This includes the identifiers for the order, universal unique identifier for the order, po number, SKU(s) ordered, and details on the destination, receiver, etc. Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/orders/\<order_uuid\>/
-
 ### Response Parameters:
 
 uuid
@@ -249,7 +247,7 @@ tracking_numbers
 allocation
 : (object) The Allocation object contains quantity ordered, quantity allocated, quantity backordered, quantity rejected, and backorder date.
 
-#### Allocation Object: 
+#### Allocation Object:
 
 quantity_ordered
 : (number) The Quantity Ordered of the SKU
@@ -326,10 +324,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Order Detail 
+// request Get Order Detail
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -340,26 +338,26 @@ def send_request():
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
@@ -367,10 +365,10 @@ def send_request():
     });
     request.write("{}")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);
