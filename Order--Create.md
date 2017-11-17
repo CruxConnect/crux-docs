@@ -6,7 +6,7 @@ POST /api/order/create/
 
 ### Request
 
-(Required fields: `skus`, `address`, `shipping_carrier`, `shipping_method`, `purchase_order_id`)
+(Required fields: `skus`, `address`, `shipping_carrier`, `shipping_method`, `purchase_order_id`, `supplier_uuid`)
 (Optional fields: `notes`, `address.business_name`, `address.address2` )
 
 ```js
@@ -31,6 +31,7 @@ POST /api/order/create/
   shipping_method: <string>,
   purchase_order_id: <string>,
   notes: <string>,
+  supplier_uuid: <uuid>,
 }
 ```
 
