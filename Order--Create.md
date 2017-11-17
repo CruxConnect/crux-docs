@@ -31,6 +31,7 @@ POST /api/order/create/
   shipping_method: <string>,
   purchase_order_id: <string>,
   notes: <string>,
+  supplier_uuid: <uuid>,
 }
 ```
 
