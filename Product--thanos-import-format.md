@@ -22,7 +22,7 @@ the last line specifying the item level information will be used.
     brand CharField(128)
     country_of_origin (Valid 2 letter country code)
     shipping_origin_country (Valid 2 letter country code)
-    categories (comma_separated uuids)
+    categories ('>' category path separator, '|' category separator, eg. Home > Craft > Sewing | Outdoors > Hiking)
     restrict_from_marketplaces comma_separated('amazon, 'ebay', 'newegg', 'overstock', 'walmart')
     other_marketplace_restriction CharField(256)
     fba_certified (bool)
@@ -50,15 +50,19 @@ the last line specifying the item level information will be used.
     msrp (float)
 
     # measurements
-    weight (float [kg])
-    length (float [meters])
-    width (float [meters])
-    height (float [meters])
+    sku_weight (float)
+    sku_weight_units (one_of: 'g', 'kg', 'lb', 'oz'; defaults to g; must specify to save as preferred units)
+    sku_length (float)
+    sku_width (float)
+    sku_height (float)
+    sku_dimension_units (one_of: 'cm', 'm', 'in', 'ft'; defaults to cm; must specify to save as preferred units)
 
-    package_weight (float [kg])
-    package_length (float [meters])
-    package_width (float [meters])
-    package_height (float [meters])
+    package_weight (float)
+    package_weight_units (one_of: 'g', 'kg', 'lb', 'oz'; defaults to g; must specify to save as preferred units)
+    package_length (float)
+    package_width (float)
+    package_height (float)
+    package_dimension_units (one_of: 'cm', 'm', 'in', 'ft'; defaults to cm; must specify to save as preferred units)
 
     # identifiers
     upca CharField(12)
