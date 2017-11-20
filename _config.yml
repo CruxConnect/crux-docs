@@ -1,0 +1,52 @@
+# ----
+# Site
+
+title: Thanos Docs
+description: API documentation for project codenamed thanos
+url: https://example.com
+google_analytics_key:
+permalink: pretty
+baseurl: /thanos-api-docs
+
+collections:
+  documentation:
+    title: Documentation
+    position: 1
+  login:
+    title: Login
+    position: 2
+    type: api
+  organization:
+    title: Organization
+    position: 3
+    type: api
+  billing:
+    title: Billing
+    position: 4
+    type: api
+  product:
+    title: Product
+    position: 5
+    type: api
+  ordering:
+    title: Ordering
+    position: 6
+    type: api
+  export:
+    title: Export
+    position: 7
+    type: api
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - readme.md
+  - LICENCE
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: default
