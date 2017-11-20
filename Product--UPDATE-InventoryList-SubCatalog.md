@@ -11,7 +11,7 @@ PATCH /products/catalogs/<catalog-uuid>
 {
   name: <string>,
   description: <string>,
-  retailer_uuids: [<uuid>,<uuid>], // in the case of sub-catalog
+  retailers: [<uuid>,<uuid>], // in the case of sub-catalog
 }
 ```
 
