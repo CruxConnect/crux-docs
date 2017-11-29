@@ -202,30 +202,42 @@ height
 #### SKU Measurements Object:
 
 weight
-: (number) The Weight of the SKU in pounds (lbs.)
+: (number) The Weight of the SKU in the "weight_units"
+
+weight_units
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options)
 
 length
-: (number) The Length of the SKU in inches
+: (number) The Length of the SKU in "dimension_units"
 
 width
-: (number) The Width of the SKU in inches
+: (number) The Width of the SKU in "dimension_units"
 
 height
-: (number) The Height of the SKU in inches
+: (number) The Height of the SKU in "dimension_units"
+
+dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options)
 
 #### Package Measurements Object:
 
 weight
-: (number) The Weight of the packaged SKU in pounds (lbs.)
+: (number) The Weight of the packaged SKU in "weight_units"
+
+weight_units
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options)
 
 length
-: (number) The Length of the packaged SKU in inches
+: (number) The Length of the packaged SKU in "dimension_units"
 
 width
-: (number) The Width of the packaged SKU in inches
+: (number) The Width of the packaged SKU in "dimension_units"
 
 height
-: (number) The Height of the packaged SKU in inches
+: (number) The Height of the packaged SKU in "dimension_units"
+
+dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options)
 
 #### Product Identifiers Object:
 
