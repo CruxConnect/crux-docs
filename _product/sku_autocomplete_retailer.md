@@ -117,8 +117,14 @@ skus
 
 #### SKU Object:
 
-org_uuids
-: (list) The Univeral Unique Identifiers for the Organization list parameter contains the list of org_uuids that may access this SKU
+supplier_uuid
+: (string) The Univeral Unique Identifier for the Supplier Organization to which this SKU belongs
+
+item_title
+: (string) The title of the item to which the SKU belongs
+
+distinguishing_info
+: (object) Information that distinguishes this SKU from others belonging to the same item. (e.g. condition, # of units bundled, size, etc.)
 
 product_images
 : (list) The Product Images list parameter contains the SKU Product Image objects
