@@ -342,6 +342,10 @@ custom_attributes
 categories
 : (list) The Categories list contains a list of the categories, as provided by the Supplier, for this Item.
 
+distinguishing_info
+: (object) Information that distinguishes this SKU from others belonging to the same item. (e.g. condition, # of units bundled, size, etc.)
+
+
 #### SKU Object:
 
 uuid
