@@ -135,9 +135,6 @@ sku_id
 uuid
 : (string) The Universal Unique Identifier for the SKU
 
-number_of_units_bundled
-: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
 price_tiers
 : (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
 
