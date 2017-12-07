@@ -1,40 +1,37 @@
 ---
-title: /api/organizations/transactions/&lttransaction_id&gt/
-name: Get Billing Transaction Details
-position: 1.1
-type: get
-description: Get Billing Transaction Details for specific transactions
+title: /api/accounting/transactions/export/
+name: Get Billing Transactions Export
+position: 1.4
+type: post
+description: Get Billing Transactions Export allows you to receive an email with the current Transactions on your account
 right_code: |
   ~~~ json
-  {
-    "statement_date": "2017-11-06",
-    "payment_date": "2017-11-06",
-    "transaction_id": "123456789",
-    "total": "12.00",
-    "status": "paid"
-  }
+  {}
   ~~~
-  {: title="Response" }
+  {: title="Request" }
+
 
 ---
-Get the Billing Transaction Details for a specific transaction on your account. The response includes details on the particular transaction_id you provide. Your username and password are optional as you can send your authorization token to receive this information.
+Get Billing Transactions Export allows you to get an email with the Billing Transactions List. This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. We also provide an Export uuid in response to this call. Your username and password are optional as you can send your authorization token to receive this information.
+
+URL Endpoint: /api/organizations/transactions/export/
 
 ### Response Parameters:
 
-statement_date
-: (string) The Statement Date parameter is a date of when the statement was given
-
 payment_date
-: (string) The Payment Date parameter is a date of when the payment posted on the billing transaction
+: (string) Payment Date in the following format: YYYY-MM-DD
 
-transaction_id
-: (string) The Transaction Identifier parameter is an id number for the billing transaction
-
-total
-: (number) The Total parameter is the total amount on the billing transaction
+statement_date
+: (string) Statement Date in the following format: YYYY-MM-DD
 
 status
-: (string) The Status parameter is the status for the billing transaction
+: (string) Status for the Transaction (e.g. "paid")
+
+total
+: (number) Total for the Transaction in USD (e.g. 29.95)
+
+transaction_id
+: (number) ID associated with the Transaction
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -47,15 +44,19 @@ status
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/transactions/123456789/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
+curl -X "POST" "https://stable.projectthanos.com/api/accounting/transactions/export/" \
+     -H 'Authorization: Token f97322af7ca5a5dacc73a6eae3e90dc975391fda' \
+     -H 'Content-Type: application/json; charset=utf-8' \
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://stable.projectthanos.com/api/organizations/transactions/123456789/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
+http --json POST 'https://stable.projectthanos.com/api/accounting/transactions/export/' \
+    'Authorization':'Token f97322af7ca5a5dacc73a6eae3e90dc975391fda' \
+    'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -65,18 +66,21 @@ http GET 'https://stable.projectthanos.com/api/organizations/transactions/123456
 # `pip install requests`
 
 import requests
+import json
 
 
 def send_request():
-    # Get Billing Transaction Details
-    # GET https://stable.projectthanos.com/api/organizations/transactions/123456789/
+    # Get Billing Transactions Export
+    # POST https://stable.projectthanos.com/api/accounting/transactions/export/
 
     try:
-        response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/transactions/123456789/",
+        response = requests.post(
+            url="https://stable.projectthanos.com/api/accounting/transactions/export/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token f97322af7ca5a5dacc73a6eae3e90dc975391fda",
+                "Content-Type": "application/json; charset=utf-8",
             },
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -89,7 +93,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Billing Transaction Details
+// request Get Billing Transactions Export
 (function(callback) {
     'use strict';
 
@@ -98,9 +102,9 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/organizations/transactions/123456789/',
-        method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
+        path: '/api/accounting/transactions/export/',
+        method: 'POST',
+        headers: {"Authorization":"Token f97322af7ca5a5dacc73a6eae3e90dc975391fda","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -128,7 +132,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("")
+    request.write("{}")
     request.end();
 
 
@@ -141,3 +145,4 @@ def send_request():
 
 ~~~
 {: title="Node.js" }
+
