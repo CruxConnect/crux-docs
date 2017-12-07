@@ -356,9 +356,6 @@ condition
 distinguishing_attributes
 : (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
 
-distinguishing_info
-: (object) Information that distinguishes this SKU from others belonging to the same item. (e.g. condition, # of units bundled, size, etc.)
-
 minimum_advertised_price
 : (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
 
