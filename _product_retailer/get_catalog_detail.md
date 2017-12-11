@@ -62,7 +62,6 @@ retailer
 created
 : (string) The Created parameter is the date the Catalog was Created.
 
-
 last_updated
 : (string) The Last Updated parameter is the date the Catalog was Last Updated.
 

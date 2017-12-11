@@ -32,6 +32,10 @@ collections:
     title: Product for Supplier 
     position: 5
     type: api
+  discovery:
+    title: Discovery
+    position: 5.1
+    type: api
   ordering:
     title: Ordering
     position: 6

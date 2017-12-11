@@ -50,14 +50,14 @@ Proposing changes to the API can be done using github.
 The file for a particular endpoint is found in the category folder pertaining to the call.
 You can see those categories on the left nav in the API documentation (login, organzations, billing, etc.)
 
-Let’s say I wanted to add an api call at ‘/api/export/slap-dusty/’:
+Let’s say I wanted to add an api call at ‘/export/slap-dusty/’:
 
 I would create a new file called `slap_dusty.md` inside the `_export` folder.
 
 The contents would be:
 ```
 ---
-title: /api/export/slap-dusty/
+title: /export/slap-dusty/
 name: Slap Dusty
 method: get
 description: Give dusty a good slap.
@@ -84,5 +84,6 @@ exclamation
 | 401  | Unauthorized           | You haven't told me who you are to slap Dusty. |
 | 403  | Permission Denied      | You are not allowed to slap Dusty.             |
 | 404  | Not Found              | Dusty is missing                               |
+| 500  | Internal Server Error  | Dusty did something unexpected                 |
 ```
 Note that type=method. We should change that.
