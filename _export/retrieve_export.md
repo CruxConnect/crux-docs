@@ -2,7 +2,7 @@
 title: /api/data/export/&ltexport_uuid&gt/
 name: Retrieve Export
 position: 4.00
-type: get
+method: get
 description: Retrieve a previously requested Export
 right_code: |
   ~~~ json

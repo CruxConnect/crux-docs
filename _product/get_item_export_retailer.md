@@ -2,7 +2,7 @@
 title: /api/products/items/export/
 name: Get Item Export - Retailer
 position: 2.21
-type: post
+method: post
 description: Get Item List allows you to return a complete list of items you are interested in.
 right_code: |
   ~~~ json

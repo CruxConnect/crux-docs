@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/
 name: Get List of Inventory Lists - Retailer
 position: 2.09
-type: get
+method: get
 description: Get the List of Inventory Lists for your account
 right_code: |
   ~~~ json

@@ -2,7 +2,7 @@
 title: /api/organizations/complete-password/
 name: Create New Password
 position: 0.3
-type: post
+method: post
 description: Provide a new password for your account
 right_code: |
   ~~~ json

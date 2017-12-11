@@ -16,12 +16,12 @@
 					{% for doc in sorted_docs %}
 						<li>
 							<a
-								{% if doc.type %}class="{{ doc.type }}"{% endif %}
+								{% if doc.method %}class="{{ doc.method }}"{% endif %}
                 href="{% if page.url != '/' %}/{% endif %}#{{ doc.id | replace: '/', '' | replace: '.', ''}}"
               >
 								{% if doc.title %}<span class="title">{{ doc.title }}</span>{% endif %}
 								{% if doc.name %}<span class="name">{{ doc.name }}</span>{% endif %}
-								{% if doc.type %}<span class="endpoint {{ doc.type }}"></span>{% endif %}
+								{% if doc.method %}<span class="endpoint {{ doc.method }}"></span>{% endif %}
 							</a>
 						</li>
 					{% endfor %}

@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/
 name: Get Inventory List Detail - Retailer
 position: 2.10
-type: get
+method: get
 description: Get the Details of a particular Inventory List you have access to
 right_code: |
   ~~~ json

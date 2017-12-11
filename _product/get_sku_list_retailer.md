@@ -2,7 +2,7 @@
 title: /api/products/skus/
 name: Get SKU List - Retailer
 position: 2.23
-type: get
+method: get
 description: Get SKU List allows you to return a complete list of SKUs you are interested in.
 right_code: |
   ~~~ json

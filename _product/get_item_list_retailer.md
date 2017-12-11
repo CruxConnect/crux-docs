@@ -2,7 +2,7 @@
 title: /api/products/items/
 name: Get Item List - Retailer
 position: 2.18
-type: get
+method: get
 description: Get Item List allows you to return a complete list of items you are interested in.
 right_code: |
   ~~~ json

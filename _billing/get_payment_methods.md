@@ -2,7 +2,7 @@
 title: /api/organizations/payment-methods/
 name: Get Payment Methods
 position: 1.3
-type: get
+method: get
 description: Get Payment Methods available on your account
 right_code: |
   ~~~ json

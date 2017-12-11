@@ -2,7 +2,7 @@
 title: /api/organizations/user-login/
 name: Login
 position: 0.0
-type: post
+method: post
 description: Login to receive an authentication token
 right_code: |
   ~~~ json

@@ -2,7 +2,7 @@
 title: /api/products/catalogs/&ltcatalog_uuid&gt/
 name: Get Catalog Detail - Retailer
 position: 2.01
-type: get
+method: get
 description: Get the Details of a particular Catalog you have access to
 right_code: |
   ~~~ json

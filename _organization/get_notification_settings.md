@@ -2,7 +2,7 @@
 title: /api/notifications/notification-settings/
 name: Get Notification Settings
 position: 0.98
-type: get
+method: get
 description: Get Notification Settings specific to your user account
 right_code: |
   ~~~ json

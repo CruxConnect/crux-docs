@@ -2,7 +2,7 @@
 title: /api/organizations/complete-password/
 name: Validate Password Reset
 position: 0.2
-type: get
+method: get
 description: Validate the password reset
 right_code: |
   ~~~ json

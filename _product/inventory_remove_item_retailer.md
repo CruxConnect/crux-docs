@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/remove-items/
 name: Inventory Remove Item - Retailer
 position: 2.15
-type: post
+method: post
 description: Remove Items from an existing Inventory List for your account
 right_code: |
   ~~~ json

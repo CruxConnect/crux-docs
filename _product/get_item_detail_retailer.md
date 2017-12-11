@@ -2,7 +2,7 @@
 title: /api/products/items/&ltitem_uuid&gt/
 name: Get Item Detail - Retailer
 position: 2.20
-type: get
+method: get
 description: Get Details about an Item and the SKUs associated to it.
 right_code: |
   ~~~ json
