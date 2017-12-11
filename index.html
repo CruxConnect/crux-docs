@@ -9,8 +9,8 @@ title: API Docs
 			<section class="left-docs">
 				<h3>
 					<a id="{{ doc.id | replace: '/', '' | replace: '.', '' }}">
-						{% if doc.type %}
-							<span class="endpoint {{ doc.type }}"></span>
+						{% if doc.method %}
+							<span class="endpoint {{ doc.method }}"></span>
 						{% endif %}
 						{{ doc.title }}
 					</a>

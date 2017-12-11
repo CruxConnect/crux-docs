@@ -2,7 +2,7 @@
 title: /api/organizations/
 name: Get Organization Details
 position: 0.93
-type: get
+method: get
 description: Get Organization Details specific to your organization
 right_code: |
   ~~~ json

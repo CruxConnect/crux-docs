@@ -2,7 +2,7 @@
 title: /api/organizations/reset-password/
 name: Reset Password
 position: 0.1
-type: post
+method: post
 description: Reset the Password on your account
 right_code: |
   ~~~ json

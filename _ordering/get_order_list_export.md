@@ -2,7 +2,7 @@
 title: /api/orders/export/
 name: Get Order List Export
 position: 3.01
-type: post
+method: post
 description: Get an Export of the Order List via an email
 right_code: |
   ~~~ json

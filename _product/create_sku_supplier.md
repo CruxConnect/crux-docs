@@ -2,7 +2,7 @@
 title: /api/products/skus/
 name: Create SKU - Supplier
 position: 2.24
-type: post
+method: post
 description: Create a SKU to add to a specified item_uuid
 right_code: |
   ~~~ json

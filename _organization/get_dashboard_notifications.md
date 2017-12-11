@@ -2,7 +2,7 @@
 title: /api/notifications/
 name: Get Dashboard Notifications
 position: 0.96
-type: get
+method: get
 description: Get the Dashboard Notifications for your account
 right_code: |
   ~~~ json

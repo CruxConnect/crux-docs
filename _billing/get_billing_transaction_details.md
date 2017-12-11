@@ -2,7 +2,7 @@
 title: /api/organizations/transactions/&lttransaction_id&gt/
 name: Get Billing Transaction Details
 position: 1.1
-type: get
+method: get
 description: Get Billing Transaction Details for specific transactions
 right_code: |
   ~~~ json

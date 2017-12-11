@@ -2,7 +2,7 @@
 title: /api/organizations/users/detail/&ltuser_uuid&gt/
 name: Get User
 position: 0.5
-type: get
+method: get
 description: Get all details about a single user on your account
 right_code: |
   ~~~ json

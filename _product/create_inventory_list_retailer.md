@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/
 name: Create Inventory List - Retailer
 position: 2.11
-type: post
+method: post
 description: Create an Inventory List for your account
 right_code: |
   ~~~ json

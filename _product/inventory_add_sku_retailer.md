@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
 name: Inventory Add SKU - Retailer
 position: 2.12
-type: post
+method: post
 description: Add SKUs to an existing Inventory List for your account
 right_code: |
   ~~~ json

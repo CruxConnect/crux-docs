@@ -2,7 +2,7 @@
 title: /api/orders/
 name: Get Order List
 position: 3.00
-type: post
+method: post
 description: Get the Order List for your organization
 right_code: |
   ~~~ json

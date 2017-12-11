@@ -2,7 +2,7 @@
 title: /api/organizations/users/all/
 name: Get All Users
 position: 0.4
-type: get
+method: get
 description: Get all users, with user details, specific to your account
 right_code: |
   ~~~ json

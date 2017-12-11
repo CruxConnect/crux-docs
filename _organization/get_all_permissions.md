@@ -2,7 +2,7 @@
 title: /api/organizations/all_permissions/
 name: Get All Permissions
 position: 0.6
-type: get
+method: get
 description: Get all available Permissions
 right_code: |
   ~~~ json
