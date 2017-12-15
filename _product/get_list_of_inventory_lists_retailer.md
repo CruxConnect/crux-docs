@@ -6,11 +6,6 @@ type: get
 description: Get the List of Inventory Lists for your account
 right_code: |
   ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
   [
     {
       "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",

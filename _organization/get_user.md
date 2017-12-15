@@ -7,14 +7,6 @@ description: Get all details about a single user on your account
 right_code: |
   ~~~ json
   {
-    "username": "jweir@projectthanos.com",
-    "password": "thanosrocks"
-  }
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
-  {
     "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49",
     "person": {
       "uuid": "2e0ecb7e-9426-4e66-a8a9-e69cd8c806c0",

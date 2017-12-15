@@ -6,14 +6,6 @@ type: get
 description: Get all users, with user details, specific to your account
 right_code: |
   ~~~ json
-  {
-    "username": "jweir@projectthanos.com",
-    "password": "thanosrocks"
-  }
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
   [
     {
       "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49",
