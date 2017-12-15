@@ -71,7 +71,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Create Items allows you to create (add) an item in a Supplier account. By providing  Your username and password are optional as you can send your authorization token to receive this information.
+Create Items allows you to create (add) an item in a Supplier account. By providing the required request parameters you may create a new item.
 
 ### Request Parameters:
 

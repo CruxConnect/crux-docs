@@ -32,7 +32,7 @@ right_code: |
 
 
 ---
-Remove Items from an existing Inventory List by Search. This allows you to remove Items with all associated SKUs via a Search from an Inventory List. By providing your inventory_list_uuid and any search filters, facets and search terms, you can successfully remove them from the indicated Inventory List. Your username and password are optional as you can send your authorization token to receive this information.
+Remove Items from an existing Inventory List by Search. This allows you to remove Items with all associated SKUs via a Search from an Inventory List. By providing your inventory_list_uuid and any search filters, facets and search terms, you can successfully remove them from the indicated Inventory List.
 
 ### Request Parameters:
 

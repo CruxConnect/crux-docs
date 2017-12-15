@@ -14,7 +14,7 @@ right_code: |
 
 
 ---
-Retrieve a previously requested Export via the export_uuid. By calling this API Endpoint with the export_uuid in the URL, you can retrieve a previously requested Export. Your username and password are optional as you can send your authorization token to receive this information.
+Retrieve a previously requested Export via the export_uuid. By calling this API Endpoint with the export_uuid in the URL, you can retrieve a previously requested Export.
 
 ### Response Parameters:
 

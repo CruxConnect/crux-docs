@@ -80,7 +80,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the List of Inventory Lists for your account. Your username and password are optional as you can send your authorization token to receive this information.
+Get the List of Inventory Lists for your account.
 
 ### Response Parameters:
 

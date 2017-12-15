@@ -31,7 +31,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Details of a particular Inventory List you have access to. Your username and password are optional as you can send your authorization token to receive this information.
+Get the Details of a particular Inventory List you have access to.
 
 ### Response Parameters:
 

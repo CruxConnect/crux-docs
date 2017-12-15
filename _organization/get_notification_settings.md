@@ -67,7 +67,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get all the current Notification Settings specific to your user account. This returns the organization uuid, notification name, notification domain, notification type, annd more. Providing your username and password is optional as you can send your authorization token to receive this information.
+Get all the current Notification Settings specific to your user account. This returns the organization uuid, notification name, notification domain, notification type, annd more.
 
 ### Response Parameters:
 

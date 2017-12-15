@@ -93,7 +93,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the List of Catalogs you have access to. Your username and password are optional as you can send your authorization token to receive this information.
+Get the List of Catalogs you have access to.
 
 ### Response Parameters:
 

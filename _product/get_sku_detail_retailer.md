@@ -130,7 +130,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Details about a SKU. There is a varying amount of data provided with each SKUs. The Response Parameters listed below are potential attributes of SKUs that may be returned to you. Your username and password are optional as you can send your authorization token to receive this information.
+Get Details about a SKU. There is a varying amount of data provided with each SKUs. The Response Parameters listed below are potential attributes of SKUs that may be returned to you.
 
 ### Response Parameters:
 

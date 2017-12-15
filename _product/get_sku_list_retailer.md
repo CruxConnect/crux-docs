@@ -2709,7 +2709,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get SKU List allows you to return a complete list of SKUs you are interested in. Your username and password are optional as you can send your authorization token to receive this information.
+Get SKU List allows you to return a complete list of SKUs you are interested in.
 
 URL Endpoint: /api/products/skus/
 

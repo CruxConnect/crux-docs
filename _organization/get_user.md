@@ -63,7 +63,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get all the details about a specific user on your Retailer or Supplier account. This displays their name, email, phone number, permissions (roles), and more. Your username and password are optional as you can send your authorization token to receive this information. For this particular call, the user's uuid must be added to the URL endpoint.
+Get all the details about a specific user on your Retailer or Supplier account. This displays their name, email, phone number, permissions (roles), and more. For this particular call, the user's uuid must be added to the URL endpoint.
 
 ### Response Parameters:
 

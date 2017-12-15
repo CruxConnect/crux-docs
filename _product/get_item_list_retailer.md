@@ -638,7 +638,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Item List allows you to return a complete list of items you are interested in. Your username and password are optional as you can send your authorization token to receive this information.
+Get Item List allows you to return a complete list of items you are interested in.
 
 ### Response Parameters:
 

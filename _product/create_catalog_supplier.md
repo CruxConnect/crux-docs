@@ -33,7 +33,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Create a new Catalog for Retailers to access. Your username and password are optional as you can send your authorization token to receive this information.
+Create a new Catalog for Retailers to access.
 
 ### Request Parameters:
 

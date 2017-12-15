@@ -17,8 +17,7 @@ right_code: |
 
 
 ---
-Remove User Permissions allows you to provide a user uuid and remove permissions if roles change within an organization. Simply provide the organization uuid, user uuid, and the permissions list indicating which permissions you wish to remove. Your username and password are optional as you can send your authorization token to perform this API call.
-
+Remove User Permissions allows you to provide a user uuid and remove permissions if roles change within an organization. Simply provide the organization uuid, user uuid, and the permissions list indicating which permissions you wish to remove.
 
 ### Request Parameters:
 

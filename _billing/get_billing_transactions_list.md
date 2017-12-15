@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/transactions/
+title: /api/accounting/transactions/
 name: Get Billing Transactions List
 position: 1.00
 type: get
@@ -26,7 +26,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Billing Transactions List for your account. This provides details for all billing transactions on your account. Your username and password are optional as you can send your authorization token to receive this information.
+Get the Billing Transactions List for your account. This provides details for all billing transactions on your account.
 
 ### Response Parameters:
 
@@ -56,14 +56,14 @@ status
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/transactions/" \
+curl "https://stable.projectthanos.com/api/accounting/transactions/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://stable.projectthanos.com/api/organizations/transactions/' \
+http GET 'https://stable.projectthanos.com/api/accounting/transactions/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
@@ -78,11 +78,11 @@ import requests
 
 def send_request():
     # Get Billing Transactions List
-    # GET https://stable.projectthanos.com/api/organizations/transactions/
+    # GET https://stable.projectthanos.com/api/accounting/transactions/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/transactions/",
+            url="https://stable.projectthanos.com/api/accounting/transactions/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
             },
@@ -107,7 +107,7 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/organizations/transactions/',
+        path: '/api/accounting/transactions/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
     };

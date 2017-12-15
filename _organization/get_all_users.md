@@ -110,7 +110,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get all the details about the users on your account. This displays their name, email, phone number, permissions (roles), and more. Your username and password are optional as you can send your authorization token to receive this information.
+Get all the details about the users on your account. This displays their name, email, phone number, permissions (roles), and more.
 
 ### Response Parameters:
 

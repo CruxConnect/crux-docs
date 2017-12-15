@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/transactions/&lttransaction_id&gt/
+title: /api/accounting/transactions/&lttransaction_id&gt/
 name: Get Billing Transaction Details
 position: 1.1
 type: get
@@ -17,7 +17,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Billing Transaction Details for a specific transaction on your account. The response includes details on the particular transaction_id you provide. Your username and password are optional as you can send your authorization token to receive this information.
+Get the Billing Transaction Details for a specific transaction on your account. The response includes details on the particular transaction_id you provide.
 
 ### Response Parameters:
 
@@ -47,14 +47,14 @@ status
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/transactions/123456789/" \
+curl "https://stable.projectthanos.com/api/accounting/transactions/123456789/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://stable.projectthanos.com/api/organizations/transactions/123456789/' \
+http GET 'https://stable.projectthanos.com/api/accounting/transactions/123456789/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
@@ -69,11 +69,11 @@ import requests
 
 def send_request():
     # Get Billing Transaction Details
-    # GET https://stable.projectthanos.com/api/organizations/transactions/123456789/
+    # GET https://stable.projectthanos.com/api/accounting/transactions/123456789/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/transactions/123456789/",
+            url="https://stable.projectthanos.com/api/accounting/transactions/123456789/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
             },
@@ -98,7 +98,7 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/organizations/transactions/123456789/',
+        path: '/api/accounting/transactions/123456789/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
     };

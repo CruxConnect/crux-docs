@@ -32,7 +32,7 @@ right_code: |
 
 
 ---
-Remove Items from an existing Catalog by Search. This allows you to Remove Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully remove them from the indicated Catalog. Your username and password are optional as you can send your authorization token to receive this information.
+Remove Items from an existing Catalog by Search. This allows you to Remove Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully remove them from the indicated Catalog.
 
 ### Request Parameters:
 
