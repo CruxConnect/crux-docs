@@ -32,7 +32,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Details about your Organization including the uuid, name, organization type, status, date created, date activated, and account manager. Sending the username and password is not required on this call as you can send in your authorization token.
+Get the Details about your Organization including the uuid, name, organization type, status, date created, date activated, and account manager.
 
 ### Response Parameters:
 

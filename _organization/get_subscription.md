@@ -32,7 +32,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Subscription details for your organization including the plan name, available add-ons, plan features, and next bill plan. Providing a username and password is optional as you can pass in the Authenitcation Token you received at login.
+Get Subscription details for your organization including the plan name, available add-ons, plan features, and next bill plan.
 
 ### Response Parameters:
 

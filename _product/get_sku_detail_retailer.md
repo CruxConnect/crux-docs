@@ -5,36 +5,7 @@ position: 2.24
 method: get
 description: Get Details about a SKU
 right_code: |
-  ~~~ json
-  {
-    "skus": [
-      {
-        "quantity": "54",
-        "sku_id": "WONKYWILLA1"
-      },
-      {
-        "quantity": "253",
-        "sku_id": "CHOCO77"
-      }
-    ],
-    "po_number": "po-tuuhBjSj",
-    "notes": "here are some notes",
-    "shipping_carrier": "UPS",
-    "shipping_method": "Ground",
-    "address": {
-      "name": "Bob Iger",
-      "business_name": "NBC",
-      "address1": "30 Rockefeller Plaza",
-      "address2": "STE 123",
-      "city": "New York",
-      "state": "NY",
-      "postal_code": "10112"
-    }
-  }
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
+ ~~~ json
   {
     "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc",
     "restrictions": null,
@@ -130,7 +101,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Details about a SKU. There is a varying amount of data provided with each SKUs. The Response Parameters listed below are potential attributes of SKUs that may be returned to you. Your username and password are optional as you can send your authorization token to receive this information.
+Get Details about a SKU. There is a varying amount of data provided with each SKUs. The Response Parameters listed below are potential attributes of SKUs that may be returned to you.
 
 ### Response Parameters:
 
@@ -301,31 +272,7 @@ name
 curl "https://stable.projectthanos.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "address": {
-    "state": "NY",
-    "city": "New York",
-    "address1": "30 Rockefeller Plaza",
-    "business_name": "NBC",
-    "postal_code": "10112",
-    "name": "Bob Iger",
-    "address2": "STE 123"
-  },
-  "shipping_carrier": "UPS",
-  "po_number": "po-tuuhBjSj",
-  "notes": "here are some notes",
-  "skus": [
-    {
-      "quantity": "54",
-      "sku_id": "WONKYWILLA1"
-    },
-    {
-      "quantity": "253",
-      "sku_id": "CHOCO77"
-    }
-  ],
-  "shipping_method": "Ground"
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
@@ -333,30 +280,7 @@ curl "https://stable.projectthanos.com/api/products/skus/9060814c-9feb-4a3e-958c
 ~~~ bash
 http --json GET 'https://stable.projectthanos.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8' \
-    address:="{
-  \"state\": \"NY\",
-  \"city\": \"New York\",
-  \"address1\": \"30 Rockefeller Plaza\",
-  \"business_name\": \"NBC\",
-  \"postal_code\": \"10112\",
-  \"name\": \"Bob Iger\",
-  \"address2\": \"STE 123\"
-}" \
-    shipping_carrier="UPS" \
-    po_number="po-tuuhBjSj" \
-    notes="here are some notes" \
-    skus:="[
-  {
-    \"quantity\": \"54\",
-    \"sku_id\": \"WONKYWILLA1\"
-  },
-  {
-    \"quantity\": \"253\",
-    \"sku_id\": \"CHOCO77\"
-  }
-]" \
-    shipping_method="Ground"
+    'Content-Type':'application/json; charset=utf-8'
 
 ~~~
 {: title="HTTPie" }
@@ -380,29 +304,7 @@ def send_request():
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    address:="{
-  \"state\": \"NY\",
-  \"city\": \"New York\",
-  \"address1\": \"30 Rockefeller Plaza\",
-  \"business_name\": \"NBC\",
-  \"postal_code\": \"10112\",
-  \"name\": \"Bob Iger\",
-  \"address2\": \"STE 123\"
-}" \
-    shipping_carrier="UPS" \
-    po_number="po-tuuhBjSj" \
-    notes="here are some notes" \
-    skus:="[
-  {
-    \"quantity\": \"54\",
-    \"sku_id\": \"WONKYWILLA1\"
-  },
-  {
-    \"quantity\": \"253\",
-    \"sku_id\": \"CHOCO77\"
-  }
-]" \
-    shipping_method="Ground")
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -454,7 +356,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"skus\":[{\"quantity\":\"54\",\"sku_id\":\"WONKYWILLA1\"},{\"quantity\":\"253\",\"sku_id\":\"CHOCO77\"}],\"po_number\":\"po-tuuhBjSj\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\"}}")
+    request.write("{}")
     request.end();
 
 

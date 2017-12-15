@@ -115,7 +115,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Create an Order on your account. By providing the SKU(s), quantity ordered, destination, etc. you may create an order for fulfillment. Your username and password are optional as you can send your authorization token to receive this information.
+Create an Order on your account. By providing the SKU(s), quantity ordered, destination, etc. you may create an order for fulfillment.
 
 ### Request Parameters:
 

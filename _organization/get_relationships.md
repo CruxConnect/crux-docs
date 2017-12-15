@@ -97,7 +97,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get all of the direct Relationships specific to your account. These Relationships show what suppliers and/or retailers are available to you with related information such as account managers and contact information. Your username and password are optional as you can send your authorization token to receive this information.
+Get all of the direct Relationships specific to your account. These Relationships show what suppliers and/or retailers are available to you with related information such as account managers and contact information.
 
 ### Response Parameters:
 

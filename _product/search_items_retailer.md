@@ -383,7 +383,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Search for Items in the catalogs available to your organization using a number of filters, facets, and other helpful tools. Your username and password are optional as you can send your authorization token to receive this information.
+Search for Items in the catalogs available to your organization using a number of filters, facets, and other helpful tools.
 
 URL Endpoint: /api/products/items/search/
 

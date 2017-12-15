@@ -347,7 +347,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the complete List of Orders for your organization. This list contains all of your orders: completed, incomplete, processing, etc. Your username and password are optional as you can send your authorization token to receive this information.
+Get the complete List of Orders for your organization. This list contains all of your orders: completed, incomplete, processing, etc.
 
 ### Request Parameters:
 

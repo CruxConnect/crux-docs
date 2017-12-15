@@ -17,7 +17,7 @@ right_code: |
 
 
 ---
-Add User Permissions allows you to provide a user uuid and Add Permissions if roles change within an organization. Simply provide the user uuid and the permissions list indicating which permissions you wish to add. Your username and password are optional as you can send your authorization token to perform this API call.
+Add User Permissions allows you to provide a user uuid and Add Permissions if roles change within an organization. Simply provide the user uuid and the permissions list indicating which permissions you wish to add.
 
 ### Request Parameters:
 

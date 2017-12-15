@@ -7,14 +7,6 @@ description: Get all details about a single user on your account
 right_code: |
   ~~~ json
   {
-    "username": "jweir@projectthanos.com",
-    "password": "thanosrocks"
-  }
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
-  {
     "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49",
     "person": {
       "uuid": "2e0ecb7e-9426-4e66-a8a9-e69cd8c806c0",
@@ -63,7 +55,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get all the details about a specific user on your Retailer or Supplier account. This displays their name, email, phone number, permissions (roles), and more. Your username and password are optional as you can send your authorization token to receive this information. For this particular call, the user's uuid must be added to the URL endpoint.
+Get all the details about a specific user on your Retailer or Supplier account. This displays their name, email, phone number, permissions (roles), and more. For this particular call, the user's uuid must be added to the URL endpoint.
 
 ### Response Parameters:
 

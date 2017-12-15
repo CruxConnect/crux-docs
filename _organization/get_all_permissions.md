@@ -30,7 +30,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get all of the available Permissions based on the type of account requested on. These change based on Retailer or Supplier accounts. Your username and password are optional as you can send your authorization token to receive this information.
+Get all of the available Permissions based on the type of account requested on. These change based on Retailer or Supplier accounts.
 
 ### Response Parameters:
 

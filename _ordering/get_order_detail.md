@@ -122,7 +122,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Details for a specified Order. This includes the identifiers for the order, universal unique identifier for the order, po number, SKU(s) ordered, and details on the destination, receiver, etc. Your username and password are optional as you can send your authorization token to receive this information.
+Get the Details for a specified Order. This includes the identifiers for the order, universal unique identifier for the order, po number, SKU(s) ordered, and details on the destination, receiver, etc.
 
 ### Response Parameters:
 

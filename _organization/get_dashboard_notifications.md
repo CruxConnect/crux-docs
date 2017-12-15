@@ -25,9 +25,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Dashboard Notificationas for your account. These are all of the enabled notifications that you are receiving on your Dashboard. Providing your username and password is optional as you can send your authorization token to receive this information.
-
-URL Endpoint: /api/notifications/
+Get the Dashboard Notificationas for your account. These are all of the enabled notifications that you are receiving on your Dashboard.
 
 ### Response Parameters:
 

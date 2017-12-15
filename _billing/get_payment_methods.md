@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/payment-methods/
+title: /api/accounting/payment-methods/
 name: Get Payment Methods
 position: 1.3
 method: get
@@ -18,7 +18,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Payment Methods available on your account. This returns the Payment Methods that are currently on your account. If you have removed any Payment Methods prior to this call, they will not appear in the list. Your username and password are optional as you can send your authorization token to receive this information.
+Get Payment Methods available on your account. This returns the Payment Methods that are currently on your account. If you have removed any Payment Methods prior to this call, they will not appear in the list.
 
 ### Response Parameters:
 
@@ -36,7 +36,7 @@ card_last_four
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/payment-methods/" \
+curl "https://stable.projectthanos.com/api/accounting/payment-methods/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -45,7 +45,7 @@ curl "https://stable.projectthanos.com/api/organizations/payment-methods/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/organizations/payment-methods/' \
+http --json GET 'https://stable.projectthanos.com/api/accounting/payment-methods/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -63,11 +63,11 @@ import json
 
 def send_request():
     # Get Payment Methods
-    # GET https://stable.projectthanos.com/api/organizations/payment-methods/
+    # GET https://stable.projectthanos.com/api/accounting/payment-methods/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/payment-methods/",
+            url="https://stable.projectthanos.com/api/accounting/payment-methods/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -94,7 +94,7 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/organizations/payment-methods/',
+        path: '/api/accounting/payment-methods/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
