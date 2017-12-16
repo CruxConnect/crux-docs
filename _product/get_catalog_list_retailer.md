@@ -2,7 +2,7 @@
 title: /api/products/catalogs/
 name: Get Catalog List - Retailer
 position: 2.00
-type: get
+method: get
 description: Get the List of Catalogs you have access to
 right_code: |
   ~~~ json

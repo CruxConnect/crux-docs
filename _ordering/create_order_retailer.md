@@ -2,7 +2,7 @@
 title: /api/orders/create/
 name: Create Order - Retailer
 position: 3.05
-type: post
+method: post
 description: Create an Order on your account
 right_code: |
   ~~~ json

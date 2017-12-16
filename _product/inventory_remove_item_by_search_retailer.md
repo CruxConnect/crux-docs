@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/remove-items-by-search/
 name: Inventory Remove Item by Search - Retailer
 position: 2.17
-type: post
+method: post
 description: Remove Items from an existing Inventory List by Search
 right_code: |
   ~~~ json

@@ -2,7 +2,7 @@
 title: /api/organizations/relationships/
 name: Get Relationships
 position: 0.91
-type: get
+method: get
 description: Get all direct Relationships specific to your account
 right_code: |
   ~~~ json

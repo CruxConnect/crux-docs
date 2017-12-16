@@ -2,7 +2,7 @@
 title: /api/organizations/subscription/
 name: Get Subscription
 position: 0.95
-type: get
+method: get
 description: Get Subscription with details for your organization
 right_code: |
   ~~~ json

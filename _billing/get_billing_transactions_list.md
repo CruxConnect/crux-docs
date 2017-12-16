@@ -2,7 +2,7 @@
 title: /api/accounting/transactions/
 name: Get Billing Transactions List
 position: 1.00
-type: get
+method: get
 description: Get the Billing Transactions List for your account
 right_code: |
   ~~~ json

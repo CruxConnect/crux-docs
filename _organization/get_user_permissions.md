@@ -2,7 +2,7 @@
 title: /api/organizations/users/permissions/&ltuser_uuid&gt/
 name: Get User Permissions
 position: 0.7
-type: get
+method: get
 description: Get User Permissions for a particular User
 right_code: |
   ~~~ json

@@ -2,7 +2,7 @@
 title: /api/orders/&ltorder_uuid&gt/
 name: Get Order Detail
 position: 3.02
-type: get
+method: get
 description: Get the Details for a specified Order
 right_code: |
   ~~~ json

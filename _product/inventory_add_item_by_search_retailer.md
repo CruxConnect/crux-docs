@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/add-items-by-search/
 name: Inventory Add Item by Search - Retailer
 position: 2.16
-type: post
+method: post
 description: Add Items to an existing Inventory List by Search
 right_code: |
   ~~~ json

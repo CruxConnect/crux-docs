@@ -2,7 +2,7 @@
 title: /api/products/skus/search/completion/
 name: SKU Autocomplete - Retailer
 position: 2.27
-type: post
+method: post
 description: SKU Autocomplete allows you to search for a SKU without having the complete sku_id or sku_uuid
 right_code: |
   ~~~ json

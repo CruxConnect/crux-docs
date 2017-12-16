@@ -2,7 +2,7 @@
 title: /api/products/items/search/
 name: Search Items - Retailer
 position: 2.25
-type: post
+method: post
 description: Search for Items in the catalogs available to your organization
 right_code: |
   ~~~ json

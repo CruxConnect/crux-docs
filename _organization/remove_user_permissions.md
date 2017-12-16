@@ -2,7 +2,7 @@
 title: /api/organizations/users/permissions/&ltuser_uuid&gt/
 name: Remove User Permissions
 position: 0.9
-type: delete
+method: delete
 description: Remove User Permissions granted at a prior occasion
 right_code: |
   ~~~ json

@@ -2,7 +2,7 @@
 title: /api/orders/cancel/
 name: Cancel Order
 position: 3.06
-type: patch
+method: patch
 description: Cancel a pending Order (for Retailers)
 right_code: |
   ~~~ json

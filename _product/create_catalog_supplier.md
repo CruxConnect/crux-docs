@@ -2,7 +2,7 @@
 title: /api/products/catalogs/
 name: Create Catalog - Supplier
 position: 2.02
-type: post
+method: post
 description: Create a Catalog
 right_code: |
   ~~~ json

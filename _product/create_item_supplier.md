@@ -2,7 +2,7 @@
 title: /api/products/items/
 name: Create Item - Supplier
 position: 2.19
-type: post
+method: post
 description: Create Items allows you to create (add) an item in a Supplier account
 right_code: |
   ~~~ json

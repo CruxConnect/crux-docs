@@ -2,7 +2,7 @@
 title: /api/products/catalogs/&ltcatalog_uuid&gt/add-items-by-search/
 name: Catalog Add Item by Search - Supplier
 position: 2.07
-type: post
+method: post
 description: Add Items to an existing Catalog by Search
 right_code: |
   ~~~ json

@@ -2,7 +2,7 @@
 title: /api/products/catalogs/&ltcatalog_uuid&gt/remove-items-by-search/
 name: Catalog Remove Item by Search - Supplier
 position: 2.08
-type: post
+method: post
 description: Remove Items from an existing Catalog by Search
 right_code: |
   ~~~ json
