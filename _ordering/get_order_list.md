@@ -13,7 +13,8 @@ right_code: |
       "key": "uuid",
       "dir": "des"
     },
-    "status": "New",
+    "line_item_status": [],
+    "status_conjuction": "or",
     "start_date": "2017-07-31T06:00:00.000Z",
     "end_date": "2018-08-03T06:00:00.000Z"
   }
@@ -362,8 +363,11 @@ limit
 sort
 : (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in
 
-status
-: (string) The Status of the Orders you would like to see returned
+line_item_status
+: (array) One or more line item statuses. Will include orders with statuses based upon that `status_conjunction`. Possible Values are: `unallocated`, `allocated`, `rejected`, `has_tracking`, `backordered`
+
+status_conjunction
+: (string) Indicates how the line_item_status relates to the order response. Possible values are: `and`, `or`, `all`. Default: `or`. `And` will return all orders that have at least 1 line item matching each supplied status. `or` will return all orders that have at least one line item matching any of the supplied statuses. `only` will return orders that have ALL line items matching the supplied status. Only one line_item_status should be supplied when using `only`.
 
 start_date
 : (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
