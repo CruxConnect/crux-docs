@@ -1,19 +1,19 @@
 ---
 title: /api/orders/
-name: Get Order List
+name: Get Orders
 position: 3.00
 type: post
-description: Get the Order List for your organization
+description: Get the Orders for your organization
 right_code: |
   ~~~ json
   {
     "start": 0,
-    "limit": 25,
+    "limit": 3,
     "sort": {
       "key": "uuid",
       "dir": "des"
     },
-    "status": "New",
+    "line_item_status": "unallocated",
     "start_date": "2017-07-31T06:00:00.000Z",
     "end_date": "2018-08-03T06:00:00.000Z"
   }
@@ -65,6 +65,7 @@ right_code: |
             "sku_uuid": "c3786845-3f06-4a10-a6cd-ff23461ab11f",
             "sku_id": "yl3t2Lij7XJfAnsB",
             "sku_name": "The infamous blood item",
+            "status": "unallocated",
             "cost": 58.16,
             "supplier_uuid": "4b72cfbc-5123-4152-a7ed-3da5d0ce8bad",
             "supplier_name": "Brooks-Jones",
@@ -84,6 +85,7 @@ right_code: |
             "sku_uuid": "f0b82bb2-0b12-42bf-b7e4-7195ccfb21ab",
             "sku_id": "utmcbyzttt",
             "sku_name": "The changeable soap item",
+            "status": "unallocated",
             "cost": 49.96,
             "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
             "supplier_name": "Flynn Ltd",
@@ -103,6 +105,7 @@ right_code: |
             "sku_uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc",
             "sku_id": "voGDR4gOyYUOgcT7gw",
             "sku_name": "The cautious knowledge item",
+            "status": "unallocated",
             "cost": 2.84,
             "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
             "supplier_name": "Flynn Ltd",
@@ -122,6 +125,7 @@ right_code: |
             "sku_uuid": "dd9689e9-8241-4a78-afa1-7cbce9b09513",
             "sku_id": "BJA9PlgxiT9kQRaYUMF",
             "sku_name": "The aboard invention item",
+            "status": "unallocated",
             "cost": 96.49,
             "supplier_uuid": "4b72cfbc-5123-4152-a7ed-3da5d0ce8bad",
             "supplier_name": "Brooks-Jones",
@@ -177,6 +181,7 @@ right_code: |
             "sku_uuid": "ec26763f-5395-47b7-b7bb-f0ce03058e1d",
             "sku_id": "USaoDXIiLNHOgNy",
             "sku_name": "The enraged destruction item",
+            "status": "unallocated",
             "cost": 12.32,
             "supplier_uuid": "0e9dd1c1-1eb5-45dc-9bb0-fe3d53f9da0d",
             "supplier_name": "Sharp, Green and West",
@@ -196,6 +201,7 @@ right_code: |
             "sku_uuid": "0cf678be-7dd1-47e3-852c-e80942d5566b",
             "sku_id": "UfvfG2",
             "sku_name": "The capital arch item",
+            "status": "unallocated",
             "cost": 33.16,
             "supplier_uuid": "1b348539-1f1a-432e-a9c3-63f71e65ad84",
             "supplier_name": "Underwood-Chavez",
@@ -215,6 +221,7 @@ right_code: |
             "sku_uuid": "31ce0d04-e164-481e-9e41-82c4dff09aac",
             "sku_id": "fic0Sk",
             "sku_name": "The enraged water item",
+            "status": "unallocated",
             "cost": 47.23,
             "supplier_uuid": "2ed7b9ed-671e-4699-aaba-c96c0fd43c0a",
             "supplier_name": "Garcia-Arias",
@@ -234,6 +241,7 @@ right_code: |
             "sku_uuid": "260a181a-331e-4e4f-9a57-510048a5d3f2",
             "sku_id": "bpSH45MO",
             "sku_name": "The innocent competition item",
+            "status": "unallocated",
             "cost": 46.53,
             "supplier_uuid": "62bd2059-2f70-4cd5-9944-ba9969fe5f06",
             "supplier_name": "projectzuul",
@@ -253,6 +261,7 @@ right_code: |
             "sku_uuid": "cffa8102-51d5-4b6a-a847-15ecd542840c",
             "sku_id": "0EdHRMyBgv5sI",
             "sku_name": "The innocent competition item",
+            "status": "unallocated",
             "cost": 18.98,
             "supplier_uuid": "62bd2059-2f70-4cd5-9944-ba9969fe5f06",
             "supplier_name": "projectzuul",
@@ -308,6 +317,7 @@ right_code: |
             "sku_uuid": "94d6d1ed-60d4-4f83-9474-f0fb9c8f6317",
             "sku_id": "LsPsWXJb",
             "sku_name": "The incomparable arch item",
+            "status": "unallocated",
             "cost": 77.1,
             "supplier_uuid": "2ed7b9ed-671e-4699-aaba-c96c0fd43c0a",
             "supplier_name": "Garcia-Arias",
@@ -327,6 +337,7 @@ right_code: |
             "sku_uuid": "9900924d-809e-4430-a863-afd6e7f5e71b",
             "sku_id": "e0l80mJfl47",
             "sku_name": "The abnormal cause item",
+            "status": "unallocated",
             "cost": 57.94,
             "supplier_uuid": "0e9dd1c1-1eb5-45dc-9bb0-fe3d53f9da0d",
             "supplier_name": "Sharp, Green and West",
@@ -362,8 +373,8 @@ limit
 sort
 : (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in
 
-status
-: (string) The Status of the Orders you would like to see returned
+line_item_status
+: (string) The Status for the Line Item. These can be "unallocated", "allocated", "rejected", "has_tracking", "backordered", and "delivered". The Status of the Line Items within orders you would like to see returned.
 
 start_date
 : (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
@@ -494,6 +505,9 @@ sku_id
 
 sku_name
 : (string) The SKU Name
+
+status
+: (string) The Status for the Line Item. These can be "unallocated", "allocated", "rejected", "has_tracking", "backordered", and "delivered".
 
 cost
 : (number) The Cost of the SKU

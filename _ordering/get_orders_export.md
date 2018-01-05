@@ -1,9 +1,9 @@
 ---
 title: /api/orders/export/
-name: Get Order List Export
+name: Get Orders Export
 position: 3.01
 type: post
-description: Get an Export of the Order List via an email
+description: Get an Export of the Orders via an email
 right_code: |
   ~~~ json
   {}
@@ -18,7 +18,29 @@ right_code: |
   {: title="Response" }
 
 ---
-Get an Export of the Order List via an email to your email address on file. This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. We also provide an Export uuid in response to this call.
+Get an Export of the Orders via an email to your email address on file. This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. We also provide an Export uuid in response to this call.
+
+### Request Parameters:
+
+#### Optional:
+
+start
+: (number) The Start is the number of which "Order" you would like to start. If no other filters are used, the default order, which is date created, is used. The default Start value is 0. If this filter is not included in your request, the default value is used.
+
+limit
+: (number) The Limit is the element number of "Order" in your Orders List where you would like your results to end. If you have 10 orders and you limit at 8 and start at 4, only orders 4, 5, 6, 7, and 8 are included in the results.
+
+sort
+: (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in
+
+line_item_status
+: (string) The Status for the Line Item. These can be "unallocated", "allocated", "rejected", "has_tracking", "backordered", and "delivered". The Status of the Line Items within orders you would like to see returned.
+
+start_date
+: (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
+
+end_date
+: (string) The End Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
 
 ### Response Parameters:
 
@@ -39,16 +61,34 @@ uuid
 curl -X "POST" "https://stable.projectthanos.com/api/orders/export/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{}'
+     -d $'{
+  "limit": 25,
+  "end_date": "2018-08-03T06:00:00.000Z",
+  "line_item_status": "unallocated",
+  "sort": {
+    "key": "uuid",
+    "dir": "des"
+  },
+  "start_date": "2017-07-31T06:00:00.000Z",
+  "start": 0
+}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
 http --json POST 'https://stable.projectthanos.com/api/orders/export/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8'
-
+    'Authorization':'Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c' \
+    'Content-Type':'application/json; charset=utf-8' \
+    limit:=25 \
+    end_date="2018-08-03T06:00:00.000Z" \
+    line_item_status="unallocated" \
+    sort:="{
+  \"key\": \"uuid\",
+  \"dir\": \"des\"
+}" \
+    start_date="2017-07-31T06:00:00.000Z" \
+    start:=0
 
 ~~~
 {: title="HTTPie" }
@@ -62,17 +102,27 @@ import json
 
 
 def send_request():
-    # Get Order List Export
+    # Get Orders Export
     # POST https://stable.projectthanos.com/api/orders/export/
 
     try:
         response = requests.post(
             url="https://stable.projectthanos.com/api/orders/export/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps()
+            data=json.dumps({
+                "limit": 25,
+                "end_date": "2018-08-03T06:00:00.000Z",
+                "line_item_status": "unallocated",
+                "sort": {
+                    "key": "uuid",
+                    "dir": "des"
+                },
+                "start_date": "2017-07-31T06:00:00.000Z",
+                "start": 0
+            })
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -85,7 +135,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Order List Export
+// request Get Orders Export
 (function(callback) {
     'use strict';
 
@@ -96,7 +146,7 @@ def send_request():
         port: '443',
         path: '/api/orders/export/',
         method: 'POST',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -124,7 +174,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{}")
+    request.write("{\"start\":0,\"limit\":25,\"sort\":{\"key\":\"uuid\",\"dir\":\"des\"},\"line_item_status\":\"unallocated\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\"}")
     request.end();
 
 
