@@ -2,7 +2,7 @@
 title: /api/products/catalogs/&ltcatalog_uuid&gt/add-items-by-search/
 name: Catalog Add Item by Search - Supplier
 position: 2.07
-type: post
+method: post
 description: Add Items to an existing Catalog by Search
 right_code: |
   ~~~ json
@@ -32,7 +32,7 @@ right_code: |
 
 
 ---
-Add Items to an existing Catalog by Search. This allows you to add Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully add them to the indicated Catalog. Your username and password are optional as you can send your authorization token to receive this information.
+Add Items to an existing Catalog by Search. This allows you to add Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully add them to the indicated Catalog.
 
 ### Request Parameters:
 

@@ -2,14 +2,9 @@
 title: /api/orders/export/
 name: Get Order List Export
 position: 3.01
-type: post
+method: post
 description: Get an Export of the Order List via an email
 right_code: |
-  ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
   ~~~ json
   {
     "uuid": "eea176f9-f31c-4064-8ef6-0851264c6ee4"

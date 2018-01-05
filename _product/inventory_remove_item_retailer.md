@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/remove-items/
 name: Inventory Remove Item - Retailer
 position: 2.15
-type: post
+method: post
 description: Remove Items from an existing Inventory List for your account
 right_code: |
   ~~~ json
@@ -17,7 +17,7 @@ right_code: |
 
 
 ---
-Remove Items from an existing Inventory List for your account. This allows you to remove Items with all associated SKUs from an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully remove them from the indicated Inventory List. Your username and password are optional as you can send your authorization token to receive this information.
+Remove Items from an existing Inventory List for your account. This allows you to remove Items with all associated SKUs from an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully remove them from the indicated Inventory List.
 
 ### Request Parameters:
 

@@ -2,7 +2,7 @@
 title: /api/orders/fees/
 name: Get Order Fees - Retailer
 position: 3.04
-type: post
+method: post
 description: Get the Fees for a potential Order.
 right_code: |
   ~~~ json

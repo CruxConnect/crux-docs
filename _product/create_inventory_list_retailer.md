@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/
 name: Create Inventory List - Retailer
 position: 2.11
-type: post
+method: post
 description: Create an Inventory List for your account
 right_code: |
   ~~~ json
@@ -29,7 +29,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Create an Inventory Lists for your account. This Inventory List eventually will hold all of the SKUs you would like grouped together, at your discretion. To add SKUs to an Inventory List see "Add SKUs" and similarly, to add items to an Inventory List see "Add Items". To Create this Inventory list simply provide your authenticiation token you received at login, with the name and description parameters filled out. Your username and password are optional as you can send your authorization token to receive this information.
+Create an Inventory Lists for your account. This Inventory List eventually will hold all of the SKUs you would like grouped together, at your discretion. To add SKUs to an Inventory List see "Add SKUs" and similarly, to add items to an Inventory List see "Add Items". To Create this Inventory list simply provide your authenticiation token you received at login, with the name and description parameters filled out.
 
 ### Request Parameters:
 

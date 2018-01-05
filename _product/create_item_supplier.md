@@ -2,7 +2,7 @@
 title: /api/products/items/
 name: Create Item - Supplier
 position: 2.19
-type: post
+method: post
 description: Create Items allows you to create (add) an item in a Supplier account
 right_code: |
   ~~~ json
@@ -71,7 +71,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Create Items allows you to create (add) an item in a Supplier account. By providing  Your username and password are optional as you can send your authorization token to receive this information.
+Create Items allows you to create (add) an item in a Supplier account. By providing the required request parameters you may create a new item.
 
 ### Request Parameters:
 

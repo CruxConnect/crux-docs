@@ -2,7 +2,7 @@
 title: /api/products/catalogs/
 name: Create Catalog - Supplier
 position: 2.02
-type: post
+method: post
 description: Create a Catalog
 right_code: |
   ~~~ json
@@ -33,7 +33,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Create a new Catalog for Retailers to access. Your username and password are optional as you can send your authorization token to receive this information.
+Create a new Catalog for Retailers to access.
 
 ### Request Parameters:
 

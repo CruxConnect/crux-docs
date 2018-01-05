@@ -2,7 +2,7 @@
 title: /api/products/catalogs/&ltcatalog_uuid&gt/
 name: Get Catalog Detail - Retailer
 position: 2.01
-type: get
+method: get
 description: Get the Details of a particular Catalog you have access to
 right_code: |
   ~~~ json
@@ -37,7 +37,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Details of a particular Catalog you have access to. Your username and password are optional as you can send your authorization token to receive this information.
+Get the Details of a particular Catalog you have access to.
 
 ### Response Parameters:
 

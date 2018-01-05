@@ -2,7 +2,7 @@
 title: /api/orders/
 name: Get Order List
 position: 3.00
-type: post
+method: post
 description: Get the Order List for your organization
 right_code: |
   ~~~ json
@@ -347,7 +347,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the complete List of Orders for your organization. This list contains all of your orders: completed, incomplete, processing, etc. Your username and password are optional as you can send your authorization token to receive this information.
+Get the complete List of Orders for your organization. This list contains all of your orders: completed, incomplete, processing, etc.
 
 ### Request Parameters:
 
@@ -393,7 +393,7 @@ uuid
 : (string) The Universal Unique Identifier for the Order
 
 status
-: (string) The current Status of the Order
+: (string) The current Status of the Order (e.g. "New", "Pending", "Complete", "Cancelled")
 
 is_allocated
 : (boolean) Is the order Allocated by the Supplier as of the moment you get the response. Generally, this is false initially as the supplier(s) providing the SKU(s) must allocate for each Order.

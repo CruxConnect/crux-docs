@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/add-items-by-search/
 name: Inventory Add Item by Search - Retailer
 position: 2.16
-type: post
+method: post
 description: Add Items to an existing Inventory List by Search
 right_code: |
   ~~~ json
@@ -32,7 +32,7 @@ right_code: |
 
 
 ---
-Add Items to an existing Inventory List by Search. This allows you to add Items with all associated SKUs via a Search to an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully add them to the indicated Inventory List. Your username and password are optional as you can send your authorization token to receive this information.
+Add Items to an existing Inventory List by Search. This allows you to add Items with all associated SKUs via a Search to an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully add them to the indicated Inventory List.
 
 ### Request Parameters:
 

@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
 name: Inventory Add SKU - Retailer
 position: 2.12
-type: post
+method: post
 description: Add SKUs to an existing Inventory List for your account
 right_code: |
   ~~~ json
@@ -16,7 +16,7 @@ right_code: |
   {: title="Request" }
 
 ---
-Add SKUs to an existing Inventory List for your account. This allows you to add SKUs to an Inventory List. By providing your inventory_list_uuid and a list of sku_uuids, you can successfully add them to the indicated Inventory List. Your username and password are optional as you can send your authorization token to receive this information.
+Add SKUs to an existing Inventory List for your account. This allows you to add SKUs to an Inventory List. By providing your inventory_list_uuid and a list of sku_uuids, you can successfully add them to the indicated Inventory List.
 
 ### Request Parameters:
 

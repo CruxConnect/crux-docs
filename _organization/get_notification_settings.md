@@ -2,7 +2,7 @@
 title: /api/notifications/notification-settings/
 name: Get Notification Settings
 position: 0.98
-type: get
+method: get
 description: Get Notification Settings specific to your user account
 right_code: |
   ~~~ json
@@ -67,7 +67,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get all the current Notification Settings specific to your user account. This returns the organization uuid, notification name, notification domain, notification type, annd more. Providing your username and password is optional as you can send your authorization token to receive this information.
+Get all the current Notification Settings specific to your user account. This returns the organization uuid, notification name, notification domain, notification type, annd more.
 
 ### Response Parameters:
 

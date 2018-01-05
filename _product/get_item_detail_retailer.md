@@ -2,38 +2,9 @@
 title: /api/products/items/&ltitem_uuid&gt/
 name: Get Item Detail - Retailer
 position: 2.20
-type: get
+method: get
 description: Get Details about an Item and the SKUs associated to it.
 right_code: |
-  ~~~ json
-  {
-    "skus": [
-      {
-        "quantity": "80",
-        "sku_id": "WONKYWILLA1"
-      },
-      {
-        "quantity": "800",
-        "sku_id": "CHOCO77"
-      }
-    ],
-    "po_number": "po-dnIVhJfo",
-    "notes": "here are some notes",
-    "shipping_carrier": "UPS",
-    "shipping_method": "Ground",
-    "address": {
-      "name": "Bob Iger",
-      "business_name": "NBC",
-      "address1": "30 Rockefeller Plaza",
-      "address2": "STE 123",
-      "city": "New York",
-      "state": "NY",
-      "postal_code": "10112"
-    }
-  }
-  ~~~
-  {: title="Request" }
-
   ~~~ json
   {
     "uuid": "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
@@ -277,7 +248,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Details about an Item and the SKUs associated to it. There is a varying amount of data provided with each item and associated SKUs. The Response Parameters listed below are potential attributes of Items and SKUs that may be returned to you. Your username and password are optional as you can send your authorization token to receive this information.
+Get Details about an Item and the SKUs associated to it. There is a varying amount of data provided with each item and associated SKUs. The Response Parameters listed below are potential attributes of Items and SKUs that may be returned to you.
 
 ### Response Parameters:
 
@@ -569,31 +540,7 @@ height
 curl "https://stable.projectthanos.com/api/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "address": {
-    "state": "NY",
-    "city": "New York",
-    "address1": "30 Rockefeller Plaza",
-    "business_name": "NBC",
-    "postal_code": "10112",
-    "name": "Bob Iger",
-    "address2": "STE 123"
-  },
-  "shipping_carrier": "UPS",
-  "po_number": "po-dnIVhJfo",
-  "notes": "here are some notes",
-  "skus": [
-    {
-      "quantity": "80",
-      "sku_id": "WONKYWILLA1"
-    },
-    {
-      "quantity": "800",
-      "sku_id": "CHOCO77"
-    }
-  ],
-  "shipping_method": "Ground"
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
@@ -601,30 +548,7 @@ curl "https://stable.projectthanos.com/api/products/items/0134a3b5-be78-4a2a-a9b
 ~~~ bash
 http --json GET 'https://stable.projectthanos.com/api/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8' \
-    address:="{
-  \"state\": \"NY\",
-  \"city\": \"New York\",
-  \"address1\": \"30 Rockefeller Plaza\",
-  \"business_name\": \"NBC\",
-  \"postal_code\": \"10112\",
-  \"name\": \"Bob Iger\",
-  \"address2\": \"STE 123\"
-}" \
-    shipping_carrier="UPS" \
-    po_number="po-dnIVhJfo" \
-    notes="here are some notes" \
-    skus:="[
-  {
-    \"quantity\": \"80\",
-    \"sku_id\": \"WONKYWILLA1\"
-  },
-  {
-    \"quantity\": \"800\",
-    \"sku_id\": \"CHOCO77\"
-  }
-]" \
-    shipping_method="Ground"
+    'Content-Type':'application/json; charset=utf-8'
 
 ~~~
 {: title="HTTPie" }
@@ -648,29 +572,7 @@ def send_request():
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    address:="{
-  \"state\": \"NY\",
-  \"city\": \"New York\",
-  \"address1\": \"30 Rockefeller Plaza\",
-  \"business_name\": \"NBC\",
-  \"postal_code\": \"10112\",
-  \"name\": \"Bob Iger\",
-  \"address2\": \"STE 123\"
-}" \
-    shipping_carrier="UPS" \
-    po_number="po-dnIVhJfo" \
-    notes="here are some notes" \
-    skus:="[
-  {
-    \"quantity\": \"80\",
-    \"sku_id\": \"WONKYWILLA1\"
-  },
-  {
-    \"quantity\": \"800\",
-    \"sku_id\": \"CHOCO77\"
-  }
-]" \
-    shipping_method="Ground")
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -722,7 +624,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"skus\":[{\"quantity\":\"80\",\"sku_id\":\"WONKYWILLA1\"},{\"quantity\":\"800\",\"sku_id\":\"CHOCO77\"}],\"po_number\":\"po-dnIVhJfo\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\"}}")
+    request.write("{}")
     request.end();
 
 

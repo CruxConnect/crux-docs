@@ -2,7 +2,7 @@
 title: /api/orders/&ltorder_uuid&gt/
 name: Get Order Detail
 position: 3.02
-type: get
+method: get
 description: Get the Details for a specified Order
 right_code: |
   ~~~ json
@@ -122,7 +122,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Details for a specified Order. This includes the identifiers for the order, universal unique identifier for the order, po number, SKU(s) ordered, and details on the destination, receiver, etc. Your username and password are optional as you can send your authorization token to receive this information.
+Get the Details for a specified Order. This includes the identifiers for the order, universal unique identifier for the order, po number, SKU(s) ordered, and details on the destination, receiver, etc.
 
 ### Response Parameters:
 
@@ -130,7 +130,7 @@ uuid
 : (string) The Universal Unique Identifier for the Order
 
 status
-: (string) The current Status of the Order
+: (string) The current Status of the Order (e.g. "New", "Pending", "Complete", "Cancelled")
 
 is_allocated
 : (boolean) Is the order Allocated by the Supplier as of the moment you get the response. Generally, this is false initially as the supplier(s) providing the SKU(s) must allocate for each Order.

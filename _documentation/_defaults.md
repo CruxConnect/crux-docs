@@ -1,7 +1,7 @@
 ---
 title:
 position:
-type:
+method:
 description:
 right_code:
 ---

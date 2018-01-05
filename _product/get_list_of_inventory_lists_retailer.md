@@ -2,14 +2,9 @@
 title: /api/products/inventory-lists/
 name: Get List of Inventory Lists - Retailer
 position: 2.09
-type: get
+method: get
 description: Get the List of Inventory Lists for your account
 right_code: |
-  ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
   ~~~ json
   [
     {
@@ -80,7 +75,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the List of Inventory Lists for your account. Your username and password are optional as you can send your authorization token to receive this information.
+Get the List of Inventory Lists for your account.
 
 ### Response Parameters:
 

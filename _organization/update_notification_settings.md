@@ -2,7 +2,7 @@
 title: /api/notifications/notification-settings/
 name: Update Notification Settings
 position: 0.99
-type: put
+method: put
 description: Update Notification Settings allows you to update a single notification's settings
 right_code: |
   ~~~ json
@@ -17,7 +17,7 @@ right_code: |
 
 
 ---
-Update Notification Settings allows you to update a single Notification's settings. By providing the uuid for the notification with the location, frequency, and "enabled" you may update a Notification. Providing your username and password is optional as you can send your authorization token to receive this information.
+Update Notification Settings allows you to update a single Notification's settings. By providing the uuid for the notification with the location, frequency, and "enabled" you may update a Notification.
 
 ### Request Parameters:
 
