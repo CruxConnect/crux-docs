@@ -1,9 +1,9 @@
 ---
 title: /api/products/items/
-name: Get Item List - Retailer
+name: Get Items - Retailer
 position: 2.18
 type: get
-description: Get Item List allows you to return a complete list of items you are interested in.
+description: Get Items allows you to return a complete list of items you are interested in.
 right_code: |
   ~~~ json
   [
@@ -581,7 +581,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Item List allows you to return a complete list of items you are interested in. Your username and password are optional as you can send your authorization token to receive this information.
+Get Items allows you to return a complete list of items you are interested in. Your username and password are optional as you can send your authorization token to receive this information.
 
 ### Response Parameters:
 

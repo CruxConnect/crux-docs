@@ -1,9 +1,9 @@
 ---
 title: /api/products/catalogs/
-name: Get Catalog List - Retailer
+name: Get Catalogs - Retailer
 position: 2.00
 type: get
-description: Get the List of Catalogs you have access to
+description: Get the Catalogs you have access to
 right_code: |
   ~~~ json
   [
@@ -93,7 +93,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the List of Catalogs you have access to. Your username and password are optional as you can send your authorization token to receive this information.
+Get the Catalogs you have access to.
 
 ### Response Parameters:
 
