@@ -1,9 +1,9 @@
 ---
 title: /api/accounting/transactions/
-name: Get Billing Transactions List
+name: Get Transactions
 position: 1.00
 type: get
-description: Get the Billing Transactions List for your account
+description: Get the Transactions for your account
 right_code: |
   ~~~ json
   [
@@ -26,7 +26,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Billing Transactions List for your account. This provides details for all billing transactions on your account. Your username and password are optional as you can send your authorization token to receive this information.
+Get the Transactions for your account. This provides details for all billing transactions on your account.
 
 ### Response Parameters:
 
