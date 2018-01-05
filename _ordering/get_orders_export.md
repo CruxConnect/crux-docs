@@ -6,13 +6,26 @@ type: post
 description: Get an Export of the Orders via an email
 right_code: |
   ~~~ json
-  {}
+  {
+    "start": 0,
+    "limit": 25,
+    "sort": {
+      "key": "uuid",
+      "dir": "des"
+    },
+    "line_item_status": [
+      "unallocated"
+    ],
+    "status_conjunction": "or",
+    "start_date": "2017-07-31T06:00:00.000Z",
+    "end_date": "2018-08-03T06:00:00.000Z"
+  }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "uuid": "eea176f9-f31c-4064-8ef6-0851264c6ee4"
+    "uuid": "b9888421-594c-4d2f-9f0d-3b138a16c845"
   }
   ~~~
   {: title="Response" }
@@ -34,7 +47,10 @@ sort
 : (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in
 
 line_item_status
-: (string) The Status for the Line Item. These can be "unallocated", "allocated", "rejected", "has_tracking", "backordered", and "delivered". The Status of the Line Items within orders you would like to see returned.
+: (array) One or more line item statuses. Will include orders with statuses based upon that `status_conjunction`. Possible Values are: `unallocated`, `allocated`, `rejected`, `has_tracking`, `backordered`
+
+status_conjunction
+: (string) Indicates how the line_item_status relates to the order response. Possible values are: `and`, `or`, `all`. Default: `or`. `And` will return all orders that have at least 1 line item matching each supplied status. `or` will return all orders that have at least one line item matching any of the supplied statuses. `only` will return orders that have ALL line items matching the supplied status. Only one line_item_status should be supplied when using `only`.
 
 start_date
 : (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
@@ -59,18 +75,21 @@ uuid
 
 ~~~ bash
 curl -X "POST" "https://stable.projectthanos.com/api/orders/export/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "limit": 25,
-  "end_date": "2018-08-03T06:00:00.000Z",
-  "line_item_status": "unallocated",
   "sort": {
     "key": "uuid",
     "dir": "des"
   },
+  "start": 0,
+  "status_conjunction": "or",
   "start_date": "2017-07-31T06:00:00.000Z",
-  "start": 0
+  "limit": 25,
+  "line_item_status": [
+    "unallocated"
+  ],
+  "end_date": "2018-08-03T06:00:00.000Z"
 }'
 
 ~~~
@@ -80,15 +99,18 @@ curl -X "POST" "https://stable.projectthanos.com/api/orders/export/" \
 http --json POST 'https://stable.projectthanos.com/api/orders/export/' \
     'Authorization':'Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c' \
     'Content-Type':'application/json; charset=utf-8' \
-    limit:=25 \
-    end_date="2018-08-03T06:00:00.000Z" \
-    line_item_status="unallocated" \
     sort:="{
   \"key\": \"uuid\",
   \"dir\": \"des\"
 }" \
+    start:=0 \
+    status_conjunction="or" \
     start_date="2017-07-31T06:00:00.000Z" \
-    start:=0
+    limit:=25 \
+    line_item_status:="[
+  \"unallocated\"
+]" \
+    end_date="2018-08-03T06:00:00.000Z"
 
 ~~~
 {: title="HTTPie" }
@@ -112,17 +134,18 @@ def send_request():
                 "Authorization": "Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps({
-                "limit": 25,
-                "end_date": "2018-08-03T06:00:00.000Z",
-                "line_item_status": "unallocated",
-                "sort": {
-                    "key": "uuid",
-                    "dir": "des"
-                },
-                "start_date": "2017-07-31T06:00:00.000Z",
-                "start": 0
-            })
+            data=json.dumps(    sort:="{
+  \"key\": \"uuid\",
+  \"dir\": \"des\"
+}" \
+    start:=0 \
+    status_conjunction="or" \
+    start_date="2017-07-31T06:00:00.000Z" \
+    limit:=25 \
+    line_item_status:="[
+  \"unallocated\"
+]" \
+    end_date="2018-08-03T06:00:00.000Z")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -174,7 +197,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"start\":0,\"limit\":25,\"sort\":{\"key\":\"uuid\",\"dir\":\"des\"},\"line_item_status\":\"unallocated\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\"}")
+    request.write("{\"start\":0,\"limit\":25,\"sort\":{\"key\":\"uuid\",\"dir\":\"des\"},\"line_item_status\":[\"unallocated\"],\"status_conjunction\":\"or\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\"}")
     request.end();
 
 

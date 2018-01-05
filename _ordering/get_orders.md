@@ -8,12 +8,15 @@ right_code: |
   ~~~ json
   {
     "start": 0,
-    "limit": 3,
+    "limit": 25,
     "sort": {
       "key": "uuid",
       "dir": "des"
     },
-    "line_item_status": "unallocated",
+    "line_item_status": [
+      "unallocated"
+    ],
+    "status_conjunction": "or",
     "start_date": "2017-07-31T06:00:00.000Z",
     "end_date": "2018-08-03T06:00:00.000Z"
   }
@@ -22,15 +25,15 @@ right_code: |
 
   ~~~ json
   {
-    "total_results": 3,
+    "total_results": 110,
     "orders": [
       {
-        "uuid": "299fc593-04f0-424d-9847-e359b9dfde56",
+        "uuid": "58a5c52c-42c4-4018-bca3-447bb2c146c9",
         "status": "New",
         "is_allocated": false,
-        "purchase_order_id": "bb1e6b18-25fa-4703-8ecb-c4c55da56086",
-        "created_date": "2017-10-23T18:29:24.716079Z",
-        "notes": "Blanditiis dolores maiores eveniet saepe at.",
+        "purchase_order_id": "86c55b42-fae4-4218-9b8b-40b01c6ec0eb",
+        "created_date": "2017-12-05T22:32:32.217413Z",
+        "notes": "Ea aperiam ut est iure saepe nemo.",
         "fees": {
           "estimated_shipping_cost": 0,
           "drop_ship_fee": 0,
@@ -38,20 +41,21 @@ right_code: |
         },
         "retailer": {
           "name": "projectthanos",
-          "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
+          "uuid": "1bd645dd-f2d8-401b-aa79-cfb990851fe9",
           "user": {
             "name": " ",
             "email": "dchadwick@projectthanos.com"
           }
         },
         "address": {
-          "name": "James Smith",
-          "business_name": "Price-Lloyd",
-          "address1": "1878 Randy Valleys\nAnthonybury, OH 51137",
-          "address2": "127 Cox Spurs\nLake Deborah, PW 48750",
-          "city": "Lake Coltonstad",
-          "state": "Ohio",
-          "postal_code": "90181"
+          "name": "Timothy Gonzalez",
+          "business_name": "Hernandez Inc",
+          "address1": "225 Le Corners\nAndreaton, ID 14958-4394",
+          "address2": "450 Howe Cliff Apt. 557\nThomasfort, ME 36012-3981",
+          "city": "Port Ellenfort",
+          "state": "Alabama",
+          "postal_code": "66445",
+          "phone_number": null
         },
         "requested_shipping": {
           "shipping_carrier": "UPS",
@@ -59,268 +63,15 @@ right_code: |
         },
         "line_items": [
           {
-            "uuid": "abe537ad-d1ee-485e-8f60-920cbd9ba160",
-            "item_uuid": "358d6043-220f-4107-93b7-1c22151dd5f0",
-            "item_name": "The infamous blood item",
-            "sku_uuid": "c3786845-3f06-4a10-a6cd-ff23461ab11f",
-            "sku_id": "yl3t2Lij7XJfAnsB",
-            "sku_name": "The infamous blood item",
-            "status": "unallocated",
-            "cost": 58.16,
-            "supplier_uuid": "4b72cfbc-5123-4152-a7ed-3da5d0ce8bad",
-            "supplier_name": "Brooks-Jones",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 6,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "a3efa8a0-c3ef-4dc1-81cc-07a6c5a57e2b",
-            "item_uuid": "97fa8fdf-6b94-409e-a684-841d42605881",
-            "item_name": "The changeable soap item",
-            "sku_uuid": "f0b82bb2-0b12-42bf-b7e4-7195ccfb21ab",
-            "sku_id": "utmcbyzttt",
-            "sku_name": "The changeable soap item",
-            "status": "unallocated",
-            "cost": 49.96,
-            "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
-            "supplier_name": "Flynn Ltd",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 9,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "7c997127-19bd-430a-9f61-fdc49fc1527c",
-            "item_uuid": "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941",
-            "item_name": "The cautious knowledge item",
-            "sku_uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc",
-            "sku_id": "voGDR4gOyYUOgcT7gw",
-            "sku_name": "The cautious knowledge item",
-            "status": "unallocated",
-            "cost": 2.84,
-            "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
-            "supplier_name": "Flynn Ltd",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 10,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "32012bb6-a580-41b7-b1f4-c9f62ced6bc9",
-            "item_uuid": "98eb1720-9b1e-49ca-be08-e516e8fb46de",
-            "item_name": "The aboard invention item",
-            "sku_uuid": "dd9689e9-8241-4a78-afa1-7cbce9b09513",
-            "sku_id": "BJA9PlgxiT9kQRaYUMF",
-            "sku_name": "The aboard invention item",
-            "status": "unallocated",
-            "cost": 96.49,
-            "supplier_uuid": "4b72cfbc-5123-4152-a7ed-3da5d0ce8bad",
-            "supplier_name": "Brooks-Jones",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 1,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          }
-        ]
-      },
-      {
-        "uuid": "713ddf6b-1f85-4ce5-86ff-bf6619bf82b4",
-        "status": "New",
-        "is_allocated": false,
-        "purchase_order_id": "60c34b21-cf25-421d-ab5a-bfe39b0122a6",
-        "created_date": "2017-10-23T18:29:24.897608Z",
-        "notes": "Sit nihil deleniti quam illum magnam aperiam dolor.",
-        "fees": {
-          "estimated_shipping_cost": 0,
-          "drop_ship_fee": 0,
-          "order_fee": 0
-        },
-        "retailer": {
-          "name": "projectthanos",
-          "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
-          "user": {
-            "name": " ",
-            "email": "dchadwick@projectthanos.com"
-          }
-        },
-        "address": {
-          "name": "Emily Greene",
-          "business_name": "Wilson Ltd",
-          "address1": "Unit 5793 Box 1065\nDPO AP 43179",
-          "address2": "606 Stevens Vista Suite 652\nLake Tonyaville, MI 68484-5519",
-          "city": "New Jeffreyburgh",
-          "state": "Louisiana",
-          "postal_code": "50215"
-        },
-        "requested_shipping": {
-          "shipping_carrier": "UPS",
-          "shipping_method": "Ground"
-        },
-        "line_items": [
-          {
-            "uuid": "8e718458-2888-4268-9f40-97cfbc79bd46",
-            "item_uuid": "db6537cc-7e4e-4d98-b7e6-7f9044d9de54",
-            "item_name": "The enraged destruction item",
-            "sku_uuid": "ec26763f-5395-47b7-b7bb-f0ce03058e1d",
-            "sku_id": "USaoDXIiLNHOgNy",
-            "sku_name": "The enraged destruction item",
-            "status": "unallocated",
-            "cost": 12.32,
-            "supplier_uuid": "0e9dd1c1-1eb5-45dc-9bb0-fe3d53f9da0d",
-            "supplier_name": "Sharp, Green and West",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 3,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "0b62f1b1-a656-46eb-8d8e-4370174bb1c3",
-            "item_uuid": "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
-            "item_name": "The capital arch item",
-            "sku_uuid": "0cf678be-7dd1-47e3-852c-e80942d5566b",
-            "sku_id": "UfvfG2",
-            "sku_name": "The capital arch item",
-            "status": "unallocated",
-            "cost": 33.16,
-            "supplier_uuid": "1b348539-1f1a-432e-a9c3-63f71e65ad84",
-            "supplier_name": "Underwood-Chavez",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 3,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "f44c2907-ade2-4a6e-b235-432036981c5e",
-            "item_uuid": "9bd1c686-0ce1-404c-8055-d52e99e2a987",
-            "item_name": "The enraged water item",
-            "sku_uuid": "31ce0d04-e164-481e-9e41-82c4dff09aac",
-            "sku_id": "fic0Sk",
-            "sku_name": "The enraged water item",
-            "status": "unallocated",
-            "cost": 47.23,
-            "supplier_uuid": "2ed7b9ed-671e-4699-aaba-c96c0fd43c0a",
-            "supplier_name": "Garcia-Arias",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 7,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "1e3f529b-7046-457a-9b51-34cee7711b00",
-            "item_uuid": "8e1898de-4bee-46ef-b242-16ddfacfd350",
-            "item_name": "The innocent competition item",
-            "sku_uuid": "260a181a-331e-4e4f-9a57-510048a5d3f2",
-            "sku_id": "bpSH45MO",
-            "sku_name": "The innocent competition item",
-            "status": "unallocated",
-            "cost": 46.53,
-            "supplier_uuid": "62bd2059-2f70-4cd5-9944-ba9969fe5f06",
-            "supplier_name": "projectzuul",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 5,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "3a655157-5c23-4742-a0db-0afc9cfa4df6",
-            "item_uuid": "8e1898de-4bee-46ef-b242-16ddfacfd350",
-            "item_name": "The innocent competition item",
-            "sku_uuid": "cffa8102-51d5-4b6a-a847-15ecd542840c",
-            "sku_id": "0EdHRMyBgv5sI",
-            "sku_name": "The innocent competition item",
-            "status": "unallocated",
-            "cost": 18.98,
-            "supplier_uuid": "62bd2059-2f70-4cd5-9944-ba9969fe5f06",
-            "supplier_name": "projectzuul",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 9,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          }
-        ]
-      },
-      {
-        "uuid": "de742b48-9a66-49b5-90ca-e7ad5f7c97e4",
-        "status": "New",
-        "is_allocated": false,
-        "purchase_order_id": "64d42d01-33ef-4ee2-ade1-ce3d581eee6c",
-        "created_date": "2017-10-23T18:29:25.120938Z",
-        "notes": "Pariatur quidem odio animi deleniti.",
-        "fees": {
-          "estimated_shipping_cost": 0,
-          "drop_ship_fee": 0,
-          "order_fee": 0
-        },
-        "retailer": {
-          "name": "projectthanos",
-          "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
-          "user": {
-            "name": " ",
-            "email": "dchadwick@projectthanos.com"
-          }
-        },
-        "address": {
-          "name": "Dylan Simmons",
-          "business_name": "Gentry, Thomas and Sloan",
-          "address1": "4372 Scott Ranch Suite 626\nTravisborough, CT 32091",
-          "address2": "25885 Randy Ways\nMollyfort, OR 78898-2675",
-          "city": "Brownview",
-          "state": "Washington",
-          "postal_code": "27396"
-        },
-        "requested_shipping": {
-          "shipping_carrier": "UPS",
-          "shipping_method": "Ground"
-        },
-        "line_items": [
-          {
-            "uuid": "37d4fd2d-9e92-4198-b24a-5bab45f3f61a",
-            "item_uuid": "32ef4bba-1332-4ad2-a599-84fd96be44e5",
-            "item_name": "The incomparable arch item",
-            "sku_uuid": "94d6d1ed-60d4-4f83-9474-f0fb9c8f6317",
-            "sku_id": "LsPsWXJb",
-            "sku_name": "The incomparable arch item",
-            "status": "unallocated",
-            "cost": 77.1,
-            "supplier_uuid": "2ed7b9ed-671e-4699-aaba-c96c0fd43c0a",
-            "supplier_name": "Garcia-Arias",
+            "uuid": "f2cc5d9c-efce-4275-a74a-30fde379e23e",
+            "item_uuid": "0c8299b7-a9a4-4399-aef2-dc25702db7a0",
+            "item_name": "The eight cobweb item",
+            "sku_uuid": "ea6da339-baab-4b90-9f2f-533c58fdc3e3",
+            "sku_id": "TESTSKUID",
+            "sku_name": "The eight cobweb item",
+            "cost": 85.84,
+            "supplier_uuid": "b68160e5-61a5-44ce-96d4-40e123cc3450",
+            "supplier_name": "Rodriguez-Smith",
             "tracking_numbers": [],
             "allocation": {
               "quantity_ordered": 8,
@@ -331,19 +82,225 @@ right_code: |
             }
           },
           {
-            "uuid": "ccd89da0-0258-404b-acb4-e27801f855cd",
-            "item_uuid": "89cb0ff0-f524-4bc0-b247-09823cd8c4cc",
-            "item_name": "The abnormal cause item",
-            "sku_uuid": "9900924d-809e-4430-a863-afd6e7f5e71b",
-            "sku_id": "e0l80mJfl47",
-            "sku_name": "The abnormal cause item",
-            "status": "unallocated",
-            "cost": 57.94,
-            "supplier_uuid": "0e9dd1c1-1eb5-45dc-9bb0-fe3d53f9da0d",
-            "supplier_name": "Sharp, Green and West",
+            "uuid": "37329db8-713e-43b0-8690-c41986e146dd",
+            "item_uuid": "a49112fc-5e8b-4d2e-9d63-be9c385714bf",
+            "item_name": "The capital river item",
+            "sku_uuid": "0ece9413-5a00-4fb5-aaf0-b0ebf5812fd1",
+            "sku_id": "ydrMecivyQ5Yleea1R8",
+            "sku_name": "The capital river item",
+            "cost": 36.27,
+            "supplier_uuid": "b68160e5-61a5-44ce-96d4-40e123cc3450",
+            "supplier_name": "Rodriguez-Smith",
             "tracking_numbers": [],
             "allocation": {
               "quantity_ordered": 2,
+              "quantity_allocated": 0,
+              "quantity_backordered": 0,
+              "quantity_rejected": 0,
+              "backorder_date": null
+            }
+          }
+        ]
+      },
+      {
+        "uuid": "4fc0714f-fc17-492d-8478-665ee1250155",
+        "status": "New",
+        "is_allocated": false,
+        "purchase_order_id": "05ba256a-efe0-402c-b215-e4bd2e1bd7d9",
+        "created_date": "2017-12-05T22:32:32.357963Z",
+        "notes": "Itaque iusto suscipit error hic impedit iure odit blanditiis.",
+        "fees": {
+          "estimated_shipping_cost": 0,
+          "drop_ship_fee": 0,
+          "order_fee": 0
+        },
+        "retailer": {
+          "name": "projectthanos",
+          "uuid": "1bd645dd-f2d8-401b-aa79-cfb990851fe9",
+          "user": {
+            "name": " ",
+            "email": "dchadwick@projectthanos.com"
+          }
+        },
+        "address": {
+          "name": "Gregory Barnett",
+          "business_name": "Hartman Group",
+          "address1": "7010 Lynch Forges Suite 356\nWebbland, OH 98141-6408",
+          "address2": "36291 Lindsey Extensions\nRoweton, OR 33731-7996",
+          "city": "Sabrinastad",
+          "state": "Iowa",
+          "postal_code": "67896",
+          "phone_number": null
+        },
+        "requested_shipping": {
+          "shipping_carrier": "UPS",
+          "shipping_method": "Ground"
+        },
+        "line_items": [
+          {
+            "uuid": "81c4104c-98a1-40d3-8e1d-1b9c45fabab7",
+            "item_uuid": "6ae172d7-d201-4893-9562-50069acccfa2",
+            "item_name": "The cheeky rule item",
+            "sku_uuid": "6c33dd0e-3442-49a3-a247-eb4c8b818173",
+            "sku_id": "qNdEi7FHNoSZ8zff6o",
+            "sku_name": "The cheeky rule item",
+            "cost": 69.8,
+            "supplier_uuid": "a3b62a7a-4515-4d26-80d3-9427ce782b37",
+            "supplier_name": "Mcknight LLC",
+            "tracking_numbers": [],
+            "allocation": {
+              "quantity_ordered": 3,
+              "quantity_allocated": 0,
+              "quantity_backordered": 0,
+              "quantity_rejected": 0,
+              "backorder_date": null
+            }
+          },
+          {
+            "uuid": "c682fb99-9a3a-4ea3-9dd5-62b5ba448f6a",
+            "item_uuid": "f567aa86-4f0e-4997-b485-126fcae5836f",
+            "item_name": "The absorbed bite item",
+            "sku_uuid": "109f9a9e-b3b0-470f-a9f4-9bdf41d8725a",
+            "sku_id": "5HDu63dbVeFOwg",
+            "sku_name": "The absorbed bite item",
+            "cost": 60.32,
+            "supplier_uuid": "0eaac668-e0ae-4b7f-9c71-d240a7f89a4e",
+            "supplier_name": "Nelson-Morris",
+            "tracking_numbers": [],
+            "allocation": {
+              "quantity_ordered": 8,
+              "quantity_allocated": 0,
+              "quantity_backordered": 0,
+              "quantity_rejected": 0,
+              "backorder_date": null
+            }
+          },
+          {
+            "uuid": "2ce42622-f879-4055-bafb-8fdd0b0aed93",
+            "item_uuid": "2aa4ec0d-e780-467c-b7d5-f1b5322bfa18",
+            "item_name": "The impractical knowledge item",
+            "sku_uuid": "09800815-8ae9-4a89-b314-a2f13a596fd2",
+            "sku_id": "3xHe8rvJPtyyZ0u4WCd",
+            "sku_name": "The impractical knowledge item",
+            "cost": 1.26,
+            "supplier_uuid": "a3b62a7a-4515-4d26-80d3-9427ce782b37",
+            "supplier_name": "Mcknight LLC",
+            "tracking_numbers": [],
+            "allocation": {
+              "quantity_ordered": 3,
+              "quantity_allocated": 0,
+              "quantity_backordered": 0,
+              "quantity_rejected": 0,
+              "backorder_date": null
+            }
+          }
+        ]
+      },
+      {
+        "uuid": "d84c136d-537e-41f6-83f4-1af4634e02d7",
+        "status": "New",
+        "is_allocated": false,
+        "purchase_order_id": "b9496bb8-1f6b-4a6d-a613-d4ca8f7ef9b3",
+        "created_date": "2017-12-05T22:32:32.529539Z",
+        "notes": "Perspiciatis minima impedit dicta perspiciatis quas.",
+        "fees": {
+          "estimated_shipping_cost": 0,
+          "drop_ship_fee": 0,
+          "order_fee": 0
+        },
+        "retailer": {
+          "name": "projectthanos",
+          "uuid": "1bd645dd-f2d8-401b-aa79-cfb990851fe9",
+          "user": {
+            "name": " ",
+            "email": "dchadwick@projectthanos.com"
+          }
+        },
+        "address": {
+          "name": "Isaac Carlson",
+          "business_name": "Smith-Thornton",
+          "address1": "58900 Bentley Drives\nHigginsfort, DE 51542",
+          "address2": "85363 Scott Hills Apt. 018\nMayberg, TN 80477",
+          "city": "East Christinashire",
+          "state": "Massachusetts",
+          "postal_code": "85204",
+          "phone_number": null
+        },
+        "requested_shipping": {
+          "shipping_carrier": "UPS",
+          "shipping_method": "Ground"
+        },
+        "line_items": [
+          {
+            "uuid": "4801a89f-4943-4f1f-9ff0-20e36853ef4a",
+            "item_uuid": "c4bd8f56-9384-440a-978c-4341d1332f2d",
+            "item_name": "The cautious pot item",
+            "sku_uuid": "7d6e1899-3e23-4818-bed9-1b6dce6fa687",
+            "sku_id": "5VsIG6DjjVgZybv",
+            "sku_name": "The cautious pot item",
+            "cost": 19.2,
+            "supplier_uuid": "a3b62a7a-4515-4d26-80d3-9427ce782b37",
+            "supplier_name": "Mcknight LLC",
+            "tracking_numbers": [],
+            "allocation": {
+              "quantity_ordered": 5,
+              "quantity_allocated": 0,
+              "quantity_backordered": 0,
+              "quantity_rejected": 0,
+              "backorder_date": null
+            }
+          },
+          {
+            "uuid": "fe4ea18a-15cc-4255-a7ed-5354fa1f9a9f",
+            "item_uuid": "a49112fc-5e8b-4d2e-9d63-be9c385714bf",
+            "item_name": "The capital river item",
+            "sku_uuid": "720662af-67da-4eed-8a62-9ab89e581065",
+            "sku_id": "4MQPJ7MM6UoEjjI9",
+            "sku_name": "The capital river item",
+            "cost": 37.82,
+            "supplier_uuid": "b68160e5-61a5-44ce-96d4-40e123cc3450",
+            "supplier_name": "Rodriguez-Smith",
+            "tracking_numbers": [],
+            "allocation": {
+              "quantity_ordered": 10,
+              "quantity_allocated": 0,
+              "quantity_backordered": 0,
+              "quantity_rejected": 0,
+              "backorder_date": null
+            }
+          },
+          {
+            "uuid": "07050fea-f478-4b21-908b-62de98b42261",
+            "item_uuid": "f567aa86-4f0e-4997-b485-126fcae5836f",
+            "item_name": "The absorbed bite item",
+            "sku_uuid": "abf29db5-e627-484b-b328-f67eec5bb048",
+            "sku_id": "jiqqvQRjyh4rcOwvAHr",
+            "sku_name": "The absorbed bite item",
+            "cost": 27.67,
+            "supplier_uuid": "0eaac668-e0ae-4b7f-9c71-d240a7f89a4e",
+            "supplier_name": "Nelson-Morris",
+            "tracking_numbers": [],
+            "allocation": {
+              "quantity_ordered": 6,
+              "quantity_allocated": 0,
+              "quantity_backordered": 0,
+              "quantity_rejected": 0,
+              "backorder_date": null
+            }
+          },
+          {
+            "uuid": "05156c0c-1801-4fea-9109-2eef5f8acf6b",
+            "item_uuid": "5a345ed9-c310-4bc3-b68e-18cedcfe791c",
+            "item_name": "The impractical bed item",
+            "sku_uuid": "01793e24-4223-47c0-ab77-3523fadafc78",
+            "sku_id": "QWXs6zdZ",
+            "sku_name": "The impractical bed item",
+            "cost": 56.67,
+            "supplier_uuid": "a3b62a7a-4515-4d26-80d3-9427ce782b37",
+            "supplier_name": "Mcknight LLC",
+            "tracking_numbers": [],
+            "allocation": {
+              "quantity_ordered": 7,
               "quantity_allocated": 0,
               "quantity_backordered": 0,
               "quantity_rejected": 0,
@@ -358,7 +315,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the complete List of Orders for your organization. This list contains all of your orders: completed, incomplete, processing, etc. Your username and password are optional as you can send your authorization token to receive this information.
+Get Orders matching certain criteria for your organization. This may contain any or all of your orders: completed, incomplete, processing, etc.
 
 ### Request Parameters:
 
@@ -374,7 +331,10 @@ sort
 : (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in
 
 line_item_status
-: (string) The Status for the Line Item. These can be "unallocated", "allocated", "rejected", "has_tracking", "backordered", and "delivered". The Status of the Line Items within orders you would like to see returned.
+: (array) One or more line item statuses. Will include orders with statuses based upon that `status_conjunction`. Possible Values are: `unallocated`, `allocated`, `rejected`, `has_tracking`, `backordered`
+
+status_conjunction
+: (string) Indicates how the line_item_status relates to the order response. Possible values are: `and`, `or`, `all`. Default: `or`. `And` will return all orders that have at least 1 line item matching each supplied status. `or` will return all orders that have at least one line item matching any of the supplied statuses. `only` will return orders that have ALL line items matching the supplied status. Only one line_item_status should be supplied when using `only`.
 
 start_date
 : (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
@@ -507,7 +467,7 @@ sku_name
 : (string) The SKU Name
 
 status
-: (string) The Status for the Line Item. These can be "unallocated", "allocated", "rejected", "has_tracking", "backordered", and "delivered".
+: (string) The Status for the Line Item. Possible Values are: `unallocated`, `allocated`, `rejected`, `has_tracking`, `backordered`
 
 cost
 : (number) The Cost of the SKU
@@ -553,18 +513,21 @@ backorder_date
 
 ~~~ bash
 curl -X "POST" "https://stable.projectthanos.com/api/orders/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "limit": 25,
-  "status": "New",
-  "end_date": "2018-08-03T06:00:00.000Z",
   "sort": {
     "key": "uuid",
     "dir": "des"
   },
+  "start": 0,
+  "status_conjunction": "or",
   "start_date": "2017-07-31T06:00:00.000Z",
-  "start": 0
+  "limit": 25,
+  "line_item_status": [
+    "unallocated"
+  ],
+  "end_date": "2018-08-03T06:00:00.000Z"
 }'
 
 ~~~
@@ -572,17 +535,20 @@ curl -X "POST" "https://stable.projectthanos.com/api/orders/" \
 
 ~~~ bash
 http --json POST 'https://stable.projectthanos.com/api/orders/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c' \
     'Content-Type':'application/json; charset=utf-8' \
-    limit:=25 \
-    status="New" \
-    end_date="2018-08-03T06:00:00.000Z" \
     sort:="{
   \"key\": \"uuid\",
   \"dir\": \"des\"
 }" \
+    start:=0 \
+    status_conjunction="or" \
     start_date="2017-07-31T06:00:00.000Z" \
-    start:=0
+    limit:=25 \
+    line_item_status:="[
+  \"unallocated\"
+]" \
+    end_date="2018-08-03T06:00:00.000Z"
 
 ~~~
 {: title="HTTPie" }
@@ -596,25 +562,28 @@ import json
 
 
 def send_request():
-    # Get Order List
+    # Get Orders
     # POST https://stable.projectthanos.com/api/orders/
 
     try:
         response = requests.post(
             url="https://stable.projectthanos.com/api/orders/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    limit:=25 \
-    status="New" \
-    end_date="2018-08-03T06:00:00.000Z" \
-    sort:="{
+            data=json.dumps(    sort:="{
   \"key\": \"uuid\",
   \"dir\": \"des\"
 }" \
+    start:=0 \
+    status_conjunction="or" \
     start_date="2017-07-31T06:00:00.000Z" \
-    start:=0)
+    limit:=25 \
+    line_item_status:="[
+  \"unallocated\"
+]" \
+    end_date="2018-08-03T06:00:00.000Z")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -627,7 +596,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Order List
+// request Get Orders
 (function(callback) {
     'use strict';
 
@@ -638,7 +607,7 @@ def send_request():
         port: '443',
         path: '/api/orders/',
         method: 'POST',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -666,7 +635,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"start\":0,\"limit\":25,\"sort\":{\"key\":\"uuid\",\"dir\":\"des\"},\"status\":\"New\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\"}")
+    request.write("{\"start\":0,\"limit\":25,\"sort\":{\"key\":\"uuid\",\"dir\":\"des\"},\"line_item_status\":[\"unallocated\"],\"status_conjunction\":\"or\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\"}")
     request.end();
 
 
@@ -679,3 +648,4 @@ def send_request():
 
 ~~~
 {: title="Node.js" }
+
