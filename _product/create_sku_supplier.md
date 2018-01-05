@@ -2,7 +2,7 @@
 title: /api/products/skus/
 name: Create SKU - Supplier
 position: 2.24
-type: post
+method: post
 description: Create a SKU to add to a specified item_uuid
 right_code: |
   ~~~ json
@@ -76,7 +76,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Create a SKU to add to a specified item_uuid. Your username and password are optional as you can send your authorization token to receive this information.
+Create a SKU to add to a specified item_uuid.
 
 URL Endpoint: /api/products/skus/
 

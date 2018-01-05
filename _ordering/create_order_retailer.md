@@ -2,7 +2,7 @@
 title: /api/orders/create/
 name: Create Order - Retailer
 position: 3.05
-type: post
+method: post
 description: Create an Order on your account
 right_code: |
   ~~~ json
@@ -115,7 +115,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Create an Order on your account. By providing the SKU(s), quantity ordered, destination, etc. you may create an order for fulfillment. Your username and password are optional as you can send your authorization token to receive this information.
+Create an Order on your account. By providing the SKU(s), quantity ordered, destination, etc. you may create an order for fulfillment.
 
 ### Request Parameters:
 
@@ -177,7 +177,7 @@ uuid
 : (string) The Universal Unique Identifier for the Order
 
 status
-: (string) The current Status of the Order
+: (string) The current Status of the Order (e.g. "New", "Pending", "Complete", "Cancelled")
 
 is_allocated
 : (boolean) Is the order Allocated by the Supplier as of the moment you get the response. Generally, this is false initially as the supplier(s) providing the SKU(s) must allocate for each Order.

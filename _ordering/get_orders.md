@@ -2,7 +2,7 @@
 title: /api/orders/
 name: Get Orders
 position: 3.00
-type: post
+method: post
 description: Get the Orders for your organization
 right_code: |
   ~~~ json
@@ -364,7 +364,7 @@ uuid
 : (string) The Universal Unique Identifier for the Order
 
 status
-: (string) The current Status of the Order
+: (string) The current Status of the Order (e.g. "New", "Pending", "Complete", "Cancelled")
 
 is_allocated
 : (boolean) Is the order Allocated by the Supplier as of the moment you get the response. Generally, this is false initially as the supplier(s) providing the SKU(s) must allocate for each Order.

@@ -1,71 +1,49 @@
 ---
-title: /api/organizations/
-name: Get Organization Details
-position: 0.93
+title: /api/accounting/transactions/
+name: Get Billing Transactions List
+position: 1.00
 method: get
-description: Get Organization Details specific to your organization
+description: Get the Billing Transactions List for your account
 right_code: |
   ~~~ json
-  {
-    "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
-    "name": "projectthanos",
-    "org_type": "RETAILER",
-    "status": "ACTIVE",
-    "created_date": "2017-10-23T18:20:43.336669Z",
-    "active_date": null,
-    "account_manager": {
-      "uuid": "ad61c73e-790d-4e42-921c-b1d7ccc97217",
-      "org_user": {
-        "uuid": "817979d4-9d67-4675-a9db-73ac99d9eec7",
-        "person": {
-          "uuid": "6baf482d-a380-4084-a439-a67b8752f63c",
-          "first_name": "Jennifer",
-          "last_name": "Garrett",
-          "email": "uking@clark-davis.info",
-          "phone": "01443719956"
-        },
-        "status": "ACTIVE"
-      }
+  [
+    {
+      "statement_date": "2017-11-06",
+      "payment_date": "2017-11-06",
+      "transaction_id": "123456789",
+      "total": "12.00",
+      "status": "paid"
+    },
+    {
+      "statement_date": "2017-11-06",
+      "payment_date": "2017-11-06",
+      "transaction_id": "456789101",
+      "total": "10.99",
+      "status": "paid"
     }
-  }
+  ]
   ~~~
   {: title="Response" }
 
 ---
-Get the Details about your Organization including the uuid, name, organization type, status, date created, date activated, and account manager.
+Get the Billing Transactions List for your account. This provides details for all billing transactions on your account.
 
 ### Response Parameters:
 
-#### Organization Object:
+statement_date
+: (string) The Statement Date parameter is a date of when the statement was given
 
-uuid
-: (string) Universal Unique Identifier for an Organization
+payment_date
+: (string) The Payment Date parameter is a date of when the payment posted on the billing transaction
 
-name
-: (string) Name of the Organization
+transaction_id
+: (string) The Transaction Identifier parameter is an id number for the billing transaction
 
-org_type
-: (string) Organization Type defines if the organization is a "RETAILER" or a "SUPPLIER"
+total
+: (number) The Total parameter is the total amount on the billing transaction
 
 status
-: (string) Status for the Organization, which can be "PENDING", "ACTIVE", or "DEACTIVATED"
-
-created_date
-: (string) Created Date; the Date when the Organization was Created within our system
-
-active_date
-: (string) Active Date; the Date when the Organization became Active within our system
-
-account_manager
-: (object) Account Manager object containing a uuid and an organization user
-
-#### Account Manager Object:
-
-uuid
-: (string) Universal Unique Identifier for an Account Manager
-
-org_user
-: (object) Organization User object containing a uuid, person, and status
+: (string) The Status parameter is the status for the billing transaction
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -78,14 +56,14 @@ org_user
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/" \
+curl "https://stable.projectthanos.com/api/accounting/transactions/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://stable.projectthanos.com/api/organizations/' \
+http GET 'https://stable.projectthanos.com/api/accounting/transactions/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
@@ -99,12 +77,12 @@ import requests
 
 
 def send_request():
-    # Get Organization Details
-    # GET https://stable.projectthanos.com/api/organizations/
+    # Get Billing Transactions List
+    # GET https://stable.projectthanos.com/api/accounting/transactions/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/",
+            url="https://stable.projectthanos.com/api/accounting/transactions/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
             },
@@ -120,7 +98,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Organization Details
+// request Get Billing Transactions List
 (function(callback) {
     'use strict';
 
@@ -129,7 +107,7 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/organizations/',
+        path: '/api/accounting/transactions/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
     };
@@ -172,3 +150,4 @@ def send_request():
 
 ~~~
 {: title="Node.js" }
+

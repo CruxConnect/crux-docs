@@ -2,7 +2,7 @@
 title: /api/orders/cancel/
 name: Cancel Order
 position: 3.06
-type: patch
+method: patch
 description: Cancel a pending Order (for Retailers)
 right_code: |
   ~~~ json
@@ -14,7 +14,7 @@ right_code: |
 
 
 ---
-Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, your request to cancel an order is sent to the pertinent supplier(s). Your username and password are optional as you can send your authorization token to receive this information.
+Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, your request to cancel an order is sent to the pertinent supplier(s).
 
 ### Request Parameters:
 

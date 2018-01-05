@@ -2,7 +2,7 @@
 title: /api/products/skus/
 name: Get SKUs - Retailer
 position: 2.23
-type: get
+method: get
 description: Get SKUs allows you to return a complete list of SKUs you are interested in.
 right_code: |
   ~~~ json
@@ -338,7 +338,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get SKUs allows you to return a complete list of SKUs you are interested in. Your username and password are optional as you can send your authorization token to receive this information.
+Get SKUs allows you to return a complete list of SKUs you are interested in.
 
 ### Response Parameters:
 

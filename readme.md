@@ -52,6 +52,55 @@ Aviator is already optimised for adding, updating and removing documentation pag
 * Set the order of the collections with the position field in collection configuration in `_config.yml`.
 * Set the order of the documents inside a collection by setting the position in front matter.
 
-### Search
+## Proposing Changes
 
-* Add `excluded_in_search: true` to any documentation page's front matter to exclude that page in the search results.
+Proposing changes to the API can be done using github.
+
+1. Create a new branch.
+1. Edit the markdown files for the specific endpoints you propose to change
+1. Create a pull request into master.
+1. Add the `proposed change` label
+1. Assign reviewers.
+1. After approval, change the label to `unreleased` until the relevant code is released.
+1. During this time assign the PR to the documentation team to update PAW and flesh out the additional details. (example requests/responses etc.)
+1. After the doc team has completed their work, this branch should be merged coordinated with release of the change.
+
+The file for a particular endpoint is found in the category folder pertaining to the call.
+You can see those categories on the left nav in the API documentation (login, organzations, billing, etc.)
+
+Let’s say I wanted to add an api call at ‘/api/export/slap-dusty/’:
+
+I would create a new file called `slap_dusty.md` inside the `_export` folder.
+
+The contents would be:
+```
+---
+title: /api/export/slap-dusty/
+name: Slap Dusty
+method: get
+description: Give dusty a good slap.
+---
+### Request Parameters:
+slap_type
+: (string) Slap Type is the type of slap you are giving. e.g. back-handed, open-handed, butt
+
+intensity
+: (int) The intensity of the slap. 1-11
+
+### Response Parameters:
+
+uuid
+: (string) Universal Unique Identifier for the slap
+
+exclamation
+: (string) The sound that came out of Dusty as you slapped him
+
+| Code | Name                   | Meaning                                        |
+|------|-------------------------------------------------------------------------|
+| 200  | OK                     | Dusty was slapped                              |
+| 400  | Bad Request            | You failed at slapping Dusty.                  |
+| 401  | Unauthorized           | You haven't told me who you are to slap Dusty. |
+| 403  | Permission Denied      | You are not allowed to slap Dusty.             |
+| 404  | Not Found              | Dusty is missing                               |
+```
+Note that type=method. We should change that.

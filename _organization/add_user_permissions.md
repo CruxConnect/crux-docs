@@ -2,7 +2,7 @@
 title: /api/organizations/users/permissions/&ltuser_uuid&gt/
 name: Add User Permissions
 position: 0.8
-type: patch
+method: patch
 description: Add User Permissions for a user of your organization
 right_code: |
   ~~~ json
@@ -17,7 +17,7 @@ right_code: |
 
 
 ---
-Add User Permissions allows you to provide a user uuid and Add Permissions if roles change within an organization. Simply provide the user uuid and the permissions list indicating which permissions you wish to add. Your username and password are optional as you can send your authorization token to perform this API call.
+Add User Permissions allows you to provide a user uuid and Add Permissions if roles change within an organization. Simply provide the user uuid and the permissions list indicating which permissions you wish to add.
 
 ### Request Parameters:
 

@@ -20,8 +20,8 @@ collections:
     title: Organization
     position: 3
     type: api
-  billing:
-    title: Billing
+  accounting:
+    title: Accounting
     position: 4
     type: api
   product:

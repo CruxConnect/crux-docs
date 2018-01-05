@@ -2,7 +2,7 @@
 title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/add-items/
 name: Inventory Add Item - Retailer
 position: 2.14
-type: post
+method: post
 description: Add Items to an existing Inventory List for your account
 right_code: |
   ~~~ json
@@ -17,7 +17,7 @@ right_code: |
 
 
 ---
-Add Items to an existing Inventory List for your account. This allows you to add Items with all associated SKUs to an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully add them to the indicated Inventory List. Your username and password are optional as you can send your authorization token to receive this information.
+Add Items to an existing Inventory List for your account. This allows you to add Items with all associated SKUs to an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully add them to the indicated Inventory List.
 
 ### Request Parameters:
 

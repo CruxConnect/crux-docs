@@ -2,12 +2,12 @@
 title: /api/products/skus/search/completion/
 name: SKU Autocomplete - Retailer
 position: 2.27
-type: post
+method: post
 description: SKU Autocomplete allows you to search for a SKU without having the complete sku_id or sku_uuid
 right_code: |
   ~~~ json
   {
-    "partial": "A"
+    "partial": "Z"
   }
   ~~~
   {: title="Request" }
@@ -16,100 +16,90 @@ right_code: |
   {
     "skus": [
       {
-        "sku_id": "A6yIzsn83j921",
-        "owner_uuid": "1bd645dd-f2d8-401b-aa79-cfb990851fe9",
-        "distinguishing_info": {
-          "number_of_units_bundled": 1000,
-          "distinguishing_attributes": {
-            "apparel-size": "XXXXS",
-            "color": "blue"
-          },
-          "condition": "used"
-        },
+        "uuid": "66f8b469-f702-4e4f-89ec-b7131a5225f1",
+        "sku_id": "5Z0CurC5",
+        "number_of_units_bundled": 4,
         "price_tiers": [
           {
-            "minimum_tier_quantity": 2,
             "shipping_cost": 1.99,
-            "cost": 100.12,
-            "shipping_cost_is_estimate": true
+            "shipping_cost_is_estimate": true,
+            "minimum_tier_quantity": 2,
+            "cost": 100.12
           },
           {
-            "minimum_tier_quantity": 4,
             "shipping_cost": 0.99,
-            "cost": 75.6,
-            "shipping_cost_is_estimate": true
+            "shipping_cost_is_estimate": true,
+            "minimum_tier_quantity": 4,
+            "cost": 75.6
           },
           {
-            "minimum_tier_quantity": 16,
             "shipping_cost": 0,
-            "cost": 49.99,
-            "shipping_cost_is_estimate": true
+            "shipping_cost_is_estimate": true,
+            "minimum_tier_quantity": 16,
+            "cost": 49.99
           }
         ],
-        "item_title": "The inborn color item",
-        "uuid": "6e804cc7-3e5f-44dc-a02e-7eb0adc4ee39",
-        "supplier_uuid": "cb8677c0-9e3e-4ec9-9b01-4662578a6736",
         "product_images": [
           {
-            "width": 80,
-            "uuid": "df82601f-90b1-4fde-8311-54ddb5873bfb",
-            "url": "https://api.adorable.io/avatars/80/obad30.png",
-            "height": 80
+            "uuid": "7800e2e6-6748-40f1-9a4d-cb6880ea0538",
+            "url": "https://api.adorable.io/avatars/155/obad15.png",
+            "height": 155,
+            "width": 155
           },
           {
-            "width": 155,
-            "uuid": "feb6e877-4d9f-41ac-a009-9635e7e6ea77",
-            "url": "https://api.adorable.io/avatars/155/obad39.png",
-            "height": 155
+            "uuid": "e8736e75-a021-414f-bbfe-146db16b8e08",
+            "url": "https://api.adorable.io/avatars/285/obad15.png",
+            "height": 285,
+            "width": 285
           }
+        ],
+        "org_uuids": [
+          "2ed7b9ed-671e-4699-aaba-c96c0fd43c0a",
+          "5e85605d-b2e8-4f10-9ecb-675190118065",
+          "2d3845d0-4325-44b0-a505-c8c68227380e"
         ]
       },
       {
-        "sku_id": "aVCos8HBAf2H",
-        "owner_uuid": "1bd645dd-f2d8-401b-aa79-cfb990851fe9",
-        "distinguishing_info": {
-          "number_of_units_bundled": 12,
-          "distinguishing_attributes": {
-            "apparel-size": "XXXXS"
-          },
-          "condition": "used"
-        },
+        "uuid": "abbe37bf-c5ba-4080-b048-cd9cc1f72e5c",
+        "sku_id": "ZcMp0Hkml81kkJnH",
+        "number_of_units_bundled": 1,
         "price_tiers": [
           {
-            "minimum_tier_quantity": 2,
             "shipping_cost": 1.99,
-            "cost": 100.12,
-            "shipping_cost_is_estimate": true
+            "shipping_cost_is_estimate": false,
+            "minimum_tier_quantity": 1,
+            "cost": 20.99
           },
           {
-            "minimum_tier_quantity": 4,
             "shipping_cost": 0.99,
-            "cost": 75.6,
-            "shipping_cost_is_estimate": true
+            "shipping_cost_is_estimate": false,
+            "minimum_tier_quantity": 12,
+            "cost": 18.12
           },
           {
-            "minimum_tier_quantity": 16,
             "shipping_cost": 0,
-            "cost": 49.99,
-            "shipping_cost_is_estimate": true
+            "shipping_cost_is_estimate": false,
+            "minimum_tier_quantity": 100,
+            "cost": 17.76
           }
         ],
-        "item_title": "The elfin year item",
-        "uuid": "ac452a39-bd06-4be2-91e4-d9b0fa9fab36",
-        "supplier_uuid": "21e16bf4-312f-4352-8569-9be60894473a",
         "product_images": [
           {
-            "width": 155,
-            "uuid": "ceccb86d-0820-48ee-ab85-4fdad7dde447",
-            "url": "https://api.adorable.io/avatars/155/obad39.png",
-            "height": 155
+            "uuid": "473e164b-55a5-4520-be4b-c2223ec9361b",
+            "url": "https://api.adorable.io/avatars/285/obad33.png",
+            "height": 285,
+            "width": 285
           },
           {
-            "width": 80,
-            "uuid": "d1be61ed-0d80-4953-b168-fe054584dff2",
-            "url": "https://api.adorable.io/avatars/80/obad33.png",
-            "height": 80
+            "uuid": "6da1fe0b-d052-4590-b946-b28c5cecd28a",
+            "url": "https://api.adorable.io/avatars/155/obad39.png",
+            "height": 155,
+            "width": 155
           }
+        ],
+        "org_uuids": [
+          "0e9dd1c1-1eb5-45dc-9bb0-fe3d53f9da0d",
+          "a070146b-409c-4a36-8bc4-565881a71bea"
         ]
       }
     ]
@@ -123,47 +113,27 @@ SKU Autocomplete allows you to search for a SKU without having the complete sku_
 ### Response Parameters:
 
 skus
-: (list) The SKUs list parameter contains the list of SKU objects that match the partial sku_id you provided
+: (list) The SKUs list parameter contains the list of SKU objects that match the partial sku_id or sku_uuid you provided
 
 #### SKU Object:
+
+org_uuids
+: (list) The Univeral Unique Identifiers for the Organization list parameter contains the list of org_uuids that may access this SKU
+
+product_images
+: (list) The Product Images list parameter contains the SKU Product Image objects
 
 sku_id
 : (string) The Stock Keeping Unit (SKU) Identifier for the SKU as provided by the Supplier
 
-owner_uuids
-: (list) The Univeral Unique Identifiers for the Owner of the sku_id
-
-distinguishing_attributes
-: (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
-
-price_tiers
-: (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
-
-item_title
-: (string) The Title for the Item
-
 uuid
 : (string) The Universal Unique Identifier for the SKU
 
-supplier_uuid
-: (string) The Unviersal Unique Identifier for the Supplier
+number_of_units_bundled
+: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
-product_images
-: (list) The Product Images list parameter contains urls and dimensions for each image
-
-#### Price Tier Object:
-
-shipping_cost
-: (number) The Shipping Cost per the SKU per the Price Tier
-
-minimum_tier_quantity
-: (number) The Minimum Tier Quantity per the SKU per the Price Tier
-
-cost
-: (number) The Cost per the SKU per the Price Tier
-
-shipping_cost_is_estimate
-: (boolean) The Shipping Cost is Estimate parameter answers the question whether the shipping cost is an estimate per the SKU per the Price Tier.
+price_tiers
+: (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
 
 #### Product Image Object:
 
@@ -179,6 +149,20 @@ width
 height
 : (number) The Image Height in pixels for the SKU Product Image
 
+#### Price Tier Object:
+
+shipping_cost
+: (number) The Shipping Cost per the SKU per the Price Tier
+
+minimum_tier_quantity
+: (number) The Minimum Tier Quantity per the SKU per the Price Tier
+
+cost
+: (number) The Cost per the SKU per the Price Tier
+
+shipping_cost_is_estimate
+: (boolean) The Shipping Cost is Estimate parameter answers the question whether the shipping cost is an estimate per the SKU per the Price Tier.
+
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
 | 200  | OK                     | The API call was received and response is provided                           |
@@ -192,10 +176,10 @@ height
 
 ~~~ bash
 curl -X "POST" "https://stable.projectthanos.com/api/products/skus/search/completion/" \
-     -H 'Authorization: Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c' \
+     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "partial": "A"
+  "partial": "Z"
 }'
 
 ~~~
@@ -203,9 +187,9 @@ curl -X "POST" "https://stable.projectthanos.com/api/products/skus/search/comple
 
 ~~~ bash
 http --json POST 'https://stable.projectthanos.com/api/products/skus/search/completion/' \
-    'Authorization':'Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c' \
+    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
-    partial="A"
+    partial="Z"
 
 ~~~
 {: title="HTTPie" }
@@ -226,10 +210,10 @@ def send_request():
         response = requests.post(
             url="https://stable.projectthanos.com/api/products/skus/search/completion/",
             headers={
-                "Authorization": "Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c",
+                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    partial="A")
+            data=json.dumps(    partial="Z")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -253,7 +237,7 @@ def send_request():
         port: '443',
         path: '/api/products/skus/search/completion/',
         method: 'POST',
-        headers: {"Authorization":"Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -281,7 +265,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"partial\":\"A\"}")
+    request.write("{\"partial\":\"Z\"}")
     request.end();
 
 
@@ -294,4 +278,3 @@ def send_request():
 
 ~~~
 {: title="Node.js" }
-

@@ -2,7 +2,7 @@
 title: /api/organizations/users/permissions/&ltuser_uuid&gt/
 name: Get User Permissions
 position: 0.7
-type: get
+method: get
 description: Get User Permissions for a particular User
 right_code: |
   ~~~ json
@@ -47,7 +47,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Permissions on a specified User. This call returns the Permissions in a list which indicates a list of Permissions currently available on the specified User. Your username and password are optional as you can send your authorization token to receive this information.
+Get the Permissions on a specified User. This call returns the Permissions in a list which indicates a list of Permissions currently available on the specified User.
 
 ### Response Parameters:
 
