@@ -364,7 +364,7 @@ sort
 : (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in
 
 line_item_status
-: (array) One or more line item statuses. Will include orders with statuses based upon that `status_conjunction`. Possible Values are: `unallocated`, `allocated`, `rejected`, `has_tracking`, `backordered`
+: (array) One or more line item statuses: unallocated, allocated, has_tracking, backordered, rejected. The response will contain orders with statuses that match the provided line_item_status (as combined based on status_conjunction)
 
 status_conjunction
 : (string) Indicates how the line_item_status relates to the order response. Possible values are: `and`, `or`, `all`. Default: `or`. `And` will return all orders that have at least 1 line item matching each supplied status. `or` will return all orders that have at least one line item matching any of the supplied statuses. `only` will return orders that have ALL line items matching the supplied status. Only one line_item_status should be supplied when using `only`.
