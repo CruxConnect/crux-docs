@@ -1,9 +1,9 @@
 ---
-title: /api/organizations/relationships/
-name: Get Relationships
+title: /api/organizations/connections/
+name: Get Connections
 position: 0.91
 method: get
-description: Get all direct Relationships specific to your account
+description: Get all direct Connections specific to your account
 right_code: |
   ~~~ json
   [
@@ -97,14 +97,14 @@ right_code: |
   {: title="Response" }
 
 ---
-Get all of the direct Relationships specific to your account. These Relationships show what suppliers and/or retailers are available to you with related information such as account managers and contact information.
+Get all of the direct Connections specific to your account. These Connections show what suppliers and/or retailers are available to you with related information such as account managers and contact information.
 
 ### Response Parameters:
 
-#### Relationship Object:
+#### Connection Object:
 
 uuid
-: (string) Universal Unique Identifier for a Relationship
+: (string) Universal Unique Identifier for a Connection
 
 retailer
 : (object) Retailer object containing a uuid, and an organization object
@@ -113,7 +113,7 @@ supplier
 : (object) Supplier object containing a uuid, and an organization object
 
 status
-: (string) Status for the Relationship, which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
+: (string) Status for the Connection, which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
 
 #### Retailer Object:
 
@@ -201,7 +201,7 @@ phone
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/relationships/" \
+curl "https://stable.projectthanos.com/api/organizations/connections/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -210,7 +210,7 @@ curl "https://stable.projectthanos.com/api/organizations/relationships/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/organizations/relationships/' \
+http --json GET 'https://stable.projectthanos.com/api/organizations/connections/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -227,12 +227,12 @@ import json
 
 
 def send_request():
-    # Get Relationships
-    # GET https://stable.projectthanos.com/api/organizations/relationships/
+    # Get Connections
+    # GET https://stable.projectthanos.com/api/organizations/connections/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/relationships/",
+            url="https://stable.projectthanos.com/api/organizations/connections/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -250,7 +250,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Relationships
+// request Get Connections
 (function(callback) {
     'use strict';
 
@@ -259,7 +259,7 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/organizations/relationships/',
+        path: '/api/organizations/connections/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
