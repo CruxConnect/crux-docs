@@ -1,11 +1,11 @@
 ---
-title: Getting Started
+title: Getting Started with CRUX
 position: 1
 ---
 
-Welcome to our API.
+Welcome to the CRUX API.
 
-This API document is designed for those interested in developing an application with our platform.
+This API document is designed for those interested in developing an application with the CRUX platform.
 
 This API is still under development and will evolve.
 

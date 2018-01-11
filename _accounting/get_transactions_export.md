@@ -1,24 +1,35 @@
 ---
-title: /api/orders/export/
-name: Get Order List Export
-position: 3.01
-method: post
-description: Get an Export of the Order List via an email
+title: /api/accounting/transactions/export/
+name: Get Transactions Export
+position: 1.4
+type: post
+description: Get Transactions Export allows you to receive an email with the current Transactions on your account
 right_code: |
   ~~~ json
-  {
-    "uuid": "eea176f9-f31c-4064-8ef6-0851264c6ee4"
-  }
+  {}
   ~~~
-  {: title="Response" }
+  {: title="Request" }
+
 
 ---
-Get an Export of the Order List via an email to your email address on file. This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. We also provide an Export uuid in response to this call.
+Get Transactions Export allows you to get an email with the Billing Transactions List. This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. We also provide an Export uuid in response to this call.
 
 ### Response Parameters:
 
-uuid
-: (string) The Universal Unique Identifier for the Export
+payment_date
+: (string) Payment Date in the following format: YYYY-MM-DD
+
+statement_date
+: (string) Statement Date in the following format: YYYY-MM-DD
+
+status
+: (string) Status for the Transaction (e.g. "paid")
+
+total
+: (number) Total for the Transaction in USD (e.g. 29.95)
+
+transaction_id
+: (number) ID associated with the Transaction
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -31,8 +42,8 @@ uuid
 
 
 ~~~ bash
-curl -X "POST" "https://stable.projectthanos.com/api/orders/export/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+curl -X "POST" "https://stable.projectthanos.com/api/accounting/transactions/export/" \
+     -H 'Authorization: Token f97322af7ca5a5dacc73a6eae3e90dc975391fda' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -40,8 +51,8 @@ curl -X "POST" "https://stable.projectthanos.com/api/orders/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://stable.projectthanos.com/api/orders/export/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+http --json POST 'https://stable.projectthanos.com/api/accounting/transactions/export/' \
+    'Authorization':'Token f97322af7ca5a5dacc73a6eae3e90dc975391fda' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -57,14 +68,14 @@ import json
 
 
 def send_request():
-    # Get Order List Export
-    # POST https://stable.projectthanos.com/api/orders/export/
+    # Get Billing Transactions Export
+    # POST https://stable.projectthanos.com/api/accounting/transactions/export/
 
     try:
         response = requests.post(
-            url="https://stable.projectthanos.com/api/orders/export/",
+            url="https://stable.projectthanos.com/api/accounting/transactions/export/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token f97322af7ca5a5dacc73a6eae3e90dc975391fda",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -80,7 +91,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Order List Export
+// request Get Billing Transactions Export
 (function(callback) {
     'use strict';
 
@@ -89,9 +100,9 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/orders/export/',
+        path: '/api/accounting/transactions/export/',
         method: 'POST',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token f97322af7ca5a5dacc73a6eae3e90dc975391fda","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -132,3 +143,4 @@ def send_request():
 
 ~~~
 {: title="Node.js" }
+

@@ -3,7 +3,7 @@ title: Authentication
 position: 2
 right_code: |
   ~~~ bash
-  curl "https://stable.projectthanos.com/api/path/to/api/endpoint/" \
+  curl "https://api.cruxconnect.com/api/path/to/api/endpoint/" \
     -H 'Authorization: Token YOUR_AUTH_TOKEN' \
     -H 'Content-Type: application/json; charset=utf-8' \
     -d $'{}'
@@ -11,7 +11,7 @@ right_code: |
   {: title="Curl" }
 
   ~~~ bash
-  http --json GET 'https://stable.projectthanos.com/api/path/to/api/endpoint/' \
+  http --json GET 'https://api.cruxconnect.com/api/path/to/api/endpoint/' \
     'Authorization':'Token YOUR_AUTH_TOKEN' \
     'Content-Type':'application/json; charset=utf-8'
   ~~~
@@ -27,11 +27,11 @@ right_code: |
 
     def send_request():
         # Get All Permissions
-        # GET https://stable.projectthanos.com/api/path/to/api/endpoint/
+        # GET https://api.cruxconnect.com/api/path/to/api/endpoint/
 
         try:
             response = requests.get(
-                url="https://stable.projectthanos.com/api/path/to/api/endpoint/",
+                url="https://api.cruxconnect.com/api/path/to/api/endpoint/",
                 headers={
                     "Authorization": "Token YOUR_AUTH_TOKEN",
                     "Content-Type": "application/json; charset=utf-8",
@@ -55,7 +55,7 @@ right_code: |
         const httpTransport = require('https');
         const responseEncoding = 'utf8';
         const httpOptions = {
-            hostname: 'stable.projectthanos.com',
+            hostname: 'api.cruxconnect.com',
             port: '443',
             path: '/api/path/to/api/endpoint/',
             method: 'GET',

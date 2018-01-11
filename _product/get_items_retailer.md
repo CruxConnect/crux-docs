@@ -1,9 +1,9 @@
 ---
 title: /api/products/items/
-name: Get Item List - Retailer
+name: Get Items - Retailer
 position: 2.18
 method: get
-description: Get Item List allows you to return a complete list of items you are interested in.
+description: Get Items allows you to return a complete list of items you are interested in.
 right_code: |
   ~~~ json
   [
@@ -56,13 +56,17 @@ right_code: |
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             },
             "package": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             }
           },
           "product_identifiers": {
@@ -140,18 +144,22 @@ right_code: |
               "height": 80
             }
           ],
-          "measurements": {
+            "measurements": {
             "sku": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             },
             "package": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             }
           },
           "product_identifiers": {
@@ -189,87 +197,6 @@ right_code: |
           }
         },
         {
-          "uuid": "5bd06e80-64ae-4150-bff9-fd3b8896c41c",
-          "restrictions": null,
-          "condition": "refurb",
-          "distinguishing_attributes": {},
-          "minimum_advertised_price": 10.0,
-          "msrp": 173.04,
-          "price_tiers": [
-            {
-              "shipping_cost_is_estimate": true,
-              "cost": 100.12,
-              "shipping_cost": 1.99,
-              "minimum_tier_quantity": 2
-            },
-            {
-              "shipping_cost_is_estimate": true,
-              "cost": 75.6,
-              "shipping_cost": 0.99,
-              "minimum_tier_quantity": 4
-            },
-            {
-              "shipping_cost_is_estimate": true,
-              "cost": 49.99,
-              "shipping_cost": 0.0,
-              "minimum_tier_quantity": 16
-            }
-          ],
-          "product_images": [
-            {
-              "uuid": "1b527e40-d81c-4f75-a9ce-a9af09e66929",
-              "url": "https://api.adorable.io/avatars/80/obad12.png",
-              "width": 80,
-              "height": 80
-            },
-            {
-              "uuid": "e3817a5d-7aee-4efc-9334-14b8e5324517",
-              "url": "https://api.adorable.io/avatars/80/obad24.png",
-              "width": 80,
-              "height": 80
-            }
-          ],
-          "measurements": {
-            "sku": {
-              "weight": null,
-              "length": null,
-              "width": null,
-              "height": null
-            },
-            "package": {
-              "weight": null,
-              "length": null,
-              "width": null,
-              "height": null
-            }
-          },
-          "product_identifiers": {
-            "upca": null,
-            "ean13": null,
-            "gtin14": "10123456000015",
-            "isbn": "9780765348272",
-            "asin": null,
-            "mpn": null
-          },
-          "inventory_lists": [
-            {
-              "uuid": "44a1f968-1ce8-4826-9cd9-f8a54f5d542d",
-              "name": "The empty calendar inventory list"
-            }
-          ],
-          "created": "2017-10-23T18:26:35.849423Z",
-          "last_updated": "2017-10-23T18:26:35.849469Z",
-          "sku_id": "86EJwyYolPHU",
-          "quantity_in_stock": 11,
-          "quantity_on_backorder": 4,
-          "number_of_units_bundled": 1,
-          "minimum_advertised_price_currency": "USD",
-          "msrp_currency": "USD",
-          "item": {
-            "uuid": "97fa8fdf-6b94-409e-a684-841d42605881"
-          }
-        },
-        {
           "uuid": "f0b82bb2-0b12-42bf-b7e4-7195ccfb21ab",
           "restrictions": null,
           "condition": "new",
@@ -298,18 +225,22 @@ right_code: |
               "height": 285
             }
           ],
-          "measurements": {
+           "measurements": {
             "sku": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             },
             "package": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             }
           },
           "product_identifiers": {
@@ -425,18 +356,22 @@ right_code: |
               "height": 285
             }
           ],
-          "measurements": {
+           "measurements": {
             "sku": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             },
             "package": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             }
           },
           "product_identifiers": {
@@ -531,13 +466,17 @@ right_code: |
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             },
             "package": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             }
           },
           "product_identifiers": {
@@ -591,18 +530,22 @@ right_code: |
               "height": 155
             }
           ],
-          "measurements": {
+           "measurements": {
             "sku": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             },
             "package": {
               "weight": null,
               "length": null,
               "width": null,
-              "height": null
+              "height": null,
+              "weight_units": null,
+              "dimension_units":null
             }
           },
           "product_identifiers": {
@@ -638,7 +581,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Item List allows you to return a complete list of items you are interested in.
+Get Items allows you to return a complete list of items you are interested in.
 
 ### Response Parameters:
 
@@ -804,30 +747,42 @@ height
 #### SKU Measurements Object:
 
 weight
-: (number) The Weight of the SKU in pounds (lbs.)
+: (number) The Weight of the SKU in the "weight_units"
+
+weight_units
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
 
 length
-: (number) The Length of the SKU in inches
+: (number) The Length of the SKU in "dimension_units"
 
 width
-: (number) The Width of the SKU in inches
+: (number) The Width of the SKU in "dimension_units"
 
 height
-: (number) The Height of the SKU in inches
+: (number) The Height of the SKU in "dimension_units"
+
+dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 #### Package Measurements Object:
 
 weight
-: (number) The Weight of the packaged SKU in pounds (lbs.)
+: (number) The Weight of the packaged SKU in the "weight_units"
+
+weight_units
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
 
 length
-: (number) The Length of the packaged SKU in inches
+: (number) The Length of the packaged SKU in "dimension_units"
 
 width
-: (number) The Width of the packaged SKU in inches
+: (number) The Width of the packaged SKU in "dimension_units"
 
 height
-: (number) The Height of the packaged SKU in inches
+: (number) The Height of the packaged SKU in "dimension_units"
+
+dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 #### Product Identifiers Object:
 

@@ -1,9 +1,9 @@
 ---
 title: /api/accounting/transactions/&lttransaction_id&gt/
-name: Get Billing Transaction Details
+name: Get Transaction Details
 position: 1.1
-method: get
-description: Get Billing Transaction Details for specific transactions
+type: get
+description: Get Transaction Details for specific transactions
 right_code: |
   ~~~ json
   {
@@ -17,7 +17,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get the Billing Transaction Details for a specific transaction on your account. The response includes details on the particular transaction_id you provide.
+Get the Transaction Details for a specific transaction on your account. The response includes details on the particular transaction_id you provide.
 
 ### Response Parameters:
 

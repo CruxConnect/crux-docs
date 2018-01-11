@@ -47,6 +47,7 @@ right_code: |
         "sku_uuid": "c3786845-3f06-4a10-a6cd-ff23461ab11f",
         "sku_id": "yl3t2Lij7XJfAnsB",
         "sku_name": "The infamous blood item",
+        "status": "unallocated",
         "cost": 58.16,
         "supplier_uuid": "4b72cfbc-5123-4152-a7ed-3da5d0ce8bad",
         "supplier_name": "Brooks-Jones",
@@ -66,6 +67,7 @@ right_code: |
         "sku_uuid": "f0b82bb2-0b12-42bf-b7e4-7195ccfb21ab",
         "sku_id": "utmcbyzttt",
         "sku_name": "The changeable soap item",
+        "status": "unallocated",
         "cost": 49.96,
         "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
         "supplier_name": "Flynn Ltd",
@@ -85,6 +87,7 @@ right_code: |
         "sku_uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc",
         "sku_id": "voGDR4gOyYUOgcT7gw",
         "sku_name": "The cautious knowledge item",
+        "status": "unallocated",
         "cost": 2.84,
         "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
         "supplier_name": "Flynn Ltd",
@@ -104,6 +107,7 @@ right_code: |
         "sku_uuid": "dd9689e9-8241-4a78-afa1-7cbce9b09513",
         "sku_id": "BJA9PlgxiT9kQRaYUMF",
         "sku_name": "The aboard invention item",
+        "status": "unallocated",
         "cost": 96.49,
         "supplier_uuid": "4b72cfbc-5123-4152-a7ed-3da5d0ce8bad",
         "supplier_name": "Brooks-Jones",
@@ -231,6 +235,9 @@ sku_id
 
 sku_name
 : (string) The SKU Name
+
+status
+: (string) The Status for the Line Item. These can be "unallocated", "allocated", "rejected", "has_tracking", "backordered", and "delivered".
 
 cost
 : (number) The Cost of the SKU

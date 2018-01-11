@@ -1,44 +1,49 @@
 ---
-title: /api/accounting/payment-methods/
-name: Get Payment Methods
-position: 1.3
+title: /api/accounting/transactions/
+name: Get Transactions
+position: 1.00
 type: get
-description: Get Payment Methods available on your account
+description: Get the Transactions for your account
 right_code: |
   ~~~ json
-  {
-    "payment_type": "CREDIT CARD",
-    "card_number": "4111111111111111",
-    "card_last_four": "1111",
-    "card_expiration": "2017-11-06",
-    "is_default": true,
-    "address": "1234 Thanos Road\nLehi, Utah 845005"
-  }
+  [
+    {
+      "statement_date": "2017-11-06",
+      "payment_date": "2017-11-06",
+      "transaction_id": "123456789",
+      "total": "12.00",
+      "status": "paid"
+    },
+    {
+      "statement_date": "2017-11-06",
+      "payment_date": "2017-11-06",
+      "transaction_id": "456789101",
+      "total": "10.99",
+      "status": "paid"
+    }
+  ]
   ~~~
   {: title="Response" }
 
 ---
-Get Payment Methods available on your account. This returns the Payment Methods that are currently on your account. If you have removed any Payment Methods prior to this call, they will not appear in the list.
+Get the Transactions for your account. This provides details for all billing transactions on your account.
 
 ### Response Parameters:
 
-payment_type
-: (string) The Payment Type associated with the organization (e.g. "CREDIT CARD")
+statement_date
+: (string) The Statement Date parameter is a date of when the statement was given
 
-card_number
-: (number) The 15 or 16 digit Card Number
+payment_date
+: (string) The Payment Date parameter is a date of when the payment posted on the billing transaction
 
-card_last_four
-: (number) The Last Four digits of your credit Card on file with your organization
+transaction_id
+: (string) The Transaction Identifier parameter is an id number for the billing transaction
 
-card_expiration
-: (string) The Card Expiration is the date in a YYYY-MM-DD format
+total
+: (number) The Total parameter is the total amount on the billing transaction
 
-is_default
-: (boolean) The "Is Default" parameter indicates whether this is the default or not
-
-address
-: (string) The Address assocated with the card
+status
+: (string) The Status parameter is the status for the billing transaction
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -51,19 +56,15 @@ address
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/accounting/payment-methods/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-     -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{}'
+curl "https://stable.projectthanos.com/api/accounting/transactions/" \
+     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/accounting/payment-methods/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8'
-
+http GET 'https://stable.projectthanos.com/api/accounting/transactions/' \
+    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="HTTPie" }
@@ -73,21 +74,18 @@ http --json GET 'https://stable.projectthanos.com/api/accounting/payment-methods
 # `pip install requests`
 
 import requests
-import json
 
 
 def send_request():
-    # Get Payment Methods
-    # GET https://stable.projectthanos.com/api/accounting/payment-methods/
+    # Get Billing Transactions List
+    # GET https://stable.projectthanos.com/api/accounting/transactions/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/accounting/payment-methods/",
+            url="https://stable.projectthanos.com/api/accounting/transactions/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
-                "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -100,7 +98,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Payment Methods
+// request Get Billing Transactions List
 (function(callback) {
     'use strict';
 
@@ -109,9 +107,9 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/accounting/payment-methods/',
+        path: '/api/accouting/transactions/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -139,7 +137,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{}")
+    request.write("")
     request.end();
 
 
@@ -152,3 +150,4 @@ def send_request():
 
 ~~~
 {: title="Node.js" }
+
