@@ -5,11 +5,6 @@ position: 3.07
 method: delete
 description: Cancel an item on a pending Order (for Retailers)
 right_code: |
-  ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
 
 ---
 Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, your request to cancel an order is sent to the pertinent supplier(s).
