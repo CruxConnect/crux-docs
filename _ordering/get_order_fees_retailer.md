@@ -109,7 +109,7 @@ per_order_fee
 
 
 ~~~ bash
-curl -X "POST" "https://stable.projectthanos.com/api/orders/fees/" \
+curl -X "POST" "https://api.cruxconnect.com/api/orders/fees/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -129,7 +129,7 @@ curl -X "POST" "https://stable.projectthanos.com/api/orders/fees/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://stable.projectthanos.com/api/orders/fees/' \
+http --json POST 'https://api.cruxconnect.com/api/orders/fees/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     skus:="[
@@ -156,11 +156,11 @@ import json
 
 def send_request():
     # Get Order Fees - Retailer
-    # POST https://stable.projectthanos.com/api/orders/fees/
+    # POST https://api.cruxconnect.com/api/orders/fees/
 
     try:
         response = requests.post(
-            url="https://stable.projectthanos.com/api/orders/fees/",
+            url="https://api.cruxconnect.com/api/orders/fees/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -194,7 +194,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/orders/fees/',
         method: 'POST',

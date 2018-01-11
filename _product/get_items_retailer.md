@@ -870,7 +870,7 @@ height
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/products/items/" \
+curl "https://api.cruxconnect.com/api/products/items/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -879,7 +879,7 @@ curl "https://stable.projectthanos.com/api/products/items/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/products/items/' \
+http --json GET 'https://api.cruxconnect.com/api/products/items/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -897,11 +897,11 @@ import json
 
 def send_request():
     # Get Item List - Retailer
-    # GET https://stable.projectthanos.com/api/products/items/
+    # GET https://api.cruxconnect.com/api/products/items/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/products/items/",
+            url="https://api.cruxconnect.com/api/products/items/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -926,7 +926,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/products/items/',
         method: 'GET',

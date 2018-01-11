@@ -2,7 +2,7 @@
 title: /api/accounting/transactions/export/
 name: Get Transactions Export
 position: 1.4
-type: post
+method: post
 description: Get Transactions Export allows you to receive an email with the current Transactions on your account
 right_code: |
   ~~~ json
@@ -42,7 +42,7 @@ transaction_id
 
 
 ~~~ bash
-curl -X "POST" "https://stable.projectthanos.com/api/accounting/transactions/export/" \
+curl -X "POST" "https://api.cruxconnect.com/api/accounting/transactions/export/" \
      -H 'Authorization: Token f97322af7ca5a5dacc73a6eae3e90dc975391fda' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -51,7 +51,7 @@ curl -X "POST" "https://stable.projectthanos.com/api/accounting/transactions/exp
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://stable.projectthanos.com/api/accounting/transactions/export/' \
+http --json POST 'https://api.cruxconnect.com/api/accounting/transactions/export/' \
     'Authorization':'Token f97322af7ca5a5dacc73a6eae3e90dc975391fda' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -69,11 +69,11 @@ import json
 
 def send_request():
     # Get Billing Transactions Export
-    # POST https://stable.projectthanos.com/api/accounting/transactions/export/
+    # POST https://api.cruxconnect.com/api/accounting/transactions/export/
 
     try:
         response = requests.post(
-            url="https://stable.projectthanos.com/api/accounting/transactions/export/",
+            url="https://api.cruxconnect.com/api/accounting/transactions/export/",
             headers={
                 "Authorization": "Token f97322af7ca5a5dacc73a6eae3e90dc975391fda",
                 "Content-Type": "application/json; charset=utf-8",
@@ -98,7 +98,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/accounting/transactions/export/',
         method: 'POST',

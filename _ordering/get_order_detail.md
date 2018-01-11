@@ -282,7 +282,7 @@ backorder_date
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/" \
+curl "https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -291,7 +291,7 @@ curl "https://stable.projectthanos.com/api/orders/299fc593-04f0-424d-9847-e359b9
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/' \
+http --json GET 'https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -309,11 +309,11 @@ import json
 
 def send_request():
     # Get Order Detail
-    # GET https://stable.projectthanos.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/
+    # GET https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/",
+            url="https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -338,7 +338,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/',
         method: 'GET',

@@ -512,7 +512,7 @@ backorder_date
 
 
 ~~~ bash
-curl -X "POST" "https://stable.projectthanos.com/api/orders/" \
+curl -X "POST" "https://api.cruxconnect.com/api/orders/" \
      -H 'Authorization: Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -534,7 +534,7 @@ curl -X "POST" "https://stable.projectthanos.com/api/orders/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://stable.projectthanos.com/api/orders/' \
+http --json POST 'https://api.cruxconnect.com/api/orders/' \
     'Authorization':'Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c' \
     'Content-Type':'application/json; charset=utf-8' \
     sort:="{
@@ -563,11 +563,11 @@ import json
 
 def send_request():
     # Get Orders
-    # POST https://stable.projectthanos.com/api/orders/
+    # POST https://api.cruxconnect.com/api/orders/
 
     try:
         response = requests.post(
-            url="https://stable.projectthanos.com/api/orders/",
+            url="https://api.cruxconnect.com/api/orders/",
             headers={
                 "Authorization": "Token d7bb2fbb0c666dee5a5a36634baac3114e08ba9c",
                 "Content-Type": "application/json; charset=utf-8",
@@ -603,7 +603,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/orders/',
         method: 'POST',

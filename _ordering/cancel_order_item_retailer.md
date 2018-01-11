@@ -22,7 +22,7 @@ Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, 
 
 
 ~~~ bash
-curl -X "DELETE" "https://stable.projectthanos.com/api/orders/items/cancel//" \
+curl -X "DELETE" "https://api.cruxconnect.com/api/orders/items/cancel//" \
      -H 'Authorization: Token 825dd305b5858e2373763ff338615db822fe67a0' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -31,7 +31,7 @@ curl -X "DELETE" "https://stable.projectthanos.com/api/orders/items/cancel//" \
 {: title="Curl" }
 
 ~~~ bash
-http --json DELETE 'https://stable.projectthanos.com/api/orders/items/cancel//' \
+http --json DELETE 'https://api.cruxconnect.com/api/orders/items/cancel//' \
     'Authorization':'Token 825dd305b5858e2373763ff338615db822fe67a0' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -49,11 +49,11 @@ import json
 
 def send_request():
     # Cancel Order Item - Retailer
-    # DELETE https://stable.projectthanos.com/api/orders/items/cancel//
+    # DELETE https://api.cruxconnect.com/api/orders/items/cancel//
 
     try:
         response = requests.delete(
-            url="https://stable.projectthanos.com/api/orders/items/cancel//",
+            url="https://api.cruxconnect.com/api/orders/items/cancel//",
             headers={
                 "Authorization": "Token 825dd305b5858e2373763ff338615db822fe67a0",
                 "Content-Type": "application/json; charset=utf-8",
@@ -78,7 +78,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/orders/items/cancel//',
         method: 'DELETE',

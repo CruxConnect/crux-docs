@@ -33,7 +33,7 @@ token
 
 
 ~~~ bash
-curl -X "POST" "https://stable.projectthanos.com/api/organizations/complete-password/" \
+curl -X "POST" "https://api.cruxconnect.com/api/organizations/complete-password/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "token": "G7TwCq1Vkds0DLYnfAuP",
@@ -44,7 +44,7 @@ curl -X "POST" "https://stable.projectthanos.com/api/organizations/complete-pass
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://stable.projectthanos.com/api/organizations/complete-password/' \
+http --json POST 'https://api.cruxconnect.com/api/organizations/complete-password/' \
     'Content-Type':'application/json; charset=utf-8' \
     token="G7TwCq1Vkds0DLYnfAuP" \
     password="thanosrocks"
@@ -62,11 +62,11 @@ import json
 
 def send_request():
     # Create New Password
-    # POST https://stable.projectthanos.com/api/organizations/complete-password/
+    # POST https://api.cruxconnect.com/api/organizations/complete-password/
 
     try:
         response = requests.post(
-            url="https://stable.projectthanos.com/api/organizations/complete-password/",
+            url="https://api.cruxconnect.com/api/organizations/complete-password/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
@@ -91,7 +91,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/organizations/complete-password/',
         method: 'POST',
