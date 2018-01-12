@@ -2,7 +2,7 @@
 title: /api/accounting/transactions/
 name: Get Transactions
 position: 1.00
-type: get
+method: get
 description: Get the Transactions for your account
 right_code: |
   ~~~ json
@@ -56,14 +56,14 @@ status
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/accounting/transactions/" \
+curl "https://api.cruxconnect.com/api/accounting/transactions/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://stable.projectthanos.com/api/accounting/transactions/' \
+http GET 'https://api.cruxconnect.com/api/accounting/transactions/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
@@ -78,11 +78,11 @@ import requests
 
 def send_request():
     # Get Billing Transactions List
-    # GET https://stable.projectthanos.com/api/accounting/transactions/
+    # GET https://api.cruxconnect.com/api/accounting/transactions/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/accounting/transactions/",
+            url="https://api.cruxconnect.com/api/accounting/transactions/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
             },
@@ -105,7 +105,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/accouting/transactions/',
         method: 'GET',

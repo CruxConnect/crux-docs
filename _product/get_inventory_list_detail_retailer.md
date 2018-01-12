@@ -68,7 +68,7 @@ description
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/" \
+curl "https://api.cruxconnect.com/api/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -77,7 +77,7 @@ curl "https://stable.projectthanos.com/api/products/inventory-lists/868ea19d-508
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/' \
+http --json GET 'https://api.cruxconnect.com/api/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -95,11 +95,11 @@ import json
 
 def send_request():
     # Get Inventory List Detail - Retailer
-    # GET https://stable.projectthanos.com/api/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/
+    # GET https://api.cruxconnect.com/api/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/",
+            url="https://api.cruxconnect.com/api/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -124,7 +124,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/',
         method: 'GET',

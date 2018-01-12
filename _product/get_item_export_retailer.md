@@ -307,7 +307,7 @@ height
 
 
 ~~~ bash
-curl -X "POST" "https://stable.projectthanos.com/api/products/items/export/" \
+curl -X "POST" "https://api.cruxconnect.com/api/products/items/export/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -321,7 +321,7 @@ curl -X "POST" "https://stable.projectthanos.com/api/products/items/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://stable.projectthanos.com/api/products/items/export/' \
+http --json POST 'https://api.cruxconnect.com/api/products/items/export/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     uuids:="[
@@ -342,11 +342,11 @@ import json
 
 def send_request():
     # Get Item Export - Retailer
-    # POST https://stable.projectthanos.com/api/products/items/export/
+    # POST https://api.cruxconnect.com/api/products/items/export/
 
     try:
         response = requests.post(
-            url="https://stable.projectthanos.com/api/products/items/export/",
+            url="https://api.cruxconnect.com/api/products/items/export/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -374,7 +374,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/products/items/export/',
         method: 'POST',

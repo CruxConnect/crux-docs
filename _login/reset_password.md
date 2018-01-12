@@ -7,7 +7,7 @@ description: Reset the Password on your account
 right_code: |
   ~~~ json
   {
-    "email": "jweir@projectthanos.com"
+    "email": "mrbailey@projectthanos.com"
   }
   ~~~
   {: title="Request" }
@@ -42,19 +42,19 @@ reset_token
 
 
 ~~~ bash
-curl -X "POST" "https://stable.projectthanos.com/api/organizations/reset-password/" \
+curl -X "POST" "https://api.cruxconnect.com/api/organizations/reset-password/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "email": "jweir@projectthanos.com"
+  "email": "mrbailey@projectthanos.com"
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://stable.projectthanos.com/api/organizations/reset-password/' \
+http --json POST 'https://api.cruxconnect.com/api/organizations/reset-password/' \
     'Content-Type':'application/json; charset=utf-8' \
-    email="jweir@projectthanos.com"
+    email="mrbailey@projectthanos.com"
 
 ~~~
 {: title="HTTPie" }
@@ -69,15 +69,15 @@ import json
 
 def send_request():
     # Reset Password
-    # POST https://stable.projectthanos.com/api/organizations/reset-password/
+    # POST https://api.cruxconnect.com/api/organizations/reset-password/
 
     try:
         response = requests.post(
-            url="https://stable.projectthanos.com/api/organizations/reset-password/",
+            url="https://api.cruxconnect.com/api/organizations/reset-password/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    email="jweir@projectthanos.com")
+            data=json.dumps(    email="mrbailey@projectthanos.com")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -97,7 +97,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/organizations/reset-password/',
         method: 'POST',
@@ -129,7 +129,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"email\":\"jweir@projectthanos.com\"}")
+    request.write("{\"email\":\"mrbailey@projectthanos.com\"}")
     request.end();
 
 

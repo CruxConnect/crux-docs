@@ -7,7 +7,7 @@ description: Validate the password reset
 right_code: |
   ~~~ json
   {
-    "email": "jweir@projectthanos.com"
+    "email": "mrbailey@projectthanos.com"
   }
   ~~~
   {: title="Request" }
@@ -29,22 +29,22 @@ email
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP" \
+curl "https://api.cruxconnect.com/api/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: text/plain; charset=utf-8' \
      -d $'{
-  "email": "jweir@projectthanos.com"
+  "email": "mrbailey@projectthanos.com"
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --form GET 'https://stable.projectthanos.com/api/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP' \
+http --form GET 'https://api.cruxconnect.com/api/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'text/plain; charset=utf-8' \
     'data'=$'{
-  \"email\": \"jweir@projectthanos.com\"
+  \"email\": \"mrbailey@projectthanos.com\"
 }'
 
 ~~~
@@ -59,11 +59,11 @@ import requests
 
 def send_request():
     # Validate Password Reset
-    # GET https://stable.projectthanos.com/api/organizations/complete-password/
+    # GET https://api.cruxconnect.com/api/organizations/complete-password/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/complete-password/",
+            url="https://api.cruxconnect.com/api/organizations/complete-password/",
             params={
                 "token": "G7TwCq1Vkds0DLYnfAuP",
             },
@@ -90,7 +90,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP',
         method: 'GET',
@@ -122,7 +122,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\n  \"email\": \"jweir@projectthanos.com\"\n}")
+    request.write("{\n  \"email\": \"mrbailey@projectthanos.com\"\n}")
     request.end();
 
 

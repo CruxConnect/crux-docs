@@ -7,7 +7,7 @@ description: Login to receive an authentication token
 right_code: |
   ~~~ json
   {
-    "username": "jweir@projectthanos.com",
+    "username": "mrbailey@projectthanos.com",
     "password": "thanosrocks"
   }
   ~~~
@@ -69,10 +69,10 @@ org_type
 
 
 ~~~ bash
-curl -X "POST" "https://stable.projectthanos.com/api/organizations/user-login/" \
+curl -X "POST" "https://api.cruxconnect.com/api/organizations/user-login/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "username": "jweir@projectthanos.com",
+  "username": "mrbailey@projectthanos.com",
   "password": "thanosrocks"
 }'
 
@@ -80,9 +80,9 @@ curl -X "POST" "https://stable.projectthanos.com/api/organizations/user-login/" 
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://stable.projectthanos.com/api/organizations/user-login/' \
+http --json POST 'https://api.cruxconnect.com/api/organizations/user-login/' \
     'Content-Type':'application/json; charset=utf-8' \
-    username="jweir@projectthanos.com" \
+    username="mrbailey@projectthanos.com" \
     password="thanosrocks"
 
 ~~~
@@ -98,15 +98,15 @@ import json
 
 def send_request():
     # Login
-    # POST https://stable.projectthanos.com/api/organizations/user-login/
+    # POST https://api.cruxconnect.com/api/organizations/user-login/
 
     try:
         response = requests.post(
-            url="https://stable.projectthanos.com/api/organizations/user-login/",
+            url="https://api.cruxconnect.com/api/organizations/user-login/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    username="jweir@projectthanos.com" \
+            data=json.dumps(    username="mrbailey@projectthanos.com" \
     password="thanosrocks")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -127,7 +127,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/organizations/user-login/',
         method: 'POST',
@@ -159,7 +159,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"username\":\"jweir@projectthanos.com\",\"password\":\"thanosrocks\"}")
+    request.write("{\"username\":\"mrbailey@projectthanos.com\",\"password\":\"thanosrocks\"}")
     request.end();
 
 

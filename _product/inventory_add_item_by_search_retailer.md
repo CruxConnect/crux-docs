@@ -63,7 +63,7 @@ pagination
 
 
 ~~~ bash
-curl -X "POST" "https://stable.projectthanos.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/" \
+curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -92,7 +92,7 @@ curl -X "POST" "https://stable.projectthanos.com/api/products/inventory-lists/c8
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://stable.projectthanos.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/' \
+http --json POST 'https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
@@ -128,11 +128,11 @@ import json
 
 def send_request():
     # Inventory Add Item by Search - Retailer
-    # POST https://stable.projectthanos.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/
+    # POST https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/
 
     try:
         response = requests.post(
-            url="https://stable.projectthanos.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/",
+            url="https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -175,7 +175,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api.cruxconnect.com',
         port: '443',
         path: '/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/',
         method: 'POST',
