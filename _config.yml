@@ -36,7 +36,8 @@ collections:
     title: Export
     position: 7
     type: api
-gems:
+
+plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
