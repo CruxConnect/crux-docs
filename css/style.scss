@@ -3,22 +3,37 @@ layout: null
 sitemap: false
 ---
 
-$brand-colour: #35d69b;
-
-$nav-header-height: 60px;
-$nav-background-color: #f5f5f5;
-$nav-width: 300px;
-
-$space: 20px;
-
+$nav-width: 320px;
 $mobile-break: 700px;
 
-$colour-get: #66BB6A;
-$colour-post: #42A5F5;
-$colour-put: #7E57C2;
-$colour-patch: #EA526F;
-$colour-delete: #FF7043;
+$color-brand: #d92526;
+$color-link: #1eaedb;
+$color-off-black: #474a54;
+$color-border: #ddd;
+$color-border-dark: #555;
 
+$color-white: #fff;
+$color-description: #aaa;
+$color-sidebar-light: #777;
+$color-sidebar-dark: #888;
+
+// Background colors
+$color-bg-light: #f7f7f7;
+$color-bg-dark: #232323;
+$color-bg-nav: #fbfbfb;
+
+// Method colors
+$color-get: #66bb6a;
+$color-post: #42a5f5;
+$color-put: #7e57c2;
+$color-patch: #ea526f;
+$color-delete: #ff7043;
+
+// Status colors
+$color-info: #56adec;
+$color-error: #f20;
+$color-success: #6c0;
+$color-warning: #fd0;
 
 
 @import "mixins";
