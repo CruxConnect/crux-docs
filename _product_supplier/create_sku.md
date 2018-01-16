@@ -1,34 +1,118 @@
 ---
-title: /products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/
-name: Catalog Add SKU - Supplier
-position: 2.03
+title: /products/skus/
+name: Create SKU
+position: 2.24
 method: post
-description: Add already existing SKUs to a Catalog
+description: Create a SKU to add to a specified item_uuid
 right_code: |
   ~~~ json
   {
-    "sku_uuids": [
-      "84d075e0-28e2-449c-9292-5cfe6981e922"
-    ]
+    "item": {
+      "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520"
+    },
+    "sku_id": "AWWghwmTNb",
+    "minimum_advertised_price": "40.00",
+    "msrp": "55.99",
+    "quantity_in_stock": "500",
+    "quantity_on_backorder": "100",
+    "number_of_units_bundled": "2",
+    "minimum_advertised_price_currency": "USD",
+    "msrp_currency": "USD"
   }
   ~~~
   {: title="Request" }
 
+  ~~~ json
+  {
+    "uuid": "b0a7e210-ebb5-460d-a75a-6d417899aedb",
+    "restrictions": null,
+    "condition": "new",
+    "distinguishing_attributes": {},
+    "item": {
+      "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520"
+    },
+    "minimum_advertised_price": 40,
+    "msrp": 55.99,
+    "price_tiers": [],
+    "product_images": [],
+    "measurements": {
+      "sku": {
+        "weight": null,
+        "length": null,
+        "width": null,
+        "height": null
+      },
+      "package": {
+        "weight": null,
+        "length": null,
+        "width": null,
+        "height": null
+      }
+    },
+    "product_identifiers": {
+      "upca": null,
+      "ean13": null,
+      "gtin14": null,
+      "isbn": null,
+      "asin": null,
+      "mpn": null
+    },
+    "catalogs": [
+      {
+        "uuid": "962900df-0bd3-447b-9bdd-caff66a14591",
+        "name": "master"
+      }
+    ],
+    "created": "2017-11-07T19:16:46.151007Z",
+    "last_updated": "2017-11-07T19:16:46.151057Z",
+    "sku_id": "RcKrkPpsgC",
+    "quantity_in_stock": 500,
+    "quantity_on_backorder": 100,
+    "number_of_units_bundled": 2,
+    "minimum_advertised_price_currency": "USD",
+    "msrp_currency": "USD"
+  }
+  ~~~
+  {: title="Response" }
 
 ---
-Add already existing SKUs to a Catalog for Retailers to access. This allows you to add SKUs to a Catalog. By providing your catalog_uuid, and a list of sku_uuids with related data, you can successfully add them to the items added previously to the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
+Create a SKU to add to a specified item_uuid.
 
-URL Endpoint: /products/catalogs/<catalog_uuid>/add-skus/
+URL Endpoint: /products/skus/
 
 ### Request Parameters:
 
-sku_uuids
-: (list) The SKU UUIDs list parameter holds a list of sku_uuids to an existing catalog
-
-#### SKU ID Object:
+item
+: (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
 
 sku_id
-: (string) The SKU Identifier for the SKU
+: (string) The SKU Identifier for the SKU as provided by the Supplier
+
+minimum_advertised_price
+: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
+
+msrp
+: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
+
+quantity_in_stock
+: (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
+
+quantity_on_backorder
+: (number) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
+
+number_of_units_bundled
+: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
+
+minimum_advertised_price_currency
+: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
+
+msrp_currency
+: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
+
+### Response Parameters:
+
+uuid
+: (string) The Universal Unique Identifier for the SKU
 
 restrictions
 : (string) The Restrictions imposed on the SKU
@@ -38,6 +122,9 @@ condition
 
 distinguishing_attributes
 : (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
+
+item
+: (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
 
 minimum_advertised_price
 : (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
@@ -56,6 +143,18 @@ measurements
 
 product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
+
+inventory_lists
+: (list) The Inventory Lists list contains all of the Inventory List objects where this SKU currently resides.
+
+created
+: (string) The Created parameter indicates the date the SKU was Created in our system.
+
+last_updated
+: (string) The Last Updated parameter indicates the date the SKU was Last Updated in our system.
+
+sku_id
+: (string) The SKU Identifier for the SKU as provided by the Supplier
 
 quantity_in_stock
 : (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
@@ -88,6 +187,9 @@ shipping_cost_is_estimate
 
 #### Product Image Object:
 
+uuid
+: (string) The Universal Unique Identifier for the SKU Product Image
+
 url
 : (string) The URL for the SKU Product Image
 
@@ -100,30 +202,42 @@ height
 #### SKU Measurements Object:
 
 weight
-: (number) The Weight of the SKU in pounds (lbs.)
+: (number) The Weight of the SKU in the "weight_units"
+
+weight_units
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
 
 length
-: (number) The Length of the SKU in inches
+: (number) The Length of the SKU in "dimension_units"
 
 width
-: (number) The Width of the SKU in inches
+: (number) The Width of the SKU in "dimension_units"
 
 height
-: (number) The Height of the SKU in inches
+: (number) The Height of the SKU in "dimension_units"
+
+dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 #### Package Measurements Object:
 
 weight
-: (number) The Weight of the packaged SKU in pounds (lbs.)
+: (number) The Weight of the packaged SKU in "weight_units"
+
+weight_units
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
 
 length
-: (number) The Length of the packaged SKU in inches
+: (number) The Length of the packaged SKU in "dimension_units"
 
 width
-: (number) The Width of the packaged SKU in inches
+: (number) The Width of the packaged SKU in "dimension_units"
 
 height
-: (number) The Height of the packaged SKU in inches
+: (number) The Height of the packaged SKU in "dimension_units"
+
+dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 #### Product Identifiers Object:
 
@@ -157,25 +271,41 @@ mpn
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/" \
-     -H 'Authorization: Token 825dd305b5858e2373763ff338615db822fe67a0' \
+curl -X "POST" "https:/.cruxconnect.com/products/skus/" \
+     -H 'Authorization: Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "sku_uuids": [
-    "84d075e0-28e2-449c-9292-5cfe6981e922"
-  ]
+  "sku_id": "AWWghwmTNb",
+  "minimum_advertised_price": "40.00",
+  "msrp_currency": "USD",
+  "quantity_in_stock": "500",
+  "quantity_on_backorder": "100",
+  "number_of_units_bundled": "2",
+  "msrp": "55.99",
+  "item": {
+    "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520"
+  },
+  "minimum_advertised_price_currency": "USD"
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/' \
-    'Authorization':'Token 825dd305b5858e2373763ff338615db822fe67a0' \
+http --json POST 'https:/.cruxconnect.com/products/skus/' \
+    'Authorization':'Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
     'Content-Type':'application/json; charset=utf-8' \
-    sku_uuids:="[
-  \"84d075e0-28e2-449c-9292-5cfe6981e922\"
-]"
+    sku_id="AWWghwmTNb" \
+    minimum_advertised_price="40.00" \
+    msrp_currency="USD" \
+    quantity_in_stock="500" \
+    quantity_on_backorder="100" \
+    number_of_units_bundled="2" \
+    msrp="55.99" \
+    item:="{
+  \"uuid\": \"4cc9a5f6-e024-4f48-8775-7ff35543f520\"
+}" \
+    minimum_advertised_price_currency="USD"
 
 ~~~
 {: title="HTTPie" }
@@ -189,19 +319,27 @@ import json
 
 
 def send_request():
-    # Catalog Add SKU - Supplier
-    # POST https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/
+    # Create SKU
+    # POST https:/.cruxconnect.com/products/skus/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/",
+            url="https:/.cruxconnect.com/products/skus/",
             headers={
-                "Authorization": "Token 825dd305b5858e2373763ff338615db822fe67a0",
+                "Authorization": "Token 0102f963bf7c4c4452d46e30645de9182ba0d137",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sku_uuids:="[
-  \"84d075e0-28e2-449c-9292-5cfe6981e922\"
-]")
+            data=json.dumps(    sku_id="AWWghwmTNb" \
+    minimum_advertised_price="40.00" \
+    msrp_currency="USD" \
+    quantity_in_stock="500" \
+    quantity_on_backorder="100" \
+    number_of_units_bundled="2" \
+    msrp="55.99" \
+    item:="{
+  \"uuid\": \"4cc9a5f6-e024-4f48-8775-7ff35543f520\"
+}" \
+    minimum_advertised_price_currency="USD")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -214,7 +352,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Catalog Add SKU - Supplier
+// request Create SKU
 (function(callback) {
     'use strict';
 
@@ -223,9 +361,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/',
+        path: '/products/skus/',
         method: 'POST',
-        headers: {"Authorization":"Token 825dd305b5858e2373763ff338615db822fe67a0","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 0102f963bf7c4c4452d46e30645de9182ba0d137","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -253,7 +391,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_uuids\":[\"84d075e0-28e2-449c-9292-5cfe6981e922\"]}")
+    request.write("{\"item\":{\"uuid\":\"4cc9a5f6-e024-4f48-8775-7ff35543f520\"},\"sku_id\":\"AWWghwmTNb\",\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
     request.end();
 
 

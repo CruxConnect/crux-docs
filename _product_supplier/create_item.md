@@ -1,40 +1,129 @@
 ---
-title: /products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/
-name: Catalog Add Item - Suppplier
-position: 2.05
+title: /products/items/
+name: Create Item
+position: 2.19
 method: post
-description: Add already existing Items to a Catalog
+description: Create Items allows you to create (add) an item in a Supplier account
 right_code: |
   ~~~ json
   {
-    "item_uuids": [
-      "112f26c6-64e5-4814-b06a-24961e8abd21"
-    ]
+    "item_id": "RtfiaeIRXj",
+    "title": "The Item Title - XkuKRGySts",
+    "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
+    "warranty": "The warranty information is included here",
+    "return_policy": "The return policy is included here",
+    "manufacturer": "The Manufacturer",
+    "brand": "The Brand",
+    "country_of_origin": "CN",
+    "shipping_origin_country": "US",
+    "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
+    "fba_certified": false,
+    "custom_attributes": {
+      "Color": "black",
+      "Size": "15\" x 15\" x 18\""
+    }
   }
   ~~~
   {: title="Request" }
 
+  ~~~ json
+  {
+    "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520",
+    "skus": [],
+    "restrict_from_marketplaces": null,
+    "supplier": {
+      "uuid": "9ff4ca63-7a46-4eee-a4fb-859e201460c8",
+      "name": "projectzuul"
+    },
+    "cost_range": {
+      "min": null,
+      "max": null
+    },
+    "minimum_advertised_price_range": {
+      "min": null,
+      "max": null
+    },
+    "msrp_range": {
+      "min": null,
+      "max": null
+    },
+    "product_images": [],
+    "created": "2017-11-07T16:16:55.106356Z",
+    "last_updated": "2017-11-07T16:16:55.106410Z",
+    "item_id": "lWWISBERmJ",
+    "title": "The Item Title - KaiEHTsqXH",
+    "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
+    "warranty": "The warranty information is included here",
+    "return_policy": "The return policy is included here",
+    "manufacturer": "The Manufacturer",
+    "brand": "The Brand",
+    "country_of_origin": "CN",
+    "shipping_origin_country": "US",
+    "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
+    "fba_certified": false,
+    "custom_attributes": {
+      "Color": "black",
+      "Size": "15\" x 15\" x 18\""
+    },
+    "categories": []
+  }
+  ~~~
+  {: title="Response" }
 
 ---
-Add already existing Items to a Catalog for Retailers to access. This allows you to add Items to a Catalog with all associated SKUs. By providing your catalog_uuid and a list of item_ids with related data, you can successfully add them to the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
-
-URL Endpoint: /products/catalogs/<catalog_uuid>/add-items/
+Create Items allows you to create (add) an item in a Supplier account. By providing the required request parameters you may create a new item.
 
 ### Request Parameters:
 
-item_uuids
-: (list) The Item UUIDs list parameter holds item_uuids for all of the items you wish to add to your Catalog
-
-#### Item ID Object:
-
 item_id
 : (string) The Item Identifier is the identifier for the item as provided by the supplier. This is the parent identifier for the child SKU; SKUs are considered children identifiers to the item_id.
+
+title
+: (string) The Item Title is the title for the Item
+
+description
+: (string) The Description for the Item
+
+warranty
+: (string) The Warranty for the Item, if provided/available
+
+return_policy
+: (string) The Return Policy for the Item, if provided/available
+
+manufacturer
+: (string) The Manufacturer for the Item
+
+brand
+: (string) The Brand of the Item
+
+country_of_origin
+: (string) The Country of Origin is the country code of the origin of the Item
+
+shipping_origin_country
+: (string) The Shipping Origin Country is the country code of the shipping origin of the Item. If the item is manufacturered in the USA, but the distributor is in Canada, the Shipping Origin Country is going to have a value of "CA".
+
+other_marketplace_restriction
+: (string) The Other Markeplace Restriction is a string list of markeplaces where the item is prohibited from being sold.
+
+fba_certified
+: (boolean) The Fulfillment By Amazon (FBA) Certified parameter indicates whether this supplier has FBA set up on this Item.
+
+custom_attributes
+: (object) The Custom Attributes object parameter contains any special attributes you would like to include in a key-value pair
+
+### Response Parameters:
+
+uuid
+: (string) Universal Unique Identifier for the Item
 
 skus
 : (list) The Stock Keeping Units (SKUs) list contains individual SKUs, or Item-variants, with their SKU-level data
 
 restrict_from_marketplaces
 : (list) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
+
+supplier
+: (object) The Supplier object contains the uuid for the Supplier and the Supplier name
 
 cost_range
 : (object) The Cost Range object contains the minimum and maximum prices you will pay for the Item, based on the available variants (SKUs).
@@ -47,6 +136,15 @@ msrp_range
 
 product_images
 : (list) The Product Images list stores a list of images for the item, based on the available variants (SKUs)
+
+created
+: (string) The Created parameter is the date when the Item was added to our system.
+
+last_updated
+: (string) The Last Updated parameter is the date when the Item was last updated in our system.
+
+item_id
+: (string) The Item Identifier is the identifier for the item as provided by the supplier. This is the parent identifier for the child SKU; SKUs are considered children identifiers to the item_id.
 
 title
 : (string) The Item Title is the title for the Item
@@ -86,8 +184,8 @@ categories
 
 #### SKU Object:
 
-sku_id
-: (string) The SKU Identifier for the SKU as provided by the Supplier
+uuid
+: (string) The Universal Unique Identifier for the SKU
 
 restrictions
 : (string) The Restrictions imposed on the SKU
@@ -125,6 +223,9 @@ created
 last_updated
 : (string) The Last Updated parameter indicates the date the SKU was Last Updated in our system.
 
+sku_id
+: (string) The SKU Identifier for the SKU as provided by the Supplier
+
 quantity_in_stock
 : (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
 
@@ -139,6 +240,9 @@ minimum_advertised_price_currency
 
 msrp_currency
 : (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
+
+item
+: (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
 
 #### Price Tier Object:
 
@@ -156,6 +260,9 @@ shipping_cost_is_estimate
 
 #### Product Image Object:
 
+uuid
+: (string) The Universal Unique Identifier for the SKU Product Image
+
 url
 : (string) The URL for the SKU Product Image
 
@@ -168,30 +275,42 @@ height
 #### SKU Measurements Object:
 
 weight
-: (number) The Weight of the SKU in pounds (lbs.)
+: (number) The Weight of the SKU in the "weight_units"
+
+weight_units
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
 
 length
-: (number) The Length of the SKU in inches
+: (number) The Length of the SKU in "dimension_units"
 
 width
-: (number) The Width of the SKU in inches
+: (number) The Width of the SKU in "dimension_units"
 
 height
-: (number) The Height of the SKU in inches
+: (number) The Height of the SKU in "dimension_units"
+
+dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 #### Package Measurements Object:
 
 weight
-: (number) The Weight of the packaged SKU in pounds (lbs.)
+: (number) The Weight of the packaged SKU in "weight_units"
+
+weight_units
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
 
 length
-: (number) The Length of the packaged SKU in inches
+: (number) The Length of the packaged SKU in "dimension_units"
 
 width
-: (number) The Width of the packaged SKU in inches
+: (number) The Width of the packaged SKU in "dimension_units"
 
 height
-: (number) The Height of the packaged SKU in inches
+: (number) The Height of the packaged SKU in "dimension_units"
+
+dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 #### Product Identifiers Object:
 
@@ -213,6 +332,22 @@ asin
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
 
+#### Inventory List Object:
+
+uuid
+: (string) The Universal Unique Identifier for the Inventory List
+
+name
+: (string) The Name your company has given to this Inventory List
+
+#### Supplier Object:
+
+uuid
+: (string) The Universal Unique Identifier for the Supplier
+
+name
+: (string) The Supplier Name
+
 #### Cost Range Object:
 
 min
@@ -229,7 +364,7 @@ min
 max
 : (number) The Maximum MAP for one of the SKUs or Item-variants
 
-Manufacturer's Suggested Retail Price (MSRP) Range Object:
+#### Manufacturer's Suggested Retail Price (MSRP) Range Object:
 
 min
 : (number) The Minimum MSRP for one of the SKUs or Item-variants
@@ -263,25 +398,49 @@ height
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/" \
-     -H 'Authorization: Token 825dd305b5858e2373763ff338615db822fe67a0' \
+curl -X "POST" "https:/.cruxconnect.com/products/items/" \
+     -H 'Authorization: Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "item_uuids": [
-    "112f26c6-64e5-4814-b06a-24961e8abd21"
-  ]
+  "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn'"'"'t already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
+  "shipping_origin_country": "US",
+  "country_of_origin": "CN",
+  "item_id": "RtfiaeIRXj",
+  "brand": "The Brand",
+  "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
+  "fba_certified": false,
+  "title": "The Item Title - XkuKRGySts",
+  "custom_attributes": {
+    "Color": "black",
+    "Size": "15\\" x 15\\" x 18\\""
+  },
+  "warranty": "The warranty information is included here",
+  "manufacturer": "The Manufacturer",
+  "return_policy": "The return policy is included here"
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/' \
-    'Authorization':'Token 825dd305b5858e2373763ff338615db822fe67a0' \
+http --json POST 'https:/.cruxconnect.com/products/items/' \
+    'Authorization':'Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
     'Content-Type':'application/json; charset=utf-8' \
-    item_uuids:="[
-  \"112f26c6-64e5-4814-b06a-24961e8abd21\"
-]"
+    description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
+    shipping_origin_country="US" \
+    country_of_origin="CN" \
+    item_id="RtfiaeIRXj" \
+    brand="The Brand" \
+    other_marketplace_restriction="eBay, Amazon, Sears, Walmart" \
+    fba_certified:=false \
+    title="The Item Title - XkuKRGySts" \
+    custom_attributes:="{
+  \"Color\": \"black\",
+  \"Size\": \"15\\\" x 15\\\" x 18\\\"\"
+}" \
+    warranty="The warranty information is included here" \
+    manufacturer="The Manufacturer" \
+    return_policy="The return policy is included here"
 
 ~~~
 {: title="HTTPie" }
@@ -295,19 +454,31 @@ import json
 
 
 def send_request():
-    # Catalog Add Item - Suppplier
-    # POST https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/
+    # Create Item
+    # POST https:/.cruxconnect.com/products/items/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/",
+            url="https:/.cruxconnect.com/products/items/",
             headers={
-                "Authorization": "Token 825dd305b5858e2373763ff338615db822fe67a0",
+                "Authorization": "Token 0102f963bf7c4c4452d46e30645de9182ba0d137",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    item_uuids:="[
-  \"112f26c6-64e5-4814-b06a-24961e8abd21\"
-]")
+            data=json.dumps(    description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
+    shipping_origin_country="US" \
+    country_of_origin="CN" \
+    item_id="RtfiaeIRXj" \
+    brand="The Brand" \
+    other_marketplace_restriction="eBay, Amazon, Sears, Walmart" \
+    fba_certified:=false \
+    title="The Item Title - XkuKRGySts" \
+    custom_attributes:="{
+  \"Color\": \"black\",
+  \"Size\": \"15\\\" x 15\\\" x 18\\\"\"
+}" \
+    warranty="The warranty information is included here" \
+    manufacturer="The Manufacturer" \
+    return_policy="The return policy is included here")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -320,7 +491,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Catalog Add Item - Suppplier
+// request Create Item
 (function(callback) {
     'use strict';
 
@@ -329,9 +500,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/',
+        path: '/products/items/',
         method: 'POST',
-        headers: {"Authorization":"Token 825dd305b5858e2373763ff338615db822fe67a0","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 0102f963bf7c4c4452d46e30645de9182ba0d137","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -359,7 +530,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_uuids\":[\"112f26c6-64e5-4814-b06a-24961e8abd21\"]}")
+    request.write("{\"item_id\":\"RtfiaeIRXj\",\"title\":\"The Item Title - XkuKRGySts\",\"description\":\"This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.\",\"warranty\":\"The warranty information is included here\",\"return_policy\":\"The return policy is included here\",\"manufacturer\":\"The Manufacturer\",\"brand\":\"The Brand\",\"country_of_origin\":\"CN\",\"shipping_origin_country\":\"US\",\"other_marketplace_restriction\":\"eBay, Amazon, Sears, Walmart\",\"fba_certified\":false,\"custom_attributes\":{\"Color\":\"black\",\"Size\":\"15\\\" x 15\\\" x 18\\\"\"}}")
     request.end();
 
 

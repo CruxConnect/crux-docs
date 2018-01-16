@@ -1,9 +1,9 @@
 ---
-title: /products/catalogs/&ltcatalog_uuid&gt/remove-items-by-search/
-name: Catalog Remove Item by Search - Supplier
-position: 2.08
+title: /products/catalogs/&ltcatalog_uuid&gt/add-items-by-search/
+name: Catalog Add Item by Search
+position: 2.07
 method: post
-description: Remove Items from an existing Catalog by Search
+description: Add Items to an existing Catalog by Search
 right_code: |
   ~~~ json
   {
@@ -32,7 +32,7 @@ right_code: |
 
 
 ---
-Remove Items from an existing Catalog by Search. This allows you to Remove Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully remove them from the indicated Catalog.
+Add Items to an existing Catalog by Search. This allows you to add Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully add them to the indicated Catalog.
 
 ### Request Parameters:
 
@@ -63,7 +63,7 @@ pagination
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/" \
+curl -X "POST" "https:/.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -92,7 +92,7 @@ curl -X "POST" "https:/.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/' \
+http --json POST 'https:/.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
@@ -127,12 +127,12 @@ import json
 
 
 def send_request():
-    # Catalog Remove Item by Search - Supplier
-    # POST https:/.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/
+    # Catalog Add Item by Search
+    # POST https:/.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/",
+            url="https:/.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -168,7 +168,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Catalog Remove Item by Search - Supplier
+// request Catalog Add Item by Search
 (function(callback) {
     'use strict';
 
@@ -177,7 +177,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/',
+        path: '/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

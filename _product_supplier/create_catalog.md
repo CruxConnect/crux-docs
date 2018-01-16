@@ -1,6 +1,6 @@
 ---
 title: /products/catalogs/
-name: Create Catalog - Supplier
+name: Create Catalog
 position: 2.02
 method: post
 description: Create a Catalog
@@ -120,7 +120,7 @@ import json
 
 
 def send_request():
-    # Create Catalog - Supplier
+    # Create Catalog
     # POST https:/.cruxconnect.com/products/catalogs/
 
     try:
@@ -144,7 +144,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Create Catalog - Supplier
+// request Create Catalog
 (function(callback) {
     'use strict';
 
