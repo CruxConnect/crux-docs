@@ -1,60 +1,27 @@
 ---
-title: /products/inventory-lists/&ltinventory_list_uuid&gt/
-name: Get Inventory List Detail - Retailer
-position: 2.10
-method: get
-description: Get the Details of a particular Inventory List you have access to
+title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
+name: Inventory Add SKU
+position: 2.12
+method: post
+description: Add SKUs to an existing Inventory List for your account
 right_code: |
   ~~~ json
   {
-    "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",
-    "retailer": {
-      "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
-    },
-    "skus": [
-      {
-        "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc"
-      },
-      {
-        "uuid": "12009d4d-6206-4811-9934-10e6016769e8"
-      },
-      {
-        "uuid": "1ba7a1e7-0eb3-46ae-875f-67d65caa94fa"
-      }
-    ],
-    "created": "2017-10-23T18:28:19.509589Z",
-    "last_updated": "2017-10-23T18:28:19.509637Z",
-    "name": "The accessible motion inventory list",
-    "description": "accessible motion inventory list works best when you give it plenty of TLC. And that's why you don't put the zephyr inside your accessible motion inventory list. It doesn't work that way. All your wildest dreams would come true. Oh, no you don't!  Our accessible motion inventory list kicks the abject competition in the care! Be the hero. Be the kind of person your mother wanted you to me. Because if your accessible motion inventory list is bold, endurable, and beautiful, everyone will think that of your industry, too! Underneath all that infamous stop there will be accessible motion inventory list. Watching. Waiting. Wanting. Wishing. Wondering. Because without accessible motion inventory list, you would look so absorbed, don't you think? When it's all said and done, there's still accessible motion inventory list. Still. Because we care about how your accessible motion inventory list looks! You know you want it."
+    "sku_uuids": [
+      "9060814c-9feb-4a3e-958c-cb26d537cffc",
+      "12009d4d-6206-4811-9934-10e6016769e8"
+    ]
   }
   ~~~
-  {: title="Response" }
+  {: title="Request" }
 
 ---
-Get the Details of a particular Inventory List you have access to.
+Add SKUs to an existing Inventory List for your account. This allows you to add SKUs to an Inventory List. By providing your inventory_list_uuid and a list of sku_uuids, you can successfully add them to the indicated Inventory List.
 
-### Response Parameters:
+### Request Parameters:
 
-uuid
-: (string) Universal Unique Identifier for the Inventory List
-
-retailer
-: (object) The Retailer object contains a single retailer_uuid.
-
-skus
-: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
-
-created
-: (string) The Created parameter is the date the Catalog was Created.
-
-last_updated
-: (string) The Last Updated parameter is the date the Catalog was Last Updated.
-
-name
-: (string) The Name the supplier has designated for this Inventory List
-
-description
-: (string) The Description the supplier has provided for this Inventory List
+sku_uuids
+: (list) The SKU UUIDs list parameter holds sku_uuids for all of the SKUs you wish to add to your Inventory List
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -63,24 +30,32 @@ description
 | 401  | Unauthorized           | Generally, the username or password is incorrect                             |
 | 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
 | 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
+| 405  | Method Not Allowed     | Generally, the HTTP verb does not match the intended API call                |
 | 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
 
 
 ~~~ bash
-curl "https:/.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/" \
+curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{}'
+     -d $'{
+  "sku_uuids": [
+    "9060814c-9feb-4a3e-958c-cb26d537cffc",
+    "12009d4d-6206-4811-9934-10e6016769e8"
+  ]
+}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https:/.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/' \
+http --json POST 'https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8'
-
+    'Content-Type':'application/json; charset=utf-8' \
+    sku_uuids:="[
+  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
+  \"12009d4d-6206-4811-9934-10e6016769e8\"
+]"
 
 ~~~
 {: title="HTTPie" }
@@ -94,17 +69,20 @@ import json
 
 
 def send_request():
-    # Get Inventory List Detail - Retailer
-    # GET https:/.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/
+    # Inventory Add SKU
+    # POST https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/
 
     try:
-        response = requests.get(
-            url="https:/.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/",
+        response = requests.post(
+            url="https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps()
+            data=json.dumps(    sku_uuids:="[
+  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
+  \"12009d4d-6206-4811-9934-10e6016769e8\"
+]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -117,7 +95,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Inventory List Detail - Retailer
+// request Inventory Add SKU
 (function(callback) {
     'use strict';
 
@@ -126,8 +104,8 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/',
-        method: 'GET',
+        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/',
+        method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
@@ -156,7 +134,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{}")
+    request.write("{\"sku_uuids\":[\"9060814c-9feb-4a3e-958c-cb26d537cffc\",\"12009d4d-6206-4811-9934-10e6016769e8\"]}")
     request.end();
 
 

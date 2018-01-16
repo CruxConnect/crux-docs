@@ -1,6 +1,6 @@
 ---
 title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-items-by-search/
-name: Inventory Add Item by Search - Retailer
+name: Inventory Add Item by Search
 position: 2.16
 method: post
 description: Add Items to an existing Inventory List by Search
@@ -127,7 +127,7 @@ import json
 
 
 def send_request():
-    # Inventory Add Item by Search - Retailer
+    # Inventory Add Item by Search
     # POST https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/
 
     try:
@@ -168,7 +168,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Inventory Add Item by Search - Retailer
+// request Inventory Add Item by Search
 (function(callback) {
     'use strict';
 

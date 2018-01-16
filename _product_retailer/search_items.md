@@ -1,6 +1,6 @@
 ---
 title: /products/items/search/
-name: Search Items - Retailer
+name: Search Items
 position: 2.25
 method: post
 description: Search for Items in the catalogs available to your organization
@@ -877,7 +877,7 @@ import json
 
 
 def send_request():
-    # Search Items - Retailer
+    # Search Items
     # POST https:/.cruxconnect.com/products/items/search/
 
     try:
@@ -928,7 +928,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Search Items - Retailer
+// request Search Items
 (function(callback) {
     'use strict';
 

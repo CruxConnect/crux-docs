@@ -1,27 +1,44 @@
 ---
-title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
-name: Inventory Add SKU - Retailer
-position: 2.12
+title: /products/items/search/export/
+name: Get Item Export by Search
+position: 2.22
 method: post
-description: Add SKUs to an existing Inventory List for your account
+description: Get Item List allows you to return a complete list of items you are interested in.
 right_code: |
   ~~~ json
   {
-    "sku_uuids": [
-      "9060814c-9feb-4a3e-958c-cb26d537cffc",
-      "12009d4d-6206-4811-9934-10e6016769e8"
+    "item_uuids": [
+      "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
+      "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
     ]
   }
   ~~~
   {: title="Request" }
 
+  ~~~ json
+  {
+    "export": {
+      "uuid": "99f15ad9-d8ac-4f07-8eff-94640d807618"
+    }
+  }
+  ~~~
+  {: title="Response" }
+
 ---
-Add SKUs to an existing Inventory List for your account. This allows you to add SKUs to an Inventory List. By providing your inventory_list_uuid and a list of sku_uuids, you can successfully add them to the indicated Inventory List.
+Get Item List allows you to return a complete list of items you are interested in.
 
 ### Request Parameters:
 
-sku_uuids
-: (list) The SKU UUIDs list parameter holds sku_uuids for all of the SKUs you wish to add to your Inventory List
+item_uuids
+: (list) The Item UUIDs parameter provides a list of item_uuids to be exported
+
+### Response Parameters:
+
+export
+: (object) The export object contains a single key and value pair of uuid and it's value
+
+uuid
+: (string) The Universal Unique Identifier for the Export. Note: In the case of no results in the search the key "uuid" and it's accompanying value will not be displayed at all. (e.g. {"export": {}})
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -30,18 +47,18 @@ sku_uuids
 | 401  | Unauthorized           | Generally, the username or password is incorrect                             |
 | 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
 | 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb does not match the intended API call                |
+| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
 | 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/" \
+curl -X "POST" "https:/.cruxconnect.com/products/items/search/export/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "sku_uuids": [
-    "9060814c-9feb-4a3e-958c-cb26d537cffc",
-    "12009d4d-6206-4811-9934-10e6016769e8"
+  "item_uuids": [
+    "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
+    "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
   ]
 }'
 
@@ -49,12 +66,12 @@ curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/' \
+http --json POST 'https:/.cruxconnect.com/products/items/search/export/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
-    sku_uuids:="[
-  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
-  \"12009d4d-6206-4811-9934-10e6016769e8\"
+    item_uuids:="[
+  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
+  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
 ]"
 
 ~~~
@@ -69,19 +86,19 @@ import json
 
 
 def send_request():
-    # Inventory Add SKU - Retailer
-    # POST https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/
+    # Get Item Export by Search
+    # POST https:/.cruxconnect.com/products/items/search/export/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/",
+            url="https:/.cruxconnect.com/products/items/search/export/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sku_uuids:="[
-  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
-  \"12009d4d-6206-4811-9934-10e6016769e8\"
+            data=json.dumps(    item_uuids:="[
+  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
+  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -95,7 +112,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Inventory Add SKU - Retailer
+// request Get Item Export by Search
 (function(callback) {
     'use strict';
 
@@ -104,7 +121,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/',
+        path: '/products/items/search/export/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
@@ -134,7 +151,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_uuids\":[\"9060814c-9feb-4a3e-958c-cb26d537cffc\",\"12009d4d-6206-4811-9934-10e6016769e8\"]}")
+    request.write("{\"item_uuids\":[\"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",\"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"]}")
     request.end();
 
 

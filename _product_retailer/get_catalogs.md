@@ -1,6 +1,6 @@
 ---
 title: /products/catalogs/
-name: Get Catalogs - Retailer
+name: Get Catalogs
 position: 2.00
 method: get
 description: Get the Catalogs you have access to
@@ -168,7 +168,7 @@ import json
 
 
 def send_request():
-    # Get Catalog List - Retailer
+    # Get Catalog List
     # GET https:/.cruxconnect.com/products/catalogs/
 
     try:
@@ -191,7 +191,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Catalog List - Retailer
+// request Get Catalog List
 (function(callback) {
     'use strict';
 

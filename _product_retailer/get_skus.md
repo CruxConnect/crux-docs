@@ -1,6 +1,6 @@
 ---
 title: /products/skus/
-name: Get SKUs - Retailer
+name: Get SKUs
 position: 2.23
 method: get
 description: Get SKUs allows you to return a complete list of SKUs you are interested in.
@@ -544,7 +544,7 @@ import json
 
 
 def send_request():
-    # Get SKU List - Retailer
+    # Get SKU List
     # GET https:/.cruxconnect.com/products/skus/
 
     try:
@@ -567,7 +567,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get SKU List - Retailer
+// request Get SKU List
 (function(callback) {
     'use strict';
 

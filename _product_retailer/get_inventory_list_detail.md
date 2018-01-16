@@ -1,28 +1,60 @@
 ---
-title: /products/inventory-lists/&ltinventory_list_uuid&gt/remove-items/
-name: Inventory Remove Item - Retailer
-position: 2.15
-method: post
-description: Remove Items from an existing Inventory List for your account
+title: /products/inventory-lists/&ltinventory_list_uuid&gt/
+name: Get Inventory List Detail
+position: 2.10
+method: get
+description: Get the Details of a particular Inventory List you have access to
 right_code: |
   ~~~ json
   {
-    "item_uuids": [
-      "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
-      "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
-    ]
+    "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",
+    "retailer": {
+      "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
+    },
+    "skus": [
+      {
+        "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc"
+      },
+      {
+        "uuid": "12009d4d-6206-4811-9934-10e6016769e8"
+      },
+      {
+        "uuid": "1ba7a1e7-0eb3-46ae-875f-67d65caa94fa"
+      }
+    ],
+    "created": "2017-10-23T18:28:19.509589Z",
+    "last_updated": "2017-10-23T18:28:19.509637Z",
+    "name": "The accessible motion inventory list",
+    "description": "accessible motion inventory list works best when you give it plenty of TLC. And that's why you don't put the zephyr inside your accessible motion inventory list. It doesn't work that way. All your wildest dreams would come true. Oh, no you don't!  Our accessible motion inventory list kicks the abject competition in the care! Be the hero. Be the kind of person your mother wanted you to me. Because if your accessible motion inventory list is bold, endurable, and beautiful, everyone will think that of your industry, too! Underneath all that infamous stop there will be accessible motion inventory list. Watching. Waiting. Wanting. Wishing. Wondering. Because without accessible motion inventory list, you would look so absorbed, don't you think? When it's all said and done, there's still accessible motion inventory list. Still. Because we care about how your accessible motion inventory list looks! You know you want it."
   }
   ~~~
-  {: title="Request" }
-
+  {: title="Response" }
 
 ---
-Remove Items from an existing Inventory List for your account. This allows you to remove Items with all associated SKUs from an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully remove them from the indicated Inventory List.
+Get the Details of a particular Inventory List you have access to.
 
-### Request Parameters:
+### Response Parameters:
 
-item_uuids
-: (list) The Items list parameter holds item_uuids for all of the items you wish to add to your Inventory List
+uuid
+: (string) Universal Unique Identifier for the Inventory List
+
+retailer
+: (object) The Retailer object contains a single retailer_uuid.
+
+skus
+: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
+
+created
+: (string) The Created parameter is the date the Catalog was Created.
+
+last_updated
+: (string) The Last Updated parameter is the date the Catalog was Last Updated.
+
+name
+: (string) The Name the supplier has designated for this Inventory List
+
+description
+: (string) The Description the supplier has provided for this Inventory List
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -36,27 +68,19 @@ item_uuids
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/" \
+curl "https:/.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "item_uuids": [
-    "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
-    "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
-  ]
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/' \
+http --json GET 'https:/.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8' \
-    item_uuids:="[
-  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
-  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
-]"
+    'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -70,20 +94,17 @@ import json
 
 
 def send_request():
-    # Inventory Remove Item - Retailer
-    # POST https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/
+    # Get Inventory List Detail
+    # GET https:/.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/
 
     try:
-        response = requests.post(
-            url="https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/",
+        response = requests.get(
+            url="https:/.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    item_uuids:="[
-  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
-  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
-]")
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -96,7 +117,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Inventory Remove Item - Retailer
+// request Get Inventory List Detail
 (function(callback) {
     'use strict';
 
@@ -105,8 +126,8 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/',
-        method: 'POST',
+        path: '/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/',
+        method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
@@ -135,7 +156,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_uuids\":[\"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",\"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"]}")
+    request.write("{}")
     request.end();
 
 

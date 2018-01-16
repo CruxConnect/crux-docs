@@ -1,6 +1,6 @@
 ---
 title: /products/inventory-lists/
-name: Get Inventory Lists - Retailer
+name: Get Inventory Lists
 position: 2.09
 method: get
 description: Get the Inventory Lists for your account
@@ -138,7 +138,7 @@ import json
 
 
 def send_request():
-    # Get List of Inventory Lists - Retailer
+    # Get List of Inventory Lists
     # GET https:/.cruxconnect.com/products/inventory-lists/
 
     try:
@@ -161,7 +161,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get List of Inventory Lists - Retailer
+// request Get List of Inventory Lists
 (function(callback) {
     'use strict';
 

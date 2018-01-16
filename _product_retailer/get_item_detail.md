@@ -1,6 +1,6 @@
 ---
 title: /products/items/&ltitem_uuid&gt/
-name: Get Item Detail - Retailer
+name: Get Item Detail
 position: 2.20
 method: get
 description: Get Details about an Item and the SKUs associated to it.
@@ -562,7 +562,7 @@ import json
 
 
 def send_request():
-    # Get Item Detail - Retailer
+    # Get Item Detail
     # GET https:/.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/
 
     try:
@@ -585,7 +585,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Item Detail - Retailer
+// request Get Item Detail
 (function(callback) {
     'use strict';
 

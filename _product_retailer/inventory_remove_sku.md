@@ -1,75 +1,28 @@
 ---
-title: /products/inventory-lists/
-name: Create Inventory List - Retailer
-position: 2.11
+title: /products/inventory-lists/&ltinventory_list_uuid&gt/remove-skus/
+name: Inventory Remove SKU
+position: 2.13
 method: post
-description: Create an Inventory List for your account
+description: Remove SKUs from an existing Inventory List for your account
 right_code: |
   ~~~ json
   {
-    "name": "New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS",
-    "description": "The Description for the New Test Inventory List Name"
+    "sku_uuids": [
+      "9060814c-9feb-4a3e-958c-cb26d537cffc",
+      "12009d4d-6206-4811-9934-10e6016769e8"
+    ]
   }
   ~~~
   {: title="Request" }
 
-  ~~~ json
-  {
-    "uuid": "c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18",
-    "retailer": {
-      "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
-    },
-    "skus": [],
-    "created": "2017-11-02T17:07:25.823165Z",
-    "last_updated": "2017-11-02T17:07:25.823217Z",
-    "name": "New Test Inventory List Name",
-    "description": "The Description for the New Test Inventory List Name"
-  }
-  ~~~
-  {: title="Response" }
 
 ---
-Create an Inventory Lists for your account. This Inventory List eventually will hold all of the SKUs you would like grouped together, at your discretion. To add SKUs to an Inventory List see "Add SKUs" and similarly, to add items to an Inventory List see "Add Items". To Create this Inventory list simply provide your authenticiation token you received at login, with the name and description parameters filled out.
+Remove SKUs from an existing Inventory List for your account. This allows you to remove SKUs from an Inventory List. By providing your inventory_list_uuid and a list of sku_uuids, you can successfully remove them from the indicated Inventory List.
 
 ### Request Parameters:
 
-name
-: (string) The Name of the new Inventory List
-
-description
-: (string) The Description for the Inventory List
-
-### Response Parameters:
-
-uuid
-: (string) Universal Unique Identifier for the Inventory List
-
-retailer
-: (object) The Retailer object contains a single retailer_uuid.
-
-supplier
-: (object) The Supplier object contains a supplier_uuid
-
 skus
-: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each. This is empty when you create the list
-
-num_skus
-: (number) The total Number of SKUs per the Catalog
-
-default_shipping_cost
-: (number) The Default Shipping Cost parameter contains a Shipping Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable ship cost per the SKUs or a more sophisticated Shipping strategy.
-
-created
-: (string) The Created parameter is the date the Catalog was Created.
-
-last_updated
-: (string) The Last Updated parameter is the date the Catalog was Last Updated.
-
-name
-: (string) The Name the supplier has designated for this Catalog
-
-description
-: (string) The Description the supplier has provided for this Catalog
+: (list) The SKUs list parameter holds sku_uuids for all of the SKUs you wish to add to your Inventory List
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -78,28 +31,32 @@ description
 | 401  | Unauthorized           | Generally, the username or password is incorrect                             |
 | 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
 | 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
+| 405  | Method Not Allowed     | Generally, the HTTP verb does not match the intended API call                |
 | 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/" \
+curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "name": "New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS",
-  "description": "The Description for the New Test Inventory List Name"
+  "sku_uuids": [
+    "9060814c-9feb-4a3e-958c-cb26d537cffc",
+    "12009d4d-6206-4811-9934-10e6016769e8"
+  ]
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/inventory-lists/' \
+http --json POST 'https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
-    name="New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS" \
-    description="The Description for the New Test Inventory List Name"
+    sku_uuids:="[
+  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
+  \"12009d4d-6206-4811-9934-10e6016769e8\"
+]"
 
 ~~~
 {: title="HTTPie" }
@@ -113,18 +70,20 @@ import json
 
 
 def send_request():
-    # Create Inventory List - Retailer
-    # POST https:/.cruxconnect.com/products/inventory-lists/
+    # Inventory Remove SKU
+    # POST https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/products/inventory-lists/",
+            url="https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    name="New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS" \
-    description="The Description for the New Test Inventory List Name")
+            data=json.dumps(    sku_uuids:="[
+  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
+  \"12009d4d-6206-4811-9934-10e6016769e8\"
+]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -137,7 +96,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Create Inventory List - Retailer
+// request Inventory Remove SKU
 (function(callback) {
     'use strict';
 
@@ -146,7 +105,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/',
+        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
@@ -176,7 +135,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"name\":\"New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS\",\"description\":\"The Description for the New Test Inventory List Name\"}")
+    request.write("{\"sku_uuids\":[\"9060814c-9feb-4a3e-958c-cb26d537cffc\",\"12009d4d-6206-4811-9934-10e6016769e8\"]}")
     request.end();
 
 

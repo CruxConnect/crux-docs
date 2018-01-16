@@ -1,6 +1,6 @@
 ---
 title: /products/items/
-name: Get Items - Retailer
+name: Get Items
 position: 2.18
 method: get
 description: Get Items allows you to return a complete list of items you are interested in.
@@ -896,7 +896,7 @@ import json
 
 
 def send_request():
-    # Get Item List - Retailer
+    # Get Item List
     # GET https:/.cruxconnect.com/products/items/
 
     try:
@@ -919,7 +919,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Item List - Retailer
+// request Get Item List
 (function(callback) {
     'use strict';
 

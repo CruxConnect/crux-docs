@@ -1,9 +1,9 @@
 ---
-title: /products/items/search/export/
-name: Get Item Export by Search - Retailer
-position: 2.22
+title: /products/inventory-lists/&ltinventory_list_uuid&gt/remove-items/
+name: Inventory Remove Item
+position: 2.15
 method: post
-description: Get Item List allows you to return a complete list of items you are interested in.
+description: Remove Items from an existing Inventory List for your account
 right_code: |
   ~~~ json
   {
@@ -15,30 +15,14 @@ right_code: |
   ~~~
   {: title="Request" }
 
-  ~~~ json
-  {
-    "export": {
-      "uuid": "99f15ad9-d8ac-4f07-8eff-94640d807618"
-    }
-  }
-  ~~~
-  {: title="Response" }
 
 ---
-Get Item List allows you to return a complete list of items you are interested in.
+Remove Items from an existing Inventory List for your account. This allows you to remove Items with all associated SKUs from an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully remove them from the indicated Inventory List.
 
 ### Request Parameters:
 
 item_uuids
-: (list) The Item UUIDs parameter provides a list of item_uuids to be exported
-
-### Response Parameters:
-
-export
-: (object) The export object contains a single key and value pair of uuid and it's value
-
-uuid
-: (string) The Universal Unique Identifier for the Export. Note: In the case of no results in the search the key "uuid" and it's accompanying value will not be displayed at all. (e.g. {"export": {}})
+: (list) The Items list parameter holds item_uuids for all of the items you wish to add to your Inventory List
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -52,7 +36,7 @@ uuid
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/items/search/export/" \
+curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -66,7 +50,7 @@ curl -X "POST" "https:/.cruxconnect.com/products/items/search/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/items/search/export/' \
+http --json POST 'https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
@@ -86,12 +70,12 @@ import json
 
 
 def send_request():
-    # Get Item Export by Search - Retailer
-    # POST https:/.cruxconnect.com/products/items/search/export/
+    # Inventory Remove Item
+    # POST https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/products/items/search/export/",
+            url="https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -112,7 +96,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Item Export by Search - Retailer
+// request Inventory Remove Item
 (function(callback) {
     'use strict';
 
@@ -121,7 +105,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/products/items/search/export/',
+        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

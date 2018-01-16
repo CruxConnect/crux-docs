@@ -1,9 +1,9 @@
 # ----
 # Site
 
-title: Thanos Docs
-description: API documentation for project codenamed thanos
-url: https://example.com
+title: CRUX Docs
+description: API documentation for CRUXconnect
+url: https://api.cruxconnect.com
 google_analytics_key:
 permalink: pretty
 baseurl:
@@ -24,8 +24,12 @@ collections:
     title: Accounting
     position: 4
     type: api
-  product:
-    title: Product
+  product_retailer:
+    title: Product for Retailers
+    position: 5
+    type: api
+  product_supplier:
+    title: Product for Supplier 
     position: 5
     type: api
   ordering:

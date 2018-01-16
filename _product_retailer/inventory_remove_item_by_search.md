@@ -1,6 +1,6 @@
 ---
 title: /products/inventory-lists/&ltinventory_list_uuid&gt/remove-items-by-search/
-name: Inventory Remove Item by Search - Retailer
+name: Inventory Remove Item by Search
 position: 2.17
 method: post
 description: Remove Items from an existing Inventory List by Search
@@ -127,7 +127,7 @@ import json
 
 
 def send_request():
-    # Inventory Remove Item by Search - Retailer
+    # Inventory Remove Item by Search
     # POST https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items-by-search/
 
     try:
@@ -168,7 +168,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Inventory Remove Item by Search - Retailer
+// request Inventory Remove Item by Search
 (function(callback) {
     'use strict';
 
