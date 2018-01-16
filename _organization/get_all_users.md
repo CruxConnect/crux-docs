@@ -181,10 +181,7 @@ description
 curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "username": "mrbailey@projectthanos.com",
-  "password": "thanosrocks"
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
@@ -192,9 +189,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/all/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8' \
-    username="mrbailey@projectthanos.com" \
-    password="thanosrocks"
+    'Content-Type':'application/json; charset=utf-8'
 
 ~~~
 {: title="HTTPie" }
@@ -218,8 +213,7 @@ def send_request():
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    username="mrbailey@projectthanos.com" \
-    password="thanosrocks")
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -271,7 +265,6 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"username\":\"mrbailey@projectthanos.com\",\"password\":\"thanosrocks\"}")
     request.end();
 
 

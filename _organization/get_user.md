@@ -134,10 +134,7 @@ description
 curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: text/plain; charset=utf-8' \
-     -d $'{
-  "username": "jweir@projectthanos.com",
-  "password": "thanosrocks"
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
@@ -146,10 +143,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/3a7acb28-ab
 http --form GET 'https://api-sandbox.cruxconnect.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'text/plain; charset=utf-8' \
-    'data'=$'{
-  \"username\": \"jweir@projectthanos.com\",
-  \"password\": \"thanosrocks\"
-}'
+    'data'=$'{}'
 
 ~~~
 {: title="HTTPie" }
@@ -223,7 +217,6 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\n  \"username\": \"jweir@projectthanos.com\",\n  \"password\": \"thanosrocks\"\n}")
     request.end();
 
 
