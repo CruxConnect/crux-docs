@@ -178,11 +178,11 @@ description
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/organizations/users/all/" \
+curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "username": "jweir@projectthanos.com",
+  "username": "mrbailey@projectthanos.com",
   "password": "thanosrocks"
 }'
 
@@ -190,10 +190,10 @@ curl "https://stable.projectthanos.com/organizations/users/all/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/organizations/users/all/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/all/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
-    username="jweir@projectthanos.com" \
+    username="mrbailey@projectthanos.com" \
     password="thanosrocks"
 
 ~~~
@@ -209,16 +209,16 @@ import json
 
 def send_request():
     # Get All Users
-    # GET https://stable.projectthanos.com/organizations/users/all/
+    # GET https://api-sandbox.cruxconnect.com/organizations/users/all/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/organizations/users/all/",
+            url="https://api-sandbox.cruxconnect.com/organizations/users/all/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    username="jweir@projectthanos.com" \
+            data=json.dumps(    username="mrbailey@projectthanos.com" \
     password="thanosrocks")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -239,7 +239,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/organizations/users/all/',
         method: 'GET',
@@ -271,7 +271,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"username\":\"jweir@projectthanos.com\",\"password\":\"thanosrocks\"}")
+    request.write("{\"username\":\"mrbailey@projectthanos.com\",\"password\":\"thanosrocks\"}")
     request.end();
 
 

@@ -87,7 +87,7 @@ default_shipping_cost_currency
 
 
 ~~~ bash
-curl "https:/.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/" \
+curl "https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -96,7 +96,7 @@ curl "https:/.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https:/.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -114,11 +114,11 @@ import json
 
 def send_request():
     # Get Catalog Detail
-    # GET https:/.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/
+    # GET https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/
 
     try:
         response = requests.get(
-            url="https:/.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -143,7 +143,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/',
         method: 'GET',

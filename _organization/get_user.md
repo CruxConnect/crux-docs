@@ -131,7 +131,7 @@ description
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/" \
+curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: text/plain; charset=utf-8' \
      -d $'{
@@ -143,7 +143,7 @@ curl "https://stable.projectthanos.com/organizations/users/detail/3a7acb28-ab13-
 {: title="Curl" }
 
 ~~~ bash
-http --form GET 'https://stable.projectthanos.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/' \
+http --form GET 'https://api-sandbox.cruxconnect.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'text/plain; charset=utf-8' \
     'data'=$'{
@@ -163,11 +163,11 @@ import requests
 
 def send_request():
     # Get User
-    # GET https://stable.projectthanos.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/
+    # GET https://api-sandbox.cruxconnect.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/",
+            url="https://api-sandbox.cruxconnect.com/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "text/plain; charset=utf-8",
@@ -191,7 +191,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/organizations/users/detail/3a7acb28-ab13-437e-8c35-46cf4f0bea49/',
         method: 'GET',

@@ -271,7 +271,7 @@ mpn
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/skus/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
      -H 'Authorization: Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -292,7 +292,7 @@ curl -X "POST" "https:/.cruxconnect.com/products/skus/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/skus/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
     'Authorization':'Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_id="AWWghwmTNb" \
@@ -320,11 +320,11 @@ import json
 
 def send_request():
     # Create SKU
-    # POST https:/.cruxconnect.com/products/skus/
+    # POST https://api-sandbox.cruxconnect.com/products/skus/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/products/skus/",
+            url="https://api-sandbox.cruxconnect.com/products/skus/",
             headers={
                 "Authorization": "Token 0102f963bf7c4c4452d46e30645de9182ba0d137",
                 "Content-Type": "application/json; charset=utf-8",
@@ -359,7 +359,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/skus/',
         method: 'POST',

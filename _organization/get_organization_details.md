@@ -78,14 +78,14 @@ org_user
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/organizations/" \
+curl "https://api-sandbox.cruxconnect.com/organizations/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://stable.projectthanos.com/organizations/' \
+http GET 'https://api-sandbox.cruxconnect.com/organizations/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
@@ -100,11 +100,11 @@ import requests
 
 def send_request():
     # Get Organization Details
-    # GET https://stable.projectthanos.com/organizations/
+    # GET https://api-sandbox.cruxconnect.com/organizations/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/organizations/",
+            url="https://api-sandbox.cruxconnect.com/organizations/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
             },
@@ -127,7 +127,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/organizations/',
         method: 'GET',

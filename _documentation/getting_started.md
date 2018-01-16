@@ -1,16 +1,21 @@
 ---
 title: Getting Started with CRUX
 position: 1
+right_code: |
+  ~~~ bash
+  https://api-sandbox.cruxconnect.com
+  ~~~
+  {: title="Sandbox" }
+
+  ~~~ bash
+  https://api.cruxconnect.com
+  ~~~
+  {: title="Production" }
 ---
 
 Welcome to the CRUX API.
 
 This API document is designed for those interested in developing an application with the CRUXconnect platform.
-
-| Environment | URL                                 |
-|-------------|-------------------------------------|
-| Sandbox     | https://api-sandbox.cruxconnect.com |
-| Production  | https://api.cruxconnect.com         |
 
 We encourage new users to take advantage of the Sandbox access. Familiarize yourself with the various methods available and how to work with the responses. This allows you and your company to send plenty of API calls in a "sandboxed" environment outside of our production environment. Even after implementing integration in the Production environment, you may decide to revisit the methods available to optimize your code and application of our API methods. Although we're optimistic that you'll always do things the right way the first time, we're aware that there are occasions where testing produces unintended results. For this reason, we encourage that you use the sandbox to keep potentially dangerous testing "sandboxed."
 

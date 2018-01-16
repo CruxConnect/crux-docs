@@ -281,7 +281,7 @@ name
 
 
 ~~~ bash
-curl "https:/.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/" \
+curl "https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -290,7 +290,7 @@ curl "https:/.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https:/.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -307,11 +307,11 @@ import json
 
 def send_request():
     # Get Sku Detail
-    # GET https:/.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/
+    # GET https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/
 
     try:
         response = requests.get(
-            url="https:/.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/",
+            url="https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -336,7 +336,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/',
         method: 'GET',

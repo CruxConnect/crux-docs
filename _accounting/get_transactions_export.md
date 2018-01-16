@@ -42,7 +42,7 @@ transaction_id
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/accounting/transactions/export/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/accounting/transactions/export/" \
      -H 'Authorization: Token f97322af7ca5a5dacc73a6eae3e90dc975391fda' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -51,7 +51,7 @@ curl -X "POST" "https:/.cruxconnect.com/accounting/transactions/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/accounting/transactions/export/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/accounting/transactions/export/' \
     'Authorization':'Token f97322af7ca5a5dacc73a6eae3e90dc975391fda' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -69,11 +69,11 @@ import json
 
 def send_request():
     # Get Billing Transactions Export
-    # POST https:/.cruxconnect.com/accounting/transactions/export/
+    # POST https://api-sandbox.cruxconnect.com/accounting/transactions/export/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/accounting/transactions/export/",
+            url="https://api-sandbox.cruxconnect.com/accounting/transactions/export/",
             headers={
                 "Authorization": "Token f97322af7ca5a5dacc73a6eae3e90dc975391fda",
                 "Content-Type": "application/json; charset=utf-8",
@@ -98,7 +98,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/accounting/transactions/export/',
         method: 'POST',

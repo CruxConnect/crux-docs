@@ -29,7 +29,7 @@ email
 
 
 ~~~ bash
-curl "https:/.cruxconnect.com/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP" \
+curl "https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: text/plain; charset=utf-8' \
      -d $'{
@@ -40,7 +40,7 @@ curl "https:/.cruxconnect.com/organizations/complete-password/?token=G7TwCq1Vkds
 {: title="Curl" }
 
 ~~~ bash
-http --form GET 'https:/.cruxconnect.com/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP' \
+http --form GET 'https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'text/plain; charset=utf-8' \
     'data'=$'{
@@ -59,11 +59,11 @@ import requests
 
 def send_request():
     # Validate Password Reset
-    # GET https:/.cruxconnect.com/organizations/complete-password/
+    # GET https://api-sandbox.cruxconnect.com/organizations/complete-password/
 
     try:
         response = requests.get(
-            url="https:/.cruxconnect.com/organizations/complete-password/",
+            url="https://api-sandbox.cruxconnect.com/organizations/complete-password/",
             params={
                 "token": "G7TwCq1Vkds0DLYnfAuP",
             },
@@ -90,7 +90,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP',
         method: 'GET',

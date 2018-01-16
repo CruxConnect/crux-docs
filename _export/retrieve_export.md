@@ -32,7 +32,7 @@ uuid
 
 
 ~~~ bash
-curl "https:/.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/" \
+curl "https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -42,7 +42,7 @@ curl "https:/.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/"
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https:/.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -60,11 +60,11 @@ import json
 
 def send_request():
     # INCOMPLETE - Retrieve Export
-    # GET https:/.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/
+    # GET https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/
 
     try:
         response = requests.get(
-            url="https:/.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/",
+            url="https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -88,7 +88,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/data/export/232497cc-95eb-4ffd-a084-edea0c413267/',
         method: 'GET',

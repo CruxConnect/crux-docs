@@ -56,14 +56,14 @@ status
 
 
 ~~~ bash
-curl "https:/.cruxconnect.com/accounting/transactions/" \
+curl "https://api-sandbox.cruxconnect.com/accounting/transactions/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https:/.cruxconnect.com/accounting/transactions/' \
+http GET 'https://api-sandbox.cruxconnect.com/accounting/transactions/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
@@ -78,11 +78,11 @@ import requests
 
 def send_request():
     # Get Billing Transactions List
-    # GET https:/.cruxconnect.com/accounting/transactions/
+    # GET https://api-sandbox.cruxconnect.com/accounting/transactions/
 
     try:
         response = requests.get(
-            url="https:/.cruxconnect.com/accounting/transactions/",
+            url="https://api-sandbox.cruxconnect.com/accounting/transactions/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
             },
@@ -105,7 +105,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/accouting/transactions/',
         method: 'GET',

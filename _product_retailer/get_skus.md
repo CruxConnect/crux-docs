@@ -518,7 +518,7 @@ name
 
 
 ~~~ bash
-curl "https:/.cruxconnect.com/products/skus/" \
+curl "https://api-sandbox.cruxconnect.com/products/skus/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -527,7 +527,7 @@ curl "https:/.cruxconnect.com/products/skus/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https:/.cruxconnect.com/products/skus/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -545,11 +545,11 @@ import json
 
 def send_request():
     # Get SKU List
-    # GET https:/.cruxconnect.com/products/skus/
+    # GET https://api-sandbox.cruxconnect.com/products/skus/
 
     try:
         response = requests.get(
-            url="https:/.cruxconnect.com/products/skus/",
+            url="https://api-sandbox.cruxconnect.com/products/skus/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -574,7 +574,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/skus/',
         method: 'GET',

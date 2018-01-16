@@ -52,7 +52,7 @@ type
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/notifications/" \
+curl "https://api-sandbox.cruxconnect.com/notifications/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -63,7 +63,7 @@ curl "https://stable.projectthanos.com/notifications/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/notifications/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/notifications/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     user_uuid="3a7acb28-ab13-437e-8c35-46cf4f0bea49"
@@ -81,11 +81,11 @@ import json
 
 def send_request():
     # Get Dashboard Notifications
-    # GET https://stable.projectthanos.com/notifications/
+    # GET https://api-sandbox.cruxconnect.com/notifications/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/notifications/",
+            url="https://api-sandbox.cruxconnect.com/notifications/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -110,7 +110,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/notifications/',
         method: 'GET',

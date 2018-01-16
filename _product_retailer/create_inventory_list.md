@@ -83,7 +83,7 @@ description
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -95,7 +95,7 @@ curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/inventory-lists/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     name="New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS" \
@@ -114,11 +114,11 @@ import json
 
 def send_request():
     # Create Inventory List
-    # POST https:/.cruxconnect.com/products/inventory-lists/
+    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/products/inventory-lists/",
+            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -144,7 +144,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/inventory-lists/',
         method: 'POST',

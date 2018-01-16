@@ -49,7 +49,7 @@ quantity
 
 
 ~~~ bash
-curl -X "PATCH" "https:/.cruxconnect.com/orders/cancel/" \
+curl -X "PATCH" "https://api-sandbox.cruxconnect.com/orders/cancel/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -60,7 +60,7 @@ curl -X "PATCH" "https:/.cruxconnect.com/orders/cancel/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json PATCH 'https:/.cruxconnect.com/orders/cancel/' \
+http --json PATCH 'https://api-sandbox.cruxconnect.com/orders/cancel/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     order_uuid="358cd9ec-de30-45c5-b12b-5e4f78037645"
@@ -78,11 +78,11 @@ import json
 
 def send_request():
     # Cancel Order
-    # PATCH https:/.cruxconnect.com/orders/cancel/
+    # PATCH https://api-sandbox.cruxconnect.com/orders/cancel/
 
     try:
         response = requests.patch(
-            url="https:/.cruxconnect.com/orders/cancel/",
+            url="https://api-sandbox.cruxconnect.com/orders/cancel/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -107,7 +107,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/orders/cancel/',
         method: 'PATCH',

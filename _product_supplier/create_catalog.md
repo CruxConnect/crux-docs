@@ -90,7 +90,7 @@ default_shipping_cost_currency
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/products/catalogs/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -102,7 +102,7 @@ curl -X "POST" "https:/.cruxconnect.com/products/catalogs/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/products/catalogs/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     name="Spring Thanos Collection P3dI52EbvsjW2LP3htmDVRahafWnEm6v" \
@@ -121,11 +121,11 @@ import json
 
 def send_request():
     # Create Catalog
-    # POST https:/.cruxconnect.com/products/catalogs/
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/products/catalogs/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -151,7 +151,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/catalogs/',
         method: 'POST',

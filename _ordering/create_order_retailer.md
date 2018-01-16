@@ -322,7 +322,7 @@ backorder_date
 
 
 ~~~ bash
-curl -X "POST" "https:/.cruxconnect.com/orders/create/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -355,7 +355,7 @@ curl -X "POST" "https:/.cruxconnect.com/orders/create/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https:/.cruxconnect.com/orders/create/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     address:="{
@@ -395,11 +395,11 @@ import json
 
 def send_request():
     # Create Order - Retailer
-    # POST https:/.cruxconnect.com/orders/create/
+    # POST https://api-sandbox.cruxconnect.com/orders/create/
 
     try:
         response = requests.post(
-            url="https:/.cruxconnect.com/orders/create/",
+            url="https://api-sandbox.cruxconnect.com/orders/create/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -446,7 +446,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/orders/create/',
         method: 'POST',
