@@ -1,5 +1,5 @@
 ---
-title: /api/products/items/search/
+title: /products/items/search/
 name: Search Items - Retailer
 position: 2.25
 method: post
@@ -289,13 +289,13 @@ right_code: |
         "product_images": [
           {
             "uuid": "443ba02e-973b-4fee-8a00-9c4bd8c5c3a5",
-            "url": "https://api.adorable.io/avatars/80/obad21.png",
+            "url": "https:/.adorable.io/avatars/80/obad21.png",
             "width": 80,
             "height": 80
           },
           {
             "uuid": "b08c80af-7b64-47e7-ab49-e77c8a5b33d7",
-            "url": "https://api.adorable.io/avatars/80/obad20.png",
+            "url": "https:/.adorable.io/avatars/80/obad20.png",
             "width": 80,
             "height": 80
           }
@@ -344,13 +344,13 @@ right_code: |
         "product_images": [
           {
             "uuid": "602a19a4-7ac8-480c-ab19-ee981051f742",
-            "url": "https://api.adorable.io/avatars/80/obad21.png",
+            "url": "https:/.adorable.io/avatars/80/obad21.png",
             "width": 80,
             "height": 80
           },
           {
             "uuid": "c69ea867-4a5f-4d6d-8e4d-7b25a4bee63a",
-            "url": "https://api.adorable.io/avatars/80/obad15.png",
+            "url": "https:/.adorable.io/avatars/80/obad15.png",
             "width": 80,
             "height": 80
           }
@@ -385,7 +385,7 @@ right_code: |
 ---
 Search for Items in the catalogs available to your organization using a number of filters, facets, and other helpful tools.
 
-URL Endpoint: /api/products/items/search/
+URL Endpoint: /products/items/search/
 
 ### Request Parameters:
 
@@ -793,7 +793,7 @@ inventory_lists
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/items/search/" \
+curl -X "POST" "https:/.cruxconnect.com/products/items/search/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -832,7 +832,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/items/search/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/items/search/' \
+http --json POST 'https:/.cruxconnect.com/products/items/search/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
@@ -878,11 +878,11 @@ import json
 
 def send_request():
     # Search Items - Retailer
-    # POST https://api.cruxconnect.com/api/products/items/search/
+    # POST https:/.cruxconnect.com/products/items/search/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/items/search/",
+            url="https:/.cruxconnect.com/products/items/search/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -937,7 +937,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/items/search/',
+        path: '/products/items/search/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

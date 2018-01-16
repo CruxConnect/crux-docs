@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/subscription/
+title: /organizations/subscription/
 name: Get Subscription
 position: 0.95
 method: get
@@ -79,14 +79,14 @@ card_last_four
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/subscription/" \
+curl "https://stable.projectthanos.com/organizations/subscription/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://stable.projectthanos.com/api/organizations/subscription/' \
+http GET 'https://stable.projectthanos.com/organizations/subscription/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
@@ -101,11 +101,11 @@ import requests
 
 def send_request():
     # Get Subscription
-    # GET https://stable.projectthanos.com/api/organizations/subscription/
+    # GET https://stable.projectthanos.com/organizations/subscription/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/subscription/",
+            url="https://stable.projectthanos.com/organizations/subscription/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
             },
@@ -130,7 +130,7 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/organizations/subscription/',
+        path: '/organizations/subscription/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
     };

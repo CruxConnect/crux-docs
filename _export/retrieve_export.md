@@ -1,5 +1,5 @@
 ---
-title: /api/data/export/&ltexport_uuid&gt/
+title: /data/export/&ltexport_uuid&gt/
 name: Retrieve Export
 position: 4.00
 method: get
@@ -32,7 +32,7 @@ uuid
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/data/export/232497cc-95eb-4ffd-a084-edea0c413267/" \
+curl "https:/.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -42,7 +42,7 @@ curl "https://api.cruxconnect.com/api/data/export/232497cc-95eb-4ffd-a084-edea0c
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/data/export/232497cc-95eb-4ffd-a084-edea0c413267/' \
+http --json GET 'https:/.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -60,11 +60,11 @@ import json
 
 def send_request():
     # INCOMPLETE - Retrieve Export
-    # GET https://api.cruxconnect.com/api/data/export/232497cc-95eb-4ffd-a084-edea0c413267/
+    # GET https:/.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/data/export/232497cc-95eb-4ffd-a084-edea0c413267/",
+            url="https:/.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -90,7 +90,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/data/export/232497cc-95eb-4ffd-a084-edea0c413267/',
+        path: '/data/export/232497cc-95eb-4ffd-a084-edea0c413267/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

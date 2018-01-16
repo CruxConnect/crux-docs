@@ -1,5 +1,5 @@
 ---
-title: /api/products/items/search/export/
+title: /products/items/search/export/
 name: Get Item Export by Search - Retailer
 position: 2.22
 method: post
@@ -52,7 +52,7 @@ uuid
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/items/search/export/" \
+curl -X "POST" "https:/.cruxconnect.com/products/items/search/export/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -66,7 +66,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/items/search/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/items/search/export/' \
+http --json POST 'https:/.cruxconnect.com/products/items/search/export/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
@@ -87,11 +87,11 @@ import json
 
 def send_request():
     # Get Item Export by Search - Retailer
-    # POST https://api.cruxconnect.com/api/products/items/search/export/
+    # POST https:/.cruxconnect.com/products/items/search/export/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/items/search/export/",
+            url="https:/.cruxconnect.com/products/items/search/export/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -121,7 +121,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/items/search/export/',
+        path: '/products/items/search/export/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

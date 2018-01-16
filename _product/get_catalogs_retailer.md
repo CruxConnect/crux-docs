@@ -1,5 +1,5 @@
 ---
-title: /api/products/catalogs/
+title: /products/catalogs/
 name: Get Catalogs - Retailer
 position: 2.00
 method: get
@@ -142,7 +142,7 @@ default_shipping_cost_currency
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/products/catalogs/" \
+curl "https:/.cruxconnect.com/products/catalogs/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -151,7 +151,7 @@ curl "https://api.cruxconnect.com/api/products/catalogs/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/products/catalogs/' \
+http --json GET 'https:/.cruxconnect.com/products/catalogs/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -169,11 +169,11 @@ import json
 
 def send_request():
     # Get Catalog List - Retailer
-    # GET https://api.cruxconnect.com/api/products/catalogs/
+    # GET https:/.cruxconnect.com/products/catalogs/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/products/catalogs/",
+            url="https:/.cruxconnect.com/products/catalogs/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -200,7 +200,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/catalogs/',
+        path: '/products/catalogs/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

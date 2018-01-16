@@ -1,5 +1,5 @@
 ---
-title: /api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/
+title: /products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/
 name: Catalog Add SKU - Supplier
 position: 2.03
 method: post
@@ -18,7 +18,7 @@ right_code: |
 ---
 Add already existing SKUs to a Catalog for Retailers to access. This allows you to add SKUs to a Catalog. By providing your catalog_uuid, and a list of sku_uuids with related data, you can successfully add them to the items added previously to the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/products/catalogs/<catalog_uuid>/add-skus/
+URL Endpoint: /products/catalogs/<catalog_uuid>/add-skus/
 
 ### Request Parameters:
 
@@ -157,7 +157,7 @@ mpn
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/" \
+curl -X "POST" "https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/" \
      -H 'Authorization: Token 825dd305b5858e2373763ff338615db822fe67a0' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -170,7 +170,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/' \
+http --json POST 'https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/' \
     'Authorization':'Token 825dd305b5858e2373763ff338615db822fe67a0' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_uuids:="[
@@ -190,11 +190,11 @@ import json
 
 def send_request():
     # Catalog Add SKU - Supplier
-    # POST https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/
+    # POST https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/",
+            url="https:/.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/",
             headers={
                 "Authorization": "Token 825dd305b5858e2373763ff338615db822fe67a0",
                 "Content-Type": "application/json; charset=utf-8",
@@ -223,7 +223,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/',
+        path: '/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/',
         method: 'POST',
         headers: {"Authorization":"Token 825dd305b5858e2373763ff338615db822fe67a0","Content-Type":"application/json; charset=utf-8"}
     };

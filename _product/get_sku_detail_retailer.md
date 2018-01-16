@@ -1,5 +1,5 @@
 ---
-title: /api/products/skus/&ltsku_uuid&gt/
+title: /products/skus/&ltsku_uuid&gt/
 name: Get Sku Detail - Retailer
 position: 2.24
 method: get
@@ -41,13 +41,13 @@ right_code: |
     "product_images": [
       {
         "uuid": "1929dd2b-ad2c-4021-9960-fb26e7bf448a",
-        "url": "https://api.adorable.io/avatars/80/obad20.png",
+        "url": "https:/.adorable.io/avatars/80/obad20.png",
         "width": 80,
         "height": 80
       },
       {
         "uuid": "8e6e1355-a185-4574-bb54-dc2193b9ab2d",
-        "url": "https://api.adorable.io/avatars/285/obad39.png",
+        "url": "https:/.adorable.io/avatars/285/obad39.png",
         "width": 285,
         "height": 285
       }
@@ -281,7 +281,7 @@ name
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/" \
+curl "https:/.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -290,7 +290,7 @@ curl "https://api.cruxconnect.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/' \
+http --json GET 'https:/.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -307,11 +307,11 @@ import json
 
 def send_request():
     # Get Sku Detail - Retailer
-    # GET https://api.cruxconnect.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/
+    # GET https:/.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/",
+            url="https:/.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -338,7 +338,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/',
+        path: '/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

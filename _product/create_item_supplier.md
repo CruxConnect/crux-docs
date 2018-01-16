@@ -1,5 +1,5 @@
 ---
-title: /api/products/items/
+title: /products/items/
 name: Create Item - Supplier
 position: 2.19
 method: post
@@ -398,7 +398,7 @@ height
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/items/" \
+curl -X "POST" "https:/.cruxconnect.com/products/items/" \
      -H 'Authorization: Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -423,7 +423,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/items/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/items/' \
+http --json POST 'https:/.cruxconnect.com/products/items/' \
     'Authorization':'Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
     'Content-Type':'application/json; charset=utf-8' \
     description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
@@ -455,11 +455,11 @@ import json
 
 def send_request():
     # Create Item - Supplier
-    # POST https://api.cruxconnect.com/api/products/items/
+    # POST https:/.cruxconnect.com/products/items/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/items/",
+            url="https:/.cruxconnect.com/products/items/",
             headers={
                 "Authorization": "Token 0102f963bf7c4c4452d46e30645de9182ba0d137",
                 "Content-Type": "application/json; charset=utf-8",
@@ -500,7 +500,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/items/',
+        path: '/products/items/',
         method: 'POST',
         headers: {"Authorization":"Token 0102f963bf7c4c4452d46e30645de9182ba0d137","Content-Type":"application/json; charset=utf-8"}
     };

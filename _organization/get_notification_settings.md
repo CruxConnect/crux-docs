@@ -1,5 +1,5 @@
 ---
-title: /api/notifications/notification-settings/
+title: /notifications/notification-settings/
 name: Get Notification Settings
 position: 0.98
 method: get
@@ -108,7 +108,7 @@ enabled
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/notifications/notification-settings/" \
+curl "https://stable.projectthanos.com/notifications/notification-settings/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -117,7 +117,7 @@ curl "https://stable.projectthanos.com/api/notifications/notification-settings/"
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/notifications/notification-settings/' \
+http --json GET 'https://stable.projectthanos.com/notifications/notification-settings/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -135,11 +135,11 @@ import json
 
 def send_request():
     # Get Notification Settings
-    # GET https://stable.projectthanos.com/api/notifications/notification-settings/
+    # GET https://stable.projectthanos.com/notifications/notification-settings/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/notifications/notification-settings/",
+            url="https://stable.projectthanos.com/notifications/notification-settings/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -166,7 +166,7 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/notifications/notification-settings/',
+        path: '/notifications/notification-settings/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

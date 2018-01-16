@@ -1,5 +1,5 @@
 ---
-title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/remove-skus/
+title: /products/inventory-lists/&ltinventory_list_uuid&gt/remove-skus/
 name: Inventory Remove SKU - Retailer
 position: 2.13
 method: post
@@ -36,7 +36,7 @@ skus
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/" \
+curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -50,7 +50,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/' \
+http --json POST 'https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_uuids:="[
@@ -71,11 +71,11 @@ import json
 
 def send_request():
     # Inventory Remove SKU - Retailer
-    # POST https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/
+    # POST https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/",
+            url="https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -105,7 +105,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/',
+        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-skus/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

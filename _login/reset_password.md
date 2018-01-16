@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/reset-password/
+title: /organizations/reset-password/
 name: Reset Password
 position: 0.1
 method: post
@@ -42,7 +42,7 @@ reset_token
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/organizations/reset-password/" \
+curl -X "POST" "https:/.cruxconnect.com/organizations/reset-password/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "email": "mrbailey@projectthanos.com"
@@ -52,7 +52,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/organizations/reset-password/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/organizations/reset-password/' \
+http --json POST 'https:/.cruxconnect.com/organizations/reset-password/' \
     'Content-Type':'application/json; charset=utf-8' \
     email="mrbailey@projectthanos.com"
 
@@ -69,11 +69,11 @@ import json
 
 def send_request():
     # Reset Password
-    # POST https://api.cruxconnect.com/api/organizations/reset-password/
+    # POST https:/.cruxconnect.com/organizations/reset-password/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/organizations/reset-password/",
+            url="https:/.cruxconnect.com/organizations/reset-password/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
@@ -99,7 +99,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/organizations/reset-password/',
+        path: '/organizations/reset-password/',
         method: 'POST',
         headers: {"Content-Type":"application/json; charset=utf-8"}
     };

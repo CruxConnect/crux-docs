@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/users/all/
+title: /organizations/users/all/
 name: Get All Users
 position: 0.4
 method: get
@@ -178,7 +178,7 @@ description
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/users/all/" \
+curl "https://stable.projectthanos.com/organizations/users/all/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -190,7 +190,7 @@ curl "https://stable.projectthanos.com/api/organizations/users/all/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/organizations/users/all/' \
+http --json GET 'https://stable.projectthanos.com/organizations/users/all/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     username="jweir@projectthanos.com" \
@@ -209,11 +209,11 @@ import json
 
 def send_request():
     # Get All Users
-    # GET https://stable.projectthanos.com/api/organizations/users/all/
+    # GET https://stable.projectthanos.com/organizations/users/all/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/users/all/",
+            url="https://stable.projectthanos.com/organizations/users/all/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -241,7 +241,7 @@ def send_request():
     const httpOptions = {
         hostname: 'stable.projectthanos.com',
         port: '443',
-        path: '/api/organizations/users/all/',
+        path: '/organizations/users/all/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

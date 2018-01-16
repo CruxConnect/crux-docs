@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/user-login/
+title: /organizations/user-login/
 name: Login
 position: 0.0
 method: post
@@ -69,7 +69,7 @@ org_type
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/organizations/user-login/" \
+curl -X "POST" "https:/.cruxconnect.com/organizations/user-login/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "username": "mrbailey@projectthanos.com",
@@ -80,7 +80,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/organizations/user-login/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/organizations/user-login/' \
+http --json POST 'https:/.cruxconnect.com/organizations/user-login/' \
     'Content-Type':'application/json; charset=utf-8' \
     username="mrbailey@projectthanos.com" \
     password="thanosrocks"
@@ -98,11 +98,11 @@ import json
 
 def send_request():
     # Login
-    # POST https://api.cruxconnect.com/api/organizations/user-login/
+    # POST https:/.cruxconnect.com/organizations/user-login/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/organizations/user-login/",
+            url="https:/.cruxconnect.com/organizations/user-login/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
@@ -129,7 +129,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/organizations/user-login/',
+        path: '/organizations/user-login/',
         method: 'POST',
         headers: {"Content-Type":"application/json; charset=utf-8"}
     };

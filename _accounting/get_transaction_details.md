@@ -1,5 +1,5 @@
 ---
-title: /api/accounting/transactions/&lttransaction_id&gt/
+title: /accounting/transactions/&lttransaction_id&gt/
 name: Get Transaction Details
 position: 1.1
 method: get
@@ -47,14 +47,14 @@ status
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/accounting/transactions/123456789/" \
+curl "https:/.cruxconnect.com/accounting/transactions/123456789/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api.cruxconnect.com/api/accounting/transactions/123456789/' \
+http GET 'https:/.cruxconnect.com/accounting/transactions/123456789/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
 
 ~~~
@@ -69,11 +69,11 @@ import requests
 
 def send_request():
     # Get Billing Transaction Details
-    # GET https://api.cruxconnect.com/api/accounting/transactions/123456789/
+    # GET https:/.cruxconnect.com/accounting/transactions/123456789/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/accounting/transactions/123456789/",
+            url="https:/.cruxconnect.com/accounting/transactions/123456789/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
             },
@@ -98,7 +98,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/accounting/transactions/123456789/',
+        path: '/accounting/transactions/123456789/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
     };

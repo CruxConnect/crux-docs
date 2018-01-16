@@ -1,5 +1,5 @@
 ---
-title: /api/products/items/
+title: /products/items/
 name: Get Items - Retailer
 position: 2.18
 method: get
@@ -40,13 +40,13 @@ right_code: |
           "product_images": [
             {
               "uuid": "81ada0e1-74ee-4a32-b709-745950288608",
-              "url": "https://api.adorable.io/avatars/285/obad15.png",
+              "url": "https:/.adorable.io/avatars/285/obad15.png",
               "width": 285,
               "height": 285
             },
             {
               "uuid": "e3817a5d-7aee-4efc-9334-14b8e5324517",
-              "url": "https://api.adorable.io/avatars/80/obad24.png",
+              "url": "https:/.adorable.io/avatars/80/obad24.png",
               "width": 80,
               "height": 80
             }
@@ -133,13 +133,13 @@ right_code: |
           "product_images": [
             {
               "uuid": "e3817a5d-7aee-4efc-9334-14b8e5324517",
-              "url": "https://api.adorable.io/avatars/80/obad24.png",
+              "url": "https:/.adorable.io/avatars/80/obad24.png",
               "width": 80,
               "height": 80
             },
             {
               "uuid": "c69ea867-4a5f-4d6d-8e4d-7b25a4bee63a",
-              "url": "https://api.adorable.io/avatars/80/obad15.png",
+              "url": "https:/.adorable.io/avatars/80/obad15.png",
               "width": 80,
               "height": 80
             }
@@ -214,13 +214,13 @@ right_code: |
           "product_images": [
             {
               "uuid": "1b527e40-d81c-4f75-a9ce-a9af09e66929",
-              "url": "https://api.adorable.io/avatars/80/obad12.png",
+              "url": "https:/.adorable.io/avatars/80/obad12.png",
               "width": 80,
               "height": 80
             },
             {
               "uuid": "81ada0e1-74ee-4a32-b709-745950288608",
-              "url": "https://api.adorable.io/avatars/285/obad15.png",
+              "url": "https:/.adorable.io/avatars/285/obad15.png",
               "width": 285,
               "height": 285
             }
@@ -290,13 +290,13 @@ right_code: |
       "product_images": [
         {
           "uuid": "602a19a4-7ac8-480c-ab19-ee981051f742",
-          "url": "https://api.adorable.io/avatars/80/obad21.png",
+          "url": "https:/.adorable.io/avatars/80/obad21.png",
           "width": 80,
           "height": 80
         },
         {
           "uuid": "8e6e1355-a185-4574-bb54-dc2193b9ab2d",
-          "url": "https://api.adorable.io/avatars/285/obad39.png",
+          "url": "https:/.adorable.io/avatars/285/obad39.png",
           "width": 285,
           "height": 285
         }
@@ -345,13 +345,13 @@ right_code: |
           "product_images": [
             {
               "uuid": "1929dd2b-ad2c-4021-9960-fb26e7bf448a",
-              "url": "https://api.adorable.io/avatars/80/obad20.png",
+              "url": "https:/.adorable.io/avatars/80/obad20.png",
               "width": 80,
               "height": 80
             },
             {
               "uuid": "8e6e1355-a185-4574-bb54-dc2193b9ab2d",
-              "url": "https://api.adorable.io/avatars/285/obad39.png",
+              "url": "https:/.adorable.io/avatars/285/obad39.png",
               "width": 285,
               "height": 285
             }
@@ -450,13 +450,13 @@ right_code: |
           "product_images": [
             {
               "uuid": "13e618d5-cc70-4771-a76d-95b9d447ae29",
-              "url": "https://api.adorable.io/avatars/155/obad12.png",
+              "url": "https:/.adorable.io/avatars/155/obad12.png",
               "width": 155,
               "height": 155
             },
             {
               "uuid": "93304bd2-1b28-4673-b666-ebe0ebaed3b9",
-              "url": "https://api.adorable.io/avatars/155/obad39.png",
+              "url": "https:/.adorable.io/avatars/155/obad39.png",
               "width": 155,
               "height": 155
             }
@@ -525,7 +525,7 @@ right_code: |
           "product_images": [
             {
               "uuid": "13e618d5-cc70-4771-a76d-95b9d447ae29",
-              "url": "https://api.adorable.io/avatars/155/obad12.png",
+              "url": "https:/.adorable.io/avatars/155/obad12.png",
               "width": 155,
               "height": 155
             }
@@ -870,7 +870,7 @@ height
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/products/items/" \
+curl "https:/.cruxconnect.com/products/items/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -879,7 +879,7 @@ curl "https://api.cruxconnect.com/api/products/items/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/products/items/' \
+http --json GET 'https:/.cruxconnect.com/products/items/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -897,11 +897,11 @@ import json
 
 def send_request():
     # Get Item List - Retailer
-    # GET https://api.cruxconnect.com/api/products/items/
+    # GET https:/.cruxconnect.com/products/items/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/products/items/",
+            url="https:/.cruxconnect.com/products/items/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -928,7 +928,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/items/',
+        path: '/products/items/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

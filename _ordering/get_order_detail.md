@@ -1,5 +1,5 @@
 ---
-title: /api/orders/&ltorder_uuid&gt/
+title: /orders/&ltorder_uuid&gt/
 name: Get Order Detail
 position: 3.02
 method: get
@@ -282,7 +282,7 @@ backorder_date
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/" \
+curl "https:/.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -291,7 +291,7 @@ curl "https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde5
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/' \
+http --json GET 'https:/.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -309,11 +309,11 @@ import json
 
 def send_request():
     # Get Order Detail
-    # GET https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/
+    # GET https:/.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/",
+            url="https:/.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -340,7 +340,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/',
+        path: '/orders/299fc593-04f0-424d-9847-e359b9dfde56/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

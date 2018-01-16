@@ -1,5 +1,5 @@
 ---
-title: /api/accounting/payment-methods/
+title: /accounting/payment-methods/
 name: Get Payment Methods
 position: 1.3
 type: get
@@ -51,7 +51,7 @@ address
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/accounting/payment-methods/" \
+curl "https:/.cruxconnect.com/accounting/payment-methods/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -60,7 +60,7 @@ curl "https://api.cruxconnect.com/api/accounting/payment-methods/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/accounting/payment-methods/' \
+http --json GET 'https:/.cruxconnect.com/accounting/payment-methods/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -78,11 +78,11 @@ import json
 
 def send_request():
     # Get Payment Methods
-    # GET https://api.cruxconnect.com/api/accounting/payment-methods/
+    # GET https:/.cruxconnect.com/accounting/payment-methods/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/accounting/payment-methods/",
+            url="https:/.cruxconnect.com/accounting/payment-methods/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -109,7 +109,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/accounting/payment-methods/',
+        path: '/accounting/payment-methods/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

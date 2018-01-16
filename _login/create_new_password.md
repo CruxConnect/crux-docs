@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/complete-password/
+title: /organizations/complete-password/
 name: Create New Password
 position: 0.3
 method: post
@@ -33,7 +33,7 @@ token
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/organizations/complete-password/" \
+curl -X "POST" "https:/.cruxconnect.com/organizations/complete-password/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "token": "G7TwCq1Vkds0DLYnfAuP",
@@ -44,7 +44,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/organizations/complete-password/
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/organizations/complete-password/' \
+http --json POST 'https:/.cruxconnect.com/organizations/complete-password/' \
     'Content-Type':'application/json; charset=utf-8' \
     token="G7TwCq1Vkds0DLYnfAuP" \
     password="thanosrocks"
@@ -62,11 +62,11 @@ import json
 
 def send_request():
     # Create New Password
-    # POST https://api.cruxconnect.com/api/organizations/complete-password/
+    # POST https:/.cruxconnect.com/organizations/complete-password/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/organizations/complete-password/",
+            url="https:/.cruxconnect.com/organizations/complete-password/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
@@ -93,7 +93,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/organizations/complete-password/',
+        path: '/organizations/complete-password/',
         method: 'POST',
         headers: {"Content-Type":"application/json; charset=utf-8"}
     };

@@ -1,5 +1,5 @@
 ---
-title: /api/products/catalogs/&ltcatalog_uuid&gt/
+title: /products/catalogs/&ltcatalog_uuid&gt/
 name: Get Catalog Detail - Retailer
 position: 2.01
 method: get
@@ -87,7 +87,7 @@ default_shipping_cost_currency
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/" \
+curl "https:/.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -96,7 +96,7 @@ curl "https://api.cruxconnect.com/api/products/catalogs/5d704568-d5a6-4751-94ff-
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/' \
+http --json GET 'https:/.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -114,11 +114,11 @@ import json
 
 def send_request():
     # Get Catalog Detail - Retailer
-    # GET https://api.cruxconnect.com/api/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/
+    # GET https:/.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/",
+            url="https:/.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -145,7 +145,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/',
+        path: '/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

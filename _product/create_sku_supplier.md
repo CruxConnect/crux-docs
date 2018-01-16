@@ -1,5 +1,5 @@
 ---
-title: /api/products/skus/
+title: /products/skus/
 name: Create SKU - Supplier
 position: 2.24
 method: post
@@ -78,7 +78,7 @@ right_code: |
 ---
 Create a SKU to add to a specified item_uuid.
 
-URL Endpoint: /api/products/skus/
+URL Endpoint: /products/skus/
 
 ### Request Parameters:
 
@@ -271,7 +271,7 @@ mpn
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/skus/" \
+curl -X "POST" "https:/.cruxconnect.com/products/skus/" \
      -H 'Authorization: Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -292,7 +292,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/skus/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/skus/' \
+http --json POST 'https:/.cruxconnect.com/products/skus/' \
     'Authorization':'Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_id="AWWghwmTNb" \
@@ -320,11 +320,11 @@ import json
 
 def send_request():
     # Create SKU - Supplier
-    # POST https://api.cruxconnect.com/api/products/skus/
+    # POST https:/.cruxconnect.com/products/skus/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/skus/",
+            url="https:/.cruxconnect.com/products/skus/",
             headers={
                 "Authorization": "Token 0102f963bf7c4c4452d46e30645de9182ba0d137",
                 "Content-Type": "application/json; charset=utf-8",
@@ -361,7 +361,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/skus/',
+        path: '/products/skus/',
         method: 'POST',
         headers: {"Authorization":"Token 0102f963bf7c4c4452d46e30645de9182ba0d137","Content-Type":"application/json; charset=utf-8"}
     };

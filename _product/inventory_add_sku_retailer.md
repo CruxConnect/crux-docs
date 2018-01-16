@@ -1,5 +1,5 @@
 ---
-title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
+title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
 name: Inventory Add SKU - Retailer
 position: 2.12
 method: post
@@ -35,7 +35,7 @@ sku_uuids
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/" \
+curl -X "POST" "https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -49,7 +49,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/' \
+http --json POST 'https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_uuids:="[
@@ -70,11 +70,11 @@ import json
 
 def send_request():
     # Inventory Add SKU - Retailer
-    # POST https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/
+    # POST https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/",
+            url="https:/.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -104,7 +104,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api.cruxconnect.com',
         port: '443',
-        path: '/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/',
+        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
