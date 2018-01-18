@@ -128,6 +128,18 @@ pre {
   overflow: auto;
   white-space: pre;
 }
+div.highlight {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba($color-white, 0), $color-white);
+    width: 1.5em;
+  }
+}
 
 dl {
   border-top: 1px solid $color-border;
@@ -341,10 +353,11 @@ hr {
   box-sizing: border-box;
 
   pre {
-     border: 0px;
-     box-shadow: 0 0 0 1px $color-border;
-     border-radius: 3px;
-     padding: 10px;
+    border: 0px;
+    box-shadow: 0 0 0 1px $color-border;
+    border-radius: 3px;
+    padding: 10px;
+    padding-right: 1.5em;
   }
 }
 
@@ -359,9 +372,13 @@ hr {
   }
 
   pre {
-    background: black;
-    padding: 10px;
+    background: $color-black;
     border-radius: 5px;
+    padding: 10px;
+    padding-right: 1.5em;
+  }
+  div.highlight:after{
+    background: linear-gradient(90deg, rgba($color-black, 0), $color-black);
   }
 
   .code-viewer .languages li a:hover {
