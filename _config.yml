@@ -6,7 +6,7 @@ description: API documentation for project codenamed thanos
 url: https://example.com
 google_analytics_key:
 permalink: pretty
-baseurl:
+baseurl: ""
 
 collections:
   documentation:
