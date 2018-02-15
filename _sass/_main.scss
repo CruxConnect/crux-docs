@@ -83,6 +83,7 @@ th {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   font-weight: 300;
+  word-wrap: break-word;
 }
 
 h1 { font-size: 4.0rem; line-height: 1.2;  letter-spacing: -.1rem;}
@@ -126,6 +127,18 @@ pre {
   margin: 22px 0;
   overflow: auto;
   white-space: pre;
+}
+div.highlight {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba($color-white, 0), $color-white);
+    width: 1.5em;
+  }
 }
 
 dl {
@@ -171,7 +184,7 @@ dl dd:after {
 }
 
 .sidebar {
-  padding: 20px 20px 0 20px;
+  padding: 20px;
   white-space:nowrap;
   overflow-y: auto;
 
@@ -183,8 +196,8 @@ dl dd:after {
     padding: 0 0 0 10px;
     margin: 0;
     list-style: none;
-    &.api{
-      padding: 0
+    &.api .title {
+      display: none;
     }
   }
 
@@ -210,10 +223,15 @@ dl dd:after {
   }
 }
 
+.api-key > .endpoint:first-child{
+  padding-left: 1px;
+}
 .endpoint {
   font-size: 10px;
   padding: 0 2px;
   position: relative;
+  margin-left: auto;
+  text-transform: uppercase;
 }
 
 h3 .endpoint {
@@ -221,33 +239,19 @@ h3 .endpoint {
   font-size: 19px;
 }
 
-.endpoint.PUT,
-.endpoint.put {
-  color: $color-put;
-  &:after {
-    content: "PUT";
-  }
-}
-
-.endpoint.DELETE,
-.endpoint.delete {
-  color: $color-delete;
-  &:after {
-    content: "DELETE";
-  }
-}
-
-.endpoint.GET,
-.endpoint.get {
-  &:after {
-    content: "GET";
-  }
-}
 .sidebar .api a{
-  padding-left: .25em;
+  padding-right: .25em;
   border-right-width: .25em;
   border-right-style: solid;
   margin-bottom: 1px;
+  display: flex;
+  align-items: flex-start;
+  span {
+    max-width: 98%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
 }
 
 .GET, .get {
@@ -271,20 +275,6 @@ h3 .endpoint {
   border-color: $color-delete;
 }
 
-.endpoint.POST,
-.endpoint.post {
-  &:after {
-    content: "POST";
-  }
-}
-
-.endpoint.PATCH,
-.endpoint.patch {
-  color: $color-patch;
-  &:after {
-    content: "PATCH";
-  }
-}
 .main {
   margin: 0 0 0 $nav-width;
   border-left: 1px solid $color-border;
@@ -363,10 +353,11 @@ hr {
   box-sizing: border-box;
 
   pre {
-     border: 0px;
-     box-shadow: 0 0 0 1px $color-border;
-     border-radius: 3px;
-     padding: 10px;
+    border: 0px;
+    box-shadow: 0 0 0 1px $color-border;
+    border-radius: 3px;
+    padding: 10px;
+    padding-right: 1.5em;
   }
 }
 
@@ -381,9 +372,13 @@ hr {
   }
 
   pre {
-    background: black;
-    padding: 10px;
+    background: $color-black;
     border-radius: 5px;
+    padding: 10px;
+    padding-right: 1.5em;
+  }
+  div.highlight:after{
+    background: linear-gradient(90deg, rgba($color-black, 0), $color-black);
   }
 
   .code-viewer .languages li a:hover {
@@ -413,7 +408,7 @@ hr {
         }
 
         &.active:hover {
-          border-color: transparent; // TODO
+          border-color: transparent;
         }
       }
     }
@@ -533,9 +528,6 @@ header {
 
     h1 {
       box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1);
-    }
-    .api .title {
-      display: none;
     }
   }
 }

@@ -6,7 +6,7 @@ description: API documentation for CRUXconnect
 url: https://api.cruxconnect.com
 google_analytics_key:
 permalink: pretty
-baseurl:
+baseurl: ""
 
 collections:
   documentation:
