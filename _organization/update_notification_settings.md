@@ -1,5 +1,5 @@
 ---
-title: /api/notifications/notification-settings/
+title: /notifications/notification-settings/
 name: Update Notification Settings
 position: 0.99
 method: put
@@ -44,7 +44,7 @@ notification_frequency
 
 
 ~~~ bash
-curl -X "PUT" "https://stable.projectthanos.com/api/notifications/notification-settings/" \
+curl -X "PUT" "https://api-sandbox.cruxconnect.com/notifications/notification-settings/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -58,7 +58,7 @@ curl -X "PUT" "https://stable.projectthanos.com/api/notifications/notification-s
 {: title="Curl" }
 
 ~~~ bash
-http --json PUT 'https://stable.projectthanos.com/api/notifications/notification-settings/' \
+http --json PUT 'https://api-sandbox.cruxconnect.com/notifications/notification-settings/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     notification_via="Dashboard" \
@@ -79,11 +79,11 @@ import json
 
 def send_request():
     # Update Notification Settings
-    # PUT https://stable.projectthanos.com/api/notifications/notification-settings/
+    # PUT https://api-sandbox.cruxconnect.com/notifications/notification-settings/
 
     try:
         response = requests.put(
-            url="https://stable.projectthanos.com/api/notifications/notification-settings/",
+            url="https://api-sandbox.cruxconnect.com/notifications/notification-settings/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -111,9 +111,9 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/notifications/notification-settings/',
+        path: '/notifications/notification-settings/',
         method: 'PUT',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

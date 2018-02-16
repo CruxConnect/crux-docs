@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/users/all/
+title: /organizations/users/all/
 name: Get All Users
 position: 0.4
 method: get
@@ -178,23 +178,18 @@ description
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/users/all/" \
+curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "username": "jweir@projectthanos.com",
-  "password": "thanosrocks"
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/organizations/users/all/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/all/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8' \
-    username="jweir@projectthanos.com" \
-    password="thanosrocks"
+    'Content-Type':'application/json; charset=utf-8'
 
 ~~~
 {: title="HTTPie" }
@@ -209,17 +204,16 @@ import json
 
 def send_request():
     # Get All Users
-    # GET https://stable.projectthanos.com/api/organizations/users/all/
+    # GET https://api-sandbox.cruxconnect.com/organizations/users/all/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/users/all/",
+            url="https://api-sandbox.cruxconnect.com/organizations/users/all/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    username="jweir@projectthanos.com" \
-    password="thanosrocks")
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -239,9 +233,9 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/organizations/users/all/',
+        path: '/organizations/users/all/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
@@ -271,7 +265,6 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"username\":\"jweir@projectthanos.com\",\"password\":\"thanosrocks\"}")
     request.end();
 
 

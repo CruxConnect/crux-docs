@@ -1,57 +1,40 @@
 ---
-title: /api/products/skus/&ltsku_uuid&gt/
-name: Get Sku Detail - Retailer
+title: /products/skus/
+name: Create SKU
 position: 2.24
-method: get
-description: Get Details about a SKU
+method: post
+description: Create a SKU to add to a specified item_uuid
 right_code: |
- ~~~ json
+  ~~~ json
   {
-    "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc",
-    "restrictions": null,
-    "condition": "refurb",
-    "distinguishing_attributes": {
-      "size": 3
-    },
     "item": {
-      "uuid": "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
+      "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520"
     },
-    "minimum_advertised_price": 10,
-    "msrp": 43.65,
-    "price_tiers": [
-      {
-        "shipping_cost_is_estimate": true,
-        "cost": 100.12,
-        "shipping_cost": 1.99,
-        "minimum_tier_quantity": 2
-      },
-      {
-        "shipping_cost_is_estimate": true,
-        "cost": 75.6,
-        "shipping_cost": 0.99,
-        "minimum_tier_quantity": 4
-      },
-      {
-        "shipping_cost_is_estimate": true,
-        "cost": 49.99,
-        "shipping_cost": 0,
-        "minimum_tier_quantity": 16
-      }
-    ],
-    "product_images": [
-      {
-        "uuid": "1929dd2b-ad2c-4021-9960-fb26e7bf448a",
-        "url": "https://api.adorable.io/avatars/80/obad20.png",
-        "width": 80,
-        "height": 80
-      },
-      {
-        "uuid": "8e6e1355-a185-4574-bb54-dc2193b9ab2d",
-        "url": "https://api.adorable.io/avatars/285/obad39.png",
-        "width": 285,
-        "height": 285
-      }
-    ],
+    "sku_id": "AWWghwmTNb",
+    "minimum_advertised_price": "40.00",
+    "msrp": "55.99",
+    "quantity_in_stock": "500",
+    "quantity_on_backorder": "100",
+    "number_of_units_bundled": "2",
+    "minimum_advertised_price_currency": "USD",
+    "msrp_currency": "USD"
+  }
+  ~~~
+  {: title="Request" }
+
+  ~~~ json
+  {
+    "uuid": "b0a7e210-ebb5-460d-a75a-6d417899aedb",
+    "restrictions": null,
+    "condition": "new",
+    "distinguishing_attributes": {},
+    "item": {
+      "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520"
+    },
+    "minimum_advertised_price": 40,
+    "msrp": 55.99,
+    "price_tiers": [],
+    "product_images": [],
     "measurements": {
       "sku": {
         "weight": null,
@@ -70,30 +53,22 @@ right_code: |
       "upca": null,
       "ean13": null,
       "gtin14": null,
-      "isbn": "9780765348272",
-      "asin": "B000N2HBSO",
+      "isbn": null,
+      "asin": null,
       "mpn": null
     },
-    "inventory_lists": [
+    "catalogs": [
       {
-        "uuid": "44a1f968-1ce8-4826-9cd9-f8a54f5d542d",
-        "name": "The empty calendar inventory list"
-      },
-      {
-        "uuid": "c9b32603-f6bf-4f49-89fd-8424399974f2",
-        "name": "The enchanted act inventory list"
-      },
-      {
-        "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",
-        "name": "The accessible motion inventory list"
+        "uuid": "962900df-0bd3-447b-9bdd-caff66a14591",
+        "name": "master"
       }
     ],
-    "created": "2017-10-23T18:25:36.448007Z",
-    "last_updated": "2017-10-23T18:25:36.448050Z",
-    "sku_id": "voGDR4gOyYUOgcT7gw",
-    "quantity_in_stock": 14,
-    "quantity_on_backorder": 81,
-    "number_of_units_bundled": 1,
+    "created": "2017-11-07T19:16:46.151007Z",
+    "last_updated": "2017-11-07T19:16:46.151057Z",
+    "sku_id": "RcKrkPpsgC",
+    "quantity_in_stock": 500,
+    "quantity_on_backorder": 100,
+    "number_of_units_bundled": 2,
     "minimum_advertised_price_currency": "USD",
     "msrp_currency": "USD"
   }
@@ -101,7 +76,38 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Details about a SKU. There is a varying amount of data provided with each SKUs. The Response Parameters listed below are potential attributes of SKUs that may be returned to you.
+Create a SKU to add to a specified item_uuid.
+
+URL Endpoint: /products/skus/
+
+### Request Parameters:
+
+item
+: (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
+
+sku_id
+: (string) The SKU Identifier for the SKU as provided by the Supplier
+
+minimum_advertised_price
+: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
+
+msrp
+: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
+
+quantity_in_stock
+: (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
+
+quantity_on_backorder
+: (number) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
+
+number_of_units_bundled
+: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
+
+minimum_advertised_price_currency
+: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
+
+msrp_currency
+: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
 
 ### Response Parameters:
 
@@ -253,22 +259,6 @@ asin
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
 
-#### Inventory List Object:
-
-uuid
-: (string) The Universal Unique Identifier for the Inventory List
-
-name
-: (string) The Name your company has given to this Inventory List
-
-Supplier Object:
-
-uuid
-: (string) The Universal Unique Identifier for the Supplier
-
-name
-: (string) The Supplier Name
-
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
 | 200  | OK                     | The API call was received and response is provided                           |
@@ -281,18 +271,41 @@ name
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
+     -H 'Authorization: Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{}'
+     -d $'{
+  "sku_id": "AWWghwmTNb",
+  "minimum_advertised_price": "40.00",
+  "msrp_currency": "USD",
+  "quantity_in_stock": "500",
+  "quantity_on_backorder": "100",
+  "number_of_units_bundled": "2",
+  "msrp": "55.99",
+  "item": {
+    "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520"
+  },
+  "minimum_advertised_price_currency": "USD"
+}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8'
+http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
+    'Authorization':'Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
+    'Content-Type':'application/json; charset=utf-8' \
+    sku_id="AWWghwmTNb" \
+    minimum_advertised_price="40.00" \
+    msrp_currency="USD" \
+    quantity_in_stock="500" \
+    quantity_on_backorder="100" \
+    number_of_units_bundled="2" \
+    msrp="55.99" \
+    item:="{
+  \"uuid\": \"4cc9a5f6-e024-4f48-8775-7ff35543f520\"
+}" \
+    minimum_advertised_price_currency="USD"
 
 ~~~
 {: title="HTTPie" }
@@ -306,17 +319,27 @@ import json
 
 
 def send_request():
-    # Get Sku Detail - Retailer
-    # GET https://api.cruxconnect.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/
+    # Create SKU
+    # POST https://api-sandbox.cruxconnect.com/products/skus/
 
     try:
-        response = requests.get(
-            url="https://api.cruxconnect.com/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/",
+        response = requests.post(
+            url="https://api-sandbox.cruxconnect.com/products/skus/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 0102f963bf7c4c4452d46e30645de9182ba0d137",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps()
+            data=json.dumps(    sku_id="AWWghwmTNb" \
+    minimum_advertised_price="40.00" \
+    msrp_currency="USD" \
+    quantity_in_stock="500" \
+    quantity_on_backorder="100" \
+    number_of_units_bundled="2" \
+    msrp="55.99" \
+    item:="{
+  \"uuid\": \"4cc9a5f6-e024-4f48-8775-7ff35543f520\"
+}" \
+    minimum_advertised_price_currency="USD")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -329,18 +352,18 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Sku Detail - Retailer
+// request Create SKU
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/',
-        method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        path: '/products/skus/',
+        method: 'POST',
+        headers: {"Authorization":"Token 0102f963bf7c4c4452d46e30645de9182ba0d137","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -368,7 +391,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{}")
+    request.write("{\"item\":{\"uuid\":\"4cc9a5f6-e024-4f48-8775-7ff35543f520\"},\"sku_id\":\"AWWghwmTNb\",\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
     request.end();
 
 

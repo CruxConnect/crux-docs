@@ -1,43 +1,37 @@
 ---
-title: /api/products/inventory-lists/
-name: Create Inventory List - Retailer
-position: 2.11
-method: post
-description: Create an Inventory List for your account
+title: /products/inventory-lists/&ltinventory_list_uuid&gt/
+name: Get Inventory List Detail
+position: 2.10
+method: get
+description: Get the Details of a particular Inventory List you have access to
 right_code: |
   ~~~ json
   {
-    "name": "New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS",
-    "description": "The Description for the New Test Inventory List Name"
-  }
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
-  {
-    "uuid": "c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18",
+    "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",
     "retailer": {
       "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
     },
-    "skus": [],
-    "created": "2017-11-02T17:07:25.823165Z",
-    "last_updated": "2017-11-02T17:07:25.823217Z",
-    "name": "New Test Inventory List Name",
-    "description": "The Description for the New Test Inventory List Name"
+    "skus": [
+      {
+        "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc"
+      },
+      {
+        "uuid": "12009d4d-6206-4811-9934-10e6016769e8"
+      },
+      {
+        "uuid": "1ba7a1e7-0eb3-46ae-875f-67d65caa94fa"
+      }
+    ],
+    "created": "2017-10-23T18:28:19.509589Z",
+    "last_updated": "2017-10-23T18:28:19.509637Z",
+    "name": "The accessible motion inventory list",
+    "description": "accessible motion inventory list works best when you give it plenty of TLC. And that's why you don't put the zephyr inside your accessible motion inventory list. It doesn't work that way. All your wildest dreams would come true. Oh, no you don't!  Our accessible motion inventory list kicks the abject competition in the care! Be the hero. Be the kind of person your mother wanted you to me. Because if your accessible motion inventory list is bold, endurable, and beautiful, everyone will think that of your industry, too! Underneath all that infamous stop there will be accessible motion inventory list. Watching. Waiting. Wanting. Wishing. Wondering. Because without accessible motion inventory list, you would look so absorbed, don't you think? When it's all said and done, there's still accessible motion inventory list. Still. Because we care about how your accessible motion inventory list looks! You know you want it."
   }
   ~~~
   {: title="Response" }
 
 ---
-Create an Inventory Lists for your account. This Inventory List eventually will hold all of the SKUs you would like grouped together, at your discretion. To add SKUs to an Inventory List see "Add SKUs" and similarly, to add items to an Inventory List see "Add Items". To Create this Inventory list simply provide your authenticiation token you received at login, with the name and description parameters filled out.
-
-### Request Parameters:
-
-name
-: (string) The Name of the new Inventory List
-
-description
-: (string) The Description for the Inventory List
+Get the Details of a particular Inventory List you have access to.
 
 ### Response Parameters:
 
@@ -47,17 +41,8 @@ uuid
 retailer
 : (object) The Retailer object contains a single retailer_uuid.
 
-supplier
-: (object) The Supplier object contains a supplier_uuid
-
 skus
-: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each. This is empty when you create the list
-
-num_skus
-: (number) The total Number of SKUs per the Catalog
-
-default_shipping_cost
-: (number) The Default Shipping Cost parameter contains a Shipping Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable ship cost per the SKUs or a more sophisticated Shipping strategy.
+: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
 
 created
 : (string) The Created parameter is the date the Catalog was Created.
@@ -66,10 +51,10 @@ last_updated
 : (string) The Last Updated parameter is the date the Catalog was Last Updated.
 
 name
-: (string) The Name the supplier has designated for this Catalog
+: (string) The Name the supplier has designated for this Inventory List
 
 description
-: (string) The Description the supplier has provided for this Catalog
+: (string) The Description the supplier has provided for this Inventory List
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -83,23 +68,19 @@ description
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/" \
+curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "name": "New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS",
-  "description": "The Description for the New Test Inventory List Name"
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/inventory-lists/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8' \
-    name="New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS" \
-    description="The Description for the New Test Inventory List Name"
+    'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -113,18 +94,17 @@ import json
 
 
 def send_request():
-    # Create Inventory List - Retailer
-    # POST https://api.cruxconnect.com/api/products/inventory-lists/
+    # Get Inventory List Detail
+    # GET https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/
 
     try:
-        response = requests.post(
-            url="https://api.cruxconnect.com/api/products/inventory-lists/",
+        response = requests.get(
+            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    name="New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS" \
-    description="The Description for the New Test Inventory List Name")
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -137,17 +117,17 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Create Inventory List - Retailer
+// request Get Inventory List Detail
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/inventory-lists/',
-        method: 'POST',
+        path: '/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/',
+        method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
@@ -176,7 +156,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"name\":\"New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS\",\"description\":\"The Description for the New Test Inventory List Name\"}")
+    request.write("{}")
     request.end();
 
 

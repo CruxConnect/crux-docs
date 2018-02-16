@@ -1,6 +1,6 @@
 ---
-title: /api/products/items/search/export/
-name: Get Item Export by Search - Retailer
+title: /products/items/search/export/
+name: Get Item Export by Search
 position: 2.22
 method: post
 description: Get Item List allows you to return a complete list of items you are interested in.
@@ -52,7 +52,7 @@ uuid
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/items/search/export/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/export/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -66,7 +66,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/items/search/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/items/search/export/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/items/search/export/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
@@ -86,12 +86,12 @@ import json
 
 
 def send_request():
-    # Get Item Export by Search - Retailer
-    # POST https://api.cruxconnect.com/api/products/items/search/export/
+    # Get Item Export by Search
+    # POST https://api-sandbox.cruxconnect.com/products/items/search/export/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/items/search/export/",
+            url="https://api-sandbox.cruxconnect.com/products/items/search/export/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -112,16 +112,16 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Item Export by Search - Retailer
+// request Get Item Export by Search
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/items/search/export/',
+        path: '/products/items/search/export/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

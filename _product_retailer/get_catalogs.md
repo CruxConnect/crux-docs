@@ -1,6 +1,6 @@
 ---
-title: /api/products/catalogs/
-name: Get Catalogs - Retailer
+title: /products/catalogs/
+name: Get Catalogs
 position: 2.00
 method: get
 description: Get the Catalogs you have access to
@@ -142,7 +142,7 @@ default_shipping_cost_currency
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/products/catalogs/" \
+curl "https://api-sandbox.cruxconnect.com/products/catalogs/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -151,7 +151,7 @@ curl "https://api.cruxconnect.com/api/products/catalogs/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/products/catalogs/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/catalogs/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -168,12 +168,12 @@ import json
 
 
 def send_request():
-    # Get Catalog List - Retailer
-    # GET https://api.cruxconnect.com/api/products/catalogs/
+    # Get Catalog List
+    # GET https://api-sandbox.cruxconnect.com/products/catalogs/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/products/catalogs/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -191,16 +191,16 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Catalog List - Retailer
+// request Get Catalog List
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/catalogs/',
+        path: '/products/catalogs/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

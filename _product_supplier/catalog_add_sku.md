@@ -1,14 +1,14 @@
 ---
-title: /api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/
-name: Catalog Add Item - Suppplier
-position: 2.05
+title: /products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/
+name: Catalog Add SKU
+position: 2.03
 method: post
-description: Add already existing Items to a Catalog
+description: Add already existing SKUs to a Catalog
 right_code: |
   ~~~ json
   {
-    "item_uuids": [
-      "112f26c6-64e5-4814-b06a-24961e8abd21"
+    "sku_uuids": [
+      "84d075e0-28e2-449c-9292-5cfe6981e922"
     ]
   }
   ~~~
@@ -16,78 +16,19 @@ right_code: |
 
 
 ---
-Add already existing Items to a Catalog for Retailers to access. This allows you to add Items to a Catalog with all associated SKUs. By providing your catalog_uuid and a list of item_ids with related data, you can successfully add them to the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
+Add already existing SKUs to a Catalog for Retailers to access. This allows you to add SKUs to a Catalog. By providing your catalog_uuid, and a list of sku_uuids with related data, you can successfully add them to the items added previously to the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /api/products/catalogs/<catalog_uuid>/add-items/
+URL Endpoint: /products/catalogs/<catalog_uuid>/add-skus/
 
 ### Request Parameters:
 
-item_uuids
-: (list) The Item UUIDs list parameter holds item_uuids for all of the items you wish to add to your Catalog
+sku_uuids
+: (list) The SKU UUIDs list parameter holds a list of sku_uuids to an existing catalog
 
-#### Item ID Object:
-
-item_id
-: (string) The Item Identifier is the identifier for the item as provided by the supplier. This is the parent identifier for the child SKU; SKUs are considered children identifiers to the item_id.
-
-skus
-: (list) The Stock Keeping Units (SKUs) list contains individual SKUs, or Item-variants, with their SKU-level data
-
-restrict_from_marketplaces
-: (list) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
-
-cost_range
-: (object) The Cost Range object contains the minimum and maximum prices you will pay for the Item, based on the available variants (SKUs).
-
-minimum_advertised_price_range
-: (object) The Minimum Advertised Price Range object contains the minimum and maximum MAPs for the item, based on the available variants (SKUs).
-
-msrp_range
-: (object) The Manufacturer's Suggested Retail Price Range object contains the minimum and maximum MSRPs for the Item, based on the available variants (SKUs).
-
-product_images
-: (list) The Product Images list stores a list of images for the item, based on the available variants (SKUs)
-
-title
-: (string) The Item Title is the title for the Item
-
-description
-: (string) The Description for the Item
-
-warranty
-: (string) The Warranty for the Item, if provided/available
-
-return_policy
-: (string) The Return Policy for the Item, if provided/available
-
-manufacturer
-: (string) The Manufacturer for the Item
-
-brand
-: (string) The Brand of the Item
-
-country_of_origin
-: (string) The Country of Origin is the country code of the origin of the Item
-
-shipping_origin_country
-: (string) The Shipping Origin Country is the country code of the shipping origin of the Item. If the item is manufacturered in the USA, but the distributor is in Canada, the Shipping Origin Country is going to have a value of "CA".
-
-other_marketplace_restriction
-: (string) The Other Markeplace Restriction is a string list of markeplaces where the item is prohibited from being sold.
-
-fba_certified
-: (boolean) The Fulfillment By Amazon (FBA) Certified parameter indicates whether this supplier has FBA set up on this Item.
-
-custom_attributes
-: (object) The Custom Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
-
-categories
-: (list) The Categories list contains a list of the categories, as provided by the Supplier, for this Item.
-
-#### SKU Object:
+#### SKU ID Object:
 
 sku_id
-: (string) The SKU Identifier for the SKU as provided by the Supplier
+: (string) The SKU Identifier for the SKU
 
 restrictions
 : (string) The Restrictions imposed on the SKU
@@ -115,15 +56,6 @@ measurements
 
 product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
-
-inventory_lists
-: (list) The Inventory Lists list contains all of the Inventory List objects where this SKU currently resides.
-
-created
-: (string) The Created parameter indicates the date the SKU was Created in our system.
-
-last_updated
-: (string) The Last Updated parameter indicates the date the SKU was Last Updated in our system.
 
 quantity_in_stock
 : (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
@@ -213,44 +145,6 @@ asin
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
 
-#### Cost Range Object:
-
-min
-: (number) The Minimum price for one of the SKUs or Item-variants
-
-max
-: (number) The Maximum price for one of the SKUs or Item-variants
-
-#### Minimum Advertized Price Range Object:
-
-min
-: (number) The Minimum MAP for one of the SKUs or Item-variants
-
-max
-: (number) The Maximum MAP for one of the SKUs or Item-variants
-
-Manufacturer's Suggested Retail Price (MSRP) Range Object:
-
-min
-: (number) The Minimum MSRP for one of the SKUs or Item-variants
-
-max
-: (number) The Maximum MSRP for one of the SKUs or Item-variants
-
-#### Item Product Images Object:
-
-uuid
-: (string) The Universal Unique Identifier for the Item Product Image
-
-url
-: (string) The URL for the Item Product Image
-
-width
-: (number) The Image Width in pixels for the Item Product Image
-
-height
-: (number) The Image Height in pixels for the Item Product Image
-
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
 | 200  | OK                     | The API call was received and response is provided                           |
@@ -263,12 +157,12 @@ height
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/" \
      -H 'Authorization: Token 825dd305b5858e2373763ff338615db822fe67a0' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "item_uuids": [
-    "112f26c6-64e5-4814-b06a-24961e8abd21"
+  "sku_uuids": [
+    "84d075e0-28e2-449c-9292-5cfe6981e922"
   ]
 }'
 
@@ -276,11 +170,11 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/' \
     'Authorization':'Token 825dd305b5858e2373763ff338615db822fe67a0' \
     'Content-Type':'application/json; charset=utf-8' \
-    item_uuids:="[
-  \"112f26c6-64e5-4814-b06a-24961e8abd21\"
+    sku_uuids:="[
+  \"84d075e0-28e2-449c-9292-5cfe6981e922\"
 ]"
 
 ~~~
@@ -295,18 +189,18 @@ import json
 
 
 def send_request():
-    # Catalog Add Item - Suppplier
-    # POST https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/
+    # Catalog Add SKU
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/",
             headers={
                 "Authorization": "Token 825dd305b5858e2373763ff338615db822fe67a0",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    item_uuids:="[
-  \"112f26c6-64e5-4814-b06a-24961e8abd21\"
+            data=json.dumps(    sku_uuids:="[
+  \"84d075e0-28e2-449c-9292-5cfe6981e922\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -320,16 +214,16 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Catalog Add Item - Suppplier
+// request Catalog Add SKU
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/',
+        path: '/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/',
         method: 'POST',
         headers: {"Authorization":"Token 825dd305b5858e2373763ff338615db822fe67a0","Content-Type":"application/json; charset=utf-8"}
     };
@@ -359,7 +253,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_uuids\":[\"112f26c6-64e5-4814-b06a-24961e8abd21\"]}")
+    request.write("{\"sku_uuids\":[\"84d075e0-28e2-449c-9292-5cfe6981e922\"]}")
     request.end();
 
 

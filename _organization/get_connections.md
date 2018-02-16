@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/connections/
+title: /organizations/connections/
 name: Get Connections
 position: 0.91
 method: get
@@ -201,7 +201,7 @@ phone
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/connections/" \
+curl "https://api-sandbox.cruxconnect.com/organizations/connections/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -210,7 +210,7 @@ curl "https://stable.projectthanos.com/api/organizations/connections/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/organizations/connections/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/organizations/connections/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -228,11 +228,11 @@ import json
 
 def send_request():
     # Get Connections
-    # GET https://stable.projectthanos.com/api/organizations/connections/
+    # GET https://api-sandbox.cruxconnect.com/organizations/connections/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/connections/",
+            url="https://api-sandbox.cruxconnect.com/organizations/connections/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -257,9 +257,9 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/organizations/connections/',
+        path: '/organizations/connections/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

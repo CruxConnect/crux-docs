@@ -1,9 +1,9 @@
 ---
-title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/add-items-by-search/
-name: Inventory Add Item by Search - Retailer
-position: 2.16
+title: /products/catalogs/&ltcatalog_uuid&gt/add-items-by-search/
+name: Catalog Add Item by Search
+position: 2.07
 method: post
-description: Add Items to an existing Inventory List by Search
+description: Add Items to an existing Catalog by Search
 right_code: |
   ~~~ json
   {
@@ -32,7 +32,7 @@ right_code: |
 
 
 ---
-Add Items to an existing Inventory List by Search. This allows you to add Items with all associated SKUs via a Search to an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully add them to the indicated Inventory List.
+Add Items to an existing Catalog by Search. This allows you to add Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully add them to the indicated Catalog.
 
 ### Request Parameters:
 
@@ -63,7 +63,7 @@ pagination
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -92,7 +92,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
@@ -127,12 +127,12 @@ import json
 
 
 def send_request():
-    # Inventory Add Item by Search - Retailer
-    # POST https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/
+    # Catalog Add Item by Search
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -168,16 +168,16 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Inventory Add Item by Search - Retailer
+// request Catalog Add Item by Search
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/',
+        path: '/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

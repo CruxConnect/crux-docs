@@ -1,28 +1,79 @@
 ---
-title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/remove-items/
-name: Inventory Remove Item - Retailer
-position: 2.15
-method: post
-description: Remove Items from an existing Inventory List for your account
+title: /products/catalogs/&ltcatalog_uuid&gt/
+name: Get Catalog Detail
+position: 2.01
+method: get
+description: Get the Details of a particular Catalog you have access to
 right_code: |
   ~~~ json
   {
-    "item_uuids": [
-      "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
-      "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
-    ]
+    "uuid": "5d704568-d5a6-4751-94ff-cc0d86da99dc",
+    "supplier": {
+      "uuid": "f2ee86d6-7384-4144-bc35-428cd8e02c16"
+    },
+    "skus": [
+      {
+        "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc"
+      },
+      {
+        "uuid": "12009d4d-6206-4811-9934-10e6016769e8"
+      },
+      {
+        "uuid": "1ba7a1e7-0eb3-46ae-875f-67d65caa94fa"
+      }
+    ],
+    "num_skus": 3,
+    "default_shipping_cost": null,
+    "retailer": {
+      "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
+    },
+    "created": "2017-10-23T18:25:36.265190Z",
+    "last_updated": "2017-10-23T18:25:36.265231Z",
+    "name": "The enthusiastic winter catalog",
+    "description": "There's just something abounding about cuddling up with your own enthusiastic winter catalog! Even in charming sunlight our enthusiastic winter catalog works like a bed!It will blow your charming mind.Then tacos will start raining right out of the charming sky.Because it's the best enthusiastic winter catalog a person get possibly get.  At least on a charming Tuesday! Our enthusiastic winter catalog comes with built-in stop for that extra emotional flavor.",
+    "default_shipping_cost_currency": "USD"
   }
   ~~~
-  {: title="Request" }
-
+  {: title="Response" }
 
 ---
-Remove Items from an existing Inventory List for your account. This allows you to remove Items with all associated SKUs from an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully remove them from the indicated Inventory List.
+Get the Details of a particular Catalog you have access to.
 
-### Request Parameters:
+### Response Parameters:
 
-item_uuids
-: (list) The Items list parameter holds item_uuids for all of the items you wish to add to your Inventory List
+uuid
+: (string) Universal Unique Identifier for the Catalog
+
+supplier
+: (object) The Supplier object contains a supplier_uuid
+
+skus
+: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
+
+num_skus
+: (number) The total Number of SKUs per the Catalog
+
+default_shipping_cost
+: (number) The Default Shipping Cost parameter contains a Shipping Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable ship cost per the SKUs or a more sophisticated Shipping strategy.
+
+retailer
+: (object) The Retailer object contains a single retailer_uuid.
+
+created
+: (string) The Created parameter is the date the Catalog was Created.
+
+
+last_updated
+: (string) The Last Updated parameter is the date the Catalog was Last Updated.
+
+name
+: (string) The Name the supplier has designated for this Catalog
+
+description
+: (string) The Description the supplier has provided for this Catalog
+
+default_shipping_cost_currency
+: (string) The Default Shipping Cost Currency parameter indicates what
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -36,27 +87,19 @@ item_uuids
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/" \
+curl "https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "item_uuids": [
-    "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
-    "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
-  ]
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'application/json; charset=utf-8' \
-    item_uuids:="[
-  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
-  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
-]"
+    'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -70,20 +113,17 @@ import json
 
 
 def send_request():
-    # Inventory Remove Item - Retailer
-    # POST https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/
+    # Get Catalog Detail
+    # GET https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/
 
     try:
-        response = requests.post(
-            url="https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/",
+        response = requests.get(
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    item_uuids:="[
-  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
-  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
-]")
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -96,17 +136,17 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Inventory Remove Item - Retailer
+// request Get Catalog Detail
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/',
-        method: 'POST',
+        path: '/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/',
+        method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
@@ -135,7 +175,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_uuids\":[\"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",\"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"]}")
+    request.write("{}")
     request.end();
 
 

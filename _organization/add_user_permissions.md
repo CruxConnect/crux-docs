@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/users/permissions/&ltuser_uuid&gt/
+title: /organizations/users/permissions/&ltuser_uuid&gt/
 name: Add User Permissions
 position: 0.8
 method: patch
@@ -35,7 +35,7 @@ permission_uuids
 
 
 ~~~ bash
-curl -X "PATCH" "https://stable.projectthanos.com/api/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/" \
+curl -X "PATCH" "https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -49,7 +49,7 @@ curl -X "PATCH" "https://stable.projectthanos.com/api/organizations/users/permis
 {: title="Curl" }
 
 ~~~ bash
-http --json PATCH 'https://stable.projectthanos.com/api/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/' \
+http --json PATCH 'https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     permission_uuids:="[
@@ -70,11 +70,11 @@ import json
 
 def send_request():
     # Add User Permissions
-    # PATCH https://stable.projectthanos.com/api/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/
+    # PATCH https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/
 
     try:
         response = requests.patch(
-            url="https://stable.projectthanos.com/api/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/",
+            url="https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -102,9 +102,9 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/',
+        path: '/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/',
         method: 'PATCH',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

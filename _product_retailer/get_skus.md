@@ -1,6 +1,6 @@
 ---
-title: /api/products/skus/
-name: Get SKUs - Retailer
+title: /products/skus/
+name: Get SKUs
 position: 2.23
 method: get
 description: Get SKUs allows you to return a complete list of SKUs you are interested in.
@@ -518,7 +518,7 @@ name
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/products/skus/" \
+curl "https://api-sandbox.cruxconnect.com/products/skus/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -527,7 +527,7 @@ curl "https://api.cruxconnect.com/api/products/skus/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/products/skus/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -544,12 +544,12 @@ import json
 
 
 def send_request():
-    # Get SKU List - Retailer
-    # GET https://api.cruxconnect.com/api/products/skus/
+    # Get SKU List
+    # GET https://api-sandbox.cruxconnect.com/products/skus/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/products/skus/",
+            url="https://api-sandbox.cruxconnect.com/products/skus/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -567,16 +567,16 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get SKU List - Retailer
+// request Get SKU List
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/skus/',
+        path: '/products/skus/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

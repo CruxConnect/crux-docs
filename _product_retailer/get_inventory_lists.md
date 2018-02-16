@@ -1,6 +1,6 @@
 ---
-title: /api/products/inventory-lists/
-name: Get Inventory Lists - Retailer
+title: /products/inventory-lists/
+name: Get Inventory Lists
 position: 2.09
 method: get
 description: Get the Inventory Lists for your account
@@ -112,7 +112,7 @@ description
 
 
 ~~~ bash
-curl "https://api.cruxconnect.com/api/products/inventory-lists/" \
+curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -121,7 +121,7 @@ curl "https://api.cruxconnect.com/api/products/inventory-lists/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api.cruxconnect.com/api/products/inventory-lists/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/inventory-lists/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -138,12 +138,12 @@ import json
 
 
 def send_request():
-    # Get List of Inventory Lists - Retailer
-    # GET https://api.cruxconnect.com/api/products/inventory-lists/
+    # Get List of Inventory Lists
+    # GET https://api-sandbox.cruxconnect.com/products/inventory-lists/
 
     try:
         response = requests.get(
-            url="https://api.cruxconnect.com/api/products/inventory-lists/",
+            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -161,16 +161,16 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get List of Inventory Lists - Retailer
+// request Get List of Inventory Lists
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/inventory-lists/',
+        path: '/products/inventory-lists/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

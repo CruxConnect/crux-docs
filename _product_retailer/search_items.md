@@ -1,6 +1,6 @@
 ---
-title: /api/products/items/search/
-name: Search Items - Retailer
+title: /products/items/search/
+name: Search Items
 position: 2.25
 method: post
 description: Search for Items in the catalogs available to your organization
@@ -385,7 +385,7 @@ right_code: |
 ---
 Search for Items in the catalogs available to your organization using a number of filters, facets, and other helpful tools.
 
-URL Endpoint: /api/products/items/search/
+URL Endpoint: /products/items/search/
 
 ### Request Parameters:
 
@@ -793,7 +793,7 @@ inventory_lists
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/items/search/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -832,7 +832,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/items/search/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/items/search/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/items/search/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
@@ -877,12 +877,12 @@ import json
 
 
 def send_request():
-    # Search Items - Retailer
-    # POST https://api.cruxconnect.com/api/products/items/search/
+    # Search Items
+    # POST https://api-sandbox.cruxconnect.com/products/items/search/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/items/search/",
+            url="https://api-sandbox.cruxconnect.com/products/items/search/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -928,16 +928,16 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Search Items - Retailer
+// request Search Items
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/items/search/',
+        path: '/products/items/search/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

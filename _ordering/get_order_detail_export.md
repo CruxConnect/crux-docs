@@ -1,5 +1,5 @@
 ---
-title: /api/orders/&ltorder_uuid&gt/export/
+title: /orders/&ltorder_uuid&gt/export/
 name: Get Order Detail Export
 position: 3.03
 method: post
@@ -38,7 +38,7 @@ uuid
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -49,7 +49,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     order_uuid="bce99b67-2b23-43b8-a229-9c97b9e79935"
@@ -67,11 +67,11 @@ import json
 
 def send_request():
     # Get Order Detail Export
-    # POST https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/
+    # POST https://api-sandbox.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/",
+            url="https://api-sandbox.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -96,9 +96,9 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/',
+        path: '/orders/299fc593-04f0-424d-9847-e359b9dfde56/export/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

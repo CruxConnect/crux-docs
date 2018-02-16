@@ -1,5 +1,5 @@
 ---
-title: /api/organizations/users/permissions/&ltuser_uuid&gt/
+title: /organizations/users/permissions/&ltuser_uuid&gt/
 name: Get User Permissions
 position: 0.7
 method: get
@@ -90,7 +90,7 @@ grouping
 
 
 ~~~ bash
-curl "https://stable.projectthanos.com/api/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/" \
+curl "https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -104,7 +104,7 @@ curl "https://stable.projectthanos.com/api/organizations/users/permissions/3a7ac
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://stable.projectthanos.com/api/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     notification_via="email" \
@@ -125,11 +125,11 @@ import json
 
 def send_request():
     # Get User Permissions
-    # GET https://stable.projectthanos.com/api/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/
+    # GET https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/
 
     try:
         response = requests.get(
-            url="https://stable.projectthanos.com/api/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/",
+            url="https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -157,9 +157,9 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'stable.projectthanos.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/',
+        path: '/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/',
         method: 'GET',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

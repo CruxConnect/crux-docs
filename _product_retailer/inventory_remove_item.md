@@ -1,9 +1,9 @@
 ---
-title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/add-items/
-name: Inventory Add Item - Retailer
-position: 2.14
+title: /products/inventory-lists/&ltinventory_list_uuid&gt/remove-items/
+name: Inventory Remove Item
+position: 2.15
 method: post
-description: Add Items to an existing Inventory List for your account
+description: Remove Items from an existing Inventory List for your account
 right_code: |
   ~~~ json
   {
@@ -17,7 +17,7 @@ right_code: |
 
 
 ---
-Add Items to an existing Inventory List for your account. This allows you to add Items with all associated SKUs to an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully add them to the indicated Inventory List.
+Remove Items from an existing Inventory List for your account. This allows you to remove Items with all associated SKUs from an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully remove them from the indicated Inventory List.
 
 ### Request Parameters:
 
@@ -36,7 +36,7 @@ item_uuids
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -50,7 +50,7 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
@@ -70,12 +70,12 @@ import json
 
 
 def send_request():
-    # Inventory Add Item - Retailer
-    # POST https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/
+    # Inventory Remove Item
+    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/",
+            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
@@ -96,16 +96,16 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Inventory Add Item - Retailer
+// request Inventory Remove Item
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/',
+        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/remove-items/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };

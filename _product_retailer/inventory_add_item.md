@@ -1,27 +1,28 @@
 ---
-title: /api/products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
-name: Inventory Add SKU - Retailer
-position: 2.12
+title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-items/
+name: Inventory Add Item
+position: 2.14
 method: post
-description: Add SKUs to an existing Inventory List for your account
+description: Add Items to an existing Inventory List for your account
 right_code: |
   ~~~ json
   {
-    "sku_uuids": [
-      "9060814c-9feb-4a3e-958c-cb26d537cffc",
-      "12009d4d-6206-4811-9934-10e6016769e8"
+    "item_uuids": [
+      "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
+      "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
     ]
   }
   ~~~
   {: title="Request" }
 
+
 ---
-Add SKUs to an existing Inventory List for your account. This allows you to add SKUs to an Inventory List. By providing your inventory_list_uuid and a list of sku_uuids, you can successfully add them to the indicated Inventory List.
+Add Items to an existing Inventory List for your account. This allows you to add Items with all associated SKUs to an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully add them to the indicated Inventory List.
 
 ### Request Parameters:
 
-sku_uuids
-: (list) The SKU UUIDs list parameter holds sku_uuids for all of the SKUs you wish to add to your Inventory List
+item_uuids
+: (list) The Items list parameter holds item_uuids for all of the items you wish to add to your Inventory List
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
@@ -30,18 +31,18 @@ sku_uuids
 | 401  | Unauthorized           | Generally, the username or password is incorrect                             |
 | 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
 | 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb does not match the intended API call                |
+| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
 | 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
 
 
 ~~~ bash
-curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/" \
      -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "sku_uuids": [
-    "9060814c-9feb-4a3e-958c-cb26d537cffc",
-    "12009d4d-6206-4811-9934-10e6016769e8"
+  "item_uuids": [
+    "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
+    "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
   ]
 }'
 
@@ -49,12 +50,12 @@ curl -X "POST" "https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/' \
     'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
     'Content-Type':'application/json; charset=utf-8' \
-    sku_uuids:="[
-  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
-  \"12009d4d-6206-4811-9934-10e6016769e8\"
+    item_uuids:="[
+  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
+  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
 ]"
 
 ~~~
@@ -69,19 +70,19 @@ import json
 
 
 def send_request():
-    # Inventory Add SKU - Retailer
-    # POST https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/
+    # Inventory Add Item
+    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/
 
     try:
         response = requests.post(
-            url="https://api.cruxconnect.com/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/",
+            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/",
             headers={
                 "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sku_uuids:="[
-  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
-  \"12009d4d-6206-4811-9934-10e6016769e8\"
+            data=json.dumps(    item_uuids:="[
+  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
+  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -95,16 +96,16 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Inventory Add SKU - Retailer
+// request Inventory Add Item
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/',
+        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items/',
         method: 'POST',
         headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
     };
@@ -134,7 +135,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_uuids\":[\"9060814c-9feb-4a3e-958c-cb26d537cffc\",\"12009d4d-6206-4811-9934-10e6016769e8\"]}")
+    request.write("{\"item_uuids\":[\"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",\"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"]}")
     request.end();
 
 
