@@ -36,13 +36,13 @@ right_code: |
         "product_images": [
           {
             "uuid": "800388e7-de33-494a-94ac-93f57f959de3",
-            "url": "https:/.adorable.io/avatars/80/obad15.png",
+            "url": "https://api.adorable.io/avatars/80/obad15.png",
             "width": 80,
             "height": 80
           },
           {
             "uuid": "bd465a5a-c006-45b9-ac26-83fd978ba36f",
-            "url": "https:/.adorable.io/avatars/80/obad33.png",
+            "url": "https://api.adorable.io/avatars/80/obad33.png",
             "width": 80,
             "height": 80
           }
@@ -128,13 +128,13 @@ right_code: |
         "product_images": [
           {
             "uuid": "38a566f9-7cd1-4d0a-8d99-c12bd749bd78",
-            "url": "https:/.adorable.io/avatars/285/obad24.png",
+            "url": "https://api.adorable.io/avatars/285/obad24.png",
             "width": 285,
             "height": 285
           },
           {
             "uuid": "74bef732-c204-43af-97a6-bee4e2d0997b",
-            "url": "https:/.adorable.io/avatars/155/obad20.png",
+            "url": "https://api.adorable.io/avatars/155/obad20.png",
             "width": 155,
             "height": 155
           }
@@ -212,13 +212,13 @@ right_code: |
     "product_images": [
       {
         "uuid": "443ba02e-973b-4fee-8a00-9c4bd8c5c3a5",
-        "url": "https:/.adorable.io/avatars/80/obad21.png",
+        "url": "https://api.adorable.io/avatars/80/obad21.png",
         "width": 80,
         "height": 80
       },
       {
         "uuid": "b08c80af-7b64-47e7-ab49-e77c8a5b33d7",
-        "url": "https:/.adorable.io/avatars/80/obad20.png",
+        "url": "https://api.adorable.io/avatars/80/obad20.png",
         "width": 80,
         "height": 80
       }
