@@ -41,13 +41,13 @@ right_code: |
     "product_images": [
       {
         "uuid": "1929dd2b-ad2c-4021-9960-fb26e7bf448a",
-        "url": "https:/.adorable.io/avatars/80/obad20.png",
+        "url": "https://api.adorable.io/avatars/80/obad20.png",
         "width": 80,
         "height": 80
       },
       {
         "uuid": "8e6e1355-a185-4574-bb54-dc2193b9ab2d",
-        "url": "https:/.adorable.io/avatars/285/obad39.png",
+        "url": "https://api.adorable.io/avatars/285/obad39.png",
         "width": 285,
         "height": 285
       }
