@@ -25,10 +25,7 @@ $ bundle exec jekyll serve
 
 ## Editing
 
-Each documented endpoint is found in its own markdown file.
-Add new files is fairly straightforward. You may use the PAW exporter to export into the aviator format, or simply
-follow the format based upon other endpoints. Provide an expected response, as well as requests in `Curl`, `HTTPie`,
-`Python` and `Node.js`.
+The source of each documented endpoint is in the [Paw file](/files/Crux-API-Project.paw). The description contains the human readable notes and the code is generated from Paw. Any changes are made there. The [Crux Aviator Generator](https://github.com/CruxConnect/paw-aviator-extension) extension is then used to generated the markdown file for each endpoint.
 
 ### Usage
 
