@@ -3997,7 +3997,7 @@ end_date
 : (string) The End Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
 
 term
-: (string) Keyword(s) search term
+: (string) For Retailers: term can be a Record UUID or PO Number.  For Suppliers: term can be an Order UUID or SKU ID
 
 org_uuids
 : (array) An array of Organization Universal Unique Identifiers
@@ -4022,9 +4022,6 @@ orders
 
 uuid
 : (string) The Universal Unique Identifier for the Order
-
-status
-: (string) The current Status of the Order
 
 is_allocated
 : (boolean) Is the order Allocated by the Supplier as of the moment you get the response. Generally, this is false initially as the supplier(s) providing the SKU(s) must allocate for each Order.
@@ -4098,6 +4095,9 @@ state
 postal_code
 : (number) The Zip Code / Postal Code associated with the Address
 
+phone_number
+: (number) The Phone Number associated with the address
+
 #### Requested Shipping Object:
 
 shipping_carrier
@@ -4127,7 +4127,7 @@ sku_name
 : (string) The SKU Name
 
 status
-: (string) The Status for the Line Item. Possible Values are: `unallocated`, `allocated`, `rejected`, `has_tracking`, `backordered`
+: (string) The Status for the Line Item. Possible Values are: `Unallocated`, `Allocated`, `Rejected`, `HasTracking`, `Backordered`, `Cancelled`
 
 cost
 : (number) The Cost of the SKU
@@ -4147,16 +4147,16 @@ allocation
 #### Allocation Object: 
 
 quantity_ordered
-: (number) The Quantity Ordered of the SKU
+: (int) The Quantity Ordered of the SKU
 
 quantity_allocated
-: (number) The Quantity Allocated by the Supplier for this Order
+: (int) The Quantity Allocated by the Supplier for this Order
 
 quantity_backordered
-: (number) The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state. If you allow the supplier to fulfill the order, this number is supposed to decrease to 0 as they get the item in-stock in their warehouse(s). When a Supplier gets a Backorder Date, they add it to the field labeled "backorder_date".
+: (int) The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state. If you allow the supplier to fulfill the order, this number is supposed to decrease to 0 as they get the item in-stock in their warehouse(s). When a Supplier gets a Backorder Date, they add it to the field labeled "backorder_date".
 
 quantity_rejected
-: (number) The Quantity Rejected by the Supplier is the Quantity that they simply cannot fulfill. Reasons may vary, such as state or federal law, customs, or being out-of-stock on an already discontinued product line.
+: (int) The Quantity Rejected by the Supplier is the Quantity that they simply cannot fulfill. Reasons may vary, such as state or federal law, customs, or being out-of-stock on an already discontinued product line.
 
 backorder_date
 : (string) The Date that the Backordered SKU will be available for shipment. This date should be used as a tentative schedule which may help determine if waiting for the order is appropriate. Should this date be unacceptable, you may cancel the order with the "Cancel Order" API call.
