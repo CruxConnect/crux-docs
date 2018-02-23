@@ -3998,8 +3998,8 @@ end_date
 
 term
 : (string) Term varies depending on if the Orders are for a Retailer or Suppler:
-1. For Retailers: term can be either null, Record UUID or PO Number.  
-2. For Suppliers: term can be either null, Order UUID or SKU ID
+1. For Retailers: term can be either a Record UUID or PO Number.  
+2. For Suppliers: term can be either an Order UUID or SKU ID
 
 org_uuids
 : (array) An array of Organization Universal Unique Identifiers
