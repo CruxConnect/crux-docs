@@ -3997,7 +3997,9 @@ end_date
 : (string) The End Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
 
 term
-: (string) For Retailers: term can be a Record UUID or PO Number.  For Suppliers: term can be an Order UUID or SKU ID
+: (string) Term varies depending on if the Orders are for a Retailer or Suppler:
+1. For Retailers: term can be either null, Record UUID or PO Number.  
+2. For Suppliers: term can be either null, Order UUID or SKU ID
 
 org_uuids
 : (array) An array of Organization Universal Unique Identifiers
