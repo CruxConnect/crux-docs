@@ -262,10 +262,33 @@ supplier_name
 : (string) The Supplier Name
 
 tracking_numbers
-: (list) The Tracking Numbers list provides a Tracking Number or list of multiple Tracking Numbers for this particular SKU.
+: (list) An Order may be brokend in to multiple shipment each of which has its own Tracking Number object.  The Tracking Numbers list provides a list of those Tracking Number objects for this particular SKU.  
 
 allocation
 : (object) The Allocation object contains quantity ordered, quantity allocated, quantity backordered, quantity rejected, and backorder date.
+
+#### Tracking Numbers Object:
+
+tracking_number
+: (string) The tracking number for this shipment
+
+shipping_carrier
+: (string) The Shipping Carrier for this shipment
+
+shipping_method
+: (string) The Shipping Method for this shipment
+
+shipping_weight
+: (string) The Shipping Weight for this shipment
+
+shipping_cost
+: (number) The Shipping Cost for this shipment
+
+shipping_date
+: (string) The date the order was shipped
+
+quantity
+: (int) The number of items in the shipment
 
 #### Allocation Object: 
 
