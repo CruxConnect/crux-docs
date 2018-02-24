@@ -262,7 +262,7 @@ supplier_name
 : (string) The Supplier Name
 
 tracking_numbers
-: (list) An Order may be brokend in to multiple shipment each of which has its own Tracking Number object.  The Tracking Numbers list provides a list of those Tracking Number objects for this particular SKU.  
+: (array) The Tracking Numbers array parameter includes tracking number objects. Each include a tracking number, carrier, method, weight, cost, shipping date, and quantity.
 
 allocation
 : (object) The Allocation object contains quantity ordered, quantity allocated, quantity backordered, quantity rejected, and backorder date.
