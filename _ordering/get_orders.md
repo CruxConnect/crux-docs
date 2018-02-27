@@ -1,36 +1,40 @@
 ---
 title: /orders/
 name: Get Orders
-position: 0
+position: 3.00
 method: post
 description: Get the Orders for your organization
 right_code: |
   ~~~ json
   {
     "start": 0,
-    "limit": 1,
+    "limit": 2,
     "line_item_statuses": [
-      "unallocated"
+      "Unallocated"
     ],
     "line_item_status_conjunction": "or",
     "start_date": "2017-07-31T06:00:00.000Z",
     "end_date": "2018-08-03T06:00:00.000Z",
     "term": "",
-    "org_uuids": []
+    "org_uuids": [],
+    "sort": {
+      "key": "date",
+      "value": "asc"
+    }
   }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "total_results": 101,
+    "total_results": 104,
     "orders": [
       {
-        "uuid": "10307ca4-c702-4a44-abb3-3828e67bdbb9",
+        "uuid": "9a39a7e0-078b-4321-a6dc-02bb2a505243",
         "is_allocated": false,
-        "purchase_order_id": "4225a169-c912-438c-be13-fcfbf9c6ba5e",
-        "created_date": "2018-02-13T23:50:45.118818Z",
-        "notes": "Accusamus voluptatem beatae quibusdam quia ex consequatur.",
+        "purchase_order_id": "po-XLisbIUs",
+        "created_date": "2018-02-26T17:53:57.326890Z",
+        "notes": "here are some notes",
         "fees": {
           "estimated_shipping_cost": 0,
           "drop_ship_fee": 0,
@@ -45,13 +49,13 @@ right_code: |
           }
         },
         "address": {
-          "name": "Mr. Daniel Morales",
-          "business_name": "Gonzalez, Fisher and Richmond",
-          "address1": "234 Sandra Cove Suite 835\nJosephfort, ID 04759",
-          "address2": "851 Gutierrez Fork\nNorth Marystad, MI 54955",
-          "city": "Port Ryanstad",
-          "state": "Missouri",
-          "postal_code": "28806",
+          "name": "Bob Iger",
+          "business_name": "NBC",
+          "address1": "30 Rockefeller Plaza",
+          "address2": "STE 123",
+          "city": "New York",
+          "state": "NY",
+          "postal_code": "10112",
           "phone_number": null
         },
         "requested_shipping": {
@@ -60,99 +64,75 @@ right_code: |
         },
         "line_items": [
           {
-            "uuid": "0f022062-6ec8-4beb-97cf-02fe3d2c5820",
+            "uuid": "c3fb678f-f881-4894-a7ca-424119289cc4",
             "status": "Unallocated",
-            "item_uuid": "041a4cf0-a4a6-46eb-a61c-a87b28995557",
-            "item_name": "Frogg Toggs Pro Lite Rain Suit Royal Blue - X/XXL",
-            "sku_uuid": "adc3c7f0-8811-4c56-a968-2d88c9dcfd92",
-            "sku_id": "1002664",
-            "sku_name": "Frogg Toggs Pro Lite Rain Suit Royal Blue - X/XXL",
-            "cost": 39.6,
+            "item_uuid": "a904832e-2ad4-4ad7-8339-e4b0877a42bd",
+            "item_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
+            "sku_uuid": "f9ded77b-35b2-45e1-a071-2eec8e99f581",
+            "sku_id": "000106",
+            "sku_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
+            "cost": 66.05,
             "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
             "supplier_name": "Crux Supplier A",
             "tracking_numbers": [],
             "allocation": {
-              "quantity_ordered": 8,
+              "quantity_ordered": 475,
               "quantity_allocated": 0,
               "quantity_backordered": 0,
               "quantity_rejected": 0,
               "backorder_date": null
             }
-          },
+          }
+        ]
+      },
+      {
+        "uuid": "3b6bf17a-1a95-41c7-8961-52ac8459c986",
+        "is_allocated": false,
+        "purchase_order_id": "po-WbbQy4Nu",
+        "created_date": "2018-02-26T15:45:17.390064Z",
+        "notes": "here are some notes",
+        "fees": {
+          "estimated_shipping_cost": 0,
+          "drop_ship_fee": 0,
+          "order_fee": 0
+        },
+        "retailer": {
+          "name": "Crux Retailer",
+          "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
+          "user": {
+            "name": "Roy Breslawski",
+            "email": "rbreslawski@cruxretailer.com"
+          }
+        },
+        "address": {
+          "name": "Bob Iger",
+          "business_name": "NBC",
+          "address1": "30 Rockefeller Plaza",
+          "address2": "STE 123",
+          "city": "New York",
+          "state": "NY",
+          "postal_code": "10112",
+          "phone_number": null
+        },
+        "requested_shipping": {
+          "shipping_carrier": "UPS",
+          "shipping_method": "Ground"
+        },
+        "line_items": [
           {
-            "uuid": "7b90f9d5-6497-48e6-8b70-61f669f8e8d4",
+            "uuid": "052cae65-0332-4e8a-820a-3d482913e810",
             "status": "Unallocated",
-            "item_uuid": "f45deb3e-2f98-41b9-85d6-d50b8f9557f2",
-            "item_name": "Spyderco Endura4 Lightweight Black FRN Comboedge",
-            "sku_uuid": "4b89350e-27f7-4d55-b643-b8f1d3b64f18",
-            "sku_id": "000951",
-            "sku_name": "Spyderco Endura4 Lightweight Black FRN Comboedge",
-            "cost": 51.38,
+            "item_uuid": "a904832e-2ad4-4ad7-8339-e4b0877a42bd",
+            "item_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
+            "sku_uuid": "f9ded77b-35b2-45e1-a071-2eec8e99f581",
+            "sku_id": "000106",
+            "sku_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
+            "cost": 66.05,
             "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
             "supplier_name": "Crux Supplier A",
             "tracking_numbers": [],
             "allocation": {
-              "quantity_ordered": 6,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "980b9534-42b1-4c05-8bf1-ff8b5c966d63",
-            "status": "Unallocated",
-            "item_uuid": "51041ea6-8946-42f7-96a8-ac9ed9a17119",
-            "item_name": "Genesis Original Righthand Bow Green",
-            "sku_uuid": "e5cc3d99-19ed-4d6e-bef9-1aef50f33c4a",
-            "sku_id": "000192",
-            "sku_name": "Genesis Original Righthand Bow Green",
-            "cost": 68.46,
-            "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
-            "supplier_name": "Crux Supplier A",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 3,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "0e29ee59-cc01-4698-b462-84f3b7f43f34",
-            "status": "Unallocated",
-            "item_uuid": "88d1cee7-9ee3-447e-82cf-0a9591bd1c86",
-            "item_name": "Women’s Motivation Tech Bra",
-            "sku_uuid": "4e85d942-b411-495a-ad09-3cac30f86244",
-            "sku_id": "NF0A2VARFTH-S",
-            "sku_name": "Women’s Motivation Tech Bra",
-            "cost": 37.21,
-            "supplier_uuid": "fa18d9a6-1d83-45e0-bebe-41098b0e3925",
-            "supplier_name": "ES Docker Cluster Inc",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 7,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          },
-          {
-            "uuid": "7c37c3d3-d90c-4f86-8d7c-2ba43ce882dd",
-            "status": "Unallocated",
-            "item_uuid": "2ba73e2a-bd96-47c9-9317-045101e35674",
-            "item_name": "Women’s Freedom Insulated Pant",
-            "sku_uuid": "6effebfa-ee19-47f3-8634-f3a3b40967a6",
-            "sku_id": "NF0A3337FN4-XL-SHT",
-            "sku_name": "Women’s Freedom Insulated Pant",
-            "cost": 54.38,
-            "supplier_uuid": "fa18d9a6-1d83-45e0-bebe-41098b0e3925",
-            "supplier_name": "ES Docker Cluster Inc",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 8,
+              "quantity_ordered": 236,
               "quantity_allocated": 0,
               "quantity_backordered": 0,
               "quantity_rejected": 0,
@@ -180,6 +160,9 @@ start
 limit
 : (int) The Limit is the element number of "Order" in your Orders List where you would like your results to end. If you have 10 orders and you limit at 8 and start at 4, only orders 4, 5, 6, 7, and 8 are included in the results.
 
+sort
+: (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in
+
 line_item_statuses
 : (array) One or more line item statuses. Will include orders with statuses based upon that `status_conjunction`. Possible Values are: `Unallocated`, `Allocated`, `Rejected`, `HasTracking`, `Backordered`, `Cancelled`. The response will contain orders with statuses that match the provided line_item_status (as combined based on line_item_status_conjunction).
 
@@ -201,10 +184,9 @@ org_uuids
 ##### Sort Object:
 
 key
-: (string) The Key is the attribute on which you'd like to sort. Possible values include date, status, and sku_id.
-
+: (string) The Key is the attribute on which you'd like to sort. Currently this is 'date' only.
 dir
-: (string) The Direction is ascending or descending entered as "asc" or "des"
+: (string) The Direction is ascending or descending.  Use 'asc' for ascending.  Any other value, would return the default direction of descending.
 
 ### Response Parameters:
 
@@ -335,10 +317,33 @@ supplier_name
 : (string) The Supplier Name
 
 tracking_numbers
-: (list) The Tracking Numbers list provides a Tracking Number or list of multiple Tracking Numbers for this particular SKU.
+: (array) The Tracking Numbers array parameter includes tracking number objects. Each include a tracking number, carrier, method, weight, cost, shipping date, and quantity.
 
 allocation
 : (object) The Allocation object contains quantity ordered, quantity allocated, quantity backordered, quantity rejected, and backorder date.
+
+#### Tracking Numbers Object:
+
+tracking_number
+: (string) The tracking number for this shipment
+
+shipping_carrier
+: (string) The Shipping Carrier for this shipment
+
+shipping_method
+: (string) The Shipping Method for this shipment
+
+shipping_weight
+: (string) The Shipping Weight for this shipment
+
+shipping_cost
+: (number) The Shipping Cost for this shipment
+
+shipping_date
+: (string) The date the order was shipped
+
+quantity
+: (int) The number of items in the shipment
 
 #### Allocation Object: 
 
@@ -366,11 +371,15 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "line_item_status_conjunction": "or",
+  "sort": {
+    "key": "date",
+    "value": "asc"
+  },
   "start": 0,
   "start_date": "2017-07-31T06:00:00.000Z",
-  "limit": 1,
+  "limit": 2,
   "line_item_statuses": [
-    "unallocated"
+    "Unallocated"
   ],
   "end_date": "2018-08-03T06:00:00.000Z",
   "org_uuids": [],
@@ -385,11 +394,15 @@ http --json POST 'https://api-sandbox.cruxconnect.com/orders/' \
     'Authorization':'Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d' \
     'Content-Type':'application/json; charset=utf-8' \
     line_item_status_conjunction="or" \
+    sort:="{
+  \"key\": \"date\",
+  \"value\": \"asc\"
+}" \
     start:=0 \
     start_date="2017-07-31T06:00:00.000Z" \
-    limit:=1 \
+    limit:=2 \
     line_item_statuses:="[
-  \"unallocated\"
+  \"Unallocated\"
 ]" \
     end_date="2018-08-03T06:00:00.000Z" \
     org_uuids:="[]" \
@@ -418,11 +431,15 @@ def send_request():
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    line_item_status_conjunction="or" \
+    sort:="{
+  \"key\": \"date\",
+  \"value\": \"asc\"
+}" \
     start:=0 \
     start_date="2017-07-31T06:00:00.000Z" \
-    limit:=1 \
+    limit:=2 \
     line_item_statuses:="[
-  \"unallocated\"
+  \"Unallocated\"
 ]" \
     end_date="2018-08-03T06:00:00.000Z" \
     org_uuids:="[]" \
@@ -478,7 +495,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"start\":0,\"limit\":1,\"line_item_statuses\":[\"unallocated\"],\"line_item_status_conjunction\":\"or\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"term\":\"\",\"org_uuids\":[]}")
+    request.write("{\"start\":0,\"limit\":2,\"line_item_statuses\":[\"Unallocated\"],\"line_item_status_conjunction\":\"or\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"asc\"}}")
     request.end();
     
 
