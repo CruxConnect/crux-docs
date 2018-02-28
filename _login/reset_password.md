@@ -1,7 +1,7 @@
 ---
 title: /organizations/reset-password/
 name: Reset Password
-position: 0.1
+position: 0.01
 method: post
 description: Reset the Password on your account
 right_code: |
@@ -32,14 +32,7 @@ email
 reset_token
 : (string) Reset Token - to be used specifically with "Complete Password Reset" API call
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+Expected responses include 200, 400, 401, 403, or 404.
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/reset-password/" \
