@@ -3,7 +3,7 @@ title: /orders/export/
 name: Get Orders Export
 position: 3.01
 method: post
-description: Get an Export of the Order List via an email
+description: Get an Export of the Orders via an email
 right_code: |
   ~~~ json
   {
@@ -29,17 +29,12 @@ Get an Export of the Orders via an email to your email address on file. This API
 uuids
 : (Array) Array of Universal Unique Identifiers for Export
 
-#### Optional:
-
-none
-
-
 ### Response Parameters:
 
 uuid
 : (string) The Universal Unique Identifier for the Export
 
-Expected responses include 200, 400, 401, 403, or 404.                                     |
+Expected responses include 200, 400, 401, 403, or 404.
 
 
 ~~~ bash
