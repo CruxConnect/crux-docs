@@ -279,7 +279,7 @@ description
 : (string) Description of the Permission
 
 visibility
-: (string) User type with visibility of the permission.  These include 'RETAILER', 'SUPPLIER', or 'BOTH'
+: (string) Visibility based on user type.  This includes 'RETAILER', 'SUPPLIER', or 'BOTH'
 
 grouping
 : (string) Permission grouping.  These include 
