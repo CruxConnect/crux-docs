@@ -1,7 +1,7 @@
 ---
 title: /organizations/complete-password/
 name: Create New Password
-position: 0.3
+position: 0.03
 method: post
 description: Provide a new password for your account
 right_code: |
@@ -25,12 +25,7 @@ password
 token
 : (string) This is the "reset_token" you received from your "Reset Password" API call
 
-| Code | Name                   | Meaning                                                                                  |
-|------|------------------------|------------------------------------------------------------------------------------------|
-| 204  | No Content             | The API call was received and the password has been updated in our system                |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL or email address is not in our system |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                                      |
-
+Expected responses include 200, 400, 401, 403, or 404.
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-password/" \
