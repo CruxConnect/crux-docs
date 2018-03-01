@@ -274,7 +274,7 @@ name
 - add_order_tracking (Supplier Only)
 - allocate_order (Supplier Only)
 - view_supplier_catalogs (Supplier Only)
-- edit_supplier_catalogs(Supplier Only)
+- edit_supplier_catalogs (Supplier Only)
 
 
 display_name
@@ -287,7 +287,7 @@ visibility
 : (string) Visibility based on user type.  This includes 'RETAILER', 'SUPPLIER', or 'BOTH'
 
 grouping
-: (string) Permission grouping.
+: (string) Permission grouping
 
 #### Organization User Object
 
