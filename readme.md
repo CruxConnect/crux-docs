@@ -26,7 +26,14 @@ $ bundle exec jekyll serve
 
 ## Editing
 
-The source of each documented endpoint is in the [Paw file](/files/Crux-API-Project.paw). The description contains the human readable notes and the code is generated from Paw. Any changes are made there. The [Crux Aviator Generator](https://github.com/CruxConnect/paw-aviator-extension) extension is then used to generated the markdown file for each endpoint.
+The source of each documented public endpoint is in the [Paw file](/files/Crux-API-Project.paw).
+
+Internal endpoints are documented in the [Internal Paw file](/files/Internal_Crux_API-Project.paw).
+
+The description contains the human readable notes and the code is generated from Paw.
+Any changes are made there.
+The [Crux Aviator Generator](https://github.com/CruxConnect/paw-aviator-extension)
+extension is then used to generated the markdown file for each endpoint.
 
 ### Usage
 
@@ -34,6 +41,12 @@ The source of each documented endpoint is in the [Paw file](/files/Crux-API-Proj
 * Set the order of the collections with the position field in collection configuration in `_config.yml`.
 * Set the order of the documents inside a collection by setting the position in front matter.
 * Messages may be added to the documentation with the following classes: `info`, `error`, `success`, `warning`
+
+### Visibility
+
+Each collection or endpoint may have a `visiblity` setting.
+`public` and `internal` are the standard choices.
+Any other value will cause the item to appear in both internal and public api docs.
 
 ## Proposing API Changes
 
