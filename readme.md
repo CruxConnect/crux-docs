@@ -1,6 +1,7 @@
 # Crux Connect API Docs
 
-Jekyll built and Github Pages hosted [API documentation](https://docs.cruxconnect.com) for [Crux Connect](https://www.cruxconnect.com).
+Jekyll built and Github Pages hosted [API documentation](https://docs.cruxconnect.com)
+and [Internal API documentation](https://docs.cruxconnect.com/internal/)
 
 ## Features
 
