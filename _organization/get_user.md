@@ -6,11 +6,6 @@ method: get
 description: Get all details about a single user on your account
 right_code: |
   ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
   {
     "uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff",
     "person": {
