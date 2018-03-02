@@ -1,27 +1,32 @@
 ---
-title: /organizations/users/detail/9c6c7f88-6042-4601-b537-3b141842978d/
+title: /organizations/users/detail/&ltuuid&gt/
 name: Get User
-position: 0.5
+position: .5
 method: get
 description: Get all details about a single user on your account
 right_code: |
   ~~~ json
+  {}
+  ~~~
+  {: title="Request" }
+
+  ~~~ json
   {
-    "uuid": "9c6c7f88-6042-4601-b537-3b141842978d",
+    "uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff",
     "person": {
-      "uuid": "fbbf086e-1e57-48b4-9df4-fad9ecda7cde",
-      "first_name": "owner",
-      "last_name": "user",
-      "email": "owneruser8@projectzuul.com",
-      "phone": "+54(3)4615639912",
+      "uuid": "4b4e8ea4-a3cf-4c63-b34e-e1b9047c1340",
+      "first_name": "Roy",
+      "last_name": "Breslawski",
+      "email": "rbreslawski@cruxsupplier.com",
+      "phone": null,
       "job_title": null
     },
     "permission_assignments": {
       "permissions": [
         {
-          "assigned": false,
+          "assigned": true,
           "permission": {
-            "uuid": "5b7906fd-23dd-4fe1-8e50-778819d145ad",
+            "uuid": "68b1647d-b6a7-48b1-9ec2-bf2f1003b6cc",
             "name": "view_org_users",
             "display_name": "View Users",
             "description": "Ability to see the users in an organization",
@@ -29,9 +34,20 @@ right_code: |
             "grouping": "ORGUSERS"
           }
         },
+        {
+          "assigned": true,
+          "permission": {
+            "uuid": "293d9373-c318-4724-881c-a4e5b0b3e952",
+            "name": "edit_org_users",
+            "display_name": "Edit Users",
+            "description": "Ability to edit/change/delete users in an organization",
+            "visibility": "BOTH",
+            "grouping": "ORGUSERS"
+          }
+        },
       ],
       "org_user": {
-        "uuid": "9c6c7f88-6042-4601-b537-3b141842978d"
+        "uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff"
       }
     },
     "status": "ACTIVE"
@@ -45,43 +61,11 @@ Get all the details about a specific user on your Retailer or Supplier account. 
 To view orgainzation users, you must be assigned the 'view_org_users' permission.
 {: .info }
 
-To edit organization users, you must be assigned the 'edit_org_users' permission.
-{: .info }
-
 URL Endpoint: `/api/organizations/users/detail/<user_uuid>/`
 
 ### Response Parameters:
 
-#### User:
-
-uuid
-: (string) Universal Unique Identifier for the User
-
-person
-: (object) Person is an object containing a uuid, first name, last name, email, and phone number
-
-permission_assignments
-: (object) Permission Assignments is an object containing a list of permissions and an organization User
-
-status
-: (string) User's account status which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
-
-#### Person Object:
-
-uuid
-: (string) Universal Unique Identifier for the Person
-
-first_name
-: (string) First Name of the Person
-
-last_name
-: (string) Last Name of the Person
-
-email
-: (string) Email address of the Person
-
-phone
-: (string) Phone number of the Person
+{% include objects/user.md %}
 
 {% include objects/permissions_assignment.md %}
 
@@ -89,8 +73,8 @@ phone
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/organizations/users/detail/9c6c7f88-6042-4601-b537-3b141842978d/" \
-     -H 'Authorization: Token f48c0bbe50aedb45dfa70e466cf6e2d328092d5a' \
+curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/" \
+     -H 'Authorization: Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -98,8 +82,8 @@ curl "https://api-dev.cruxconnect.com/organizations/users/detail/9c6c7f88-6042-4
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-dev.cruxconnect.com/organizations/users/detail/9c6c7f88-6042-4601-b537-3b141842978d/' \
-    'Authorization':'Token f48c0bbe50aedb45dfa70e466cf6e2d328092d5a' \
+http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/' \
+    'Authorization':'Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -116,13 +100,13 @@ import json
 
 def send_request():
     # Get User
-    # GET https://api-dev.cruxconnect.com/organizations/users/detail/9c6c7f88-6042-4601-b537-3b141842978d/
+    # GET https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/organizations/users/detail/9c6c7f88-6042-4601-b537-3b141842978d/",
+            url="https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/",
             headers={
-                "Authorization": "Token f48c0bbe50aedb45dfa70e466cf6e2d328092d5a",
+                "Authorization": "Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -145,11 +129,11 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/users/detail/9c6c7f88-6042-4601-b537-3b141842978d/',
+        path: '/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/',
         method: 'GET',
-        headers: {"Authorization":"Token f48c0bbe50aedb45dfa70e466cf6e2d328092d5a","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

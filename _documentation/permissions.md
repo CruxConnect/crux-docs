@@ -1,5 +1,6 @@
 ---
 title: Permissions
+visibility: public
 position: 3
 ---
 
