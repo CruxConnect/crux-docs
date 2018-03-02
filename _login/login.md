@@ -1,26 +1,55 @@
 ---
 title: /organizations/user-login/
 name: Login
-position: 0.0
+position: 0.00
 method: post
 description: Login to receive an authentication token
 right_code: |
   ~~~ json
   {
-    "username": "mrbailey@projectthanos.com",
-    "password": "thanosrocks"
+    "username": "rbreslawski@cruxretailer.com",
+    "password": "thanos_rocks"
   }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "auth_token": "a0f17278bed479ee719ea890b8caf0329e1f3e5b",
-    "org_uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
-    "user_uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49",
-    "retailer_uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c",
+    "auth_token": "dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d",
+    "org_uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
+    "user_uuid": "359f4b19-08d1-480b-a6e6-24d5d4e5049d",
+    "retailer_uuid": "60148a62-008f-4989-9fd2-f79d13cdc6fb",
     "supplier_uuid": "",
-    "org_type": "RETAILER"
+    "org_type": "RETAILER",
+    "permission_assignments": {
+      "permissions": [
+        {
+          "assigned": true,
+          "permission": {
+            "uuid": "68b1647d-b6a7-48b1-9ec2-bf2f1003b6cc",
+            "name": "view_org_users",
+            "display_name": "View Users",
+            "description": "Ability to see the users in an organization",
+            "visibility": "BOTH",
+            "grouping": "ORGUSERS"
+          }
+        },
+        {
+          "assigned": true,
+          "permission": {
+            "uuid": "293d9373-c318-4724-881c-a4e5b0b3e952",
+            "name": "edit_org_users",
+            "display_name": "Edit Users",
+            "description": "Ability to edit/change/delete users in an organization",
+            "visibility": "BOTH",
+            "grouping": "ORGUSERS"
+          }
+        },
+      ],
+      "org_user": {
+        "uuid": "359f4b19-08d1-480b-a6e6-24d5d4e5049d"
+      }
+    }
   }
   ~~~
   {: title="Response" }
@@ -36,10 +65,8 @@ username
 password
 : The password you provided for your Retailer or Supplier account
 
-The response will include the following information:
-
 ### Response Parameters:
-
+ 
 auth_token
 : (string) Authentication Token to be used for subsequent API calls
 
@@ -58,22 +85,71 @@ supplier_uuid
 org_type
 : (string) Defines the type of organization based on credentials
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+permission_assignments
+: (object) Permissions assigned status and Organization User ID
+
+#### Permissions Object
+
+permissions
+: (object) Contains two parameters assigned -- a boolean value that that shows if the permission is assigned -- and permission object
+
+##### Permission Object
+
+uuid
+: (string) Permission UUID
+
+name
+: (string) Permission Name. Permissions include 
+- view_org_users
+- edit_org_users
+- view_org_subscription_plan
+- edit_org_subscription_plan
+- view_payment_info
+- edit_payment_info
+- view_billing_statement
+- view_notifications_settings
+- edit_email_notifications_preferences
+- create_order (Retailer Only)
+- cancel_order
+- view_order
+- export_order
+- view_inventory_lists (Retailer Only)
+- edit_inventory_lists (Retailer Only)
+- view_items
+- edit_items (Supplier Only)
+- add_order_tracking (Supplier Only)
+- allocate_order (Supplier Only)
+- view_supplier_catalogs (Supplier Only)
+- edit_supplier_catalogs (Supplier Only)
+
+
+display_name
+: (string) Permission Display Name
+
+description
+: (string) Description of the Permission
+
+visibility
+: (string) Visibility based on user type.  This includes 'RETAILER', 'SUPPLIER', or 'BOTH'
+
+grouping
+: (string) Permission grouping
+
+#### Organization User Object
+
+uuid
+: (string) User's Organization UUID
+
+Expected responses include 200, 400, 401, 403, or 404.
 
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
+     -H 'Authorization: ' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "username": "mrbailey@projectthanos.com",
-  "password": "thanosrocks"
+  "username": "rbreslawski@cruxretailer.com",
+  "password": "thanos_rocks"
 }'
 
 ~~~
@@ -81,9 +157,10 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/organizations/user-login/' \
+    'Authorization':'' \
     'Content-Type':'application/json; charset=utf-8' \
-    username="mrbailey@projectthanos.com" \
-    password="thanosrocks"
+    username="rbreslawski@cruxretailer.com" \
+    password="thanos_rocks"
 
 ~~~
 {: title="HTTPie" }
@@ -104,10 +181,11 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/organizations/user-login/",
             headers={
+                "Authorization": "",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    username="mrbailey@projectthanos.com" \
-    password="thanosrocks")
+            data=json.dumps(    username="rbreslawski@cruxretailer.com" \
+    password="thanos_rocks")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -120,10 +198,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Login
+// request Login 
 (function(callback) {
     'use strict';
-
+        
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -131,40 +209,40 @@ def send_request():
         port: '443',
         path: '/organizations/user-login/',
         method: 'POST',
-        headers: {"Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
-
+ 
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-
+        
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;
+                responseStr = responseStr + chunk;            
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ?
+            responseStr = responseBufs.length > 0 ? 
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-
+            
             callback(null, res.statusCode, res.headers, responseStr);
         });
-
+        
     })
     .setTimeout(0)
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"username\":\"mrbailey@projectthanos.com\",\"password\":\"thanosrocks\"}")
+    request.write("{\"username\":\"rbreslawski@cruxretailer.com\",\"password\":\"thanos_rocks\"}")
     request.end();
-
+    
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error);
+    console.log('ERROR:', error); 
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

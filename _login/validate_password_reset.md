@@ -1,7 +1,7 @@
 ---
 title: /organizations/complete-password/
 name: Validate Password Reset
-position: 0.2
+position: 0.02
 method: get
 description: Validate the password reset
 right_code: |
@@ -21,11 +21,7 @@ This API call requires that you have first requested to reset your password ("Re
 email
 : (string) The email you provided in your "Reset Password" API call
 
-| Code | Name                   | Meaning                                                                                  |
-|------|------------------------|------------------------------------------------------------------------------------------|
-| 204  | No Content             | The API call was received and an email was sent to the email address provided            |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL or email address is not in our system |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                                      |
+Expected responses include 200, 400, 401, 403, or 404.
 
 
 ~~~ bash
