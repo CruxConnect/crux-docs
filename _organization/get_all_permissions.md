@@ -32,19 +32,14 @@ right_code: |
 ---
 Get all of the available Permissions based on the type of account requested on. These change based on Retailer or Supplier accounts.
 
+To view orgainzation users, you must be assigned the 'view_org_users' permission.
+{: .info }
+
+{% include links/available_permissions.md %}
+
 ### Response Parameters:
 
-uuid
-: (string) Universal Unique Identifier for a Permission
-
-name
-: (string) Name of a Permission; written in shortened snake case
-
-display_name
-: (string) Display Name of a Permission; a more user-friendly name of the Permission
-
-description
-: (string) Description of a Permission
+{% include objects/permission.md %}
 
 {% include links/response_codes.md %}
 

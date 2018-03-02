@@ -1,7 +1,7 @@
 ---
 title: Paw
 visibility: public
-position: 4
+position: 5
 ---
 
 Paw is a macOS HTTP client that lets you test and describe the APIs you build or consume.

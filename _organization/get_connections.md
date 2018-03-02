@@ -173,22 +173,7 @@ person
 status
 : (string) Status for the Organization User, which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
 
-#### Person Object:
-
-uuid
-: (string) Universal Unique Identifier for the Person
-
-first_name
-: (string) First Name of the Person
-
-last_name
-: (string) Last Name of the Person
-
-email
-: (string) Email address of the Person
-
-phone
-: (string) Phone number of the Person
+{% include objects/person.md %}
 
 {% include links/response_codes.md %}
 

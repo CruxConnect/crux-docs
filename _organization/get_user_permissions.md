@@ -49,35 +49,14 @@ right_code: |
 ---
 Get the Permissions on a specified User. This call returns the Permissions in a list which indicates a list of Permissions currently available on the specified User.
 
+To view orgainzation users, you must be assigned the 'view_org_users' permission.
+{: .info }
+
+{% include links/available_permissions.md %}
+
 ### Response Parameters:
 
-#### Permissions List Object:
-
-assigned
-: (boolean) Assigned indicates whether the pertinent User has a specific permission
-
-permission
-: (object) Permission object contains a uuid, name, display name, description, visibility, and grouping
-
-#### Permission Object:
-
-uuid
-: (string) Universal Unique Identifier for a Permission
-
-name
-: (string) Name of a Permission; written in shortened snake case
-
-display_name
-: (string) Display Name of a Permission; a more user-friendly name of the Permission
-
-description
-: (string) Description of a Permission
-
-visibility
-: (string) Visibility for writing, reading, or both
-
-grouping
-: (string) Grouping where the Permission fits within the aspects of the account type
+{% include objects/permissions_list.md %}
 
 {% include links/response_codes.md %}
 

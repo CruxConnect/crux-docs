@@ -1,1 +1,1 @@
-(For available permissions see [Login](#loginlogin).)
+(For available permissions see the [Permissions Section](#documentationpermissions).)

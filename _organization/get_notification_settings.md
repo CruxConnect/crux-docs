@@ -69,6 +69,12 @@ right_code: |
 ---
 Get all the current Notification Settings specific to your user account. This returns the organization uuid, notification name, notification domain, notification type, annd more.
 
+To view notification settings, you must be assigned the 'view_notifications_settings' permission
+{: .info }
+
+To edit email notification preferences, you must be assigned the 'edit_email_notifications_preferences' permission
+{: .info }
+
 ### Response Parameters:
 
 uuid

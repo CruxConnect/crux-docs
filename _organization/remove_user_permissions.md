@@ -19,6 +19,9 @@ right_code: |
 ---
 Remove User Permissions allows you to provide a user uuid and remove permissions if roles change within an organization. Simply provide the organization uuid, user uuid, and the permissions list indicating which permissions you wish to remove.
 
+To edit organization users, you must be assigned the 'edit_org_users' permission.
+{: .info }
+
 ### Request Parameters:
 
 permission_uuids

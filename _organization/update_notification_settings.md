@@ -19,6 +19,12 @@ right_code: |
 ---
 Update Notification Settings allows you to update a single Notification's settings. By providing the uuid for the notification with the location, frequency, and "enabled" you may update a Notification.
 
+To view notification settings, you must be assigned the 'view_notifications_settings' permission
+{: .info }
+
+To edit email notification preferences, you must be assigned the 'edit_email_notifications_preferences' permission
+{: .info }
+
 ### Request Parameters:
 
 uuid

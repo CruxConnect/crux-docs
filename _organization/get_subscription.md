@@ -34,6 +34,12 @@ right_code: |
 ---
 Get Subscription details for your organization including the plan name, available add-ons, plan features, and next bill plan.
 
+To view your organization plan, you must be assigned the 'view_org_subscription_plan' permission
+{: .info }
+
+To edit your organization plan, you must be assigned the 'edit_org_subscription_plan' permission
+{: .info }
+
 ### Response Parameters:
 
 plan_name

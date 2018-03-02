@@ -27,6 +27,9 @@ right_code: |
 ---
 Get the Dashboard Notificationas for your account. These are all of the enabled notifications that you are receiving on your Dashboard.
 
+To view orders, you must be assigned the 'view_orders' permission
+{: .info }
+
 ### Response Parameters:
 
 uuid

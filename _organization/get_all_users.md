@@ -104,40 +104,14 @@ right_code: |
 ---
 Get all the details about the users on your account. This displays their name, email, phone number, permissions (roles), and more.
 
+To view orgainzation users, you must be assigned the 'view_org_users' permission.
+{: .info }
+
 ### Response Parameters:
 
-#### User:
+{% include objects/user.md %}
 
-uuid
-: (string) Universal Unique Identifier for the User
-
-person
-: (object) Person is an object containing a uuid, first name, last name, email, and phone number
-
-permission_assignments
-: (object) Permission Assignments is an object containing a list of permissions and an organization User
-
-status
-: (string) User's account status which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
-
-#### Person Object:
-
-uuid
-: (string) Universal Unique Identifier for the Person
-
-first_name
-: (string) First Name of the Person
-
-last_name
-: (string) Last Name of the Person
-
-email
-: (string) Email address of the Person
-
-phone
-: (string) Phone number of the Person
-
-{% include objects/permissions_assignments.md %}
+{% include objects/permissions_assignment.md %}
 
 {% include links/response_codes.md %}
 

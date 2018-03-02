@@ -19,6 +19,9 @@ right_code: |
 ---
 Add User Permissions allows you to provide a user uuid and Add Permissions if roles change within an organization. Simply provide the user uuid and the permissions list indicating which permissions you wish to add.
 
+To edit organization users, you must be assigned the 'edit_org_users' permission.
+{: .info }
+
 ### Request Parameters:
 
 permission_uuids
