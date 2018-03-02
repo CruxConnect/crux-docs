@@ -10,35 +10,48 @@ baseurl: ""
 
 collections:
   documentation:
+    visibility: all
     title: Documentation
     position: 1
   login:
+    visibility: public
     title: Login
     position: 2
     type: api
   organization:
+    visibility: public
     title: Organization
     position: 3
     type: api
   accounting:
+    visibility: public
     title: Accounting
     position: 4
     type: api
   product_retailer:
+    visibility: public
     title: Product for Retailers
     position: 5
     type: api
   product_supplier:
-    title: Product for Supplier 
+    visibility: public
+    title: Product for Supplier
     position: 5
     type: api
   ordering:
+    visibility: public
     title: Ordering
     position: 6
     type: api
   export:
+    visibility: public
     title: Export
     position: 7
+    type: api
+  tools:
+    visibility: internal
+    title: Operations Tools
+    position: 8
     type: api
 
 plugins:
