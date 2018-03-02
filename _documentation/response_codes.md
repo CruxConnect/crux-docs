@@ -11,7 +11,7 @@ Expected response that you might see returned.  If there is an additional respon
 | 201  | Created                | The API call was received and something was created                          |
 | 204  | No Content             | The API call was received and we are performing the requested action         |
 | 400  | Bad Request            | Something required for the request is missing                                |
-| 401  | Unauthorized           | The username or password is incorrect                                        |
+| 401  | Unauthorized           | The authentication credentials (username/password or token) are incorrect.   |
 | 403  | Permission Denied      | The user does not have permission to perform the requested action            |
 | 404  | Not Found              | The call is not sent to the correct URL                                      |
 | 405  | Method Not Allowed     | The HTTP verb is not correct for the intended call                           |
