@@ -21,7 +21,7 @@ This API call requires that you have first requested to reset your password ("Re
 email
 : (string) The email you provided in your "Reset Password" API call
 
-Expected responses include 200, 400, 401, 403, or 404.
+{% include links/response_codes.md %}
 
 
 ~~~ bash

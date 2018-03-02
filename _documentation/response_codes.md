@@ -1,7 +1,9 @@
 ---
-title: Errors
+title: Response Codes
 position: 3
 ---
+
+Expected response that you might see returned.  If there is an additional response code that might occur, we'll identify it in the associated document.
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|

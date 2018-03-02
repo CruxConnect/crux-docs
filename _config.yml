@@ -58,6 +58,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
+include:
+  - common/links
+
 exclude:
   - readme.md
   - LICENCE

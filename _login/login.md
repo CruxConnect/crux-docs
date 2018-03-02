@@ -66,7 +66,7 @@ password
 : The password you provided for your Retailer or Supplier account
 
 ### Response Parameters:
- 
+
 auth_token
 : (string) Authentication Token to be used for subsequent API calls
 
@@ -99,7 +99,7 @@ uuid
 : (string) Permission UUID
 
 name
-: (string) Permission Name. Permissions include 
+: (string) Permission Name. Permissions include
 - view_org_users
 - edit_org_users
 - view_org_subscription_plan
@@ -140,7 +140,7 @@ grouping
 uuid
 : (string) User's Organization UUID
 
-Expected responses include 200, 400, 401, 403, or 404.
+{% include links/response_codes.md %}
 
 
 ~~~ bash
@@ -198,10 +198,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Login 
+// request Login
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -212,26 +212,26 @@ def send_request():
         headers: {"Authorization":"","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
@@ -239,10 +239,10 @@ def send_request():
     });
     request.write("{\"username\":\"rbreslawski@cruxretailer.com\",\"password\":\"thanos_rocks\"}")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

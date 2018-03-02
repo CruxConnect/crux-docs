@@ -25,7 +25,7 @@ password
 token
 : (string) This is the "reset_token" you received from your "Reset Password" API call
 
-Expected responses include 200, 400, 401, 403, or 404.
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-password/" \
