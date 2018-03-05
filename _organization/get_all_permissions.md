@@ -32,29 +32,16 @@ right_code: |
 ---
 Get all of the available Permissions based on the type of account requested on. These change based on Retailer or Supplier accounts.
 
+To view orgainzation users, you must be assigned the 'view_org_users' permission.
+{: .info }
+
+{% include links/available_permissions.md %}
+
 ### Response Parameters:
 
-uuid
-: (string) Universal Unique Identifier for a Permission
+{% include objects/permission.md %}
 
-name
-: (string) Name of a Permission; written in shortened snake case
-
-display_name
-: (string) Display Name of a Permission; a more user-friendly name of the Permission
-
-description
-: (string) Description of a Permission
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/all_permissions/" \

@@ -15,7 +15,7 @@ right_code: |
 
 
 ---
-This API call requires that you have first requested to reset your password ("Reset Password" API call) and validated that request ("Validate Reset Password" API call). To create a new password, you provide the "reset token" that you received from the "Reset Password" API call and provide the password you'd like to use.
+This API call requires that you have first requested to reset your password (["Reset Password" API call](#loginreset_password)) and validated that request (["Validate Reset Password" API call](#loginvalidate_password_reset)). To create a new password, you provide the "reset token" that you received from the "Reset Password" API call and provide the password you'd like to use.
 
 ### Request Parameters:
 
@@ -25,7 +25,7 @@ password
 token
 : (string) This is the "reset_token" you received from your "Reset Password" API call
 
-Expected responses include 200, 400, 401, 403, or 404.
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-password/" \

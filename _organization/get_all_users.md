@@ -104,78 +104,16 @@ right_code: |
 ---
 Get all the details about the users on your account. This displays their name, email, phone number, permissions (roles), and more.
 
+To view orgainzation users, you must be assigned the 'view_org_users' permission.
+{: .info }
+
 ### Response Parameters:
 
-#### User:
+{% include objects/user.md %}
 
-uuid
-: (string) Universal Unique Identifier for the User
+{% include objects/permissions_assignment.md %}
 
-person
-: (object) Person is an object containing a uuid, first name, last name, email, and phone number
-
-permission_assignments
-: (object) Permission Assignments is an object containing a list of permissions and an organization User
-
-status
-: (string) User's account status which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
-
-#### Person Object:
-
-uuid
-: (string) Universal Unique Identifier for the Person
-
-first_name
-: (string) First Name of the Person
-
-last_name
-: (string) Last Name of the Person
-
-email
-: (string) Email address of the Person
-
-phone
-: (string) Phone number of the Person
-
-#### Permission Assignments Object:
-
-permissions
-: (list) Permissions are a list of available individual permissions with details as well as if the permission has been assigned to this User
-
-org_user
-: (object) Organization User holds the uuid for the User
-
-#### Permissions Object List:
-
-assigned
-: (boolean) Assigned indicates whether this particular Permission has been Assigned to this User
-
-permission
-: (object) Permission is an object detailing a specific Permission with a uuid, name, display name, and description
-
-#### Permission Object:
-
-uuid
-: (string) Universal Unique Identifier for the Permission
-
-name
-: (string) Name of the Permission; written in shortened snake case
-
-display_name
-: (string) Display Name of the Permission; a more user-friendly name of the Permission
-
-description
-: (string) Description of the Permission
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \

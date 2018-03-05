@@ -34,6 +34,9 @@ right_code: |
 ---
 Get Subscription details for your organization including the plan name, available add-ons, plan features, and next bill plan.
 
+To view your organization plan, you must be assigned the 'view_org_subscription_plan' permission
+{: .info }
+
 ### Response Parameters:
 
 plan_name
@@ -68,14 +71,7 @@ end_date
 card_last_four
 : (string) Last Four digits of the credit Card being billed for this Subscription
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+{% include links/response_codes.md %}
 
 
 ~~~ bash

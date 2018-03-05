@@ -20,7 +20,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Should you need to reset your password, you may initiate the process via this call. This is to be used in conjunction with the "Validate Password Reset" and "Create New Password" API calls.
+Should you need to reset your password, you may initiate the process via this call. This is to be used in conjunction with the ["Validate Password Reset"](#loginvalidate_password_reset) and ["Create New Password"](#logincreate_new_password) API calls.
 
 ### Request Parameters:
 
@@ -32,7 +32,7 @@ email
 reset_token
 : (string) Reset Token - to be used specifically with "Complete Password Reset" API call
 
-Expected responses include 200, 400, 401, 403, or 404.
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/reset-password/" \

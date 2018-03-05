@@ -1,13 +1,13 @@
 ---
 title: /organizations/user-login/
 name: Login
-position: 0.00
+position: 1.00
 method: post
 description: Login to receive an authentication token
 right_code: |
   ~~~ json
   {
-    "username": "rbreslawski@cruxretailer.com",
+    "username": "rbreslawski@cruxsupplier.com",
     "password": "thanos_rocks"
   }
   ~~~
@@ -15,12 +15,12 @@ right_code: |
 
   ~~~ json
   {
-    "auth_token": "dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d",
-    "org_uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
-    "user_uuid": "359f4b19-08d1-480b-a6e6-24d5d4e5049d",
-    "retailer_uuid": "60148a62-008f-4989-9fd2-f79d13cdc6fb",
-    "supplier_uuid": "",
-    "org_type": "RETAILER",
+    "auth_token": "d9741c2c241b8f9b9955130ca08dbfbd891d9c84",
+    "org_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
+    "user_uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff",
+    "retailer_uuid": "",
+    "supplier_uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137",
+    "org_type": "SUPPLIER",
     "permission_assignments": {
       "permissions": [
         {
@@ -47,7 +47,7 @@ right_code: |
         },
       ],
       "org_user": {
-        "uuid": "359f4b19-08d1-480b-a6e6-24d5d4e5049d"
+        "uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff"
       }
     }
   }
@@ -66,7 +66,7 @@ password
 : The password you provided for your Retailer or Supplier account
 
 ### Response Parameters:
- 
+
 auth_token
 : (string) Authentication Token to be used for subsequent API calls
 
@@ -99,29 +99,8 @@ uuid
 : (string) Permission UUID
 
 name
-: (string) Permission Name. Permissions include 
-- view_org_users
-- edit_org_users
-- view_org_subscription_plan
-- edit_org_subscription_plan
-- view_payment_info
-- edit_payment_info
-- view_billing_statement
-- view_notifications_settings
-- edit_email_notifications_preferences
-- create_order (Retailer Only)
-- cancel_order
-- view_order
-- export_order
-- view_inventory_lists (Retailer Only)
-- edit_inventory_lists (Retailer Only)
-- view_items
-- edit_items (Supplier Only)
-- add_order_tracking (Supplier Only)
-- allocate_order (Supplier Only)
-- view_supplier_catalogs (Supplier Only)
-- edit_supplier_catalogs (Supplier Only)
-
+: (string) Permission Name.
+: {% include links/available_permissions.md %}
 
 display_name
 : (string) Permission Display Name
@@ -140,15 +119,15 @@ grouping
 uuid
 : (string) User's Organization UUID
 
-Expected responses include 200, 400, 401, 403, or 404.
+{% include links/response_codes.md %}
 
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
-     -H 'Authorization: ' \
      -H 'Content-Type: application/json; charset=utf-8' \
+     -u ':' \
      -d $'{
-  "username": "rbreslawski@cruxretailer.com",
+  "username": "rbreslawski@cruxsupplier.com",
   "password": "thanos_rocks"
 }'
 
@@ -157,9 +136,9 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/organizations/user-login/' \
-    'Authorization':'' \
+    'Authorization':'Basic Og==' \
     'Content-Type':'application/json; charset=utf-8' \
-    username="rbreslawski@cruxretailer.com" \
+    username="rbreslawski@cruxsupplier.com" \
     password="thanos_rocks"
 
 ~~~
@@ -181,10 +160,10 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/organizations/user-login/",
             headers={
-                "Authorization": "",
+                "Authorization": "Basic Og==",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    username="rbreslawski@cruxretailer.com" \
+            data=json.dumps(    username="rbreslawski@cruxsupplier.com" \
     password="thanos_rocks")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -198,10 +177,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Login 
+// request Login
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -209,40 +188,41 @@ def send_request():
         port: '443',
         path: '/organizations/user-login/',
         method: 'POST',
-        headers: {"Authorization":"","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Basic Og==","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
+    // Using Basic Auth {"username":"","password":""}
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"username\":\"rbreslawski@cruxretailer.com\",\"password\":\"thanos_rocks\"}")
+    request.write("{\"username\":\"rbreslawski@cruxsupplier.com\",\"password\":\"thanos_rocks\"}")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

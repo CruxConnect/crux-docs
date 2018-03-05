@@ -173,32 +173,9 @@ person
 status
 : (string) Status for the Organization User, which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
 
-#### Person Object:
+{% include objects/person.md %}
 
-uuid
-: (string) Universal Unique Identifier for the Person
-
-first_name
-: (string) First Name of the Person
-
-last_name
-: (string) Last Name of the Person
-
-email
-: (string) Email address of the Person
-
-phone
-: (string) Phone number of the Person
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/connections/" \

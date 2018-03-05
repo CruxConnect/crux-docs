@@ -27,6 +27,9 @@ right_code: |
 ---
 Get the Dashboard Notificationas for your account. These are all of the enabled notifications that you are receiving on your Dashboard.
 
+To view orders, you must be assigned the 'view_orders' permission
+{: .info }
+
 ### Response Parameters:
 
 uuid
@@ -41,15 +44,7 @@ created_at
 type
 : (string) The Type parameter indicates where the notification is sent. For this call it should always say "Dashboard".
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/notifications/" \
