@@ -94,7 +94,6 @@ status
 suppliers_retailer_account_number
 : (string) Supplier's retailer account number
 
-<<<<<<< HEAD
 retailers_supplier_account_number
 : (string) Retailer's supplier account number
 
@@ -107,15 +106,6 @@ retailers_supplier_account_number
 {% include objects/account_manager.md %}
 
 {% include links/response_codes.md %}
-=======
-person
-: (object) Person object containing a uuid, first name, last name, email address, and phone number
-
-status
-: (string) Status for the Organization User, which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
-
-{% include objects/person.md %}
->>>>>>> master
 
 {% include links/response_codes.md %}
 
