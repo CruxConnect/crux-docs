@@ -40,20 +40,12 @@ transaction_id
 : (string) The Transaction Identifier parameter is an id number for the billing transaction
 
 total
-: (number) The Total parameter is the total amount on the billing transaction
+: (string) The Total parameter is the total amount on the billing transaction
 
 status
 : (string) The Status parameter is the status for the billing transaction
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/accounting/transactions/" \

@@ -6,13 +6,6 @@ method: get
 description: Get the Dashboard Notifications for your account
 right_code: |
   ~~~ json
-  {
-    "user_uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49"
-  }
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
   [
     {
       "uuid": "ed059353-71d6-44da-a676-22134e37bcc4",
