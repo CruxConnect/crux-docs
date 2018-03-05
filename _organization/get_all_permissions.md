@@ -49,7 +49,6 @@ To view orgainzation users, you must be assigned the 'view_org_users' permission
 
 {% include links/response_codes.md %}
 
-
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/all_permissions/" \
      -H 'Authorization: Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \

@@ -16,4 +16,4 @@ visibility
 : (string) Visibility of permission to SUPPLIER, RETAILER, or BOTH
 
 grouping
-: (string) Grouping the permission belongs to
+: (string) Grouping to which the permission belongs

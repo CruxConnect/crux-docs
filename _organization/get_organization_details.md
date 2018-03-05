@@ -37,9 +37,6 @@ Get the Details about your Organization including the uuid, name, organization t
 
 {% include objects/account_manager.md %}
 
-{% include links/response_codes.md %}
-
-
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/" \
      -H 'Authorization: Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84'
