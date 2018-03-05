@@ -99,28 +99,8 @@ uuid
 : (string) Permission UUID
 
 name
-: (string) Permission Name. Permissions include
-- view_org_users
-- edit_org_users
-- view_org_subscription_plan
-- edit_org_subscription_plan
-- view_payment_info
-- edit_payment_info
-- view_billing_statement
-- view_notifications_settings
-- edit_email_notifications_preferences
-- create_order (Retailer Only)
-- cancel_order
-- view_order
-- export_order
-- view_inventory_lists (Retailer Only)
-- edit_inventory_lists (Retailer Only)
-- view_items
-- edit_items (Supplier Only)
-- add_order_tracking (Supplier Only)
-- allocate_order (Supplier Only)
-- view_supplier_catalogs (Supplier Only)
-- edit_supplier_catalogs(Supplier Only)
+: (string) Permission Name.
+: {% include links/available_permissions.md %}
 
 display_name
 : (string) Permission Display Name
