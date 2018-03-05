@@ -107,8 +107,6 @@ retailers_supplier_account_number
 
 {% include links/response_codes.md %}
 
-{% include links/response_codes.md %}
-
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/connections/" \
      -H 'Authorization: Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \
