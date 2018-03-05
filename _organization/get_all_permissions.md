@@ -44,11 +44,17 @@ To view orgainzation users, you must be assigned the 'view_org_users' permission
 {% include links/available_permissions.md %}
 
 ### Response Parameters:
+<<<<<<< HEAD
 
 {% include objects/permission.md %}
 
 {% include links/response_codes.md %}
+=======
 
+{% include objects/permission.md %}
+>>>>>>> master
+
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/all_permissions/" \
