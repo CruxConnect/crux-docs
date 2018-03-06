@@ -1,31 +1,27 @@
 ---
-title: /catalog/update
-name: Update Discovery Participation and Catalog
-visibility: internal
-position: 2.80
-method: post
-description: Update Discovery Catalog Participation
+title: /catalog/&ltuuid&gt/
+name: Get Discovery Participation
+position: 5.10
+method: get
+description: Get Discovery Catalog Participation
 right_code: |
   ~~~ json
-  {
-    "supplier_uuid": "2a0295b6-dd74-4239-9988-24fcdb1adcea",
-    "participation": true,
-    "discovery_catalog_uuid": "05a46c58-9d13-4912-9167-7effc2cc7482"
-  }
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
-  {
-    "supplier_uuid": "2a0295b6-dd74-4239-9988-24fcdb1adcea",
-  }
+    {
+      "supplier_uuid": "2a0295b6-dd74-4239-9988-24fcdb1adcea",
+      "participation": true,
+      "discovery_catalog_uuid": "05a46c58-9d13-4912-9167-7effc2cc7482"
+    }
   ~~~
   {: title="Response" }
 
 ---
-Update Supplier participation in the Discovery Catalog and the identify which catalog they will use as their Discovery Catalog
+Get Supplier participation in the Discovery Catalog and, if participating, the catalog the Supplier will use as their Discovery Catalog
 
 ### Request
+supplier_uuid
+: (uuid) The Universal Unique Identifier for the Supplier
+
+### Response
 
 supplier_uuid
 : (string) The Universal Unique Identifier for the Supplier
@@ -34,27 +30,16 @@ participation
 : (bool) Whether or not the Supplier will participate in Discovery Catalog
 
 discovery_catalog_uuid
-: (string) The Universal Unique Identifier for the Discovery Catalog. Required if participation is true.  Empty/Ignored if not participating.
-
-#### Response
-
-supplier_uuid
-: (string) The Universal Unique Identifier for the chosen Discovery Catalog
+: (string) The Universal Unique Identifier for the Discovery Catalog. Empty if not participating.
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/catalog/update" \
-     -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "": ""
-}'
+curl "https://api-dev.cruxconnect.com/catalog/&ltuuid&gt/"
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/catalog/update' \
-    'Content-Type':'application/json; charset=utf-8' \
-    =""
+http GET 'https://api-dev.cruxconnect.com/catalog/&ltuuid&gt/'
 
 ~~~
 {: title="HTTPie" }
@@ -64,20 +49,15 @@ http --json POST 'https://api-sandbox.cruxconnect.com/catalog/update' \
 # `pip install requests`
 
 import requests
-import json
 
 
 def send_request():
-    # Update Discovery Participation and Catalog
-    # POST https://api-sandbox.cruxconnect.com/catalog/update
+    # Get Discovery Participation
+    # GET https://api-dev.cruxconnect.com/catalog/&ltuuid&gt/
 
     try:
-        response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/catalog/update",
-            headers={
-                "Content-Type": "application/json; charset=utf-8",
-            },
-            data=json.dumps(    ="")
+        response = requests.get(
+            url="https://api-dev.cruxconnect.com/catalog/&ltuuid&gt/",
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -90,18 +70,18 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Update Discovery Participation and Catalog
+// request Get Discovery Participation
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
+        hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/catalog/update',
-        method: 'POST',
-        headers: {"Content-Type":"application/json; charset=utf-8"}
+        path: '/catalog/&ltuuid&gt/',
+        method: 'GET',
+        headers: {}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -130,7 +110,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"\":\"\"}")
+    request.write("")
     request.end();
 
 
