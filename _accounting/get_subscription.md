@@ -1,7 +1,7 @@
 ---
 title: /organizations/subscription/
 name: Get Subscription
-position: 0.95
+position: 1.7
 method: get
 description: Get Subscription with details for your organization
 right_code: |
@@ -54,7 +54,7 @@ plan_addons
 next_bill_plan
 : (object) Next Bill Plan object contains the billing date, amount to be billed, start date, end date, and last 4 digits of the credit card being billed for the Subscription
 
-#### Next Nill Plan Object:
+#### Next Bill Plan Object:
 
 bill_date
 : Billing Date when the account will renew

@@ -11,3 +11,9 @@ display_name
 
 description
 : (string) Description of the Permission
+
+visibility
+: (string) Visibility of permission to SUPPLIER, RETAILER, or BOTH
+
+grouping
+: (string) Grouping the permission belongs to

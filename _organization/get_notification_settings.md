@@ -84,7 +84,7 @@ notification_domain
 : (string) Notification Domain is the domain to which the Notification pertains. Potential domains are "Billing", "Inventory", "Orders", and "Miscellaneous".
 
 notification_type
-: (list) Notification Type is a list with information about the Notifications you (will) receive including location, frequency, and if it is enabled.
+: (array) Notification Type is a list with information about the Notifications you (will) receive including location, frequency, and if it is enabled.
 
 org_user
 : (object) Organization User is an object containing your user uuid

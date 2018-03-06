@@ -8,89 +8,65 @@ right_code: |
   ~~~ json
   [
     {
-      "uuid": "2659c223-8179-4d3f-86aa-340eb35045ad",
+      "uuid": "4db3ff73-603f-4db6-aaff-ea1acef847a0",
       "retailer": {
-        "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c",
+        "uuid": "60148a62-008f-4989-9fd2-f79d13cdc6fb",
         "organization": {
-          "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
-          "name": "projectthanos",
+          "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
+          "name": "Crux Retailer",
           "org_type": "RETAILER",
           "status": "ACTIVE",
-          "created_date": "2017-10-23T18:20:43.336669Z",
+          "created_date": "2018-02-09T17:02:01Z",
           "active_date": null,
           "account_manager": {
-            "uuid": "ad61c73e-790d-4e42-921c-b1d7ccc97217",
-            "org_user": {
-              "uuid": "817979d4-9d67-4675-a9db-73ac99d9eec7",
-              "person": {
-                "uuid": "6baf482d-a380-4084-a439-a67b8752f63c",
-                "first_name": "Jennifer",
-                "last_name": "Garrett",
-                "email": "uking@clark-davis.info",
-                "phone": "01443719956"
-              },
-              "status": "ACTIVE"
+            "uuid": "6c249798-7564-468d-83de-d98ae8b0b7cf",
+            "person": {
+              "uuid": "f3548ea5-15ab-459e-9f1a-d982b21e916d",
+              "first_name": "Joe",
+              "last_name": "Account",
+              "email": "joe@cruxaccountmanager.com",
+              "phone": "(267)977-0572x195",
+              "job_title": null
             }
           }
         }
       },
       "supplier": {
-        "uuid": "ce4f9803-7870-4a78-b2cb-8949c8f550d6",
+        "uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137",
         "organization": {
-          "uuid": "1b348539-1f1a-432e-a9c3-63f71e65ad84",
-          "name": "Underwood-Chavez",
+          "uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
+          "name": "Crux Supplier A",
           "org_type": "SUPPLIER",
           "status": "ACTIVE",
-          "created_date": "2017-10-23T18:20:35.835821Z",
+          "created_date": "2018-02-09T17:02:13Z",
           "active_date": null,
           "account_manager": {
-            "uuid": "77da8f8f-3c9b-47d0-8043-025372b15015",
-            "org_user": {
-              "uuid": "5e50b269-1aa8-46c5-9244-a6980b72d0e5",
-              "person": {
-                "uuid": "82480f25-a531-4e0f-b8eb-caaee42d3e39",
-                "first_name": "Kimberly",
-                "last_name": "James",
-                "email": "hernandezmichael@mann-hunter.biz",
-                "phone": "536.461.2834"
-              },
-              "status": "ACTIVE"
+            "uuid": "6c249798-7564-468d-83de-d98ae8b0b7cf",
+            "person": {
+              "uuid": "f3548ea5-15ab-459e-9f1a-d982b21e916d",
+              "first_name": "Joe",
+              "last_name": "Account",
+              "email": "joe@cruxaccountmanager.com",
+              "phone": "(267)977-0572x195",
+              "job_title": null
             }
           }
         }
       },
       "status": "ACTIVE",
-      "merchandise_manager": null
-    },
-    {
-      "uuid": "2b6df160-9f08-496e-9cc6-f89c17741557",
-      "retailer": {
-        "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c",
-        "organization": {
-          "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
-          "name": "projectthanos",
-          "org_type": "RETAILER",
-          "status": "ACTIVE",
-          "created_date": "2017-10-23T18:20:43.336669Z",
-          "active_date": null,
-          "account_manager": {
-            "uuid": "ad61c73e-790d-4e42-921c-b1d7ccc97217",
-            "org_user": {
-              "uuid": "817979d4-9d67-4675-a9db-73ac99d9eec7",
-              "person": {
-                "uuid": "6baf482d-a380-4084-a439-a67b8752f63c",
-                "first_name": "Jennifer",
-                "last_name": "Garrett",
-                "email": "uking@clark-davis.info",
-                "phone": "01443719956"
-              },
-              "status": "ACTIVE"
-            }
-          }
+      "account_manager": {
+        "uuid": "6c249798-7564-468d-83de-d98ae8b0b7cf",
+        "person": {
+          "uuid": "f3548ea5-15ab-459e-9f1a-d982b21e916d",
+          "first_name": "Joe",
+          "last_name": "Account",
+          "email": "joe@cruxaccountmanager.com",
+          "phone": "(267)977-0572x195",
+          "job_title": null
         }
       },
-      "status": "ACTIVE",
-      "merchandise_manager": null
+      "suppliers_retailer_account_number": null,
+      "retailers_supplier_account_number": null
     },
   ]
   ~~~
@@ -115,71 +91,25 @@ supplier
 status
 : (string) Status for the Connection, which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
 
-#### Retailer Object:
+suppliers_retailer_account_number
+: (string) Supplier's retailer account number
 
-uuid
-: (string) Universal Unique Identifier for a Retailer
+retailers_supplier_account_number
+: (string) Retailer's supplier account number
 
-organization
-: (object) Organization object containing a uuid, name, organization type, status, created date, active date, and an account manager
+{% include objects/retailer.md %}
 
-Supplier:
+{% include objects/supplier.md %}
 
-uuid
-: (string) Universal Unique Identifier for the Supplier
+{% include objects/organization.md %}
 
-organization
-: (object) Organization object containing a uuid, name, organization type, status, created date, active date, and an account manager
-
-#### Organization Object:
-
-uuid
-: (string) Universal Unique Identifier for an Organization
-
-name
-: (string) Name of the Organization
-
-org_type
-: (string) Organization Type defines if the organization is a "RETAILER" or a "SUPPLIER"
-
-status
-: (string) Status for the Organization, which can be "PENDING", "ACTIVE", or "DEACTIVATED"
-
-created_date
-: (string) Created Date; the Date when the Organization was Created within our system
-
-active_date
-: (string) Active Date; the Date when the Organization became Active within our system
-
-account_manager
-: (object) Account Manager object containing a uuid and an organization user
-
-#### Account Manager Object:
-
-uuid
-: (string) Universal Unique Identifier for an Account Manager
-
-org_user
-: (object) Organization User object containing a uuid, person, and status
-
-#### Organization User Object:
-
-uuid
-: (string) Universal Unique Identifier for an Organization User
-
-person
-: (object) Person object containing a uuid, first name, last name, email address, and phone number
-
-status
-: (string) Status for the Organization User, which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
-
-{% include objects/person.md %}
+{% include objects/account_manager.md %}
 
 {% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/connections/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -188,7 +118,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/connections/" \
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/organizations/connections/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -211,7 +141,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/connections/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -238,7 +168,7 @@ def send_request():
         port: '443',
         path: '/organizations/connections/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

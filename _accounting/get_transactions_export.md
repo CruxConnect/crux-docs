@@ -6,13 +6,19 @@ method: post
 description: Get Transactions Export allows you to receive an email with the current Transactions on your account
 right_code: |
   ~~~ json
-  {}
+  {
+    "uuid": "r5682624-3167-47d2-8b09-3cdf3c1fd61b"
+  }
   ~~~
-  {: title="Request" }
+  {: title="Response" }
 
 
 ---
-Get Transactions Export allows you to get an email with the Billing Transactions List. This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. We also provide an Export uuid in response to this call.
+Get Transactions Export allows you to get an email with the Billing Transactions List.
+
+This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. The email will have a comma delimited file (.csv) attached with the response parameter data.
+
+We also provide an Export uuid in response to this call.
 
 ### Response Parameters:
 
@@ -26,20 +32,12 @@ status
 : (string) Status for the Transaction (e.g. "paid")
 
 total
-: (number) Total for the Transaction in USD (e.g. 29.95)
+: (string) Total for the Transaction in USD (e.g. 29.95)
 
 transaction_id
-: (number) ID associated with the Transaction
+: (string) ID associated with the Transaction
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/accounting/transactions/export/" \
