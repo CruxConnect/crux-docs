@@ -68,7 +68,7 @@ percentage of _orders_ marked 'delivered'
 percentage of _orders_ marked 'Allocated' or 'HasTracking' (ie, not 'Backordered', 'Rejected', or 'Unallocated'; ignore retailer-initiated 'Cancelled').
 percentage of _SKUs_ marked 'Allocated' or 'HasTracking' (ie, not 'Backordered', 'Rejected', or 'Unallocated'; ignore retailer-initiated 'Cancelled').
 
-shipping_origin_country_name : (string) English name of country from which SKUs are shipped. The names come from the 'Country name' column of ISO 3166-1 alpha-2 without any change in capitalization. (Note: behind the scenes, Crux only identifies a country by its two-character ISO 3166-1 alpha-2 code. If there is every a discrepancy between the country code and the country name, the code takes precedence.)
+shipping_origin_country_name : (string) English name of country from which SKUs are shipped. The names come from the 'Country name' column of ISO 3166-1 alpha-2 without any change in capitalization. (Note: behind the scenes, Crux only identifies a country by its two-character ISO 3166-1 alpha-2 code. If there is ever a discrepancy between the country code and the country name, the code takes precedence.)
 
 contact : (object) See below. An individual employee of the supplier designated as the contact person for Crux-related questions.
 
