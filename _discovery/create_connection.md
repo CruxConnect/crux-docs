@@ -61,7 +61,7 @@ email
 : (string) Email address of the Person
 
 phone
-: (string) Phone number of the Person
+: (string) Phone number of the Person. Format is not specified but must contain no more than 20 characters.
 
 Optional: none
 
