@@ -6,14 +6,14 @@ description: A list of all suppliers available to you in the discovery catalog
 right_code: |
   ~~~ json
   {
-    "initial_character": "e"
+    "initial_character": "e",
     "limit": "40",
     "recent": "90",
     "sort": {
       "key": "number_of_skus",
       "dir": "desc",
     },
-    "start": "3",
+    "start": "3"
   }
   ~~~
   {: title="Request" }
