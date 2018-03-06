@@ -1,7 +1,8 @@
 ---
 title: /organizations/user-login/
-name: Login
+name: Retrieve Auth Token
 position: 1.00
+visibility: all
 method: post
 description: Login to receive an authentication token
 right_code: |
@@ -55,7 +56,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Provide a username and password to receive your authentication token and various account-related data. The purpose of the authentication token is to allow you to fetch account-related info without using your username and password. Prior to making other account-related calls, login to get your authentication token.
+Provide a username and password to receive your authentication token and various account-related data. All other calls require an authentication token.
 
 ### Request Parameters:
 
@@ -136,7 +137,6 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/organizations/user-login/' \
-    'Authorization':'Basic Og==' \
     'Content-Type':'application/json; charset=utf-8' \
     username="rbreslawski@cruxsupplier.com" \
     password="thanos_rocks"
@@ -160,7 +160,6 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/organizations/user-login/",
             headers={
-                "Authorization": "Basic Og==",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    username="rbreslawski@cruxsupplier.com" \
@@ -188,7 +187,7 @@ def send_request():
         port: '443',
         path: '/organizations/user-login/',
         method: 'POST',
-        headers: {"Authorization":"Basic Og==","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

@@ -1,7 +1,8 @@
 ---
 title: /notifications/notification-settings/
 name: Get Notification Settings
-position: 0.98
+position: 1.13
+visibility: public
 method: get
 description: Get Notification Settings specific to your user account
 right_code: |

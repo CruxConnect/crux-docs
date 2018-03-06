@@ -1,7 +1,8 @@
 ---
 title: /organizations/users/permissions/&ltuser_uuid&gt/
 name: Remove User Permissions
-position: 0.9
+position: 1.09
+visibility: public
 method: delete
 description: Remove User Permissions granted at a prior occasion
 right_code: |

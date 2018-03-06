@@ -1,7 +1,8 @@
 ---
 title: /organizations/users/detail/&ltuuid&gt/
 name: Get User
-position: .5
+position: 1.05
+visibility: public
 method: get
 description: Get all details about a single user on your account
 right_code: |

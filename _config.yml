@@ -13,13 +13,8 @@ collections:
     visibility: all
     title: Documentation
     position: 1
-  login:
-    visibility: public
-    title: Login
-    position: 2
-    type: api
   organization:
-    visibility: public
+    visibility: all
     title: Organization
     position: 3
     type: api

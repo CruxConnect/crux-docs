@@ -1,7 +1,8 @@
 ---
 title: /notifications/
 name: Get Dashboard Notifications
-position: 0.96
+position: 1.12
+visibility: public
 method: get
 description: Get the Dashboard Notifications for your account
 right_code: |

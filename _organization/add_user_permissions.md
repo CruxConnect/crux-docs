@@ -1,7 +1,8 @@
 ---
 title: /organizations/users/permissions/&ltuser_uuid&gt/
 name: Add User Permissions
-position: 0.8
+position: 1.08
+visibility: public
 method: patch
 description: Add User Permissions for a user of your organization
 right_code: |
