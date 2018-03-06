@@ -1,47 +1,50 @@
 ---
 title: /organizations/complete-password/
-name: Validate Password Reset
-position: 0.02
-method: get
-description: Validate the password reset
+name: Create New Password
+position: 1.03
+visibility: internal
+method: post
+description: Provide a new password for your account
 right_code: |
   ~~~ json
   {
-    "email": "mrbailey@projectthanos.com"
+    "password": "thanos_rocks",
+    "token": "VBnQ8wmbEuJdoqpAFh01"
   }
   ~~~
   {: title="Request" }
 
 
 ---
-This API call requires that you have first requested to reset your password (["Reset Password" API call](#loginreset_password)). Validate that the password reset was requested on the email address provided. By sending a GET request with the email address an email is sent to you with the "reset token". That "reset token" can then be used with the "Complete Password Reset" API call
+This API call requires that you have first requested to reset your password (["Reset Password" API call](#organizationpassword-reset)) and validated that request (["Validate Password Reset"](#organizationpassword-reset)). To create a new password, you provide the "reset token" that you received in an email sent by the ["Reset Password" API call](#organizationpassword-reset) and provide the password you'd like to use.
 
 ### Request Parameters:
 
-email
-: (string) The email you provided in your "Reset Password" API call
+password
+: (string) The new password you would like to use for your account
+
+token
+: (string) This is the "reset_token" you received from your "Reset Password" API call
 
 {% include links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-     -H 'Content-Type: text/plain; charset=utf-8' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-password/" \
+     -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "email": "mrbailey@projectthanos.com"
+  "token": "VBnQ8wmbEuJdoqpAFh01",
+  "password": "thanos_rocks"
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --form GET 'https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
-    'Content-Type':'text/plain; charset=utf-8' \
-    'data'=$'{
-  \"email\": \"mrbailey@projectthanos.com\"
-}'
+http --json POST 'https://api-sandbox.cruxconnect.com/organizations/complete-password/' \
+    'Content-Type':'application/json; charset=utf-8' \
+    token="VBnQ8wmbEuJdoqpAFh01" \
+    password="thanos_rocks"
 
 ~~~
 {: title="HTTPie" }
@@ -51,22 +54,21 @@ http --form GET 'https://api-sandbox.cruxconnect.com/organizations/complete-pass
 # `pip install requests`
 
 import requests
+import json
 
 
 def send_request():
-    # Validate Password Reset
-    # GET https://api-sandbox.cruxconnect.com/organizations/complete-password/
+    # Create New Password
+    # POST https://api-sandbox.cruxconnect.com/organizations/complete-password/
 
     try:
-        response = requests.get(
+        response = requests.post(
             url="https://api-sandbox.cruxconnect.com/organizations/complete-password/",
-            params={
-                "token": "G7TwCq1Vkds0DLYnfAuP",
-            },
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
-                "Content-Type": "text/plain; charset=utf-8",
+                "Content-Type": "application/json; charset=utf-8",
             },
+            data=json.dumps(    token="VBnQ8wmbEuJdoqpAFh01" \
+    password="thanos_rocks")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -79,7 +81,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Validate Password Reset
+// request Create New Password
 (function(callback) {
     'use strict';
 
@@ -88,9 +90,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/complete-password/?token=G7TwCq1Vkds0DLYnfAuP',
-        method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"text/plain; charset=utf-8"}
+        path: '/organizations/complete-password/',
+        method: 'POST',
+        headers: {"Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -118,7 +120,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\n  \"email\": \"mrbailey@projectthanos.com\"\n}")
+    request.write("{\"password\":\"thanos_rocks\",\"token\":\"VBnQ8wmbEuJdoqpAFh01\"}")
     request.end();
 
 

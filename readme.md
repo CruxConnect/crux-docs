@@ -71,9 +71,10 @@ I would create a new file called `slap_dusty.md` inside the `_export` folder.
 The contents would be:
 ```
 ---
-title: /api/export/slap-dusty/
+title: /export/slap-dusty/
 name: Slap Dusty
 method: get
+visibility: public
 description: Give dusty a good slap.
 ---
 ### Request Parameters:
@@ -91,12 +92,14 @@ uuid
 exclamation
 : (string) The sound that came out of Dusty as you slapped him
 
-| Code | Name                   | Meaning                                        |
-|------|-------------------------------------------------------------------------|
-| 200  | OK                     | Dusty was slapped                              |
-| 400  | Bad Request            | You failed at slapping Dusty.                  |
-| 401  | Unauthorized           | You haven't told me who you are to slap Dusty. |
-| 403  | Permission Denied      | You are not allowed to slap Dusty.             |
-| 404  | Not Found              | Dusty is missing                               |
+### Expected Response Codes:
+
+| Code | Name                   | Meaning                         |
+|------|----------------------------------------------------------|
+| 201  | OK                     | Dusty was cloned, THEN slapped  |
+| 404  | Not Found              | Dusty is missing                |
+
+{% include links/response_codes.md %}
 ```
-Note that type=method. We should change that.
+
+Note: Only document response codes in a table in the endpoint md file when they mean something special.

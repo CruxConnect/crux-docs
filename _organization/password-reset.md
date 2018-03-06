@@ -1,7 +1,8 @@
 ---
 title: /organizations/reset-password/
 name: Reset Password
-position: 0.01
+position: 1.01
+visibility: internal
 method: post
 description: Reset the Password on your account
 right_code: |
@@ -14,25 +15,21 @@ right_code: |
 
   ~~~ json
   {
-    "reset_token": "G7TwCq1Vkds0DLYnfAuP"
+    "reset_token": "VBnQ8wmbEuJdoqpAFh01"
   }
   ~~~
   {: title="Response" }
 
 ---
-Should you need to reset your password, you may initiate the process via this call. This is to be used in conjunction with the ["Validate Password Reset"](#loginvalidate_password_reset) and ["Create New Password"](#logincreate_new_password) API calls.
+Should you need to reset your password, you may initiate the process via this call. This is to be used in conjunction with the ["Validate Password Reset"](#organizationpassword-reset) and ["Create New Password"](#organizationpassword-create) API calls.
 
 ### Request Parameters:
 
 email
 : (string) The email you provided for your account
 
-### Response Parameters:
-
-reset_token
-: (string) Reset Token - to be used specifically with "Complete Password Reset" API call
-
 {% include links/response_codes.md %}
+
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/reset-password/" \

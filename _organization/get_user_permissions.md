@@ -1,7 +1,8 @@
 ---
 title: /organizations/users/permissions/&ltuser_uuid&gt/
 name: Get User Permissions
-position: 0.7
+position: 1.07
+visibility: public
 method: get
 description: Get User Permissions for a particular User
 right_code: |

@@ -1,1 +1,1 @@
-For expected response codes see: [Response Codes](#documentationresponse_codes)
+For standard response codes see: [Response Codes](#documentationresponse_codes)
