@@ -1,6 +1,7 @@
 ---
 title: /catalog/&ltuuid&gt/
 name: Get Discovery Participation
+visibility: internal
 position: 5.10
 method: get
 description: Get Discovery Catalog Participation
