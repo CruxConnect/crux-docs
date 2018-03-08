@@ -1,4 +1,3 @@
-///// Should this file be in Organizations?
 ---
 title: /discovery/create
 ///// maybe: /connections/create
@@ -67,9 +66,6 @@ Optional: none
 
 
 ### Response Parameters:
-
-///// Should we return a full connection object (like in get_connections.md) or just a connection UUID and a request_date?
-///// Should we just return a generic 'success' message and send a confirmation email the same time we send an email to the account manager?
 
 uuid
 : (string) Universal Unique Identifier for the connection
