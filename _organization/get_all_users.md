@@ -1,7 +1,8 @@
 ---
 title: /organizations/users/all/
 name: Get All Users
-position: 0.4
+position: 1.04
+visibility: public
 method: get
 description: Get all users, with user details, specific to your account
 right_code: |

@@ -1,7 +1,8 @@
 ---
 title: /notifications/notification-settings/
 name: Update Notification Settings
-position: 0.99
+position: 1.14
+visibility: public
 method: put
 description: Update Notification Settings allows you to update a single notification's settings
 right_code: |

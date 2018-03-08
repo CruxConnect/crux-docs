@@ -1,7 +1,8 @@
 ---
 title: /organizations/all_permissions/
 name: Get All Permissions
-position: 0.6
+position: 1.06
+visibility: public
 method: get
 description: Get all available Permissions
 right_code: |

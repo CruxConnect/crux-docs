@@ -1,48 +1,32 @@
 ---
 title: /organizations/complete-password/
-name: Create New Password
-position: 0.03
-method: post
-description: Provide a new password for your account
-right_code: |
-  ~~~ json
-  {
-    "password": "thanosrocks",
-    "token": "G7TwCq1Vkds0DLYnfAuP"
-  }
-  ~~~
-  {: title="Request" }
-
+name: Validate Password Token
+position: 1.02
+visibility: internal
+method: get
+description: Validate the password reset
 
 ---
-This API call requires that you have first requested to reset your password (["Reset Password" API call](#loginreset_password)) and validated that request (["Validate Reset Password" API call](#loginvalidate_password_reset)). To create a new password, you provide the "reset token" that you received from the "Reset Password" API call and provide the password you'd like to use.
+This API call requires that you have first requested to reset your password (["Reset Password" API call](#organizationpassword-reset)). Validate that the password reset was requested on the email address provided. By sending a GET request with the email address an email is sent to you with the "reset token". That "reset token" can then be used with the "Complete Password Reset" API call
 
 ### Request Parameters:
 
-password
-: (string) The new password you would like to use for your account
-
 token
-: (string) This is the "reset_token" you received from your "Reset Password" API call
+: (string) The reset token delivered to the email that was provided in the "Reset Password" API call
 
 {% include links/response_codes.md %}
 
+
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-password/" \
-     -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "token": "G7TwCq1Vkds0DLYnfAuP",
-  "password": "thanosrocks"
-}'
+curl "https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01" \
+     -H 'Content-Type: application/octet-stream'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/organizations/complete-password/' \
-    'Content-Type':'application/json; charset=utf-8' \
-    token="G7TwCq1Vkds0DLYnfAuP" \
-    password="thanosrocks"
+http GET 'https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01' \
+    'Content-Type':'application/octet-stream'
 
 ~~~
 {: title="HTTPie" }
@@ -52,21 +36,21 @@ http --json POST 'https://api-sandbox.cruxconnect.com/organizations/complete-pas
 # `pip install requests`
 
 import requests
-import json
 
 
 def send_request():
-    # Create New Password
-    # POST https://api-sandbox.cruxconnect.com/organizations/complete-password/
+    # Validate Password Token
+    # GET https://api-sandbox.cruxconnect.com/organizations/complete-password/
 
     try:
-        response = requests.post(
+        response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/complete-password/",
-            headers={
-                "Content-Type": "application/json; charset=utf-8",
+            params={
+                "token": "VBnQ8wmbEuJdoqpAFh01",
             },
-            data=json.dumps(    token="G7TwCq1Vkds0DLYnfAuP" \
-    password="thanosrocks")
+            headers={
+                "Content-Type": "application/octet-stream",
+            },
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -79,7 +63,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Create New Password
+// request Validate Password Token
 (function(callback) {
     'use strict';
 
@@ -88,9 +72,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/complete-password/',
-        method: 'POST',
-        headers: {"Content-Type":"application/json; charset=utf-8"}
+        path: '/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01',
+        method: 'GET',
+        headers: {"Content-Type":"application/octet-stream"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -118,7 +102,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"password\":\"thanosrocks\",\"token\":\"G7TwCq1Vkds0DLYnfAuP\"}")
+    request.write("")
     request.end();
 
 
