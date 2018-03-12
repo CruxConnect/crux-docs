@@ -45,7 +45,7 @@ right_code: |
           "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
           "user": {
             "name": "Crux User",
-            "email": "user@cruxretailer.com"
+            "email": "user@mycompany.com"
           }
         },
         "address": {
@@ -101,7 +101,7 @@ right_code: |
           "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
           "user": {
             "name": "Crux User",
-            "email": "user@cruxretailer.com"
+            "email": "user@mycompany.com"
           }
         },
         "address": {

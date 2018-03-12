@@ -8,7 +8,7 @@ description: Login to receive an authentication token
 right_code: |
   ~~~ json
   {
-    "username": "user@cruxsupplier.com",
+    "username": "user@mycompany.com",
     "password": "thanos_rocks"
   }
   ~~~
@@ -128,7 +128,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -u ':' \
      -d $'{
-  "username": "user@cruxsupplier.com",
+  "username": "user@mycompany.com",
   "password": "thanos_rocks"
 }'
 
@@ -138,7 +138,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/organizations/user-login/' \
     'Content-Type':'application/json; charset=utf-8' \
-    username="user@cruxsupplier.com" \
+    username="user@mycompany.com" \
     password="thanos_rocks"
 
 ~~~
@@ -162,7 +162,7 @@ def send_request():
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    username="user@cruxsupplier.com" \
+            data=json.dumps(    username="user@mycompany.com" \
     password="thanos_rocks")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -216,7 +216,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"username\":\"user@cruxsupplier.com\",\"password\":\"thanos_rocks\"}")
+    request.write("{\"username\":\"user@mycompany.com\",\"password\":\"thanos_rocks\"}")
     request.end();
 
 

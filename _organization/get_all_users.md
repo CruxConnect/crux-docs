@@ -59,7 +59,7 @@ right_code: |
         "uuid": "2de10d50-c595-48c3-8cb2-029afd221637",
         "first_name": "Crux",
         "last_name": "User",
-        "email": "user@cruxretailer.com",
+        "email": "user@mycompany.com",
         "phone": "(617)395-2696"
       },
       "permission_assignments": {
