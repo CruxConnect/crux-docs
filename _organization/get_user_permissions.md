@@ -63,7 +63,7 @@ To view orgainzation users, you must be assigned the 'view_org_users' permission
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "notification_via": "email",
@@ -77,7 +77,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     notification_via="email" \
     enabled="true" \
@@ -103,7 +103,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    notification_via="email" \
@@ -133,7 +133,7 @@ def send_request():
         port: '443',
         path: '/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

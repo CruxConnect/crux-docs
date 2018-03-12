@@ -43,14 +43,14 @@ Get the Details about your Organization including the uuid, name, organization t
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/" \
-     -H 'Authorization: Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84'
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
 http GET 'https://api-sandbox.cruxconnect.com/organizations/' \
-    'Authorization':'Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84'
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
 
 ~~~
 {: title="HTTPie" }
@@ -70,7 +70,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/",
             headers={
-                "Authorization": "Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
             },
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -95,7 +95,7 @@ def send_request():
         port: '443',
         path: '/organizations/',
         method: 'GET',
-        headers: {"Authorization":"Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

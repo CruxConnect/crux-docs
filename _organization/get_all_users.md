@@ -12,9 +12,9 @@ right_code: |
       "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49",
       "person": {
         "uuid": "2e0ecb7e-9426-4e66-a8a9-e69cd8c806c0",
-        "first_name": "Jason ",
-        "last_name": "Weir",
-        "email": "jweir@projectthanos.com",
+        "first_name": "Crux ",
+        "last_name": "User",
+        "email": "user@mycompany.com",
         "phone": "1-722-036-2568x9442"
       },
       "permission_assignments": {
@@ -57,9 +57,9 @@ right_code: |
       "uuid": "cefc9200-91eb-40dd-8937-d8edaa8f955f",
       "person": {
         "uuid": "2de10d50-c595-48c3-8cb2-029afd221637",
-        "first_name": "Matt",
-        "last_name": "Bailey",
-        "email": "mrbailey@projectthanos.com",
+        "first_name": "Crux",
+        "last_name": "User",
+        "email": "user@mycompany.com",
         "phone": "(617)395-2696"
       },
       "permission_assignments": {
@@ -118,7 +118,7 @@ To view orgainzation users, you must be assigned the 'view_org_users' permission
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -127,7 +127,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/all/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 ~~~
@@ -149,7 +149,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/users/all/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -176,7 +176,7 @@ def send_request():
         port: '443',
         path: '/organizations/users/all/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

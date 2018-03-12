@@ -11,9 +11,9 @@ right_code: |
     "uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff",
     "person": {
       "uuid": "4b4e8ea4-a3cf-4c63-b34e-e1b9047c1340",
-      "first_name": "Roy",
-      "last_name": "Breslawski",
-      "email": "rbreslawski@cruxsupplier.com",
+      "first_name": "Crux",
+      "last_name": "User",
+      "email": "user@mycompany.com",
       "phone": null,
       "job_title": null
     },
@@ -70,7 +70,7 @@ URL Endpoint: `/api/organizations/users/detail/<user_uuid>/`
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/" \
-     -H 'Authorization: Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -79,7 +79,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-54
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/' \
-    'Authorization':'Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -102,7 +102,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/",
             headers={
-                "Authorization": "Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -129,7 +129,7 @@ def send_request():
         port: '443',
         path: '/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/',
         method: 'GET',
-        headers: {"Authorization":"Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

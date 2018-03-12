@@ -272,7 +272,7 @@ mpn
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
-     -H 'Authorization: Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "sku_id": "AWWghwmTNb",
@@ -293,7 +293,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
-    'Authorization':'Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_id="AWWghwmTNb" \
     minimum_advertised_price="40.00" \
@@ -326,7 +326,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/skus/",
             headers={
-                "Authorization": "Token 0102f963bf7c4c4452d46e30645de9182ba0d137",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    sku_id="AWWghwmTNb" \
@@ -363,7 +363,7 @@ def send_request():
         port: '443',
         path: '/products/skus/',
         method: 'POST',
-        headers: {"Authorization":"Token 0102f963bf7c4c4452d46e30645de9182ba0d137","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

@@ -8,15 +8,15 @@ description: Login to receive an authentication token
 right_code: |
   ~~~ json
   {
-    "username": "rbreslawski@cruxsupplier.com",
-    "password": "thanos_rocks"
+    "username": "user@mycompany.com",
+    "password": "crux_is_awesome"
   }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "auth_token": "d9741c2c241b8f9b9955130ca08dbfbd891d9c84",
+    "auth_token": "47d4yfbwymedhiudj384702984nakju4hajh395d",
     "org_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
     "user_uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff",
     "retailer_uuid": "",
@@ -128,8 +128,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -u ':' \
      -d $'{
-  "username": "rbreslawski@cruxsupplier.com",
-  "password": "thanos_rocks"
+  "username": "user@mycompany.com",
+  "password": "crux_is_awesome"
 }'
 
 ~~~
@@ -138,8 +138,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/organizations/user-login/' \
     'Content-Type':'application/json; charset=utf-8' \
-    username="rbreslawski@cruxsupplier.com" \
-    password="thanos_rocks"
+    username="user@mycompany.com" \
+    password="crux_is_awesome"
 
 ~~~
 {: title="HTTPie" }
@@ -162,8 +162,8 @@ def send_request():
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    username="rbreslawski@cruxsupplier.com" \
-    password="thanos_rocks")
+            data=json.dumps(    username="user@mycompany.com" \
+    password="crux_is_awesome")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -216,7 +216,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"username\":\"rbreslawski@cruxsupplier.com\",\"password\":\"thanos_rocks\"}")
+    request.write("{\"username\":\"user@mycompany.com\",\"password\":\"crux_is_awesome\"}")
     request.end();
 
 
