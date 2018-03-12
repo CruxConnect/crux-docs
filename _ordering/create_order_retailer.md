@@ -1,7 +1,7 @@
 ---
 title: /orders/create/
 name: Create Order - Retailer
-position: 3.05
+position: 4.06
 visibility: public
 method: post
 description: Create an Order on your account
@@ -10,13 +10,13 @@ right_code: |
   {
     "skus": [
       {
-        "quantity": "147",
-        "sku_id": "000106",
+        "quantity": "36",
+        "sku_id": "000078",
         "supplier_uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137",
-        "price": "0"
+        "price": "27.99"
       }
     ],
-    "purchase_order_id": "po-w7ywcUWS",
+    "purchase_order_id": "po-CLOB25tC",
     "notes": "here are some notes",
     "shipping_carrier": "UPS",
     "shipping_method": "Ground",
@@ -27,7 +27,8 @@ right_code: |
       "address2": "STE 123",
       "city": "New York",
       "state": "NY",
-      "postal_code": "10112"
+      "postal_code": "10112",
+      "phone_number": "801-555-1212"
     }
   }
   ~~~
@@ -35,10 +36,10 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "49bd2a6d-fe6b-4145-a059-9439289801ae",
+    "uuid": "1ab8e55f-ea7e-4a58-b7d3-db723272dbbd",
     "is_allocated": false,
-    "purchase_order_id": "po-5fkQo2ET",
-    "created_date": "2018-03-08T22:20:25.311697Z",
+    "purchase_order_id": "po-xErcaA5u",
+    "created_date": "2018-03-12T20:27:39.579586Z",
     "notes": "here are some notes",
     "fees": {
       "estimated_shipping_cost": 0,
@@ -49,8 +50,8 @@ right_code: |
       "name": "Crux Retailer",
       "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
       "user": {
-        "name": "Crux  User",
-        "email": "user@mycompany.com"
+        "name": "Roy Breslawski",
+        "email": "rbreslawski@cruxretailer.com"
       }
     },
     "address": {
@@ -61,7 +62,7 @@ right_code: |
       "city": "New York",
       "state": "NY",
       "postal_code": "10112",
-      "phone_number": null,
+      "phone_number": "801-555-1212",
       "country": null
     },
     "requested_shipping": {
@@ -70,21 +71,21 @@ right_code: |
     },
     "line_items": [
       {
-        "uuid": "9af950c1-5dac-4da4-a86c-f1a0f3bdff40",
+        "uuid": "d3842ec4-d1f8-4cf1-860b-b9eeb8a35680",
         "status": "Unallocated",
-        "item_uuid": "a904832e-2ad4-4ad7-8339-e4b0877a42bd",
-        "item_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
-        "sku_uuid": "f9ded77b-35b2-45e1-a071-2eec8e99f581",
-        "sku_id": "000106",
-        "sku_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
-        "sku_title_variants": "PulseTech Xtreme Charger Auto  100X010 XC100-P {}",
+        "item_uuid": "0d0c2332-8cc6-4768-8417-55bd0b298da7",
+        "item_name": "Deltran BT Junior 12 Volt",
+        "sku_uuid": "17c4d2c8-a5ae-43b9-aecc-c4d688184395",
+        "sku_id": "000078",
+        "sku_name": "Deltran BT Junior 12 Volt",
+        "sku_title_variants": "Deltran BT Junior 12 Volt {}",
         "sku_special_instructions": null,
-        "cost": 66.05,
+        "cost": 22,
         "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
         "supplier_name": "Crux Supplier A",
         "tracking_numbers": [],
         "allocation": {
-          "quantity_ordered": 202,
+          "quantity_ordered": 22,
           "quantity_allocated": 0,
           "quantity_backordered": 0,
           "quantity_rejected": 0,
@@ -103,7 +104,7 @@ Create an Order on your account. By providing the SKU(s), quantity ordered, dest
 ### Request Parameters:
 
 skus
-: (list) The list of SKUs ordered including the supplier_id, sku_id and quantity per SKU
+: (array) The array SKU objects ordered including the supplier_id, sku_id and quantity per SKU
 
 purchase_order_id
 : (string) The Purchase Order ID that you provide to identify your order
@@ -202,6 +203,8 @@ shipping_method
 
 {% include objects/allocation.md %}
 
+### Expected Response Codes
+
 {% include links/response_codes.md %}
 
 
@@ -216,17 +219,18 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
     "address1": "30 Rockefeller Plaza",
     "business_name": "NBC",
     "postal_code": "10112",
+    "phone_number": "801-555-1212",
     "name": "Bob Iger",
     "address2": "STE 123"
   },
-  "purchase_order_id": "po-w7ywcUWS",
+  "purchase_order_id": "po-CLOB25tC",
   "notes": "here are some notes",
   "shipping_carrier": "UPS",
   "skus": [
     {
-      "quantity": "147",
-      "price": "0",
-      "sku_id": "000106",
+      "quantity": "36",
+      "price": "27.99",
+      "sku_id": "000078",
       "supplier_uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137"
     }
   ],
@@ -246,17 +250,18 @@ http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
   \"address1\": \"30 Rockefeller Plaza\",
   \"business_name\": \"NBC\",
   \"postal_code\": \"10112\",
+  \"phone_number\": \"801-555-1212\",
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-w7ywcUWS" \
+    purchase_order_id="po-CLOB25tC" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"147\",
-    \"price\": \"0\",
-    \"sku_id\": \"000106\",
+    \"quantity\": \"36\",
+    \"price\": \"27.99\",
+    \"sku_id\": \"000078\",
     \"supplier_uuid\": \"b5f05054-dce4-4286-96fc-b9424d6b2137\"
   }
 ]" \
@@ -290,17 +295,18 @@ def send_request():
   \"address1\": \"30 Rockefeller Plaza\",
   \"business_name\": \"NBC\",
   \"postal_code\": \"10112\",
+  \"phone_number\": \"801-555-1212\",
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-w7ywcUWS" \
+    purchase_order_id="po-CLOB25tC" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"147\",
-    \"price\": \"0\",
-    \"sku_id\": \"000106\",
+    \"quantity\": \"36\",
+    \"price\": \"27.99\",
+    \"sku_id\": \"000078\",
     \"supplier_uuid\": \"b5f05054-dce4-4286-96fc-b9424d6b2137\"
   }
 ]" \
@@ -356,7 +362,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"skus\":[{\"quantity\":\"147\",\"sku_id\":\"000106\",\"supplier_uuid\":\"b5f05054-dce4-4286-96fc-b9424d6b2137\",\"price\":\"0\"}],\"purchase_order_id\":\"po-w7ywcUWS\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\"}}")
+    request.write("{\"skus\":[{\"quantity\":\"36\",\"sku_id\":\"000078\",\"supplier_uuid\":\"b5f05054-dce4-4286-96fc-b9424d6b2137\",\"price\":\"27.99\"}],\"purchase_order_id\":\"po-CLOB25tC\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"}}")
     request.end();
 
 

@@ -264,7 +264,7 @@ shipping_method
 
 {% include objects/allocation.md %}
 
-Expected responses include 200, 400, 401, 403, or 404.
+{% include links/response_codes.md %}
 
 
 ~~~ bash

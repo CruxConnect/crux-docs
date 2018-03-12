@@ -1,15 +1,18 @@
 ---
-title: /orders/export/
-name: Get Orders Export
-position: 4.02
+title: /orders/fees/
+name: Get Order Fees - Retailer
+position: 4.05
 visibility: public
 method: post
-description: Get an Export of the Order List via an email
+description: Get the Fees for a potential Order.
 right_code: |
   ~~~ json
   {
-    "uuids": [
-      "49bd2a6d-fe6b-4145-a059-9439289801ae"
+    "skus": [
+      {
+        "quantity": 5,
+        "sku_id": "000078"
+      }
     ]
   }
   ~~~
@@ -17,27 +20,57 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "521c8baa-1c44-4ca7-88ce-f4eadba37bc0"
+    "estimated_shipping_cost": 0,
+    "drop_ship_fee": 0,
+    "order_fee": 0
   }
   ~~~
   {: title="Response" }
 
 ---
-Get an Export of the Orders via an email to your email address on file.
+Before placing an order, use this call to return the total Fees for the Order. This may be used a number of ways. Perhaps you would like to make sure you are charging enough for an order and would like a "sanity check" on the price before committing to the potential buyer. This API call allows you to get the full, all-inclusive price for the Order.
 
-This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. The Order Details will be attached to the email as as a comma-delimited (.csv) file.
-
-We also provide an Export uuid in response to this call.
 
 ### Request Parameters:
 
-uuids
-: (array) Array of Universal Unique Identifiers for Export
+##### Required:
+
+skus
+: (list) The list of SKUs ordered including the SKU ID and Quantity per SKU
+
+##### SKU Object:
+
+sku_id
+: (string) The SKU ID is the SKU provided by the supplier which identifies that product you are purchasing
+
+quantity
+: (number) The Quantity ordered of the SKU ID
+
+#### Optional:
+
+address
+: (object) The Address object containing name, business name, address line 1, address line 2, city, state, postal code
+
+shipping_carrier
+: (string) The Shipping Carrier to deliver the order
+
+shipping_method
+: (string) The Shipping Method used by the Shipping Carrier to deliver the order
+
+##### Address Object:
+
+{% include objects/address_business.md %}
 
 ### Response Parameters:
 
-uuid
-: (string) The Universal Unique Identifier for the Export
+estimated_shipping_cost
+: (number) The Estimated Shipping Cost of the Order
+
+drop_ship_fee
+: (number) The total Drop Ship Fee for the Order
+
+per_order_fee
+: (number) The Per Order Fee for the Order
 
 ### Expected Response Codes
 
@@ -45,12 +78,15 @@ uuid
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/export/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/fees/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "uuids": [
-    "49bd2a6d-fe6b-4145-a059-9439289801ae"
+  "skus": [
+    {
+      "quantity": 5,
+      "sku_id": "000078"
+    }
   ]
 }'
 
@@ -58,11 +94,14 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/orders/export/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/orders/fees/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
-    uuids:="[
-  \"49bd2a6d-fe6b-4145-a059-9439289801ae\"
+    skus:="[
+  {
+    \"quantity\": 5,
+    \"sku_id\": \"000078\"
+  }
 ]"
 
 ~~~
@@ -77,18 +116,21 @@ import json
 
 
 def send_request():
-    # Get Orders Export
-    # POST https://api-sandbox.cruxconnect.com/orders/export/
+    # Get Order Fees - Retailer
+    # POST https://api-sandbox.cruxconnect.com/orders/fees/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/orders/export/",
+            url="https://api-sandbox.cruxconnect.com/orders/fees/",
             headers={
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    uuids:="[
-  \"49bd2a6d-fe6b-4145-a059-9439289801ae\"
+            data=json.dumps(    skus:="[
+  {
+    \"quantity\": 5,
+    \"sku_id\": \"000078\"
+  }
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -102,7 +144,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Orders Export
+// request Get Order Fees - Retailer
 (function(callback) {
     'use strict';
 
@@ -111,7 +153,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/orders/export/',
+        path: '/orders/fees/',
         method: 'POST',
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
@@ -141,7 +183,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"uuids\":[\"49bd2a6d-fe6b-4145-a059-9439289801ae\"]}")
+    request.write("{\"skus\":[{\"quantity\":5,\"sku_id\":\"000078\"}]}")
     request.end();
 
 

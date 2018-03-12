@@ -1,7 +1,7 @@
 ---
 title: /orders/items/cancel/&ltorder_item_uuid&gt/
 name: Cancel Order Item - Retailer
-position: 3.07
+position: 4.07
 method: delete
 description: Cancel an item on a pending Order (for Retailers)
 right_code: |
@@ -9,16 +9,12 @@ right_code: |
 ---
 Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, your request to cancel an order is sent to the pertinent supplier(s).
 
+#### URL Parameters
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 204  | No Content             | The API call was received and the order cancel request is now pending        |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-| 422  | Unprocessable Entity   | Generally, the order_item_uuid can't be cancelled or may be wrong altogether |
+order_item_uuid>
+: (string) The Universal Unique Identifier for the item which you intend to cancel
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
