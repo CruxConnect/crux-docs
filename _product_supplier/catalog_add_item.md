@@ -264,7 +264,7 @@ height
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/" \
-     -H 'Authorization: Token 825dd305b5858e2373763ff338615db822fe67a0' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "item_uuids": [
@@ -277,7 +277,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-1
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/' \
-    'Authorization':'Token 825dd305b5858e2373763ff338615db822fe67a0' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
   \"112f26c6-64e5-4814-b06a-24961e8abd21\"
@@ -302,7 +302,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/",
             headers={
-                "Authorization": "Token 825dd305b5858e2373763ff338615db822fe67a0",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    item_uuids:="[
@@ -331,7 +331,7 @@ def send_request():
         port: '443',
         path: '/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/',
         method: 'POST',
-        headers: {"Authorization":"Token 825dd305b5858e2373763ff338615db822fe67a0","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

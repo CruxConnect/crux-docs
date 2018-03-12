@@ -308,7 +308,7 @@ height
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/export/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "uuids": [
@@ -322,7 +322,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/export/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/items/export/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     uuids:="[
   \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
@@ -348,7 +348,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/items/export/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    uuids:="[
@@ -378,7 +378,7 @@ def send_request():
         port: '443',
         path: '/products/items/export/',
         method: 'POST',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

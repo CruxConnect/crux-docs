@@ -7,7 +7,7 @@
         <h3>
           <a id="{{ doc.id | replace: '/', '' | replace: '.', '' }}">
             {% if doc.method %}
-              <span class="endpoint {{ doc.method }}"></span>
+              <span class="endpoint {{ doc.method }}">{{ doc.method }}</span>
             {% endif %}
             {{ doc.title }}
           </a>

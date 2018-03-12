@@ -1,39 +1,48 @@
 ---
-title: /organizations/complete-password/
-name: Create New Password
-position: 1.03
+title: /organizations/accept-invite/&lt;invitation-token&gt;/
+name: Accept Crux Invite
+position: 1.05
 visibility: internal
 method: post
-description: Provide a new password for your account
+description: Validate the account invitation token
 right_code: |
   ~~~ json
   {
-    "password": "crux_is_awesome",
-    "token": "VBnQ8wmbEuJdoqpAFh01"
+    "password": "crux_is_awesome"
   }
   ~~~
   {: title="Request" }
 
 
 ---
-This API call requires that you have first requested to reset your password (["Reset Password" API call](#organizationpassword-reset)) and validated that request (["Validate Password Reset"](#organizationpassword-reset)). To create a new password, you provide the "reset token" that you received in an email sent by the ["Reset Password" API call](#organizationpassword-reset) and provide the password you'd like to use.
+This API call requires that you have first recieved an email containing an invitatation link. That link will contain an invitation token. Alternatively in a development environment, you may use the token included in the response to the (["Reset Password" API call](#organizationpassword-reset)).
+
+This call will set a password for the account tied to the token and mark the account as active.
+
+### URL Parameters:
+
+token
+: (string) The invitation token
 
 ### Request Parameters:
 
 password
-: (string) The new password you would like to use for your account
+: (string) The invitation token
 
-token
-: (string) This is the "reset_token" you received from your "Reset Password" API call
+### Expected Response Codes
+
+| Code | Name       | Meaning                                      |
+|------|-----------------------------------------------------------|
+| 204  | No Content | The invitation was completed                 |
+| 404  | Not Found  | The token is invalid                         |
 
 {% include links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-password/" \
+curl -X "POST" "http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "token": "VBnQ8wmbEuJdoqpAFh01",
   "password": "crux_is_awesome"
 }'
 
@@ -41,9 +50,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-passw
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/organizations/complete-password/' \
+http --json POST 'http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/' \
     'Content-Type':'application/json; charset=utf-8' \
-    token="VBnQ8wmbEuJdoqpAFh01" \
     password="crux_is_awesome"
 
 ~~~
@@ -58,17 +66,16 @@ import json
 
 
 def send_request():
-    # Create New Password
-    # POST https://api-sandbox.cruxconnect.com/organizations/complete-password/
+    # Accept Invitation
+    # POST http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/organizations/complete-password/",
+            url="http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    token="VBnQ8wmbEuJdoqpAFh01" \
-    password="crux_is_awesome")
+            data=json.dumps(    password="crux_is_awesome")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -81,21 +88,22 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Create New Password
+// request Accept Invitation
 (function(callback) {
     'use strict';
 
-    const httpTransport = require('https');
+    const httpTransport = require('http');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
-        port: '443',
-        path: '/organizations/complete-password/',
+        hostname: 'localhost',
+        port: '80',
+        path: '/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/',
         method: 'POST',
         headers: {"Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
+    // Paw Store Cookies option is not supported
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
@@ -120,7 +128,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"password\":\"crux_is_awesome\",\"token\":\"VBnQ8wmbEuJdoqpAFh01\"}")
+    request.write("{\"password\":\"crux_is_awesome\"}")
     request.end();
 
 

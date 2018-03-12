@@ -80,7 +80,7 @@ right_code: |
           },
           {
             "uuid": "8676b377-4180-4ad9-b71d-dccfa83bea43",
-            "name": "Nicks List"
+            "name": "My List"
           }
         ],
         "created": "2017-10-23T18:28:07.217708Z",
@@ -172,7 +172,7 @@ right_code: |
           },
           {
             "uuid": "8676b377-4180-4ad9-b71d-dccfa83bea43",
-            "name": "Nicks List"
+            "name": "My List"
           },
           {
             "uuid": "164aaf12-2400-4af7-b5c1-00da17c3f60e",
@@ -538,7 +538,7 @@ height
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -547,7 +547,7 @@ curl "https://api-sandbox.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 ~~~
@@ -569,7 +569,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -596,7 +596,7 @@ def send_request():
         port: '443',
         path: '/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

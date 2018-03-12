@@ -49,14 +49,14 @@ status
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/accounting/transactions/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
 http GET 'https://api-sandbox.cruxconnect.com/accounting/transactions/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
 
 ~~~
 {: title="HTTPie" }
@@ -76,7 +76,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/accounting/transactions/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
             },
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -101,7 +101,7 @@ def send_request():
         port: '443',
         path: '/accouting/transactions/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

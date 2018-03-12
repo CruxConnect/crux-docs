@@ -49,8 +49,8 @@ right_code: |
       "name": "Crux Retailer",
       "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
       "user": {
-        "name": "Roy Breslawski",
-        "email": "rbreslawski@cruxretailer.com"
+        "name": "Crux  User",
+        "email": "user@mycompany.com"
       }
     },
     "address": {
@@ -207,7 +207,7 @@ shipping_method
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
-     -H 'Authorization: Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "address": {
@@ -238,7 +238,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
-    'Authorization':'Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     address:="{
   \"state\": \"NY\",
@@ -281,7 +281,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/orders/create/",
             headers={
-                "Authorization": "Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    address:="{
@@ -328,7 +328,7 @@ def send_request():
         port: '443',
         path: '/orders/create/',
         method: 'POST',
-        headers: {"Authorization":"Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

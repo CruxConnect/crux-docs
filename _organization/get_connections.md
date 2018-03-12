@@ -110,7 +110,7 @@ retailers_supplier_account_number
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/connections/" \
-     -H 'Authorization: Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -119,7 +119,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/connections/" \
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/organizations/connections/' \
-    'Authorization':'Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -142,7 +142,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/connections/",
             headers={
-                "Authorization": "Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -169,7 +169,7 @@ def send_request():
         port: '443',
         path: '/organizations/connections/',
         method: 'GET',
-        headers: {"Authorization":"Token d9741c2c241b8f9b9955130ca08dbfbd891d9c84","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

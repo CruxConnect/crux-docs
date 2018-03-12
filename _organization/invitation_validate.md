@@ -1,56 +1,61 @@
 ---
-title: /organizations/
-name: Get Organization Details
-position: 1.11
-visibility: public
+title: /organizations/accept-invite/&lt;invitation-token&gt;/
+name: Validate Crux Invite
+position: 1.04
+visibility: internal
 method: get
-description: Get Organization Details specific to your organization
+description: Validate the account invitation token
 right_code: |
   ~~~ json
+
+  ~~~
+  {: title="Request" }
+
+  ~~~ json
   {
-    "uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
-    "name": "Crux Supplier A",
-    "org_type": "SUPPLIER",
-    "status": "ACTIVE",
-    "created_date": "2018-02-09T17:02:13Z",
-    "active_date": null,
-    "account_manager": {
-      "uuid": "6c249798-7564-468d-83de-d98ae8b0b7cf",
-      "person": {
-        "uuid": "f3548ea5-15ab-459e-9f1a-d982b21e916d",
-        "first_name": "Joe",
-        "last_name": "Account",
-        "email": "joe@cruxaccountmanager.com",
-        "phone": "(267)977-0572x195",
-        "job_title": null
-      }
-    }
+    "email": "user@mycompany.com",
+    "token": "gAhdVJa6r7YzoP54El1D"
   }
   ~~~
   {: title="Response" }
 
 ---
-Get the Details about your Organization including the uuid, name, organization type, status, date created, date activated, and account manager.
+This API call requires that you have first recieved an email containing an invitatation link. That link will contain an invitation token. Alternatively in a development environment, you may use the token included in the response to the (["Reset Password" API call](#organizationpassword-reset)).
+
+This call will check to see if the token is valid. If the token is found, but has expired, a 201 response will be received and a new invitation email will be sent.
+
+### URL Parameters:
+
+token
+: (string) The invitation token
 
 ### Response Parameters:
 
-{% include objects/organization.md %}
+email
+: (string) The email address to which the invitation belongs
 
-{% include objects/account_manager.md %}
+token
+: (string) The invitation token
+
+### Expected Response Codes
+
+| Code | Name      | Meaning                                      |
+|------|----------------------------------------------------------|
+| 200  | OK        | The token is valid                           |
+| 201  | Created   | The token has expired. A new email was sent. |
+| 404  | Not Found | The token is invalid                         |
 
 {% include links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
+curl "http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/"
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api-sandbox.cruxconnect.com/organizations/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
+http GET 'http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/'
 
 ~~~
 {: title="HTTPie" }
@@ -63,15 +68,12 @@ import requests
 
 
 def send_request():
-    # Get Organization Details
-    # GET https://api-sandbox.cruxconnect.com/organizations/
+    # Validate Invitation
+    # GET http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/",
-            headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
-            },
+            url="http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/",
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -84,21 +86,22 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Organization Details
+// request Validate Invitation
 (function(callback) {
     'use strict';
 
-    const httpTransport = require('https');
+    const httpTransport = require('http');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
-        port: '443',
-        path: '/organizations/',
+        hostname: 'localhost',
+        port: '80',
+        path: '/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d"}
+        headers: {}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
+    // Paw Store Cookies option is not supported
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
