@@ -13,7 +13,7 @@ right_code: |
 
   ~~~ json
   {
-    "email": "mrbailey@projectzuul.com",
+    "email": "mrbailey@cruxsupplier.com",
     "token": "gAhdVJa6r7YzoP54El1D"
   }
   ~~~

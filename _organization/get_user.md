@@ -13,7 +13,7 @@ right_code: |
       "uuid": "4b4e8ea4-a3cf-4c63-b34e-e1b9047c1340",
       "first_name": "Roy",
       "last_name": "Breslawski",
-      "email": "rbreslawski@cruxsupplier.com",
+      "email": "user@cruxsupplier.com",
       "phone": null,
       "job_title": null
     },

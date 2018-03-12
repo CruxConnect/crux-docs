@@ -14,7 +14,7 @@ right_code: |
         "uuid": "2e0ecb7e-9426-4e66-a8a9-e69cd8c806c0",
         "first_name": "Jason ",
         "last_name": "Weir",
-        "email": "jweir@projectthanos.com",
+        "email": "user@mycompany.com",
         "phone": "1-722-036-2568x9442"
       },
       "permission_assignments": {
@@ -59,7 +59,7 @@ right_code: |
         "uuid": "2de10d50-c595-48c3-8cb2-029afd221637",
         "first_name": "Matt",
         "last_name": "Bailey",
-        "email": "mrbailey@projectthanos.com",
+        "email": "mrbailey@cruxretailer.com",
         "phone": "(617)395-2696"
       },
       "permission_assignments": {

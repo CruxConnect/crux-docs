@@ -23,7 +23,7 @@ right_code: |
       "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
       "user": {
         "name": " ",
-        "email": "dchadwick@projectthanos.com"
+        "email": "dchadwick@cruxretailer.com"
       }
     },
     "address": {

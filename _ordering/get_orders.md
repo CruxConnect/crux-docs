@@ -45,7 +45,7 @@ right_code: |
           "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
           "user": {
             "name": "Roy Breslawski",
-            "email": "rbreslawski@cruxretailer.com"
+            "email": "user@cruxretailer.com"
           }
         },
         "address": {
@@ -101,7 +101,7 @@ right_code: |
           "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
           "user": {
             "name": "Roy Breslawski",
-            "email": "rbreslawski@cruxretailer.com"
+            "email": "user@cruxretailer.com"
           }
         },
         "address": {

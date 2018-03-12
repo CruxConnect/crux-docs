@@ -54,7 +54,7 @@ right_code: |
       "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
       "user": {
         "name": "Jason  Weir",
-        "email": "jweir@projectthanos.com"
+        "email": "user@mycompany.com"
       }
     },
     "address": {
