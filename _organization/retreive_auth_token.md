@@ -16,7 +16,7 @@ right_code: |
 
   ~~~ json
   {
-    "auth_token": "d9741c2c241b8f9b9955130ca08dbfbd891d9c84",
+    "auth_token": "47d4yfbwymedhiudj384702984nakju4hajh395d",
     "org_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
     "user_uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff",
     "retailer_uuid": "",

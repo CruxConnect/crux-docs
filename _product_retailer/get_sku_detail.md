@@ -282,7 +282,7 @@ name
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -291,7 +291,7 @@ curl "https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 ~~~
@@ -313,7 +313,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -340,7 +340,7 @@ def send_request():
         port: '443',
         path: '/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

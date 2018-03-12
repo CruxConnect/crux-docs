@@ -44,7 +44,7 @@ notification_frequency
 
 ~~~ bash
 curl -X "PUT" "https://api-sandbox.cruxconnect.com/notifications/notification-settings/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "notification_via": "Dashboard",
@@ -58,7 +58,7 @@ curl -X "PUT" "https://api-sandbox.cruxconnect.com/notifications/notification-se
 
 ~~~ bash
 http --json PUT 'https://api-sandbox.cruxconnect.com/notifications/notification-settings/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     notification_via="Dashboard" \
     enabled="True" \
@@ -84,7 +84,7 @@ def send_request():
         response = requests.put(
             url="https://api-sandbox.cruxconnect.com/notifications/notification-settings/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    notification_via="Dashboard" \
@@ -114,7 +114,7 @@ def send_request():
         port: '443',
         path: '/notifications/notification-settings/',
         method: 'PUT',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

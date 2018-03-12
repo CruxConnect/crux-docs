@@ -283,7 +283,7 @@ backorder_date
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -292,7 +292,7 @@ curl "https://api-sandbox.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9d
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -315,7 +315,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/orders/299fc593-04f0-424d-9847-e359b9dfde56/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -342,7 +342,7 @@ def send_request():
         port: '443',
         path: '/orders/299fc593-04f0-424d-9847-e359b9dfde56/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

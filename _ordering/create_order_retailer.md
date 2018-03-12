@@ -323,7 +323,7 @@ backorder_date
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "address": {
@@ -356,7 +356,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     address:="{
   \"state\": \"NY\",
@@ -401,7 +401,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/orders/create/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    address:="{
@@ -450,7 +450,7 @@ def send_request():
         port: '443',
         path: '/orders/create/',
         method: 'POST',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

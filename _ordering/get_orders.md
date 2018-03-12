@@ -367,7 +367,7 @@ Expected responses include 200, 400, 401, 403, or 404.
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
-     -H 'Authorization: Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "line_item_status_conjunction": "or",
@@ -391,7 +391,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/' \
-    'Authorization':'Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     line_item_status_conjunction="or" \
     sort:="{
@@ -427,7 +427,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/orders/",
             headers={
-                "Authorization": "Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    line_item_status_conjunction="or" \
@@ -467,7 +467,7 @@ def send_request():
         port: '443',
         path: '/orders/',
         method: 'POST',
-        headers: {"Authorization":"Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
  

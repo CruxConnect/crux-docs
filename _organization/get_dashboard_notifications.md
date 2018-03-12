@@ -42,7 +42,7 @@ type
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/notifications/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "user_uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49"
@@ -53,7 +53,7 @@ curl "https://api-sandbox.cruxconnect.com/notifications/" \
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/notifications/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     user_uuid="3a7acb28-ab13-437e-8c35-46cf4f0bea49"
 
@@ -76,7 +76,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/notifications/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    user_uuid="3a7acb28-ab13-437e-8c35-46cf4f0bea49")
@@ -103,7 +103,7 @@ def send_request():
         port: '443',
         path: '/notifications/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

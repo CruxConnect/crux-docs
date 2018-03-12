@@ -32,7 +32,7 @@ permission_uuids
 
 ~~~ bash
 curl -X "DELETE" "https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "permission_uuids": [
@@ -46,7 +46,7 @@ curl -X "DELETE" "https://api-sandbox.cruxconnect.com/organizations/users/permis
 
 ~~~ bash
 http --json DELETE 'https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     permission_uuids:="[
   \"2a0295b6-dd74-4239-9988-24fcdb1adcea\",
@@ -72,7 +72,7 @@ def send_request():
         response = requests.delete(
             url="https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    permission_uuids:="[
@@ -102,7 +102,7 @@ def send_request():
         port: '443',
         path: '/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/',
         method: 'DELETE',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

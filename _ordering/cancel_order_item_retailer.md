@@ -23,7 +23,7 @@ Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, 
 
 ~~~ bash
 curl -X "DELETE" "https://api-sandbox.cruxconnect.com/orders/items/cancel//" \
-     -H 'Authorization: Token 825dd305b5858e2373763ff338615db822fe67a0' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -32,7 +32,7 @@ curl -X "DELETE" "https://api-sandbox.cruxconnect.com/orders/items/cancel//" \
 
 ~~~ bash
 http --json DELETE 'https://api-sandbox.cruxconnect.com/orders/items/cancel//' \
-    'Authorization':'Token 825dd305b5858e2373763ff338615db822fe67a0' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -55,7 +55,7 @@ def send_request():
         response = requests.delete(
             url="https://api-sandbox.cruxconnect.com/orders/items/cancel//",
             headers={
-                "Authorization": "Token 825dd305b5858e2373763ff338615db822fe67a0",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -82,7 +82,7 @@ def send_request():
         port: '443',
         path: '/orders/items/cancel//',
         method: 'DELETE',
-        headers: {"Authorization":"Token 825dd305b5858e2373763ff338615db822fe67a0","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
