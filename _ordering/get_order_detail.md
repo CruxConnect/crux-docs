@@ -6,10 +6,6 @@ visibility: public
 method: get
 description: Get the Details for a specified Order
 right_code: |
-  ~~~ json
-
-  ~~~
-  {: title="Request" }
 
   ~~~ json
   {

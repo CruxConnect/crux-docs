@@ -1,5 +1,5 @@
 ---
-title: /orders/allocation/1ab8e55f-ea7e-4a58-b7d3-db723272dbbd/
+title: /orders/allocation/&lgorder-uuid&gt/
 name: Allocate Order - Supplier
 position: 4.08
 visibility: public
@@ -33,6 +33,11 @@ right_code: |
 
 ---
 Allocate stock for a Retailer Order. Essentially accepting the entire order or a portion of the order by providing the order_uuid and providing the order_item_id and associated quantities per the allocation types.
+
+### URL Parameters:
+
+order_uuid
+: (string) Universal Unique Identifier for the Order
 
 ### Request Parameters:
 
