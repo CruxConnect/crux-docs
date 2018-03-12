@@ -8,7 +8,7 @@ description: Reset the Password on your account
 right_code: |
   ~~~ json
   {
-    "email": "mrbailey@cruxretailer.com"
+    "email": "user@cruxretailer.com"
   }
   ~~~
   {: title="Request" }
@@ -35,7 +35,7 @@ email
 curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/reset-password/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "email": "mrbailey@cruxretailer.com"
+  "email": "user@cruxretailer.com"
 }'
 
 ~~~
@@ -44,7 +44,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/reset-password
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/organizations/reset-password/' \
     'Content-Type':'application/json; charset=utf-8' \
-    email="mrbailey@cruxretailer.com"
+    email="user@cruxretailer.com"
 
 ~~~
 {: title="HTTPie" }
@@ -67,7 +67,7 @@ def send_request():
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    email="mrbailey@cruxretailer.com")
+            data=json.dumps(    email="user@cruxretailer.com")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -119,7 +119,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"email\":\"mrbailey@cruxretailer.com\"}")
+    request.write("{\"email\":\"user@cruxretailer.com\"}")
     request.end();
 
 

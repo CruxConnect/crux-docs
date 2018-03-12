@@ -12,8 +12,8 @@ right_code: |
       "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49",
       "person": {
         "uuid": "2e0ecb7e-9426-4e66-a8a9-e69cd8c806c0",
-        "first_name": "Jason ",
-        "last_name": "Weir",
+        "first_name": "Crux ",
+        "last_name": "User",
         "email": "user@mycompany.com",
         "phone": "1-722-036-2568x9442"
       },
@@ -57,9 +57,9 @@ right_code: |
       "uuid": "cefc9200-91eb-40dd-8937-d8edaa8f955f",
       "person": {
         "uuid": "2de10d50-c595-48c3-8cb2-029afd221637",
-        "first_name": "Matt",
-        "last_name": "Bailey",
-        "email": "mrbailey@cruxretailer.com",
+        "first_name": "Crux",
+        "last_name": "User",
+        "email": "user@cruxretailer.com",
         "phone": "(617)395-2696"
       },
       "permission_assignments": {

@@ -44,7 +44,7 @@ right_code: |
           "name": "Crux Retailer",
           "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
           "user": {
-            "name": "Roy Breslawski",
+            "name": "Crux User",
             "email": "user@cruxretailer.com"
           }
         },
@@ -100,7 +100,7 @@ right_code: |
           "name": "Crux Retailer",
           "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
           "user": {
-            "name": "Roy Breslawski",
+            "name": "Crux User",
             "email": "user@cruxretailer.com"
           }
         },
@@ -345,7 +345,7 @@ shipping_date
 quantity
 : (int) The number of items in the shipment
 
-#### Allocation Object: 
+#### Allocation Object:
 
 quantity_ordered
 : (int) The Quantity Ordered of the SKU
@@ -456,10 +456,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Orders 
+// request Get Orders
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -470,26 +470,26 @@ def send_request():
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
@@ -497,10 +497,10 @@ def send_request():
     });
     request.write("{\"start\":0,\"limit\":2,\"line_item_statuses\":[\"Unallocated\"],\"line_item_status_conjunction\":\"or\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"asc\"}}")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

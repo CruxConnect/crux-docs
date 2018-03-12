@@ -80,7 +80,7 @@ right_code: |
           },
           {
             "uuid": "8676b377-4180-4ad9-b71d-dccfa83bea43",
-            "name": "Nicks List"
+            "name": "My List"
           }
         ],
         "created": "2017-10-23T18:28:07.217708Z",
@@ -172,7 +172,7 @@ right_code: |
           },
           {
             "uuid": "8676b377-4180-4ad9-b71d-dccfa83bea43",
-            "name": "Nicks List"
+            "name": "My List"
           },
           {
             "uuid": "164aaf12-2400-4af7-b5c1-00da17c3f60e",
