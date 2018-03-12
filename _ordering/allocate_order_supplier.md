@@ -1,7 +1,7 @@
 ---
 title: /orders/allocation/1ab8e55f-ea7e-4a58-b7d3-db723272dbbd/
 name: Allocate Order - Supplier
-position: 4.09
+position: 4.08
 visibility: public
 method: put
 description: Allocate stock for a Retailer Order

@@ -1,7 +1,7 @@
 ---
 title: /orders/&ltorder-uuid&gt/
 name: Get Order Detail
-position: 4.03
+position: 4.01
 visibility: public
 method: get
 description: Get the Details for a specified Order
