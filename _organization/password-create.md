@@ -8,7 +8,7 @@ description: Provide a new password for your account
 right_code: |
   ~~~ json
   {
-    "password": "thanos_rocks",
+    "password": "crux_is_awesome",
     "token": "VBnQ8wmbEuJdoqpAFh01"
   }
   ~~~
@@ -34,7 +34,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-passw
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "token": "VBnQ8wmbEuJdoqpAFh01",
-  "password": "thanos_rocks"
+  "password": "crux_is_awesome"
 }'
 
 ~~~
@@ -44,7 +44,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-passw
 http --json POST 'https://api-sandbox.cruxconnect.com/organizations/complete-password/' \
     'Content-Type':'application/json; charset=utf-8' \
     token="VBnQ8wmbEuJdoqpAFh01" \
-    password="thanos_rocks"
+    password="crux_is_awesome"
 
 ~~~
 {: title="HTTPie" }
@@ -68,7 +68,7 @@ def send_request():
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    token="VBnQ8wmbEuJdoqpAFh01" \
-    password="thanos_rocks")
+    password="crux_is_awesome")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -120,7 +120,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"password\":\"thanos_rocks\",\"token\":\"VBnQ8wmbEuJdoqpAFh01\"}")
+    request.write("{\"password\":\"crux_is_awesome\",\"token\":\"VBnQ8wmbEuJdoqpAFh01\"}")
     request.end();
 
 

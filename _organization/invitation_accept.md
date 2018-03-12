@@ -8,7 +8,7 @@ description: Validate the account invitation token
 right_code: |
   ~~~ json
   {
-    "password": "thanos_rocks"
+    "password": "crux_is_awesome"
   }
   ~~~
   {: title="Request" }
@@ -43,7 +43,7 @@ password
 curl -X "POST" "http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "password": "thanos_rocks"
+  "password": "crux_is_awesome"
 }'
 
 ~~~
@@ -52,7 +52,7 @@ curl -X "POST" "http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1un
 ~~~ bash
 http --json POST 'http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/' \
     'Content-Type':'application/json; charset=utf-8' \
-    password="thanos_rocks"
+    password="crux_is_awesome"
 
 ~~~
 {: title="HTTPie" }
@@ -75,7 +75,7 @@ def send_request():
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    password="thanos_rocks")
+            data=json.dumps(    password="crux_is_awesome")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -128,7 +128,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"password\":\"thanos_rocks\"}")
+    request.write("{\"password\":\"crux_is_awesome\"}")
     request.end();
 
 
