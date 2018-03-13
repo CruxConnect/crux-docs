@@ -2,6 +2,7 @@
 title: /products/catalogs/&ltcatalog_uuid&gt/
 name: Get Catalog Detail
 position: 2.01
+visibility: public
 method: get
 description: Get the Details of a particular Catalog you have access to
 right_code: |

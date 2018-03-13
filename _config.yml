@@ -24,7 +24,7 @@ collections:
     position: 4
     type: api
   product_retailer:
-    visibility: public
+    visibility: all
     title: Product for Retailers
     position: 5
     type: api
