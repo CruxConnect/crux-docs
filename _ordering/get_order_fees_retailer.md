@@ -33,7 +33,7 @@ Before placing an order, use this call to return the total Fees for the Order. T
 
 ### Request Parameters:
 
-##### Required:
+#### Required:
 
 skus
 : (list) The list of SKUs ordered including the SKU ID and Quantity per SKU
