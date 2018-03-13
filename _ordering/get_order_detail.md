@@ -23,18 +23,18 @@ right_code: |
       "name": "Crux Retailer",
       "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
       "user": {
-        "name": "Roy Breslawski",
-        "email": "rbreslawski@cruxretailer.com"
+        "name": "Crux User",
+        "email": "user@mycompany.com"
       }
     },
     "address": {
       "name": "Bob Iger",
-      "business_name": "NBC",
-      "address1": "30 Rockefeller Plaza",
+      "business_name": "Disney",
+      "address1": "1955 Mickey Mouse Lane",
       "address2": "STE 123",
-      "city": "New York",
-      "state": "NY",
-      "postal_code": "10112",
+      "city": "Anaheim",
+      "state": "CA",
+      "postal_code": "92802",
       "phone_number": null,
       "country": null
     },

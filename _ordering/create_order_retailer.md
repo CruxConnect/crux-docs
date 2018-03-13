@@ -50,8 +50,8 @@ right_code: |
       "name": "Crux Retailer",
       "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
       "user": {
-        "name": "Roy Breslawski",
-        "email": "rbreslawski@cruxretailer.com"
+        "name": "Crux User",
+        "email": "user@mycompany.com"
       }
     },
     "address": {

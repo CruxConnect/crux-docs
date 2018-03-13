@@ -54,17 +54,7 @@ allocation
 
 #### Allocation Object
 
-quantity_accepted
-: (number) The Quantity Accepted is the total Quantity accepted at the moment of Allocation
-
-quantity_rejected
-: (number) The Quantity Rejected by the Supplier is the Quantity that they simply cannot fulfill. Reasons may vary, such as state or federal law, customs, or being out-of-stock on an already discontinued product line, etc.
-
-quantity_backordered
-: (number) The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state.
-
-backorder_date
-: (string) The Date that the Backordered SKU will be available for shipment. The format is 'YYYY-MM-DD'. This date indicates the tentative schedule for shipment.
+{% include objects/allocation.md %}
 
 ### Response Parameters
 
