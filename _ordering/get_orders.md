@@ -2,6 +2,7 @@
 title: /orders/
 name: Get Orders
 position: 3.00
+visibility: public
 method: post
 description: Get the Orders for your organization
 right_code: |

@@ -2,6 +2,7 @@
 title: /products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/
 name: Catalog Add Item
 position: 2.05
+visibility: public
 method: post
 description: Add already existing Items to a Catalog
 right_code: |
