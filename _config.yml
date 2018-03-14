@@ -9,6 +9,10 @@ permalink: pretty
 baseurl: ""
 
 collections:
+  file_specs_documentation:
+    visibility: file-specs
+    title: Documentation
+    position: 1
   documentation:
     visibility: all
     title: Documentation

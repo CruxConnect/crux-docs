@@ -1,0 +1,10 @@
+---
+title: Knowledgebase
+---
+<!-- begin setting filtered collections -->
+{% assign visibility = 'knowledgebase' %}
+{% assign filtered_collections = site.collections | where_exp:"item", "item.visibility == visibility" %}
+{% assign sorted_collections = filtered_collections | sort: "position" %}
+<!-- end setting filtered collections -->
+<!-- TODO: we could update this to not use the same template if we wanted -->
+{% include endpoint_documentation.html %}
