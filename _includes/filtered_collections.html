@@ -2,20 +2,23 @@
 {% if page.path == 'file-specs.html' %}
   {% assign visibility = 'file-specs' %}
   {% assign filtered_collections = site.collections | where_exp:"item", "item.visibility == visibility" %}
-  {% assign sorted_collections = filtered_collections | sort: "position" %}
 {% elsif page.path == 'knowledgebase.html' %}
   {% assign visibility = 'knowledgebase' %}
   {% assign filtered_collections = site.collections | where_exp:"item", "item.visibility == visibility" %}
-  {% assign sorted_collections = filtered_collections | sort: "position" %}
 {% else %}
   {% if page.path == 'internal.html' %}
-    {% assign excluded_visibility = 'public' %}
+    {% assign visibility = 'internal' %}
   {% else %}
-    {% assign excluded_visibility = 'internal' %}
+    {% assign visibility = 'public' %}
   {% endif %}
-  <!-- TODO: change to included_visibility and include `included_visibility` + `all` somehow -->
-  <!-- see https://stackoverflow.com/questions/42722902/and-or-on-a-where-exp-expression-on-jekyll -->
-  {% assign filtered_collections = site.collections | where_exp:"item", "item.visibility != excluded_visibility" %}
-  {% assign sorted_collections = filtered_collections | sort: "position" %}
+
+  {% assign filtered_collections = "" | split,"" %}
+  {% for collection in site.collections %}
+    {% if collection.visibility contains "all" or collection.visibility contains visibility %}
+      {% assign filtered_collections = filtered_collections | push:collection %}
+    {% endif %}
+  {% endfor %}
+
 {% endif %}
+{% assign sorted_collections = filtered_collections | sort: "position" %}
 <!-- end setting filtered collections -->
