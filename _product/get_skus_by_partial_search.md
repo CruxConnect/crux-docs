@@ -15,7 +15,7 @@ right_code: |
 
   ~~~ json
   {
-    "skus": []
+    "skus": ["TBD: Results Pending Backend Update"]
   }
   ~~~
   {: title="Response" }
