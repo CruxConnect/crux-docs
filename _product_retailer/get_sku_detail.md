@@ -2,6 +2,7 @@
 title: /products/skus/&ltsku_uuid&gt/
 name: Get Sku Detail
 position: 2.24
+visibility: public
 method: get
 description: Get Details about a SKU
 right_code: |

@@ -2,6 +2,7 @@
 title: /products/items/search/
 name: Search Items
 position: 2.25
+visibility: public
 method: post
 description: Search for Items in the catalogs available to your organization
 right_code: |
