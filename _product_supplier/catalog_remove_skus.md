@@ -1,15 +1,15 @@
 ---
-title: /products/catalogs/&ltcatalog-uuid&gt/add-skus/
-name: Catalog Add SKU
-position: 2.01
+title: /products/catalogs/&ltcatalog-uuid&gt/remove-skus/
+name: Catalog Remove SKU
+position: 2.03
 visibility: public
 method: post
-description: Add already existing SKUs to a Catalog
+description: Remove SKUs from a Catalog
 right_code: |
   ~~~ json
   {
     "sku_uuids": [
-      "12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d"
+      "fcf57d87-19ae-46ad-adea-aad17ccb2d15"
     ]
   }
   ~~~
@@ -17,17 +17,17 @@ right_code: |
 
 
 ---
-Add already existing SKUs to a Catalog for Retailers to access. By providing your catalog_uuid in the URL and array of sku_uuids, you can successfully add them to items previously included in the indicated Catalog.
+Remove SKUs from a Catalog for Retailers to access. This allows you to remove SKUs from a Catalog. By providing your catalog_uuid and a list of sku_uuids, you can successfully remove them from the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
 
 ### URL Parameters
 
-catalog_uuid
-: (string) Universal Unique Identifier for the catalog to which the sku will be added
+catalog-uuid
+: (string) Unique Universal Identifier for the Catalog
 
 ### Request Parameters:
 
 sku_uuids
-: (array) The SKU UUIDs parameter holds an array of sku_uuids
+: (array) Array of SKU uuid(s) for all of the SKUs you wish to remove from your Catalog
 
 ### Expected Response Codes
 
@@ -35,12 +35,12 @@ sku_uuids
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "sku_uuids": [
-    "12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d"
+    "fcf57d87-19ae-46ad-adea-aad17ccb2d15"
   ]
 }'
 
@@ -48,11 +48,11 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_uuids:="[
-  \"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"
+  \"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"
 ]"
 
 ~~~
@@ -67,18 +67,18 @@ import json
 
 
 def send_request():
-    # Catalog Add SKU
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/
+    # Catalog Remove SKU
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/",
             headers={
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    sku_uuids:="[
-  \"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"
+  \"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -92,7 +92,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Catalog Add SKU
+// request Catalog Remove SKU
 (function(callback) {
     'use strict';
 
@@ -101,7 +101,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/',
+        path: '/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/',
         method: 'POST',
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
@@ -131,7 +131,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_uuids\":[\"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"]}")
+    request.write("{\"sku_uuids\":[\"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"]}")
     request.end();
 
 
