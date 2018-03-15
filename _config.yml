@@ -16,15 +16,20 @@ collections:
   organization:
     visibility: all
     title: Organization
-    position: 3
+    position: 2
     type: api
   accounting:
     visibility: public
     title: Accounting
+    position: 3
+    type: api
+  product:
+    visibility: all
+    title: Product
     position: 4
     type: api
   product_retailer:
-    visibility: public
+    visibility: all
     title: Product for Retailers
     position: 5
     type: api

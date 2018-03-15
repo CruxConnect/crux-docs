@@ -2,6 +2,7 @@
 title: /products/items/&ltitem_uuid&gt/
 name: Get Item Detail
 position: 2.20
+visibility: public
 method: get
 description: Get Details about an Item and the SKUs associated to it.
 right_code: |

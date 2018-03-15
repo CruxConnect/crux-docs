@@ -2,6 +2,7 @@
 title: /products/inventory-lists/&ltinventory_list_uuid&gt/remove-items/
 name: Inventory Remove Item
 position: 2.15
+visibility: public
 method: post
 description: Remove Items from an existing Inventory List for your account
 right_code: |
