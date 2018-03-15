@@ -133,6 +133,9 @@ quantity_on_backorder
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
+<!--
+task github https://github.com/CruxConnect/crux-api/issues/1017  Backend doesn't support passing in objects or arrays of objects
+
 price_tiers (TBD)
 : (array) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
 
@@ -147,6 +150,8 @@ product_identifiers (TBD)
 
 catalogs (TBD)
 : (array) Array of Catalog uuid(s) where the sku should reside
+
+-->
 
 
 
