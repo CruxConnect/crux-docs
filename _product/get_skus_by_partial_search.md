@@ -1,7 +1,7 @@
 ---
 title: /products/skus/search/completion/
 name: Search by Partial SKU ID
-position: 2.25
+position: 1.00
 visibility: internal
 method: post
 description: Get SKUs based on partial sku id

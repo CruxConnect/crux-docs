@@ -23,6 +23,11 @@ collections:
     title: Accounting
     position: 4
     type: api
+  product:
+    visibility: all
+    title: Product
+    position: 5
+    type: api
   product_retailer:
     visibility: all
     title: Product for Retailers
