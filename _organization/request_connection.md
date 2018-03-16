@@ -17,6 +17,8 @@ organization_name:
 primary_contact_name:
 : (string) The name of the primary contact for the supplier.
 
+Optional:
+
 primary_contact_phone:
 : (string) The phone number for the primary contact.
 
