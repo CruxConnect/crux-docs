@@ -7,7 +7,7 @@ description: Initiate a connection request between a retailer and a supplier
 
 ### Request Parameters:
 
-For the purposes of ease of description, we describe these endpoints as a retailer requestion a connection to a supplier.
+For the purposes of ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
 Required:
 
