@@ -1,6 +1,5 @@
 ---
 title: /discovery/create
-///// maybe: /connections/create
 name: Create Connection
 method: POST
 description: Initiate a formal connection in Crux between a retailer and a supplier
