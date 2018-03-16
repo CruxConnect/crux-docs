@@ -1,7 +1,9 @@
 ---
-title: /discovery/suppliers [Jeff might change this]
+title: /discovery/suppliers <!--TODO: not the final location-->
 name: Discovery Supplier list
 method: POST
+position: 5.00
+visibility: public
 description: A list of all suppliers available to you in the discovery catalog
 right_code: |
   ~~~ json

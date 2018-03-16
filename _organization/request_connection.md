@@ -1,7 +1,9 @@
 ---
-title: /account/request-connection
+title: /account/request-connection <!--TODO: not the final location-->
 name: Request a Connection
 method: POST
+position: 1.15
+visibility: public
 description: Initiate a connection request between a retailer and a supplier
 ---
 
@@ -43,9 +45,15 @@ integration_rules:
 additional_information:
 : (string) Links to any sample files or specification documentation you may have.
 
-additional_files:
-: (string) Uploaded files of any sample files or documentation.
+uploaded_files:
+: (array) Array of File Objects previously uploaded by the [#upload endpoint](#filesupload). Sample files or documentation.
 
+#### File Object
+name:
+: (string) Name of the file
+
+uuid:
+: (string) The Universal Unique Identifier of the uploaded file
 
 ### Response Parameters:
 

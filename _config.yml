@@ -47,9 +47,9 @@ collections:
     title: Ordering
     position: 6
     type: api
-  export:
+  files:
     visibility: public
-    title: Export
+    title: Files
     position: 7
     type: api
   tools:

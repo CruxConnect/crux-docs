@@ -1,5 +1,5 @@
 ---
-title: /catalog/&ltuuid&gt/
+title: /catalog/&ltuuid&gt/ <!--TODO: not the final location-->
 name: Get Discovery Participation
 visibility: internal
 position: 5.20

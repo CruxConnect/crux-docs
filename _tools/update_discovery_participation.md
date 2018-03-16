@@ -1,5 +1,5 @@
 ---
-title: /catalog/update
+title: /catalog/update <!--TODO: not the final location-->
 name: Update Discovery Participation
 visibility: internal
 position: 5.10
