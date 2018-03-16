@@ -39,7 +39,7 @@ Expected responses include 200, 400, 401, 403, or 404.
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/export/" \
-     -H 'Authorization: Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "uuids": [
@@ -52,7 +52,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/export/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/export/' \
-    'Authorization':'Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     uuids:="[
   \"3b6bf17a-1a95-41c7-8961-52ac8459c986\"
@@ -77,7 +77,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/orders/export/",
             headers={
-                "Authorization": "Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    uuids:="[
@@ -106,7 +106,7 @@ def send_request():
         port: '443',
         path: '/orders/export/',
         method: 'POST',
-        headers: {"Authorization":"Token dc2ee4bc1b4a87834db8549c0c08fe67e9aabe5d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
  

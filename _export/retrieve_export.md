@@ -1,49 +1,51 @@
 ---
-title: /data/export/&ltexport_uuid&gt/
+title: /api/data/export/&ltexport-uuid&gt/
 name: Retrieve Export
-position: 4.00
+position: 5.00
+visibility: public
 method: get
 description: Retrieve a previously requested Export
 right_code: |
+
   ~~~ json
   {
-    "uuid": "2b409e66-0f95-4175-b568-f05b7db7e5b2"
+    "uuid": "d54c7721-0a6a-425c-b874-507437af3e11",
+    "status": "COMPLETED",
+    "url": "https://stable-exports.s3.amazonaws.com/order_export.csv?Signature=MN6L1KGTiicgitbbnXvJQLztpoU%3D&AWSAccessKeyId=AKIAID5FCZH4JE4B45XQ&Expires=1520954409"
   }
   ~~~
   {: title="Response" }
 
-
 ---
 Retrieve a previously requested Export via the export_uuid. By calling this API Endpoint with the export_uuid in the URL, you can retrieve a previously requested Export.
+
+### URL Parameters
+
+export_uuid
+: (string) The Universal Unique Identifier for the Export
 
 ### Response Parameters:
 
 uuid
 : (string) The Universal Unique Identifier for the Export
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+curl "https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/" \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
-'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+http --json GET 'https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -59,14 +61,14 @@ import json
 
 
 def send_request():
-    # INCOMPLETE - Retrieve Export
-    # GET https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/
+    # Retrieve Export
+    # GET https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/",
+            url="https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -82,6 +84,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
+// request Retrieve Export
 (function(callback) {
     'use strict';
 
@@ -90,9 +93,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/data/export/232497cc-95eb-4ffd-a084-edea0c413267/',
+        path: '/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

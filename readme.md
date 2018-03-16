@@ -1,6 +1,7 @@
 # Crux Connect API Docs
 
-Jekyll built and Github Pages hosted [API documentation](https://docs.cruxconnect.com) for [Crux Connect](https://www.cruxconnect.com).
+Jekyll built and Github Pages hosted [API documentation](https://docs.cruxconnect.com)
+and [Internal API documentation](https://docs.cruxconnect.com/internal/)
 
 ## Features
 
@@ -25,7 +26,14 @@ $ bundle exec jekyll serve
 
 ## Editing
 
-The source of each documented endpoint is in the [Paw file](/files/Crux-API-Project.paw). The description contains the human readable notes and the code is generated from Paw. Any changes are made there. The [Crux Aviator Generator](https://github.com/CruxConnect/paw-aviator-extension) extension is then used to generated the markdown file for each endpoint.
+The source of each documented public endpoint is in the [Paw file](/files/Crux-API-Project.paw).
+
+Internal endpoints are documented in the [Internal Paw file](/files/Internal_Crux_API-Project.paw).
+
+The description contains the human readable notes and the code is generated from Paw.
+Any changes are made there.
+The [Crux Aviator Generator](https://github.com/CruxConnect/paw-aviator-extension)
+extension is then used to generated the markdown file for each endpoint.
 
 ### Usage
 
@@ -33,6 +41,12 @@ The source of each documented endpoint is in the [Paw file](/files/Crux-API-Proj
 * Set the order of the collections with the position field in collection configuration in `_config.yml`.
 * Set the order of the documents inside a collection by setting the position in front matter.
 * Messages may be added to the documentation with the following classes: `info`, `error`, `success`, `warning`
+
+### Visibility
+
+Each collection or endpoint may have a `visiblity` setting.
+`public` and `internal` are the standard choices.
+Any other value will cause the item to appear in both internal and public api docs.
 
 ## Proposing API Changes
 
@@ -60,6 +74,7 @@ The contents would be:
 title: /export/slap-dusty/
 name: Slap Dusty
 method: get
+visibility: public
 description: Give dusty a good slap.
 ---
 ### Request Parameters:
@@ -77,6 +92,7 @@ uuid
 exclamation
 : (string) The sound that came out of Dusty as you slapped him
 
+### Expected Response Codes:
 | Code | Name                   | Meaning                                        |
 |------|-------------------------------------------------------------------------|
 | 200  | OK                     | Dusty was slapped                              |
@@ -85,5 +101,8 @@ exclamation
 | 403  | Permission Denied      | You are not allowed to slap Dusty.             |
 | 404  | Not Found              | Dusty is missing                               |
 | 500  | Internal Server Error  | Dusty did something unexpected                 |
+
+{% include links/response_codes.md %}
 ```
-Note that type=method. We should change that.
+
+Note: Only document response codes in a table in the endpoint md file when they mean something special.

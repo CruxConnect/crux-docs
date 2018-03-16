@@ -15,7 +15,14 @@ html {
   height: 100vh;
 }
 
+header { 
+  min-height: 100vh;
+}
 @media (max-width: $mobile-break) {
+  header { 
+    min-height: 0;
+  }
+
   .sidebar, header > form {
     display: none;
   }

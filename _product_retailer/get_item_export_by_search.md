@@ -2,6 +2,7 @@
 title: /products/items/search/export/
 name: Get Item Export by Search
 position: 2.22
+visibility: public
 method: post
 description: Get Item List allows you to return a complete list of items you are interested in.
 right_code: |
@@ -53,7 +54,7 @@ uuid
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/export/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "item_uuids": [
@@ -67,7 +68,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/export
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/items/search/export/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
   \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
@@ -93,7 +94,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/items/search/export/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    item_uuids:="[
@@ -123,7 +124,7 @@ def send_request():
         port: '443',
         path: '/products/items/search/export/',
         method: 'POST',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

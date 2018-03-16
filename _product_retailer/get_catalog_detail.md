@@ -2,6 +2,7 @@
 title: /products/catalogs/&ltcatalog_uuid&gt/
 name: Get Catalog Detail
 position: 2.01
+visibility: public
 method: get
 description: Get the Details of a particular Catalog you have access to
 right_code: |
@@ -87,7 +88,7 @@ default_shipping_cost_currency
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -96,7 +97,7 @@ curl "https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-9
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -119,7 +120,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -146,7 +147,7 @@ def send_request():
         port: '443',
         path: '/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

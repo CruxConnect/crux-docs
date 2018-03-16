@@ -64,7 +64,7 @@ pagination
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "search_term": "",
@@ -93,7 +93,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-0
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
     filters:="{
@@ -134,7 +134,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    search_term="" \
@@ -179,7 +179,7 @@ def send_request():
         port: '443',
         path: '/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/',
         method: 'POST',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

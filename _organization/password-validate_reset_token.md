@@ -1,53 +1,32 @@
 ---
-title: /organizations/reset-password/
-name: Reset Password
-position: 0.01
-method: post
-description: Reset the Password on your account
-right_code: |
-  ~~~ json
-  {
-    "email": "mrbailey@projectthanos.com"
-  }
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
-  {
-    "reset_token": "G7TwCq1Vkds0DLYnfAuP"
-  }
-  ~~~
-  {: title="Response" }
+title: /organizations/complete-password/
+name: Validate Password Token
+position: 1.02
+visibility: internal
+method: get
+description: Validate the password reset
 
 ---
-Should you need to reset your password, you may initiate the process via this call. This is to be used in conjunction with the "Validate Password Reset" and "Create New Password" API calls.
+This API call requires that you have first requested to reset your password (["Reset Password" API call](#organizationpassword-reset)). Validate that the password reset was requested on the email address provided. By sending a GET request with the email address an email is sent to you with the "reset token". That "reset token" can then be used with the "Complete Password Reset" API call
 
 ### Request Parameters:
 
-email
-: (string) The email you provided for your account
+token
+: (string) The reset token delivered to the email that was provided in the "Reset Password" API call
 
-### Response Parameters:
+{% include links/response_codes.md %}
 
-reset_token
-: (string) Reset Token - to be used specifically with "Complete Password Reset" API call
-
-Expected responses include 200, 400, 401, 403, or 404.
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/reset-password/" \
-     -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "email": "mrbailey@projectthanos.com"
-}'
+curl "https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01" \
+     -H 'Content-Type: application/octet-stream'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/organizations/reset-password/' \
-    'Content-Type':'application/json; charset=utf-8' \
-    email="mrbailey@projectthanos.com"
+http GET 'https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01' \
+    'Content-Type':'application/octet-stream'
 
 ~~~
 {: title="HTTPie" }
@@ -57,20 +36,21 @@ http --json POST 'https://api-sandbox.cruxconnect.com/organizations/reset-passwo
 # `pip install requests`
 
 import requests
-import json
 
 
 def send_request():
-    # Reset Password
-    # POST https://api-sandbox.cruxconnect.com/organizations/reset-password/
+    # Validate Password Token
+    # GET https://api-sandbox.cruxconnect.com/organizations/complete-password/
 
     try:
-        response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/organizations/reset-password/",
-            headers={
-                "Content-Type": "application/json; charset=utf-8",
+        response = requests.get(
+            url="https://api-sandbox.cruxconnect.com/organizations/complete-password/",
+            params={
+                "token": "VBnQ8wmbEuJdoqpAFh01",
             },
-            data=json.dumps(    email="mrbailey@projectthanos.com")
+            headers={
+                "Content-Type": "application/octet-stream",
+            },
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -83,7 +63,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Reset Password
+// request Validate Password Token
 (function(callback) {
     'use strict';
 
@@ -92,9 +72,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/reset-password/',
-        method: 'POST',
-        headers: {"Content-Type":"application/json; charset=utf-8"}
+        path: '/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01',
+        method: 'GET',
+        headers: {"Content-Type":"application/octet-stream"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -122,7 +102,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"email\":\"mrbailey@projectthanos.com\"}")
+    request.write("")
     request.end();
 
 

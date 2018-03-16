@@ -1,48 +1,59 @@
 ---
-title: /organizations/complete-password/
-name: Create New Password
-position: 0.03
+title: /products/catalogs/&ltcatalog-uuid&gt/remove-skus/
+name: Catalog Remove SKU
+position: 2.03
+visibility: public
 method: post
-description: Provide a new password for your account
+description: Remove SKUs from a Catalog
 right_code: |
   ~~~ json
   {
-    "password": "thanosrocks",
-    "token": "G7TwCq1Vkds0DLYnfAuP"
+    "sku_uuids": [
+      "fcf57d87-19ae-46ad-adea-aad17ccb2d15"
+    ]
   }
   ~~~
   {: title="Request" }
 
 
 ---
-This API call requires that you have first requested to reset your password ("Reset Password" API call) and validated that request ("Validate Reset Password" API call). To create a new password, you provide the "reset token" that you received from the "Reset Password" API call and provide the password you'd like to use.
+Remove SKUs from a Catalog for Retailers to access. This allows you to remove SKUs from a Catalog. By providing your catalog_uuid and a list of sku_uuids, you can successfully remove them from the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
+
+### URL Parameters
+
+catalog-uuid
+: (string) Unique Universal Identifier for the Catalog
 
 ### Request Parameters:
 
-password
-: (string) The new password you would like to use for your account
+sku_uuids
+: (array) Array of SKU uuid(s) for all of the SKUs you wish to remove from your Catalog
 
-token
-: (string) This is the "reset_token" you received from your "Reset Password" API call
+### Expected Response Codes
 
-Expected responses include 200, 400, 401, 403, or 404.
+{% include links/response_codes.md %}
+
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-password/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/" \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "token": "G7TwCq1Vkds0DLYnfAuP",
-  "password": "thanosrocks"
+  "sku_uuids": [
+    "fcf57d87-19ae-46ad-adea-aad17ccb2d15"
+  ]
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/organizations/complete-password/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
-    token="G7TwCq1Vkds0DLYnfAuP" \
-    password="thanosrocks"
+    sku_uuids:="[
+  \"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"
+]"
 
 ~~~
 {: title="HTTPie" }
@@ -56,17 +67,19 @@ import json
 
 
 def send_request():
-    # Create New Password
-    # POST https://api-sandbox.cruxconnect.com/organizations/complete-password/
+    # Catalog Remove SKU
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/organizations/complete-password/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/",
             headers={
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    token="G7TwCq1Vkds0DLYnfAuP" \
-    password="thanosrocks")
+            data=json.dumps(    sku_uuids:="[
+  \"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"
+]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -79,7 +92,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Create New Password
+// request Catalog Remove SKU
 (function(callback) {
     'use strict';
 
@@ -88,9 +101,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/complete-password/',
+        path: '/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/',
         method: 'POST',
-        headers: {"Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -118,7 +131,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"password\":\"thanosrocks\",\"token\":\"G7TwCq1Vkds0DLYnfAuP\"}")
+    request.write("{\"sku_uuids\":[\"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"]}")
     request.end();
 
 

@@ -1,7 +1,8 @@
 ---
 title: /organizations/users/all/
 name: Get All Users
-position: 0.4
+position: 1.04
+visibility: public
 method: get
 description: Get all users, with user details, specific to your account
 right_code: |
@@ -11,9 +12,9 @@ right_code: |
       "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49",
       "person": {
         "uuid": "2e0ecb7e-9426-4e66-a8a9-e69cd8c806c0",
-        "first_name": "Jason ",
-        "last_name": "Weir",
-        "email": "jweir@projectthanos.com",
+        "first_name": "Crux ",
+        "last_name": "User",
+        "email": "user@mycompany.com",
         "phone": "1-722-036-2568x9442"
       },
       "permission_assignments": {
@@ -56,9 +57,9 @@ right_code: |
       "uuid": "cefc9200-91eb-40dd-8937-d8edaa8f955f",
       "person": {
         "uuid": "2de10d50-c595-48c3-8cb2-029afd221637",
-        "first_name": "Matt",
-        "last_name": "Bailey",
-        "email": "mrbailey@projectthanos.com",
+        "first_name": "Crux",
+        "last_name": "User",
+        "email": "user@mycompany.com",
         "phone": "(617)395-2696"
       },
       "permission_assignments": {
@@ -104,82 +105,20 @@ right_code: |
 ---
 Get all the details about the users on your account. This displays their name, email, phone number, permissions (roles), and more.
 
+To view orgainzation users, you must be assigned the 'view_org_users' permission.
+{: .info }
+
 ### Response Parameters:
 
-#### User:
+{% include objects/user.md %}
 
-uuid
-: (string) Universal Unique Identifier for the User
+{% include objects/permissions_assignment.md %}
 
-person
-: (object) Person is an object containing a uuid, first name, last name, email, and phone number
-
-permission_assignments
-: (object) Permission Assignments is an object containing a list of permissions and an organization User
-
-status
-: (string) User's account status which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
-
-#### Person Object:
-
-uuid
-: (string) Universal Unique Identifier for the Person
-
-first_name
-: (string) First Name of the Person
-
-last_name
-: (string) Last Name of the Person
-
-email
-: (string) Email address of the Person
-
-phone
-: (string) Phone number of the Person
-
-#### Permission Assignments Object:
-
-permissions
-: (list) Permissions are a list of available individual permissions with details as well as if the permission has been assigned to this User
-
-org_user
-: (object) Organization User holds the uuid for the User
-
-#### Permissions Object List:
-
-assigned
-: (boolean) Assigned indicates whether this particular Permission has been Assigned to this User
-
-permission
-: (object) Permission is an object detailing a specific Permission with a uuid, name, display name, and description
-
-#### Permission Object:
-
-uuid
-: (string) Universal Unique Identifier for the Permission
-
-name
-: (string) Name of the Permission; written in shortened snake case
-
-display_name
-: (string) Display Name of the Permission; a more user-friendly name of the Permission
-
-description
-: (string) Description of the Permission
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -188,7 +127,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/all/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 ~~~
@@ -210,7 +149,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/users/all/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -237,7 +176,7 @@ def send_request():
         port: '443',
         path: '/organizations/users/all/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

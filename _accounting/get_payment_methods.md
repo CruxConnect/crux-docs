@@ -1,7 +1,7 @@
 ---
 title: /accounting/payment-methods/
 name: Get Payment Methods
-position: 1.3
+position: 1.06
 method: get
 description: Get Payment Methods available on your account
 right_code: |
@@ -26,10 +26,10 @@ payment_type
 : (string) The Payment Type associated with the organization (e.g. "CREDIT CARD")
 
 card_number
-: (number) The 15 or 16 digit Card Number
+: (string) The 15 or 16 digit Card Number
 
 card_last_four
-: (number) The Last Four digits of your credit Card on file with your organization
+: (string) The Last Four digits of your credit Card on file with your organization
 
 card_expiration
 : (string) The Card Expiration is the date in a YYYY-MM-DD format
@@ -38,21 +38,13 @@ is_default
 : (boolean) The "Is Default" parameter indicates whether this is the default or not
 
 address
-: (string) The Address assocated with the card
+: (string) The Address associated with the card
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/accounting/payment-methods/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -61,7 +53,7 @@ curl "https://api-sandbox.cruxconnect.com/accounting/payment-methods/" \
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/accounting/payment-methods/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -84,7 +76,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/accounting/payment-methods/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -111,7 +103,7 @@ def send_request():
         port: '443',
         path: '/accounting/payment-methods/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

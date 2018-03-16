@@ -2,6 +2,7 @@
 title: /products/inventory-lists/&ltinventory_list_uuid&gt/
 name: Get Inventory List Detail
 position: 2.10
+visibility: public
 method: get
 description: Get the Details of a particular Inventory List you have access to
 right_code: |
@@ -69,7 +70,7 @@ description
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -78,7 +79,7 @@ curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -101,7 +102,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -128,7 +129,7 @@ def send_request():
         port: '443',
         path: '/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

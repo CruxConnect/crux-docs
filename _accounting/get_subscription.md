@@ -1,7 +1,7 @@
 ---
 title: /organizations/subscription/
 name: Get Subscription
-position: 0.95
+position: 1.7
 method: get
 description: Get Subscription with details for your organization
 right_code: |
@@ -34,6 +34,9 @@ right_code: |
 ---
 Get Subscription details for your organization including the plan name, available add-ons, plan features, and next bill plan.
 
+To view your organization plan, you must be assigned the 'view_org_subscription_plan' permission
+{: .info }
+
 ### Response Parameters:
 
 plan_name
@@ -51,7 +54,7 @@ plan_addons
 next_bill_plan
 : (object) Next Bill Plan object contains the billing date, amount to be billed, start date, end date, and last 4 digits of the credit card being billed for the Subscription
 
-#### Next Nill Plan Object:
+#### Next Bill Plan Object:
 
 bill_date
 : Billing Date when the account will renew
@@ -68,26 +71,19 @@ end_date
 card_last_four
 : (string) Last Four digits of the credit Card being billed for this Subscription
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+{% include links/response_codes.md %}
 
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/subscription/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
 http GET 'https://api-sandbox.cruxconnect.com/organizations/subscription/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
 
 ~~~
 {: title="HTTPie" }
@@ -107,7 +103,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/subscription/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
             },
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -132,7 +128,7 @@ def send_request():
         port: '443',
         path: '/organizations/subscription/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

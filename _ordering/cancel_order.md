@@ -50,7 +50,7 @@ quantity
 
 ~~~ bash
 curl -X "PATCH" "https://api-sandbox.cruxconnect.com/orders/cancel/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "order_uuid": "358cd9ec-de30-45c5-b12b-5e4f78037645"
@@ -61,7 +61,7 @@ curl -X "PATCH" "https://api-sandbox.cruxconnect.com/orders/cancel/" \
 
 ~~~ bash
 http --json PATCH 'https://api-sandbox.cruxconnect.com/orders/cancel/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     order_uuid="358cd9ec-de30-45c5-b12b-5e4f78037645"
 
@@ -84,7 +84,7 @@ def send_request():
         response = requests.patch(
             url="https://api-sandbox.cruxconnect.com/orders/cancel/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    order_uuid="358cd9ec-de30-45c5-b12b-5e4f78037645")
@@ -111,7 +111,7 @@ def send_request():
         port: '443',
         path: '/orders/cancel/',
         method: 'PATCH',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

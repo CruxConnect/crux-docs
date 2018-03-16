@@ -2,6 +2,7 @@
 title: /products/inventory-lists/
 name: Create Inventory List
 position: 2.11
+visibility: public
 method: post
 description: Create an Inventory List for your account
 right_code: |
@@ -84,7 +85,7 @@ description
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "name": "New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS",
@@ -96,7 +97,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     name="New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS" \
     description="The Description for the New Test Inventory List Name"
@@ -120,7 +121,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/inventory-lists/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    name="New Test Inventory List Name op7bNvJAHkdlwcWghAL4G0pTrQAh6gQS" \
@@ -148,7 +149,7 @@ def send_request():
         port: '443',
         path: '/products/inventory-lists/',
         method: 'POST',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

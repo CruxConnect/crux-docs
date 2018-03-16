@@ -10,26 +10,32 @@ baseurl: ""
 
 collections:
   documentation:
+    visibility: all
     title: Documentation
     position: 1
-  login:
-    title: Login
+  organization:
+    visibility: all
+    title: Organization
     position: 2
     type: api
-  organization:
-    title: Organization
+  accounting:
+    visibility: public
+    title: Accounting
     position: 3
     type: api
-  accounting:
-    title: Accounting
+  product:
+    visibility: all
+    title: Product
     position: 4
     type: api
   product_retailer:
+    visibility: all
     title: Product for Retailers
     position: 5
     type: api
   product_supplier:
-    title: Product for Supplier 
+    visibility: public
+    title: Product for Supplier
     position: 5
     type: api
   discovery:
@@ -37,17 +43,27 @@ collections:
     position: 5.1
     type: api
   ordering:
+    visibility: public
     title: Ordering
     position: 6
     type: api
   export:
+    visibility: public
     title: Export
     position: 7
+    type: api
+  tools:
+    visibility: internal
+    title: Operations Tools
+    position: 8
     type: api
 
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
+
+include:
+  - common/links
 
 exclude:
   - readme.md
