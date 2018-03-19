@@ -30,7 +30,7 @@ right_code: |
           "email": "gporgie@puddingandpie.com",
           "phone": "1-722-036-2568x9442"
         },
-        "logo": "https://api.adorable.io/avatars/50/abott@adorable.png"
+        "logo": "https://api.adorable.io/avatars/50/abott@adorable.png",
         "description": "Reapers, Ramblers, Rabbits, Wrenches, and Wrigglers",
         "fulfillment_percentage": "91.2345839",
         "number_of_skus": "347,523",
@@ -46,7 +46,7 @@ right_code: |
           "email": "mmuffet@sitonatuffet.com",
           "phone": "1-335-897-4352x1947",
         },
-        "logo": "https://api.adorable.io/avatars/50/abott@adorable.png"
+        "logo": "https://api.adorable.io/avatars/50/abott@adorable.png",
         "description": "Best stuff, best services, bestness, betterness",
         "fulfillment_percentage": "80.00000000001",
         "number_of_skus": "3,326,000",
