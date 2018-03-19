@@ -29,11 +29,12 @@ right_code: |
           "name": "Georgie Porgie",
           "email": "gporgie@puddingandpie.com",
           "phone": "1-722-036-2568x9442"
-        }
-        "description": "Reapers, Ramblers, Rabbits, Wrenches, and Wrigglers"
+        },
+        "logo": "https://api.adorable.io/avatars/50/abott@adorable.png"
+        "description": "Reapers, Ramblers, Rabbits, Wrenches, and Wrigglers",
         "fulfillment_percentage": "91.2345839",
         "number_of_skus": "347,523",
-        "shipping_origin_country_name": "United Arab Emirates"
+        "shipping_origin_country_name": "United Arab Emirates",
         "website": "www.google.com",
       },
       {
@@ -43,12 +44,13 @@ right_code: |
           "uuid": "97fa8fdf-6b94-409e-a684-841d42605881",
           "name": "Missy Muffet",
           "email": "mmuffet@sitonatuffet.com",
-          "phone": "1-335-897-4352x1947"
-        }
-        "description": "Best stuff, best services, bestness, betterness"
+          "phone": "1-335-897-4352x1947",
+        },
+        "logo": "https://api.adorable.io/avatars/50/abott@adorable.png"
+        "description": "Best stuff, best services, bestness, betterness",
         "fulfillment_percentage": "80.00000000001",
         "number_of_skus": "3,326,000",
-        "shipping_origin_country_name": "Åland Islands"
+        "shipping_origin_country_name": "Åland Islands",
         "website": "https://www.wearehardtoreach.com",
       }
     ]
@@ -105,6 +107,9 @@ name
 
 contact
 : (object) See below. An individual employee of the supplier designated as the contact person for Crux-related questions.
+
+logo
+: (string) URL for Supplier Logo image.  Image should be 50px by 50px
 
 description
 : (string) Summary, provided by the supplier, of what the supplier offers. The length is unconstrained.
