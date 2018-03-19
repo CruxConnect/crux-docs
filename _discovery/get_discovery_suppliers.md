@@ -31,8 +31,8 @@ right_code: |
           "phone": "1-722-036-2568x9442"
         }
         "description": "Reapers, Ramblers, Rabbits, Wrenches, and Wrigglers"
-        "fulfillment_percentage": "91.2345839",
-        "number_of_skus": "347,523",
+        "fulfillment_percentage": 91.2345839,
+        "number_of_skus": 347523,
         "shipping_origin_country_name": "United Arab Emirates"
         "website": "www.google.com",
       },
@@ -46,8 +46,8 @@ right_code: |
           "phone": "1-335-897-4352x1947"
         }
         "description": "Best stuff, best services, bestness, betterness"
-        "fulfillment_percentage": "80.00000000001",
-        "number_of_skus": "3,326,000",
+        "fulfillment_percentage": 80.00000000001,
+        "number_of_skus": 3326000,
         "shipping_origin_country_name": "Åland Islands"
         "website": "https://www.wearehardtoreach.com",
       }
