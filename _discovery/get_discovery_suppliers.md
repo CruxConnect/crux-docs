@@ -33,6 +33,8 @@ right_code: |
           "phone": "1-722-036-2568x9442"
         }
         "description": "Reapers, Ramblers, Rabbits, Wrenches, and Wrigglers"
+        "status:" "Connected",
+        "connection_date": "2018-02-09T17:02:01.111Z",
         "fulfillment_percentage": "91.2345839",
         "number_of_skus": "347,523",
         "shipping_origin_country_name": "United Arab Emirates"
@@ -48,6 +50,8 @@ right_code: |
           "phone": "1-335-897-4352x1947"
         }
         "description": "Best stuff, best services, bestness, betterness"
+        "status:" "Connection Pending",
+        "connection_date": "2018-02-02T22:22:22.222Z",
         "fulfillment_percentage": "80.00000000001",
         "number_of_skus": "3,326,000",
         "shipping_origin_country_name": "Åland Islands"
@@ -110,6 +114,12 @@ contact
 
 description
 : (string) Summary, provided by the supplier, of what the supplier offers. The length is unconstrained.
+
+status
+: (string) State of the connection. Choices are 'Connected' or 'Connection Pending'. (Any other statuses would cause the supplier to not be listed as a connection.)
+
+connection_date
+: (string) Date when the connection was created. Formatted as UTC following ISO-8601.
 
 fulfillment_percentage
 : (float) Percentage of SKUs ordered from the supplier through Crux that the supplier has delivered. At a minimum, the fulfillment_percentage will be calculated to at least two decimal places.
