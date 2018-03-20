@@ -116,7 +116,7 @@ description
 : (string) Summary, provided by the supplier, of what the supplier offers. The length is unconstrained.
 
 status
-: (string) State of the connection. Choices are 'Connected' or 'Connection Pending'. (Any other statuses would cause the supplier to not be listed as a connection.)
+: (string) State of the connection. Choices are “CONFIRMATION WAITING” or “ACTIVE”. (Any other statuses would cause the supplier to not be listed as a connection.)
 
 connection_date
 : (string) Date when the connection was created. Formatted as UTC following ISO-8601.
