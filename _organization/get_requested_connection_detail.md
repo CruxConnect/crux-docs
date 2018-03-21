@@ -1,10 +1,10 @@
 ---
-title: /account/connections/request ***AND*** /account/connections/request/<uuid> <!--TODO: not the final location-->
-name: Request a Connection / Update a connection request
-method: POST
+title: /account/connections/request/<uuid> <!--TODO: not the final location-->
+name: Get Requested Connection Detail
+method: GET
 position: 1.15
 visibility: public
-description: Initiate a connection request between a retailer and a supplier
+description: Get details of a connection request
 right_code: |
   ~~~ json
   {
@@ -55,33 +55,10 @@ right_code: |
     ]
   }
   ~~~
-  {: title="Request" }
+  {: title="Response" }
 ---
 
-#### Integration Objects
-type:
-: (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
-
-update_frequency:
-: (string) A cron representation of the update frequency for the integration
-
-file_locations:
-: (string) Locations (URLs) where the files for this integration can be retrieved
-
-file_specs:
-: (string) Specifications of the files
-
-rules:
-: (string) Rules and business logic for the integration
-
-#### File Object
-name:
-: (string) Name of the file
-
-uuid:
-: (string) The Universal Unique Identifier of the uploaded file
-
-### Request Parameters:
+### Response Parameters:
 
 For the purposes of ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
