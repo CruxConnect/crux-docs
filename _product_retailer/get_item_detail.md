@@ -90,8 +90,6 @@ right_code: |
         "quantity_in_stock": 59,
         "quantity_on_backorder": null,
         "number_of_units_bundled": 1,
-        "minimum_advertised_price_currency": "USD",
-        "msrp_currency": "USD",
         "item": {
           "uuid": "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017"
         }
@@ -186,8 +184,6 @@ right_code: |
         "quantity_in_stock": 32,
         "quantity_on_backorder": 61,
         "number_of_units_bundled": 48,
-        "minimum_advertised_price_currency": "USD",
-        "msrp_currency": "USD",
         "item": {
           "uuid": "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017"
         }
@@ -374,12 +370,6 @@ quantity_on_backorder
 
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
-
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
 
 item
 : (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.

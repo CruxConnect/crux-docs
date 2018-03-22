@@ -29,8 +29,6 @@ right_code: |
     "last_updated": "2018-03-13T20:33:24.960897Z",
     "name": "Crux  Worldwide Connection 0P6bc03TVbnoA73UAP1DrsNnrTpnCDWR",
     "description": "Crux Worldwide Connection is a test catalog for the purposes of testing",
-    "default_shipping_cost_currency": "USD",
-    "default_handling_cost_currency": "USD"
   }
   ~~~
   {: title="Response" }
@@ -81,13 +79,6 @@ name
 
 description
 : (string) The Description the supplier has provided for this Catalog
-
-default_shipping_cost_currency
-: (string) The Default Shipping Cost Currency parameter indicates the default currency
-
-default_handling_cost_currency
-: (string) The Default Handling Cost Currency parameter indicates the default currency
-
 
 #### Supplier Object
 

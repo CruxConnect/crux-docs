@@ -33,7 +33,6 @@ right_code: |
       "last_updated": "2017-10-23T18:25:36.265231Z",
       "name": "The enthusiastic winter catalog",
       "description": "There's just something abounding about cuddling up with your own enthusiastic winter catalog! Even in charming sunlight our enthusiastic winter catalog works like a bed!It will blow your charming mind.Then tacos will start raining right out of the charming sky.Because it's the best enthusiastic winter catalog a person get possibly get.  At least on a charming Tuesday! Our enthusiastic winter catalog comes with built-in stop for that extra emotional flavor.",
-      "default_shipping_cost_currency": "USD"
     },
     {
       "uuid": "7089b6ff-64f6-4aee-99ea-7d389b301d90",
@@ -60,7 +59,6 @@ right_code: |
       "last_updated": "2017-10-23T18:28:07.027252Z",
       "name": "The enormous pollution catalog",
       "description": "Be the hero. Even in celebrated sunlight our enormous pollution catalog works like a prose!It will blow your celebrated mind.Then tacos will start raining right out of the celebrated sky.Because it's the best enormous pollution catalog a person get possibly get.  At least on a celebrated Tuesday! Be the kind of person your mother wanted you to me. I like, it, I love it, I want some more of it. When it's all said and done, there's still enormous pollution catalog. Still. Because if your enormous pollution catalog is bold, easy-going, and beautiful, everyone will think that of your partner, too! All your wildest dreams would come true. Our enormous pollution catalog comes with built-in room for that extra abject flavor. Because without enormous pollution catalog, you would look so cheerful, don't you think? enormous pollution catalog works best when you give it plenty of TLC. There's just something insignificant about cuddling up with your own enormous pollution catalog! And then there's our enormous pollution catalog, which will blow off your emotional sink!! Oh, no you don't!  Our enormous pollution catalog kicks the aberrant competition in the battle! All the other kids with the pumped up kicks will wish they had enormous pollution catalog.",
-      "default_shipping_cost_currency": "USD"
     },
     {
       "uuid": "702c0a58-503e-4bdb-9b9e-e78065c7f120",
@@ -87,7 +85,6 @@ right_code: |
       "last_updated": "2017-10-23T18:28:22.720765Z",
       "name": "The capital powder catalog",
       "description": "Oh, no you don't!  Our capital powder catalog kicks the eminent competition in the title! Because without capital powder catalog, you would look so educated, don't you think? Because if your capital powder catalog is bold, elastic, and beautiful, everyone will think that of your pollution, too! Underneath all that insignificant border there will be capital powder catalog. Watching. Waiting. Wanting. Wishing. Wondering. Our capital powder catalog comes with built-in toe for that extra accomplished flavor.",
-      "default_shipping_cost_currency": "USD"
     }
   ]
   ~~~
@@ -127,9 +124,6 @@ name
 
 description
 : (string) The Description the supplier has provided for this Catalog
-
-default_shipping_cost_currency
-: (string) The Default Shipping Cost Currency parameter indicates what
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|

@@ -95,8 +95,6 @@ right_code: |
     "quantity_in_stock": 14,
     "quantity_on_backorder": 81,
     "number_of_units_bundled": 1,
-    "minimum_advertised_price_currency": "USD",
-    "msrp_currency": "USD"
   }
   ~~~
   {: title="Response" }
@@ -159,12 +157,6 @@ quantity_on_backorder
 
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
-
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
 
 #### Price Tier Object:
 

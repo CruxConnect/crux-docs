@@ -98,8 +98,6 @@ right_code: |
           "quantity_in_stock": 91,
           "quantity_on_backorder": 95,
           "number_of_units_bundled": 48,
-          "minimum_advertised_price_currency": "USD",
-          "msrp_currency": "USD",
           "item": {
             "uuid": "97fa8fdf-6b94-409e-a684-841d42605881"
           }
@@ -191,8 +189,6 @@ right_code: |
           "quantity_in_stock": 14,
           "quantity_on_backorder": 74,
           "number_of_units_bundled": 1,
-          "minimum_advertised_price_currency": "USD",
-          "msrp_currency": "USD",
           "item": {
             "uuid": "97fa8fdf-6b94-409e-a684-841d42605881"
           }
@@ -264,8 +260,6 @@ right_code: |
           "quantity_in_stock": 26,
           "quantity_on_backorder": 91,
           "number_of_units_bundled": 1,
-          "minimum_advertised_price_currency": "USD",
-          "msrp_currency": "USD",
           "item": {
             "uuid": "97fa8fdf-6b94-409e-a684-841d42605881"
           }
@@ -395,8 +389,6 @@ right_code: |
           "quantity_in_stock": 14,
           "quantity_on_backorder": 81,
           "number_of_units_bundled": 1,
-          "minimum_advertised_price_currency": "USD",
-          "msrp_currency": "USD",
           "item": {
             "uuid": "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
           }
@@ -500,8 +492,6 @@ right_code: |
           "quantity_in_stock": 89,
           "quantity_on_backorder": null,
           "number_of_units_bundled": 1000,
-          "minimum_advertised_price_currency": "USD",
-          "msrp_currency": "USD",
           "item": {
             "uuid": "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
           }
@@ -569,8 +559,6 @@ right_code: |
           "quantity_in_stock": 22,
           "quantity_on_backorder": 2,
           "number_of_units_bundled": 1,
-          "minimum_advertised_price_currency": "USD",
-          "msrp_currency": "USD",
           "item": {
             "uuid": "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
           }
@@ -707,12 +695,6 @@ quantity_on_backorder
 
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
-
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
 
 item
 : (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.

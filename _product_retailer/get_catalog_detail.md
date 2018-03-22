@@ -32,7 +32,6 @@ right_code: |
     "last_updated": "2017-10-23T18:25:36.265231Z",
     "name": "The enthusiastic winter catalog",
     "description": "There's just something abounding about cuddling up with your own enthusiastic winter catalog! Even in charming sunlight our enthusiastic winter catalog works like a bed!It will blow your charming mind.Then tacos will start raining right out of the charming sky.Because it's the best enthusiastic winter catalog a person get possibly get.  At least on a charming Tuesday! Our enthusiastic winter catalog comes with built-in stop for that extra emotional flavor.",
-    "default_shipping_cost_currency": "USD"
   }
   ~~~
   {: title="Response" }
@@ -72,9 +71,6 @@ name
 
 description
 : (string) The Description the supplier has provided for this Catalog
-
-default_shipping_cost_currency
-: (string) The Default Shipping Cost Currency parameter indicates what
 
 | Code | Name                   | Meaning                                                                      |
 |------|-------------------------------------------------------------------------------------------------------|
