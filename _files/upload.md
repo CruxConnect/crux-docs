@@ -14,6 +14,9 @@ For this request the the content-type header should be `multipart/form-data`.
 file
 : (string) The file contents for upload
 
+filename
+: (string) The filename for upload
+
 ### Response Parameters:
 
 uuid
