@@ -3,7 +3,7 @@ title: /data/upload/ <!--TODO: not the final location-->
 name: Upload a File
 position: 5.01
 visibility: public
-method: POST
+method: PUT
 description: Upload a file
 ---
 
