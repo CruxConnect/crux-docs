@@ -35,8 +35,8 @@ right_code: |
         "description": "Reapers, Ramblers, Rabbits, Wrenches, and Wrigglers"
         "status:" "Connected",
         "connection_date": "2018-02-09T17:02:01.111Z",
-        "fulfillment_percentage": "91.2345839",
-        "number_of_skus": "347,523",
+        "fulfillment_percentage": 91.2345839,
+        "number_of_skus": 347523,
         "shipping_origin_country_name": "United Arab Emirates"
         "website": "www.google.com",
       },
@@ -52,8 +52,8 @@ right_code: |
         "description": "Best stuff, best services, bestness, betterness"
         "status:" "Connection Pending",
         "connection_date": "2018-02-02T22:22:22.222Z",
-        "fulfillment_percentage": "80.00000000001",
-        "number_of_skus": "3,326,000",
+        "fulfillment_percentage": 80.00000000001,
+        "number_of_skus": 326000,
         "shipping_origin_country_name": "Åland Islands"
         "website": "https://www.wearehardtoreach.com",
       }
