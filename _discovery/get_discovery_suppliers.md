@@ -1,5 +1,5 @@
 ---
-title: /discovery/suppliers <!--TODO: not the final location-->
+title: /discovery/suppliers
 name: Discovery Supplier list
 method: POST
 position: 5.00
@@ -31,10 +31,8 @@ right_code: |
           "name": "Georgie Porgie",
           "email": "gporgie@puddingandpie.com",
           "phone": "1-722-036-2568x9442"
-        }
+        },
         "description": "Reapers, Ramblers, Rabbits, Wrenches, and Wrigglers"
-        "status:" "Connected",
-        "connection_date": "2018-02-09T17:02:01.111Z",
         "fulfillment_percentage": 91.2345839,
         "number_of_skus": 347523,
         "shipping_origin_country_name": "United Arab Emirates"
@@ -48,16 +46,15 @@ right_code: |
           "name": "Missy Muffet",
           "email": "mmuffet@sitonatuffet.com",
           "phone": "1-335-897-4352x1947"
-        }
+        },
         "description": "Best stuff, best services, bestness, betterness"
-        "status:" "Connection Pending",
-        "connection_date": "2018-02-02T22:22:22.222Z",
         "fulfillment_percentage": 80.00000000001,
         "number_of_skus": 326000,
         "shipping_origin_country_name": "Åland Islands"
         "website": "https://www.wearehardtoreach.com",
       }
-    ]
+    ],
+    "pagination": {...}
   }
   ~~~
   {: title="Response" }
@@ -103,6 +100,14 @@ Any 'dir' that is a string but is not 'asc' is treated as 'desc'. The 'key' is r
 
 ### Response Parameters:
 
+suppliers
+: (object) A list of Discovery Supplier objects (see blow)
+
+pagination
+: (object) The Pagination object parameter includes the total_count, start, and limit for your Search.
+
+#### Discovery Suppliers
+
 uuid
 : (string) Universal Unique Identifier for the supplier
 
@@ -115,20 +120,11 @@ contact
 description
 : (string) Summary, provided by the supplier, of what the supplier offers. The length is unconstrained.
 
-status
-: (string) State of the connection. Choices are “CONFIRMATION WAITING” or “ACTIVE”. (Any other statuses would cause the supplier to not be listed as a connection.)
-
-connection_date
-: (string) Date when the connection was created. Formatted as UTC following ISO-8601.
-
 fulfillment_percentage
 : (float) Percentage of SKUs ordered from the supplier through Crux that the supplier has delivered. At a minimum, the fulfillment_percentage will be calculated to at least two decimal places.
 
 number_of_skus
 : (int) Number of SKUs that the supplier has made visible in the Discovery Catalog.
-
-pagination
-: (object) The Pagination object parameter includes the total_count, start, and limit for your Search.
 
 shipping_origin_country_name
 : (string) English name of country from which SKUs are shipped. The names come from the 'Country name' column of ISO 3166-1 alpha-2 without any change in capitalization. (Note: behind the scenes, Crux only identifies a country by its two-character ISO 3166-1 alpha-2 code. If there is ever a discrepancy between the country code and the country name, the code takes precedence.)
@@ -136,6 +132,10 @@ shipping_origin_country_name
 website
 : (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
 
+contact
+: (object)  A Contact Object (see below)
+
+<!-- TODO: turn this block into: {% include objects/contact.md %} -->
 Contact Object:
 uuid
 : (string) Contact's user UUID.
@@ -149,6 +149,7 @@ email
 phone
 : (string) Contact's phone number. Maximum length is 20 characters.
 
+<!-- TODO: turn this block into: {% include objects/pagination.md %} -->
 #### Pagination Object:
 
 total_count

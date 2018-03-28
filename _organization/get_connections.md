@@ -19,6 +19,13 @@ right_code: |
           "status": "ACTIVE",
           "created_date": "2018-02-09T17:02:01Z",
           "active_date": null,
+          "website": "www.example.com",
+          "contact": {
+            "uuid": "97fa8fdf-6b94-409e-a684-841d42605881",
+            "name": "Missy Muffet",
+            "email": "mmuffet@sitonatuffet.com",
+            "phone": "1-335-897-4352x1947"
+          },
           "account_manager": {
             "uuid": "6c249798-7564-468d-83de-d98ae8b0b7cf",
             "person": {
@@ -41,6 +48,13 @@ right_code: |
           "status": "ACTIVE",
           "created_date": "2018-02-09T17:02:13Z",
           "active_date": null,
+          "website": "www.example.com",
+          "contact": {
+            "uuid": "97fa8fdf-6b94-409e-a684-841d42605881",
+            "name": "Missy Muffet",
+            "email": "mmuffet@sitonatuffet.com",
+            "phone": "1-335-897-4352x1947"
+          },
           "account_manager": {
             "uuid": "6c249798-7564-468d-83de-d98ae8b0b7cf",
             "person": {
@@ -98,11 +112,30 @@ suppliers_retailer_account_number
 retailers_supplier_account_number
 : (string) Retailer's supplier account number
 
+website
+: (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
+
 {% include objects/retailer.md %}
 
 {% include objects/supplier.md %}
 
 {% include objects/organization.md %}
+
+<!-- TODO: turn this block into: {% include objects/contact.md %} -->
+Contact Object:
+uuid
+: (string) Contact's user UUID.
+
+name
+: (string) Contact's name ready for display. Character case is specified, eg, "La'Quanda McCann" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy Duck", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía Rodríguez de la Peña y de Ybarra", "Håkon Jørgensen".
+
+email
+: (string) Contact's email address. Maximum length is 200 characters.
+
+phone
+: (string) Contact's phone number. Maximum length is 20 characters.
+
+
 
 {% include objects/account_manager.md %}
 
