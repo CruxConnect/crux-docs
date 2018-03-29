@@ -1,5 +1,5 @@
 ---
-title: /catalog/update <!--TODO: not the final location-->
+title: /discovery/participation/&lt;org_uuid&gt;/
 name: Update Discovery Participation
 visibility: internal
 position: 5.10
@@ -8,8 +8,7 @@ description: Update Discovery Catalog Participation
 right_code: |
   ~~~ json
   {
-    "supplier_uuid": "2a0295b6-dd74-4239-9988-24fcdb1adcea",
-    "participation": true,
+    "is_participating": true,
     "discovery_catalog_uuid": "05a46c58-9d13-4912-9167-7effc2cc7482"
   }
   ~~~
@@ -20,10 +19,7 @@ Update Supplier participation in the Discovery Catalog and the identify which ca
 
 ### Request
 
-supplier_uuid
-: (string) The Universal Unique Identifier for the Supplier
-
-participation
+is_participating
 : (bool) Whether or not the Supplier will participate in Discovery Catalog
 
 discovery_catalog_uuid
@@ -31,7 +27,8 @@ discovery_catalog_uuid
 
 #### Response
 
-200 Success
+204 Success
+409 when the org_uuid relates to a retailer not a supplier
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/catalog/update" \

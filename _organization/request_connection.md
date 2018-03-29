@@ -1,6 +1,6 @@
 ---
-title: /account/connections/request ***AND*** /account/connections/request/<uuid> <!--TODO: not the final location-->
-name: Request a Connection / Update a connection request
+title: /connections/request/
+name: Request a Connection
 method: POST
 position: 1.15
 visibility: public
@@ -143,3 +143,7 @@ uuid
 
 request_date
 : (string) Date and time the request to connect was received. Formatted as UTC following ISO 8601.
+
+### Response Code:
+
+201 Created

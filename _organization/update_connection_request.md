@@ -1,16 +1,13 @@
 ---
-title: /connections/request/<uuid> <!--TODO: not the final location-->
-name: Get Requested Connection Detail
-method: GET
+title: /connections/request/&lt;uuid&gt;/
+name: Update a Connection Request
+method: PATCH
 position: 1.15
 visibility: public
-description: Get details of a connection request
+description: Update a connection request between a retailer and a supplier
 right_code: |
   ~~~ json
   {
-    uuid: '555b68e5-e407-4b15-b200-6fade8980596',
-    created_date: '2017-03-29T20:11:12+00:00',
-    modified_date: '2018-03-29T20:11:12+00:00',
     organization_name: 'Bobs Big Boys',
     primary_contact_name: 'Bob',
     primary_contact_phone: '555.867.5309',
@@ -58,24 +55,45 @@ right_code: |
     ]
   }
   ~~~
-  {: title="Response" }
+  {: title="Request" }
 ---
 
-### Response Parameters:
+#### Integration Objects
+type:
+: (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
+
+update_frequency:
+: (string) A cron representation of the update frequency for the integration
+
+file_locations:
+: (string) Locations (URLs) where the files for this integration can be retrieved
+
+file_specs:
+: (string) Specifications of the files
+
+rules:
+: (string) Rules and business logic for the integration
+
+#### File Object
+name:
+: (string) Name of the file
+
+uuid:
+: (string) The Universal Unique Identifier of the uploaded file
+
+### Request Parameters:
 
 For the purposes of ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
-created_date
-: (string) Date and time the request to connect was received. Formatted as UTC following ISO 8601.
-
-modified_date
-: (string) Date and time the request to connect was last modified. Formatted as UTC following ISO 8601.
+Required:
 
 organization_name:
 : (string) The name of supplier.
 
 primary_contact_name:
 : (string) The name of the primary contact for the supplier.
+
+Optional:
 
 primary_contact_phone:
 : (string) The phone number for the primary contact.
@@ -117,3 +135,7 @@ name:
 
 uuid:
 : (string) The Universal Unique Identifier of the uploaded file
+
+### Response Code:
+
+204 Created
