@@ -2,6 +2,7 @@
 title: /products/catalogs/
 name: Create Catalog
 position: 2.02
+visibility: public
 method: post
 description: Create a Catalog
 right_code: |

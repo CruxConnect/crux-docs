@@ -1,5 +1,6 @@
 ---
 title: Response Codes
+visibility: all
 position: 4
 ---
 

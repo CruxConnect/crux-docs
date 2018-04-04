@@ -2,6 +2,7 @@
 title: /products/items/
 name: Create Item
 position: 2.19
+visibility: public
 method: post
 description: Create Items allows you to create (add) an item in a Supplier account
 right_code: |

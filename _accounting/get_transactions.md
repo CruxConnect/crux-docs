@@ -2,6 +2,7 @@
 title: /accounting/transactions/
 name: Get Transactions
 position: 1.00
+visibility: public
 method: get
 description: Get the Transactions for your account
 right_code: |

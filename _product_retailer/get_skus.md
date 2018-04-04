@@ -2,6 +2,7 @@
 title: /products/skus/
 name: Get SKUs
 position: 2.23
+visibility: public
 method: get
 description: Get SKUs allows you to return a complete list of SKUs you are interested in.
 right_code: |

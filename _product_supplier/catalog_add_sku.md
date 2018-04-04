@@ -2,6 +2,7 @@
 title: /products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-skus/
 name: Catalog Add SKU
 position: 2.03
+visibility: public
 method: post
 description: Add already existing SKUs to a Catalog
 right_code: |

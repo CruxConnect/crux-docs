@@ -2,6 +2,7 @@
 title: /orders/create/
 name: Create Order - Retailer
 position: 3.05
+visibility: public
 method: post
 description: Create an Order on your account
 right_code: |

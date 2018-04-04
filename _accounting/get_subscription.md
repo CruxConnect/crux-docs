@@ -2,6 +2,7 @@
 title: /organizations/subscription/
 name: Get Subscription
 position: 1.7
+visibility: public
 method: get
 description: Get Subscription with details for your organization
 right_code: |
