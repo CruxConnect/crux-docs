@@ -13,6 +13,12 @@
               <span class="endpoint PATCH">PATCH</span>
               <span class="endpoint DELETE">DELETE</span>
             </li>
+          {% elsif collection.type == 'fs' %}
+            <li class="fs-key">
+              <span class="endpoint REQUIRED">REQUIRED</span>
+              <span class="endpoint PREFERRED">PREFERRED</span>
+              <span class="endpoint OPTIONAL">OPTIONAL</span>
+            </li>
           {% endif %}
           {% assign filtered_docs = collection.docs | where_exp:"item", "item.visibility != excluded_visibility" %}
           {% assign sorted_docs = filtered_docs | sort: "position" %}

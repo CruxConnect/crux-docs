@@ -15,11 +15,11 @@ html {
   height: 100vh;
 }
 
-header { 
+header {
   min-height: 100vh;
 }
 @media (max-width: $mobile-break) {
-  header { 
+  header {
     min-height: 0;
   }
 
@@ -34,7 +34,7 @@ header {
   .sidebar a {
     padding: 10px 0;
   }
-  .sidebar .api a {
+  .sidebar .api a, .sidebar .fs a{
     display: grid;
     grid-template-columns: 1fr 1fr 2.5em;
     grid-gap: .25em;
@@ -203,7 +203,8 @@ dl dd:after {
     padding: 0 0 0 10px;
     margin: 0;
     list-style: none;
-    &.api .title {
+    &.api .title,
+    &.fs .title {
       display: none;
     }
   }
@@ -230,7 +231,8 @@ dl dd:after {
   }
 }
 
-.api-key > .endpoint:first-child{
+.api-key > .endpoint:first-child,
+.fs-key > .endpoint:first-child{
   padding-left: 1px;
 }
 .endpoint {
@@ -246,7 +248,7 @@ h3 .endpoint {
   font-size: 19px;
 }
 
-.sidebar .api a{
+.sidebar .api a, .sidebar .fs a{
   padding-right: .25em;
   border-right-width: .25em;
   border-right-style: solid;
@@ -280,6 +282,18 @@ h3 .endpoint {
 .DELETE, .delete {
   color: $color-delete;
   border-color: $color-delete;
+}
+.REQUIRED, .required {
+  color: $color-required;
+  border-color: $color-required;
+}
+.PREFERRED, .preferred {
+  color: $color-preferred;
+  border-color: $color-preferred;
+}
+.OPTIONAL, .optional {
+  color: $color-optional;
+  border-color: $color-optional;
 }
 
 .main {
