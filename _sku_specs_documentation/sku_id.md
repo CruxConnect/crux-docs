@@ -2,7 +2,7 @@
 title: sku_id
 name: sku_id
 position: 1
-visibility: file-specs
+visibility: all
 method: required
 description: Letters, numbers, or a combination of both to form a unique identification for a specified sku.
 right_code: |

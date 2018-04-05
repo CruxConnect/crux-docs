@@ -10,12 +10,12 @@ baseurl: ""
 
 collections:
   file_specs_documentation:
-    visibility: file-specs
+    visibility: all
     title: Item File Specifications
     position: 1
     type: fs
   sku_specs_documentation:
-    visibility: file-specs
+    visibility: all
     title: SKU File Specifications
     position: 2
     type: fs
@@ -23,7 +23,6 @@ collections:
     visibility: all
     title: Documentation
     position: 3
-    type: fu
   organization:
     visibility: public
     title: Organization
