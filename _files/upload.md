@@ -1,5 +1,5 @@
 ---
-title: /data/upload/ <!--TODO: not the final location-->
+title: /organizations/files/upload/
 name: Upload a File
 position: 5.01
 visibility: public
