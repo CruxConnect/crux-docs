@@ -1,5 +1,5 @@
 ---
-title: /account/connections/request/ <!--TODO: not the final location-->
+title: /organizations/connections/request/
 name: Get Requested Connection Detail
 method: GET
 visibility: public

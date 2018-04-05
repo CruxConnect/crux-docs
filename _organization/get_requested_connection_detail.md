@@ -1,5 +1,5 @@
 ---
-title: /connections/request/<uuid> <!--TODO: not the final location-->
+title: /organizations/connections/request/<uuid>
 name: Get Requested Connection Detail
 method: GET
 position: 1.15

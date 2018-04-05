@@ -1,5 +1,5 @@
 ---
-title: /connections/request/
+title: /organizations/connections/request/
 name: Request a Connection
 method: POST
 position: 1.15

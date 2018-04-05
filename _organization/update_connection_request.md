@@ -1,5 +1,5 @@
 ---
-title: /connections/request/&lt;uuid&gt;/
+title: /organizations/connections/request/&lt;uuid&gt;/
 name: Update a Connection Request
 method: PATCH
 position: 1.15
