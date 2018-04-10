@@ -64,19 +64,18 @@ none
 initial_character
 : (string) First character of supplier name OR '#'. If a letter or number, only suppliers whose name starts with this character will be returned. If '#', suppliers whose name starts with any number (0-9) will be returned. Only the first character of the string will be considered. Letters and numbers must be from UTF-8 ranges 0030-0039 (0-9), 0041-005A (A-Z), or 0061-007A (a-z). Upper- and lower-case letters are treated the same. (Some suppliers have company names with characters not in the specified ranges, but when they join Crux they provide a simplified, standardized name that uses only the limited character set above. It is the simplified/standardized name that determines where a supplier appears in the initial_character search.)
 
-limit
-: (int) Number of suppliers displayed on a page; used for paginating results. Default: 50. Maximum: 100. Any 'limit' greater than the Maximum will be forced to the Maximum.
-
 recent
 : (int) Number of days. If specified, returns suppliers that have made their products available in the Discovery Catalog in the past 'recent' days.
 
 sort
 : (object) Field and order for sorting.
 
-start
-: (int) Element number of the first supplier that will be displayed on a page. (The available suppliers are returned in an ordered list, numbered from 0 to Number-of-suppliers, with each supplier an element in the list.) Used for paginating results. Default: 0. If greater than or equal to the number of available suppliers, 'start' is forced to the Number-of-suppliers (which will yield zero results).
+pagination
+: (object) Object parameter includes the start and limit for you search
 
 {% include objects/sort.md %}
+
+{% include objects/request_pagination.md %}
 
 ### Response Parameters:
 
@@ -119,7 +118,7 @@ contact
 {% include objects/contact.md %}
 
 
-{% include objects/response_pagination.md %}
+{% include objects/pagination.md %}
 
 ### Expected Response Codes
 
