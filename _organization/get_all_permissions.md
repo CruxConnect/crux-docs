@@ -1,30 +1,37 @@
 ---
 title: /organizations/all_permissions/
 name: Get All Permissions
-position: 0.6
+position: 1.06
+visibility: public
 method: get
 description: Get all available Permissions
 right_code: |
   ~~~ json
   [
     {
-      "uuid": "51690784-8e22-44f2-a6b6-ae3fdb556051",
-      "name": "create_org",
-      "display_name": "Create Organization",
-      "description": "Ability to create an org"
+      "uuid": "5b7906fd-23dd-4fe1-8e50-778819d145ad",
+      "name": "view_org_users",
+      "display_name": "View Users",
+      "description": "Ability to see the users in an organization",
+      "visibility": "BOTH",
+      "grouping": "ORGUSERS"
     },
     {
-      "uuid": "f3854a65-cb5c-4ea6-a0b6-e352328f3f92",
-      "name": "update_org_status",
-      "display_name": "Update Org Status",
-      "description": "Update the org status pending, active, or deactive"
+      "uuid": "191b95cc-5555-4947-8085-286d167931ca",
+      "name": "edit_org_users",
+      "display_name": "Edit Users",
+      "description": "Ability to edit/change/delete users in an organization",
+      "visibility": "BOTH",
+      "grouping": "ORGUSERS"
     },
     {
-      "uuid": "d3826e60-0f8d-4ca5-b89c-2d2022ece698",
-      "name": "create_relationships",
-      "display_name": "Create Relationship",
-      "description": "Add a relationship between organizaitons, such as supplier to retailer"
-    }
+      "uuid": "64b53e87-01bf-4416-affb-937beea1661e",
+      "name": "view_org_subscription_plan",
+      "display_name": "View Subscription Plan",
+      "description": "View the subscription plan info for an organization",
+      "visibility": "BOTH",
+      "grouping": "ORGSUB"
+    },
   ]
   ~~~
   {: title="Response" }
@@ -32,33 +39,22 @@ right_code: |
 ---
 Get all of the available Permissions based on the type of account requested on. These change based on Retailer or Supplier accounts.
 
+To view orgainzation users, you must be assigned the 'view_org_users' permission.
+{: .info }
+
+{% include links/available_permissions.md %}
+
 ### Response Parameters:
 
-uuid
-: (string) Universal Unique Identifier for a Permission
+{% include objects/permission.md %}
 
-name
-: (string) Name of a Permission; written in shortened snake case
+{% include links/response_codes.md %}
 
-display_name
-: (string) Display Name of a Permission; a more user-friendly name of the Permission
-
-description
-: (string) Description of a Permission
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/all_permissions/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -67,7 +63,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/all_permissions/" \
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/organizations/all_permissions/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -90,7 +86,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/all_permissions/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -117,7 +113,7 @@ def send_request():
         port: '443',
         path: '/organizations/all_permissions/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

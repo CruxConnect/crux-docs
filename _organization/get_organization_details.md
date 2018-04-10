@@ -1,30 +1,28 @@
 ---
 title: /organizations/
 name: Get Organization Details
-position: 0.93
+position: 1.11
+visibility: public
 method: get
 description: Get Organization Details specific to your organization
 right_code: |
   ~~~ json
   {
-    "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
-    "name": "projectthanos",
-    "org_type": "RETAILER",
+    "uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
+    "name": "Crux Supplier A",
+    "org_type": "SUPPLIER",
     "status": "ACTIVE",
-    "created_date": "2017-10-23T18:20:43.336669Z",
+    "created_date": "2018-02-09T17:02:13Z",
     "active_date": null,
     "account_manager": {
-      "uuid": "ad61c73e-790d-4e42-921c-b1d7ccc97217",
-      "org_user": {
-        "uuid": "817979d4-9d67-4675-a9db-73ac99d9eec7",
-        "person": {
-          "uuid": "6baf482d-a380-4084-a439-a67b8752f63c",
-          "first_name": "Jennifer",
-          "last_name": "Garrett",
-          "email": "uking@clark-davis.info",
-          "phone": "01443719956"
-        },
-        "status": "ACTIVE"
+      "uuid": "6c249798-7564-468d-83de-d98ae8b0b7cf",
+      "person": {
+        "uuid": "f3548ea5-15ab-459e-9f1a-d982b21e916d",
+        "first_name": "Joe",
+        "last_name": "Account",
+        "email": "joe@cruxaccountmanager.com",
+        "phone": "(267)977-0572x195",
+        "job_title": null
       }
     }
   }
@@ -36,57 +34,23 @@ Get the Details about your Organization including the uuid, name, organization t
 
 ### Response Parameters:
 
-#### Organization Object:
+{% include objects/organization.md %}
 
-uuid
-: (string) Universal Unique Identifier for an Organization
+{% include objects/account_manager.md %}
 
-name
-: (string) Name of the Organization
-
-org_type
-: (string) Organization Type defines if the organization is a "RETAILER" or a "SUPPLIER"
-
-status
-: (string) Status for the Organization, which can be "PENDING", "ACTIVE", or "DEACTIVATED"
-
-created_date
-: (string) Created Date; the Date when the Organization was Created within our system
-
-active_date
-: (string) Active Date; the Date when the Organization became Active within our system
-
-account_manager
-: (object) Account Manager object containing a uuid and an organization user
-
-#### Account Manager Object:
-
-uuid
-: (string) Universal Unique Identifier for an Account Manager
-
-org_user
-: (object) Organization User object containing a uuid, person, and status
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+{% include links/response_codes.md %}
 
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/organizations/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
 http GET 'https://api-sandbox.cruxconnect.com/organizations/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b'
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
 
 ~~~
 {: title="HTTPie" }
@@ -106,7 +70,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/organizations/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
             },
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -131,7 +95,7 @@ def send_request():
         port: '443',
         path: '/organizations/',
         method: 'GET',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

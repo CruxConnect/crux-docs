@@ -1,5 +1,5 @@
 ---
-title: /catalog/&ltuuid&gt/
+title: /discovery/participation/&lt;org_uuid&gt;/
 name: Get Discovery Participation
 visibility: internal
 position: 5.20
@@ -9,7 +9,7 @@ right_code: |
   ~~~ json
     {
       "supplier_uuid": "2a0295b6-dd74-4239-9988-24fcdb1adcea",
-      "participation": true,
+      "is_participating": true,
       "discovery_catalog_uuid": "05a46c58-9d13-4912-9167-7effc2cc7482"
     }
   ~~~
@@ -27,7 +27,7 @@ supplier_uuid
 supplier_uuid
 : (string) The Universal Unique Identifier for the Supplier
 
-participation
+is_participating
 : (bool) Whether or not the Supplier will participate in Discovery Catalog
 
 discovery_catalog_uuid

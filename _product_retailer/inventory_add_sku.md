@@ -2,6 +2,7 @@
 title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
 name: Inventory Add SKU
 position: 2.12
+visibility: public
 method: post
 description: Add SKUs to an existing Inventory List for your account
 right_code: |
@@ -36,7 +37,7 @@ sku_uuids
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "sku_uuids": [
@@ -50,7 +51,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/c8e
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_uuids:="[
   \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
@@ -76,7 +77,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    sku_uuids:="[
@@ -106,7 +107,7 @@ def send_request():
         port: '443',
         path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/',
         method: 'POST',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

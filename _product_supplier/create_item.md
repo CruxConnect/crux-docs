@@ -399,7 +399,7 @@ height
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \
-     -H 'Authorization: Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn'"'"'t already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
@@ -424,7 +424,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/items/' \
-    'Authorization':'Token 0102f963bf7c4c4452d46e30645de9182ba0d137' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
     shipping_origin_country="US" \
@@ -461,7 +461,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/items/",
             headers={
-                "Authorization": "Token 0102f963bf7c4c4452d46e30645de9182ba0d137",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
@@ -502,7 +502,7 @@ def send_request():
         port: '443',
         path: '/products/items/',
         method: 'POST',
-        headers: {"Authorization":"Token 0102f963bf7c4c4452d46e30645de9182ba0d137","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

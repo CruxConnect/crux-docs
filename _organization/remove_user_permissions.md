@@ -1,7 +1,8 @@
 ---
 title: /organizations/users/permissions/&ltuser_uuid&gt/
 name: Remove User Permissions
-position: 0.9
+position: 1.09
+visibility: public
 method: delete
 description: Remove User Permissions granted at a prior occasion
 right_code: |
@@ -19,24 +20,19 @@ right_code: |
 ---
 Remove User Permissions allows you to provide a user uuid and remove permissions if roles change within an organization. Simply provide the organization uuid, user uuid, and the permissions list indicating which permissions you wish to remove.
 
+To edit organization users, you must be assigned the 'edit_org_users' permission.
+{: .info }
+
 ### Request Parameters:
 
 permission_uuids
 : (string list) The list of permission uuids you wish to remove from a user
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 204  | No Content             | The API call was received and the permission removal occurred                |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "DELETE" "https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "permission_uuids": [
@@ -50,7 +46,7 @@ curl -X "DELETE" "https://api-sandbox.cruxconnect.com/organizations/users/permis
 
 ~~~ bash
 http --json DELETE 'https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     permission_uuids:="[
   \"2a0295b6-dd74-4239-9988-24fcdb1adcea\",
@@ -76,7 +72,7 @@ def send_request():
         response = requests.delete(
             url="https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    permission_uuids:="[
@@ -106,7 +102,7 @@ def send_request():
         port: '443',
         path: '/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/',
         method: 'DELETE',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

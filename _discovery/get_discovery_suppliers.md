@@ -1,7 +1,9 @@
 ---
-title: /discovery/suppliers [Jeff might change this]
+title: /discovery/suppliers
 name: Discovery Supplier list
 method: POST
+position: 5.00
+visibility: public
 description: A list of all suppliers available to you in the discovery catalog
 right_code: |
   ~~~ json
@@ -29,7 +31,7 @@ right_code: |
           "name": "Georgie Porgie",
           "email": "gporgie@puddingandpie.com",
           "phone": "1-722-036-2568x9442"
-        }
+        },
         "description": "Reapers, Ramblers, Rabbits, Wrenches, and Wrigglers"
         "fulfillment_percentage": 91.2345839,
         "number_of_skus": 347523,
@@ -44,14 +46,15 @@ right_code: |
           "name": "Missy Muffet",
           "email": "mmuffet@sitonatuffet.com",
           "phone": "1-335-897-4352x1947"
-        }
+        },
         "description": "Best stuff, best services, bestness, betterness"
         "fulfillment_percentage": 80.00000000001,
-        "number_of_skus": 3326000,
+        "number_of_skus": 326000,
         "shipping_origin_country_name": "Åland Islands"
         "website": "https://www.wearehardtoreach.com",
       }
-    ]
+    ],
+    "pagination": {...}
   }
   ~~~
   {: title="Response" }
@@ -63,7 +66,7 @@ Required: none
 
 Optional:
 initial_character
-: (string) First character of supplier name OR '#'. If a letter or number, only suppliers whose name starts with this character will be returned. If '#', suppliers whose name starts with any number (0-9) will be returned. Only the first character of the string will be considered. Letters and numbers must be from UTF-8 ranges 0030-0039 (0-9), 0041-005A (A-Z), or 0061-007A (a-z). Upper- and lower-case letters are treated the same. (Some suppliers have company names with characters not in the specified ranges, but when they join Crux they provide a simplified, standardized name that uses only the limited character set above. It is the simplified/standardized name that determines where a supplier appears in the initial_character search.) Strings with more th
+: (string) First character of supplier name OR '#'. If a letter or number, only suppliers whose name starts with this character will be returned. If '#', suppliers whose name starts with any number (0-9) will be returned. Only the first character of the string will be considered. Letters and numbers must be from UTF-8 ranges 0030-0039 (0-9), 0041-005A (A-Z), or 0061-007A (a-z). Upper- and lower-case letters are treated the same. (Some suppliers have company names with characters not in the specified ranges, but when they join Crux they provide a simplified, standardized name that uses only the limited character set above. It is the simplified/standardized name that determines where a supplier appears in the initial_character search.)
 
 limit
 : (int) Number of suppliers displayed on a page; used for paginating results. Default: 50. Maximum: 100. Any 'limit' greater than the Maximum will be forced to the Maximum.
@@ -97,6 +100,14 @@ Any 'dir' that is a string but is not 'asc' is treated as 'desc'. The 'key' is r
 
 ### Response Parameters:
 
+suppliers
+: (object) A list of Discovery Supplier objects (see blow)
+
+pagination
+: (object) The Pagination object parameter includes the total_count, start, and limit for your Search.
+
+#### Discovery Suppliers
+
 uuid
 : (string) Universal Unique Identifier for the supplier
 
@@ -115,15 +126,16 @@ fulfillment_percentage
 number_of_skus
 : (int) Number of SKUs that the supplier has made visible in the Discovery Catalog.
 
-pagination
-: (object) The Pagination object parameter includes the total_count, start, and limit for your Search.
-
 shipping_origin_country_name
 : (string) English name of country from which SKUs are shipped. The names come from the 'Country name' column of ISO 3166-1 alpha-2 without any change in capitalization. (Note: behind the scenes, Crux only identifies a country by its two-character ISO 3166-1 alpha-2 code. If there is ever a discrepancy between the country code and the country name, the code takes precedence.)
 
 website
 : (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
 
+contact
+: (object)  A Contact Object (see below)
+
+<!-- TODO: turn this block into: {% include objects/contact.md %} -->
 Contact Object:
 uuid
 : (string) Contact's user UUID.
@@ -137,6 +149,7 @@ email
 phone
 : (string) Contact's phone number. Maximum length is 20 characters.
 
+<!-- TODO: turn this block into: {% include objects/pagination.md %} -->
 #### Pagination Object:
 
 total_count

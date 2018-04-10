@@ -1,7 +1,8 @@
 ---
 title: /notifications/notification-settings/
 name: Update Notification Settings
-position: 0.99
+position: 1.14
+visibility: public
 method: put
 description: Update Notification Settings allows you to update a single notification's settings
 right_code: |
@@ -19,6 +20,12 @@ right_code: |
 ---
 Update Notification Settings allows you to update a single Notification's settings. By providing the uuid for the notification with the location, frequency, and "enabled" you may update a Notification.
 
+To view notification settings, you must be assigned the 'view_notifications_settings' permission
+{: .info }
+
+To edit email notification preferences, you must be assigned the 'edit_email_notifications_preferences' permission
+{: .info }
+
 ### Request Parameters:
 
 uuid
@@ -33,19 +40,11 @@ enabled
 notification_frequency
 : (string) The Notification Frequency refers to how often you'll be notified. Possible values are "Real-time", "Twice a day", and "Daily"
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 204  | No Content             | The API call was received and the settings have been updated                 |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "PUT" "https://api-sandbox.cruxconnect.com/notifications/notification-settings/" \
-     -H 'Authorization: Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "notification_via": "Dashboard",
@@ -59,7 +58,7 @@ curl -X "PUT" "https://api-sandbox.cruxconnect.com/notifications/notification-se
 
 ~~~ bash
 http --json PUT 'https://api-sandbox.cruxconnect.com/notifications/notification-settings/' \
-    'Authorization':'Token a0f17278bed479ee719ea890b8caf0329e1f3e5b' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     notification_via="Dashboard" \
     enabled="True" \
@@ -85,7 +84,7 @@ def send_request():
         response = requests.put(
             url="https://api-sandbox.cruxconnect.com/notifications/notification-settings/",
             headers={
-                "Authorization": "Token a0f17278bed479ee719ea890b8caf0329e1f3e5b",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    notification_via="Dashboard" \
@@ -115,7 +114,7 @@ def send_request():
         port: '443',
         path: '/notifications/notification-settings/',
         method: 'PUT',
-        headers: {"Authorization":"Token a0f17278bed479ee719ea890b8caf0329e1f3e5b","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

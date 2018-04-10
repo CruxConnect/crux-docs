@@ -1,6 +1,7 @@
 ---
 title: Getting Started with CRUX
 position: 1
+visibility: public
 right_code: |
   ~~~ bash
   https://api-sandbox.cruxconnect.com
