@@ -1,21 +1,19 @@
 ---
-title: /discovery/suppliers
-name: Discovery Supplier list
-method: POST
-position: 5.00
+title: /discovery/suppliers/
+name: Discovery Supplier List
+position: 3.00
 visibility: public
+method: post
 description: A list of all suppliers available to you in the discovery catalog
 right_code: |
   ~~~ json
   {
-    "initial_character": "e",
-    "limit": "40",
-    "recent": "90",
     "sort": {
       "key": "number_of_skus",
-      "dir": "desc",
+      "dir": "desc"
     },
-    "start": "3"
+    "initial_character": "T",
+    "recent": "90"
   }
   ~~~
   {: title="Request" }
@@ -24,47 +22,41 @@ right_code: |
   {
     "suppliers": [
       {
-        "uuid": "9b3314d7-a280-4ed4-bf5c-83e3c9b013c0",
-        "name": "Romero Reapers",
+        "uuid": "b0f9550d-c180-46ca-acda-2f081feb1a46",
+        "name": "Thomas-Perkins",
+        "website": "romero.com",
+        "description": null,
+        "fulfillment_percentage": 0,
+        "number_of_skus": 5,
         "contact": {
-          "uuid": "2e0ecb7e-9426-4e66-a8a9-e69cd8c806c0",
-          "name": "Georgie Porgie",
-          "email": "gporgie@puddingandpie.com",
-          "phone": "1-722-036-2568x9442"
-        },
-        "description": "Reapers, Ramblers, Rabbits, Wrenches, and Wrigglers"
-        "fulfillment_percentage": 91.2345839,
-        "number_of_skus": 347523,
-        "shipping_origin_country_name": "United Arab Emirates"
-        "website": "www.google.com",
-      },
-      {
-        "uuid": "45d9c4a6-0bf0-4fa6-95df-c421ddba16e5",
-        "name": "Best Company Ever",
-        "contact": {
-          "uuid": "97fa8fdf-6b94-409e-a684-841d42605881",
-          "name": "Missy Muffet",
-          "email": "mmuffet@sitonatuffet.com",
-          "phone": "1-335-897-4352x1947"
-        },
-        "description": "Best stuff, best services, bestness, betterness"
-        "fulfillment_percentage": 80.00000000001,
-        "number_of_skus": 326000,
-        "shipping_origin_country_name": "Åland Islands"
-        "website": "https://www.wearehardtoreach.com",
+          "uuid": "ace86572-ee12-4829-9079-3e69a997e42f",
+          "first_name": "owner",
+          "last_name": "user",
+          "email": "owneruser1@romero.com",
+          "phone": "1-541-219-3109x433",
+          "job_title": "Account Manager"
+        }
       }
     ],
-    "pagination": {...}
+    "pagination": {
+      "total_count": 1,
+      "start": null,
+      "limit": null
+    }
   }
   ~~~
   {: title="Response" }
 
 ---
+A list of all suppliers available to you in the discovery catalog
+
 ### Request Parameters:
 
-Required: none
+#### Required:
+none
 
-Optional:
+#### Optional:
+
 initial_character
 : (string) First character of supplier name OR '#'. If a letter or number, only suppliers whose name starts with this character will be returned. If '#', suppliers whose name starts with any number (0-9) will be returned. Only the first character of the string will be considered. Letters and numbers must be from UTF-8 ranges 0030-0039 (0-9), 0041-005A (A-Z), or 0061-007A (a-z). Upper- and lower-case letters are treated the same. (Some suppliers have company names with characters not in the specified ranges, but when they join Crux they provide a simplified, standardized name that uses only the limited character set above. It is the simplified/standardized name that determines where a supplier appears in the initial_character search.)
 
@@ -75,28 +67,12 @@ recent
 : (int) Number of days. If specified, returns suppliers that have made their products available in the Discovery Catalog in the past 'recent' days.
 
 sort
-: (object) Field and order for sorting. See below.
+: (object) Field and order for sorting.
 
 start
 : (int) Element number of the first supplier that will be displayed on a page. (The available suppliers are returned in an ordered list, numbered from 0 to Number-of-suppliers, with each supplier an element in the list.) Used for paginating results. Default: 0. If greater than or equal to the number of available suppliers, 'start' is forced to the Number-of-suppliers (which will yield zero results).
 
-Sort Object:
-key
-: (string) Field on which to sort. Default: supplier. Options are:
-- supplier : name of the supplier in English. Sort: alphabetic.
-- number_of_skus : number of supplier's SKUs in the Discovery Catalog. Sort: numeric.
-- fulfillment_percentage : percentage of SKUs ordered from the supplier that the supplier delivers. Sort: numeric.
-- shipping_origin : Country from which SKUs are shipped. Sort: alphabetic by English name of country.
-
-dir
-: (string) Direction of sorting. Options are:
-- asc : Ascending. alphabetic: 0 --> 9 --> A --> Z; numeric: 0 --> 9
-- desc : Descending. alphabetic: Z --> A --> 9 --> 0; numeric: 9 --> 0
-Any 'dir' that is a string but is not 'asc' is treated as 'desc'. The 'key' is required but 'dir' is optional. If no 'dir' is given, it defaults as follows:
-- supplier : asc
-- number_of_skus : desc
-- fulfillment_percentage : desc
-- shipping_origin : asc
+{% include objects/sort.md %}
 
 ### Response Parameters:
 
@@ -106,7 +82,7 @@ suppliers
 pagination
 : (object) The Pagination object parameter includes the total_count, start, and limit for your Search.
 
-#### Discovery Suppliers
+#### Suppliers
 
 uuid
 : (string) Universal Unique Identifier for the supplier
@@ -133,30 +109,139 @@ website
 : (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
 
 contact
-: (object)  A Contact Object (see below)
+: (object)  A Contact Object
 
-<!-- TODO: turn this block into: {% include objects/contact.md %} -->
-Contact Object:
-uuid
-: (string) Contact's user UUID.
 
-name
-: (string) Contact's name ready for display. Character case is specified, eg, "La'Quanda McCann" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy Duck", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía Rodríguez de la Peña y de Ybarra", "Håkon Jørgensen".
+{% include objects/contact.md %}
 
-email
-: (string) Contact's email address. Maximum length is 200 characters.
 
-phone
-: (string) Contact's phone number. Maximum length is 20 characters.
+{% include objects/pagination.md %}
 
-<!-- TODO: turn this block into: {% include objects/pagination.md %} -->
-#### Pagination Object:
+### Expected Response Codes
 
-total_count
-: (number) The Total Count of results returned for this Search
+{% include links/response_codes.md %}
 
-start
-: (number) The Start parameter indicates on which element of the list of results the pagination should begin.
 
-limit
-: (number) The Limit parameter indicates one which element of the list of results the pagination should end.
+~~~ bash
+curl -X "POST" "https://api-dev.cruxconnect.com/discovery/suppliers/" \
+     -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
+     -H 'Authorization: Token 1234567890' \
+     -H 'Content-Type: application/json; charset=utf-8' \
+     -d $'{
+  "recent": "90",
+  "initial_character": "T",
+  "sort": {
+    "key": "number_of_skus",
+    "dir": "desc"
+  }
+}'
+
+~~~
+{: title="Curl" }
+
+~~~ bash
+http --json POST 'https://api-dev.cruxconnect.com/discovery/suppliers/' \
+    'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
+    'Authorization':'Token 1234567890' \
+    'Content-Type':'application/json; charset=utf-8' \
+    recent="90" \
+    initial_character="T" \
+    sort:="{
+  \"key\": \"number_of_skus\",
+  \"dir\": \"desc\"
+}"
+
+~~~
+{: title="HTTPie" }
+
+~~~ python
+# Install the Python Requests library:
+# `pip install requests`
+
+import requests
+import json
+
+
+def send_request():
+    # Discovery Supplier List
+    # POST https://api-dev.cruxconnect.com/discovery/suppliers/
+
+    try:
+        response = requests.post(
+            url="https://api-dev.cruxconnect.com/discovery/suppliers/",
+            headers={
+                "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
+                "Authorization": "Token 1234567890",
+                "Content-Type": "application/json; charset=utf-8",
+            },
+            data=json.dumps(    recent="90" \
+    initial_character="T" \
+    sort:="{
+  \"key\": \"number_of_skus\",
+  \"dir\": \"desc\"
+}")
+        )
+        print('Response HTTP Status Code: {status_code}'.format(
+            status_code=response.status_code))
+        print('Response HTTP Response Body: {content}'.format(
+            content=response.content))
+    except requests.exceptions.RequestException:
+        print('HTTP Request failed')
+
+~~~
+{: title="Python (requests)" }
+
+~~~ javascript
+// request Discovery Supplier List
+(function(callback) {
+    'use strict';
+
+    const httpTransport = require('https');
+    const responseEncoding = 'utf8';
+    const httpOptions = {
+        hostname: 'api-dev.cruxconnect.com',
+        port: '443',
+        path: '/discovery/suppliers/',
+        method: 'POST',
+        headers: {"Cookie":"sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp","Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
+    };
+    httpOptions.headers['User-Agent'] = 'node ' + process.version;
+
+    // Paw Store Cookies option is not supported
+
+    const request = httpTransport.request(httpOptions, (res) => {
+        let responseBufs = [];
+        let responseStr = '';
+
+        res.on('data', (chunk) => {
+            if (Buffer.isBuffer(chunk)) {
+                responseBufs.push(chunk);
+            }
+            else {
+                responseStr = responseStr + chunk;
+            }
+        }).on('end', () => {
+            responseStr = responseBufs.length > 0 ?
+                Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
+
+            callback(null, res.statusCode, res.headers, responseStr);
+        });
+
+    })
+    .setTimeout(0)
+    .on('error', (error) => {
+        callback(error);
+    });
+    request.write("{\"sort\":{\"key\":\"number_of_skus\",\"dir\":\"desc\"},\"initial_character\":\"T\",\"recent\":\"90\"}")
+    request.end();
+
+
+})((error, statusCode, headers, body) => {
+    console.log('ERROR:', error);
+    console.log('STATUS:', statusCode);
+    console.log('HEADERS:', JSON.stringify(headers));
+    console.log('BODY:', body);
+});
+
+~~~
+{: title="Node.js" }
