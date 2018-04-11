@@ -31,32 +31,32 @@ collections:
   product_retailer:
     visibility: all
     title: Product for Retailers
-    position: 5
+    position: 4.1
     type: api
   product_supplier:
     visibility: public
     title: Product for Supplier
-    position: 5
+    position: 4.2
     type: api
   discovery:
     visibility: public
     title: Discovery
-    position: 6
+    position: 5
     type: api
   ordering:
     visibility: public
     title: Ordering
-    position: 7
+    position: 6
     type: api
   files:
     visibility: public
     title: Files
-    position: 8
+    position: 7
     type: api
   tools:
     visibility: internal
     title: Operations Tools
-    position: 9
+    position: 8
     type: api
 
 plugins:
