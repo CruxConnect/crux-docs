@@ -3,7 +3,7 @@ title: /organizations/files/upload/
 name: Upload a File
 position: 5.01
 visibility: public
-method: PUT
+method: POST
 description: Upload a file
 ---
 
@@ -12,7 +12,7 @@ For this request the the content-type header should be `multipart/form-data`.
 ### Request Parameters
 
 file
-: (string) The file contents for upload
+: (string) The physical file to be uploaded.
 
 filename
 : (string) The filename for upload
