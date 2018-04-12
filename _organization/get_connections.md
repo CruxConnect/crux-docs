@@ -107,9 +107,6 @@ suppliers_retailer_account_number
 retailers_supplier_account_number
 : (string) Retailer's supplier account number
 
-<!-- task: not being returned in response ... should it be
-website : (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
--->
 
 #### Retailer Object:
 
@@ -122,9 +119,6 @@ organization
 contact
 : (object) Retailer Contact
 
-account_manager
-: (object) Retailer account manater
-
 #### Supplier:
 
 uuid
@@ -132,9 +126,6 @@ uuid
 
 organization
 : (object) Organization object containing a uuid, name, organization type, status, created date, active date, and an account manager
-
-account_manager
-: (object) Supplier account manager
 
 contact
 : (object) Supplier Contact
@@ -146,6 +137,8 @@ uuid
 
 name
 : (string) Name of the Organization
+
+website : (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
 
 org_type
 : (string) Organization Type defines if the organization is a "RETAILER" or a "SUPPLIER"
@@ -189,7 +182,22 @@ uuid
 person
 : (object) Person is an object containing a uuid, first name, last name, email, and phone number
 
-{% include objects/person.md %}
+#### Person Object:
+
+uuid
+: (string) Universal Unique Identifier for the Person
+
+first_name
+: (string) First Name of the Person ready for display. Character case is specified, eg, "La'Quanda McCann" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía", "Håkon".
+
+last_name
+: (string) Last Name of the Person ready for display. Character case is specified, eg, "La'Quanda McCann" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy Duck", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía Rodríguez de la Peña y de Ybarra", "Håkon Jørgensen".
+
+email
+: (string) Email address of the Person
+
+phone
+: (string) Phone number of the Person
 
 job_title
 : (string) Person's job title

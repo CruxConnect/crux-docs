@@ -77,8 +77,6 @@ website
 contact
 : (object) The contact information for the connectee
 
-
-<!-- TODO: turn this block into: {% include objects/contact.md %} -->
 ##### Contact object
 
 name

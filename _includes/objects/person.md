@@ -14,3 +14,8 @@ email
 
 phone
 : (string) Phone number of the Person
+
+<!-- task-github-127
+job_title
+: (string) Person's job title
+-->

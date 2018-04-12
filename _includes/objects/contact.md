@@ -1,3 +1,6 @@
+<!-- task-github-127
+Same as Person Object
+-->
 #### Contact Object
 uuid
 : (string) Universal Unique Identifier for the contact.

@@ -6,10 +6,7 @@ uuid
 organization
 : (object) Organization object containing a uuid, name, organization type, status, created date, active date, and an account manager
 
-<!--
-account_manager
-: (object) Supplier account manager
-
+<!-- task-github-127
 contact
 : (object) Supplier Contact
 -->
