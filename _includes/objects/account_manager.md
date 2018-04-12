@@ -7,3 +7,11 @@ person
 : (object) Person is an object containing a uuid, first name, last name, email, and phone number
 
 {% include objects/person.md %}
+
+job_title
+: (string) Person's job title
+
+<!--
+job_title
+:(string) Job title of the contact.
+-->
