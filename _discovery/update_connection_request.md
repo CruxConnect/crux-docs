@@ -1,99 +1,50 @@
 ---
-title: /organizations/connections/request/&lt;uuid&gt;/
-name: Update a Connection Request
-method: PATCH
-position: 3.06
+title: /organizations/connections/request/&ltuuid&gt/
+name: Update Connection Request
+position: 3.05
 visibility: public
-description: Update a connection request between a retailer and a supplier
+method: patch
+description:
 right_code: |
   ~~~ json
   {
-    organization_name: 'Bobs Big Boys',
-    primary_contact_name: 'Bob',
-    primary_contact_phone: '555.867.5309',
-    primary_contact_email: 'bob@bigboys.com',
-    organization_account_number: '0987654321',
-    additional_information: 'I like yodelling',
-    requested_integrations: [
+    "organization_name": "Thomas-Perkins",
+    "primary_contact_name": "owner user",
+    "primary_contact_phone": "801-555-1212",
+    "primary_contact_email": "roger@rabbit.com",
+    "retailer_account_number": "ABC123",
+    "additional_information": "What's up doc",
+    "integrations": [
       {
-        "type": "items",
-        "update_frequency": "30 6,12 * * *",
-        "file_locations": "ftp://foo:bar@baz.blerg",
-        "file_specs": "Special things you should know are: I like long walks on the beach",
-        "rules": ""
-      }, {
-        "type": "orders",
-        "update_frequency": "33 * * * *",
-        "file_locations": "ftp://foo:bar@baz.blerg",
-        "file_specs": "Special things you should know are: I like to get jiggy with it.",
-        "rules": "Only big willy style is allowed"
-      }, {
-        "type": "other",
-        "update_frequency": "* * * * *",
-        "file_locations": "ftp://foo:bar@baz.blerg",
-        "file_specs": "I like big butts and I cannot lie",
-        "rules": "Can't deny"
-      }, {
-        "type": "other",
-        "update_frequency": "13 3 3 9 *",
-        "file_locations": "ftp://foo:bar@baz.blerg",
-        "file_specs": "Annual Purge",
-        "rules": "There are no rules"
-      },
-    ]
-    uploaded_files: [
-      {
-        name: 'Example Item File',
-        uuid: '555b68e5-e407-4b15-b200-6fade8980596',
-      },{
-        name: 'Example Order File',
-        uuid: '8988ff95-e82d-4b28-b55f-057c3208c00e',
-      },{
-        name: 'Example Allocation File',
-        uuid: 'a55897c4-3d86-4804-851a-b89654a1d309',
+        "record_uuid": "3a438d7e-1234-46e1-96d2-efd9dac561d9",
+        "integration_type": "items",
+        "update_frequency": "* 20 12 3 8,9 *",
+        "file_specs": "items specs",
+        "rules": "if you can't say anything nice, don't say anything at all"
       }
     ]
   }
   ~~~
   {: title="Request" }
+
+
 ---
+### URL Parameters:
 
-#### Integration Objects
-type:
-: (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
-
-update_frequency:
-: (string) A cron representation of the update frequency for the integration
-
-file_locations:
-: (string) Locations (URLs) where the files for this integration can be retrieved
-
-file_specs:
-: (string) Specifications of the files
-
-rules:
-: (string) Rules and business logic for the integration
-
-#### File Object
-name:
-: (string) Name of the file
-
-uuid:
-: (string) The Universal Unique Identifier of the uploaded file
+uuid
+: (string) The Universal Unique Identifier for the connection request
 
 ### Request Parameters:
 
 For the purposes of ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
-Required:
+Optional:
 
 organization_name:
-: (string) The name of supplier.
+: (string) The name of supplier.  Note: this is returned as org_name in the other connection responses
 
 primary_contact_name:
-: (string) The name of the primary contact for the supplier.
-
-Optional:
+: (string) The name of the primary contact for the supplier. Note: this is returned as org_contact_full_name in other connection responses
 
 primary_contact_phone:
 : (string) The phone number for the primary contact.
@@ -113,6 +64,8 @@ requested_integrations:
 uploaded_files:
 : (array) Array of File Objects previously uploaded by the [#upload endpoint](#filesupload). Sample files or documentation.
 
+<!-- task-github-127 Create Integration include file -->
+
 #### Integration Objects
 type:
 : (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
@@ -129,6 +82,8 @@ file_specs:
 rules:
 : (string) Rules and business logic for the integration
 
+<!-- task-github-127 Create File include file -->
+
 #### File Object
 name:
 : (string) Name of the file
@@ -136,6 +91,161 @@ name:
 uuid:
 : (string) The Universal Unique Identifier of the uploaded file
 
-### Response Code:
+### Expected Response Codes
 
-204 Created
+Expected reponse code is 204.
+
+
+{% include links/response_codes.md %}
+
+
+~~~ bash
+curl -X "PATCH" "https://api-dev.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/" \
+     -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
+     -H 'Authorization: Token 1234567890' \
+     -H 'Content-Type: application/json; charset=utf-8' \
+     -d $'{
+  "integrations": [
+    {
+      "rules": "if you can'"'"'t say anything nice, don'"'"'t say anything at all",
+      "file_specs": "items specs",
+      "record_uuid": "3a438d7e-1234-46e1-96d2-efd9dac561d9",
+      "update_frequency": "* 20 12 3 8,9 *",
+      "integration_type": "items"
+    }
+  ],
+  "retailer_account_number": "ABC123",
+  "additional_information": "What'"'"'s up doc",
+  "primary_contact_name": "owner user",
+  "primary_contact_phone": "801-555-1212",
+  "organization_name": "Thomas-Perkins",
+  "primary_contact_email": "roger@rabbit.com"
+}'
+
+~~~
+{: title="Curl" }
+
+~~~ bash
+http --json PATCH 'https://api-dev.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/' \
+    'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
+    'Authorization':'Token 1234567890' \
+    'Content-Type':'application/json; charset=utf-8' \
+    integrations:="[
+  {
+    \"rules\": \"if you can't say anything nice, don't say anything at all\",
+    \"file_specs\": \"items specs\",
+    \"record_uuid\": \"3a438d7e-1234-46e1-96d2-efd9dac561d9\",
+    \"update_frequency\": \"* 20 12 3 8,9 *\",
+    \"integration_type\": \"items\"
+  }
+]" \
+    retailer_account_number="ABC123" \
+    additional_information="What's up doc" \
+    primary_contact_name="owner user" \
+    primary_contact_phone="801-555-1212" \
+    organization_name="Thomas-Perkins" \
+    primary_contact_email="roger@rabbit.com"
+
+~~~
+{: title="HTTPie" }
+
+~~~ python
+# Install the Python Requests library:
+# `pip install requests`
+
+import requests
+import json
+
+
+def send_request():
+    # Update Connection Request
+    # PATCH https://api-dev.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/
+
+    try:
+        response = requests.patch(
+            url="https://api-dev.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/",
+            headers={
+                "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
+                "Authorization": "Token 1234567890",
+                "Content-Type": "application/json; charset=utf-8",
+            },
+            data=json.dumps(    integrations:="[
+  {
+    \"rules\": \"if you can't say anything nice, don't say anything at all\",
+    \"file_specs\": \"items specs\",
+    \"record_uuid\": \"3a438d7e-1234-46e1-96d2-efd9dac561d9\",
+    \"update_frequency\": \"* 20 12 3 8,9 *\",
+    \"integration_type\": \"items\"
+  }
+]" \
+    retailer_account_number="ABC123" \
+    additional_information="What's up doc" \
+    primary_contact_name="owner user" \
+    primary_contact_phone="801-555-1212" \
+    organization_name="Thomas-Perkins" \
+    primary_contact_email="roger@rabbit.com")
+        )
+        print('Response HTTP Status Code: {status_code}'.format(
+            status_code=response.status_code))
+        print('Response HTTP Response Body: {content}'.format(
+            content=response.content))
+    except requests.exceptions.RequestException:
+        print('HTTP Request failed')
+
+~~~
+{: title="Python (requests)" }
+
+~~~ javascript
+// request Update Connection Request
+(function(callback) {
+    'use strict';
+
+    const httpTransport = require('https');
+    const responseEncoding = 'utf8';
+    const httpOptions = {
+        hostname: 'api-dev.cruxconnect.com',
+        port: '443',
+        path: '/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/',
+        method: 'PATCH',
+        headers: {"Cookie":"sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp","Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
+    };
+    httpOptions.headers['User-Agent'] = 'node ' + process.version;
+
+    // Paw Store Cookies option is not supported
+
+    const request = httpTransport.request(httpOptions, (res) => {
+        let responseBufs = [];
+        let responseStr = '';
+
+        res.on('data', (chunk) => {
+            if (Buffer.isBuffer(chunk)) {
+                responseBufs.push(chunk);
+            }
+            else {
+                responseStr = responseStr + chunk;
+            }
+        }).on('end', () => {
+            responseStr = responseBufs.length > 0 ?
+                Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
+
+            callback(null, res.statusCode, res.headers, responseStr);
+        });
+
+    })
+    .setTimeout(0)
+    .on('error', (error) => {
+        callback(error);
+    });
+    request.write("{\"organization_name\":\"Thomas-Perkins\",\"primary_contact_name\":\"owner user\",\"primary_contact_phone\":\"801-555-1212\",\"primary_contact_email\":\"roger@rabbit.com\",\"retailer_account_number\":\"ABC123\",\"additional_information\":\"What's up doc\",\"integrations\":[{\"record_uuid\":\"3a438d7e-1234-46e1-96d2-efd9dac561d9\",\"integration_type\":\"items\",\"update_frequency\":\"* 20 12 3 8,9 *\",\"file_specs\":\"items specs\",\"rules\":\"if you can't say anything nice, don't say anything at all\"}]}")
+    request.end();
+
+
+})((error, statusCode, headers, body) => {
+    console.log('ERROR:', error);
+    console.log('STATUS:', statusCode);
+    console.log('HEADERS:', JSON.stringify(headers));
+    console.log('BODY:', body);
+});
+
+~~~
+{: title="Node.js" }

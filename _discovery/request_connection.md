@@ -171,6 +171,7 @@ requested_integrations:
 uploaded_files:
 : (array) Array of File Objects previously uploaded by the [#upload endpoint](#filesupload). Sample files or documentation.
 
+<!-- task-github-127 Create Integration include file -->
 #### Integration Objects
 type:
 : (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
@@ -186,6 +187,8 @@ file_specs:
 
 rules:
 : (string) Rules and business logic for the integration
+
+<!-- task-github-127 Create File include file -->
 
 #### File Object
 name:
