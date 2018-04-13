@@ -1,24 +1,44 @@
 ---
-title: /discovery/participation/&lt;org_uuid&gt;/
+title: /discovery/participation/&ltuuid&gt/
 name: Get Discovery Participation
+position: 8.00
 visibility: internal
-position: 5.20
 method: get
 description: Get Discovery Catalog Participation
 right_code: |
   ~~~ json
-    {
-      "supplier_uuid": "2a0295b6-dd74-4239-9988-24fcdb1adcea",
-      "is_participating": true,
-      "discovery_catalog_uuid": "05a46c58-9d13-4912-9167-7effc2cc7482"
+  {
+    "supplier_uuid": "963e4549-712b-42d7-8bd9-34eb21d15ea9",
+    "is_participating": true,
+    "discovery_catalog_uuid": "ecb49a47-714f-4d37-927d-21921738d681",
+    "date_joined": "2018-04-06",
+    "requested_by": {
+      "uuid": "507368a9-b52c-47c2-8f18-681ed95ff27f",
+      "first_name": "",
+      "last_name": "",
+      "email": "kweaver@projectzuul.com",
+      "phone": "483-900-7133",
+      "job_title": "Account Manager"
+    },
+    "approved_by": {
+      "uuid": "6cf0bb8b-442e-43c4-8bbe-bc823e17981e",
+      "person": {
+        "uuid": "cfcc3db3-dbfd-4019-be0a-2858e08a760a",
+        "first_name": "Joe",
+        "last_name": "Account",
+        "email": "joe@cruxaccountmanager.com",
+        "phone": "717.334.5425x58894",
+        "job_title": "Account Manager"
+      }
     }
+  }
   ~~~
   {: title="Response" }
 
 ---
 Get Supplier participation in the Discovery Catalog and, if participating, the catalog the Supplier will use as their Discovery Catalog
 
-### Request
+### URL Parameters
 supplier_uuid
 : (uuid) The Universal Unique Identifier for the Supplier
 
@@ -31,16 +51,87 @@ is_participating
 : (bool) Whether or not the Supplier will participate in Discovery Catalog
 
 discovery_catalog_uuid
-: (string) The Universal Unique Identifier for the Discovery Catalog. Empty if not participating.
+: (string) The Universal Unique Identifier for the Discovery Catalog. Required if participation is true.  Empty/Ignored if not participating.
+
+date_joined
+: (string) Date joined the discovery catalog
+
+requested_by
+: (object) Person who requested participation in the discovery catalog
+
+approved_by
+: (object) Who approved the participation including a uuid and details on the person
+
+#### Requested By
+<!-- task-github-127 use Person include file -->
+
+uuid
+: (string) Universal Unique Identifier for the contact.
+
+first_name
+: (string) First Name of the contact.
+
+last_name
+: (string) Last Name of the contact.
+
+email
+: (string) Email address of the contact. Maximum length is 200 characters
+
+phone
+: (string) Phone number of the contact. Maximum length is 20 characters
+
+job_title
+:(string) Job title of the contact.
+
+#### Approved By
+uuid
+
+person
+: (object) Person who approved the discovery participation request
+
+#### Person
+
+<!-- task-github-127 use Person include file -->
+
+uuid
+: (string) Universal Unique Identifier for the contact.
+
+first_name
+: (string) First Name of the contact.
+
+last_name
+: (string) Last Name of the contact.
+
+email
+: (string) Email address of the contact. Maximum length is 200 characters
+
+phone
+: (string) Phone number of the contact. Maximum length is 20 characters
+
+job_title
+:(string) Job title of the contact.
+
+### Expected Response Codes
+
+{% include links/response_codes.md %}
+
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/catalog/&ltuuid&gt/"
+curl "https://api-dev.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/" \
+     -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
+     -H 'Authorization: Token 01234567890' \
+     -H 'Content-Type: application/json; charset=utf-8' \
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api-dev.cruxconnect.com/catalog/&ltuuid&gt/'
+http --json GET 'https://api-dev.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/' \
+    'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
+    'Authorization':'Token 01234567890' \
+    'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -50,15 +141,22 @@ http GET 'https://api-dev.cruxconnect.com/catalog/&ltuuid&gt/'
 # `pip install requests`
 
 import requests
+import json
 
 
 def send_request():
     # Get Discovery Participation
-    # GET https://api-dev.cruxconnect.com/catalog/&ltuuid&gt/
+    # GET https://api-dev.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/catalog/&ltuuid&gt/",
+            url="https://api-dev.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/",
+            headers={
+                "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
+                "Authorization": "Token 01234567890",
+                "Content-Type": "application/json; charset=utf-8",
+            },
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -80,9 +178,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/catalog/&ltuuid&gt/',
+        path: '/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/',
         method: 'GET',
-        headers: {}
+        headers: {"Cookie":"sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp","Authorization":"Token 01234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -111,7 +209,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("")
+    request.write("{}")
     request.end();
 
 

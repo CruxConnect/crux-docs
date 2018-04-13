@@ -2,7 +2,7 @@
 title: /discovery/participation/&lt;org_uuid&gt;/
 name: Update Discovery Participation
 visibility: internal
-position: 5.10
+position: 8.10
 method: post
 description: Update Discovery Catalog Participation
 right_code: |
