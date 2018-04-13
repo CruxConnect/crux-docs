@@ -2,7 +2,7 @@
 title: /organizations/connections/request/&lt;uuid&gt;/
 name: Update a Connection Request
 method: PATCH
-position: 1.15
+position: 3.06
 visibility: public
 description: Update a connection request between a retailer and a supplier
 right_code: |

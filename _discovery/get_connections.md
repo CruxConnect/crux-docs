@@ -1,7 +1,7 @@
 ---
 title: /organizations/connections/
 name: Get Connections
-position: 4.10
+position: 3.01
 visibility: public
 method: get
 description: Get all direct Connections specific to your account

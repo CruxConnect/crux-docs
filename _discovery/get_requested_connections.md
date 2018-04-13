@@ -101,10 +101,10 @@ pagination
 #### Connection Request Object:
 
 integrations
-: (object) Integrations to the including `item`, `order`, `allocation`, `tracking`, `other`
+: (object) Integrations to including `item`, `order`, `allocation`, `tracking`, `other`
 
-uploaded_files
-: (object) Uploaded files including the file name the file's UUID.
+uploaded_files:
+: (array) Array of File Objects previously uploaded by the [#upload endpoint](#filesupload). Sample files or documentation.
 
 record_uuid
 : (string) UUID of the connection request
@@ -121,7 +121,7 @@ primary_contact_phone
 primary_contact_email
 : (string) Email address for the orgainzation primary contact
 
-retailer_account_number
+retailer_account_number or supplier_account_number
 : (string) Account number for the retailer
 
 additional_information
@@ -140,17 +140,26 @@ approved_by
 {% include objects/response_pagination.md %}
 
 #### Integration Objects
-type:
+record_uuid
+: (object) UUID for the integration
+
+integration_type
 : (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
 
-update_frequency:
+update_frequency
 : (string) A cron representation of the update frequency for the integration
 
-file_locations:
+feed_source_file_locations
 : (string) Locations (URLs) where the files for this integration can be retrieved
 
-file_specs:
+file_specs
 : (string) Specifications of the files
+
+rules
+: (string) Rules and business logic for the integration
+
+date_created
+: (string) Date the integration was created
 
 rules:
 : (string) Rules and business logic for the integration

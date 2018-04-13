@@ -1,7 +1,7 @@
 ---
 title: /discovery/suppliers/
 name: Discovery Supplier List
-position: 7.00
+position: 3.00
 visibility: public
 method: post
 description: A list of all suppliers available to you in the discovery catalog
