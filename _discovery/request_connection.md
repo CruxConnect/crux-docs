@@ -235,7 +235,18 @@ curl -X "POST" "https://api-dev.cruxconnect.com/organizations/connections/reques
       "update_frequency": "ftp://foo:bar@baz.blerg"
     }
   ],
-  "uploaded_files": [],
+  "uploaded_files": [
+          {
+        name: 'Example Item File',
+        uuid: '555b68e5-e407-4b15-b200-6fade8980596',
+      },{
+        name: 'Example Order File',
+        uuid: '8988ff95-e82d-4b28-b55f-057c3208c00e',
+      },{
+        name: 'Example Allocation File',
+        uuid: 'a55897c4-3d86-4804-851a-b89654a1d309',
+      }
+  ],
   "additional_information": "Oh, It'"'"'s you Bob",
   "primary_contact_name": "Bob Brown",
   "primary_contact_phone": "801-555-1212",
@@ -272,7 +283,18 @@ http --json POST 'https://api-dev.cruxconnect.com/organizations/connections/requ
     \"update_frequency\": \"ftp://foo:bar@baz.blerg\"
   }
 ]" \
-    uploaded_files:="[]" \
+    uploaded_files:="[
+      {
+        name: 'Example Item File',
+        uuid: '555b68e5-e407-4b15-b200-6fade8980596',
+      },{
+        name: 'Example Order File',
+        uuid: '8988ff95-e82d-4b28-b55f-057c3208c00e',
+      },{
+        name: 'Example Allocation File',
+        uuid: 'a55897c4-3d86-4804-851a-b89654a1d309',
+      }
+    ]" \
     additional_information="Oh, It's you Bob" \
     primary_contact_name="Bob Brown" \
     primary_contact_phone="801-555-1212" \
@@ -323,7 +345,18 @@ def send_request():
     \"update_frequency\": \"ftp://foo:bar@baz.blerg\"
   }
 ]" \
-    uploaded_files:="[]" \
+    uploaded_files:="[
+      {
+        name: "Example Item File",
+        uuid: "555b68e5-e407-4b15-b200-6fade8980596",
+      },{
+        name: "Example Order File",
+        uuid: "8988ff95-e82d-4b28-b55f-057c3208c00e",
+      },{
+        name: "Example Allocation File",
+        uuid: "a55897c4-3d86-4804-851a-b89654a1d309",
+      }
+    ]" \
     additional_information="Oh, It's you Bob" \
     primary_contact_name="Bob Brown" \
     primary_contact_phone="801-555-1212" \
