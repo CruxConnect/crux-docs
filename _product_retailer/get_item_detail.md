@@ -1,5 +1,5 @@
 ---
-title: /products/items/
+title: /products/items/&lt;item_uuid&gt;/
 name: Get Item Detail
 position: 1.04
 visibility: Public
