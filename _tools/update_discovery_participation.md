@@ -25,10 +25,13 @@ is_participating
 discovery_catalog_uuid
 : (string) The Universal Unique Identifier for the Discovery Catalog. Required if participation is true.  Empty/Ignored if not participating.
 
-#### Response
+### Expected Response Codes
 
-204 Success
-409 when the org_uuid relates to a retailer not a supplier
+- 204 Success
+
+- 409 Conflict (when the org_uuid relates to a retailer not a supplier)
+
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/catalog/update" \

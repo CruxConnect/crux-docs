@@ -81,7 +81,7 @@ phone
 : (string) Phone number of the contact. Maximum length is 20 characters
 
 job_title
-:(string) Job title of the contact.
+: (string) Job title of the contact.
 
 #### Approved By
 uuid
@@ -109,7 +109,7 @@ phone
 : (string) Phone number of the contact. Maximum length is 20 characters
 
 job_title
-:(string) Job title of the contact.
+: (string) Job title of the contact
 
 ### Expected Response Codes
 
