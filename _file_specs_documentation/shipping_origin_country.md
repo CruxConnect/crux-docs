@@ -1,13 +1,13 @@
 ---
-title: country_of_origin
-name: country_of_origin
-position: 8
+title: shipping_origin_country
+name: shipping_origin_country
+position: 9
 visibility: all
 method: optional
-description: The country where the product was manufactured. Must be a 2-digit ISO country code.
+description: ISO country code where the product is shipping from.
 right_code: |
   ~~~ bash
-  SS
+  US
   ~~~
   {: title="2-digit ISO Country Code" }
 
