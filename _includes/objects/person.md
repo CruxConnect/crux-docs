@@ -7,10 +7,10 @@ uuid
 : (string) Universal Unique Identifier for the Person
 
 first_name
-: (string) First Name of the Person ready for display. Character case is specified, eg, "La'Quanda McCann" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía", "Håkon".
+: (string) First Name of the Person ready for display. Character case is specified, eg, "La'Quanda" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía", "Håkon".
 
 last_name
-: (string) Last Name of the Person ready for display. Character case is specified, eg, "La'Quanda McCann" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy Duck", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía Rodríguez de la Peña y de Ybarra", "Håkon Jørgensen".
+: (string) Last Name of the Person ready for display. Character case is specified, eg, "McCann" rather than "MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Duck", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "Haüy", "Rodríguez de la Peña y de Ybarra", "Jørgensen".
 
 email
 : (string) Email address of the Person

@@ -48,7 +48,7 @@ supplier_uuid
 : (string) The Universal Unique Identifier for the Supplier
 
 is_participating
-: (bool) Whether or not the Supplier will participate in Discovery Catalog
+: (bool) Whether or not the Supplier is participating in Discovery Catalog
 
 discovery_catalog_uuid
 : (string) The Universal Unique Identifier for the Discovery Catalog. Required if participation is true.  Empty/Ignored if not participating.

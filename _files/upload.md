@@ -9,7 +9,7 @@ right_code: |
   ~~~ json
   {
     "filename": "My File"
-    "file": "File contents - see description"
+    "file": "File contents in a multipart/form-data format"
   }
   ~~~
   {: title="Request" }
@@ -50,7 +50,7 @@ Upload A File
 # Long Description
 Upload a File
 
-For this request the the content-type header should be `multipart/form-data`.
+For this request the content-type header should be `multipart/form-data`.
 
 ### Request Parameters
 

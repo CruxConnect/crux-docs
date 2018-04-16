@@ -100,6 +100,7 @@ exclamation
 | 401  | Unauthorized           | You haven't told me who you are to slap Dusty. |
 | 403  | Permission Denied      | You are not allowed to slap Dusty.             |
 | 404  | Not Found              | Dusty is missing                               |
+| 409  | Critical               | Dusty is not a supplier                        |
 | 500  | Internal Server Error  | Dusty did something unexpected                 |
 
 {% include links/response_codes.md %}
