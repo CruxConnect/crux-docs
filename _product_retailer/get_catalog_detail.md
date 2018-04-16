@@ -1,7 +1,7 @@
 ---
 title: /products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/
 name: Get Catalog Detail
-position: 1.08
+position: 1.01
 visibility: Internal
 method: get
 description: Get the Details of a particular Catalog you have access to
