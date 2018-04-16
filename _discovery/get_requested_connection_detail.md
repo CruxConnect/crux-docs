@@ -42,8 +42,17 @@ right_code: |
     "retailer_account_number": "",
     "additional_information": "",
     "request_date": "2018-04-09",
-    "is_approved": false,
-    "approved_by": null
+    "is_approved": true,
+    "approved_by": {
+      "uuid": "6cf0bb8b-442e-43c4-8bbe-bc823e17981e",
+      "person": {
+        "uuid": "cfcc3db3-dbfd-4019-be0a-2858e08a760a",
+        "first_name": "Joe",
+        "last_name": "Account",
+        "email": "joe@cruxaccountmanager.com",
+        "phone": "717.334.5425x58894",
+        "job_title": "Account Manager"
+      }
   }
   ~~~
   {: title="Response" }
@@ -90,7 +99,8 @@ is_approved
 : (boolean) Approval status of the connection request
 
 approved_by
-: (string) Name of person approving the request
+: (object) Who approved the participation including a uuid and details on the person
+
 
 <!-- task-github-127 Create Integration include file -->
 
@@ -100,7 +110,7 @@ record_uuid
 : (object) UUID for the integration
 
 integration_type
-: (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
+: (string) Type of the integration. Options: "item", "order", "allocation", "tracking", "other"
 
 update_frequency
 : (string) A cron representation of the update frequency for the integration
@@ -116,6 +126,17 @@ rules
 
 date_created
 : (string) Date the integration was created
+
+#### Approved By
+uuid
+: (string) The Universal Unique Identifier for the Approval Object
+
+person
+: (object) Person who approved the discovery participation request
+
+#### Person
+
+{% include objects/contact.md %}
 
 <!-- task-github-127 Create File include file -->
 #### File Object

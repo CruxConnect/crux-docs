@@ -7,10 +7,12 @@ method: post
 description: Upload A File
 right_code: |
   ~~~ json
-
+  {
+    "filename": "My File"
+    "file": "File contents - see description"
+  }
   ~~~
   {: title="Request" }
-
   ~~~ json
   {
     "uuid": "70f0fc07-23ef-4174-ac67-def3c629b7ea"

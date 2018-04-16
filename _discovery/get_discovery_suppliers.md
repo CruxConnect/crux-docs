@@ -115,9 +115,9 @@ website
 contact
 : (object)  A Contact Object
 
+#### Contact Object
 
 {% include objects/contact.md %}
-
 
 {% include objects/response_pagination.md %}
 

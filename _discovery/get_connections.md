@@ -74,8 +74,8 @@ right_code: |
           "job_title": "Account Manager"
         }
       },
-      "suppliers_retailer_account_number": null,
-      "retailers_supplier_account_number": null
+      "suppliers_retailer_account_number": "38473",
+      "retailers_supplier_account_number": "59830"
     }
   ]
   ~~~
@@ -138,7 +138,8 @@ uuid
 name
 : (string) Name of the Organization
 
-website : (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
+website
+: (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
 
 org_type
 : (string) Organization Type defines if the organization is a "RETAILER" or a "SUPPLIER"
@@ -156,23 +157,8 @@ account_manager
 : (object) Account Manager object containing a uuid and an organization user
 
 #### Contact Object
-uuid
-: (string) Universal Unique Identifier for the contact.
 
-first_name
-: (string) First Name of the contact.
-
-last_name
-: (string) Last Name of the contact.
-
-email
-: (string) Email address of the contact. Maximum length is 200 characters
-
-phone
-: (string) Phone number of the contact. Maximum length is 20 characters
-
-job_title
-:(string) Job title of the contact.
+{% include objects/contact.md %}
 
 #### Account Manager Object:
 
@@ -184,23 +170,7 @@ person
 
 #### Person Object:
 
-uuid
-: (string) Universal Unique Identifier for the Person
-
-first_name
-: (string) First Name of the Person ready for display. Character case is specified, eg, "La'Quanda McCann" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía", "Håkon".
-
-last_name
-: (string) Last Name of the Person ready for display. Character case is specified, eg, "La'Quanda McCann" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy Duck", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía Rodríguez de la Peña y de Ybarra", "Håkon Jørgensen".
-
-email
-: (string) Email address of the Person
-
-phone
-: (string) Phone number of the Person
-
-job_title
-: (string) Person's job title
+{% include objects/contact.md %}
 
 ### Expected Response Codes
 

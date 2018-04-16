@@ -7,42 +7,16 @@ method: get
 description: Get a list of requested connections
 right_code: |
   ~~~ json
-  {}
+  {
+    "start": 0,
+    "limit": 50
+  }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
     "requests": [
-      {
-        "integrations": [
-          {
-            "record_uuid": "43e75dbc-20cd-488a-b904-8c1910904ec5",
-            "integration_type": "items",
-            "update_frequency": null,
-            "feed_source_file_locations": "items locs",
-            "file_specs": "items specs",
-            "rules": "items rules",
-            "date_created": "2018-04-09"
-          }
-        ],
-        "uploaded_files": [
-          {
-            "name": "Example Item File",
-            "uuid": "555b68e5-e407-4b15-b200-6fade8980596",
-          }
-        ],
-        "record_uuid": "6c822de1-8f9a-48ca-87c1-c5c788a6caf3",
-        "org_name": "G",
-        "org_contact_full_name": "g",
-        "primary_contact_phone": "g",
-        "primary_contact_email": "g@g.gg",
-        "retailer_account_number": "",
-        "additional_information": "",
-        "request_date": "2018-04-09",
-        "is_approved": false,
-        "approved_by": null
-      },
       {
         "integrations": [
           {
@@ -61,11 +35,20 @@ right_code: |
         "org_contact_full_name": "owner user",
         "primary_contact_phone": "1-541-219-3109x433",
         "primary_contact_email": "owneruser1@romero.com",
-        "retailer_account_number": null,
-        "additional_information": null,
+        "retailer_account_number": "384857",
+        "additional_information": "I think, therefore I am",
         "request_date": "2018-04-10",
-        "is_approved": false,
-        "approved_by": null
+        "is_approved": true,
+        "approved_by": {
+          "uuid": "6cf0bb8b-442e-43c4-8bbe-bc823e17981e",
+          "person": {
+            "uuid": "cfcc3db3-dbfd-4019-be0a-2858e08a760a",
+            "first_name": "Joe",
+            "last_name": "Account",
+            "email": "joe@cruxaccountmanager.com",
+            "phone": "717.334.5425x58894",
+            "job_title": "Account Manager"
+          },
       }
     ],
     "pagination": {
@@ -134,7 +117,7 @@ is_approved
 : (boolean) Approval status of the connection request
 
 approved_by
-: (string) Name of person approving the request
+: (object) Who approved the participation including a uuid and details on the person
 
 
 {% include objects/response_pagination.md %}
@@ -163,6 +146,18 @@ date_created
 
 rules:
 : (string) Rules and business logic for the integration
+
+#### Approved By
+
+uuid
+: (string) The Universal Unique Identifier for the Approval Object
+
+person
+: (object) Person who approved the discovery participation request
+
+#### Person
+
+{% include objects/contact.md %}
 
 #### File Object
 name:

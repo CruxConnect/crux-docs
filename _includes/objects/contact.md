@@ -1,7 +1,6 @@
 <!-- task-github-127
 Same as Person Object
 -->
-#### Contact Object
 uuid
 : (string) Universal Unique Identifier for the contact.
 
@@ -18,4 +17,4 @@ phone
 : (string) Phone number of the contact. Maximum length is 20 characters
 
 job_title
-:(string) Job title of the contact.
+: (string) Job title of the contact.

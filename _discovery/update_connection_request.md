@@ -68,7 +68,7 @@ uploaded_files:
 
 #### Integration Objects
 type:
-: (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
+: (string) Type of the integration. Options: "item", "order", "allocation", "tracking", "other"
 
 update_frequency:
 : (string) A cron representation of the update frequency for the integration
