@@ -1,14 +1,15 @@
 ---
-title: /products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/
+title: /products/catalogs/&ltcatalog-uuid&gt/add-items/
 name: Catalog Add Item
-position: 2.05
+position: 2.04
+visibility: public
 method: post
 description: Add already existing Items to a Catalog
 right_code: |
   ~~~ json
   {
     "item_uuids": [
-      "112f26c6-64e5-4814-b06a-24961e8abd21"
+      "fc82cac4-391b-4fab-a335-fe8867494750"
     ]
   }
   ~~~
@@ -18,12 +19,12 @@ right_code: |
 ---
 Add already existing Items to a Catalog for Retailers to access. This allows you to add Items to a Catalog with all associated SKUs. By providing your catalog_uuid and a list of item_ids with related data, you can successfully add them to the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
 
-URL Endpoint: /products/catalogs/<catalog_uuid>/add-items/
+URL Endpoint: /api/products/catalogs/<catalog_uuid>/add-items/
 
 ### Request Parameters:
 
 item_uuids
-: (list) The Item UUIDs list parameter holds item_uuids for all of the items you wish to add to your Catalog
+: (array) The Item UUIDs array parameter holds item_uuids for all of the items you wish to add to your Catalog
 
 #### Item ID Object:
 
@@ -31,10 +32,10 @@ item_id
 : (string) The Item Identifier is the identifier for the item as provided by the supplier. This is the parent identifier for the child SKU; SKUs are considered children identifiers to the item_id.
 
 skus
-: (list) The Stock Keeping Units (SKUs) list contains individual SKUs, or Item-variants, with their SKU-level data
+: (array) The Stock Keeping Units (SKUs) array contains individual SKUs, or Item-variants, with their SKU-level data
 
 restrict_from_marketplaces
-: (list) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
+: (array) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
 
 cost_range
 : (object) The Cost Range object contains the minimum and maximum prices you will pay for the Item, based on the available variants (SKUs).
@@ -46,7 +47,7 @@ msrp_range
 : (object) The Manufacturer's Suggested Retail Price Range object contains the minimum and maximum MSRPs for the Item, based on the available variants (SKUs).
 
 product_images
-: (list) The Product Images list stores a list of images for the item, based on the available variants (SKUs)
+: (array) The Product Images array stores a array of images for the item, based on the available variants (SKUs)
 
 title
 : (string) The Item Title is the title for the Item
@@ -82,7 +83,7 @@ custom_attributes
 : (object) The Custom Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
 
 categories
-: (list) The Categories list contains a list of the categories, as provided by the Supplier, for this Item.
+: (array) The Categories array contains a list of the categories, as provided by the Supplier, for this Item.
 
 #### SKU Object:
 
@@ -105,10 +106,10 @@ msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
+: (array) The array of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
 
 product_images
-: (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
+: (array) The Product Images are a array of product image objects for the SKU which contain a uuid, url, width, and height of the image.
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.
@@ -117,7 +118,7 @@ product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
 
 inventory_lists
-: (list) The Inventory Lists list contains all of the Inventory List objects where this SKU currently resides.
+: (array) The Inventory Lists array contains all of the Inventory array objects where this SKU currently resides.
 
 created
 : (string) The Created parameter indicates the date the SKU was Created in our system.
@@ -251,24 +252,18 @@ width
 height
 : (number) The Image Height in pixels for the Item Product Image
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/b1a6513c-d624-4f33-9a59-6f6c670cf280/add-items/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "item_uuids": [
-    "112f26c6-64e5-4814-b06a-24961e8abd21"
+    "fc82cac4-391b-4fab-a335-fe8867494750"
   ]
 }'
 
@@ -276,11 +271,11 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-1
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/b1a6513c-d624-4f33-9a59-6f6c670cf280/add-items/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
-  \"112f26c6-64e5-4814-b06a-24961e8abd21\"
+  \"fc82cac4-391b-4fab-a335-fe8867494750\"
 ]"
 
 ~~~
@@ -296,17 +291,17 @@ import json
 
 def send_request():
     # Catalog Add Item
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/b1a6513c-d624-4f33-9a59-6f6c670cf280/add-items/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/b1a6513c-d624-4f33-9a59-6f6c670cf280/add-items/",
             headers={
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    item_uuids:="[
-  \"112f26c6-64e5-4814-b06a-24961e8abd21\"
+  \"fc82cac4-391b-4fab-a335-fe8867494750\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -329,7 +324,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/f2f8273a-18c4-44d8-820f-7404bd4f0589/add-items/',
+        path: '/products/catalogs/b1a6513c-d624-4f33-9a59-6f6c670cf280/add-items/',
         method: 'POST',
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
@@ -359,7 +354,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_uuids\":[\"112f26c6-64e5-4814-b06a-24961e8abd21\"]}")
+    request.write("{\"item_uuids\":[\"fc82cac4-391b-4fab-a335-fe8867494750\"]}")
     request.end();
 
 

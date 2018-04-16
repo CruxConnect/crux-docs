@@ -1,51 +1,59 @@
 ---
-title: /data/export/&ltexport_uuid&gt/
-name: Retrieve Export
-position: 4.00
-method: get
-description: Retrieve a previously requested Export
+title: /products/catalogs/&ltcatalog-uuid&gt/remove-skus/
+name: Catalog Remove SKU
+position: 2.03
+visibility: public
+method: post
+description: Remove SKUs from a Catalog
 right_code: |
   ~~~ json
   {
-    "uuid": "2b409e66-0f95-4175-b568-f05b7db7e5b2"
+    "sku_uuids": [
+      "fcf57d87-19ae-46ad-adea-aad17ccb2d15"
+    ]
   }
   ~~~
-  {: title="Response" }
+  {: title="Request" }
 
 
 ---
-Retrieve a previously requested Export via the export_uuid. By calling this API Endpoint with the export_uuid in the URL, you can retrieve a previously requested Export.
+Remove SKUs from a Catalog for Retailers to access. This allows you to remove SKUs from a Catalog. By providing your catalog_uuid and a list of sku_uuids, you can successfully remove them from the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
 
-### Response Parameters:
+### URL Parameters
 
-uuid
-: (string) The Universal Unique Identifier for the Export
+catalog-uuid
+: (string) Unique Universal Identifier for the Catalog
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+### Request Parameters:
+
+sku_uuids
+: (array) Array of SKU uuid(s) for all of the SKUs you wish to remove from your Catalog
+
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{}'
-'
+     -d $'{
+  "sku_uuids": [
+    "fcf57d87-19ae-46ad-adea-aad17ccb2d15"
+  ]
+}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
-    'Content-Type':'application/json; charset=utf-8'
-
+    'Content-Type':'application/json; charset=utf-8' \
+    sku_uuids:="[
+  \"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"
+]"
 
 ~~~
 {: title="HTTPie" }
@@ -59,17 +67,19 @@ import json
 
 
 def send_request():
-    # INCOMPLETE - Retrieve Export
-    # GET https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/
+    # Catalog Remove SKU
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/
 
     try:
-        response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/data/export/232497cc-95eb-4ffd-a084-edea0c413267/",
+        response = requests.post(
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/",
             headers={
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps()
+            data=json.dumps(    sku_uuids:="[
+  \"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"
+]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -82,6 +92,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
+// request Catalog Remove SKU
 (function(callback) {
     'use strict';
 
@@ -90,8 +101,8 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/data/export/232497cc-95eb-4ffd-a084-edea0c413267/',
-        method: 'GET',
+        path: '/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/',
+        method: 'POST',
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
@@ -120,7 +131,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{}")
+    request.write("{\"sku_uuids\":[\"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"]}")
     request.end();
 
 

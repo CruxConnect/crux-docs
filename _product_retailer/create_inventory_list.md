@@ -2,6 +2,7 @@
 title: /products/inventory-lists/
 name: Create Inventory List
 position: 2.11
+visibility: public
 method: post
 description: Create an Inventory List for your account
 right_code: |

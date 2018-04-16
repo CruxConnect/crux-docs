@@ -1,59 +1,52 @@
 ---
-title: /products/catalogs/&ltcatalog-uuid&gt/add-skus/
-name: Catalog Add SKU
-position: 2.01
-visibility: public
+title: /discovery/participation/&lt;org_uuid&gt;/
+name: Update Discovery Participation
+visibility: internal
+position: 8.10
 method: post
-description: Add already existing SKUs to a Catalog
+description: Update Discovery Catalog Participation
 right_code: |
   ~~~ json
   {
-    "sku_uuids": [
-      "12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d"
-    ]
+    "is_participating": true,
+    "discovery_catalog_uuid": "05a46c58-9d13-4912-9167-7effc2cc7482"
   }
   ~~~
   {: title="Request" }
 
-
 ---
-Add already existing SKUs to a Catalog for Retailers to access. By providing your catalog_uuid in the URL and array of sku_uuids, you can successfully add them to items previously included in the indicated Catalog.
+Update Supplier participation in the Discovery Catalog and the identify which catalog they will use as their Discovery Catalog
 
-### URL Parameters
+### Request
 
-catalog_uuid
-: (string) Universal Unique Identifier for the catalog to which the sku will be added
+is_participating
+: (bool) Whether or not the Supplier will participate in Discovery Catalog
 
-### Request Parameters:
-
-sku_uuids
-: (array) The SKU UUIDs parameter holds an array of sku_uuids
+discovery_catalog_uuid
+: (string) The Universal Unique Identifier for the Discovery Catalog. Required if participation is true.  Empty/Ignored if not participating.
 
 ### Expected Response Codes
 
+- 204 Success
+
+- 409 Conflict (when the org_uuid relates to a retailer not a supplier)
+
 {% include links/response_codes.md %}
 
-
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/catalog/update" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "sku_uuids": [
-    "12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d"
-  ]
+  "": ""
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json POST 'https://api-sandbox.cruxconnect.com/catalog/update' \
     'Content-Type':'application/json; charset=utf-8' \
-    sku_uuids:="[
-  \"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"
-]"
+    =""
 
 ~~~
 {: title="HTTPie" }
@@ -67,19 +60,16 @@ import json
 
 
 def send_request():
-    # Catalog Add SKU
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/
+    # Update Discovery Participation and Catalog
+    # POST https://api-sandbox.cruxconnect.com/catalog/update
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/",
+            url="https://api-sandbox.cruxconnect.com/catalog/update",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sku_uuids:="[
-  \"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"
-]")
+            data=json.dumps(    ="")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -92,7 +82,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Catalog Add SKU
+// request Update Discovery Participation and Catalog
 (function(callback) {
     'use strict';
 
@@ -101,12 +91,13 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/',
+        path: '/catalog/update',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
+    // Paw Store Cookies option is not supported
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
@@ -131,7 +122,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_uuids\":[\"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"]}")
+    request.write("{\"\":\"\"}")
     request.end();
 
 

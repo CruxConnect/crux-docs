@@ -1,39 +1,43 @@
 ---
 title: /products/catalogs/
 name: Create Catalog
-position: 2.02
+position: 2.00
+visibility: public
 method: post
 description: Create a Catalog
 right_code: |
   ~~~ json
   {
-    "name": "Spring Thanos Collection P3dI52EbvsjW2LP3htmDVRahafWnEm6v",
-    "description": "The Spring Thanos Collection is a test catalog for the purposes of testing"
+    "name": "Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU",
+    "description": "Crux Worldwide Connection is a test catalog for the purposes of testing"
   }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "uuid": "9f987473-03e7-46aa-97e8-63d385703ce3",
+    "uuid": "7c973d2d-e888-4aa6-878d-5b62253cf0ea",
     "supplier": {
-      "uuid": "9ff4ca63-7a46-4eee-a4fb-859e201460c8"
+      "uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137"
     },
     "skus": [],
     "num_skus": 0,
     "default_shipping_cost": null,
+    "default_handling_cost": null,
     "retailers": [],
-    "created": "2017-11-01T20:12:07.898788Z",
-    "last_updated": "2017-11-01T20:12:07.898842Z",
-    "name": "Winter Thanos Collection",
-    "description": "The Winter Thanos Collection is a test catalog for the purposes of testing",
-    "default_shipping_cost_currency": "USD"
+    "created": "2018-03-13T20:33:24.960830Z",
+    "last_updated": "2018-03-13T20:33:24.960897Z",
+    "name": "Crux  Worldwide Connection 0P6bc03TVbnoA73UAP1DrsNnrTpnCDWR",
+    "description": "Crux Worldwide Connection is a test catalog for the purposes of testing",
+    "default_shipping_cost_currency": "USD",
+    "default_handling_cost_currency": "USD"
   }
   ~~~
   {: title="Response" }
 
 ---
 Create a new Catalog for Retailers to access.
+
 
 ### Request Parameters:
 
@@ -49,16 +53,19 @@ uuid
 : (string) Universal Unique Identifier for the Catalog
 
 supplier
-: (object) The Supplier object contains a supplier_uuid
+: (object) Supplier object containing the supplier uuid
 
 skus
-: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
+: (array) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
 
 num_skus
 : (number) The total Number of SKUs per the Catalog
 
 default_shipping_cost
 : (number) The Default Shipping Cost parameter contains a Shipping Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable ship cost per the SKUs or a more sophisticated Shipping strategy.
+
+default_handling_cost
+: (number) The Default Handling Cost parameter contains a Handling Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable handling cost per the SKUs or a more sophisticated handling strategy.
 
 retailer
 : (object) The Retailer object contains a single retailer_uuid.
@@ -76,17 +83,31 @@ description
 : (string) The Description the supplier has provided for this Catalog
 
 default_shipping_cost_currency
-: (string) The Default Shipping Cost Currency parameter indicates what
+: (string) The Default Shipping Cost Currency parameter indicates the default currency
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+default_handling_cost_currency
+: (string) The Default Handling Cost Currency parameter indicates the default currency
+
+
+#### Supplier Object
+
+uuid
+: (string) The Universal Unique Identifier for the supplier
+
+#### SKUs Object
+
+sku_uuid
+: (string) The Universal Unique Identifier for the SKU
+
+
+#### Retailer Object
+
+retailer_uuid
+: (string) The Universal Unique Identifier for the Retailer
+
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
@@ -94,8 +115,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "name": "Spring Thanos Collection P3dI52EbvsjW2LP3htmDVRahafWnEm6v",
-  "description": "The Spring Thanos Collection is a test catalog for the purposes of testing"
+  "name": "Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU",
+  "description": "Crux Worldwide Connection is a test catalog for the purposes of testing"
 }'
 
 ~~~
@@ -105,8 +126,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/" \
 http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
-    name="Spring Thanos Collection P3dI52EbvsjW2LP3htmDVRahafWnEm6v" \
-    description="The Spring Thanos Collection is a test catalog for the purposes of testing"
+    name="Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU" \
+    description="Crux Worldwide Connection is a test catalog for the purposes of testing"
 
 ~~~
 {: title="HTTPie" }
@@ -130,8 +151,8 @@ def send_request():
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    name="Spring Thanos Collection P3dI52EbvsjW2LP3htmDVRahafWnEm6v" \
-    description="The Spring Thanos Collection is a test catalog for the purposes of testing")
+            data=json.dumps(    name="Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU" \
+    description="Crux Worldwide Connection is a test catalog for the purposes of testing")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -183,7 +204,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"name\":\"Spring Thanos Collection P3dI52EbvsjW2LP3htmDVRahafWnEm6v\",\"description\":\"The Spring Thanos Collection is a test catalog for the purposes of testing\"}")
+    request.write("{\"name\":\"Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU\",\"description\":\"Crux Worldwide Connection is a test catalog for the purposes of testing\"}")
     request.end();
 
 

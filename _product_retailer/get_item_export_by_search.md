@@ -2,6 +2,7 @@
 title: /products/items/search/export/
 name: Get Item Export by Search
 position: 2.22
+visibility: public
 method: post
 description: Get Item List allows you to return a complete list of items you are interested in.
 right_code: |

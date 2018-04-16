@@ -16,21 +16,31 @@ collections:
   organization:
     visibility: all
     title: Organization
-    position: 3
+    position: 2
     type: api
   accounting:
     visibility: public
     title: Accounting
+    position: 3
+    type: api
+  product:
+    visibility: all
+    title: Product
     position: 4
     type: api
   product_retailer:
-    visibility: public
+    visibility: all
     title: Product for Retailers
-    position: 5
+    position: 4.1
     type: api
   product_supplier:
     visibility: public
     title: Product for Supplier
+    position: 4.2
+    type: api
+  discovery:
+    visibility: public
+    title: Discovery
     position: 5
     type: api
   ordering:
@@ -38,9 +48,9 @@ collections:
     title: Ordering
     position: 6
     type: api
-  export:
+  files:
     visibility: public
-    title: Export
+    title: Files
     position: 7
     type: api
   tools:

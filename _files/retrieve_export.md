@@ -1,33 +1,33 @@
 ---
-title: /products/catalogs/&ltcatalog-uuid&gt/add-skus/
-name: Catalog Add SKU
-position: 2.01
+title: /api/data/export/&ltexport-uuid&gt/
+name: Retrieve Export
+position: 5.00
 visibility: public
-method: post
-description: Add already existing SKUs to a Catalog
+method: get
+description: Retrieve a previously requested Export
 right_code: |
+
   ~~~ json
   {
-    "sku_uuids": [
-      "12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d"
-    ]
+    "uuid": "d54c7721-0a6a-425c-b874-507437af3e11",
+    "status": "COMPLETED",
+    "url": "https://stable-exports.s3.amazonaws.com/order_export.csv?Signature=MN6L1KGTiicgitbbnXvJQLztpoU%3D&AWSAccessKeyId=AKIAID5FCZH4JE4B45XQ&Expires=1520954409"
   }
   ~~~
-  {: title="Request" }
-
+  {: title="Response" }
 
 ---
-Add already existing SKUs to a Catalog for Retailers to access. By providing your catalog_uuid in the URL and array of sku_uuids, you can successfully add them to items previously included in the indicated Catalog.
+Retrieve a previously requested Export via the export_uuid. By calling this API Endpoint with the export_uuid in the URL, you can retrieve a previously requested Export.
 
 ### URL Parameters
 
-catalog_uuid
-: (string) Universal Unique Identifier for the catalog to which the sku will be added
+export_uuid
+: (string) The Universal Unique Identifier for the Export
 
-### Request Parameters:
+### Response Parameters:
 
-sku_uuids
-: (array) The SKU UUIDs parameter holds an array of sku_uuids
+uuid
+: (string) The Universal Unique Identifier for the Export
 
 ### Expected Response Codes
 
@@ -35,25 +35,19 @@ sku_uuids
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/" \
+curl "https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "sku_uuids": [
-    "12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d"
-  ]
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
-    'Content-Type':'application/json; charset=utf-8' \
-    sku_uuids:="[
-  \"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"
-]"
+    'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -67,19 +61,17 @@ import json
 
 
 def send_request():
-    # Catalog Add SKU
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/
+    # Retrieve Export
+    # GET https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/
 
     try:
-        response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/",
+        response = requests.get(
+            url="https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/",
             headers={
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sku_uuids:="[
-  \"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"
-]")
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -92,7 +84,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Catalog Add SKU
+// request Retrieve Export
 (function(callback) {
     'use strict';
 
@@ -101,8 +93,8 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/',
-        method: 'POST',
+        path: '/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/',
+        method: 'GET',
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
@@ -131,7 +123,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_uuids\":[\"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"]}")
+    request.write("{}")
     request.end();
 
 
