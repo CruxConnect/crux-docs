@@ -27,16 +27,12 @@ For this request the the content-type header should be `multipart/form-data`.
 
 ### Request Parameters
 
-file
-: (string) The file contents for upload
-
-filename
-: (string) The filename for upload
+{% include objects/file_upload.md %}
 
 ### Response Parameters:
 
 uuid
-: (string) The Universal Unique Identifier for the uploaded file
+: (string) The Universal Unique Identifier for the uploaded file. (For clarity: the UUID goes with the upload, not the file. If you upload the exact same file more than once, each upload will have its own UUID.)
 
 ### Expected Response Codes
 

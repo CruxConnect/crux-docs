@@ -104,8 +104,11 @@ primary_contact_phone
 primary_contact_email
 : (string) Email address for the orgainzation primary contact
 
-retailer_account_number or supplier_account_number
+retailer_account_number
 : (string) Account number for the retailer
+
+supplier_account_number
+: (string) Account number for the supplier
 
 additional_information
 : (string) Additional information
@@ -117,7 +120,7 @@ is_approved
 : (boolean) Approval status of the connection request
 
 approved_by
-: (object) Who approved the participation including a uuid and details on the person
+: (object) Crux employee who approved the supplier's visibility in the Discovery Marketplace
 
 
 {% include objects/response_pagination.md %}
@@ -150,7 +153,7 @@ rules:
 #### Approved By
 
 uuid
-: (string) The Universal Unique Identifier for the Approval Object
+: (string) The Universal Unique Identifier
 
 person
 : (object) Person who approved the discovery participation request
@@ -160,11 +163,8 @@ person
 {% include objects/contact.md %}
 
 #### File Object
-name:
-: (string) Name of the file
 
-uuid:
-: (string) The Universal Unique Identifier of the uploaded file
+{% include objects/file_upload.md %}
 
 ### Expected Response Codes
 

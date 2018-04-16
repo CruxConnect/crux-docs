@@ -54,39 +54,23 @@ discovery_catalog_uuid
 : (string) The Universal Unique Identifier for the Discovery Catalog. Required if participation is true.  Empty/Ignored if not participating.
 
 date_joined
-: (string) Date joined the discovery catalog
+: (string) Most recent date supplier made themselves visible in the discovery catalog
 
 requested_by
-: (object) Person who requested participation in the discovery catalog
+: (object) Person Object for supplier employee who requested the supplier's visibility in the Discovery Marketplace.
 
 approved_by
-: (object) Who approved the participation including a uuid and details on the person
+: (object) Crux employee who approved the supplier's visibility in the Discovery Marketplace
 
 #### Requested By
 <!-- task-github-127 use Person include file -->
 
-uuid
-: (string) Universal Unique Identifier for the contact.
-
-first_name
-: (string) First Name of the contact.
-
-last_name
-: (string) Last Name of the contact.
-
-email
-: (string) Email address of the contact. Maximum length is 200 characters
-
-phone
-: (string) Phone number of the contact. Maximum length is 20 characters
-
-job_title
-: (string) Job title of the contact.
+{% include objects/contact.md %}
 
 #### Approved By
 
 uuid
-: (string) The Universal Unique Identifier for the Approval Object
+: (string) The Universal Unique Identifier
 
 person
 : (object) Person who approved the discovery participation request

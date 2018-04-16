@@ -36,7 +36,7 @@ uuid
 
 ### Request Parameters:
 
-For the purposes of ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
+For ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
 Optional:
 
@@ -85,11 +85,8 @@ rules:
 <!-- task-github-127 Create File include file -->
 
 #### File Object
-name:
-: (string) Name of the file
 
-uuid:
-: (string) The Universal Unique Identifier of the uploaded file
+{% include objects/file_upload.md %}
 
 ### Expected Response Codes
 

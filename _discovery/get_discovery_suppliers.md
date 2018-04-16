@@ -101,7 +101,7 @@ description
 : (string) Summary, provided by the supplier, of what the supplier offers. The length is unconstrained.
 
 fulfillment_percentage
-: (float) Percentage of SKUs ordered from the supplier through Crux that the supplier has delivered. At a minimum, the fulfillment_percentage will be calculated to at least two decimal places.
+: (float) Percentage of SKUs ordered from the supplier through Crux that the supplier has delivered. The fulfillment_percentage will be calculated to at least two decimal places.
 
 number_of_skus
 : (int) Number of SKUs that the supplier has made visible in the Discovery Catalog.

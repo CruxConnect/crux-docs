@@ -63,7 +63,7 @@ Initiate a connection request between a retailer and a supplier
 
 ### Request Parameters:
 
-For the purposes of ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
+For ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
 Required:
 
@@ -110,12 +110,8 @@ rules:
 : (string) Rules and business logic for the integration
 
 #### File Object
-name:
-: (string) Name of the file
 
-uuid:
-: (string) The Universal Unique Identifier of the uploaded file
-
+{% include objects/file_upload.md %}
 
 ### Response Parameters:
 

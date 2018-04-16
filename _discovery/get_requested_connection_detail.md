@@ -99,7 +99,7 @@ is_approved
 : (boolean) Approval status of the connection request
 
 approved_by
-: (object) Who approved the participation including a uuid and details on the person
+: (object) Crux employee who approved the supplier's visibility in the Discovery Marketplace
 
 
 <!-- task-github-127 Create Integration include file -->
@@ -129,7 +129,7 @@ date_created
 
 #### Approved By
 uuid
-: (string) The Universal Unique Identifier for the Approval Object
+: (string) The Universal Unique Identifier
 
 person
 : (object) Person who approved the discovery participation request
@@ -141,11 +141,7 @@ person
 <!-- task-github-127 Create File include file -->
 #### File Object
 
-name:
-: (string) Name of the file
-
-uuid:
-: (string) The Universal Unique Identifier of the uploaded file
+{% include objects/file_upload.md %}
 
 ### Expected Response Codes
 
