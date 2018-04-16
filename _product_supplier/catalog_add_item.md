@@ -246,7 +246,7 @@ width
 height
 : (number) The Image Height in pixels for the Item Product Image
 
-### Expected Response Codes
+# Response Codes
 
 {% include links/response_codes.md %}
 
