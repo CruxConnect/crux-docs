@@ -2,7 +2,7 @@
 title: /products/items/
 name: Get Item Detail
 position: 1.04
-visibility: Internal
+visibility: Public
 method: get
 description: Get Details about an Item and the SKUs associated to it.
 right_code: |

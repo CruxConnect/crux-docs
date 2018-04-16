@@ -1,8 +1,8 @@
 ---
-title: /products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/
+title: /products/catalogs/&lt;uuid&gt;/
 name: Get Catalog Detail
 position: 1.01
-visibility: Internal
+visibility: Public
 method: get
 description: Get the Details of a particular Catalog you have access to
 right_code: |
@@ -28,8 +28,8 @@ right_code: |
     },
     "created": "2018-04-06T01:12:09.804995Z",
     "last_updated": "2018-04-06T01:12:18.259897Z",
-    "name": "The elfin industry catalog",
-    "description": "Because if your elfin industry catalog is bold, incomplete, and beautiful, everyone will think that of your believe, too! It's clear, crisp, and guaranteed! Oh, no you don't!  Our elfin industry catalog kicks the earthy competition in the smile! Because we care about how your elfin industry catalog looks! You know what's accurate about elfin industry catalog? Because without elfin industry catalog, you would look so cheery, don't you think? Be the kind of person your mother wanted you to me. All your wildest dreams would come true. All the other kids with the pumped up kicks will wish they had elfin industry catalog. I like, it, I love it, I want some more of it. When it's all said and done, there's still elfin industry catalog. Still. You know you want it."
+    "name": "The industry catalog",
+    "description": "Add your description here"
   }
   ~~~
   {: title="Response" }
