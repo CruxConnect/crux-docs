@@ -394,7 +394,7 @@ filters
 : (object) The Filters object parameter includes all of the potential filters you wish to include in your Search. These filters include "cost_per_unit", "number_of_item_images", "image_height", "image_width", etc.
 
 facets
-: (object) The Facets object parameter includes all of the potential facets you wish to include in your Search. These facets include "supplier", "shipping_cost_type", "shipping_origin_country", "country_of_origin", "bundle_type", "product_identifiers", "categories", etc.
+: (object) The Facets object parameter includes all of the potential facets you wish to include in your Search. These facets include "supplier", "shipping_cost_type", "shipping_origin_country", "country_of_origin", "bundle_type", "product_identifiers", "categories", "catalog_type", etc.
 
 search_term
 : (string) The Search Term you would like to search for
@@ -439,6 +439,9 @@ product_identifiers
 categories
 : (list) The Categories list is a list of categories in which SKUs may reside
 
+catalog_type
+: (list) The kind of catalog to which the retrieved SKUs belong, "standard" and/or "discovery".  Defaults to "standard".
+
 #### Pagination Object:
 
 start
@@ -462,7 +465,7 @@ sort
 : (list) The Sort list parameter includes the attribute(s) on which you are performing a Sort on your Search
 
 facets
-: (object) The Facets object contains product_identifiers, bundle_type, condition, supplier, catalogs, categories, shipping_origin_country, shipping_cost_type, and inventory lists
+(object) The Facets object contains product_identifiers, bundle_type, condition, supplier, catalogs, categories, shipping_origin_country, shipping_cost_type, catalog_type, and inventory lists
 
 filters
 : (object) The Filters object contains image_width, cost_per_unit, minimum_tier_quantity, quantity_in_stock, and image_height
