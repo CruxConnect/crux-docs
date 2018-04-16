@@ -9,7 +9,7 @@ right_code: |
   ~~~ json
   {
     "filename": "My File"
-    "file": "File contents in a multipart/form-data format"
+    "file": "<multipart file contents>"
   }
   ~~~
   {: title="Request" }

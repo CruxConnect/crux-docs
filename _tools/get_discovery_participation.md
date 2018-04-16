@@ -54,7 +54,7 @@ discovery_catalog_uuid
 : (string) The Universal Unique Identifier for the Discovery Catalog. Required if participation is true.  Empty/Ignored if not participating.
 
 date_joined
-: (string) Most recent date supplier made themselves visible in the discovery catalog
+: (string) Most recent date supplier was made visible in the discovery catalog
 
 requested_by
 : (object) Person Object for supplier employee who requested the supplier's visibility in the Discovery Marketplace.
