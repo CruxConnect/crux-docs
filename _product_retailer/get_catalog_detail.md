@@ -1,8 +1,8 @@
 ---
-title: /products/catalogs/&lt;uuid&gt;/
+title: /products/catalogs/&lt;catalog_uuid&gt;/
 name: Get Catalog Detail
 position: 1.01
-visibility: Public
+visibility: public
 method: get
 description: Get the Details of a particular Catalog you have access to
 right_code: |

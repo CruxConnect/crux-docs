@@ -2,7 +2,7 @@
 title: /products/catalogs/
 name: Get Catalogs
 position: 1.0
-visibility: Public
+visibility: public
 method: get
 description: Get the Catalogs you have access to
 right_code: |
