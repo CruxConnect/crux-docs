@@ -96,7 +96,7 @@ sku_uuid
 retailer_uuid
 : (string) The Universal Unique Identifier for the Retailer
 
-### Expected Response Codes
+# Response Codes
 
 {% include links/response_codes.md %}
 
