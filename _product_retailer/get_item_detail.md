@@ -83,8 +83,6 @@ right_code: |
           "quantity_on_backorder": 68,
           "number_of_units_bundled": 1,
           "_distinguishing_info_hash": "beACz7hjKsvFEnTGWQBuJ6",
-          "minimum_advertised_price_currency": "USD",
-          "msrp_currency": "USD",
           "item": {
             "uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
           },
