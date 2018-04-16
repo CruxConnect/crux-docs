@@ -1,25 +1,25 @@
 ---
 title: /orders/
 name: Get Orders
-position: 3.00
+position: 4.00
+visibility: public
 method: post
 description: Get the Orders for your organization
 right_code: |
   ~~~ json
   {
     "start": 0,
-    "limit": 2,
+    "limit": 1,
     "line_item_statuses": [
-      "Unallocated"
+      "unallocated"
     ],
-    "line_item_status_conjunction": "or",
     "start_date": "2017-07-31T06:00:00.000Z",
     "end_date": "2018-08-03T06:00:00.000Z",
-    "term": "",
+    "search_term": "",
     "org_uuids": [],
     "sort": {
       "key": "date",
-      "value": "asc"
+      "value": "desc"
     }
   }
   ~~~
@@ -27,13 +27,13 @@ right_code: |
 
   ~~~ json
   {
-    "total_results": 104,
+    "total_results": 108,
     "orders": [
       {
-        "uuid": "9a39a7e0-078b-4321-a6dc-02bb2a505243",
+        "uuid": "49bd2a6d-fe6b-4145-a059-9439289801ae",
         "is_allocated": false,
-        "purchase_order_id": "po-XLisbIUs",
-        "created_date": "2018-02-26T17:53:57.326890Z",
+        "purchase_order_id": "po-5fkQo2ET",
+        "created_date": "2018-03-08T22:20:25.311697Z",
         "notes": "here are some notes",
         "fees": {
           "estimated_shipping_cost": 0,
@@ -56,7 +56,8 @@ right_code: |
           "city": "New York",
           "state": "NY",
           "postal_code": "10112",
-          "phone_number": null
+          "phone_number": null,
+          "country": null
         },
         "requested_shipping": {
           "shipping_carrier": "UPS",
@@ -64,13 +65,15 @@ right_code: |
         },
         "line_items": [
           {
-            "uuid": "c3fb678f-f881-4894-a7ca-424119289cc4",
+            "uuid": "9af950c1-5dac-4da4-a86c-f1a0f3bdff40",
             "status": "Unallocated",
             "item_uuid": "a904832e-2ad4-4ad7-8339-e4b0877a42bd",
             "item_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
             "sku_uuid": "f9ded77b-35b2-45e1-a071-2eec8e99f581",
             "sku_id": "000106",
             "sku_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
+            "sku_title_variants": "PulseTech Xtreme Charger Auto  100X010 XC100-P {}",
+            "sku_special_instructions": null,
             "cost": 66.05,
             "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
             "supplier_name": "Crux Supplier A",
@@ -161,13 +164,10 @@ limit
 : (int) The Limit is the element number of "Order" in your Orders List where you would like your results to end. If you have 10 orders and you limit at 8 and start at 4, only orders 4, 5, 6, 7, and 8 are included in the results.
 
 sort
-: (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in
+: (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in.
 
 line_item_statuses
 : (array) One or more line item statuses. Will include orders with statuses based upon that `status_conjunction`. Possible Values are: `Unallocated`, `Allocated`, `Rejected`, `HasTracking`, `Backordered`, `Cancelled`. The response will contain orders with statuses that match the provided line_item_status (as combined based on line_item_status_conjunction).
-
-line_item_status_conjunction
-: (string) Determines whether search for line_item_statuses returns orders with a union, intersection, or complement of statuses. Possible values: `and`, `or`, `only`. Default: `or`. The conjunction determines whether we return every order that contains all (and), at least one (or), or only (only) the provided line-item-status(es). For conjunction only, line_item_statuses must have exactly one line-item-status.
 
 start_date
 : (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
@@ -183,10 +183,7 @@ org_uuids
 
 ##### Sort Object:
 
-key
-: (string) The Key is the attribute on which you'd like to sort. Currently this is 'date' only.
-dir
-: (string) The Direction is ascending or descending.  Use 'asc' for ascending.  Any other value, would return the default direction of descending.
+{% include objects/sort.md %}
 
 ### Response Parameters:
 
@@ -194,7 +191,7 @@ total_results
 : (number) The Total Results are the total order count per your oganization
 
 orders
-: (list) The list of orders per your organization
+: (array) The list of orders per your organization
 
 #### Order Object:
 
@@ -226,18 +223,11 @@ requested_shipping
 : (object) The Requested Shipping object contains the shipping carrier and shipping method from the request to create the Order.
 
 line_items
-: (list) The Line Items list contains line items with their uuid, item uuid, item name, sku uuid, sku id, sku name, cost, supplier uuid, supplier name, tracking numbers list, and allocation object.
+: (array) The Line Items list contains line items with their uuid, item uuid, item name, status, sku uuid, sku id, sku name, cost, supplier uuid, supplier name, tracking numbers object, and allocation object.
 
 #### Fees Object:
 
-estimated_shipping_cost
-: (number) The Estimated Shipping Cost for the Order
-
-drop_ship_fee
-: (number) The Drop Ship Fee for the Order as charged by the Supplier
-
-order_fee
-: (number) The Order Fee charged for processing the order through our platform
+{% include objects/fees.md %}
 
 #### Retailer Object:
 
@@ -252,29 +242,7 @@ user
 
 #### Address Object:
 
-name
-: (string) The Name associated with the Address
-
-business_name
-: (string) The Business Name associated with the Address
-
-address1
-: (string) The First line of the Address
-
-address2
-: (string) The Second line of the Address. If an apartment or suite, that information should be entered in this parameter.
-
-city
-: (string) The City associated with the Address
-
-state
-: (string) The State associated with the Address
-
-postal_code
-: (number) The Zip Code / Postal Code associated with the Address
-
-phone_number
-: (number) The Phone Number associated with the address
+{% include objects/address_business.md %}
 
 #### Requested Shipping Object:
 
@@ -286,83 +254,17 @@ shipping_method
 
 #### Line Item Object:
 
-uuid
-: (string) Universal Unique Identifier for the Line Item
-
-item_uuid
-: (string) Universal Unique Identifier for the Item
-
-item_name
-: (string) The Item Name
-
-sku_uuid
-: (string) The Univeral Unique Identifier for the SKU
-
-sku_id
-: (string) The SKU as provided by the Supplier
-
-sku_name
-: (string) The SKU Name
-
-status
-: (string) The Status for the Line Item. Possible Values are: `Unallocated`, `Allocated`, `Rejected`, `HasTracking`, `Backordered`, `Cancelled`
-
-cost
-: (number) The Cost of the SKU
-
-supplier_uuid
-: (string) The Universal Unique Identifier for the Supplier
-
-supplier_name
-: (string) The Supplier Name
-
-tracking_numbers
-: (array) The Tracking Numbers array parameter includes tracking number objects. Each include a tracking number, carrier, method, weight, cost, shipping date, and quantity.
-
-allocation
-: (object) The Allocation object contains quantity ordered, quantity allocated, quantity backordered, quantity rejected, and backorder date.
+{% include objects/line_item.md %}
 
 #### Tracking Numbers Object:
 
-tracking_number
-: (string) The tracking number for this shipment
-
-shipping_carrier
-: (string) The Shipping Carrier for this shipment
-
-shipping_method
-: (string) The Shipping Method for this shipment
-
-shipping_weight
-: (string) The Shipping Weight for this shipment
-
-shipping_cost
-: (number) The Shipping Cost for this shipment
-
-shipping_date
-: (string) The date the order was shipped
-
-quantity
-: (int) The number of items in the shipment
+{% include objects/tracking_number.md %}
 
 #### Allocation Object:
 
-quantity_ordered
-: (int) The Quantity Ordered of the SKU
+{% include objects/allocation.md %}
 
-quantity_allocated
-: (int) The Quantity Allocated by the Supplier for this Order
-
-quantity_backordered
-: (int) The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state. If you allow the supplier to fulfill the order, this number is supposed to decrease to 0 as they get the item in-stock in their warehouse(s). When a Supplier gets a Backorder Date, they add it to the field labeled "backorder_date".
-
-quantity_rejected
-: (int) The Quantity Rejected by the Supplier is the Quantity that they simply cannot fulfill. Reasons may vary, such as state or federal law, customs, or being out-of-stock on an already discontinued product line.
-
-backorder_date
-: (string) The Date that the Backordered SKU will be available for shipment. This date should be used as a tentative schedule which may help determine if waiting for the order is appropriate. Should this date be unacceptable, you may cancel the order with the "Cancel Order" API call.
-
-Expected responses include 200, 400, 401, 403, or 404.
+{% include links/response_codes.md %}
 
 
 ~~~ bash
@@ -370,20 +272,19 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "line_item_status_conjunction": "or",
   "sort": {
     "key": "date",
-    "value": "asc"
+    "value": "desc"
   },
   "start": 0,
   "start_date": "2017-07-31T06:00:00.000Z",
-  "limit": 2,
+  "limit": 1,
   "line_item_statuses": [
-    "Unallocated"
+    "unallocated"
   ],
   "end_date": "2018-08-03T06:00:00.000Z",
-  "org_uuids": [],
-  "term": ""
+  "search_term": "",
+  "org_uuids": []
 }'
 
 ~~~
@@ -393,20 +294,19 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
-    line_item_status_conjunction="or" \
     sort:="{
   \"key\": \"date\",
-  \"value\": \"asc\"
+  \"value\": \"desc\"
 }" \
     start:=0 \
     start_date="2017-07-31T06:00:00.000Z" \
-    limit:=2 \
+    limit:=1 \
     line_item_statuses:="[
-  \"Unallocated\"
+  \"unallocated\"
 ]" \
     end_date="2018-08-03T06:00:00.000Z" \
-    org_uuids:="[]" \
-    term=""
+    search_term="" \
+    org_uuids:="[]"
 
 ~~~
 {: title="HTTPie" }
@@ -430,20 +330,19 @@ def send_request():
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    line_item_status_conjunction="or" \
-    sort:="{
+            data=json.dumps(    sort:="{
   \"key\": \"date\",
-  \"value\": \"asc\"
+  \"value\": \"desc\"
 }" \
     start:=0 \
     start_date="2017-07-31T06:00:00.000Z" \
-    limit:=2 \
+    limit:=1 \
     line_item_statuses:="[
-  \"Unallocated\"
+  \"unallocated\"
 ]" \
     end_date="2018-08-03T06:00:00.000Z" \
-    org_uuids:="[]" \
-    term="")
+    search_term="" \
+    org_uuids:="[]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -495,7 +394,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"start\":0,\"limit\":2,\"line_item_statuses\":[\"Unallocated\"],\"line_item_status_conjunction\":\"or\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"asc\"}}")
+    request.write("{\"start\":0,\"limit\":1,\"line_item_statuses\":[\"unallocated\"],\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"search_term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"desc\"}}")
     request.end();
 
 
