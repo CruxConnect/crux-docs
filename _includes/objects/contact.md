@@ -1,10 +1,8 @@
 <!-- task-github-127
-Same as Contact Object
+Same as Person Object
 -->
-#### Person Object:
-
 uuid
-: (string) Universal Unique Identifier for the Person
+: (string) Universal Unique Identifier for the contact.
 
 first_name
 : (string) First Name of the Person ready for display. Character case is specified, eg, "La'Quanda" rather than "LA'QUANDA MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Daffy", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "René Just Haüy", "Sofía", "Håkon".
@@ -13,12 +11,10 @@ last_name
 : (string) Last Name of the Person ready for display. Character case is specified, eg, "McCann" rather than "MCCANN". Maximum length is 200 characters. The name is encoded in UTF-8 and is not restricted to traditional English characters. Examples of valid names: "Duck", "Sūn Démíng (孫德明)", "Kawin Thamsatchanan (กวินทร์ ธรรมสัจจานันท์)", "Haüy", "Rodríguez de la Peña y de Ybarra", "Jørgensen".
 
 email
-: (string) Email address of the Person
+: (string) Email address of the contact. Maximum length is 200 characters
 
 phone
-: (string) Phone number of the Person
+: (string) Phone number of the contact. Maximum length is 20 characters
 
-<!-- task-github-127
 job_title
-: (string) Person's job title
--->
+: (string) Job title of the contact.

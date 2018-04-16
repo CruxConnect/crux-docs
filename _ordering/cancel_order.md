@@ -1,13 +1,19 @@
 ---
 title: /orders/cancel/
 name: Cancel Order
-position: 3.06
+position: 4.02
+visibility: public
 method: patch
 description: Cancel a pending Order (for Retailers)
 right_code: |
   ~~~ json
   {
-    "order_uuid": "358cd9ec-de30-45c5-b12b-5e4f78037645"
+    "order_uuid": "54a31ec5-b0be-4a92-af4c-1b75fe8e6e29",
+    "skus": [
+      {
+        "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f"
+      }
+    ]
   }
   ~~~
   {: title="Request" }
@@ -15,6 +21,7 @@ right_code: |
 
 ---
 Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, your request to cancel an order is sent to the pertinent supplier(s).
+
 
 ### Request Parameters:
 
@@ -25,27 +32,15 @@ order_uuid
 : (string) The Universal Unique Identifier for the Order which you intend to cancel
 
 skus
-: (list) The list of SKUs ordered including the supplier_id, sku_id and quantity per SKU
+: (list) The list of SKUs ordered including the supplier_uuid, sku_id and quantity per SKU
 
 #### SKU Object:
 
-supplier_id
-: (string) The Supplier Identifier is the ID associated with the Supplier providing the SKU
+{% include objects/sku.md %}
 
-sku_id
-: (string) The SKU ID is the SKU provided by the supplier which identifies that product you are purchasing
+### Expected Response Codes
 
-quantity
-: (number) The Quantity ordered of the SKU ID
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 204  | No Content             | The API call was received and the order cancel request is now pending        |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+{% include links/response_codes.md %}
 
 
 ~~~ bash
@@ -53,7 +48,12 @@ curl -X "PATCH" "https://api-sandbox.cruxconnect.com/orders/cancel/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "order_uuid": "358cd9ec-de30-45c5-b12b-5e4f78037645"
+  "skus": [
+    {
+      "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f"
+    }
+  ],
+  "order_uuid": "54a31ec5-b0be-4a92-af4c-1b75fe8e6e29"
 }'
 
 ~~~
@@ -63,7 +63,12 @@ curl -X "PATCH" "https://api-sandbox.cruxconnect.com/orders/cancel/" \
 http --json PATCH 'https://api-sandbox.cruxconnect.com/orders/cancel/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
-    order_uuid="358cd9ec-de30-45c5-b12b-5e4f78037645"
+    skus:="[
+  {
+    \"supplier_uuid\": \"757ce28d-fbd6-4b9f-8051-f847482e169f\"
+  }
+]" \
+    order_uuid="54a31ec5-b0be-4a92-af4c-1b75fe8e6e29"
 
 ~~~
 {: title="HTTPie" }
@@ -87,7 +92,12 @@ def send_request():
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    order_uuid="358cd9ec-de30-45c5-b12b-5e4f78037645")
+            data=json.dumps(    skus:="[
+  {
+    \"supplier_uuid\": \"757ce28d-fbd6-4b9f-8051-f847482e169f\"
+  }
+]" \
+    order_uuid="54a31ec5-b0be-4a92-af4c-1b75fe8e6e29")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -139,7 +149,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"order_uuid\":\"358cd9ec-de30-45c5-b12b-5e4f78037645\"}")
+    request.write("{\"order_uuid\":\"54a31ec5-b0be-4a92-af4c-1b75fe8e6e29\",\"skus\":[{\"supplier_uuid\":\"757ce28d-fbd6-4b9f-8051-f847482e169f\"}]}")
     request.end();
 
 

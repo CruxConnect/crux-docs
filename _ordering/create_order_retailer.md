@@ -1,7 +1,8 @@
 ---
 title: /orders/create/
 name: Create Order - Retailer
-position: 3.05
+position: 4.06
+visibility: public
 method: post
 description: Create an Order on your account
 right_code: |
@@ -9,17 +10,13 @@ right_code: |
   {
     "skus": [
       {
-        "quantity": "23",
-        "sku_id": "HHL59hE",
-        "supplier_id": "12347k-lk8s97-asdlfk-098sdf"
-      },
-      {
-        "quantity": "478",
-        "sku_id": "wZtMF91H2tIQ8RU",
-        "supplier_id": "12347k-lk8s97-asdlfk-098sdf"
+        "quantity": "36",
+        "sku_id": "000078",
+        "supplier_uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137",
+        "price": "27.99"
       }
     ],
-    "purchase_order_id": "po-SHJ7ffBu",
+    "purchase_order_id": "po-CLOB25tC",
     "notes": "here are some notes",
     "shipping_carrier": "UPS",
     "shipping_method": "Ground",
@@ -30,7 +27,8 @@ right_code: |
       "address2": "STE 123",
       "city": "New York",
       "state": "NY",
-      "postal_code": "10112"
+      "postal_code": "10112",
+      "phone_number": "801-555-1212"
     }
   }
   ~~~
@@ -38,11 +36,10 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "358cd9ec-de30-45c5-b12b-5e4f78037645",
-    "status": "New",
+    "uuid": "1ab8e55f-ea7e-4a58-b7d3-db723272dbbd",
     "is_allocated": false,
-    "purchase_order_id": "po-SqDgLVTq",
-    "created_date": "2017-10-30T22:21:40.156604Z",
+    "purchase_order_id": "po-xErcaA5u",
+    "created_date": "2018-03-12T20:27:39.579586Z",
     "notes": "here are some notes",
     "fees": {
       "estimated_shipping_cost": 0,
@@ -50,10 +47,10 @@ right_code: |
       "order_fee": 0
     },
     "retailer": {
-      "name": "projectthanos",
-      "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
+      "name": "Crux Retailer",
+      "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
       "user": {
-        "name": "Crux  User",
+        "name": "Crux User",
         "email": "user@mycompany.com"
       }
     },
@@ -64,7 +61,9 @@ right_code: |
       "address2": "STE 123",
       "city": "New York",
       "state": "NY",
-      "postal_code": "10112"
+      "postal_code": "10112",
+      "phone_number": "801-555-1212",
+      "country": null
     },
     "requested_shipping": {
       "shipping_carrier": "UPS",
@@ -72,37 +71,21 @@ right_code: |
     },
     "line_items": [
       {
-        "uuid": "57dd034f-5238-4336-94b9-8cb9b9bbd3ee",
-        "item_uuid": "97fa8fdf-6b94-409e-a684-841d42605881",
-        "item_name": "The changeable soap item",
-        "sku_uuid": "45d9c4a6-0bf0-4fa6-95df-c421ddba16e5",
-        "sku_id": "HHL59hE",
-        "sku_name": "The changeable soap item",
-        "cost": 49.99,
-        "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
-        "supplier_name": "Flynn Ltd",
+        "uuid": "d3842ec4-d1f8-4cf1-860b-b9eeb8a35680",
+        "status": "Unallocated",
+        "item_uuid": "0d0c2332-8cc6-4768-8417-55bd0b298da7",
+        "item_name": "Deltran BT Junior 12 Volt",
+        "sku_uuid": "17c4d2c8-a5ae-43b9-aecc-c4d688184395",
+        "sku_id": "000078",
+        "sku_name": "Deltran BT Junior 12 Volt",
+        "sku_title_variants": "Deltran BT Junior 12 Volt {}",
+        "sku_special_instructions": null,
+        "cost": 22,
+        "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
+        "supplier_name": "Crux Supplier A",
         "tracking_numbers": [],
         "allocation": {
-          "quantity_ordered": 53,
-          "quantity_allocated": 0,
-          "quantity_backordered": 0,
-          "quantity_rejected": 0,
-          "backorder_date": null
-        }
-      },
-      {
-        "uuid": "161734ec-cd42-4e00-a4d6-171230437ab3",
-        "item_uuid": "97fa8fdf-6b94-409e-a684-841d42605881",
-        "item_name": "The changeable soap item",
-        "sku_uuid": "995f5edd-7457-4661-9072-e5e9632d8b21",
-        "sku_id": "wZtMF91H2tIQ8RU",
-        "sku_name": "The changeable soap item",
-        "cost": 17.76,
-        "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
-        "supplier_name": "Flynn Ltd",
-        "tracking_numbers": [],
-        "allocation": {
-          "quantity_ordered": 283,
+          "quantity_ordered": 22,
           "quantity_allocated": 0,
           "quantity_backordered": 0,
           "quantity_rejected": 0,
@@ -117,10 +100,11 @@ right_code: |
 ---
 Create an Order on your account. By providing the SKU(s), quantity ordered, destination, etc. you may create an order for fulfillment.
 
+
 ### Request Parameters:
 
 skus
-: (list) The list of SKUs ordered including the supplier_id, sku_id and quantity per SKU
+: (array) The array SKU objects ordered including the supplier_id, sku_id and quantity per SKU
 
 purchase_order_id
 : (string) The Purchase Order ID that you provide to identify your order
@@ -139,37 +123,11 @@ address
 
 #### SKU Object:
 
-supplier_id
-: (string) The Supplier Identifier is the ID associated with the Supplier providing the SKU
-
-sku_id
-: (string) The SKU ID is the SKU provided by the supplier which identifies that product you are purchasing
-
-quantity
-: (number) The Quantity ordered of the SKU ID
+{% include objects/sku.md %}
 
 #### Address Object:
 
-name
-: (string) The Name associated with the Address
-
-business_name
-: (string) The Business Name associated with the Address
-
-address1
-: (string) The First line of the Address
-
-address2
-: (string) The Second line of the Address. If an apartment or suite, that information should be entered in this parameter.
-
-city
-: (string) The City associated with the Address
-
-state
-: (string) The State associated with the Address
-
-postal_code
-: (number) The Zip Code / Postal Code associated with the Address
+{% include objects/address_business.md %}
 
 ### Response Parameters:
 
@@ -177,7 +135,7 @@ uuid
 : (string) The Universal Unique Identifier for the Order
 
 status
-: (string) The current Status of the Order (e.g. "New", "Pending", "Complete", "Cancelled")
+: (string) The current Status of the Order
 
 is_allocated
 : (boolean) Is the order Allocated by the Supplier as of the moment you get the response. Generally, this is false initially as the supplier(s) providing the SKU(s) must allocate for each Order.
@@ -189,7 +147,7 @@ created_date
 : (string) The Date when the order was created. It will always be the same day as when you send in the request to Create the Order.
 
 notes
-: (string) The notes you provided from your request to create the Order.
+: (string) The notes you provided from your request to create the Order. Returns a Max length 250 characters
 
 fees
 : (object) The Fees object contains the estimated shipping cost, drop ship fee, and order fee
@@ -208,14 +166,7 @@ line_items
 
 #### Fees Object:
 
-estimated_shipping_cost
-: (number) The Estimated Shipping Cost for the Order
-
-drop_ship_fee
-: (number) The Drop Ship Fee for the Order as charged by the Supplier
-
-order_fee
-: (number) The Order Fee charged for processing the order through our platform
+{% include objects/fees.md %}
 
 #### Retailer Object:
 
@@ -230,26 +181,7 @@ user
 
 #### Address Object:
 
-name
-: (string) The Name associated with the Address
-
-business_name
-: (string) The Business Name associated with the Address
-
-address1
-: (string) The First line of the Address
-
-address2
-: (string) The Second line of the Address. If an apartment or suite, that information should be entered in this parameter.
-
-city
-: (string) The City associated with the Address
-
-state
-: (string) The State associated with the Address
-
-postal_code
-: (number) The Zip Code / Postal Code associated with the Address
+{% include objects/address_business.md %}
 
 #### Requested Shipping Object:
 
@@ -261,64 +193,19 @@ shipping_method
 
 #### Line Item Object:
 
-uuid
-: (string) Universal Unique Identifier for the Line Item
+{% include objects/line_item.md %}
 
-item_uuid
-: (string) Universal Unique Identifier for the Item
+#### Tracking Numbers Object:
 
-item_name
-: (string) The Item Name
-
-sku_uuid
-: (string) The Univeral Unique Identifier for the SKU
-
-sku_id
-: (string) The SKU as provided by the Supplier
-
-sku_name
-: (string) The SKU Name
-
-cost
-: (number) The Cost of the SKU
-
-supplier_uuid
-: (string) The Universal Unique Identifier for the Supplier
-
-supplier_name
-: (string) The Supplier Name
-
-tracking_numbers
-: (list) The Tracking Numbers list provides a Tracking Number or list of multiple Tracking Numbers for this particular SKU.
-
-allocation
-: (object) The Allocation object contains quantity ordered, quantity allocated, quantity backordered, quantity rejected, and backorder date.
+{% include objects/tracking_number.md %}
 
 #### Allocation Object:
 
-quantity_ordered
-: (number) The Quantity Ordered of the SKU
+{% include objects/allocation.md %}
 
-quantity_allocated
-: (number) The Quantity Allocated by the Supplier for this Order
+### Expected Response Codes
 
-quantity_backordered
-: (number) The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state. If you allow the supplier to fulfill the order, this number is supposed to decrease to 0 as they get the item in-stock in their warehouse(s). When a Supplier gets a Backorder Date, they add it to the field labeled "backorder_date".
-
-quantity_rejected
-: (number) The Quantity Rejected by the Supplier is the Quantity that they simply cannot fulfill. Reasons may vary, such as state or federal law, customs, or being out-of-stock on an already discontinued product line.
-
-backorder_date
-: (string) The Date that the Backordered SKU will be available for shipment. This date should be used as a tentative schedule which may help determine if waiting for the order is appropriate. Should this date be unacceptable, you may cancel the order with the "Cancel Order" API call.
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 201  | Created                | The API call was received and the order was created                          |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+{% include links/response_codes.md %}
 
 
 ~~~ bash
@@ -332,20 +219,19 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
     "address1": "30 Rockefeller Plaza",
     "business_name": "NBC",
     "postal_code": "10112",
+    "phone_number": "801-555-1212",
     "name": "Bob Iger",
     "address2": "STE 123"
   },
-  "purchase_order_id": "po-SHJ7ffBu",
+  "purchase_order_id": "po-CLOB25tC",
   "notes": "here are some notes",
   "shipping_carrier": "UPS",
   "skus": [
     {
-      "quantity": "23",
-      "sku_id": ""
-    },
-    {
-      "quantity": "478",
-      "sku_id": ""
+      "quantity": "36",
+      "price": "27.99",
+      "sku_id": "000078",
+      "supplier_uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137"
     }
   ],
   "shipping_method": "Ground"
@@ -364,20 +250,19 @@ http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
   \"address1\": \"30 Rockefeller Plaza\",
   \"business_name\": \"NBC\",
   \"postal_code\": \"10112\",
+  \"phone_number\": \"801-555-1212\",
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-SHJ7ffBu" \
+    purchase_order_id="po-CLOB25tC" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"23\",
-    \"sku_id\": \"\"
-  },
-  {
-    \"quantity\": \"478\",
-    \"sku_id\": \"\"
+    \"quantity\": \"36\",
+    \"price\": \"27.99\",
+    \"sku_id\": \"000078\",
+    \"supplier_uuid\": \"b5f05054-dce4-4286-96fc-b9424d6b2137\"
   }
 ]" \
     shipping_method="Ground"
@@ -410,20 +295,19 @@ def send_request():
   \"address1\": \"30 Rockefeller Plaza\",
   \"business_name\": \"NBC\",
   \"postal_code\": \"10112\",
+  \"phone_number\": \"801-555-1212\",
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-SHJ7ffBu" \
+    purchase_order_id="po-CLOB25tC" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"23\",
-    \"sku_id\": \"\"
-  },
-  {
-    \"quantity\": \"478\",
-    \"sku_id\": \"\"
+    \"quantity\": \"36\",
+    \"price\": \"27.99\",
+    \"sku_id\": \"000078\",
+    \"supplier_uuid\": \"b5f05054-dce4-4286-96fc-b9424d6b2137\"
   }
 ]" \
     shipping_method="Ground")
@@ -478,7 +362,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"skus\":[{\"quantity\":\"23\",\"sku_id\":\"\"},{\"quantity\":\"478\",\"sku_id\":\"\"}],\"purchase_order_id\":\"po-SHJ7ffBu\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\"}}")
+    request.write("{\"skus\":[{\"quantity\":\"36\",\"sku_id\":\"000078\",\"supplier_uuid\":\"b5f05054-dce4-4286-96fc-b9424d6b2137\",\"price\":\"27.99\"}],\"purchase_order_id\":\"po-CLOB25tC\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"}}")
     request.end();
 
 
