@@ -32,6 +32,7 @@ GET
 
     // These are N/A, so... null
     "bank_name": null,
+    "status": null,
   },
   {
     "uuid": "payment-method-uuid",
@@ -42,6 +43,7 @@ GET
     "bank_name": "STRIPE TEST BANK",
     "last4": "4242",
     "is_default": true, // Required. boolean
+    "status": 'new', // Applies only to bank accounts. Use stripe's values
 
     // These are N/A, so... null
     "address": {}, // No address, so give an empty object
