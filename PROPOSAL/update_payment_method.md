@@ -3,7 +3,7 @@
 `/billing/payment-methods/UUID
 
 ## Method
-PATCH
+PUT
 
 ## Request
 ```js
