@@ -1,6 +1,6 @@
 # Update Payment Method
 ## URI
-/something/<CARD_ID>/ <!-- TODO -->
+`/billing/payment-methods/UUID
 
 ## Method
 PATCH
@@ -26,4 +26,7 @@ PATCH
 ## Response
 ```js
 ```
-200? 202? 204? <!-- TODO -->
+204 No Content
+
+## Error Response
+404 Not Found
