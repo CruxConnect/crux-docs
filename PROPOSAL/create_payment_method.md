@@ -1,6 +1,6 @@
 # Create Payment Method
 ## URI
-<!-- TODO -->
+`/billing/payment-methods/`
 
 ## Method
 POST
@@ -8,7 +8,7 @@ POST
 ## Request
 ```js
 {
-  token: 'string', // The Stripe token for the payment method
+  payment_method_token: 'string', // The Stripe token for the payment method
   is_default: null, // Not required. Defaults to false
 }
 ```
