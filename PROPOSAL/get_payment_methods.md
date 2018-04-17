@@ -29,6 +29,7 @@ GET
     "last4": "4242",
     "name": "Bob Barker",
     "is_default": false, // Required. boolean
+    "funding": 'debit', // Uses stripe's possible values
 
     // These are N/A, so... null
     "bank_name": null,
@@ -47,6 +48,7 @@ GET
     "address": {}, // No address, so give an empty object
     "exp_month": null,
     "exp_year": null,
+    "funding": null,
   },
 ]
 ```
