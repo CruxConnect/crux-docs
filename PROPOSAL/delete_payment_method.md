@@ -1,6 +1,6 @@
 # Delete Payment Method
 ## URI
-/something/<CARD_ID>/ <!-- TODO -->
+`/billing/payment-methods/UUID
 
 ## Method
 DELETE
@@ -12,4 +12,7 @@ DELETE
 ## Response
 ```js
 ```
-200? 202? 204? <!-- TODO -->
+204 No Content
+
+## Error Responses
+404 Not Found
