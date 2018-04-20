@@ -1,68 +1,27 @@
 ---
-title: /orders/tracking/&lt;order_uuid&gt;/
-name: Add Order Tracking - Supplier
-position: 6.10
+title: /orders/cancel/
+name: Cancel Order
+position: 6.07
 visibility: public
-method: post
-description: Add a Tracking number or multiple Tacking numbers to an Order
+method: patch
+description: Cancel a pending Order (for Retailers)
 right_code: |
   ~~~ json
   {
-    "tracking": "123mytrack",
-    "ship_cost": 34.38,
-    "carrier": "UPS",
-    "method": "Ground",
-    "weight": 17.2,
-    "line_items": [
-      {
-        "quantity": "1",
-        "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc",
-        "sku_cost": "27.39"
-      }
-    ]
+    "order_uuid": "521a91e5-058d-4474-aeee-f0c148594a00"
   }
   ~~~
   {: title="Request" }
 
 
 ---
-Add a Tracking number or multiple Tacking numbers to an Order. Essentially adding tracking to the entire order or a portion of the order by providing the order_uuid and providing the tracking, ship_cost, carrier, method, weight, and line_items with item_uuid and quantity.
+Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, your request to cancel an order is sent to the pertinent supplier(s).
 
-### URL Parameters
-
-order_uuid
-: (string) The Universal Unique Identifier for the Order
 
 ### Request Parameters:
 
-tracking
-: (string) The Tracking number for the entire Order or a portion of the Order
-
-ship_cost
-: (num) The Shipping Cost for the entire Order or a portion of the Order as per the tracking
-
-carrier
-: (string) The Shipping Carrier who provided the Tracking Number
-
-method
-: (string) The Shipping Method associated with the Tracking Number
-
-weight
-: (num) The Shipping Weight in pounds (lbs.)
-
-line_items
-: (list) The Line Items list contains a list of Line Item objects containing line_item_uuid and quantity
-
-#### Line Item Object:
-
-line_item_uuid
-: (string) The Universal Unique Identifier for the Item
-
-quantity
-: (number) The Quantity of the Item included in the shipment associated with the Tracking Number
-
-sku_cost
-: (number) The SKU cost
+order_uuid
+: (string) The Universal Unique Identifier for the Order which you intend to cancel
 
 ### Expected Response Codes
 
@@ -70,43 +29,21 @@ sku_cost
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/" \
+curl -X "PATCH" "https://api-dev.cruxconnect.com/orders/cancel/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "ship_cost": 34.38,
-  "tracking": "123mytrack",
-  "carrier": "UPS",
-  "method": "Ground",
-  "weight": 17.2,
-  "line_items": [
-    {
-      "sku_cost": "27",
-      "quantity": "1",
-      "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc"
-    }
-  ]
+  "order_uuid": "521a91e5-058d-4474-aeee-f0c148594a00"
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/' \
+http --json PATCH 'https://api-dev.cruxconnect.com/orders/cancel/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
-    ship_cost:=34.38 \
-    tracking="123mytrack" \
-    carrier="UPS" \
-    method="Ground" \
-    weight:=17.2 \
-    line_items:="[
-  {
-    \"sku_cost\": \"27\",
-    \"quantity\": \"1\",
-    \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
-  }
-]"
+    order_uuid="521a91e5-058d-4474-aeee-f0c148594a00"
 
 ~~~
 {: title="HTTPie" }
@@ -120,28 +57,17 @@ import json
 
 
 def send_request():
-    # Add Order Tracking - Supplier
-    # POST https://api-dev.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/
+    # Cancel Order
+    # PATCH https://api-dev.cruxconnect.com/orders/cancel/
 
     try:
-        response = requests.post(
-            url="https://api-dev.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/",
+        response = requests.patch(
+            url="https://api-dev.cruxconnect.com/orders/cancel/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    ship_cost:=34.38 \
-    tracking="123mytrack" \
-    carrier="UPS" \
-    method="Ground" \
-    weight:=17.2 \
-    line_items:="[
-  {
-    \"sku_cost\": \"27\",
-    \"quantity\": \"1\",
-    \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
-  }
-]")
+            data=json.dumps(    order_uuid="521a91e5-058d-4474-aeee-f0c148594a00")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -154,7 +80,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Add Order Tracking - Supplier
+// request Cancel Order
 (function(callback) {
     'use strict';
 
@@ -163,12 +89,12 @@ def send_request():
     const httpOptions = {
         hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/',
-        method: 'POST',
+        path: '/orders/cancel/',
+        method: 'PATCH',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
-
+ 
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
@@ -193,7 +119,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"tracking\":\"123mytrack\",\"ship_cost\":34.38,\"carrier\":\"UPS\",\"method\":\"Ground\",\"weight\":17.2,\"line_items\":[{\"quantity\":\"1\",\"line_item_uuid\":\"e2c1bcab-43ef-48b8-9aa7-513755a92abc\",\"sku_cost\":\"27\"}]}")
+    request.write("{\"order_uuid\":\"521a91e5-058d-4474-aeee-f0c148594a00\"}")
     request.end();
 
 
