@@ -16,5 +16,8 @@ POST
 
 ## Response
 ```js
+{
+  uuid: '2e923440-76ba-4821-b50c-4cd7b4c462c6',
+}
 ```
 201
