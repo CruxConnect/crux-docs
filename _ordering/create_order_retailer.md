@@ -133,11 +133,11 @@ sku_id
 supplier_uuid
 : (string) The Supplier Identifier is the ID associated with the Supplier providing the SKU
 
+expected_sku_cost
+: (number) The expected cost of the SKU  (optional)
+
 price
 : (number) The SKU price
-
-expected_sku_cost (optional)
-: (number) The expected cost of the SKU
 
 #### Address Object:
 
