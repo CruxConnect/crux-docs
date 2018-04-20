@@ -1,5 +1,5 @@
 ---
-title: /orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/
+title: /orders/tracking/&lt;order_uuid&gt;/
 name: Add Order Tracking - Supplier
 position: 6.10
 visibility: public
