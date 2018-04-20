@@ -1,5 +1,5 @@
 ---
-title: /orders/tracking/&lt;uuid&gt;/
+title: /orders/tracking/&lt;order_uuid&gt;/
 name: Add Order Tracking - Supplier
 position: 6.10
 visibility: public
@@ -30,7 +30,7 @@ Add a Tracking number or multiple Tacking numbers to an Order. Essentially addin
 
 ### URL Parameters
 
-uuid
+order_uuid
 : (string) The Universal Unique Identifier for the Order
 
 ### Request Parameters:
