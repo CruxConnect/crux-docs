@@ -1,6 +1,6 @@
 # Get Payment Methods
 ## URI
-<!-- TODO -->
+/billing/payment-methods/ <!-- TODO: verify -->
 
 ## Method
 GET
