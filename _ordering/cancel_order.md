@@ -29,7 +29,7 @@ order_uuid
 
 
 ~~~ bash
-curl -X "PATCH" "https://api-dev.cruxconnect.com/orders/cancel/" \
+curl -X "PATCH" "https://api-sandbox.cruxconnect.com/orders/cancel/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -40,7 +40,7 @@ curl -X "PATCH" "https://api-dev.cruxconnect.com/orders/cancel/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json PATCH 'https://api-dev.cruxconnect.com/orders/cancel/' \
+http --json PATCH 'https://api-sandbox.cruxconnect.com/orders/cancel/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     order_uuid="521a91e5-058d-4474-aeee-f0c148594a00"
@@ -58,11 +58,11 @@ import json
 
 def send_request():
     # Cancel Order
-    # PATCH https://api-dev.cruxconnect.com/orders/cancel/
+    # PATCH https://api-sandbox.cruxconnect.com/orders/cancel/
 
     try:
         response = requests.patch(
-            url="https://api-dev.cruxconnect.com/orders/cancel/",
+            url="https://api-sandbox.cruxconnect.com/orders/cancel/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -80,40 +80,40 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Cancel Order 
+// request Cancel Order
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/orders/cancel/',
         method: 'PATCH',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
@@ -121,10 +121,10 @@ def send_request():
     });
     request.write("{\"order_uuid\":\"521a91e5-058d-4474-aeee-f0c148594a00\"}")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

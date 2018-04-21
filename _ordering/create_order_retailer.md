@@ -1,7 +1,7 @@
 ---
 title: /orders/create/
 name: Create Order - Retailer
-position: 6.06
+position: 6.05
 visibility: public
 method: post
 description: Create an Order on your account
@@ -50,8 +50,8 @@ right_code: |
       "name": "projectthanos",
       "uuid": "359204cc-c2d9-4827-b739-64c335f9fbd1",
       "user": {
-        "name": " ",
-        "email": "ncoleman@projectthanos.com"
+        "name": "Joe Buyer",
+        "email": "joe@retailer.com"
       }
     },
     "address": {
@@ -223,7 +223,7 @@ shipping_method
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/orders/create/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -255,7 +255,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/orders/create/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/orders/create/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     address:="{
@@ -294,11 +294,11 @@ import json
 
 def send_request():
     # Create Order - Retailer
-    # POST https://api-dev.cruxconnect.com/orders/create/
+    # POST https://api-sandbox.cruxconnect.com/orders/create/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/orders/create/",
+            url="https://api-sandbox.cruxconnect.com/orders/create/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -344,7 +344,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/orders/create/',
         method: 'POST',
