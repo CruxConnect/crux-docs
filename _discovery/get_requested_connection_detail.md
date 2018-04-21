@@ -149,7 +149,7 @@ person
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/" \
+curl "https://api-sandbox.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/" \
      -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
      -H 'Authorization: Token 1234567890'
 
@@ -157,7 +157,7 @@ curl "https://api-dev.cruxconnect.com/organizations/connections/request/6c822de1
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api-dev.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/' \
+http GET 'https://api-sandbox.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/' \
     'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
     'Authorization':'Token 1234567890'
 
@@ -173,11 +173,11 @@ import requests
 
 def send_request():
     # Get Requested Connection Detail
-    # GET https://api-dev.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/
+    # GET https://api-sandbox.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/",
+            url="https://api-sandbox.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/",
             headers={
                 "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
                 "Authorization": "Token 1234567890",
@@ -201,7 +201,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/',
         method: 'GET',

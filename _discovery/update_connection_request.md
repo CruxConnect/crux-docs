@@ -97,7 +97,7 @@ Expected reponse code is 204.
 
 
 ~~~ bash
-curl -X "PATCH" "https://api-dev.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/" \
+curl -X "PATCH" "https://api-sandbox.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/" \
      -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
@@ -123,7 +123,7 @@ curl -X "PATCH" "https://api-dev.cruxconnect.com/organizations/connections/reque
 {: title="Curl" }
 
 ~~~ bash
-http --json PATCH 'https://api-dev.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/' \
+http --json PATCH 'https://api-sandbox.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/' \
     'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
@@ -156,11 +156,11 @@ import json
 
 def send_request():
     # Update Connection Request
-    # PATCH https://api-dev.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/
+    # PATCH https://api-sandbox.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/
 
     try:
         response = requests.patch(
-            url="https://api-dev.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/",
+            url="https://api-sandbox.cruxconnect.com/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/",
             headers={
                 "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
                 "Authorization": "Token 1234567890",
@@ -200,7 +200,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/organizations/connections/request/d0041bf9-ee07-4298-8298-26eee419db2d/',
         method: 'PATCH',

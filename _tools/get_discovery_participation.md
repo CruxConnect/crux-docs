@@ -85,7 +85,7 @@ person
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/" \
+curl "https://api-sandbox.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/" \
      -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
      -H 'Authorization: Token 01234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
@@ -95,7 +95,7 @@ curl "https://api-dev.cruxconnect.com/discovery/participation/963e4549-712b-42d7
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-dev.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/' \
     'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
     'Authorization':'Token 01234567890' \
     'Content-Type':'application/json; charset=utf-8'
@@ -114,11 +114,11 @@ import json
 
 def send_request():
     # Get Discovery Participation
-    # GET https://api-dev.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/
+    # GET https://api-sandbox.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/",
+            url="https://api-sandbox.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/",
             headers={
                 "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
                 "Authorization": "Token 01234567890",
@@ -144,7 +144,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/',
         method: 'GET',
