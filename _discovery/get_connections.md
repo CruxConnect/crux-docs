@@ -14,8 +14,8 @@ right_code: |
         "uuid": "7c8ceed8-86c3-4c4f-9b45-8bda5aa665b2",
         "organization": {
           "uuid": "359204cc-c2d9-4827-b739-64c335f9fbd1",
-          "name": "projectthanos",
-          "website": "projectthanos.com",
+          "name": "Retail Me",
+          "website": "retailer.com",
           "org_type": "RETAILER",
           "status": "ACTIVE",
           "created_date": "2018-04-06T01:11:40.090603Z",
@@ -36,7 +36,7 @@ right_code: |
           "uuid": "2bccd690-9ba3-4e9e-bed2-96fe02185031",
           "first_name": "owner",
           "last_name": "user",
-          "email": "owneruser7@projectthanos.com",
+          "email": "owneruser7@retailer.com",
           "phone": "1-042-505-7676x449",
           "job_title": "Account Manager"
         }
@@ -45,8 +45,8 @@ right_code: |
         "uuid": "88971331-5e51-47be-a762-536499ad0366",
         "organization": {
           "uuid": "963e4549-712b-42d7-8bd9-34eb21d15ea9",
-          "name": "projectzuul",
-          "website": "projectzuul.com",
+          "name": "Supply Me",
+          "website": "supplier.com",
           "org_type": "SUPPLIER",
           "status": "ACTIVE",
           "created_date": "2018-04-06T01:11:42.840360Z",
@@ -57,7 +57,7 @@ right_code: |
           "uuid": "c10a3649-2c2c-4e65-b610-870529d79dce",
           "first_name": "owner",
           "last_name": "user",
-          "email": "owneruser8@projectzuul.com",
+          "email": "owneruser8@supplier.com",
           "phone": "(971)270-6745",
           "job_title": "Account Manager"
         }

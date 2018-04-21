@@ -16,7 +16,7 @@ right_code: |
       "uuid": "507368a9-b52c-47c2-8f18-681ed95ff27f",
       "first_name": "",
       "last_name": "",
-      "email": "kweaver@projectzuul.com",
+      "email": "kweaver@supplier.com",
       "phone": "483-900-7133",
       "job_title": "Account Manager"
     },

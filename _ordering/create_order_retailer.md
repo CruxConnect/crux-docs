@@ -47,7 +47,7 @@ right_code: |
       "order_fee": 0
     },
     "retailer": {
-      "name": "projectthanos",
+      "name": "Retail Me",
       "uuid": "359204cc-c2d9-4827-b739-64c335f9fbd1",
       "user": {
         "name": "Joe Buyer",
