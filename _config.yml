@@ -43,6 +43,16 @@ collections:
     title: Ordering
     position: 5
     type: api
+  ordering_retailer:
+    visibility: all
+    title: Product for Retailers
+    position: 5.1
+    type: api
+  ordering_supplier:
+    visibility: public
+    title: Product for Supplier
+    position: 5.2
+    type: api
   discovery:
     visibility: public
     title: Discovery
