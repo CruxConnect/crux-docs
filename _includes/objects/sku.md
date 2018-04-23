@@ -10,3 +10,6 @@ supplier_uuid
 
 price
 : (number) The SKU price
+
+expected_sku_cost
+: (number) The expected cost of the SKU

@@ -1,7 +1,7 @@
 ---
 title: /orders/create/
 name: Create Order - Retailer
-position: 4.06
+position: 5.5
 visibility: public
 method: post
 description: Create an Order on your account
@@ -10,13 +10,13 @@ right_code: |
   {
     "skus": [
       {
-        "quantity": "36",
-        "sku_id": "000078",
-        "supplier_uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137",
-        "price": "27.99"
+        "quantity": "86",
+        "sku_id": "bK0bi12ATMo",
+        "supplier_uuid": "86ab12cd-fd66-4122-8b81-f837bc72d755",
+        "price": "10"
       }
     ],
-    "purchase_order_id": "po-CLOB25tC",
+    "purchase_order_id": "po-fgpRCmls",
     "notes": "here are some notes",
     "shipping_carrier": "UPS",
     "shipping_method": "Ground",
@@ -36,10 +36,10 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "1ab8e55f-ea7e-4a58-b7d3-db723272dbbd",
+    "uuid": "310f7b60-8c80-42d8-a3aa-780363f969c7",
     "is_allocated": false,
-    "purchase_order_id": "po-xErcaA5u",
-    "created_date": "2018-03-12T20:27:39.579586Z",
+    "purchase_order_id": "po-bvteP3Sg",
+    "created_date": "2018-04-20T22:21:04.640348Z",
     "notes": "here are some notes",
     "fees": {
       "estimated_shipping_cost": 0,
@@ -47,11 +47,11 @@ right_code: |
       "order_fee": 0
     },
     "retailer": {
-      "name": "Crux Retailer",
-      "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
+      "name": "Retail Me",
+      "uuid": "359204cc-c2d9-4827-b739-64c335f9fbd1",
       "user": {
-        "name": "Crux User",
-        "email": "user@mycompany.com"
+        "name": "Joe Buyer",
+        "email": "joe@retailer.com"
       }
     },
     "address": {
@@ -71,21 +71,21 @@ right_code: |
     },
     "line_items": [
       {
-        "uuid": "d3842ec4-d1f8-4cf1-860b-b9eeb8a35680",
+        "uuid": "4883055e-f7c6-4d60-b8d3-787073b1898c",
         "status": "Unallocated",
-        "item_uuid": "0d0c2332-8cc6-4768-8417-55bd0b298da7",
-        "item_name": "Deltran BT Junior 12 Volt",
-        "sku_uuid": "17c4d2c8-a5ae-43b9-aecc-c4d688184395",
-        "sku_id": "000078",
-        "sku_name": "Deltran BT Junior 12 Volt",
-        "sku_title_variants": "Deltran BT Junior 12 Volt {}",
-        "sku_special_instructions": null,
-        "cost": 22,
-        "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
-        "supplier_name": "Crux Supplier A",
+        "item_uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4",
+        "item_name": "The insistent room item",
+        "sku_uuid": "43113405-4964-4086-b5cc-9beea7cb127e",
+        "sku_id": "bK0bi12ATMo",
+        "sku_name": "The insistent room item",
+        "sku_title_variants": "The insistent room item {'size': 9, 'color': 'azure'}",
+        "line_item_special_instructions": null,
+        "cost": 18.12,
+        "supplier_uuid": "e4ba749a-f899-4a03-a759-4610deb4b5ba",
+        "supplier_name": "Morales, Martin and Bautista",
         "tracking_numbers": [],
         "allocation": {
-          "quantity_ordered": 22,
+          "quantity_ordered": 18,
           "quantity_allocated": 0,
           "quantity_backordered": 0,
           "quantity_rejected": 0,
@@ -122,8 +122,22 @@ address
 : (object) The Address object containing name, business name, address line 1, address line 2, city, state, postal code
 
 #### SKU Object:
+<!-- task-github-127 can we starndize SKU objects -->
 
-{% include objects/sku.md %}
+quantity
+: (number) The Quantity ordered of the SKU ID
+
+sku_id
+: (string) The SKU ID is the SKU provided by the supplier which identifies that product you are purchasing
+
+supplier_uuid
+: (string) The Supplier Identifier is the ID associated with the Supplier providing the SKU
+
+expected_sku_cost
+: (number) The expected cost of the SKU  (optional)
+
+price
+: (number) The SKU price
 
 #### Address Object:
 
@@ -210,7 +224,7 @@ shipping_method
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "address": {
@@ -223,15 +237,15 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
     "name": "Bob Iger",
     "address2": "STE 123"
   },
-  "purchase_order_id": "po-CLOB25tC",
+  "purchase_order_id": "po-fgpRCmls",
   "notes": "here are some notes",
   "shipping_carrier": "UPS",
   "skus": [
     {
-      "quantity": "36",
-      "price": "27.99",
-      "sku_id": "000078",
-      "supplier_uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137"
+      "quantity": "86",
+      "price": "10",
+      "sku_id": "bK0bi12ATMo",
+      "supplier_uuid": "86ab12cd-fd66-4122-8b81-f837bc72d755"
     }
   ],
   "shipping_method": "Ground"
@@ -242,7 +256,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     address:="{
   \"state\": \"NY\",
@@ -254,15 +268,15 @@ http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-CLOB25tC" \
+    purchase_order_id="po-fgpRCmls" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"36\",
-    \"price\": \"27.99\",
-    \"sku_id\": \"000078\",
-    \"supplier_uuid\": \"b5f05054-dce4-4286-96fc-b9424d6b2137\"
+    \"quantity\": \"86\",
+    \"price\": \"10\",
+    \"sku_id\": \"bK0bi12ATMo\",
+    \"supplier_uuid\": \"86ab12cd-fd66-4122-8b81-f837bc72d755\"
   }
 ]" \
     shipping_method="Ground"
@@ -286,7 +300,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/orders/create/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    address:="{
@@ -299,15 +313,15 @@ def send_request():
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-CLOB25tC" \
+    purchase_order_id="po-fgpRCmls" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"36\",
-    \"price\": \"27.99\",
-    \"sku_id\": \"000078\",
-    \"supplier_uuid\": \"b5f05054-dce4-4286-96fc-b9424d6b2137\"
+    \"quantity\": \"86\",
+    \"price\": \"10\",
+    \"sku_id\": \"bK0bi12ATMo\",
+    \"supplier_uuid\": \"86ab12cd-fd66-4122-8b81-f837bc72d755\"
   }
 ]" \
     shipping_method="Ground")
@@ -334,7 +348,7 @@ def send_request():
         port: '443',
         path: '/orders/create/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -362,7 +376,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"skus\":[{\"quantity\":\"36\",\"sku_id\":\"000078\",\"supplier_uuid\":\"b5f05054-dce4-4286-96fc-b9424d6b2137\",\"price\":\"27.99\"}],\"purchase_order_id\":\"po-CLOB25tC\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"}}")
+    request.write("{\"skus\":[{\"quantity\":\"86\",\"sku_id\":\"bK0bi12ATMo\",\"supplier_uuid\":\"86ab12cd-fd66-4122-8b81-f837bc72d755\",\"price\":\"10\"}],\"purchase_order_id\":\"po-fgpRCmls\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"}}")
     request.end();
 
 

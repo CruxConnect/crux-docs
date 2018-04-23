@@ -128,7 +128,7 @@ request_date
 {% include links/response_codes.md %}
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/organizations/connections/request/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/connections/request/" \
      -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
@@ -177,7 +177,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/organizations/connections/reques
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/organizations/connections/request/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/organizations/connections/request/' \
     'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
@@ -233,11 +233,11 @@ import json
 
 def send_request():
     # Request Connection
-    # POST https://api-dev.cruxconnect.com/organizations/connections/request/
+    # POST https://api-sandbox.cruxconnect.com/organizations/connections/request/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/organizations/connections/request/",
+            url="https://api-sandbox.cruxconnect.com/organizations/connections/request/",
             headers={
                 "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
                 "Authorization": "Token 1234567890",
@@ -300,7 +300,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/organizations/connections/request/',
         method: 'POST',

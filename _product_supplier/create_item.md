@@ -33,7 +33,7 @@ right_code: |
     "restrict_from_marketplaces": null,
     "supplier": {
       "uuid": "9ff4ca63-7a46-4eee-a4fb-859e201460c8",
-      "name": "projectzuul"
+      "name": "supplier"
     },
     "cost_range": {
       "min": null,

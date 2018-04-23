@@ -127,7 +127,7 @@ contact
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/discovery/suppliers/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/discovery/suppliers/" \
      -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
@@ -148,7 +148,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/discovery/suppliers/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/discovery/suppliers/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/discovery/suppliers/' \
     'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
@@ -176,11 +176,11 @@ import json
 
 def send_request():
     # Discovery Supplier List
-    # POST https://api-dev.cruxconnect.com/discovery/suppliers/
+    # POST https://api-sandbox.cruxconnect.com/discovery/suppliers/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/discovery/suppliers/",
+            url="https://api-sandbox.cruxconnect.com/discovery/suppliers/",
             headers={
                 "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
                 "Authorization": "Token 1234567890",
@@ -215,7 +215,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/discovery/suppliers/',
         method: 'POST',
