@@ -1,7 +1,7 @@
 ---
 title: /orders/allocation/&lgorder-uuid&gt/
 name: Allocate Order - Supplier
-position: 6.06
+position: 5.6
 visibility: public
 method: put
 description: Allocate stock for a Retailer Order

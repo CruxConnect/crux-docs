@@ -1,7 +1,7 @@
 ---
 title: /orders/
 name: Get Orders
-position: 6.00
+position: 5.00
 visibility: public
 method: post
 description: Get the Orders for your organization

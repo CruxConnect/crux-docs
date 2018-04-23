@@ -1,7 +1,7 @@
 ---
 title: /orders/items/cancel/&ltorder_item_uuid&gt/
 name: Cancel Order Item - Retailer
-position: 6.08
+position: 5.8
 method: delete
 description: Cancel an item on a pending Order (for Retailers)
 right_code: |

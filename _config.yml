@@ -38,14 +38,14 @@ collections:
     title: Product for Supplier
     position: 4.2
     type: api
-  discovery:
-    visibility: public
-    title: Discovery
-    position: 5
-    type: api
   ordering:
     visibility: public
     title: Ordering
+    position: 5
+    type: api
+  discovery:
+    visibility: public
+    title: Discovery
     position: 6
     type: api
   files:

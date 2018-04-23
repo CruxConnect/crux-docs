@@ -1,7 +1,7 @@
 ---
 title: /orders/export/
 name: Get Orders Export
-position: 6.02
+position: 5.2
 visibility: public
 method: post
 description: Get an Export of the Order List via an email

@@ -1,7 +1,7 @@
 ---
 title: /orders/cancel/
 name: Cancel Order
-position: 6.07
+position: 5.7
 visibility: public
 method: patch
 description: Cancel a pending Order (for Retailers)
