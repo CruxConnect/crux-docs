@@ -12,7 +12,7 @@ GET
 ## Response
 ```js
 {
-  "created": 1523382891,
+  "created": '2018-04-23T21:01:02+00:00',
   "description": "My first payment",
   "amount": 2000,
   "amount_refunded": 0,
