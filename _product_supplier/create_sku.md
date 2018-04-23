@@ -16,8 +16,6 @@ right_code: |
     "condition": "used",
     "minimum_advertised_price": "40.00",
     "msrp": "55.99",
-    "minimum_advertised_price_currency": "USD",
-    "msrp_currency": "USD",
     "quantity_in_stock": "500",
     "quantity_on_backorder": "100",
     "number_of_units_bundled": "2"
@@ -105,9 +103,6 @@ quantity_on_backorder
 
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
 
 restrictions
 : (string) The Restrictions imposed on the SKU which can include "tmpunavail" (temporary unavailable) or "discontd" (dicontinued)
@@ -325,7 +320,6 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
   "sku_id": "BdsIfyDeYw",
   "minimum_advertised_price": "40.00",
   "condition": "used",
-  "msrp_currency": "USD",
   "quantity_in_stock": "500",
   "quantity_on_backorder": "100",
   "number_of_units_bundled": "2",
@@ -334,7 +328,6 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
   "item": {
     "uuid": "39e8924c-e4b9-4a14-9ef1-ac00dc505b9c"
   },
-  "minimum_advertised_price_currency": "USD"
 }'
 
 ~~~
@@ -347,7 +340,6 @@ http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
     sku_id="BdsIfyDeYw" \
     minimum_advertised_price="40.00" \
     condition="used" \
-    msrp_currency="USD" \
     quantity_in_stock="500" \
     quantity_on_backorder="100" \
     number_of_units_bundled="2" \
@@ -356,7 +348,6 @@ http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
     item:="{
   \"uuid\": \"39e8924c-e4b9-4a14-9ef1-ac00dc505b9c\"
 }" \
-    minimum_advertised_price_currency="USD"
 
 ~~~
 {: title="HTTPie" }
@@ -383,7 +374,6 @@ def send_request():
             data=json.dumps(    sku_id="BdsIfyDeYw" \
     minimum_advertised_price="40.00" \
     condition="used" \
-    msrp_currency="USD" \
     quantity_in_stock="500" \
     quantity_on_backorder="100" \
     number_of_units_bundled="2" \
@@ -392,7 +382,6 @@ def send_request():
     item:="{
   \"uuid\": \"39e8924c-e4b9-4a14-9ef1-ac00dc505b9c\"
 }" \
-    minimum_advertised_price_currency="USD")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -444,7 +433,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_id\":\"BdsIfyDeYw\",\"item\":{\"uuid\":\"39e8924c-e4b9-4a14-9ef1-ac00dc505b9c\"},\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\"}")
+    request.write("{\"sku_id\":\"BdsIfyDeYw\",\"item\":{\"uuid\":\"39e8924c-e4b9-4a14-9ef1-ac00dc505b9c\"},\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\"}")
     request.end();
 
 

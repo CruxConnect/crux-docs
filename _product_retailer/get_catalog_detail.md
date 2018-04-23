@@ -1,44 +1,46 @@
 ---
-title: /products/catalogs/&ltcatalog_uuid&gt/
+title: /products/catalogs/&lt;catalog_uuid&gt;/
 name: Get Catalog Detail
-position: 2.01
+position: 1.01
 visibility: public
 method: get
 description: Get the Details of a particular Catalog you have access to
 right_code: |
   ~~~ json
   {
-    "uuid": "5d704568-d5a6-4751-94ff-cc0d86da99dc",
+    "uuid": "38504ca3-27ea-4478-85a2-25f01cde1652",
     "supplier": {
-      "uuid": "f2ee86d6-7384-4144-bc35-428cd8e02c16"
+      "uuid": "86ab12cd-fd66-4122-8b81-f837bc72d755"
     },
     "skus": [
       {
-        "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc"
+        "uuid": "bb479ac7-4dd9-4411-a6e9-a265e51aa434"
       },
       {
-        "uuid": "12009d4d-6206-4811-9934-10e6016769e8"
+        "uuid": "95848455-d19b-48f8-8f53-5791818ddeca"
       },
-      {
-        "uuid": "1ba7a1e7-0eb3-46ae-875f-67d65caa94fa"
-      }
     ],
-    "num_skus": 3,
+    "num_skus": 30,
     "default_shipping_cost": null,
+    "default_handling_cost": null,
     "retailer": {
-      "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
+      "uuid": "7c8ceed8-86c3-4c4f-9b45-8bda5aa665b2"
     },
-    "created": "2017-10-23T18:25:36.265190Z",
-    "last_updated": "2017-10-23T18:25:36.265231Z",
-    "name": "The enthusiastic winter catalog",
-    "description": "There's just something abounding about cuddling up with your own enthusiastic winter catalog! Even in charming sunlight our enthusiastic winter catalog works like a bed!It will blow your charming mind.Then tacos will start raining right out of the charming sky.Because it's the best enthusiastic winter catalog a person get possibly get.  At least on a charming Tuesday! Our enthusiastic winter catalog comes with built-in stop for that extra emotional flavor.",
-    "default_shipping_cost_currency": "USD"
+    "created": "2018-04-06T01:12:09.804995Z",
+    "last_updated": "2018-04-06T01:12:18.259897Z",
+    "name": "The industry catalog",
+    "description": "Add your description here"
   }
   ~~~
   {: title="Response" }
 
 ---
 Get the Details of a particular Catalog you have access to.
+
+### URL Parameters:
+
+catalog_uuid
+: (string) Universal Unique Identifier for the Catalog
 
 ### Response Parameters:
 
@@ -49,7 +51,7 @@ supplier
 : (object) The Supplier object contains a supplier_uuid
 
 skus
-: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
+: (array) An array of SKU objects containing a single sku_uuid objects
 
 num_skus
 : (number) The total Number of SKUs per the Catalog
@@ -73,23 +75,29 @@ name
 description
 : (string) The Description the supplier has provided for this Catalog
 
-default_shipping_cost_currency
-: (string) The Default Shipping Cost Currency parameter indicates what
+#### Supplier Object
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+uuid
+: (string) Universal Unique Identifier for the supplier
+
+#### Retailer Object
+
+uuid
+: (string) Universal Unique Identifier for the Retailer
+
+#### SKU UUID Object
+
+uuid
+: (string) Universal Unique Identifier for the sku
+
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-dev.cruxconnect.com/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -97,8 +105,8 @@ curl "https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-9
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json GET 'https://api-dev.cruxconnect.com/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -115,13 +123,13 @@ import json
 
 def send_request():
     # Get Catalog Detail
-    # GET https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/
+    # GET https://api-dev.cruxconnect.com/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/",
+            url="https://api-dev.cruxconnect.com/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -144,11 +152,11 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
+        hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/5d704568-d5a6-4751-94ff-cc0d86da99dc/',
+        path: '/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

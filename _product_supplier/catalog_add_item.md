@@ -135,12 +135,6 @@ quantity_on_backorder
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
-
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
-
 #### Price Tier Object:
 
 shipping_cost
@@ -252,7 +246,7 @@ width
 height
 : (number) The Image Height in pixels for the Item Product Image
 
-### Expected Response Codes
+# Response Codes
 
 {% include links/response_codes.md %}
 

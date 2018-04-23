@@ -122,8 +122,6 @@ right_code: |
       "quantity_in_stock": 14,
       "quantity_on_backorder": 81,
       "number_of_units_bundled": 1,
-      "minimum_advertised_price_currency": "USD",
-      "msrp_currency": "USD"
     },
     {
       "uuid": "12009d4d-6206-4811-9934-10e6016769e8",
@@ -239,8 +237,6 @@ right_code: |
       "quantity_in_stock": 89,
       "quantity_on_backorder": null,
       "number_of_units_bundled": 1000,
-      "minimum_advertised_price_currency": "USD",
-      "msrp_currency": "USD"
     },
     {
       "uuid": "260a181a-331e-4e4f-9a57-510048a5d3f2",
@@ -331,8 +327,6 @@ right_code: |
       "quantity_in_stock": 72,
       "quantity_on_backorder": 44,
       "number_of_units_bundled": 1,
-      "minimum_advertised_price_currency": "USD",
-      "msrp_currency": "USD"
     }
   ]
   ~~~
@@ -396,12 +390,6 @@ quantity_on_backorder
 
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
-
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
 
 #### Price Tier Object:
 
@@ -507,15 +495,9 @@ uuid
 name
 : (string) The Supplier Name
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+# Response Codes
+
+{% include links/response_codes.md %}                                         |
 
 
 ~~~ bash
