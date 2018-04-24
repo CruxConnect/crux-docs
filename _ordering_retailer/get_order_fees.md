@@ -1,7 +1,7 @@
 ---
 title: /orders/fees/
-name: Get Order Fees - Retailer
-position: 5.3
+name: Get Order Fees
+position: 5.1.2
 visibility: public
 method: post
 description: Get the Fees for a potential Order.

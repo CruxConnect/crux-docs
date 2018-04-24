@@ -1,7 +1,7 @@
 ---
 title: /orders/create/
-name: Create Order - Retailer
-position: 5.4
+name: Create Order
+position: 5.1.1
 visibility: public
 method: post
 description: Create an Order on your account
