@@ -30,7 +30,7 @@ catalog-uuid
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/products/catalogs/1d140dd4-a5f6-4df3-a806-9013a1ef9ef8/add-items/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/1d140dd4-a5f6-4df3-a806-9013a1ef9ef8/add-items/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -43,7 +43,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/products/catalogs/1d140dd4-a5f6-
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/products/catalogs/1d140dd4-a5f6-4df3-a806-9013a1ef9ef8/add-items/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/1d140dd4-a5f6-4df3-a806-9013a1ef9ef8/add-items/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
@@ -63,11 +63,11 @@ import json
 
 def send_request():
     # Catalog Add Item
-    # POST https://api-dev.cruxconnect.com/products/catalogs/1d140dd4-a5f6-4df3-a806-9013a1ef9ef8/add-items/
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/1d140dd4-a5f6-4df3-a806-9013a1ef9ef8/add-items/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/products/catalogs/1d140dd4-a5f6-4df3-a806-9013a1ef9ef8/add-items/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/1d140dd4-a5f6-4df3-a806-9013a1ef9ef8/add-items/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -94,7 +94,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/catalogs/1d140dd4-a5f6-4df3-a806-9013a1ef9ef8/add-items/',
         method: 'POST',

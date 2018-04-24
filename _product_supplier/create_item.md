@@ -34,7 +34,7 @@ right_code: |
     "restrict_from_marketplaces": null,
     "supplier": {
       "uuid": "7c60cf46-42af-4666-93cc-059a2d0fb7f9",
-      "name": "projectzuul"
+      "name": "Supply Me"
     },
     "cost_range": {
       "max": null,
@@ -382,7 +382,7 @@ height
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/products/items/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -407,7 +407,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/products/items/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/products/items/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/items/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
@@ -439,11 +439,11 @@ import json
 
 def send_request():
     # Create Item
-    # POST https://api-dev.cruxconnect.com/products/items/
+    # POST https://api-sandbox.cruxconnect.com/products/items/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/products/items/",
+            url="https://api-sandbox.cruxconnect.com/products/items/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -482,7 +482,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/items/',
         method: 'POST',

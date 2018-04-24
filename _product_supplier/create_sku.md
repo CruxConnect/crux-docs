@@ -135,6 +135,7 @@ task github https://github.com/CruxConnect/crux-api/issues/1017  Backend doesn't
 
 price_tiers (TBD)
 : (array) The list of Price Tier objects on this SKU
+
 product_images (TBD)
 : (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
 
@@ -175,7 +176,7 @@ msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (array) The list of Price Tier objects on this SKU
+: (array) Array of Price Tier objects on this SKU
 
 product_images
 : (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
@@ -303,7 +304,7 @@ name
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/products/skus/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -326,7 +327,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/products/skus/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/products/skus/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_id="bHBtgt-Vph6wXHl-nyVThLSY" \
@@ -356,11 +357,11 @@ import json
 
 def send_request():
     # Create SKU
-    # POST https://api-dev.cruxconnect.com/products/skus/
+    # POST https://api-sandbox.cruxconnect.com/products/skus/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/products/skus/",
+            url="https://api-sandbox.cruxconnect.com/products/skus/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -397,7 +398,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/skus/',
         method: 'POST',

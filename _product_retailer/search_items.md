@@ -662,7 +662,7 @@ inventory_arrays
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/products/items/search/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -701,7 +701,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/products/items/search/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/products/items/search/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/items/search/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
@@ -747,11 +747,11 @@ import json
 
 def send_request():
     # Search Items
-    # POST https://api-dev.cruxconnect.com/products/items/search/
+    # POST https://api-sandbox.cruxconnect.com/products/items/search/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/products/items/search/",
+            url="https://api-sandbox.cruxconnect.com/products/items/search/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -804,7 +804,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/items/search/',
         method: 'POST',
