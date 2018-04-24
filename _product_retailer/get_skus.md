@@ -1,339 +1,104 @@
 ---
 title: /products/skus/
 name: Get SKUs
-visibility: public
 position: 2.23
+visibility: public
 method: get
-description: Get SKUs allows you to return a complete list of SKUs you are interested in.
+description: Get SKUs array allows you to return a complete array of SKUs you are interested in.
 right_code: |
+  ~~~ json
+  {}
+  ~~~
+  {: title="Request" }
+
   ~~~ json
   [
     {
-      "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc",
+      "uuid": "95848455-d19b-48f8-8f53-5791818ddeca",
       "restrictions": null,
       "condition": "refurb",
       "distinguishing_attributes": {
-        "size": 3
+        "size": 9,
+        "color": "antiquewhite"
       },
       "item": {
-        "uuid": "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
+        "uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
       },
       "minimum_advertised_price": 10,
-      "msrp": 43.65,
+      "msrp": 54.08,
       "price_tiers": [
         {
-          "shipping_cost": 1.99,
-          "minimum_tier_quantity": 2,
-          "cost": 100.12,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 0.99,
-          "minimum_tier_quantity": 4,
-          "cost": 75.6,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 0,
-          "minimum_tier_quantity": 16,
-          "cost": 49.99,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 1.99,
-          "minimum_tier_quantity": 2,
-          "cost": 100.12,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 0.99,
-          "minimum_tier_quantity": 4,
-          "cost": 75.6,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 0,
-          "minimum_tier_quantity": 16,
-          "cost": 49.99,
-          "shipping_cost_is_estimate": true
-        }
-      ],
-      "product_images": [
-        {
-          "uuid": "1929dd2b-ad2c-4021-9960-fb26e7bf448a",
-          "url": "https://api.adorable.io/avatars/80/obad20.png",
-          "width": 80,
-          "height": 80
-        },
-        {
-          "uuid": "8e6e1355-a185-4574-bb54-dc2193b9ab2d",
-          "url": "https://api.adorable.io/avatars/285/obad39.png",
-          "width": 285,
-          "height": 285
-        }
-      ],
-      "measurements": {
-        "sku": {
-          "weight": null,
-          "length": null,
-          "width": null,
-          "height": null,
-          "weight_units": null,
-          "dimension_units": null
-        },
-        "package": {
-          "weight": null,
-          "length": null,
-          "width": null,
-          "height": null,
-          "weight_units": null,
-          "dimension_units": null
-        }
-      },
-      "product_identifiers": {
-        "upca": null,
-        "ean13": null,
-        "gtin14": null,
-        "isbn": "9780765348272",
-        "asin": "B000N2HBSO",
-        "mpn": null
-      },
-      "inventory_lists": [
-        {
-          "uuid": "44a1f968-1ce8-4826-9cd9-f8a54f5d542d",
-          "name": "The empty calendar inventory list"
-        },
-        {
-          "uuid": "c9b32603-f6bf-4f49-89fd-8424399974f2",
-          "name": "The enchanted act inventory list"
-        },
-        {
-          "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",
-          "name": "The accessible motion inventory list"
-        },
-        {
-          "uuid": "044a84c9-624f-49f1-bb31-29da46dd8aa9",
-          "name": "The aching hook inventory list"
-        }
-      ],
-      "created": "2017-10-23T18:25:36.448007Z",
-      "last_updated": "2017-10-23T18:25:36.448050Z",
-      "sku_id": "voGDR4gOyYUOgcT7gw",
-      "quantity_in_stock": 14,
-      "quantity_on_backorder": 81,
-      "number_of_units_bundled": 1,
-    },
-    {
-      "uuid": "12009d4d-6206-4811-9934-10e6016769e8",
-      "restrictions": null,
-      "condition": "refurb",
-      "distinguishing_attributes": {
-        "size": 5
-      },
-      "item": {
-        "uuid": "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
-      },
-      "minimum_advertised_price": 10,
-      "msrp": 36.31,
-      "price_tiers": [
-        {
-          "shipping_cost": 1.99,
-          "minimum_tier_quantity": 2,
-          "cost": 100.12,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 0.99,
-          "minimum_tier_quantity": 4,
-          "cost": 75.6,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 0,
-          "minimum_tier_quantity": 16,
-          "cost": 49.99,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 1.99,
-          "minimum_tier_quantity": 2,
-          "cost": 100.12,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 0.99,
-          "minimum_tier_quantity": 4,
-          "cost": 75.6,
-          "shipping_cost_is_estimate": true
-        },
-        {
-          "shipping_cost": 0,
-          "minimum_tier_quantity": 16,
-          "cost": 49.99,
-          "shipping_cost_is_estimate": true
-        }
-      ],
-      "product_images": [
-        {
-          "uuid": "13e618d5-cc70-4771-a76d-95b9d447ae29",
-          "url": "https://api.adorable.io/avatars/155/obad12.png",
-          "width": 155,
-          "height": 155
-        },
-        {
-          "uuid": "93304bd2-1b28-4673-b666-ebe0ebaed3b9",
-          "url": "https://api.adorable.io/avatars/155/obad39.png",
-          "width": 155,
-          "height": 155
-        }
-      ],
-      "measurements": {
-        "sku": {
-          "weight": null,
-          "length": null,
-          "width": null,
-          "height": null,
-          "weight_units": null,
-          "dimension_units": null
-        },
-        "package": {
-          "weight": null,
-          "length": null,
-          "width": null,
-          "height": null,
-          "weight_units": null,
-          "dimension_units": null
-        }
-      },
-      "product_identifiers": {
-        "upca": null,
-        "ean13": null,
-        "gtin14": null,
-        "isbn": "9780765348272",
-        "asin": "B01G29XQ30",
-        "mpn": null
-      },
-      "inventory_lists": [
-        {
-          "uuid": "44a1f968-1ce8-4826-9cd9-f8a54f5d542d",
-          "name": "The empty calendar inventory list"
-        },
-        {
-          "uuid": "c9b32603-f6bf-4f49-89fd-8424399974f2",
-          "name": "The enchanted act inventory list"
-        },
-        {
-          "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",
-          "name": "The accessible motion inventory list"
-        },
-        {
-          "uuid": "044a84c9-624f-49f1-bb31-29da46dd8aa9",
-          "name": "The aching hook inventory list"
-        }
-      ],
-      "created": "2017-10-23T18:25:37.970745Z",
-      "last_updated": "2017-10-23T18:25:37.970792Z",
-      "sku_id": "3qcgsAKiFz8iVU9Kj",
-      "quantity_in_stock": 89,
-      "quantity_on_backorder": null,
-      "number_of_units_bundled": 1000,
-    },
-    {
-      "uuid": "260a181a-331e-4e4f-9a57-510048a5d3f2",
-      "restrictions": null,
-      "condition": "refurb",
-      "distinguishing_attributes": {
-        "size": 4,
-        "apparel-size": "M"
-      },
-      "item": {
-        "uuid": "8e1898de-4bee-46ef-b242-16ddfacfd350"
-      },
-      "minimum_advertised_price": 10,
-      "msrp": 43.74,
-      "price_tiers": [
-        {
-          "shipping_cost": 1.99,
-          "minimum_tier_quantity": 1,
-          "cost": 20.99,
-          "shipping_cost_is_estimate": false
-        },
-        {
-          "shipping_cost": 0.99,
-          "minimum_tier_quantity": 12,
+          "handling_cost": 0.99,
+          "shipping_cost_type": "fixed",
+          "catalog": {
+            "name": "The accidental pollution catalog",
+            "uuid": "0692defa-1fbf-4715-b7a2-60690292c37c"
+          },
+          "shipping_cost_is_estimate": false,
           "cost": 18.12,
-          "shipping_cost_is_estimate": false
-        },
-        {
-          "shipping_cost": 0,
-          "minimum_tier_quantity": 100,
-          "cost": 17.76,
-          "shipping_cost_is_estimate": false
+          "cost_per_unit": 0.8628571428571429,
+          "shipping_cost": 0.99,
+          "minimum_tier_quantity": 12
         }
       ],
       "product_images": [
         {
-          "uuid": "47b850b2-ad88-4a3f-99de-58d700f3c772",
-          "url": "https://api.adorable.io/avatars/285/obad20.png",
+          "uuid": "97fa6aad-b160-4dea-9740-3eaa98886ccd",
+          "url": "https://picsum.photos/285/?image=17",
           "width": 285,
           "height": 285
         },
-        {
-          "uuid": "4090fd16-5e08-44ed-8a12-e312b15b65d8",
-          "url": "https://api.adorable.io/avatars/285/obad33.png",
-          "width": 285,
-          "height": 285
-        }
       ],
       "measurements": {
-        "sku": {
-          "weight": null,
+        "package": {
+          "height": null,
           "length": null,
           "width": null,
-          "height": null,
           "weight_units": null,
+          "weight": null,
           "dimension_units": null
         },
-        "package": {
-          "weight": null,
+        "sku": {
+          "height": null,
           "length": null,
           "width": null,
-          "height": null,
           "weight_units": null,
+          "weight": null,
           "dimension_units": null
         }
       },
       "product_identifiers": {
-        "upca": "042526000096",
-        "ean13": "4006381333931",
+        "upca": null,
+        "ean13": null,
         "gtin14": null,
         "isbn": null,
         "asin": null,
         "mpn": null
       },
-      "inventory_lists": [
+      "inventory_arrays": [
         {
-          "uuid": "c9b32603-f6bf-4f49-89fd-8424399974f2",
-          "name": "The enchanted act inventory list"
+          "uuid": "1431483d-f893-45a4-8a73-0a46c44d15c5",
+          "name": "The absurd ear inventory array"
         },
         {
-          "uuid": "044a84c9-624f-49f1-bb31-29da46dd8aa9",
-          "name": "The aching hook inventory list"
+          "uuid": "5d173491-52ad-4650-91cf-b279475f978d",
+          "name": "The ablaze duck inventory array"
         }
       ],
-      "created": "2017-10-23T18:28:42.779877Z",
-      "last_updated": "2017-10-23T18:28:42.779925Z",
-      "sku_id": "bpSH45MO",
-      "quantity_in_stock": 72,
-      "quantity_on_backorder": 44,
-      "number_of_units_bundled": 1,
+      "created": "2018-04-06T01:12:10.036088Z",
+      "last_updated": "2018-04-06T01:12:10.036182Z",
+      "sku_id": "wQWFpGc",
+      "quantity_in_stock": null,
+      "quantity_on_backorder": 79,
+      "number_of_units_bundled": 21
     }
   ]
   ~~~
   {: title="Response" }
 
 ---
-Get SKUs allows you to return a complete list of SKUs you are interested in.
+Get SKUs array allows you to return a complete array of SKUs you are interested in.
+
 
 ### Response Parameters:
 
@@ -353,16 +118,16 @@ item
 : (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
 
 minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
+: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally array the SKU for sale at a lower price.
 
 msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
+: (array) The array of Price Tier objects on this SKU
 
 product_images
-: (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
+: (array) The Product Images are a array of product image objects for the SKU which contain a uuid, url, width, and height of the image.
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.
@@ -370,8 +135,8 @@ measurements
 product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
 
-inventory_lists
-: (list) The Inventory Lists list contains all of the Inventory List objects where this SKU currently resides.
+inventory_arrays
+: (array) The Inventory arrays array contains all of the Inventory array objects where this SKU currently resides.
 
 created
 : (string) The Created parameter indicates the date the SKU was Created in our system.
@@ -393,17 +158,7 @@ number_of_units_bundled
 
 #### Price Tier Object:
 
-shipping_cost
-: (number) The Shipping Cost per the SKU per the Price Tier
-
-minimum_tier_quantity
-: (number) The Minimum Tier Quantity per the SKU per the Price Tier
-
-cost
-: (number) The Cost per the SKU per the Price Tier
-
-shipping_cost_is_estimate
-: (boolean) The Shipping Cost is Estimate parameter answers the question whether the shipping cost is an estimate per the SKU per the Price Tier.
+{% include objects/price_tier.md %}
 
 #### Product Image Object:
 
@@ -442,7 +197,7 @@ dimension_units
 #### Package Measurements Object:
 
 weight
-: (number) The Weight of the packaged SKU in "weight_units"
+: (number) The Weight of the packaged SKU in the "weight_units"
 
 weight_units
 : (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options)
@@ -474,18 +229,18 @@ isbn
 : (string) The International Standard Book Number (ISBN) is a unique numberic commercial book identifier. If the SKU is a book or can be classified as a book in some way shape or form, then an ISBN may be available for it.
 
 asin
-: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper listing on Amazon.com.
+: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper arraying on Amazon.com.
 
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
 
-#### Inventory List Object:
+#### Inventory array Object:
 
 uuid
-: (string) The Universal Unique Identifier for the Inventory List
+: (string) The Universal Unique Identifier for the Inventory array
 
 name
-: (string) The Name your company has given to this Inventory List
+: (string) The Name your company has given to this Inventory array
 
 Supplier Object:
 
@@ -495,14 +250,14 @@ uuid
 name
 : (string) The Supplier Name
 
-# Response Codes
+### Expected Response Codes
 
-{% include links/response_codes.md %}                                         |
+{% include links/response_codes.md %}
 
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/products/skus/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -511,7 +266,7 @@ curl "https://api-sandbox.cruxconnect.com/products/skus/" \
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -527,14 +282,14 @@ import json
 
 
 def send_request():
-    # Get SKU List
+    # Get SKUs
     # GET https://api-sandbox.cruxconnect.com/products/skus/
 
     try:
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/products/skus/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -550,7 +305,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get SKU List
+// request Get SKUs
 (function(callback) {
     'use strict';
 
@@ -561,7 +316,7 @@ def send_request():
         port: '443',
         path: '/products/skus/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
