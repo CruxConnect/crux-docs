@@ -148,7 +148,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Details about an Item and the SKUs associated to it. There is a varying amount of data provided with each item and associated SKUs. The Response Parameters arrayed below are potential attributes of Items and SKUs that may be returned to you.
+Get Details about an Item and the SKUs associated to it. There is a varying amount of data provided with each item and associated SKUs. The Response Parameters listed below are potential attributes of Items and SKUs that may be returned to you.
 
 ### URL Parameters:
 
@@ -161,10 +161,10 @@ uuid
 : (string) Universal Unique Identifier for the Item
 
 skus
-: (array) The Stock Keeping Units (SKUs) array contains individual SKUs, or Item-variants, with their SKU-level data
+: (list) The Stock Keeping Units (SKUs) list contains individual SKUs, or Item-variants, with their SKU-level data
 
 restrict_from_marketplaces
-: (array) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
+: (list) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
 
 supplier
 : (object) The Supplier object contains the uuid for the Supplier and the Supplier name
@@ -179,7 +179,7 @@ msrp_range
 : (object) The Manufacturer's Suggested Retail Price Range object contains the minimum and maximum MSRPs for the Item, based on the available variants (SKUs).
 
 product_images
-: (array) The Product Images array stores a array of images for the item, based on the available variants (SKUs)
+: (list) The Product Images list stores a list of images for the item, based on the available variants (SKUs)
 
 created
 : (string) The Created parameter is the date when the Item was added to our system.
@@ -215,7 +215,7 @@ shipping_origin_country
 : (string) The Shipping Origin Country is the country code of the shipping origin of the Item. If the item is manufacturered in the USA, but the distributor is in Canada, the Shipping Origin Country is going to have a value of "CA".
 
 other_marketplace_restriction
-: (string) The Other Markeplace Restriction is a string array of markeplaces where the item is prohibited from being sold.
+: (string) The Other Markeplace Restriction is a string list of markeplaces where the item is prohibited from being sold.
 
 fba_certified
 : (boolean) The Fulfillment By Amazon (FBA) Certified parameter indicates whether this supplier has FBA set up on this Item.
@@ -224,7 +224,7 @@ custom_attributes
 : (object) The Custom Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
 
 categories
-: (array) The Categories array contains a array of the categories, as provided by the Supplier, for this Item.
+: (list) The Categories list contains a list of the categories, as provided by the Supplier, for this Item.
 
 #### SKU Object:
 
@@ -241,16 +241,16 @@ distinguishing_attributes
 : (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
 
 minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally array the SKU for sale at a lower price.
+: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
 
 msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (array) The array of Price Tier objects on this SKU
+: (list) The list of Price Tier objects on this SKU
 
 product_images
-: (array) The Product Images are a array of product image objects for the SKU which contain a uuid, url, width, and height of the image.
+: (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.
@@ -259,7 +259,7 @@ product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
 
 inventory_lists
-: (array) The Inventory Lists array contains all of the Inventory List objects where this SKU currently resides.
+: (list) The Inventory Lists list contains all of the Inventory List objects where this SKU currently resides.
 
 created
 : (string) The Created parameter indicates the date the SKU was Created in our system.
@@ -355,7 +355,7 @@ isbn
 : (string) The International Standard Book Number (ISBN) is a unique numberic commercial book identifier. If the SKU is a book or can be classified as a book in some way shape or form, then an ISBN may be available for it.
 
 asin
-: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper arraying on Amazon.com.
+: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper listing on Amazon.com.
 
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
