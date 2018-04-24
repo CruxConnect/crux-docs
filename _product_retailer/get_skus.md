@@ -7,11 +7,6 @@ method: get
 description: Get SKUs array allows you to return a complete array of SKUs you are interested in.
 right_code: |
   ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
   [
     {
       "uuid": "95848455-d19b-48f8-8f53-5791818ddeca",
@@ -97,7 +92,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get SKUs array allows you to return a complete array of SKUs you are interested in.
+Return a complete array of SKUs
 
 
 ### Response Parameters:
