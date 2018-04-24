@@ -1,6 +1,6 @@
 ---
 title: /orders/create/
-name: Create Order
+name: Create Order - Retailer
 position: 5.1.1
 visibility: public
 method: post
@@ -10,13 +10,13 @@ right_code: |
   {
     "skus": [
       {
-        "quantity": "86",
+        "quantity": "53",
         "sku_id": "bK0bi12ATMo",
         "supplier_uuid": "86ab12cd-fd66-4122-8b81-f837bc72d755",
         "price": "10"
       }
     ],
-    "purchase_order_id": "po-fgpRCmls",
+    "purchase_order_id": "po-tH7poMMX",
     "notes": "here are some notes",
     "shipping_carrier": "UPS",
     "shipping_method": "Ground",
@@ -36,10 +36,10 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "310f7b60-8c80-42d8-a3aa-780363f969c7",
+    "uuid": "d87a5566-8a79-44ae-a1f7-938a1ce8babe",
     "is_allocated": false,
-    "purchase_order_id": "po-bvteP3Sg",
-    "created_date": "2018-04-20T22:21:04.640348Z",
+    "purchase_order_id": "po-G8pQerR7",
+    "created_date": "2018-04-24T01:31:04.750253Z",
     "notes": "here are some notes",
     "fees": {
       "estimated_shipping_cost": 0,
@@ -50,8 +50,8 @@ right_code: |
       "name": "Retail Me",
       "uuid": "359204cc-c2d9-4827-b739-64c335f9fbd1",
       "user": {
-        "name": "Joe Buyer",
-        "email": "joe@retailer.com"
+        "name": "Joe Seller",
+        "email": "joe@retailme.com"
       }
     },
     "address": {
@@ -71,21 +71,21 @@ right_code: |
     },
     "line_items": [
       {
-        "uuid": "4883055e-f7c6-4d60-b8d3-787073b1898c",
+        "uuid": "8947c7b8-2308-4e58-8e52-279c1b03a4fc",
         "status": "Unallocated",
         "item_uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4",
         "item_name": "The insistent room item",
         "sku_uuid": "43113405-4964-4086-b5cc-9beea7cb127e",
         "sku_id": "bK0bi12ATMo",
         "sku_name": "The insistent room item",
-        "sku_title_variants": "The insistent room item {'size': 9, 'color': 'azure'}",
+        "sku_title_variants": "The insistent room item {'color': 'azure', 'size': 9}",
         "line_item_special_instructions": null,
         "cost": 18.12,
         "supplier_uuid": "e4ba749a-f899-4a03-a759-4610deb4b5ba",
         "supplier_name": "Morales, Martin and Bautista",
         "tracking_numbers": [],
         "allocation": {
-          "quantity_ordered": 18,
+          "quantity_ordered": 71,
           "quantity_allocated": 0,
           "quantity_backordered": 0,
           "quantity_rejected": 0,
@@ -133,11 +133,11 @@ sku_id
 supplier_uuid
 : (string) The Supplier Identifier is the ID associated with the Supplier providing the SKU
 
-expected_sku_cost
-: (number) The expected cost of the SKU  (optional)
-
 price
 : (number) The SKU price
+
+expected_sku_cost (optional)
+: (number) The expected cost of the SKU
 
 #### Address Object:
 
@@ -207,7 +207,47 @@ shipping_method
 
 #### Line Item Object:
 
-{% include objects/line_item.md %}
+uuid
+: (string) Universal Unique Identifier for the Line Item
+
+status
+:(string) The Status for the Line Item. Possible Values are: Unallocated, Allocated, Rejected, HasTracking, Backordered, Cancelled
+
+item_uuid
+: (string) Universal Unique Identifier for the Item
+
+item_name
+: (string) The Item Name
+
+sku_uuid
+: (string) The Univeral Unique Identifier for the SKU
+
+sku_id
+: (string) The SKU as provided by the Supplier
+
+sku_name
+: (string) The SKU Name
+
+sku_title_variants
+: (string) SKU title variants
+
+line_item_special_instructions
+: (string) SKU special instructions
+
+cost
+: (number) The Cost of the SKU
+
+supplier_uuid
+: (string) The Universal Unique Identifier for the Supplier
+
+supplier_name
+: (string) The Supplier Name
+
+tracking_numbers
+: (array) The Tracking Numbers array parameter includes tracking number objects. Each include a tracking number, carrier, method, weight, cost, shipping date, and quantity.
+
+allocation
+: (object) The Allocation object contains quantity ordered, quantity allocated, quantity backordered, quantity rejected, and backorder date.
 
 #### Tracking Numbers Object:
 
@@ -237,12 +277,12 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
     "name": "Bob Iger",
     "address2": "STE 123"
   },
-  "purchase_order_id": "po-fgpRCmls",
+  "purchase_order_id": "po-tH7poMMX",
   "notes": "here are some notes",
   "shipping_carrier": "UPS",
   "skus": [
     {
-      "quantity": "86",
+      "quantity": "53",
       "price": "10",
       "sku_id": "bK0bi12ATMo",
       "supplier_uuid": "86ab12cd-fd66-4122-8b81-f837bc72d755"
@@ -268,12 +308,12 @@ http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-fgpRCmls" \
+    purchase_order_id="po-tH7poMMX" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"86\",
+    \"quantity\": \"53\",
     \"price\": \"10\",
     \"sku_id\": \"bK0bi12ATMo\",
     \"supplier_uuid\": \"86ab12cd-fd66-4122-8b81-f837bc72d755\"
@@ -313,12 +353,12 @@ def send_request():
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-fgpRCmls" \
+    purchase_order_id="po-tH7poMMX" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"86\",
+    \"quantity\": \"53\",
     \"price\": \"10\",
     \"sku_id\": \"bK0bi12ATMo\",
     \"supplier_uuid\": \"86ab12cd-fd66-4122-8b81-f837bc72d755\"
@@ -376,7 +416,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"skus\":[{\"quantity\":\"86\",\"sku_id\":\"bK0bi12ATMo\",\"supplier_uuid\":\"86ab12cd-fd66-4122-8b81-f837bc72d755\",\"price\":\"10\"}],\"purchase_order_id\":\"po-fgpRCmls\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"}}")
+    request.write("{\"skus\":[{\"quantity\":\"53\",\"sku_id\":\"bK0bi12ATMo\",\"supplier_uuid\":\"86ab12cd-fd66-4122-8b81-f837bc72d755\",\"price\":\"10\"}],\"purchase_order_id\":\"po-tH7poMMX\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"}}")
     request.end();
 
 
