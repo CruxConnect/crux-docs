@@ -37,8 +37,8 @@ skus
 uuid
 : (string) UUID of the sku
 
-price_tiers
-: (array) One or more Price Tiers
+price_tiers (TBD)
+: (array) The list of Price Tier objects
 
 supplier_uuid
 : (string) UUID for the supplier to which this SKU belongs
@@ -59,26 +59,8 @@ product_images
 : (array) An array of Images for this SKU
 
 #### Price Tier Object:
-shipping_cost_is_estimate
-: (bool) Is the shipping cost an estimate
 
-minimum_tier_quantity
-: (int) Minimum threshold to qualify for this tier of pricing
-
-handling_cost
-: (number) An additional charge from the supplier for handling this SKU
-
-cost
-: (number) The cost of the SKU at this price tier
-
-shipping_cost_type
-: (string) The type of shipping cost. One of: fixed, free, variable
-
-cost_per_unit
-: (number) The cost of each individual unit within a bundle
-
-shipping_cost
-: (number) The Shipping Cost per the SKU per the Price Tier
+{% include objects/price_tier.md %}
 
 #### Distinguishing Info
 
