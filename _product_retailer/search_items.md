@@ -329,6 +329,9 @@ product_identifiers
 categories
 : (list) The Categories list is a list of categories in which SKUs may reside
 
+catalog_type
+: (list) The kind of catalog to which the retrieved SKUs belong, "standard" and/or "discovery".  Defaults to "standard".
+
 #### Pagination Object:
 
 start
