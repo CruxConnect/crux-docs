@@ -12,7 +12,7 @@ right_code: |
     "card_last_four": "1111",
     "card_expiration": "2017-11-06",
     "is_default": true,
-    "address": "1234 Thanos Road\nLehi, Utah 845005"
+    "address": "1234 Crux Connect Way\nLehi, Utah 845005"
   }
   ~~~
   {: title="Response" }

@@ -1,7 +1,7 @@
 ---
 title: /orders/
 name: Get Orders
-position: 5.00
+position: 5.0
 visibility: public
 method: post
 description: Get the Orders for your organization
@@ -9,10 +9,13 @@ right_code: |
   ~~~ json
   {
     "start": 0,
-    "limit": 1,
-    "line_item_statuses": [
-      "unallocated"
+    "limit": 24,
+    "line_item_allocation_statuses": [
+      "Unallocated",
+      "Allocated",
+      "Partial"
     ],
+    "line_item_designation": [],
     "start_date": "2017-07-31T06:00:00.000Z",
     "end_date": "2018-08-03T06:00:00.000Z",
     "search_term": "",
@@ -27,13 +30,13 @@ right_code: |
 
   ~~~ json
   {
-    "total_results": 108,
+    "total_results": 102,
     "orders": [
       {
-        "uuid": "49bd2a6d-fe6b-4145-a059-9439289801ae",
+        "uuid": "310f7b60-8c80-42d8-a3aa-780363f969c7",
         "is_allocated": false,
-        "purchase_order_id": "po-5fkQo2ET",
-        "created_date": "2018-03-08T22:20:25.311697Z",
+        "purchase_order_id": "po-bvteP3Sg",
+        "created_date": "2018-04-20T22:21:04.640348Z",
         "notes": "here are some notes",
         "fees": {
           "estimated_shipping_cost": 0,
@@ -41,11 +44,11 @@ right_code: |
           "order_fee": 0
         },
         "retailer": {
-          "name": "Crux Retailer",
-          "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
+          "name": "Retail Me",
+          "uuid": "359204cc-c2d9-4827-b739-64c335f9fbd1",
           "user": {
-            "name": "Crux User",
-            "email": "user@mycompany.com"
+            "name": " ",
+            "email": "me@retailer.com"
           }
         },
         "address": {
@@ -56,7 +59,7 @@ right_code: |
           "city": "New York",
           "state": "NY",
           "postal_code": "10112",
-          "phone_number": null,
+          "phone_number": "801-555-1212",
           "country": null
         },
         "requested_shipping": {
@@ -65,21 +68,21 @@ right_code: |
         },
         "line_items": [
           {
-            "uuid": "9af950c1-5dac-4da4-a86c-f1a0f3bdff40",
+            "uuid": "4883055e-f7c6-4d60-b8d3-787073b1898c",
             "status": "Unallocated",
-            "item_uuid": "a904832e-2ad4-4ad7-8339-e4b0877a42bd",
-            "item_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
-            "sku_uuid": "f9ded77b-35b2-45e1-a071-2eec8e99f581",
-            "sku_id": "000106",
-            "sku_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
-            "sku_title_variants": "PulseTech Xtreme Charger Auto  100X010 XC100-P {}",
-            "sku_special_instructions": null,
-            "cost": 66.05,
-            "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
-            "supplier_name": "Crux Supplier A",
+            "item_uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4",
+            "item_name": "The insistent room item",
+            "sku_uuid": "43113405-4964-4086-b5cc-9beea7cb127e",
+            "sku_id": "bK0bi12ATMo",
+            "sku_name": "The insistent room item",
+            "sku_title_variants": "The insistent room item {'size': 9, 'color': 'azure'}",
+            "line_item_special_instructions": null,
+            "cost": 18.12,
+            "supplier_uuid": "e4ba749a-f899-4a03-a759-4610deb4b5ba",
+            "supplier_name": "Morales, Martin and Bautista",
             "tracking_numbers": [],
             "allocation": {
-              "quantity_ordered": 475,
+              "quantity_ordered": 18,
               "quantity_allocated": 0,
               "quantity_backordered": 0,
               "quantity_rejected": 0,
@@ -88,62 +91,6 @@ right_code: |
           }
         ]
       },
-      {
-        "uuid": "3b6bf17a-1a95-41c7-8961-52ac8459c986",
-        "is_allocated": false,
-        "purchase_order_id": "po-WbbQy4Nu",
-        "created_date": "2018-02-26T15:45:17.390064Z",
-        "notes": "here are some notes",
-        "fees": {
-          "estimated_shipping_cost": 0,
-          "drop_ship_fee": 0,
-          "order_fee": 0
-        },
-        "retailer": {
-          "name": "Crux Retailer",
-          "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
-          "user": {
-            "name": "Crux User",
-            "email": "user@mycompany.com"
-          }
-        },
-        "address": {
-          "name": "Bob Iger",
-          "business_name": "NBC",
-          "address1": "30 Rockefeller Plaza",
-          "address2": "STE 123",
-          "city": "New York",
-          "state": "NY",
-          "postal_code": "10112",
-          "phone_number": null
-        },
-        "requested_shipping": {
-          "shipping_carrier": "UPS",
-          "shipping_method": "Ground"
-        },
-        "line_items": [
-          {
-            "uuid": "052cae65-0332-4e8a-820a-3d482913e810",
-            "status": "Unallocated",
-            "item_uuid": "a904832e-2ad4-4ad7-8339-e4b0877a42bd",
-            "item_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
-            "sku_uuid": "f9ded77b-35b2-45e1-a071-2eec8e99f581",
-            "sku_id": "000106",
-            "sku_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
-            "cost": 66.05,
-            "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
-            "supplier_name": "Crux Supplier A",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 236,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "backorder_date": null
-            }
-          }
-        ]
-      }
     ]
   }
   ~~~
@@ -166,8 +113,11 @@ limit
 sort
 : (object) The Sort object contains a Key to sort on and a Direction (dir) to sort in.
 
-line_item_statuses
-: (array) One or more line item statuses. Will include orders with statuses based upon that `status_conjunction`. Possible Values are: `Unallocated`, `Allocated`, `Rejected`, `HasTracking`, `Backordered`, `Cancelled`. The response will contain orders with statuses that match the provided line_item_status (as combined based on line_item_status_conjunction).
+line_item_allocation_statuses
+: (array) One or more line item statuses. Possible choices include: `Unallocated`, `Partial`, or `Allocated`
+
+line_item_designation
+: (array) Line item status designation.  Possible values include : `HasTracking`, `NeedsTracking`, `Backordered`, `Rejected`, `Cancelled`
 
 start_date
 : (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
@@ -264,27 +214,32 @@ shipping_method
 
 {% include objects/allocation.md %}
 
+### Expected Response Codes
+
 {% include links/response_codes.md %}
 
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
+  "org_uuids": [],
   "sort": {
     "key": "date",
     "value": "desc"
   },
   "start": 0,
   "start_date": "2017-07-31T06:00:00.000Z",
-  "limit": 1,
-  "line_item_statuses": [
-    "unallocated"
+  "limit": 24,
+  "line_item_designation": [],
+  "line_item_allocation_statuses": [
+    "Unallocated",
+    "Allocated",
+    "Partial"
   ],
   "end_date": "2018-08-03T06:00:00.000Z",
-  "search_term": "",
-  "org_uuids": []
+  "search_term": ""
 }'
 
 ~~~
@@ -292,21 +247,24 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
+    org_uuids:="[]" \
     sort:="{
   \"key\": \"date\",
   \"value\": \"desc\"
 }" \
     start:=0 \
     start_date="2017-07-31T06:00:00.000Z" \
-    limit:=1 \
-    line_item_statuses:="[
-  \"unallocated\"
+    limit:=24 \
+    line_item_designation:="[]" \
+    line_item_allocation_statuses:="[
+  \"Unallocated\",
+  \"Allocated\",
+  \"Partial\"
 ]" \
     end_date="2018-08-03T06:00:00.000Z" \
-    search_term="" \
-    org_uuids:="[]"
+    search_term=""
 
 ~~~
 {: title="HTTPie" }
@@ -327,22 +285,25 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/orders/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sort:="{
+            data=json.dumps(    org_uuids:="[]" \
+    sort:="{
   \"key\": \"date\",
   \"value\": \"desc\"
 }" \
     start:=0 \
     start_date="2017-07-31T06:00:00.000Z" \
-    limit:=1 \
-    line_item_statuses:="[
-  \"unallocated\"
+    limit:=24 \
+    line_item_designation:="[]" \
+    line_item_allocation_statuses:="[
+  \"Unallocated\",
+  \"Allocated\",
+  \"Partial\"
 ]" \
     end_date="2018-08-03T06:00:00.000Z" \
-    search_term="" \
-    org_uuids:="[]")
+    search_term="")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -366,7 +327,7 @@ def send_request():
         port: '443',
         path: '/orders/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -394,7 +355,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"start\":0,\"limit\":1,\"line_item_statuses\":[\"unallocated\"],\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"search_term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"desc\"}}")
+    request.write("{\"start\":0,\"limit\":24,\"line_item_allocation_statuses\":[\"Unallocated\",\"Allocated\",\"Partial\"],\"line_item_designation\":[],\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"search_term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"desc\"}}")
     request.end();
 
 
