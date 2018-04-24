@@ -4,7 +4,7 @@ name: Get SKUs
 position: 2.23
 visibility: public
 method: get
-description: Get SKUs allows you to return a complete array of SKUs you are interested in.
+description: Get SKUs allows you to return a complete list of SKUs you are interested in.
 right_code: |
   ~~~ json
   [
@@ -92,7 +92,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Return a complete array of SKUs
+Return a complete list of SKUs
 
 
 ### Response Parameters:
@@ -113,7 +113,7 @@ item
 : (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
 
 minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally array the SKU for sale at a lower price.
+: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
 
 msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
@@ -224,7 +224,7 @@ isbn
 : (string) The International Standard Book Number (ISBN) is a unique numberic commercial book identifier. If the SKU is a book or can be classified as a book in some way shape or form, then an ISBN may be available for it.
 
 asin
-: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper arraying on Amazon.com.
+: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper listing on Amazon.com.
 
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
