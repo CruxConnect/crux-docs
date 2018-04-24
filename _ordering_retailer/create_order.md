@@ -1,7 +1,8 @@
 ---
 title: /orders/create/
 name: Create Order - Retailer
-position: 3.05
+position: 5.1.1
+visibility: public
 method: post
 description: Create an Order on your account
 right_code: |
@@ -9,17 +10,13 @@ right_code: |
   {
     "skus": [
       {
-        "quantity": "23",
-        "sku_id": "HHL59hE",
-        "supplier_id": "12347k-lk8s97-asdlfk-098sdf"
-      },
-      {
-        "quantity": "478",
-        "sku_id": "wZtMF91H2tIQ8RU",
-        "supplier_id": "12347k-lk8s97-asdlfk-098sdf"
+        "quantity": "53",
+        "sku_id": "bK0bi12ATMo",
+        "supplier_uuid": "86ab12cd-fd66-4122-8b81-f837bc72d755",
+        "price": "10"
       }
     ],
-    "purchase_order_id": "po-SHJ7ffBu",
+    "purchase_order_id": "po-tH7poMMX",
     "notes": "here are some notes",
     "shipping_carrier": "UPS",
     "shipping_method": "Ground",
@@ -30,7 +27,8 @@ right_code: |
       "address2": "STE 123",
       "city": "New York",
       "state": "NY",
-      "postal_code": "10112"
+      "postal_code": "10112",
+      "phone_number": "801-555-1212"
     }
   }
   ~~~
@@ -38,11 +36,10 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "358cd9ec-de30-45c5-b12b-5e4f78037645",
-    "status": "New",
+    "uuid": "d87a5566-8a79-44ae-a1f7-938a1ce8babe",
     "is_allocated": false,
-    "purchase_order_id": "po-SqDgLVTq",
-    "created_date": "2017-10-30T22:21:40.156604Z",
+    "purchase_order_id": "po-G8pQerR7",
+    "created_date": "2018-04-24T01:31:04.750253Z",
     "notes": "here are some notes",
     "fees": {
       "estimated_shipping_cost": 0,
@@ -50,11 +47,11 @@ right_code: |
       "order_fee": 0
     },
     "retailer": {
-      "name": "projectthanos",
-      "uuid": "e7409ece-e923-4aa8-a41b-4aacb9e475be",
+      "name": "Retail Me",
+      "uuid": "359204cc-c2d9-4827-b739-64c335f9fbd1",
       "user": {
-        "name": "Crux  User",
-        "email": "user@mycompany.com"
+        "name": "Joe Seller",
+        "email": "joe@retailme.com"
       }
     },
     "address": {
@@ -64,7 +61,9 @@ right_code: |
       "address2": "STE 123",
       "city": "New York",
       "state": "NY",
-      "postal_code": "10112"
+      "postal_code": "10112",
+      "phone_number": "801-555-1212",
+      "country": null
     },
     "requested_shipping": {
       "shipping_carrier": "UPS",
@@ -72,37 +71,21 @@ right_code: |
     },
     "line_items": [
       {
-        "uuid": "57dd034f-5238-4336-94b9-8cb9b9bbd3ee",
-        "item_uuid": "97fa8fdf-6b94-409e-a684-841d42605881",
-        "item_name": "The changeable soap item",
-        "sku_uuid": "45d9c4a6-0bf0-4fa6-95df-c421ddba16e5",
-        "sku_id": "HHL59hE",
-        "sku_name": "The changeable soap item",
-        "cost": 49.99,
-        "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
-        "supplier_name": "Flynn Ltd",
+        "uuid": "8947c7b8-2308-4e58-8e52-279c1b03a4fc",
+        "status": "Unallocated",
+        "item_uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4",
+        "item_name": "The insistent room item",
+        "sku_uuid": "43113405-4964-4086-b5cc-9beea7cb127e",
+        "sku_id": "bK0bi12ATMo",
+        "sku_name": "The insistent room item",
+        "sku_title_variants": "The insistent room item {'color': 'azure', 'size': 9}",
+        "line_item_special_instructions": null,
+        "cost": 18.12,
+        "supplier_uuid": "e4ba749a-f899-4a03-a759-4610deb4b5ba",
+        "supplier_name": "Morales, Martin and Bautista",
         "tracking_numbers": [],
         "allocation": {
-          "quantity_ordered": 53,
-          "quantity_allocated": 0,
-          "quantity_backordered": 0,
-          "quantity_rejected": 0,
-          "backorder_date": null
-        }
-      },
-      {
-        "uuid": "161734ec-cd42-4e00-a4d6-171230437ab3",
-        "item_uuid": "97fa8fdf-6b94-409e-a684-841d42605881",
-        "item_name": "The changeable soap item",
-        "sku_uuid": "995f5edd-7457-4661-9072-e5e9632d8b21",
-        "sku_id": "wZtMF91H2tIQ8RU",
-        "sku_name": "The changeable soap item",
-        "cost": 17.76,
-        "supplier_uuid": "48e81e45-4462-4c9b-b0d6-9226fdede7a6",
-        "supplier_name": "Flynn Ltd",
-        "tracking_numbers": [],
-        "allocation": {
-          "quantity_ordered": 283,
+          "quantity_ordered": 71,
           "quantity_allocated": 0,
           "quantity_backordered": 0,
           "quantity_rejected": 0,
@@ -117,10 +100,11 @@ right_code: |
 ---
 Create an Order on your account. By providing the SKU(s), quantity ordered, destination, etc. you may create an order for fulfillment.
 
+
 ### Request Parameters:
 
 skus
-: (list) The list of SKUs ordered including the supplier_id, sku_id and quantity per SKU
+: (array) The array SKU objects ordered including the supplier_id, sku_id and quantity per SKU
 
 purchase_order_id
 : (string) The Purchase Order ID that you provide to identify your order
@@ -138,38 +122,26 @@ address
 : (object) The Address object containing name, business name, address line 1, address line 2, city, state, postal code
 
 #### SKU Object:
-
-supplier_id
-: (string) The Supplier Identifier is the ID associated with the Supplier providing the SKU
-
-sku_id
-: (string) The SKU ID is the SKU provided by the supplier which identifies that product you are purchasing
+<!-- task-github-127 can we starndize SKU objects -->
 
 quantity
 : (number) The Quantity ordered of the SKU ID
 
+sku_id
+: (string) The SKU ID is the SKU provided by the supplier which identifies that product you are purchasing
+
+supplier_uuid
+: (string) The Supplier Identifier is the ID associated with the Supplier providing the SKU
+
+price
+: (number) The SKU price
+
+expected_sku_cost (optional)
+: (number) The expected cost of the SKU
+
 #### Address Object:
 
-name
-: (string) The Name associated with the Address
-
-business_name
-: (string) The Business Name associated with the Address
-
-address1
-: (string) The First line of the Address
-
-address2
-: (string) The Second line of the Address. If an apartment or suite, that information should be entered in this parameter.
-
-city
-: (string) The City associated with the Address
-
-state
-: (string) The State associated with the Address
-
-postal_code
-: (number) The Zip Code / Postal Code associated with the Address
+{% include objects/address_business.md %}
 
 ### Response Parameters:
 
@@ -177,7 +149,7 @@ uuid
 : (string) The Universal Unique Identifier for the Order
 
 status
-: (string) The current Status of the Order (e.g. "New", "Pending", "Complete", "Cancelled")
+: (string) The current Status of the Order
 
 is_allocated
 : (boolean) Is the order Allocated by the Supplier as of the moment you get the response. Generally, this is false initially as the supplier(s) providing the SKU(s) must allocate for each Order.
@@ -189,7 +161,7 @@ created_date
 : (string) The Date when the order was created. It will always be the same day as when you send in the request to Create the Order.
 
 notes
-: (string) The notes you provided from your request to create the Order.
+: (string) The notes you provided from your request to create the Order. Returns a Max length 250 characters
 
 fees
 : (object) The Fees object contains the estimated shipping cost, drop ship fee, and order fee
@@ -208,14 +180,7 @@ line_items
 
 #### Fees Object:
 
-estimated_shipping_cost
-: (number) The Estimated Shipping Cost for the Order
-
-drop_ship_fee
-: (number) The Drop Ship Fee for the Order as charged by the Supplier
-
-order_fee
-: (number) The Order Fee charged for processing the order through our platform
+{% include objects/fees.md %}
 
 #### Retailer Object:
 
@@ -230,26 +195,7 @@ user
 
 #### Address Object:
 
-name
-: (string) The Name associated with the Address
-
-business_name
-: (string) The Business Name associated with the Address
-
-address1
-: (string) The First line of the Address
-
-address2
-: (string) The Second line of the Address. If an apartment or suite, that information should be entered in this parameter.
-
-city
-: (string) The City associated with the Address
-
-state
-: (string) The State associated with the Address
-
-postal_code
-: (number) The Zip Code / Postal Code associated with the Address
+{% include objects/address_business.md %}
 
 #### Requested Shipping Object:
 
@@ -263,6 +209,9 @@ shipping_method
 
 uuid
 : (string) Universal Unique Identifier for the Line Item
+
+status
+:(string) The Status for the Line Item. Possible Values are: Unallocated, Allocated, Rejected, HasTracking, Backordered, Cancelled
 
 item_uuid
 : (string) Universal Unique Identifier for the Item
@@ -279,6 +228,12 @@ sku_id
 sku_name
 : (string) The SKU Name
 
+sku_title_variants
+: (string) SKU title variants
+
+line_item_special_instructions
+: (string) SKU special instructions
+
 cost
 : (number) The Cost of the SKU
 
@@ -289,41 +244,27 @@ supplier_name
 : (string) The Supplier Name
 
 tracking_numbers
-: (list) The Tracking Numbers list provides a Tracking Number or list of multiple Tracking Numbers for this particular SKU.
+: (array) The Tracking Numbers array parameter includes tracking number objects. Each include a tracking number, carrier, method, weight, cost, shipping date, and quantity.
 
 allocation
 : (object) The Allocation object contains quantity ordered, quantity allocated, quantity backordered, quantity rejected, and backorder date.
 
+#### Tracking Numbers Object:
+
+{% include objects/tracking_number.md %}
+
 #### Allocation Object:
 
-quantity_ordered
-: (number) The Quantity Ordered of the SKU
+{% include objects/allocation.md %}
 
-quantity_allocated
-: (number) The Quantity Allocated by the Supplier for this Order
+### Expected Response Codes
 
-quantity_backordered
-: (number) The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state. If you allow the supplier to fulfill the order, this number is supposed to decrease to 0 as they get the item in-stock in their warehouse(s). When a Supplier gets a Backorder Date, they add it to the field labeled "backorder_date".
-
-quantity_rejected
-: (number) The Quantity Rejected by the Supplier is the Quantity that they simply cannot fulfill. Reasons may vary, such as state or federal law, customs, or being out-of-stock on an already discontinued product line.
-
-backorder_date
-: (string) The Date that the Backordered SKU will be available for shipment. This date should be used as a tentative schedule which may help determine if waiting for the order is appropriate. Should this date be unacceptable, you may cancel the order with the "Cancel Order" API call.
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 201  | Created                | The API call was received and the order was created                          |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+{% include links/response_codes.md %}
 
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "address": {
@@ -332,20 +273,19 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
     "address1": "30 Rockefeller Plaza",
     "business_name": "NBC",
     "postal_code": "10112",
+    "phone_number": "801-555-1212",
     "name": "Bob Iger",
     "address2": "STE 123"
   },
-  "purchase_order_id": "po-SHJ7ffBu",
+  "purchase_order_id": "po-tH7poMMX",
   "notes": "here are some notes",
   "shipping_carrier": "UPS",
   "skus": [
     {
-      "quantity": "23",
-      "sku_id": ""
-    },
-    {
-      "quantity": "478",
-      "sku_id": ""
+      "quantity": "53",
+      "price": "10",
+      "sku_id": "bK0bi12ATMo",
+      "supplier_uuid": "86ab12cd-fd66-4122-8b81-f837bc72d755"
     }
   ],
   "shipping_method": "Ground"
@@ -356,7 +296,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/create/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     address:="{
   \"state\": \"NY\",
@@ -364,20 +304,19 @@ http --json POST 'https://api-sandbox.cruxconnect.com/orders/create/' \
   \"address1\": \"30 Rockefeller Plaza\",
   \"business_name\": \"NBC\",
   \"postal_code\": \"10112\",
+  \"phone_number\": \"801-555-1212\",
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-SHJ7ffBu" \
+    purchase_order_id="po-tH7poMMX" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"23\",
-    \"sku_id\": \"\"
-  },
-  {
-    \"quantity\": \"478\",
-    \"sku_id\": \"\"
+    \"quantity\": \"53\",
+    \"price\": \"10\",
+    \"sku_id\": \"bK0bi12ATMo\",
+    \"supplier_uuid\": \"86ab12cd-fd66-4122-8b81-f837bc72d755\"
   }
 ]" \
     shipping_method="Ground"
@@ -401,7 +340,7 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/orders/create/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    address:="{
@@ -410,20 +349,19 @@ def send_request():
   \"address1\": \"30 Rockefeller Plaza\",
   \"business_name\": \"NBC\",
   \"postal_code\": \"10112\",
+  \"phone_number\": \"801-555-1212\",
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    purchase_order_id="po-SHJ7ffBu" \
+    purchase_order_id="po-tH7poMMX" \
     notes="here are some notes" \
     shipping_carrier="UPS" \
     skus:="[
   {
-    \"quantity\": \"23\",
-    \"sku_id\": \"\"
-  },
-  {
-    \"quantity\": \"478\",
-    \"sku_id\": \"\"
+    \"quantity\": \"53\",
+    \"price\": \"10\",
+    \"sku_id\": \"bK0bi12ATMo\",
+    \"supplier_uuid\": \"86ab12cd-fd66-4122-8b81-f837bc72d755\"
   }
 ]" \
     shipping_method="Ground")
@@ -450,7 +388,7 @@ def send_request():
         port: '443',
         path: '/orders/create/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -478,7 +416,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"skus\":[{\"quantity\":\"23\",\"sku_id\":\"\"},{\"quantity\":\"478\",\"sku_id\":\"\"}],\"purchase_order_id\":\"po-SHJ7ffBu\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\"}}")
+    request.write("{\"skus\":[{\"quantity\":\"53\",\"sku_id\":\"bK0bi12ATMo\",\"supplier_uuid\":\"86ab12cd-fd66-4122-8b81-f837bc72d755\",\"price\":\"10\"}],\"purchase_order_id\":\"po-tH7poMMX\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"}}")
     request.end();
 
 

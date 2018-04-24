@@ -1,202 +1,100 @@
 ---
-title: /products/items/&ltitem_uuid&gt/
+title: /products/items/&lt;item_uuid&gt;/
 name: Get Item Detail
-position: 2.20
+position: 1.04
 visibility: public
 method: get
 description: Get Details about an Item and the SKUs associated to it.
 right_code: |
   ~~~ json
   {
-    "uuid": "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
+    "uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4",
     "skus": [
       {
-        "uuid": "a81dc78b-6af2-461c-8a26-6e8d8a3e8b46",
+        "uuid": "43113405-4964-4086-b5cc-9beea7cb127e",
         "restrictions": null,
-        "condition": "refurb",
+        "condition": "new",
         "distinguishing_attributes": {
           "size": 9,
-          "color": "indigo"
+          "color": "azure"
         },
         "minimum_advertised_price": 10,
-        "msrp": 53.95,
+        "msrp": 113.42,
         "price_tiers": [
           {
-            "shipping_cost_is_estimate": true,
+            "handling_cost": 0.99,
+            "shipping_cost_type": "fixed",
+            "catalog": {
+              "name": "The accidental pollution catalog",
+              "uuid": "0692defa-1fbf-4715-b7a2-60690292c37c"
+            },
+            "shipping_cost_is_estimate": false,
+            "cost": 20.99,
+            "cost_per_unit": 20.99,
             "shipping_cost": 1.99,
-            "cost": 100.12,
-            "minimum_tier_quantity": 2
+            "minimum_tier_quantity": 1
           },
-          {
-            "shipping_cost_is_estimate": true,
-            "shipping_cost": 0.99,
-            "cost": 75.6,
-            "minimum_tier_quantity": 4
-          }
         ],
         "product_images": [
           {
-            "uuid": "800388e7-de33-494a-94ac-93f57f959de3",
-            "url": "https://api.adorable.io/avatars/80/obad15.png",
-            "width": 80,
-            "height": 80
-          },
-          {
-            "uuid": "bd465a5a-c006-45b9-ac26-83fd978ba36f",
-            "url": "https://api.adorable.io/avatars/80/obad33.png",
-            "width": 80,
-            "height": 80
-          }
-        ],
-        "measurements": {
-          "sku": {
-            "weight": null,
-            "length": null,
-            "width": null,
-            "height": null,
-            "weight_units": null,
-            "dimension_units": null
-          },
-          "package": {
-            "weight": null,
-            "length": null,
-            "width": null,
-            "height": null,
-            "weight_units": null,
-            "dimension_units": null
-          }
-        },
-        "product_identifiers": {
-          "upca": null,
-          "ean13": "4006381333931",
-          "gtin14": null,
-          "isbn": "0765348276",
-          "asin": null,
-          "mpn": null
-        },
-        "inventory_lists": [
-          {
-            "uuid": "c9b32603-f6bf-4f49-89fd-8424399974f2",
-            "name": "The enchanted act inventory list"
-          },
-          {
-            "uuid": "8676b377-4180-4ad9-b71d-dccfa83bea43",
-            "name": "My List"
-          }
-        ],
-        "created": "2017-10-23T18:28:07.217708Z",
-        "last_updated": "2017-10-23T18:28:07.217751Z",
-        "sku_id": "KzQRPs",
-        "quantity_in_stock": 59,
-        "quantity_on_backorder": null,
-        "number_of_units_bundled": 1,
-        "minimum_advertised_price_currency": "USD",
-        "msrp_currency": "USD",
-        "item": {
-          "uuid": "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017"
-        }
-      },
-      {
-        "uuid": "33d478dc-1a34-472c-84ee-3e7aec7b35f3",
-        "restrictions": null,
-        "condition": "refurb",
-        "distinguishing_attributes": {
-          "size": 12,
-          "color": "black"
-        },
-        "minimum_advertised_price": 10,
-        "msrp": 89.03,
-        "price_tiers": [
-          {
-            "shipping_cost_is_estimate": true,
-            "shipping_cost": 1.99,
-            "cost": 100.12,
-            "minimum_tier_quantity": 2
-          },
-          {
-            "shipping_cost_is_estimate": true,
-            "shipping_cost": 0.99,
-            "cost": 75.6,
-            "minimum_tier_quantity": 4
-          },
-          {
-            "shipping_cost_is_estimate": true,
-            "shipping_cost": 0,
-            "cost": 49.99,
-            "minimum_tier_quantity": 16
-          }
-        ],
-        "product_images": [
-          {
-            "uuid": "38a566f9-7cd1-4d0a-8d99-c12bd749bd78",
-            "url": "https://api.adorable.io/avatars/285/obad24.png",
-            "width": 285,
-            "height": 285
-          },
-          {
-            "uuid": "74bef732-c204-43af-97a6-bee4e2d0997b",
-            "url": "https://api.adorable.io/avatars/155/obad20.png",
+            "uuid": "49123741-26e0-4f48-9fcf-78f6e84cfdc1",
+            "url": "https://picsum.photos/155/?image=15",
             "width": 155,
             "height": 155
-          }
+          },
         ],
         "measurements": {
-          "sku": {
-            "weight": null,
+          "package": {
+            "height": null,
             "length": null,
             "width": null,
-            "height": null,
             "weight_units": null,
+            "weight": null,
             "dimension_units": null
           },
-          "package": {
-            "weight": null,
+          "sku": {
+            "height": null,
             "length": null,
             "width": null,
-            "height": null,
             "weight_units": null,
+            "weight": null,
             "dimension_units": null
           }
         },
         "product_identifiers": {
           "upca": null,
           "ean13": null,
-          "gtin14": "71123456000016",
+          "gtin14": null,
           "isbn": null,
-          "asin": "0000000000",
+          "asin": null,
           "mpn": null
         },
         "inventory_lists": [
           {
-            "uuid": "c9b32603-f6bf-4f49-89fd-8424399974f2",
-            "name": "The enchanted act inventory list"
+            "uuid": "1431483d-f893-45a4-8a73-0a46c44d15c5",
+            "name": "The absurd ear inventory list"
           },
-          {
-            "uuid": "8676b377-4180-4ad9-b71d-dccfa83bea43",
-            "name": "My List"
-          },
-          {
-            "uuid": "164aaf12-2400-4af7-b5c1-00da17c3f60e",
-            "name": "New Test Inventory List Name Py8AXVk2upqoUebbR3MKrt6vnSxqq3PD"
-          }
         ],
-        "created": "2017-10-23T18:28:07.945769Z",
-        "last_updated": "2017-10-23T18:28:07.945815Z",
-        "sku_id": "khUyhMFBWSy35",
-        "quantity_in_stock": 32,
-        "quantity_on_backorder": 61,
-        "number_of_units_bundled": 48,
+        "created": "2018-04-06T01:12:10.126126Z",
+        "last_updated": "2018-04-06T01:12:10.126207Z",
+        "sku_id": "bK0bi12ATMo",
+        "quantity_in_stock": 19,
+        "quantity_on_backorder": 68,
+        "number_of_units_bundled": 1,
+        "_distinguishing_info_hash": "beACz7hjKsvFEnTGWQBuJ6",
         "minimum_advertised_price_currency": "USD",
         "msrp_currency": "USD",
         "item": {
-          "uuid": "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017"
-        }
-      }
+          "uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
+        },
+        "_sku_measurements": null,
+        "_package_measurements": null
+      },
     ],
     "restrict_from_marketplaces": [],
     "supplier": {
-      "uuid": "ce4f9803-7870-4a78-b2cb-8949c8f550d6",
-      "name": "Underwood-Chavez"
+      "uuid": "86ab12cd-fd66-4122-8b81-f837bc72d755",
+      "name": "Morales, Martin and Bautista"
     },
     "cost_range": {
       "max": 100.12,
@@ -207,49 +105,55 @@ right_code: |
       "min": 10
     },
     "msrp_range": {
-      "max": 165.45,
-      "min": 53.95
+      "max": 159.7,
+      "min": 54.08
     },
     "product_images": [
       {
-        "uuid": "443ba02e-973b-4fee-8a00-9c4bd8c5c3a5",
-        "url": "https://api.adorable.io/avatars/80/obad21.png",
-        "width": 80,
-        "height": 80
+        "uuid": "8103e697-6a17-4dd1-939b-3d7ca9676b1c",
+        "url": "https://picsum.photos/155/?image=10",
+        "width": 155,
+        "height": 155
       },
+    ],
+    "categories": [
       {
-        "uuid": "b08c80af-7b64-47e7-ab49-e77c8a5b33d7",
-        "url": "https://api.adorable.io/avatars/80/obad20.png",
-        "width": 80,
-        "height": 80
+        "uuid": "266a9a41-58a0-429e-8275-791f169789d1",
+        "path": [
+          "candid mouth l0",
+          "inexpensive mouth l1"
+        ],
+        "description": ""
       }
     ],
-    "created": "2017-10-23T18:28:07.156739Z",
-    "last_updated": "2017-10-23T18:28:07.156782Z",
-    "item_id": "G5kZl9ujiiXlD4c9Z",
-    "title": "The capital arch item",
-    "description": "Oh, no you don't!  Our capital arch item kicks the caring competition in the recess! Our capital arch item comes with built-in base for that extra chemical flavor. And then there's our capital arch item, which will blow off your enthusiastic hose!! Be the kind of person your mother wanted you to me. Because we care about how your capital arch item looks! You know you want it. Because if your capital arch item is bold, elaborate, and beautiful, everyone will think that of your swim, too! And that's why you don't put the test inside your capital arch item. It doesn't work that way. I like, it, I love it, I want some more of it.",
-    "warranty": "A certain warranty",
+    "created": "2018-04-06T01:12:10.001127Z",
+    "last_updated": "2018-04-06T01:12:10.001188Z",
+    "item_id": "7FZvMyg0BjfewNJJ",
+    "title": "The insistent room item",
+    "description": "Underneath all that able rest there will be insistent room item. Watching. Waiting. Wanting. Wishing. Wondering. Even in abashed sunlight our insistent room item works like a rest!It will blow your abashed mind.Then tacos will start raining right out of the abashed sky.Because it's the best insistent room item a person get possibly get.  At least on a abashed Tuesday! When it's all said and done, there's still insistent room item. Still. You know you want it. Because we care about how your insistent room item looks!",
+    "warranty": "A inborn warranty",
     "return_policy": null,
-    "manufacturer": "pizzas Corp.",
-    "brand": "base brand",
-    "country_of_origin": "BV",
-    "shipping_origin_country": "NZ",
+    "manufacturer": "direction Corp.",
+    "brand": "orange brand",
+    "country_of_origin": "CX",
+    "shipping_origin_country": "TZ",
     "other_marketplace_restriction": null,
     "fba_certified": null,
     "custom_attributes": {
-      "hair-color": "black",
-      "diameter": 1
-    },
-    "categories": [
-      66
-    ]
+      "hardness": 12,
+      "hair-color": "brown"
+    }
   }
   ~~~
   {: title="Response" }
 
 ---
 Get Details about an Item and the SKUs associated to it. There is a varying amount of data provided with each item and associated SKUs. The Response Parameters listed below are potential attributes of Items and SKUs that may be returned to you.
+
+### URL Parameters:
+
+item_uuid
+: (string) Universal Unique Identifier for the Item
 
 ### Response Parameters:
 
@@ -343,7 +247,7 @@ msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
+: (list) The list of Price Tier objects on this SKU
 
 product_images
 : (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
@@ -375,12 +279,6 @@ quantity_on_backorder
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
-
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
-
 item
 : (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
 
@@ -400,17 +298,7 @@ shipping_cost_is_estimate
 
 #### Product Image Object:
 
-uuid
-: (string) The Universal Unique Identifier for the SKU Product Image
-
-url
-: (string) The URL for the SKU Product Image
-
-width
-: (number) The Image Width in pixels for the SKU Product Image
-
-height
-: (number) The Image Height in pixels for the SKU Product Image
+{% include objects/price_tier.md %}
 
 #### SKU Measurements Object:
 
@@ -418,7 +306,7 @@ weight
 : (number) The Weight of the SKU in the "weight_units"
 
 weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options)
 
 length
 : (number) The Length of the SKU in "dimension_units"
@@ -430,7 +318,7 @@ height
 : (number) The Height of the SKU in "dimension_units"
 
 dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options)
 
 #### Package Measurements Object:
 
@@ -438,7 +326,7 @@ weight
 : (number) The Weight of the packaged SKU in "weight_units"
 
 weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options)
 
 length
 : (number) The Length of the packaged SKU in "dimension_units"
@@ -450,7 +338,7 @@ height
 : (number) The Height of the packaged SKU in "dimension_units"
 
 dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options)
 
 #### Product Identifiers Object:
 
@@ -526,20 +414,13 @@ width
 height
 : (number) The Image Height in pixels for the Item Product Image
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+### Expected Response Codes
 
+{% include links/response_codes.md %}
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -547,9 +428,10 @@ curl "https://api-sandbox.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -564,13 +446,13 @@ import json
 
 def send_request():
     # Get Item Detail
-    # GET https://api-sandbox.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/
+    # GET https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/",
+            url="https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -595,9 +477,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/items/0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017/',
+        path: '/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

@@ -1,14 +1,15 @@
 ---
 title: /orders/export/
 name: Get Orders Export
-position: 3.01
+position: 5.2
+visibility: public
 method: post
-description: Get an Export of the Orders via an email
+description: Get an Export of the Order List via an email
 right_code: |
   ~~~ json
   {
     "uuids": [
-      "3b6bf17a-1a95-41c7-8961-52ac8459c986"
+      "1ab8e55f-ea7e-4a58-b7d3-db723272dbbd"
     ]
   }
   ~~~
@@ -16,25 +17,31 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "9792c9d6-bb3f-4f93-b7b3-05582901ae72"
+    "uuid": "521c8baa-1c44-4ca7-88ce-f4eadba37bc0"
   }
   ~~~
   {: title="Response" }
 
 ---
-Get an Export of the Orders via an email to your email address on file. This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. We also provide an Export uuid in response to this call.
+Get an Export of the Orders via an email to your email address on file.
+
+This API call, like other "Export" calls, will send an email to your email address. That is, the email address linked to your user_uuid. The Order Details will be attached to the email as as a comma-delimited (.csv) file.
+
+We also provide an Export uuid in response to this call.
 
 ### Request Parameters:
 
 uuids
-: (Array) Array of Universal Unique Identifiers for Export
+: (array) Array of Universal Unique Identifiers for Export
 
 ### Response Parameters:
 
 uuid
 : (string) The Universal Unique Identifier for the Export
 
-Expected responses include 200, 400, 401, 403, or 404.
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
@@ -43,7 +50,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/export/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "uuids": [
-    "3b6bf17a-1a95-41c7-8961-52ac8459c986"
+    "1ab8e55f-ea7e-4a58-b7d3-db723272dbbd"
   ]
 }'
 
@@ -55,7 +62,7 @@ http --json POST 'https://api-sandbox.cruxconnect.com/orders/export/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     uuids:="[
-  \"3b6bf17a-1a95-41c7-8961-52ac8459c986\"
+  \"1ab8e55f-ea7e-4a58-b7d3-db723272dbbd\"
 ]"
 
 ~~~
@@ -81,7 +88,7 @@ def send_request():
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    uuids:="[
-  \"3b6bf17a-1a95-41c7-8961-52ac8459c986\"
+  \"1ab8e55f-ea7e-4a58-b7d3-db723272dbbd\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -95,10 +102,10 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Orders Export 
+// request Get Orders Export
 (function(callback) {
     'use strict';
-        
+
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
@@ -109,37 +116,37 @@ def send_request():
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
- 
+
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
         let responseStr = '';
-        
+
         res.on('data', (chunk) => {
             if (Buffer.isBuffer(chunk)) {
                 responseBufs.push(chunk);
             }
             else {
-                responseStr = responseStr + chunk;            
+                responseStr = responseStr + chunk;
             }
         }).on('end', () => {
-            responseStr = responseBufs.length > 0 ? 
+            responseStr = responseBufs.length > 0 ?
                 Buffer.concat(responseBufs).toString(responseEncoding) : responseStr;
-            
+
             callback(null, res.statusCode, res.headers, responseStr);
         });
-        
+
     })
     .setTimeout(0)
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"uuids\":[\"3b6bf17a-1a95-41c7-8961-52ac8459c986\"]}")
+    request.write("{\"uuids\":[\"1ab8e55f-ea7e-4a58-b7d3-db723272dbbd\"]}")
     request.end();
-    
+
 
 })((error, statusCode, headers, body) => {
-    console.log('ERROR:', error); 
+    console.log('ERROR:', error);
     console.log('STATUS:', statusCode);
     console.log('HEADERS:', JSON.stringify(headers));
     console.log('BODY:', body);

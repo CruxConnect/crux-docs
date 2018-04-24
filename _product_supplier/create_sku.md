@@ -8,9 +8,9 @@ description: Create a SKU to add to a specified item_uuid
 right_code: |
   ~~~ json
   {
-    "sku_id": "BdsIfyDeYw",
+    "sku_id": "bHBtgt-Vph6wXHl-nyVThLSY",
     "item": {
-      "uuid": "39e8924c-e4b9-4a14-9ef1-ac00dc505b9c"
+      "uuid": "162a0052-d0dd-4abe-a666-8e055ab29098"
     },
     "restrictions": "tmpunavail",
     "condition": "used",
@@ -27,12 +27,12 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "bf63c0e6-839e-4fca-a863-a937fdd6fdf3",
+    "uuid": "3155d7b1-2622-419b-9f91-2beb3eea9d80",
     "restrictions": "tmpunavail",
     "condition": "used",
     "distinguishing_attributes": {},
     "item": {
-      "uuid": "39e8924c-e4b9-4a14-9ef1-ac00dc505b9c"
+      "uuid": "162a0052-d0dd-4abe-a666-8e055ab29098"
     },
     "minimum_advertised_price": 40,
     "msrp": 55.99,
@@ -40,20 +40,20 @@ right_code: |
     "product_images": [],
     "measurements": {
       "package": {
-        "weight_units": null,
         "length": null,
-        "height": null,
         "width": null,
+        "weight_units": null,
         "weight": null,
-        "dimension_units": null
+        "dimension_units": null,
+        "height": null
       },
       "sku": {
-        "weight_units": null,
         "length": null,
-        "height": null,
         "width": null,
+        "weight_units": null,
         "weight": null,
-        "dimension_units": null
+        "dimension_units": null,
+        "height": null
       }
     },
     "product_identifiers": {
@@ -66,16 +66,16 @@ right_code: |
     },
     "catalogs": [
       {
-        "uuid": "f9698491-d831-4d32-b561-38f7ceac0eeb",
+        "uuid": "d210cf03-d00a-4470-9730-ec5eaff4449a",
         "name": "__master__"
       }
     ],
-    "created": "2018-03-14T16:56:21.059694Z",
-    "last_updated": "2018-03-14T16:56:21.059748Z",
-    "sku_id": "trRCmsuYkG",
+    "created": "2018-04-24T18:28:50.083304Z",
+    "last_updated": "2018-04-24T18:28:50.083357Z",
+    "sku_id": "pHmbKU-XjuukhuK-0RM2nAW6",
     "quantity_in_stock": 500,
     "quantity_on_backorder": 100,
-    "number_of_units_bundled": 2,
+    "number_of_units_bundled": 2
   }
   ~~~
   {: title="Response" }
@@ -106,9 +106,6 @@ quantity_on_backorder
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
-
 restrictions
 : (string) The Restrictions imposed on the SKU which can include "tmpunavail" (temporary unavailable) or "discontd" (dicontinued)
 
@@ -137,7 +134,7 @@ number_of_units_bundled
 task github https://github.com/CruxConnect/crux-api/issues/1017  Backend doesn't support passing in objects or arrays of objects
 
 price_tiers (TBD)
-: (array) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
+: (array) The list of Price Tier objects on this SKU
 
 product_images (TBD)
 : (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
@@ -179,7 +176,7 @@ msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (array) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
+: (array) The list of Price Tier objects on this SKU
 
 product_images
 : (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
@@ -213,22 +210,11 @@ number_of_units_bundled
 
 
 #### Distinguishing Attributes Object
-
 {% include objects/attributes.md %}
 
 #### Price Tier Object:
 
-shipping_cost
-: (number) The Shipping Cost per the SKU per the Price Tier
-
-minimum_tier_quantity
-: (number) The Minimum Tier Quantity per the SKU per the Price Tier
-
-cost
-: (number) The Cost per the SKU per the Price Tier
-
-shipping_cost_is_estimate
-: (boolean) The Shipping Cost is Estimate parameter answers the question whether the shipping cost is an estimate per the SKU per the Price Tier.
+{% include objects/price_tier.md %}
 
 #### Product Image Object:
 
@@ -319,10 +305,10 @@ name
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "sku_id": "BdsIfyDeYw",
+  "sku_id": "bHBtgt-Vph6wXHl-nyVThLSY",
   "minimum_advertised_price": "40.00",
   "condition": "used",
   "msrp_currency": "USD",
@@ -332,7 +318,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
   "restrictions": "tmpunavail",
   "msrp": "55.99",
   "item": {
-    "uuid": "39e8924c-e4b9-4a14-9ef1-ac00dc505b9c"
+    "uuid": "162a0052-d0dd-4abe-a666-8e055ab29098"
   },
   "minimum_advertised_price_currency": "USD"
 }'
@@ -342,9 +328,9 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
-    sku_id="BdsIfyDeYw" \
+    sku_id="bHBtgt-Vph6wXHl-nyVThLSY" \
     minimum_advertised_price="40.00" \
     condition="used" \
     msrp_currency="USD" \
@@ -354,7 +340,7 @@ http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
     restrictions="tmpunavail" \
     msrp="55.99" \
     item:="{
-  \"uuid\": \"39e8924c-e4b9-4a14-9ef1-ac00dc505b9c\"
+  \"uuid\": \"162a0052-d0dd-4abe-a666-8e055ab29098\"
 }" \
     minimum_advertised_price_currency="USD"
 
@@ -377,10 +363,10 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/skus/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sku_id="BdsIfyDeYw" \
+            data=json.dumps(    sku_id="bHBtgt-Vph6wXHl-nyVThLSY" \
     minimum_advertised_price="40.00" \
     condition="used" \
     msrp_currency="USD" \
@@ -390,7 +376,7 @@ def send_request():
     restrictions="tmpunavail" \
     msrp="55.99" \
     item:="{
-  \"uuid\": \"39e8924c-e4b9-4a14-9ef1-ac00dc505b9c\"
+  \"uuid\": \"162a0052-d0dd-4abe-a666-8e055ab29098\"
 }" \
     minimum_advertised_price_currency="USD")
         )
@@ -416,7 +402,7 @@ def send_request():
         port: '443',
         path: '/products/skus/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -444,7 +430,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_id\":\"BdsIfyDeYw\",\"item\":{\"uuid\":\"39e8924c-e4b9-4a14-9ef1-ac00dc505b9c\"},\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\"}")
+    request.write("{\"sku_id\":\"bHBtgt-Vph6wXHl-nyVThLSY\",\"item\":{\"uuid\":\"162a0052-d0dd-4abe-a666-8e055ab29098\"},\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\"}")
     request.end();
 
 

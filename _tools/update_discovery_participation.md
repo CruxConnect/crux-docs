@@ -1,69 +1,52 @@
 ---
-title: /products/items/export/
-name: Get Item Export
-position: 2.21
-visibility: public
+title: /discovery/participation/&lt;org_uuid&gt;/
+name: Update Discovery Participation
+visibility: internal
+position: 8.10
 method: post
-description: Get Item Export allows you to export the item you are interested.
+description: Update Discovery Catalog Participation
 right_code: |
   ~~~ json
   {
-    "item_uuids": [
-      "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
-    ]
+    "is_participating": true,
+    "discovery_catalog_uuid": "05a46c58-9d13-4912-9167-7effc2cc7482"
   }
   ~~~
   {: title="Request" }
 
-  ~~~ json
-  {
-    "export": {
-      "uuid": "b039dcf4-3509-49f2-a86e-64df0dc51aba"
-    }
-  }
-  ~~~
-  {: title="Response" }
-
 ---
-Get Item Export allows you to export the item via email to your email address on file
+Update Supplier participation in the Discovery Catalog and the identify which catalog they will use as their Discovery Catalog
 
-This API call, like other “Export” calls, will send an email to your email address. That is, the email address linked to your user_uuid. The Item Details will be attached to the email as as a comma-delimited (.csv) file.
+### Request
 
-### Request Parameters:
+is_participating
+: (bool) Whether or not the Supplier will participate in Discovery Catalog
 
-item_uuids
-: (list) The Item UUIDs parameter provides a list of item_uuids to be exported
-
-### Response Parameters:
-
-uuid
-: (string) Universal Unique Identifier for the Item
+discovery_catalog_uuid
+: (string) The Universal Unique Identifier for the Discovery Catalog. Required if participation is true.  Empty/Ignored if not participating.
 
 ### Expected Response Codes
 
+- 204 Success
+
+- 409 Conflict (when the org_uuid relates to a retailer not a supplier)
+
 {% include links/response_codes.md %}
 
-
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/export/" \
-     -H 'Authorization: Token 1234567890' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/catalog/update" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "item_uuids": [
-    "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
-  ]
+  "": ""
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/items/export/' \
-    'Authorization':'Token 1234567890' \
+http --json POST 'https://api-sandbox.cruxconnect.com/catalog/update' \
     'Content-Type':'application/json; charset=utf-8' \
-    item_uuids:="[
-  \"5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4\"
-]"
+    =""
 
 ~~~
 {: title="HTTPie" }
@@ -77,19 +60,16 @@ import json
 
 
 def send_request():
-    # Get Item Export
-    # POST https://api-sandbox.cruxconnect.com/products/items/export/
+    # Update Discovery Participation and Catalog
+    # POST https://api-sandbox.cruxconnect.com/catalog/update
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/items/export/",
+            url="https://api-sandbox.cruxconnect.com/catalog/update",
             headers={
-                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    item_uuids:="[
-  \"5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4\"
-]")
+            data=json.dumps(    ="")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -102,7 +82,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Item Export
+// request Update Discovery Participation and Catalog
 (function(callback) {
     'use strict';
 
@@ -111,12 +91,13 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/items/export/',
+        path: '/catalog/update',
         method: 'POST',
-        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
+    // Paw Store Cookies option is not supported
 
     const request = httpTransport.request(httpOptions, (res) => {
         let responseBufs = [];
@@ -141,7 +122,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_uuids\":[\"5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4\"]}")
+    request.write("{\"\":\"\"}")
     request.end();
 
 

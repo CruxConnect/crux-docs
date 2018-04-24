@@ -31,21 +31,36 @@ collections:
   product_retailer:
     visibility: all
     title: Product for Retailers
-    position: 5
+    position: 4.1
     type: api
   product_supplier:
     visibility: public
     title: Product for Supplier
-    position: 5
+    position: 4.2
     type: api
   ordering:
     visibility: public
     title: Ordering
+    position: 5
+    type: api
+  ordering_retailer:
+    visibility: public
+    title: Ordering for Retailer
+    position: 5.1
+    type: api
+  ordering_supplier:
+    visibility: public
+    title: Ordering for Supplier
+    position: 5.2
+    type: api
+  discovery:
+    visibility: public
+    title: Discovery
     position: 6
     type: api
-  export:
+  files:
     visibility: public
-    title: Export
+    title: Files
     position: 7
     type: api
   tools:

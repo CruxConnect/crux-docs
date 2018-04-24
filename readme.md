@@ -64,7 +64,7 @@ Proposing changes to the API can be done using github.
 The file for a particular endpoint is found in the category folder pertaining to the call.
 You can see those categories on the left nav in the API documentation (login, organzations, billing, etc.)
 
-Let’s say I wanted to add an api call at ‘/api/export/slap-dusty/’:
+Let’s say I wanted to add an api call at ‘/export/slap-dusty/’:
 
 I would create a new file called `slap_dusty.md` inside the `_export` folder.
 
@@ -93,11 +93,15 @@ exclamation
 : (string) The sound that came out of Dusty as you slapped him
 
 ### Expected Response Codes:
-
-| Code | Name                   | Meaning                         |
-|------|----------------------------------------------------------|
-| 201  | OK                     | Dusty was cloned, THEN slapped  |
-| 404  | Not Found              | Dusty is missing                |
+| Code | Name                   | Meaning                                        |
+|------|-------------------------------------------------------------------------|
+| 200  | OK                     | Dusty was slapped                              |
+| 400  | Bad Request            | You failed at slapping Dusty.                  |
+| 401  | Unauthorized           | You haven't told me who you are to slap Dusty. |
+| 403  | Permission Denied      | You are not allowed to slap Dusty.             |
+| 404  | Not Found              | Dusty is missing                               |
+| 409  | Critical               | Dusty is not a supplier                        |
+| 500  | Internal Server Error  | Dusty did something unexpected                 |
 
 {% include links/response_codes.md %}
 ```

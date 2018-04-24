@@ -2,13 +2,14 @@
 title: /products/items/
 name: Create Item
 position: 2.19
+visibility: public
 method: post
 description: Create Items allows you to create (add) an item in a Supplier account
 right_code: |
   ~~~ json
   {
-    "item_id": "RtfiaeIRXj",
-    "title": "The Item Title - XkuKRGySts",
+    "item_id": "HtrcWbunYX",
+    "title": "The Item Title - btmelAAwpl",
     "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
     "warranty": "The warranty information is included here",
     "return_policy": "The return policy is included here",
@@ -28,30 +29,31 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520",
+    "uuid": "e9e3cc96-515c-46ce-9aa3-c573e92b861b",
     "skus": [],
     "restrict_from_marketplaces": null,
     "supplier": {
-      "uuid": "9ff4ca63-7a46-4eee-a4fb-859e201460c8",
-      "name": "projectzuul"
+      "uuid": "7c60cf46-42af-4666-93cc-059a2d0fb7f9",
+      "name": "Supply Me"
     },
     "cost_range": {
-      "min": null,
-      "max": null
+      "max": null,
+      "min": null
     },
     "minimum_advertised_price_range": {
-      "min": null,
-      "max": null
+      "max": null,
+      "min": null
     },
     "msrp_range": {
-      "min": null,
-      "max": null
+      "max": null,
+      "min": null
     },
     "product_images": [],
-    "created": "2017-11-07T16:16:55.106356Z",
-    "last_updated": "2017-11-07T16:16:55.106410Z",
-    "item_id": "lWWISBERmJ",
-    "title": "The Item Title - KaiEHTsqXH",
+    "categories": [],
+    "created": "2018-04-24T17:40:09.302024Z",
+    "last_updated": "2018-04-24T17:40:09.302113Z",
+    "item_id": "ATEFgiInHi",
+    "title": "The Item Title - pyWIwRNjXV",
     "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
     "warranty": "The warranty information is included here",
     "return_policy": "The return policy is included here",
@@ -62,10 +64,9 @@ right_code: |
     "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
     "fba_certified": false,
     "custom_attributes": {
-      "Color": "black",
-      "Size": "15\" x 15\" x 18\""
-    },
-    "categories": []
+      "Size": "15\" x 15\" x 18\"",
+      "Color": "black"
+    }
   }
   ~~~
   {: title="Response" }
@@ -203,7 +204,7 @@ msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
+: (list) The list of Price Tier objects on this SKU
 
 product_images
 : (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
@@ -235,12 +236,6 @@ quantity_on_backorder
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
-
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
-
 item
 : (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
 
@@ -260,17 +255,7 @@ shipping_cost_is_estimate
 
 #### Product Image Object:
 
-uuid
-: (string) The Universal Unique Identifier for the SKU Product Image
-
-url
-: (string) The URL for the SKU Product Image
-
-width
-: (number) The Image Width in pixels for the SKU Product Image
-
-height
-: (number) The Image Height in pixels for the SKU Product Image
+{% include objects/price_tier.md %}
 
 #### SKU Measurements Object:
 
@@ -311,6 +296,7 @@ height
 
 dimension_units
 : (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
+
 
 #### Product Identifiers Object:
 
@@ -386,30 +372,28 @@ width
 height
 : (number) The Image Height in pixels for the Item Product Image
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+#### Custom Attributes Object
+
+{% include objects/attributes.md %}
+
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn'"'"'t already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
   "shipping_origin_country": "US",
   "country_of_origin": "CN",
-  "item_id": "RtfiaeIRXj",
+  "item_id": "HtrcWbunYX",
   "brand": "The Brand",
   "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
   "fba_certified": false,
-  "title": "The Item Title - XkuKRGySts",
+  "title": "The Item Title - btmelAAwpl",
   "custom_attributes": {
     "Color": "black",
     "Size": "15\\" x 15\\" x 18\\""
@@ -424,16 +408,16 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/items/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
     shipping_origin_country="US" \
     country_of_origin="CN" \
-    item_id="RtfiaeIRXj" \
+    item_id="HtrcWbunYX" \
     brand="The Brand" \
     other_marketplace_restriction="eBay, Amazon, Sears, Walmart" \
     fba_certified:=false \
-    title="The Item Title - XkuKRGySts" \
+    title="The Item Title - btmelAAwpl" \
     custom_attributes:="{
   \"Color\": \"black\",
   \"Size\": \"15\\\" x 15\\\" x 18\\\"\"
@@ -461,17 +445,17 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/items/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
     shipping_origin_country="US" \
     country_of_origin="CN" \
-    item_id="RtfiaeIRXj" \
+    item_id="HtrcWbunYX" \
     brand="The Brand" \
     other_marketplace_restriction="eBay, Amazon, Sears, Walmart" \
     fba_certified:=false \
-    title="The Item Title - XkuKRGySts" \
+    title="The Item Title - btmelAAwpl" \
     custom_attributes:="{
   \"Color\": \"black\",
   \"Size\": \"15\\\" x 15\\\" x 18\\\"\"
@@ -502,7 +486,7 @@ def send_request():
         port: '443',
         path: '/products/items/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -530,7 +514,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_id\":\"RtfiaeIRXj\",\"title\":\"The Item Title - XkuKRGySts\",\"description\":\"This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.\",\"warranty\":\"The warranty information is included here\",\"return_policy\":\"The return policy is included here\",\"manufacturer\":\"The Manufacturer\",\"brand\":\"The Brand\",\"country_of_origin\":\"CN\",\"shipping_origin_country\":\"US\",\"other_marketplace_restriction\":\"eBay, Amazon, Sears, Walmart\",\"fba_certified\":false,\"custom_attributes\":{\"Color\":\"black\",\"Size\":\"15\\\" x 15\\\" x 18\\\"\"}}")
+    request.write("{\"item_id\":\"HtrcWbunYX\",\"title\":\"The Item Title - btmelAAwpl\",\"description\":\"This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.\",\"warranty\":\"The warranty information is included here\",\"return_policy\":\"The return policy is included here\",\"manufacturer\":\"The Manufacturer\",\"brand\":\"The Brand\",\"country_of_origin\":\"CN\",\"shipping_origin_country\":\"US\",\"other_marketplace_restriction\":\"eBay, Amazon, Sears, Walmart\",\"fba_certified\":false,\"custom_attributes\":{\"Color\":\"black\",\"Size\":\"15\\\" x 15\\\" x 18\\\"\"}}")
     request.end();
 
 
