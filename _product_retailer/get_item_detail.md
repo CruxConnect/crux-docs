@@ -1,5 +1,5 @@
 ---
-title: /products/items/&lt;uuid&gt;/
+title: /products/items/&lt;item_uuid&gt;/
 name: Get Item Detail
 position: 1.04
 visibility: public
@@ -258,8 +258,8 @@ measurements
 product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
 
-inventory_arrays
-: (array) The Inventory arrays array contains all of the Inventory array objects where this SKU currently resides.
+inventory_lists
+: (array) The Inventory Lists array contains all of the Inventory List objects where this SKU currently resides.
 
 created
 : (string) The Created parameter indicates the date the SKU was Created in our system.
@@ -360,13 +360,13 @@ asin
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
 
-#### Inventory array Object:
+#### Inventory List Object:
 
 uuid
-: (string) The Universal Unique Identifier for the Inventory array
+: (string) The Universal Unique Identifier for the Inventory List
 
 name
-: (string) The Name your company has given to this Inventory array
+: (string) The Name your company has given to this Inventory List
 
 #### Supplier Object:
 
