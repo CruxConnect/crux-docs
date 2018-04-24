@@ -284,7 +284,7 @@ filters
 : (object) The Filters object parameter includes all of the potential filters you wish to include in your Search. These filters include "cost_per_unit", "number_of_item_images", "image_height", "image_width", etc.
 
 facets
-: (object) The Facets object parameter includes all of the potential facets you wish to include in your Search. These facets include "supplier", "shipping_cost_type", "shipping_origin_country", "country_of_origin", "bundle_type", "product_identifiers", "categories", catalog_type, etc.
+: (object) The Facets object parameter includes all of the potential facets you wish to include in your Search. These facets include "supplier", "shipping_cost_type", "shipping_origin_country", "country_of_origin", "bundle_type", "product_identifiers", "categories", "catalog_type", etc.
 
 search_term
 : (string) The Search Term you would like to search for
@@ -355,7 +355,7 @@ sort
 : (list) The Sort list parameter includes the attribute(s) on which you are performing a Sort on your Search
 
 facets
-: (object) The Facets object contains product_identifiers, bundle_type, condition, supplier, catalogs, categories, shipping_origin_country, shipping_cost_type, and inventory lists
+: (object) The Facets object contains product_identifiers, bundle_type, condition, supplier, catalogs, categories, shipping_origin_country, shipping_cost_type, catalog_type, and inventory lists
 
 filters
 : (object) The Filters object contains image_width, cost_per_unit, minimum_tier_quantity, quantity_in_stock, and image_height
@@ -522,7 +522,7 @@ weight
 : (number) The Weight of the SKU in the "weight_units"
 
 weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options)
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
 
 length
 : (number) The Length of the SKU in "dimension_units"
@@ -534,7 +534,7 @@ height
 : (number) The Height of the SKU in "dimension_units"
 
 dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options)
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 #### Package Measurements Object:
 
@@ -542,7 +542,7 @@ weight
 : (number) The Weight of the packaged SKU in the "weight_units"
 
 weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options)
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
 
 length
 : (number) The Length of the packaged SKU in "dimension_units"
@@ -554,7 +554,7 @@ height
 : (number) The Height of the packaged SKU in "dimension_units"
 
 dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options)
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 #### Product Identifiers Object:
 
@@ -576,13 +576,13 @@ asin
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
 
-#### Inventory list Object:
+#### Inventory List Object:
 
 uuid
-: (string) The Universal Unique Identifier for the Inventory list
+: (string) The Universal Unique Identifier for the Inventory List
 
 name
-: (string) The Name your company has given to this Inventory list
+: (string) The Name your company has given to this Inventory List
 
 Supplier Object:
 

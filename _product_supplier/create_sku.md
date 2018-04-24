@@ -176,7 +176,7 @@ msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (array) Array of Price Tier objects on this SKU
+: (array) The list of Price Tier objects on this SKU
 
 product_images
 : (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.

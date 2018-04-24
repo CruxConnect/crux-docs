@@ -192,7 +192,7 @@ dimension_units
 #### Package Measurements Object:
 
 weight
-: (number) The Weight of the packaged SKU in the "weight_units"
+: (number) The Weight of the packaged SKU in "weight_units"
 
 weight_units
 : (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options)
