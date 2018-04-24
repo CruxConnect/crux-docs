@@ -75,6 +75,10 @@ right_code: |
               "uuid": "1431483d-f893-45a4-8a73-0a46c44d15c5",
               "name": "The absurd ear inventory list"
             },
+            {
+              "uuid": "5d173491-52ad-4650-91cf-b279475f978d",
+              "name": "The ablaze duck inventory list"
+            }
           ],
           "created": "2018-04-06T01:12:10.126126Z",
           "last_updated": "2018-04-06T01:12:10.126207Z",
@@ -90,7 +94,7 @@ right_code: |
           },
           "_sku_measurements": null,
           "_package_measurements": null
-        },
+        }
       ],
       "restrict_from_marketplaces": [],
       "supplier": {
@@ -144,7 +148,7 @@ right_code: |
         "hardness": 12,
         "hair-color": "brown"
       }
-    }
+    },
   ]
   ~~~
   {: title="Response" }
