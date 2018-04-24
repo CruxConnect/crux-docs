@@ -4,7 +4,7 @@ name: Get SKUs
 position: 2.23
 visibility: public
 method: get
-description: Get SKUs array allows you to return a complete array of SKUs you are interested in.
+description: Get SKUs allows you to return a complete array of SKUs you are interested in.
 right_code: |
   ~~~ json
   [
@@ -70,14 +70,14 @@ right_code: |
         "asin": null,
         "mpn": null
       },
-      "inventory_arrays": [
+      "inventory_lists": [
         {
           "uuid": "1431483d-f893-45a4-8a73-0a46c44d15c5",
-          "name": "The absurd ear inventory array"
+          "name": "The absurd ear Inventory List"
         },
         {
           "uuid": "5d173491-52ad-4650-91cf-b279475f978d",
-          "name": "The ablaze duck inventory array"
+          "name": "The ablaze duck Inventory List"
         }
       ],
       "created": "2018-04-06T01:12:10.036088Z",
@@ -130,8 +130,8 @@ measurements
 product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
 
-inventory_arrays
-: (array) The Inventory arrays array contains all of the Inventory array objects where this SKU currently resides.
+inventory_lists
+: (array) The Inventory Lists array contains all of the Inventory List objects where this SKU currently resides.
 
 created
 : (string) The Created parameter indicates the date the SKU was Created in our system.
@@ -229,13 +229,13 @@ asin
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
 
-#### Inventory array Object:
+#### Inventory List Object:
 
 uuid
-: (string) The Universal Unique Identifier for the Inventory array
+: (string) The Universal Unique Identifier for the Inventory List
 
 name
-: (string) The Name your company has given to this Inventory array
+: (string) The Name your company has given to this Inventory List
 
 Supplier Object:
 
