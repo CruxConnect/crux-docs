@@ -187,7 +187,7 @@ right_code: |
       ],
       "supplier": [
         {
-          "name": "projectzuul",
+          "name": "supplier",
           "uuid": "9ff4ca63-7a46-4eee-a4fb-859e201460c8",
           "selected": false,
           "count": 3
