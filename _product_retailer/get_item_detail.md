@@ -419,7 +419,7 @@ height
 {% include links/response_codes.md %}
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/" \
+curl "https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -428,7 +428,7 @@ curl "https://api-dev.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-dev.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -446,11 +446,11 @@ import json
 
 def send_request():
     # Get Item Detail
-    # GET https://api-dev.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/
+    # GET https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/",
+            url="https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -475,7 +475,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/',
         method: 'GET',

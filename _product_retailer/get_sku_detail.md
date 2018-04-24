@@ -6,101 +6,118 @@ visibility: public
 method: get
 description: Get Details about a SKU
 right_code: |
- ~~~ json
+  ~~~ json
   {
-    "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc",
+    "skus": [
+      {
+        "quantity": "72",
+        "sku_id": "WONKYWILLA1"
+      },
+    ],
+    "po_number": "po-PSJrQDYh",
+    "notes": "here are some notes",
+    "shipping_carrier": "UPS",
+    "shipping_method": "Ground",
+    "address": {
+      "name": "Bob Iger",
+      "business_name": "NBC",
+      "address1": "30 Rockefeller Plaza",
+      "address2": "STE 123",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10112"
+    }
+  }
+  ~~~
+  {: title="Request" }
+
+  ~~~ json
+  {
+    "uuid": "95848455-d19b-48f8-8f53-5791818ddeca",
     "restrictions": null,
     "condition": "refurb",
     "distinguishing_attributes": {
-      "size": 3
+      "size": 9,
+      "color": "antiquewhite"
     },
     "item": {
-      "uuid": "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
+      "uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
     },
     "minimum_advertised_price": 10,
-    "msrp": 43.65,
+    "msrp": 54.08,
     "price_tiers": [
       {
-        "shipping_cost_is_estimate": true,
-        "cost": 100.12,
+        "handling_cost": 0.99,
+        "shipping_cost_type": "fixed",
+        "catalog": {
+          "name": "The accidental pollution catalog",
+          "uuid": "0692defa-1fbf-4715-b7a2-60690292c37c"
+        },
+        "shipping_cost_is_estimate": false,
+        "cost": 20.99,
+        "cost_per_unit": 0.9995238095238095,
         "shipping_cost": 1.99,
-        "minimum_tier_quantity": 2
+        "minimum_tier_quantity": 1
       },
-      {
-        "shipping_cost_is_estimate": true,
-        "cost": 75.6,
-        "shipping_cost": 0.99,
-        "minimum_tier_quantity": 4
-      },
-      {
-        "shipping_cost_is_estimate": true,
-        "cost": 49.99,
-        "shipping_cost": 0,
-        "minimum_tier_quantity": 16
-      }
     ],
     "product_images": [
       {
-        "uuid": "1929dd2b-ad2c-4021-9960-fb26e7bf448a",
-        "url": "https://api.adorable.io/avatars/80/obad20.png",
-        "width": 80,
-        "height": 80
-      },
-      {
-        "uuid": "8e6e1355-a185-4574-bb54-dc2193b9ab2d",
-        "url": "https://api.adorable.io/avatars/285/obad39.png",
+        "uuid": "97fa6aad-b160-4dea-9740-3eaa98886ccd",
+        "url": "https://picsum.photos/285/?image=17",
         "width": 285,
         "height": 285
-      }
+      },
     ],
     "measurements": {
-      "sku": {
-        "weight": null,
-        "length": null,
-        "width": null,
-        "height": null
-      },
       "package": {
-        "weight": null,
+        "height": null,
         "length": null,
         "width": null,
-        "height": null
+        "weight_units": null,
+        "weight": null,
+        "dimension_units": null
+      },
+      "sku": {
+        "height": null,
+        "length": null,
+        "width": null,
+        "weight_units": null,
+        "weight": null,
+        "dimension_units": null
       }
     },
     "product_identifiers": {
       "upca": null,
       "ean13": null,
       "gtin14": null,
-      "isbn": "9780765348272",
-      "asin": "B000N2HBSO",
+      "isbn": null,
+      "asin": null,
       "mpn": null
     },
     "inventory_lists": [
       {
-        "uuid": "44a1f968-1ce8-4826-9cd9-f8a54f5d542d",
-        "name": "The empty calendar inventory list"
+        "uuid": "1431483d-f893-45a4-8a73-0a46c44d15c5",
+        "name": "The absurd ear inventory list"
       },
       {
-        "uuid": "c9b32603-f6bf-4f49-89fd-8424399974f2",
-        "name": "The enchanted act inventory list"
-      },
-      {
-        "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",
-        "name": "The accessible motion inventory list"
+        "uuid": "5d173491-52ad-4650-91cf-b279475f978d",
+        "name": "The ablaze duck inventory list"
       }
     ],
-    "created": "2017-10-23T18:25:36.448007Z",
-    "last_updated": "2017-10-23T18:25:36.448050Z",
-    "sku_id": "voGDR4gOyYUOgcT7gw",
-    "quantity_in_stock": 14,
-    "quantity_on_backorder": 81,
-    "number_of_units_bundled": 1,
+    "created": "2018-04-06T01:12:10.036088Z",
+    "last_updated": "2018-04-06T01:12:10.036182Z",
+    "sku_id": "wQWFpGc",
+    "quantity_in_stock": null,
+    "quantity_on_backorder": 79,
+    "number_of_units_bundled": 21
   }
   ~~~
   {: title="Response" }
 
 ---
 Get Details about a SKU. There is a varying amount of data provided with each SKUs. The Response Parameters listed below are potential attributes of SKUs that may be returned to you.
+
+URL Endpoint: /api/products/skus/<sku_uuid>/
 
 ### Response Parameters:
 
@@ -126,7 +143,7 @@ msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
+: (list) The list of Price Tier objects on this SKU
 
 product_images
 : (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
@@ -160,17 +177,7 @@ number_of_units_bundled
 
 #### Price Tier Object:
 
-shipping_cost
-: (number) The Shipping Cost per the SKU per the Price Tier
-
-minimum_tier_quantity
-: (number) The Minimum Tier Quantity per the SKU per the Price Tier
-
-cost
-: (number) The Cost per the SKU per the Price Tier
-
-shipping_cost_is_estimate
-: (boolean) The Shipping Cost is Estimate parameter answers the question whether the shipping cost is an estimate per the SKU per the Price Tier.
+{% include objects/price_tier.md %}
 
 #### Product Image Object:
 
@@ -192,7 +199,7 @@ weight
 : (number) The Weight of the SKU in the "weight_units"
 
 weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
+: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options)
 
 length
 : (number) The Length of the SKU in "dimension_units"
@@ -204,27 +211,21 @@ height
 : (number) The Height of the SKU in "dimension_units"
 
 dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options)
 
 #### Package Measurements Object:
 
 weight
-: (number) The Weight of the packaged SKU in "weight_units"
-
-weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
+: (number) The Weight of the packaged SKU in pounds (lbs.)
 
 length
-: (number) The Length of the packaged SKU in "dimension_units"
+: (number) The Length of the packaged SKU in inches
 
 width
-: (number) The Width of the packaged SKU in "dimension_units"
+: (number) The Width of the packaged SKU in inches
 
 height
-: (number) The Height of the packaged SKU in "dimension_units"
-
-dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
+: (number) The Height of the packaged SKU in inches
 
 #### Product Identifiers Object:
 
@@ -262,24 +263,71 @@ uuid
 name
 : (string) The Supplier Name
 
-# Response Codes
+### Expected Response Codes
 
-{% include links/response_codes.md %}                                        |
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{}'
+     -d $'{
+  "address": {
+    "state": "NY",
+    "city": "New York",
+    "address1": "30 Rockefeller Plaza",
+    "business_name": "NBC",
+    "postal_code": "10112",
+    "name": "Bob Iger",
+    "address2": "STE 123"
+  },
+  "shipping_carrier": "UPS",
+  "po_number": "po-PSJrQDYh",
+  "notes": "here are some notes",
+  "skus": [
+    {
+      "quantity": "72",
+      "sku_id": "WONKYWILLA1"
+    },
+    {
+      "quantity": "848",
+      "sku_id": "CHOCO77"
+    }
+  ],
+  "shipping_method": "Ground"
+}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
-    'Content-Type':'application/json; charset=utf-8'
+http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/' \
+    'Authorization':'Token 1234567890' \
+    'Content-Type':'application/json; charset=utf-8' \
+    address:="{
+  \"state\": \"NY\",
+  \"city\": \"New York\",
+  \"address1\": \"30 Rockefeller Plaza\",
+  \"business_name\": \"NBC\",
+  \"postal_code\": \"10112\",
+  \"name\": \"Bob Iger\",
+  \"address2\": \"STE 123\"
+}" \
+    shipping_carrier="UPS" \
+    po_number="po-PSJrQDYh" \
+    notes="here are some notes" \
+    skus:="[
+  {
+    \"quantity\": \"72\",
+    \"sku_id\": \"WONKYWILLA1\"
+  },
+  {
+    \"quantity\": \"848\",
+    \"sku_id\": \"CHOCO77\"
+  }
+]" \
+    shipping_method="Ground"
 
 ~~~
 {: title="HTTPie" }
@@ -294,16 +342,38 @@ import json
 
 def send_request():
     # Get Sku Detail
-    # GET https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/
+    # GET https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/",
+            url="https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps()
+            data=json.dumps(    address:="{
+  \"state\": \"NY\",
+  \"city\": \"New York\",
+  \"address1\": \"30 Rockefeller Plaza\",
+  \"business_name\": \"NBC\",
+  \"postal_code\": \"10112\",
+  \"name\": \"Bob Iger\",
+  \"address2\": \"STE 123\"
+}" \
+    shipping_carrier="UPS" \
+    po_number="po-PSJrQDYh" \
+    notes="here are some notes" \
+    skus:="[
+  {
+    \"quantity\": \"72\",
+    \"sku_id\": \"WONKYWILLA1\"
+  },
+  {
+    \"quantity\": \"848\",
+    \"sku_id\": \"CHOCO77\"
+  }
+]" \
+    shipping_method="Ground")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -325,9 +395,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/skus/9060814c-9feb-4a3e-958c-cb26d537cffc/',
+        path: '/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -355,7 +425,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{}")
+    request.write("{\"skus\":[{\"quantity\":\"72\",\"sku_id\":\"WONKYWILLA1\"},{\"quantity\":\"848\",\"sku_id\":\"CHOCO77\"}],\"po_number\":\"po-PSJrQDYh\",\"notes\":\"here are some notes\",\"shipping_carrier\":\"UPS\",\"shipping_method\":\"Ground\",\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\"}}")
     request.end();
 
 

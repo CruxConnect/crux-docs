@@ -690,7 +690,7 @@ height
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/products/items/" \
+curl "https://api-sandbox.cruxconnect.com/products/items/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -699,7 +699,7 @@ curl "https://api-dev.cruxconnect.com/products/items/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-dev.cruxconnect.com/products/items/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/items/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -717,11 +717,11 @@ import json
 
 def send_request():
     # Get Items
-    # GET https://api-dev.cruxconnect.com/products/items/
+    # GET https://api-sandbox.cruxconnect.com/products/items/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/products/items/",
+            url="https://api-sandbox.cruxconnect.com/products/items/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -746,7 +746,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/items/',
         method: 'GET',
