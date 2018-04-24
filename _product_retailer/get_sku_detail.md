@@ -117,7 +117,9 @@ right_code: |
 ---
 Get Details about a SKU. There is a varying amount of data provided with each SKUs. The Response Parameters listed below are potential attributes of SKUs that may be returned to you.
 
-URL Endpoint: /api/products/skus/<sku_uuid>/
+### URL Parameters
+sku_uuid
+: (string) The Universal Unique Identifier for the SKU
 
 ### Response Parameters:
 
