@@ -119,10 +119,10 @@ msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (array) The array of Price Tier objects on this SKU
+: (list) The list of Price Tier objects on this SKU
 
 product_images
-: (array) The Product Images are a array of product image objects for the SKU which contain a uuid, url, width, and height of the image.
+: (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.
@@ -131,7 +131,7 @@ product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
 
 inventory_lists
-: (array) The Inventory Lists array contains all of the Inventory List objects where this SKU currently resides.
+: (list) The Inventory Lists list contains all of the Inventory List objects where this SKU currently resides.
 
 created
 : (string) The Created parameter indicates the date the SKU was Created in our system.

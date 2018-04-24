@@ -218,7 +218,7 @@ dimension_units
 #### Package Measurements Object:
 
 weight
-: (number) The Weight of the packaged SKU in pounds (lbs.)
+: (number) The Weight of the packaged SKU in "weight_units"
 
 length
 : (number) The Length of the packaged SKU in "dimension_units"
