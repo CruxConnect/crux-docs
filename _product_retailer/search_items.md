@@ -284,7 +284,7 @@ filters
 : (object) The Filters object parameter includes all of the potential filters you wish to include in your Search. These filters include "cost_per_unit", "number_of_item_images", "image_height", "image_width", etc.
 
 facets
-: (object) The Facets object parameter includes all of the potential facets you wish to include in your Search. These facets include "supplier", "shipping_cost_type", "shipping_origin_country", "country_of_origin", "bundle_type", "product_identifiers", "categories", etc.
+: (object) The Facets object parameter includes all of the potential facets you wish to include in your Search. These facets include "supplier", "shipping_cost_type", "shipping_origin_country", "country_of_origin", "bundle_type", "product_identifiers", "categories", catalog_type, etc.
 
 search_term
 : (string) The Search Term you would like to search for
@@ -312,30 +312,30 @@ image_width
 #### Facets Object:
 
 supplier
-: (array) The Supplier array is a array of suppliers using uuid or name
+: (list) The Supplier list is a list of suppliers using uuid or name
 
 shipping_cost_type
-: (array) The Shipping Cost Type array is a array of types of shipping costs the Supplier has set up
+: (list) The Shipping Cost Type list is a list of types of shipping costs the Supplier has set up
 
 shipping_origin_country
-: (array) The Shipping Origin Country array is a array of countries using the country codes. Values include "US", "CA", "MX", etc.
+: (list) The Shipping Origin Country list is a list of countries using the country codes. Values include "US", "CA", "MX", etc.
 
 bundle_type
-: (array) The Bundle Type array is a array of bundle types the Supplier has set up for the SKUs. Values for bundle_type_name include "Case Pack" and "Single".
+: (list) The Bundle Type list is a list of bundle types the Supplier has set up for the SKUs. Values for bundle_type_name include "Case Pack" and "Single".
 
 product_identifiers
-: (array) The Product Identifiers array is a array of product identifiers available on each SKU
+: (list) The Product Identifiers list is a list of product identifiers available on each SKU
 
 categories
-: (array) The Categories array is a array of categories in which SKUs may reside
+: (list) The Categories list is a list of categories in which SKUs may reside
 
 #### Pagination Object:
 
 start
-: (number) The Start parameter indicates on which element of the array of results the pagination should begin.
+: (number) The Start parameter indicates on which element of the list of results the pagination should begin.
 
 limit
-: (number) The Limit parameter indicates one which element of the array of results the pagination should end.
+: (number) The Limit parameter indicates one which element of the list of results the pagination should end.
 
 ### Response Parameters:
 
@@ -343,16 +343,16 @@ pagination
 : (object) The Pagination object parameter includes the total_count, start, and limit for your Search.
 
 items
-: (array) The Items array is a array of Items that match the criteria you provided for your Search.
+: (list) The Items list is a list of Items that match the criteria you provided for your Search.
 
 search_term
 : (string) The Search Term used to filter the results of your Search
 
 sort
-: (array) The Sort array parameter includes the attribute(s) on which you are performing a Sort on your Search
+: (list) The Sort list parameter includes the attribute(s) on which you are performing a Sort on your Search
 
 facets
-: (object) The Facets object contains product_identifiers, bundle_type, condition, supplier, catalogs, categories, shipping_origin_country, shipping_cost_type, and inventory arrays
+: (object) The Facets object contains product_identifiers, bundle_type, condition, supplier, catalogs, categories, shipping_origin_country, shipping_cost_type, and inventory lists
 
 filters
 : (object) The Filters object contains image_width, cost_per_unit, minimum_tier_quantity, quantity_in_stock, and image_height
@@ -363,10 +363,10 @@ total_count
 : (number) The Total Count of results returned for this Search
 
 start
-: (number) The Start parameter indicates on which element of the array of results the pagination should begin.
+: (number) The Start parameter indicates on which element of the list of results the pagination should begin.
 
 limit
-: (number) The Limit parameter indicates one which element of the array of results the pagination should end.
+: (number) The Limit parameter indicates one which element of the list of results the pagination should end.
 
 #### Item Object:
 
@@ -374,10 +374,10 @@ uuid
 : (string) Universal Unique Identifier for the Item
 
 skus
-: (array) The Stock Keeping Units (SKUs) array contains individual SKUs, or Item-variants, with their SKU-level data
+: (list) The Stock Keeping Units (SKUs) list contains individual SKUs, or Item-variants, with their SKU-level data
 
 restrict_from_marketplaces
-: (array) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
+: (list) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
 
 supplier
 : (object) The Supplier object contains the uuid for the Supplier and the Supplier name
@@ -392,7 +392,7 @@ msrp_range
 : (object) The Manufacturer's Suggested Retail Price Range object contains the minimum and maximum MSRPs for the Item, based on the available variants (SKUs).
 
 product_images
-: (array) The Product Images array stores a array of images for the item, based on the available variants (SKUs)
+: (list) The Product Images list stores a list of images for the item, based on the available variants (SKUs)
 
 created
 : (string) The Created parameter is the date when the Item was added to our system.
@@ -428,7 +428,7 @@ shipping_origin_country
 : (string) The Shipping Origin Country is the country code of the shipping origin of the Item. If the item is manufacturered in the USA, but the distributor is in Canada, the Shipping Origin Country is going to have a value of "CA".
 
 other_marketplace_restriction
-: (string) The Other Markeplace Restriction is a string array of markeplaces where the item is prohibited from being sold.
+: (string) The Other Markeplace Restriction is a string list of markeplaces where the item is prohibited from being sold.
 
 fba_certified
 : (boolean) The Fulfillment By Amazon (FBA) Certified parameter indicates whether this supplier has FBA set up on this Item.
@@ -437,7 +437,7 @@ custom_attributes
 : (object) The Custom Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
 
 categories
-: (array) The Categories array contains a array of the categories, as provided by the Supplier, for this Item.
+: (list) The Categories list contains a list of the categories, as provided by the Supplier, for this Item.
 
 #### SKU Object:
 
@@ -454,16 +454,16 @@ distinguishing_attributes
 : (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
 
 minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally array the SKU for sale at a lower price.
+: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
 
 msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
 price_tiers
-: (array) The array of Price Tier objects on this SKU
+: (list) The list of Price Tier objects on this SKU
 
 product_images
-: (array) The Product Images are a array of product image objects for the SKU which contain a uuid, url, width, and height of the image.
+: (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.
@@ -471,8 +471,8 @@ measurements
 product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
 
-inventory_arrays
-: (array) The Inventory arrays array contains all of the Inventory array objects where this SKU currently resides.
+inventory_lists
+: (list) The Inventory lists list contains all of the Inventory list objects where this SKU currently resides.
 
 created
 : (string) The Created parameter indicates the date the SKU was Created in our system.
@@ -568,18 +568,18 @@ isbn
 : (string) The International Standard Book Number (ISBN) is a unique numberic commercial book identifier. If the SKU is a book or can be classified as a book in some way shape or form, then an ISBN may be available for it.
 
 asin
-: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper arraying on Amazon.com.
+: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper listing on Amazon.com.
 
 mpn
 : (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
 
-#### Inventory array Object:
+#### Inventory list Object:
 
 uuid
-: (string) The Universal Unique Identifier for the Inventory array
+: (string) The Universal Unique Identifier for the Inventory list
 
 name
-: (string) The Name your company has given to this Inventory array
+: (string) The Name your company has given to this Inventory list
 
 Supplier Object:
 
@@ -630,31 +630,31 @@ height
 #### Facets Object:
 
 product_identifiers
-: (array) The Product Identifiers array is a array of product identifiers available on each SKU
+: (list) The Product Identifiers list is a list of product identifiers available on each SKU
 
 bundle_type
-: (array) The Bundle Type array is a array of bundle types the Supplier has set up for the SKUs. Values for bundle_type_name include "Case Pack" and "Single".
+: (list) The Bundle Type list is a list of bundle types the Supplier has set up for the SKUs. Values for bundle_type_name include "Case Pack" and "Single".
 
 condition
-: (array) The Condition array is a array of conditions and counts for each pertaining to the Items of your results
+: (list) The Condition list is a list of conditions and counts for each pertaining to the Items of your results
 
 supplier
-: (array) The Supplier array is a array of suppliers using uuid or name
+: (list) The Supplier list is a list of suppliers using uuid or name
 
 catalogs
-: (array) The Catalogs array is a array of catalogs in which SKUs reside
+: (list) The Catalogs list is a list of catalogs in which SKUs reside
 
 categories
-: (array) The Categories array is a array of categories in which SKUs reside
+: (list) The Categories list is a list of categories in which SKUs reside
 
 shipping_origin_country
-: (array) The Shipping Origin Country array is a array of countries using the country codes. Values include "US", "CA", "MX", etc.
+: (list) The Shipping Origin Country list is a list of countries using the country codes. Values include "US", "CA", "MX", etc.
 
 shipping_cost_type
-: (array) The Shipping Cost Type array is a array of types of shipping costs the Supplier has set up
+: (list) The Shipping Cost Type list is a list of types of shipping costs the Supplier has set up
 
-inventory_arrays
-: (array) The Inventory arrays array is a array of the inventory arrays in which the SKUs resize
+inventory_lists
+: (list) The Inventory lists list is a list of the inventory lists in which the SKUs resize
 
 ### Expected Response Codes
 
