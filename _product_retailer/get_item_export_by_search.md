@@ -26,7 +26,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Get an Export of the Items sent back to the browser or via an email to your email address on file. We also provide an Export uuid in response to this call.
+Get an Export of the Items sent back to the browser or via an email to your email address on file.
 
 The file returned is a comma delimited (.csv)  containing the response parameter data in a flat format.
 
