@@ -26,7 +26,11 @@ right_code: |
   {: title="Response" }
 
 ---
-Get Item List allows you to return a complete list of items you are interested in.
+Get an Export of the Items sent back to the browser or via an email to your email address on file. We also provide an Export uuid in response to this call.
+
+The file returned is a comma delimited (.csv)  containing the response parameter data in a flat format.
+
+If there are no skus, then the returned export is a csv file with a simple header (item_id and sku_id) with no underlying values.
 
 ### Request Parameters:
 
@@ -35,22 +39,11 @@ item_uuids
 
 ### Response Parameters:
 
-export
-: (object) The export object contains a single key and value pair of uuid and it's value
-
 uuid
-: (string) The Universal Unique Identifier for the Export. Note: In the case of no results in the search the key "uuid" and it's accompanying value will not be displayed at all. (e.g. {"export": {}})
+: (string) The Universal Unique Identifier for the Export.
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+#### Expected Response Codes
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/export/" \
