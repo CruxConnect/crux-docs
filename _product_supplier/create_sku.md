@@ -1,7 +1,7 @@
 ---
 title: /products/skus/
 name: Create SKU
-position: 3.07
+position: 12.07
 visibility: public
 method: post
 description: Create a SKU to add to a specified item_uuid

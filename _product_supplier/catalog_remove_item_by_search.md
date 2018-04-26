@@ -1,7 +1,7 @@
 ---
 title: /products/catalogs/&ltcatalog_uuid&gt/remove-items-by-search/
 name: Catalog Remove Item by Search
-position: 3.05
+position: 12.05
 method: post
 description: Remove Items from an existing Catalog by Search
 right_code: |

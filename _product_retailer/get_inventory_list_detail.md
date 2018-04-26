@@ -1,7 +1,7 @@
 ---
 title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/
 name: Get Inventory List Detail
-position: 2.10
+position: 11.01
 visibility: public
 method: get
 description: Get the Details of a particular Inventory List you have access to

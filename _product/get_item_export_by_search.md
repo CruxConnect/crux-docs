@@ -1,16 +1,16 @@
 ---
-title: /products/items/export/
-name: Get Item Export
-position: 2.21
+title: /products/items/search/export/
+name: Get Item Export by Search
+position: 4.06
 visibility: public
 method: post
-description: Get Item Export allows you to export the item you are interested.
-
+description: Get Item List allows you to return a complete list of items you are interested in.
 right_code: |
   ~~~ json
   {
     "item_uuids": [
-      "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
+      "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
+      "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
     ]
   }
   ~~~
@@ -19,16 +19,16 @@ right_code: |
   ~~~ json
   {
     "export": {
-      "uuid": "b039dcf4-3509-49f2-a86e-64df0dc51aba"
+      "uuid": "99f15ad9-d8ac-4f07-8eff-94640d807618"
     }
   }
   ~~~
   {: title="Response" }
 
 ---
-Get Item Export allows you to export the item via email to your email address on file
+Get an Export of the Items sent back to the browser or via an email to your email address on file.
 
-This API call, like other “Export” calls, will send an email to your email address. That is, the email address linked to your user_uuid. The Item Details will be attached to the email as as a comma-delimited (.csv) file.
+The file returned is a comma delimited (.csv)  containing the response parameter data in a flat format.
 
 If there are no skus, then the returned export is a csv file with a simple header (item_id and sku_id) with no underlying values.
 
@@ -40,20 +40,19 @@ item_uuids
 ### Response Parameters:
 
 uuid
-: (string) Universal Unique Identifier for the Item
+: (string) The Universal Unique Identifier for the Export.
 
-### Expected Response Codes
-
+#### Expected Response Codes
 {% include links/response_codes.md %}
 
-
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/export/" \
-     -H 'Authorization: Token 1234567890' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/export/" \
+     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "item_uuids": [
-    "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
+    "0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017",
+    "31adb57c-a40a-4a99-b3d0-3c6ccd8e8941"
   ]
 }'
 
@@ -61,11 +60,12 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/items/export/' \
-    'Authorization':'Token 1234567890' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/items/search/export/' \
+    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
-  \"5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4\"
+  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
+  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
 ]"
 
 ~~~
@@ -80,18 +80,19 @@ import json
 
 
 def send_request():
-    # Get Item Export
-    # POST https://api-sandbox.cruxconnect.com/products/items/export/
+    # Get Item Export by Search
+    # POST https://api-sandbox.cruxconnect.com/products/items/search/export/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/items/export/",
+            url="https://api-sandbox.cruxconnect.com/products/items/search/export/",
             headers={
-                "Authorization": "Token 1234567890",
+                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    item_uuids:="[
-  \"5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4\"
+  \"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",
+  \"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -105,7 +106,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Item Export
+// request Get Item Export by Search
 (function(callback) {
     'use strict';
 
@@ -114,9 +115,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/items/export/',
+        path: '/products/items/search/export/',
         method: 'POST',
-        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -144,7 +145,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_uuids\":[\"5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4\"]}")
+    request.write("{\"item_uuids\":[\"0134a3b5-be78-4a2a-a9b7-e2a5ecbcf017\",\"31adb57c-a40a-4a99-b3d0-3c6ccd8e8941\"]}")
     request.end();
 
 

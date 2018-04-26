@@ -1,7 +1,7 @@
 ---
 title: /products/catalogs/
 name: Create Catalog
-position: 3.00
+position: 12.00
 visibility: public
 method: post
 description: Create a Catalog

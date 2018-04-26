@@ -1,7 +1,7 @@
 ---
 title: /products/catalogs/&ltcatalog-uuid&gt/remove-skus/
 name: Catalog Remove SKU
-position: 3.08
+position: 12.08
 visibility: public
 method: post
 description: Remove SKUs from a Catalog

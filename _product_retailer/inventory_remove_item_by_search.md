@@ -1,7 +1,7 @@
 ---
 title: /products/inventory-lists/&ltinventory_list_uuid&gt/remove-items-by-search/
 name: Inventory Remove Item by Search
-position: 2.17
+position: 11.06
 visibility: public
 method: post
 description: Remove Items from an existing Inventory List by Search

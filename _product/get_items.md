@@ -1,7 +1,7 @@
 ---
 title: /products/items/
 name: Get Items
-position: 2.18
+position: 4.02
 visibility: public
 method: get
 description: Get Items allows you to return a complete list of items you are interested in.

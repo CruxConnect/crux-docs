@@ -1,7 +1,7 @@
 ---
 title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
 name: Inventory Add SKU
-position: 2.12
+position: 11.07
 visibility: public
 method: post
 description: Add SKUs to an existing Inventory List for your account
