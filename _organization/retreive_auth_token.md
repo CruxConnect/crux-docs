@@ -69,7 +69,7 @@ password
 ### Response Parameters:
 
 auth_token
-: (string) Authentication Token to be used for subsequent API calls
+: (string) Authentication Token to be used for subsequent API calls (note: authentication tokens expire two hours after being issued)
 
 org_uuid
 : (string) Organization Universal Unique Identifier for the organization

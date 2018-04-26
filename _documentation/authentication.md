@@ -104,7 +104,7 @@ right_code: |
 You need to be authenticated for all API requests. In order to get authenticated, you must first retreive your API token.
 This can be done by <!--logging into to the UI and visiting account details, or --> sending a
 [retreive auth token](#organizationretreive_auth_token) request.
-The authentication token you receive is to be provided as a header in subsequent calls.
+The authentication token you receive is to be provided as a header in subsequent calls. (note: authentication tokens expire two hours after being issued)
 
 Add the auth_token as to calls as a header such as 'Authorization: Token \<auth_token\>'
 
