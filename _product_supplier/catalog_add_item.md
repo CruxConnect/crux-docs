@@ -1,7 +1,7 @@
 ---
 title: /products/catalogs/&ltcatalog-uuid&gt/add-items/
 name: Catalog Add Item
-position: 2.04
+position: 3.01
 visibility: public
 method: post
 description: Add already existing Items to a Catalog

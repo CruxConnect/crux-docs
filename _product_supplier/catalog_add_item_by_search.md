@@ -1,7 +1,7 @@
 ---
 title: /products/catalogs/&ltcatalog_uuid&gt/add-items-by-search/
 name: Catalog Add Item by Search
-position: 2.07
+position: 3.02
 method: post
 description: Add Items to an existing Catalog by Search
 right_code: |

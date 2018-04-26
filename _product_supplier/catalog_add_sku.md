@@ -1,7 +1,7 @@
 ---
 title: /products/catalogs/&ltcatalog-uuid&gt/add-skus/
 name: Catalog Add SKU
-position: 2.01
+position: 3.06
 visibility: public
 method: post
 description: Add already existing SKUs to a Catalog

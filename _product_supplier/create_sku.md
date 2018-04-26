@@ -1,59 +1,64 @@
 ---
 title: /products/skus/
 name: Create SKU
-position: 2.02
+position: 3.07
 visibility: public
 method: post
 description: Create a SKU to add to a specified item_uuid
 right_code: |
   ~~~ json
   {
-    "sku_id": "bHBtgt-Vph6wXHl-nyVThLSY",
     "item": {
-      "uuid": "162a0052-d0dd-4abe-a666-8e055ab29098"
+      "uuid": "2bce11c2-e60c-47a0-899b-81edfa90f666"
     },
+    "sku_id": "srPycB-RNtCJpgJ-8B7FlRYo",
     "restrictions": "tmpunavail",
     "condition": "used",
+    "quantity_in_stock": "500",
+    "quantity_on_backorder": "100",
+    "number_of_units_bundled": "2",
+    "distinguishing_attributes": {
+      "color": "blue"
+    },
     "minimum_advertised_price": "40.00",
     "msrp": "55.99",
     "minimum_advertised_price_currency": "USD",
-    "msrp_currency": "USD",
-    "quantity_in_stock": "500",
-    "quantity_on_backorder": "100",
-    "number_of_units_bundled": "2"
+    "msrp_currency": "USD"
   }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "uuid": "3155d7b1-2622-419b-9f91-2beb3eea9d80",
+    "uuid": "7be0e3de-4108-4b08-85b4-19ddd0adcae4",
     "restrictions": "tmpunavail",
     "condition": "used",
-    "distinguishing_attributes": {},
+    "distinguishing_attributes": {
+      "color": "blue"
+    },
     "item": {
-      "uuid": "162a0052-d0dd-4abe-a666-8e055ab29098"
+      "uuid": "2bce11c2-e60c-47a0-899b-81edfa90f666"
     },
     "minimum_advertised_price": 40,
     "msrp": 55.99,
     "price_tiers": [],
     "product_images": [],
     "measurements": {
-      "package": {
-        "length": null,
-        "width": null,
-        "weight_units": null,
-        "weight": null,
-        "dimension_units": null,
-        "height": null
-      },
       "sku": {
-        "length": null,
-        "width": null,
         "weight_units": null,
         "weight": null,
+        "height": null,
+        "width": null,
         "dimension_units": null,
-        "height": null
+        "length": null
+      },
+      "package": {
+        "weight_units": null,
+        "weight": null,
+        "height": null,
+        "width": null,
+        "dimension_units": null,
+        "length": null
       }
     },
     "product_identifiers": {
@@ -66,13 +71,13 @@ right_code: |
     },
     "catalogs": [
       {
-        "uuid": "d210cf03-d00a-4470-9730-ec5eaff4449a",
+        "uuid": "81bd100e-e347-4ee3-9dfd-79a7a59aaa72",
         "name": "__master__"
       }
     ],
-    "created": "2018-04-24T18:28:50.083304Z",
-    "last_updated": "2018-04-24T18:28:50.083357Z",
-    "sku_id": "pHmbKU-XjuukhuK-0RM2nAW6",
+    "created": "2018-04-25T22:24:27.631175Z",
+    "last_updated": "2018-04-25T22:24:27.631223Z",
+    "sku_id": "DtMEqi-mWpAhAe5-qLuMx5Rc",
     "quantity_in_stock": 500,
     "quantity_on_backorder": 100,
     "number_of_units_bundled": 2
@@ -91,36 +96,12 @@ item
 sku_id
 : (string) The SKU Identifier for the SKU as provided by the Supplier
 
-minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
-
-msrp
-: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
-
-quantity_in_stock
-: (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
-
-quantity_on_backorder
-: (number) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
-
-number_of_units_bundled
-: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
 restrictions
 : (string) The Restrictions imposed on the SKU which can include "tmpunavail" (temporary unavailable) or "discontd" (dicontinued)
 
 condition
 : (string) The Condition of the SKU; these include "new", "used", and "refurb" (refurbished)
 
-distinguishing_attributes
-: (array) The Distinguishing Attributes are attributes objects based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
-
-msrp
-: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
-
-sku_id
-: (string) The SKU Identifier for the SKU as provided by the Supplier
-
 quantity_in_stock
 : (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
 
@@ -130,11 +111,20 @@ quantity_on_backorder
 number_of_units_bundled
 : (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
-<!--
-task github https://github.com/CruxConnect/crux-api/issues/1017  Backend doesn't support passing in objects or arrays of objects
+distinguishing_attributes
+: (array) The Distinguishing Attributes are attributes objects based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
 
+
+minimum_advertised_price
+: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
+
+msrp
+: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
+
+
+<!-- To Be Implmented
 price_tiers (TBD)
-: (array) The list of Price Tier objects on this SKU
+: (array) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
 
 product_images (TBD)
 : (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
@@ -147,9 +137,7 @@ product_identifiers (TBD)
 
 catalogs (TBD)
 : (array) Array of Catalog uuid(s) where the sku should reside
-
 -->
-
 
 
 ### Response Parameters:
@@ -308,19 +296,22 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "sku_id": "bHBtgt-Vph6wXHl-nyVThLSY",
-  "minimum_advertised_price": "40.00",
-  "condition": "used",
-  "msrp_currency": "USD",
-  "quantity_in_stock": "500",
-  "quantity_on_backorder": "100",
-  "number_of_units_bundled": "2",
   "restrictions": "tmpunavail",
-  "msrp": "55.99",
+  "number_of_units_bundled": "2",
+  "condition": "used",
+  "minimum_advertised_price_currency": "USD",
   "item": {
-    "uuid": "162a0052-d0dd-4abe-a666-8e055ab29098"
+    "uuid": "2bce11c2-e60c-47a0-899b-81edfa90f666"
   },
-  "minimum_advertised_price_currency": "USD"
+  "sku_id": "srPycB-RNtCJpgJ-8B7FlRYo",
+  "msrp": "55.99",
+  "quantity_in_stock": "500",
+  "minimum_advertised_price": "40.00",
+  "msrp_currency": "USD",
+  "quantity_on_backorder": "100",
+  "distinguishing_attributes": {
+    "color": "blue"
+  }
 }'
 
 ~~~
@@ -330,19 +321,22 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
 http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
-    sku_id="bHBtgt-Vph6wXHl-nyVThLSY" \
-    minimum_advertised_price="40.00" \
-    condition="used" \
-    msrp_currency="USD" \
-    quantity_in_stock="500" \
-    quantity_on_backorder="100" \
-    number_of_units_bundled="2" \
     restrictions="tmpunavail" \
-    msrp="55.99" \
+    number_of_units_bundled="2" \
+    condition="used" \
+    minimum_advertised_price_currency="USD" \
     item:="{
-  \"uuid\": \"162a0052-d0dd-4abe-a666-8e055ab29098\"
+  \"uuid\": \"2bce11c2-e60c-47a0-899b-81edfa90f666\"
 }" \
-    minimum_advertised_price_currency="USD"
+    sku_id="srPycB-RNtCJpgJ-8B7FlRYo" \
+    msrp="55.99" \
+    quantity_in_stock="500" \
+    minimum_advertised_price="40.00" \
+    msrp_currency="USD" \
+    quantity_on_backorder="100" \
+    distinguishing_attributes:="{
+  \"color\": \"blue\"
+}"
 
 ~~~
 {: title="HTTPie" }
@@ -366,19 +360,22 @@ def send_request():
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sku_id="bHBtgt-Vph6wXHl-nyVThLSY" \
-    minimum_advertised_price="40.00" \
-    condition="used" \
-    msrp_currency="USD" \
-    quantity_in_stock="500" \
-    quantity_on_backorder="100" \
+            data=json.dumps(    restrictions="tmpunavail" \
     number_of_units_bundled="2" \
-    restrictions="tmpunavail" \
-    msrp="55.99" \
+    condition="used" \
+    minimum_advertised_price_currency="USD" \
     item:="{
-  \"uuid\": \"162a0052-d0dd-4abe-a666-8e055ab29098\"
+  \"uuid\": \"2bce11c2-e60c-47a0-899b-81edfa90f666\"
 }" \
-    minimum_advertised_price_currency="USD")
+    sku_id="srPycB-RNtCJpgJ-8B7FlRYo" \
+    msrp="55.99" \
+    quantity_in_stock="500" \
+    minimum_advertised_price="40.00" \
+    msrp_currency="USD" \
+    quantity_on_backorder="100" \
+    distinguishing_attributes:="{
+  \"color\": \"blue\"
+}")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -430,7 +427,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_id\":\"bHBtgt-Vph6wXHl-nyVThLSY\",\"item\":{\"uuid\":\"162a0052-d0dd-4abe-a666-8e055ab29098\"},\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\"}")
+    request.write("{\"item\":{\"uuid\":\"2bce11c2-e60c-47a0-899b-81edfa90f666\"},\"sku_id\":\"srPycB-RNtCJpgJ-8B7FlRYo\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"distinguishing_attributes\":{\"color\":\"blue\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
     request.end();
 
 
