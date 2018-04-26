@@ -111,7 +111,7 @@ retailer_uuid
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/products/catalogs/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -125,7 +125,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/products/catalogs/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/products/catalogs/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     default_handling_cost="1.89" \
@@ -146,11 +146,11 @@ import json
 
 def send_request():
     # Create Catalog
-    # POST https://api-dev.cruxconnect.com/products/catalogs/
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/products/catalogs/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -178,7 +178,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/catalogs/',
         method: 'POST',
