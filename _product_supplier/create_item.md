@@ -222,62 +222,35 @@ fba_certified
 custom_attributes
 : (object) The Custom Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
 
-
 #### Supplier Object:
 
-uuid
-: (string) The Universal Unique Identifier for the Supplier
-
-name
-: (string) The Supplier Name
+{% include product/response/supplier_minimal.md %}
 
 #### Cost Range Object:
 
-min
-: (number) The Minimum price for one of the SKUs or Item-variants
-
-max
-: (number) The Maximum price for one of the SKUs or Item-variants
+{% include product/response/cost_range.md %}
 
 #### Minimum Advertized Price Range Object:
 
-min
-: (number) The Minimum MAP for one of the SKUs or Item-variants
-
-max
-: (number) The Maximum MAP for one of the SKUs or Item-variants
+{% include product/response/map_range.md %}
 
 #### Manufacturer's Suggested Retail Price (MSRP) Range Object:
 
-min
-: (number) The Minimum MSRP for one of the SKUs or Item-variants
-
-max
-: (number) The Maximum MSRP for one of the SKUs or Item-variants
+{% include product/response/msrp_range.md %}
 
 #### Product Images Object:
 
-uuid
-: (string) The Universal Unique Identifier for the Item Product Image
-
-url
-: (string) The URL for the Item Product Image
-
-width
-: (number) The Image Width in pixels for the Item Product Image
-
-height
-: (number) The Image Height in pixels for the Item Product Image
+{% include product/response/product_image.md %}
 
 
 #### Custom Attributes Object
 
 {% include objects/attributes.md %}
 
+
 ### Expected Response Codes
 
 {% include links/response_codes.md %}
-
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \
