@@ -27,7 +27,7 @@ catalog-uuid
 ### Request Parameters
 
 item_uuids
-(array) An array of existing Item Universal Unique Identifiers for the items to include in the catalog
+: (array) An array of existing Item Universal Unique Identifiers for the items to include in the catalog
 
 ### Expected Response Codes
 

@@ -1,5 +1,5 @@
 ---
-title: /products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/
+title: /products/catalogs/&lt;catalog_uuid&gt;/remove-items/
 name: Catalog Remove Items
 position: 12.04
 visibility: public
@@ -19,43 +19,17 @@ right_code: |
 ---
 Remove Items from the specified Catalog for Retailers to access. This allows you to remove Items and all associated SKUs from a Catalog.
 
-### URL Parameters
+### URL Parameters:
 
 catalog_uuid
 : (string) Universal Unique Identifier for the selected catalog
 
-
 ### Request Parameters:
 
 item_uuids
-: (list) The Item UUIDs list parameter holds item_uuids for all of the items you wish to remove from your Catalog
+: (aray) The Item UUIDs array holds item_uuids for all of the items you wish to remove from your Catalog
 
-
-### Expected Response Codes
-
-{% include links/response_codes.md %}
-
-### Expected Response Codes
-
-# Short Description
-Remove Items to a Catalog
-
-# Long Description
-Remove Items from the specified Catalog for Retailers to access. This allows you to remove Items and all associated SKUs from a Catalog.
-
-### URL Parameters
-
-catalog_uuid
-: (string) Universal Unique Identifier for the selected catalog
-
-
-### Request Parameters:
-
-item_uuids
-: (list) The Item UUIDs list parameter holds item_uuids for all of the items you wish to remove from your Catalog
-
-
-### Expected Response Codes
+### Expected Response Codes:
 
 {% include links/response_codes.md %}
 
