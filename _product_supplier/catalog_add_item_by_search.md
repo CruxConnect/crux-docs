@@ -75,7 +75,7 @@ pagination
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -104,7 +104,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/products/catalogs/e689e8ca-79f6-
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
@@ -140,11 +140,11 @@ import json
 
 def send_request():
     # Catalog Add Item by Search
-    # POST https://api-dev.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -187,7 +187,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/',
         method: 'POST',
