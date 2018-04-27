@@ -387,7 +387,7 @@ filters
 
 {% include product/facets.md %}
 
-### Filters Object:
+#### Filters Object:
 
 {% include product/filters.md %}
 
