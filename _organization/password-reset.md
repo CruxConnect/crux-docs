@@ -21,7 +21,7 @@ right_code: |
   {: title="Response" }
 
 ---
-Should you need to reset your password, you may initiate the process via this call. This is to be used in conjunction with the ["Validate Password Reset"](#organizationpassword-reset) and ["Create New Password"](#organizationpassword-create) API calls.
+Should you need to reset your password, you may initiate the process via this call. This is to be used in conjunction with the ["Validate Password Reset"](#organizationpassword-reset) and ["Create New Password"](#organizationpassword-create) API calls.  The reset token expires two hours after issuance.
 
 ### Request Parameters:
 
