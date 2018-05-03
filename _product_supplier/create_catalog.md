@@ -1,34 +1,37 @@
 ---
 title: /products/catalogs/
 name: Create Catalog
-position: 2.00
+position: 12.00
 visibility: public
 method: post
 description: Create a Catalog
 right_code: |
   ~~~ json
   {
-    "name": "Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU",
-    "description": "Crux Worldwide Connection is a test catalog for the purposes of testing"
+    "name": "Crux  Worldwide Connection OtgpdcPYFOlwlN5GM1NPgewoSuIRCQeE",
+    "description": "Crux Worldwide Connection is a test catalog for the purposes of testing",
+    "default_shipping_cost": "5.33",
+    "default_handling_cost": "1.89"
   }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "uuid": "7c973d2d-e888-4aa6-878d-5b62253cf0ea",
+    "uuid": "afdfd2c5-e338-4026-8122-13f5a2373a1a",
     "supplier": {
-      "uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137"
+      "uuid": "7cbf1ff0-3c91-4504-a3cc-c5bedf91f4a9"
     },
     "skus": [],
     "num_skus": 0,
-    "default_shipping_cost": null,
-    "default_handling_cost": null,
+    "default_shipping_cost": 5.33,
+    "default_handling_cost": 1.89,
     "retailers": [],
-    "created": "2018-03-13T20:33:24.960830Z",
-    "last_updated": "2018-03-13T20:33:24.960897Z",
-    "name": "Crux  Worldwide Connection 0P6bc03TVbnoA73UAP1DrsNnrTpnCDWR",
+    "created": "2018-04-26T21:21:57.618785Z",
+    "last_updated": "2018-04-26T21:21:57.618834Z",
+    "name": "Crux  Worldwide Connection 3qBqMnfBdQmQTxIDJV4634FcLd0gei8y",
     "description": "Crux Worldwide Connection is a test catalog for the purposes of testing",
+    "is_discoverable": null
   }
   ~~~
   {: title="Response" }
@@ -44,6 +47,12 @@ name
 
 description
 : (string) The Description for the new Catalog
+
+default_shipping_cost
+: (number) The Default Shipping Cost parameter contains a Shipping Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable ship cost per the SKUs or a more sophisticated Shipping strategy.
+
+default_handling_cost
+: (number) The Default Handling Cost parameter contains a Handling Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable handling cost per the SKUs or a more sophisticated handling strategy.
 
 ### Response Parameters:
 
@@ -96,18 +105,20 @@ sku_uuid
 retailer_uuid
 : (string) The Universal Unique Identifier for the Retailer
 
-# Response Codes
+### Expected Response Codes
 
 {% include links/response_codes.md %}
 
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "name": "Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU",
-  "description": "Crux Worldwide Connection is a test catalog for the purposes of testing"
+  "default_handling_cost": "1.89",
+  "name": "Crux  Worldwide Connection OtgpdcPYFOlwlN5GM1NPgewoSuIRCQeE",
+  "description": "Crux Worldwide Connection is a test catalog for the purposes of testing",
+  "default_shipping_cost": "5.33"
 }'
 
 ~~~
@@ -115,10 +126,12 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
-    name="Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU" \
-    description="Crux Worldwide Connection is a test catalog for the purposes of testing"
+    default_handling_cost="1.89" \
+    name="Crux  Worldwide Connection OtgpdcPYFOlwlN5GM1NPgewoSuIRCQeE" \
+    description="Crux Worldwide Connection is a test catalog for the purposes of testing" \
+    default_shipping_cost="5.33"
 
 ~~~
 {: title="HTTPie" }
@@ -139,11 +152,13 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/catalogs/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    name="Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU" \
-    description="Crux Worldwide Connection is a test catalog for the purposes of testing")
+            data=json.dumps(    default_handling_cost="1.89" \
+    name="Crux  Worldwide Connection OtgpdcPYFOlwlN5GM1NPgewoSuIRCQeE" \
+    description="Crux Worldwide Connection is a test catalog for the purposes of testing" \
+    default_shipping_cost="5.33")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -167,7 +182,7 @@ def send_request():
         port: '443',
         path: '/products/catalogs/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -195,7 +210,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"name\":\"Crux  Worldwide Connection MCdRVj5YLwXkws38oos8grcSHoe45xvU\",\"description\":\"Crux Worldwide Connection is a test catalog for the purposes of testing\"}")
+    request.write("{\"name\":\"Crux  Worldwide Connection OtgpdcPYFOlwlN5GM1NPgewoSuIRCQeE\",\"description\":\"Crux Worldwide Connection is a test catalog for the purposes of testing\",\"default_shipping_cost\":\"5.33\",\"default_handling_cost\":\"1.89\"}")
     request.end();
 
 

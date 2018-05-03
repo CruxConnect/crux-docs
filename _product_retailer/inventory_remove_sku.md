@@ -1,7 +1,7 @@
 ---
 title: /products/inventory-lists/&ltinventory_list_uuid&gt/remove-skus/
 name: Inventory Remove SKU
-position: 2.13
+position: 11.08
 visibility: public
 method: post
 description: Remove SKUs from an existing Inventory List for your account

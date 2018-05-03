@@ -1,15 +1,15 @@
 ---
-title: /products/catalogs/&ltcatalog-uuid&gt/remove-skus/
-name: Catalog Remove SKU
-position: 12.08
+title: /products/catalogs/&lt;catalog_uuid&gt;/remove-items/
+name: Catalog Remove Items
+position: 12.04
 visibility: public
 method: post
-description: Remove SKUs from a Catalog
+description: Remove Items to a Catalog
 right_code: |
   ~~~ json
   {
-    "sku_uuids": [
-      "fcf57d87-19ae-46ad-adea-aad17ccb2d15"
+    "item_uuids": [
+      "6dc3646a-8719-483e-8b4c-617215fb1bf0"
     ]
   }
   ~~~
@@ -17,30 +17,30 @@ right_code: |
 
 
 ---
-Remove SKUs from a Catalog for Retailers to access. This allows you to remove SKUs from a Catalog. By providing your catalog_uuid and a list of sku_uuids, you can successfully remove them from the indicated Catalog.Your username and password are optional as you can send your authorization token to receive this information.
+Remove Items from the specified Catalog for Retailers to access. This allows you to remove Items and all associated SKUs from a Catalog.
 
-### URL Parameters
+### URL Parameters:
 
-catalog-uuid
-: (string) Unique Universal Identifier for the Catalog
+catalog_uuid
+: (string) Universal Unique Identifier for the selected catalog
 
 ### Request Parameters:
 
-sku_uuids
-: (array) Array of SKU uuid(s) for all of the SKUs you wish to remove from your Catalog
+item_uuids
+: (aray) The Item UUIDs array holds item_uuids for all of the items you wish to remove from your Catalog
 
-### Expected Response Codes
+### Expected Response Codes:
 
 {% include links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "sku_uuids": [
-    "fcf57d87-19ae-46ad-adea-aad17ccb2d15"
+  "item_uuids": [
+    "6dc3646a-8719-483e-8b4c-617215fb1bf0"
   ]
 }'
 
@@ -48,11 +48,11 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
-    sku_uuids:="[
-  \"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"
+    item_uuids:="[
+  \"6dc3646a-8719-483e-8b4c-617215fb1bf0\"
 ]"
 
 ~~~
@@ -67,18 +67,18 @@ import json
 
 
 def send_request():
-    # Catalog Remove SKU
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/
+    # Catalog Remove Items
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sku_uuids:="[
-  \"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"
+            data=json.dumps(    item_uuids:="[
+  \"6dc3646a-8719-483e-8b4c-617215fb1bf0\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -92,7 +92,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Catalog Remove SKU
+// request Catalog Remove Items
 (function(callback) {
     'use strict';
 
@@ -101,9 +101,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/',
+        path: '/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -131,7 +131,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_uuids\":[\"fcf57d87-19ae-46ad-adea-aad17ccb2d15\"]}")
+    request.write("{\"item_uuids\":[\"6dc3646a-8719-483e-8b4c-617215fb1bf0\"]}")
     request.end();
 
 

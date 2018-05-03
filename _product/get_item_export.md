@@ -1,10 +1,11 @@
 ---
 title: /products/items/export/
 name: Get Item Export
-position: 2.21
+position: 4.04
 visibility: public
 method: post
 description: Get Item Export allows you to export the item you are interested.
+
 right_code: |
   ~~~ json
   {
@@ -28,6 +29,8 @@ right_code: |
 Get Item Export allows you to export the item via email to your email address on file
 
 This API call, like other “Export” calls, will send an email to your email address. That is, the email address linked to your user_uuid. The Item Details will be attached to the email as as a comma-delimited (.csv) file.
+
+If there are no skus, then the returned export is a csv file with a simple header (item_id and sku_id) with no underlying values.
 
 ### Request Parameters:
 

@@ -1,7 +1,7 @@
 ---
 title: /products/inventory-lists/
 name: Get Inventory Lists
-position: 2.09
+position: 11.00
 visibility: public
 method: get
 description: Get the Inventory Lists for your account

@@ -1,7 +1,7 @@
 ---
 title: /products/catalogs/
 name: Get Catalogs
-position: 1.0
+position: 4.0
 visibility: public
 method: get
 description: Get the Catalogs you have access to

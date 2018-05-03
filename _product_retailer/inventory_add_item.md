@@ -1,7 +1,7 @@
 ---
 title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-items/
 name: Inventory Add Item
-position: 2.14
+position: 11.03
 visibility: public
 method: post
 description: Add Items to an existing Inventory List for your account
