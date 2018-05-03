@@ -121,25 +121,6 @@ minimum_advertised_price
 msrp
 : (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
 
-
-<!-- To Be Implmented
-price_tiers (TBD)
-: (array) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
-
-product_images (TBD)
-: (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
-
-measurements (TBD)
-: (object) The Measurements object contains sku measurements object and a package measurements object.
-
-product_identifiers (TBD)
-: (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
-
-catalogs (TBD)
-: (array) Array of Catalog uuid(s) where the sku should reside
--->
-
-
 ### Response Parameters:
 
 uuid
