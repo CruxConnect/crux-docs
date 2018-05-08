@@ -19,9 +19,9 @@ right_code: |
 ---
 Add Items to an existing Inventory List for your account.
 
-To create an inventory list see [Create Inventory List](/#product_retailercreate_inventory_list)
+To create an Inventory List see [Create Inventory List](/#product_retailercreate_inventory_list)
 
-To add SKUs to an Inventory List see [Inventory Add Item](/#product_retailerinventory_add_sku).
+To add SKUs to an Inventory List see [Inventory Add SKU](/#product_retailerinventory_add_sku).
 
 ### URL Parameters
 

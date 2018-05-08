@@ -19,6 +19,8 @@ right_code: |
 ---
 Add SKUs to an existing Inventory List for your account.
 
+To add items to an Inventory List see [Inventory Add Item](/#product_retailerinventory_add_item).
+
 ### URL Parameters
 
 inventory_list_uuid

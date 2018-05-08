@@ -32,9 +32,9 @@ right_code: |
 ---
 Create an Inventory Lists for your account.
 
-To add SKUs to an Inventory List see [Inventory Add Item](/#product_retailerinventory_add_sku).
+To add SKUs to an Inventory List see [Inventory Add SKU](/#product_retailerinventory_add_sku).
 
-To add items to an Inventory List see [Inventory Add SKU](/#product_retailerinventory_add_item).
+To add Items to an Inventory List see [Inventory Add Item](/#product_retailerinventory_add_item).
 
 ### Request Parameters:
 
@@ -53,7 +53,7 @@ retailer
 : (object) The Retailer object contains a single retailer_uuid.
 
 skus
-: (array) An empty array that is used to hold SKUs associated with the inventory list. To add SKUs to an Inventory List see [Inventory Add Item](/#product_retailerinventory_add_sku).
+: (array) An empty array that is used to hold SKUs associated with the inventory list. To add SKUs to an Inventory List see [Inventory Add SKU](/#product_retailerinventory_add_sku).
 
 num_skus
 : (number) The total Number of SKUs per the Catalog
