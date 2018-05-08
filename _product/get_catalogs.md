@@ -74,7 +74,7 @@ supplier
 : (object) The Supplier object contains a supplier_uuid
 
 skus
-: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
+: (array) Array of SKU objects containing a single sku_uuid each
 
 num_skus
 : (number) The total Number of SKUs per the Catalog
