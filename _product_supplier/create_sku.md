@@ -188,7 +188,7 @@ number_of_units_bundled
 
 #### Product Image Object:
 
-{% include product/response/product_image.md %}
+{% include product/response/image.md %}
 
 #### SKU Measurements Object:
 

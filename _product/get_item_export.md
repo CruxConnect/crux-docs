@@ -35,7 +35,7 @@ If there are no skus, then the returned export is a csv file with a simple heade
 ### Request Parameters:
 
 item_uuids
-: (list) The Item UUIDs parameter provides a list of item_uuids to be exported
+: (array) The Item UUIDs parameter provides a list of item_uuids to be exported
 
 ### Response Parameters:
 
