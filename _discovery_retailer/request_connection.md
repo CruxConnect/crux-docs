@@ -65,15 +65,13 @@ Initiate a connection request between a retailer and a supplier
 
 For ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
-Required:
-
 organization_name:
 : (string) The name of supplier.
 
 primary_contact_name:
 : (string) The name of the primary contact for the supplier.
 
-Optional:
+### Optional
 
 primary_contact_phone:
 : (string) The phone number for the primary contact.

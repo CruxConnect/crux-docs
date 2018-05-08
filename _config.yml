@@ -58,6 +58,11 @@ collections:
     title: Discovery
     position: 6
     type: api
+  discovery_retailer:
+    visibility: public
+    title: Discovery Retailer
+    position: 6.1
+    type: api
   files:
     visibility: public
     title: Files

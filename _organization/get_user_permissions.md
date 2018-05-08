@@ -55,6 +55,11 @@ To view orgainzation users, you must be assigned the 'view_org_users' permission
 
 {% include links/available_permissions.md %}
 
+### URL Parameters
+
+user_uuid
+: (string) User Universal Unique Identifier
+
 ### Response Parameters:
 
 {% include objects/permissions_list.md %}
