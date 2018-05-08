@@ -38,7 +38,7 @@ uuid
 
 For ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
-Optional:
+### Optional:
 
 organization_name:
 : (string) The name of supplier.  Note: this is returned as org_name in the other connection responses
