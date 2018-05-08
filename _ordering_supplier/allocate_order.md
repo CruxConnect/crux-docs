@@ -1,5 +1,5 @@
 ---
-title: /orders/allocation/&lgorder-uuid&gt/
+title: /orders/allocation/&lt;order-uuid&gt;/
 name: Allocate Order
 position: 5.2.2
 visibility: public
@@ -40,6 +40,7 @@ order_uuid
 : (string) Universal Unique Identifier for the Order
 
 ### Request Parameters:
+#### Optional
 
 line_items
 : (array) The Order Items array contains the individual Order Item objects
@@ -47,7 +48,7 @@ line_items
 #### Order Item Object
 
 line_item_uuid
-: (string) The Order Item ID is the sku_id for the product purchased by the Retailer
+: (string) The line item uuid for the product purchased by the Retailer
 
 allocation
 : (object) The Allocation Object parameter includes the quantites accepted, rejected, and backordered.
