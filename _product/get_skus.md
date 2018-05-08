@@ -130,6 +130,9 @@ An array of SKU Objects
 
 {% include product/response/supplier_minimal.md %}
 
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/products/skus/" \
