@@ -156,9 +156,6 @@ right_code: |
 ---
 Get Item List allows you to return a complete list of items you are interested in.
 
-
-### Response Parameters:
-
 ### Response Parameters:
 
 An array of item objects is returned
