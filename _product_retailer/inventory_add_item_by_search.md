@@ -11,6 +11,18 @@ right_code: |
     "filters": {
       "cost_per_unit": {
         "min": "0"
+      },
+      "number_of_item_images": {
+        "min": 0,
+        "max": "500"
+      },
+      "image_height": {
+        "min": 0,
+        "max": 100000
+      },
+      "image_width": {
+        "min": 0,
+        "max": 100000
       }
     },
     "facets": {
@@ -19,7 +31,8 @@ right_code: |
       "shipping_origin_country": [],
       "bundle_type": [],
       "product_identifiers": [],
-      "categories": []
+      "categories": [],
+      "catalog_type": []
     },
     "search_term": "",
     "sort": "title",
@@ -95,7 +108,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/054
     "shipping_origin_country": [],
     "bundle_type": [],
     "product_identifiers": [],
-    "categories": []
+    "categories": [],
+    "catalog_type": []
   }
 }'
 
@@ -123,7 +137,8 @@ http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/0
   \"shipping_origin_country\": [],
   \"bundle_type\": [],
   \"product_identifiers\": [],
-  \"categories\": []
+  \"categories\": [],
+  \"catalog_type\": []
 }"
 
 ~~~
@@ -165,7 +180,8 @@ def send_request():
   \"shipping_origin_country\": [],
   \"bundle_type\": [],
   \"product_identifiers\": [],
-  \"categories\": []
+  \"categories\": [],
+  \"catalog_type]": []
 }")
         )
         print('Response HTTP Status Code: {status_code}'.format(
