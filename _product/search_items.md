@@ -248,25 +248,11 @@ right_code: |
 ---
 Search for Items in the catalogs available to your organization using a number of filters, facets, and other helpful tools.
 
-
 ### Request Parameters:
 
 ##### Optional
 
-filters
-: (object) The Filters object parameter includes all of the potential filters you wish to include in your Search. These filters include "cost_per_unit", "number_of_item_images", "image_height", "image_width", etc.
-
-facets
-: (object) The Facets object parameter includes all of the potential facets you wish to include in your Search. These facets include "supplier", "shipping_cost_type", "shipping_origin_country", "country_of_origin", "bundle_type", "product_identifiers", "categories", "catalog_type", etc.
-
-search_term
-: (string) The Search Term you would like to search for
-
-sort
-: (string) The Sort parameter indicates what attribute on which you would like to sort
-
-pagination
-: (object) The Pagination object includes start and limit which allow you to receive a manageable amount of data back from your API call.
+{% include product/request/search_params.md %}
 
 #### Filters Object:
 
@@ -300,6 +286,7 @@ search_term
 sort
 : (array) The Sort list parameter includes the attribute(s) on which you are performing a Sort on your Search
 
+
 #### Pagination Object:
 
 {% include product/response/pagination.md %}
@@ -314,7 +301,7 @@ sort
 
 #### Price Tier Object:
 
-{% include objects/price_tier.md %}
+{% include product/response/price_tier.md %}
 
 #### Product Image Object:
 
