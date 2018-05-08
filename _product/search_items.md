@@ -73,12 +73,6 @@ right_code: |
             "width": 80,
             "height": 80
           },
-          {
-            "uuid": "fe5557a9-e09e-427f-9476-881be31fa175",
-            "url": "https://picsum.photos/285/?image=29",
-            "width": 285,
-            "height": 285
-          }
         ],
         "sku_count": 10,
         "created": "2018-04-06T01:12:10.568241Z",
@@ -106,7 +100,8 @@ right_code: |
             ],
             "description": ""
           }
-        ]
+        ],
+        "catalog_type": [],
       }
     ],
     "facets": {
@@ -136,30 +131,6 @@ right_code: |
           "uuid": "AR",
           "selected": false
         },
-        {
-          "name": "Åland Islands",
-          "count": 1,
-          "uuid": "AX",
-          "selected": false
-        },
-        {
-          "name": "Bulgaria",
-          "count": 1,
-          "uuid": "BG",
-          "selected": false
-        },
-        {
-          "name": "Bouvet Island",
-          "count": 1,
-          "uuid": "BV",
-          "selected": false
-        },
-        {
-          "name": "Tanzania, United Republic of",
-          "count": 1,
-          "uuid": "TZ",
-          "selected": false
-        }
       ],
       "categories": {
         "e4ba749a-f899-4a03-a759-4610deb4b5ba": [
@@ -280,6 +251,8 @@ Search for Items in the catalogs available to your organization using a number o
 
 ### Request Parameters:
 
+##### Optional
+
 filters
 : (object) The Filters object parameter includes all of the potential filters you wish to include in your Search. These filters include "cost_per_unit", "number_of_item_images", "image_height", "image_width", etc.
 
@@ -309,23 +282,23 @@ pagination
 
 ### Response Parameters:
 
+items
+: (array) Array of Item Objects that match the criteria you provided for your Search.
+
+filters
+: (object) The Filters object contains image_width, cost_per_unit, minimum_tier_quantity, quantity_in_stock, and image_height
+
+facets
+: (object) The Facets object contains product_identifiers, bundle_type, condition, supplier, catalogs, categories, shipping_origin_country, shipping_cost_type, catalog_type, and inventory lists
+
 pagination
 : (object) The Pagination object parameter includes the total_count, start, and limit for your Search.
-
-items
-: (list) The Items list is a list of Items that match the criteria you provided for your Search.
 
 search_term
 : (string) The Search Term used to filter the results of your Search
 
 sort
-: (list) The Sort list parameter includes the attribute(s) on which you are performing a Sort on your Search
-
-facets
-: (object) The Facets object contains product_identifiers, bundle_type, condition, supplier, catalogs, categories, shipping_origin_country, shipping_cost_type, catalog_type, and inventory lists
-
-filters
-: (object) The Filters object contains image_width, cost_per_unit, minimum_tier_quantity, quantity_in_stock, and image_height
+: (array) The Sort list parameter includes the attribute(s) on which you are performing a Sort on your Search
 
 #### Pagination Object:
 
@@ -345,7 +318,7 @@ filters
 
 #### Product Image Object:
 
-{% include product/response/product_image.md %}
+{% include product/response/image.md %}
 
 #### SKU Measurements Object:
 
@@ -381,20 +354,19 @@ filters
 
 #### Item Product Images Object:
 
-{% include product/response/product_image.md %}
+{% include product/response/image.md %}
 
 #### Facets Object:
 
 {% include product/facets.md %}
 
-#### Filters Object:
+### Filters Object:
 
 {% include product/filters.md %}
 
 ### Expected Response Codes
 
 {% include links/response_codes.md %}
-
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/" \

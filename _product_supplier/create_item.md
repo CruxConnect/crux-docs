@@ -240,7 +240,7 @@ custom_attributes
 
 #### Product Images Object:
 
-{% include product/response/product_image.md %}
+{% include product/response/image.md %}
 
 
 #### Custom Attributes Object
