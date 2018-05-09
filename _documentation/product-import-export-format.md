@@ -109,16 +109,16 @@ dimension_units
 : (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 weight
-: (float) Weight in grams (g)
+: (float) Weight (default grams)
 
 length
-: (float) Length in centimeters (cm)
+: (float) Length (default centimeters)
 
 width
-: (float) Width in centimeters (cm)
+: (float) Width (default centimeters)
 
 height
-: (float) Height in centimeters (cm)
+: (float) Height (default centimeters)
 
 #### Package Measurements
 
@@ -129,16 +129,16 @@ package_dimension_units
 : (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 package_weight
-: (float) Package weight in grams (g)
+: (float) Package weight (default grams)
 
 package_length
-: (float) Package Length in centimeters (cm)
+: (float) Package Length (default centimeters)
 
 package_width
-: (float) Package width in centimeters (cm)
+: (float) Package width (default centimeters)
 
 package_height
-: (float) Package height in centimeters (cm)
+: (float) Package height (default centimeters)
 
 #### Identifiers
 
