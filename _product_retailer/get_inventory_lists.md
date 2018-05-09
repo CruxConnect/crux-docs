@@ -102,7 +102,7 @@ description
 : (string) The Description the supplier has provided for this Inventory List
 
 
-# Response Codes
+### Expected Response Codes
 
 {% include links/response_codes.md %}                                        |
 
