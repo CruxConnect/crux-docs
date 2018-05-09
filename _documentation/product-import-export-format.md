@@ -8,24 +8,26 @@ parent) and skus (the sku is the child with variant attributes) to be imported
 and exported.  Each item may be associated with multiple skus and item level information
 should be duplicated across its skus.
 
+Fields do not have to be in a particular order.
+
 [N] => an integer
 
 ### Item Level Info
 
 item_id
-: (string(256))  [**REQUIRED**] The Item Identifier is the identifier for the item as provided by the supplier.
+: (string(max 256))  [**REQUIRED**] The Item Identifier is the identifier for the item as provided by the supplier.
 
 supplier_uuid
 : (string) [**RETAILER-ONLY**, **EXPORT-ONLY**] Universal Unique Identifier for the Supplier
 
 title
-: (string(256)) [**REQUIRED**] Item Title
+: (string(max 256)) [**REQUIRED**] Item Title
 
 description
-: (string(maximum 65,535)) Item Description
+: (string(max 65,535)) Item Description
 
 warranty
-: (string(maximum 65,535)) Item Warranty
+: (string(max 65,535)) Item Warranty
 
 return_policy
 : (string(max 65,535)) Item Return Policy
@@ -37,10 +39,10 @@ brand
 : (string(max 128)) Item Brand
 
 country_of_origin
-: (string) Valid 2 letter country code for the country of origin (e.g. 'CA')
+: (string(2)) Valid 2 letter country code for the country of origin (e.g. 'CA')
 
 shipping_origin_country
-: (string) Valid 2 letter country code for the shipping origin country (e.g. 'US')
+: (string(2)) Valid 2 letter country code for the shipping origin country (e.g. 'US')
 
 categories
 : (string) The categories to which the item belongs.
@@ -60,7 +62,7 @@ custom_attribute.[N].name
 : (string(max 128)) Custom Attribute Name
 
 custom_attribute.[N].value
-: (string(256)) Custom Attribute Value
+: (string(max 256)) Custom Attribute Value
 
 custom_attribute.[N].type
 : (string) Custom Attribute Type.  Can be one of: 'str', 'int', 'float', 'bool'
@@ -94,33 +96,57 @@ minimum_advertised_price
 msrp
 : (float) Manufacturer Suggested Retail Price
 
+product_images_for_sku
+: (string) Urls for the product image.  Individual URLs are comma separated urls. Duplicate urls across sku or item will reference the same ProductImage
+
+inventory_lists
+: (string) [**RETAILER-ONLY**, **EXPORT-ONLY**] Comma seperated Inventory List UUIDs.  Example: '03e697-6a17-4dd1-939b-3d7ca9676b1c, 266a9a41-58a0-429e-8275-791f169789d1'
+
+
 #### Measurements
+
+weight_units
+: (string) The units utilized by the supplier for weight (‘g’, ‘kg’, ‘lb’, and ‘oz’ are potential options, where ‘g’ is the default)
+
+dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
+
 weight
-: (float [kg]) Weight in kilograms (kg)
+: (float) Weight in grams (g)
 
 length
-: (float) Length in meters
+: (float) Length in centimeters (cm)
 
 width
-: (float) Width in meters
+: (float) Width in centimeters (cm)
 
 height
-: (float) Height in meters
+: (float) Height in centimeters (cm)
+
+#### Package Measurements
+
+package_weight_units
+: (string) The units utilized by the supplier for weight (‘g’, ‘kg’, ‘lb’, and ‘oz’ are potential options, where ‘g’ is the default)
+
+package_dimension_units
+: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
 
 package_weight
-: (float) Package weight in kilograms (kg)
+: (float) Package weight in grams (g)
 
 package_length
-: (float) Package Length in meters
+: (float) Package Length in centimeters (cm)
 
 package_width
-: (float) Package width in meters
+: (float) Package width in centimeters (cm)
 
 package_height
-:(float) Package height in meters
+: (float) Package height in centimeters (cm)
+
+#### Identifiers
 
 upca
-: (string(12)) UPCa Product Identifier
+: (string(12)) UPCA Product Identifier
 
 ean13
 : (string(13)) EAN13 Product Identifier
@@ -137,6 +163,8 @@ asin
 mpn
 : (string(128)) Product Identifier
 
+#### Distinguishing Attributes
+
 distinguishing_attribute.[N].name
 : (string(max 128)) Distinguishing Attribute Name
 
@@ -146,26 +174,23 @@ distinguishing_attribute.[N].value
 distinguishing_attribute.[N].type
 : (string) Distinguishing Attribute Type.  Can be one of 'str', 'int', 'float', 'bool'
 
+#### Pricing
+
 pricing.[N].catalog NAME
 : (string) [**SUPPLIER-ONLY**] Catalog Name
 
 pricing.[N].minimum_tier_quantity
-:(int) Minimum Tier Quantity
+: (int) Minimum Tier Quantity
 
 pricing.[N].cost
-:(float) Cost
+: (float) Cost
 
 pricing.[N].shipping_cost
-:(float) Shipping Cost
+: (float) Shipping Cost
 
 pricing.[N].shipping_cost_is_estimate
-:(bool) Is Shipping Cost an estimate
+: (bool) Is Shipping Cost an estimate
 
 pricing.[N].handling_cost
-:(float) Handling Cost
+: (float) Handling Cost
 
-product_images_for_sku
-: (string) Urls for the product image.  Individual URLs are comma separated urls. Duplicate urls across sku or item will reference the same ProductImage
-
-inventory_lists
-: (string) [**RETAILER-ONLY**, **EXPORT-ONLY**] Comma seperated Inventory List UUIDs.  Example: '03e697-6a17-4dd1-939b-3d7ca9676b1c, 266a9a41-58a0-429e-8275-791f169789d1'
