@@ -3,10 +3,7 @@ title: Product Import/Export CSV File Format
 visibility: public
 position: 5
 ---
-The product specification file allows items (the item is the
-parent) and skus (the sku is the child with variant attributes) to be imported
-and exported.  Each item may be associated with multiple skus and item level information
-should be duplicated across its skus.
+The product specification file allows items (the item is the parent) and skus (the sku is the child with variant attributes) to be imported and exported.  Each item may be associated with multiple skus and item level information should be duplicated across its skus.
 
 Fields do not have to be in a particular order.
 
