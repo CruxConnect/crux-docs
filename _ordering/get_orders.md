@@ -15,7 +15,7 @@ right_code: |
       "Allocated",
       "Partial"
     ],
-    "line_item_designation": [],
+    "line_item_designation": "HasTracking",
     "start_date": "2017-07-31T06:00:00.000Z",
     "end_date": "2018-08-03T06:00:00.000Z",
     "search_term": "",
@@ -117,7 +117,7 @@ line_item_allocation_statuses
 : (array) One or more line item statuses. Possible choices include: `Unallocated`, `Partial`, or `Allocated`
 
 line_item_designation
-: (array) Line item status designation.  Possible values include : `HasTracking`, `NeedsTracking`, `Backordered`, `Rejected`, `Cancelled`
+: (string) Line item status designation.  One of the following : `HasTracking`, `NeedsTracking`, `Backordered`, `Rejected`, `Cancelled`
 
 start_date
 : (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
@@ -232,7 +232,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
   "start": 0,
   "start_date": "2017-07-31T06:00:00.000Z",
   "limit": 24,
-  "line_item_designation": [],
+  "line_item_designation": "HasTracking",
   "line_item_allocation_statuses": [
     "Unallocated",
     "Allocated",
@@ -257,7 +257,7 @@ http --json POST 'https://api-sandbox.cruxconnect.com/orders/' \
     start:=0 \
     start_date="2017-07-31T06:00:00.000Z" \
     limit:=24 \
-    line_item_designation:="[]" \
+    line_item_designation:="HasTracking" \
     line_item_allocation_statuses:="[
   \"Unallocated\",
   \"Allocated\",
@@ -296,7 +296,7 @@ def send_request():
     start:=0 \
     start_date="2017-07-31T06:00:00.000Z" \
     limit:=24 \
-    line_item_designation:="[]" \
+    line_item_designation:="HasTracking" \
     line_item_allocation_statuses:="[
   \"Unallocated\",
   \"Allocated\",
@@ -355,7 +355,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"start\":0,\"limit\":24,\"line_item_allocation_statuses\":[\"Unallocated\",\"Allocated\",\"Partial\"],\"line_item_designation\":[],\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"search_term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"desc\"}}")
+    request.write("{\"start\":0,\"limit\":24,\"line_item_allocation_statuses\":[\"Unallocated\",\"Allocated\",\"Partial\"],\"line_item_designation\":\"HasTracking\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"search_term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"desc\"}}")
     request.end();
 
 
