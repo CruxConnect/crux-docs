@@ -355,7 +355,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"start\":0,\"limit\":24,\"line_item_allocation_statuses\":[\"Unallocated\",\"Allocated\",\"Partial\"],\"line_item_designation\":[],\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"search_term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"desc\"}}")
+    request.write("{\"start\":0,\"limit\":24,\"line_item_allocation_statuses\":[\"Unallocated\",\"Allocated\",\"Partial\"],\"line_item_designation\":\"HasTracking\",\"start_date\":\"2017-07-31T06:00:00.000Z\",\"end_date\":\"2018-08-03T06:00:00.000Z\",\"search_term\":\"\",\"org_uuids\":[],\"sort\":{\"key\":\"date\",\"value\":\"desc\"}}")
     request.end();
 
 
