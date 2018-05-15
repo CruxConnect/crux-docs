@@ -8,13 +8,13 @@ skus
 : (array) Array SKU objects containing a single sku_uuid each
 
 num_skus
-: (number) The total Number of SKUs per the Catalog
+: (integer) The total Number of SKUs per the Catalog
 
 default_shipping_cost
-: (number) The Default Shipping Cost parameter contains a Shipping Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable ship cost per the SKUs or a more sophisticated Shipping strategy.
+: (decimal) The Default Shipping Cost parameter contains a Shipping Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable ship cost per the SKUs or a more sophisticated Shipping strategy. (2 decimal places)
 
 default_handling_cost
-: (number) The Default Handling Cost parameter contains a Handling Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable handling cost per the SKUs or a more sophisticated handling strategy.
+: (decimal) The Default Handling Cost parameter contains a Handling Cost the Supplier determined to be the Default. If null or empty, the Supplier has a variable handling cost per the SKUs or a more sophisticated handling strategy. (2 decimal places)
 
 retailer
 : (object) The Retailer object contains a single retailer_uuid.
