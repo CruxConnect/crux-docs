@@ -5,7 +5,7 @@ supplier
 : (object) The Supplier object contains a supplier_uuid
 
 skus
-: (array) Array SKU objects containing a single sku_uuid each
+: (array) Array of SKU objects. SKU Objects are each composed of a single sku_uuid.
 
 num_skus
 : (integer) The total Number of SKUs per the Catalog

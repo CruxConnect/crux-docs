@@ -2,7 +2,7 @@ uuid
 : (string) Universal Unique Identifier for the Item
 
 skus
-: (array) The Stock Keeping Units (SKUs) contains individual SKUs, or Item-variants, with their SKU-level data
+: (array) Array of SKU objects.  Each object contains individual SKUs, or Item-variants, with the associated SKU-level data
 
 restrict_from_marketplaces
 : (list) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
@@ -20,7 +20,7 @@ msrp_range
 : (object) The Manufacturer's Suggested Retail Price Range object contains the minimum and maximum MSRPs for the Item, based on the available variants (SKUs).
 
 product_images
-: (array) Product Images stores an array of images for the item, based on the available variants (SKUs)
+: (array) Array of product images for the item.
 
 created
 : (string) The Created parameter is the date when the Item was added to our system.
@@ -65,4 +65,4 @@ custom_attributes
 : (object) The Custom Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
 
 categories
-: (array) Categories contains an array of the categories, as provided by the Supplier, for this Item.
+: (array) Array of categories, as provided by the Supplier, for the Item.

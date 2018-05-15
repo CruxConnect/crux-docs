@@ -17,7 +17,7 @@ cost_per_unit
 : (decimal) Unit cost for an item at the price tier (2 decimal places)
 
 minimum_tier_quantity
-: (decimal) Minimum quantity purchased to qualify for the price tier (2 decimal places)
+: (integer) Minimum quantity purchased to qualify for the price tier
 
 #### Catalog Object
 uuid

@@ -20,7 +20,7 @@ price_tiers
 : (array) Array of Price Tier objects on this SKU
 
 product_images
-: (array) Array of product image objects for the SKU which contain a uuid, url, width, and height of the image.
+: (array) Array of product image objects for the SKU. Each object contains a uuid, url, width, and height of the image.
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.
@@ -29,7 +29,7 @@ product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
 
 inventory_lists
-: (array) Inventory Lists contains an array of all the Inventory list objects where this SKU currently resides.
+: (array) Array of all the Inventory list objects where the SKU currently resides.
 
 created
 : (string) The Created parameter indicates the date the SKU was Created in our system.
