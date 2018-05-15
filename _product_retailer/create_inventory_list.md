@@ -56,7 +56,7 @@ skus
 : (array) An empty array that is used to hold SKUs associated with the inventory list. To add SKUs to an Inventory List see [Inventory Add SKU](/#product_retailerinventory_add_sku).
 
 num_skus
-: (number) The total Number of SKUs per the Catalog
+: (integer) The total Number of SKUs per the Catalog
 
 created
 : (string) The Created parameter is the date the Catalog was Created.

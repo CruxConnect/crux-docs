@@ -125,7 +125,7 @@ address
 <!-- task-github-127 can we starndize SKU objects -->
 
 quantity
-: (number) The Quantity ordered of the SKU ID
+: (integer) The Quantity ordered of the SKU ID
 
 sku_id
 : (string) The SKU ID is the SKU provided by the supplier which identifies that product you are purchasing
@@ -134,10 +134,10 @@ supplier_uuid
 : (string) The Supplier Identifier is the ID associated with the Supplier providing the SKU
 
 price
-: (number) The SKU price
+: (decimal) The SKU price (2 decimal places)
 
 expected_sku_cost (optional)
-: (number) The expected cost of the SKU
+: (decimal) The expected cost of the SKU (2 decimal places)
 
 #### Address Object:
 
@@ -176,7 +176,7 @@ requested_shipping
 : (object) The Requested Shipping object contains the shipping carrier and shipping method from the request to create the Order.
 
 line_items
-: (list) The Line Items list contains line items with their uuid, item uuid, item name, sku uuid, sku id, sku name, cost, supplier uuid, supplier name, tracking numbers list, and allocation object.
+: (array) The Line Items contains line items with their uuid, item uuid, item name, sku uuid, sku id, sku name, cost, supplier uuid, supplier name, tracking numbers list, and allocation object.
 
 #### Fees Object:
 
@@ -235,7 +235,7 @@ line_item_special_instructions
 : (string) SKU special instructions
 
 cost
-: (number) The Cost of the SKU
+: (decimal) The Cost of the SKU (2 decimal places)
 
 supplier_uuid
 : (string) The Universal Unique Identifier for the Supplier

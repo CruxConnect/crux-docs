@@ -29,7 +29,7 @@ inventory_list_uuid
 ### Request Parameters:
 
 sku_uuids
-: (list) The SKU UUIDs list parameter holds sku_uuids for all of the SKUs you wish to add to your Inventory List
+: (array) The SKU UUIDs parameter holds sku_uuids for all of the SKUs you wish to add to your Inventory List
 
 ### Expected Response Codes
 

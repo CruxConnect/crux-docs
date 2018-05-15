@@ -26,7 +26,7 @@ sku_special_instructions
 : (string) SKU special instructions
 
 cost
-: (number) The Cost of the SKU
+: (decimal) The Cost of the SKU (2 decimal places)
 
 supplier_uuid
 : (string) The Universal Unique Identifier for the Supplier
