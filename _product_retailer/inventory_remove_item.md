@@ -27,7 +27,7 @@ inventory_list_uuid
 ### Request Parameters:
 
 item_uuids
-: (list) The Items list parameter holds item_uuids for all of the items you wish to add to your Inventory List
+: (array) The Items parameter holds item_uuids for all of the items you wish to add to your Inventory List
 
 ### Expected Response Codes
 

@@ -39,7 +39,7 @@ tracking
 : (string) The Tracking number for the entire Order or a portion of the Order
 
 ship_cost
-: (num) The Shipping Cost for the entire Order or a portion of the Order as per the tracking
+: (decimal) The Shipping Cost for the entire Order or a portion of the Order as per the tracking  (2 decimal places)
 
 carrier
 : (string) The Shipping Carrier who provided the Tracking Number
@@ -48,10 +48,10 @@ method
 : (string) The Shipping Method associated with the Tracking Number
 
 weight
-: (num) The Shipping Weight in pounds (lbs.)
+: (decimal) The Shipping Weight in pounds (lbs.) (2 decimal places)
 
 line_items
-: (list) The Line Items list contains a list of Line Item objects containing line_item_uuid and quantity
+: (array) Line Items contains an array of Line Item objects containing line_item_uuid and quantity
 
 #### Line Item Object:
 
@@ -59,10 +59,10 @@ line_item_uuid
 : (string) The Universal Unique Identifier for the Item
 
 quantity
-: (number) The Quantity of the Item included in the shipment associated with the Tracking Number
+: (integer) The Quantity of the Item included in the shipment associated with the Tracking Number
 
 sku_cost
-: (number) The SKU cost
+: (decimal) The SKU cost (2 decimal places)
 
 ### Expected Response Codes
 

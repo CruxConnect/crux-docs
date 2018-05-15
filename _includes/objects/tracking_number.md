@@ -17,4 +17,4 @@ shipping_date
 : (string) The date the order was shipped
 
 quantity
-: (int) The number of items in the shipment
+: (integer) The number of items in the shipment

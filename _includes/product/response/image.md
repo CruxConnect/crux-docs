@@ -5,7 +5,7 @@ url
 : (string) The URL for the SKU Product Image
 
 width
-: (number) The Image Width in pixels for the SKU Product Image
+: (integer) The Image Width in pixels for the SKU Product Image
 
 height
-: (number) The Image Height in pixels for the SKU Product Image
+: (integer) The Image Height in pixels for the SKU Product Image

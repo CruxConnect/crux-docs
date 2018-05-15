@@ -30,13 +30,12 @@ right_code: |
 ---
 Before placing an order, use this call to return the total Fees for the Order. This may be used a number of ways. Perhaps you would like to make sure you are charging enough for an order and would like a "sanity check" on the price before committing to the potential buyer. This API call allows you to get the full, all-inclusive price for the Order.
 
-
 ### Request Parameters:
 
 #### Required:
 
 skus
-: (list) The list of SKUs ordered including the SKU ID and Quantity per SKU
+: (array) Array of SKUs ordered including the SKU ID and Quantity per SKU
 
 ##### SKU Object:
 
@@ -44,7 +43,7 @@ sku_id
 : (string) The SKU ID is the SKU provided by the supplier which identifies that product you are purchasing
 
 quantity
-: (number) The Quantity ordered of the SKU ID
+: (integer) The Quantity ordered of the SKU ID
 
 #### Optional:
 
@@ -67,10 +66,10 @@ estimated_shipping_cost
 : (number) The Estimated Shipping Cost of the Order
 
 drop_ship_fee
-: (number) The total Drop Ship Fee for the Order
+: (decimal) The total Drop Ship Fee for the Order (2 decimal places)
 
 per_order_fee
-: (number) The Per Order Fee for the Order
+: (decimal) The Per Order Fee for the Order (2 decimal places)
 
 ### Expected Response Codes
 

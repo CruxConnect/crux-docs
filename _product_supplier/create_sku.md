@@ -103,23 +103,23 @@ condition
 : (string) The Condition of the SKU; these include "new", "used", and "refurb" (refurbished)
 
 quantity_in_stock
-: (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
+: (integer) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
 
 quantity_on_backorder
 : (number) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
 
 number_of_units_bundled
-: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
+: (integer) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
 distinguishing_attributes
 : (array) The Distinguishing Attributes are attributes objects based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
 
 
 minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
+: (decimal) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price. (2 decmial places)
 
 msrp
-: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
+: (decimal) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling. (2 decmial places)
 
 ### Response Parameters:
 
@@ -139,10 +139,10 @@ item
 : (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
 
 minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
+: (decimal) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price. (2 decmial places)
 
 msrp
-: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
+: (decimal) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling. (2 decmial places)
 
 price_tiers
 : (array) The list of Price Tier objects on this SKU
@@ -169,16 +169,16 @@ sku_id
 : (string) The SKU Identifier for the SKU as provided by the Supplier
 
 quantity_in_stock
-: (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
+: (integer) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
 
 quantity_on_backorder
-: (number) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
+: (integer) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
 
 number_of_units_bundled
-: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
+: (integer) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
 
-#### Distinguishing Attributes Object
+#### Distinguishing Attributes Object:
 
 {% include objects/attributes.md %}
 
@@ -202,7 +202,7 @@ number_of_units_bundled
 
 {% include product/response/product_identifiers.md %}
 
-#### Catalog Object
+#### Catalog Object:
 
 {% include product/response/catalog_simple.md %}
 

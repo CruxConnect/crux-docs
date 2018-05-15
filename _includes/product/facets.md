@@ -1,20 +1,20 @@
 supplier
-: (list) The Supplier list is a list of suppliers using uuid or name
+: (array) Array of suppliers using uuid or name
 
 shipping_cost_type
-: (list) The Shipping Cost Type list is a list of types of shipping costs the Supplier has set up
+: (array) Array of shipping costs types as defined by the Supplier
 
 shipping_origin_country
-: (list) The Shipping Origin Country list is a list of countries using the country codes. Values include "US", "CA", "MX", etc.
+: (array) Array of country shipping origins using the country codes using 2 character format. For example: "US", "CA", "GE"
 
 bundle_type
-: (list) The Bundle Type list is a list of bundle types the Supplier has set up for the SKUs. Values for bundle_type_name include "Case Pack" and "Single".
+: (array) Array of bundle types the Supplier has set up for the SKUs. Values for bundle_type_name include "Case Pack" and "Single".
 
 product_identifiers
-: (list) The Product Identifiers list is a list of product identifiers available on each SKU
+: (array) Array of product identifiers available on each SKU
 
 categories
-: (list) The Categories list is a list of categories in which SKUs may reside
+: (array) Array of categories in which SKUs may reside
 
 catalog_type
-: (list) The kind of catalog to which the retrieved SKUs belong, "standard" and/or "discovery".  Defaults to "standard".
+: (array) Array of catalog types to which the retrieved SKUs belong.  Values include "standard" and/or "discovery".  Defaults to ["standard"] if catalog_type is not provided.
