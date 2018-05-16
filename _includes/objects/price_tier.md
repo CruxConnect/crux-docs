@@ -21,7 +21,7 @@ minimum_tier_quantity
 
 #### Catalog Object
 uuid
-: (string) Univeral Unique Identifier for the Catalog
+: (string) Universal Unique Identifier for the Catalog
 
 name
 : (string) Catalog Name
