@@ -11,7 +11,7 @@ item_name
 : (string) The Item Name
 
 sku_uuid
-: (string) The Univeral Unique Identifier for the SKU
+: (string) The Universal Unique Identifier for the SKU
 
 sku_id
 : (string) The SKU as provided by the Supplier
