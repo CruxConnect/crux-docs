@@ -4,13 +4,12 @@ name: sku_id
 position: 1
 visibility: all
 method: required
-description: Letters, numbers, or a combination of both to form a unique identification for a specified sku.
+description: Unique identifier for the product.
 right_code: |
   ~~~ bash
-  ADSHD000001
+  KYK23
   ~~~
-  {: title="SKU ID Example" }
-
+  {: title="sku_id" }
 ---
 
 Data Type
@@ -18,3 +17,4 @@ Data Type
 
 Character Length
 : 256
+

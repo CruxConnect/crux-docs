@@ -16,5 +16,11 @@ Data Type
 : text
 
 Character Length
-: -
+: See Accepted Values
 
+#### Accepted Values
+- amazon
+- ebay
+- newegg
+- overstock
+- walmart
