@@ -1,7 +1,7 @@
 ---
 title: /products/skus/
 name: Create SKU
-position: 2.24
+position: 12.07
 visibility: public
 method: post
 description: Create a SKU to add to a specified item_uuid
@@ -9,14 +9,19 @@ right_code: |
   ~~~ json
   {
     "item": {
-      "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520"
+      "uuid": "c278fcc7-ff5e-4494-9ccf-36d6d6d167c8"
     },
-    "sku_id": "AWWghwmTNb",
-    "minimum_advertised_price": "40.00",
-    "msrp": "55.99",
+    "sku_id": "LYsNxu-iIhTgvti-X3qj0ade",
+    "restrictions": "tmpunavail",
+    "condition": "used",
     "quantity_in_stock": "500",
     "quantity_on_backorder": "100",
     "number_of_units_bundled": "2",
+    "distinguishing_attributes": {
+      "color": "blue"
+    },
+    "minimum_advertised_price": "40.00",
+    "msrp": "55.99",
     "minimum_advertised_price_currency": "USD",
     "msrp_currency": "USD"
   }
@@ -25,12 +30,14 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "b0a7e210-ebb5-460d-a75a-6d417899aedb",
-    "restrictions": null,
-    "condition": "new",
-    "distinguishing_attributes": {},
+    "uuid": "7be0e3de-4108-4b08-85b4-19ddd0adcae4",
+    "restrictions": "tmpunavail",
+    "condition": "used",
+    "distinguishing_attributes": {
+      "color": "blue"
+    },
     "item": {
-      "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520"
+      "uuid": "2bce11c2-e60c-47a0-899b-81edfa90f666"
     },
     "minimum_advertised_price": 40,
     "msrp": 55.99,
@@ -38,16 +45,20 @@ right_code: |
     "product_images": [],
     "measurements": {
       "sku": {
+        "weight_units": null,
         "weight": null,
-        "length": null,
+        "height": null,
         "width": null,
-        "height": null
+        "dimension_units": null,
+        "length": null
       },
       "package": {
+        "weight_units": null,
         "weight": null,
-        "length": null,
+        "height": null,
         "width": null,
-        "height": null
+        "dimension_units": null,
+        "length": null
       }
     },
     "product_identifiers": {
@@ -60,26 +71,22 @@ right_code: |
     },
     "catalogs": [
       {
-        "uuid": "962900df-0bd3-447b-9bdd-caff66a14591",
-        "name": "master"
+        "uuid": "81bd100e-e347-4ee3-9dfd-79a7a59aaa72",
+        "name": "__master__"
       }
     ],
-    "created": "2017-11-07T19:16:46.151007Z",
-    "last_updated": "2017-11-07T19:16:46.151057Z",
-    "sku_id": "RcKrkPpsgC",
+    "created": "2018-04-25T22:24:27.631175Z",
+    "last_updated": "2018-04-25T22:24:27.631223Z",
+    "sku_id": "DtMEqi-mWpAhAe5-qLuMx5Rc",
     "quantity_in_stock": 500,
     "quantity_on_backorder": 100,
-    "number_of_units_bundled": 2,
-    "minimum_advertised_price_currency": "USD",
-    "msrp_currency": "USD"
+    "number_of_units_bundled": 2
   }
   ~~~
   {: title="Response" }
 
 ---
 Create a SKU to add to a specified item_uuid.
-
-URL Endpoint: /products/skus/
 
 ### Request Parameters:
 
@@ -89,26 +96,30 @@ item
 sku_id
 : (string) The SKU Identifier for the SKU as provided by the Supplier
 
-minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
+restrictions
+: (string) The Restrictions imposed on the SKU which can include "tmpunavail" (temporary unavailable) or "discontd" (dicontinued)
 
-msrp
-: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
+condition
+: (string) The Condition of the SKU; these include "new", "used", and "refurb" (refurbished)
 
 quantity_in_stock
-: (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
+: (integer) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
 
 quantity_on_backorder
 : (number) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
 
 number_of_units_bundled
-: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
+: (integer) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
+distinguishing_attributes
+: (array) The Distinguishing Attributes are attributes objects based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
 
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
+
+minimum_advertised_price
+: (decimal) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price. (2 decmial places)
+
+msrp
+: (decimal) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling. (2 decmial places)
 
 ### Response Parameters:
 
@@ -128,16 +139,16 @@ item
 : (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
 
 minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
+: (decimal) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price. (2 decmial places)
 
 msrp
-: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
+: (decimal) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling. (2 decmial places)
 
 price_tiers
-: (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
+: (array) The list of Price Tier objects on this SKU
 
 product_images
-: (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
+: (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.
@@ -145,8 +156,8 @@ measurements
 product_identifiers
 : (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
 
-inventory_lists
-: (list) The Inventory Lists list contains all of the Inventory List objects where this SKU currently resides.
+catalogs
+: (array) An array containing all of the catalog objects where this SKU currently resides.
 
 created
 : (string) The Created parameter indicates the date the SKU was Created in our system.
@@ -158,135 +169,68 @@ sku_id
 : (string) The SKU Identifier for the SKU as provided by the Supplier
 
 quantity_in_stock
-: (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
+: (integer) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
 
 quantity_on_backorder
-: (number) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
+: (integer) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
 
 number_of_units_bundled
-: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
+: (integer) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
 
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
+#### Distinguishing Attributes Object:
+
+{% include objects/attributes.md %}
 
 #### Price Tier Object:
 
-shipping_cost
-: (number) The Shipping Cost per the SKU per the Price Tier
-
-minimum_tier_quantity
-: (number) The Minimum Tier Quantity per the SKU per the Price Tier
-
-cost
-: (number) The Cost per the SKU per the Price Tier
-
-shipping_cost_is_estimate
-: (boolean) The Shipping Cost is Estimate parameter answers the question whether the shipping cost is an estimate per the SKU per the Price Tier.
+{% include objects/price_tier.md %}
 
 #### Product Image Object:
 
-uuid
-: (string) The Universal Unique Identifier for the SKU Product Image
-
-url
-: (string) The URL for the SKU Product Image
-
-width
-: (number) The Image Width in pixels for the SKU Product Image
-
-height
-: (number) The Image Height in pixels for the SKU Product Image
+{% include product/response/image.md %}
 
 #### SKU Measurements Object:
 
-weight
-: (number) The Weight of the SKU in the "weight_units"
-
-weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
-
-length
-: (number) The Length of the SKU in "dimension_units"
-
-width
-: (number) The Width of the SKU in "dimension_units"
-
-height
-: (number) The Height of the SKU in "dimension_units"
-
-dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
+{% include product/response/measurements_sku.md %}
 
 #### Package Measurements Object:
 
-weight
-: (number) The Weight of the packaged SKU in "weight_units"
-
-weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
-
-length
-: (number) The Length of the packaged SKU in "dimension_units"
-
-width
-: (number) The Width of the packaged SKU in "dimension_units"
-
-height
-: (number) The Height of the packaged SKU in "dimension_units"
-
-dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
+{% include product/response/measurements_package.md %}
 
 #### Product Identifiers Object:
 
-upca
-: (string) The Universal Product Code type A (UPCA) is an 11-digit code used to identify the SKU.
+{% include product/response/product_identifiers.md %}
 
-ean13
-: (string) The 13-digit European Article Number (EAN13) also known as the International Article Number is a 13-digit code used to identify the SKU.
+#### Catalog Object:
 
-gtin14
-: (string) The 14-digit Global Trade Identification Number (GTIN14) also known as the Global Trade Item Number is a 14-digit code used to identify the SKU.
+{% include product/response/catalog_simple.md %}
 
-isbn
-: (string) The International Standard Book Number (ISBN) is a unique numberic commercial book identifier. If the SKU is a book or can be classified as a book in some way shape or form, then an ISBN may be available for it.
+### Expected Response Codes
 
-asin
-: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper listing on Amazon.com.
-
-mpn
-: (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
-
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
-
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "sku_id": "AWWghwmTNb",
+  "restrictions": "tmpunavail",
+  "number_of_units_bundled": "2",
+  "condition": "used",
+  "minimum_advertised_price_currency": "USD",
+  "item": {
+    "uuid": "c278fcc7-ff5e-4494-9ccf-36d6d6d167c8"
+  },
+  "sku_id": "LYsNxu-iIhTgvti-X3qj0ade",
+  "msrp": "55.99",
+  "quantity_in_stock": "500",
   "minimum_advertised_price": "40.00",
   "msrp_currency": "USD",
-  "quantity_in_stock": "500",
   "quantity_on_backorder": "100",
-  "number_of_units_bundled": "2",
-  "msrp": "55.99",
-  "item": {
-    "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520"
-  },
-  "minimum_advertised_price_currency": "USD"
+  "distinguishing_attributes": {
+    "color": "blue"
+  }
 }'
 
 ~~~
@@ -294,19 +238,24 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
-    sku_id="AWWghwmTNb" \
+    restrictions="tmpunavail" \
+    number_of_units_bundled="2" \
+    condition="used" \
+    minimum_advertised_price_currency="USD" \
+    item:="{
+  \"uuid\": \"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"
+}" \
+    sku_id="LYsNxu-iIhTgvti-X3qj0ade" \
+    msrp="55.99" \
+    quantity_in_stock="500" \
     minimum_advertised_price="40.00" \
     msrp_currency="USD" \
-    quantity_in_stock="500" \
     quantity_on_backorder="100" \
-    number_of_units_bundled="2" \
-    msrp="55.99" \
-    item:="{
-  \"uuid\": \"4cc9a5f6-e024-4f48-8775-7ff35543f520\"
-}" \
-    minimum_advertised_price_currency="USD"
+    distinguishing_attributes:="{
+  \"color\": \"blue\"
+}"
 
 ~~~
 {: title="HTTPie" }
@@ -327,20 +276,25 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/skus/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    sku_id="AWWghwmTNb" \
+            data=json.dumps(    restrictions="tmpunavail" \
+    number_of_units_bundled="2" \
+    condition="used" \
+    minimum_advertised_price_currency="USD" \
+    item:="{
+  \"uuid\": \"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"
+}" \
+    sku_id="LYsNxu-iIhTgvti-X3qj0ade" \
+    msrp="55.99" \
+    quantity_in_stock="500" \
     minimum_advertised_price="40.00" \
     msrp_currency="USD" \
-    quantity_in_stock="500" \
     quantity_on_backorder="100" \
-    number_of_units_bundled="2" \
-    msrp="55.99" \
-    item:="{
-  \"uuid\": \"4cc9a5f6-e024-4f48-8775-7ff35543f520\"
-}" \
-    minimum_advertised_price_currency="USD")
+    distinguishing_attributes:="{
+  \"color\": \"blue\"
+}")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -364,7 +318,7 @@ def send_request():
         port: '443',
         path: '/products/skus/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -392,7 +346,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item\":{\"uuid\":\"4cc9a5f6-e024-4f48-8775-7ff35543f520\"},\"sku_id\":\"AWWghwmTNb\",\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
+    request.write("{\"item\":{\"uuid\":\"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"},\"sku_id\":\"LYsNxu-iIhTgvti-X3qj0ade\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"distinguishing_attributes\":{\"color\":\"blue\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
     request.end();
 
 

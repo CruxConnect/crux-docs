@@ -1,38 +1,37 @@
 ---
-title: /products/inventory-lists/&ltinventory_list_uuid&gt/
+title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/
 name: Get Inventory List Detail
-position: 2.10
+position: 11.01
 visibility: public
 method: get
 description: Get the Details of a particular Inventory List you have access to
 right_code: |
   ~~~ json
   {
-    "uuid": "868ea19d-5081-42ab-a4a5-c2337cd292af",
+    "uuid": "fef4116d-7a13-4dcf-a40c-10faa19f562c",
     "retailer": {
-      "uuid": "1d2e146c-a3df-4073-89c6-9ffc3061319c"
+      "uuid": "7b438288-bc88-4247-ac12-84e4519854fb"
     },
     "skus": [
       {
-        "uuid": "9060814c-9feb-4a3e-958c-cb26d537cffc"
+        "uuid": "26476fbe-3427-4648-9925-2090e06a41e9"
       },
-      {
-        "uuid": "12009d4d-6206-4811-9934-10e6016769e8"
-      },
-      {
-        "uuid": "1ba7a1e7-0eb3-46ae-875f-67d65caa94fa"
-      }
     ],
-    "created": "2017-10-23T18:28:19.509589Z",
-    "last_updated": "2017-10-23T18:28:19.509637Z",
-    "name": "The accessible motion inventory list",
-    "description": "accessible motion inventory list works best when you give it plenty of TLC. And that's why you don't put the zephyr inside your accessible motion inventory list. It doesn't work that way. All your wildest dreams would come true. Oh, no you don't!  Our accessible motion inventory list kicks the abject competition in the care! Be the hero. Be the kind of person your mother wanted you to me. Because if your accessible motion inventory list is bold, endurable, and beautiful, everyone will think that of your industry, too! Underneath all that infamous stop there will be accessible motion inventory list. Watching. Waiting. Wanting. Wishing. Wondering. Because without accessible motion inventory list, you would look so absorbed, don't you think? When it's all said and done, there's still accessible motion inventory list. Still. Because we care about how your accessible motion inventory list looks! You know you want it."
+    "created": "2018-04-24T23:48:19.876044Z",
+    "last_updated": "2018-04-24T23:48:19.876086Z",
+    "name": "The enormous grass inventory list",
+    "description": "When it's all said and done, there's still enormous grass inventory list."
   }
   ~~~
   {: title="Response" }
 
 ---
 Get the Details of a particular Inventory List you have access to.
+
+### URL Parameters
+
+inventory_list_uuid
+: (string) Universal Unique Identifier for the Inventory List
 
 ### Response Parameters:
 
@@ -43,7 +42,7 @@ retailer
 : (object) The Retailer object contains a single retailer_uuid.
 
 skus
-: (list) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
+: (array) The SKUs list parameter contains a list of SKU objects containing a single sku_uuid each
 
 created
 : (string) The Created parameter is the date the Catalog was Created.
@@ -57,20 +56,14 @@ name
 description
 : (string) The Description the supplier has provided for this Inventory List
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -78,8 +71,8 @@ curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json GET 'https://api-sandbox.cruxconnect.com/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -96,13 +89,13 @@ import json
 
 def send_request():
     # Get Inventory List Detail
-    # GET https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/
+    # GET https://api-sandbox.cruxconnect.com/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/",
+            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -127,9 +120,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/868ea19d-5081-42ab-a4a5-c2337cd292af/',
+        path: '/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

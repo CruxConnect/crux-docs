@@ -1,7 +1,7 @@
 ---
-title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-items-by-search/
+title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/add-items-by-search/
 name: Inventory Add Item by Search
-position: 2.16
+position: 11.05
 visibility: public
 method: post
 description: Add Items to an existing Inventory List by Search
@@ -11,6 +11,18 @@ right_code: |
     "filters": {
       "cost_per_unit": {
         "min": "0"
+      },
+      "number_of_item_images": {
+        "min": 0,
+        "max": "500"
+      },
+      "image_height": {
+        "min": 0,
+        "max": 100000
+      },
+      "image_width": {
+        "min": 0,
+        "max": 100000
       }
     },
     "facets": {
@@ -19,7 +31,8 @@ right_code: |
       "shipping_origin_country": [],
       "bundle_type": [],
       "product_identifiers": [],
-      "categories": []
+      "categories": [],
+      "catalog_type": []
     },
     "search_term": "",
     "sort": "title",
@@ -33,15 +46,20 @@ right_code: |
 
 
 ---
-Add Items to an existing Inventory List by Search. This allows you to add Items with all associated SKUs via a Search to an Inventory List. By providing your inventory_list_uuid and a list of item_uuids, you can successfully add them to the indicated Inventory List.
+Add Items with all associated SKUs based upon your search criteria to an existing Inventory List.
+
+### URL Parameters
+
+inventory_list_uuid
+: (string) Universal Unique Identifier for the Inventory List
 
 ### Request Parameters:
 
 filters
-: (object) The Filters object parameter includes all of the potential filters you wish to include in your Search. These filters include "cost_per_unit", "number_of_item_images", "image_height", "image_width", etc.
+: (object) The Filters object parameter includes all of the potential filters you wish to include in your Search.
 
 facets
-: (object) The Facets object parameter includes all of the potential facets you wish to include in your Search. These facets include "supplier", "shipping_cost_type", "shipping_origin_country", "country_of_origin", "bundle_type", "product_identifiers", "categories", etc.
+: (object) The Facets object parameter includes all of the potential facets you wish to include in your Search.
 
 search_term
 : (string) The Search Term you would like to search for
@@ -52,20 +70,25 @@ sort
 pagination
 : (object) The Pagination object includes start and limit which allow you to receive a manageable amount of data back from your API call.
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+#### Filters Object
+
+{% include product/filters.md %}
+
+#### Facets Object
+
+{% include product/facets.md %}
+
+#### Pagination Object
+{% include product/request/pagination.md %}
+
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items-by-search/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "search_term": "",
@@ -85,7 +108,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/c8e
     "shipping_origin_country": [],
     "bundle_type": [],
     "product_identifiers": [],
-    "categories": []
+    "categories": [],
+    "catalog_type": []
   }
 }'
 
@@ -93,8 +117,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/c8e
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items-by-search/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
     filters:="{
@@ -113,7 +137,8 @@ http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/c
   \"shipping_origin_country\": [],
   \"bundle_type\": [],
   \"product_identifiers\": [],
-  \"categories\": []
+  \"categories\": [],
+  \"catalog_type\": []
 }"
 
 ~~~
@@ -129,13 +154,13 @@ import json
 
 def send_request():
     # Inventory Add Item by Search
-    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/
+    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items-by-search/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/",
+            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items-by-search/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    search_term="" \
@@ -155,7 +180,8 @@ def send_request():
   \"shipping_origin_country\": [],
   \"bundle_type\": [],
   \"product_identifiers\": [],
-  \"categories\": []
+  \"categories\": [],
+  \"catalog_type]": []
 }")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -178,9 +204,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-items-by-search/',
+        path: '/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items-by-search/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

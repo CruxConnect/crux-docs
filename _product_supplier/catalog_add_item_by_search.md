@@ -1,7 +1,7 @@
 ---
 title: /products/catalogs/&ltcatalog_uuid&gt/add-items-by-search/
 name: Catalog Add Item by Search
-position: 2.07
+position: 12.02
 visibility: public
 method: post
 description: Add Items to an existing Catalog by Search
@@ -35,6 +35,11 @@ right_code: |
 ---
 Add Items to an existing Catalog by Search. This allows you to add Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully add them to the indicated Catalog.
 
+### URL Parameters:
+
+catalog-uuid
+: (string) Unique Universal Identifier for the Catalog
+
 ### Request Parameters:
 
 filters
@@ -52,20 +57,26 @@ sort
 pagination
 : (object) The Pagination object includes start and limit which allow you to receive a manageable amount of data back from your API call.
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+#### Filters Object:
+
+{% include product/filters.md %}
+
+#### Facets Object:
+
+{% include product/facets.md %}
+
+#### Pagination Object:
+
+{% include product/request/pagination.md %}
+
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "search_term": "",
@@ -93,8 +104,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-0
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
     filters:="{
@@ -129,13 +140,13 @@ import json
 
 def send_request():
     # Catalog Add Item by Search
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    search_term="" \
@@ -178,9 +189,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/add-items-by-search/',
+        path: '/products/catalogs/e689e8ca-79f6-4533-b12f-1c528e2aa5cd/add-items-by-search/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

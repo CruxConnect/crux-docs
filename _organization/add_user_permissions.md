@@ -23,6 +23,11 @@ Add User Permissions allows you to provide a user uuid and Add Permissions if ro
 To edit organization users, you must be assigned the 'edit_org_users' permission.
 {: .info }
 
+### URL Parameters
+
+user_uuid
+: (string) User Universal Unique Identifier
+
 ### Request Parameters:
 
 permission_uuids

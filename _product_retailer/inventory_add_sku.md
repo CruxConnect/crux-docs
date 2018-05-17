@@ -1,7 +1,7 @@
 ---
-title: /products/inventory-lists/&ltinventory_list_uuid&gt/add-skus/
+title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/add-skus/
 name: Inventory Add SKU
-position: 2.12
+position: 11.07
 visibility: public
 method: post
 description: Add SKUs to an existing Inventory List for your account
@@ -9,40 +9,40 @@ right_code: |
   ~~~ json
   {
     "sku_uuids": [
-      "9060814c-9feb-4a3e-958c-cb26d537cffc",
-      "12009d4d-6206-4811-9934-10e6016769e8"
+      "26476fbe-3427-4648-9925-2090e06a41e9"
     ]
   }
   ~~~
   {: title="Request" }
 
+
 ---
-Add SKUs to an existing Inventory List for your account. This allows you to add SKUs to an Inventory List. By providing your inventory_list_uuid and a list of sku_uuids, you can successfully add them to the indicated Inventory List.
+Add SKUs to an existing Inventory List for your account.
+
+To add items to an Inventory List see [Inventory Add Item](/#product_retailerinventory_add_item).
+
+### URL Parameters
+
+inventory_list_uuid
+: (string) Universal Unique Identifier for the Inventory List
 
 ### Request Parameters:
 
 sku_uuids
-: (list) The SKU UUIDs list parameter holds sku_uuids for all of the SKUs you wish to add to your Inventory List
+: (array) The SKU UUIDs parameter holds sku_uuids for all of the SKUs you wish to add to your Inventory List
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb does not match the intended API call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+### Expected Response Codes
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-skus/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "sku_uuids": [
-    "9060814c-9feb-4a3e-958c-cb26d537cffc",
-    "12009d4d-6206-4811-9934-10e6016769e8"
+    "26476fbe-3427-4648-9925-2090e06a41e9"
   ]
 }'
 
@@ -50,12 +50,11 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/c8e
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-skus/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_uuids:="[
-  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
-  \"12009d4d-6206-4811-9934-10e6016769e8\"
+  \"26476fbe-3427-4648-9925-2090e06a41e9\"
 ]"
 
 ~~~
@@ -71,18 +70,17 @@ import json
 
 def send_request():
     # Inventory Add SKU
-    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/
+    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-skus/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/",
+            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-skus/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    sku_uuids:="[
-  \"9060814c-9feb-4a3e-958c-cb26d537cffc\",
-  \"12009d4d-6206-4811-9934-10e6016769e8\"
+  \"26476fbe-3427-4648-9925-2090e06a41e9\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -105,9 +103,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/c8ea2ef5-2093-4ea9-ac19-c6ac9d333e18/add-skus/',
+        path: '/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-skus/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -135,7 +133,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_uuids\":[\"9060814c-9feb-4a3e-958c-cb26d537cffc\",\"12009d4d-6206-4811-9934-10e6016769e8\"]}")
+    request.write("{\"sku_uuids\":[\"26476fbe-3427-4648-9925-2090e06a41e9\"]}")
     request.end();
 
 

@@ -17,7 +17,7 @@ right_code: |
 ---
 This API call requires that you have first recieved an email containing an invitatation link. That link will contain an invitation token. Alternatively in a development environment, you may use the token included in the response to the (["Reset Password" API call](#organizationpassword-reset)).
 
-This call will set a password for the account tied to the token and mark the account as active.
+This call will set a password for the account tied to the token and mark the account as active. The invitation token expires two hours after issuance.
 
 ### URL Parameters:
 

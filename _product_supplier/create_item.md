@@ -1,15 +1,15 @@
 ---
 title: /products/items/
 name: Create Item
-position: 2.19
+position: 12.03
 visibility: public
 method: post
 description: Create Items allows you to create (add) an item in a Supplier account
 right_code: |
   ~~~ json
   {
-    "item_id": "RtfiaeIRXj",
-    "title": "The Item Title - XkuKRGySts",
+    "item_id": "BhPTOJNOMT",
+    "title": "The Item Title - sQAPYParbG",
     "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
     "warranty": "The warranty information is included here",
     "return_policy": "The return policy is included here",
@@ -22,37 +22,72 @@ right_code: |
     "custom_attributes": {
       "Color": "black",
       "Size": "15\" x 15\" x 18\""
-    }
+    },
+    "categories": [
+      {
+        "path": [
+          "home",
+          "garden"
+        ],
+        "description": "garden description"
+      },
+      {
+        "path": [
+          "home",
+          "outdoor",
+          "furniture"
+        ]
+      }
+    ]
   }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "uuid": "4cc9a5f6-e024-4f48-8775-7ff35543f520",
+    "uuid": "c278fcc7-ff5e-4494-9ccf-36d6d6d167c8",
     "skus": [],
     "restrict_from_marketplaces": null,
     "supplier": {
-      "uuid": "9ff4ca63-7a46-4eee-a4fb-859e201460c8",
-      "name": "projectzuul"
+      "uuid": "7cbf1ff0-3c91-4504-a3cc-c5bedf91f4a9",
+      "name": "Supply Me"
     },
     "cost_range": {
-      "min": null,
-      "max": null
+      "max": null,
+      "min": null
     },
     "minimum_advertised_price_range": {
-      "min": null,
-      "max": null
+      "max": null,
+      "min": null
     },
     "msrp_range": {
-      "min": null,
-      "max": null
+      "max": null,
+      "min": null
     },
     "product_images": [],
-    "created": "2017-11-07T16:16:55.106356Z",
-    "last_updated": "2017-11-07T16:16:55.106410Z",
-    "item_id": "lWWISBERmJ",
-    "title": "The Item Title - KaiEHTsqXH",
+    "categories": [
+      {
+        "uuid": "1ac4fa91-61bd-47e5-8cb0-5422a4769322",
+        "path": [
+          "home",
+          "garden"
+        ],
+        "description": ""
+      },
+      {
+        "uuid": "4b38beda-ee02-43f8-9af2-68a1f591777a",
+        "path": [
+          "home",
+          "outdoor",
+          "furniture"
+        ],
+        "description": ""
+      }
+    ],
+    "created": "2018-04-26T15:37:38.336220Z",
+    "last_updated": "2018-04-26T15:37:38.336272Z",
+    "item_id": "hekHBDugPr",
+    "title": "The Item Title - yrvoxUgtog",
     "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
     "warranty": "The warranty information is included here",
     "return_policy": "The return policy is included here",
@@ -63,16 +98,17 @@ right_code: |
     "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
     "fba_certified": false,
     "custom_attributes": {
-      "Color": "black",
-      "Size": "15\" x 15\" x 18\""
-    },
-    "categories": []
+      "Size": "15\" x 15\" x 18\"",
+      "Color": "black"
+    }
   }
   ~~~
   {: title="Response" }
 
 ---
 Create Items allows you to create (add) an item in a Supplier account. By providing the required request parameters you may create a new item.
+
+Note: this endpoint is under development.  There are a number of fields in the response that may not yet be setable in the request body that are returned in the response.
 
 ### Request Parameters:
 
@@ -109,6 +145,9 @@ other_marketplace_restriction
 fba_certified
 : (boolean) The Fulfillment By Amazon (FBA) Certified parameter indicates whether this supplier has FBA set up on this Item.
 
+categories
+: (array) The Categories array contains objects that describe the path to the item.  It is structured like categories=[{'path': ['home', 'garden']}] where the item would exist in the garden category which has home as it's parent. Not implemented yet is passing in the category path description, although a blank description is passed back in the response.
+
 custom_attributes
 : (object) The Custom Attributes object parameter contains any special attributes you would like to include in a key-value pair
 
@@ -118,10 +157,10 @@ uuid
 : (string) Universal Unique Identifier for the Item
 
 skus
-: (list) The Stock Keeping Units (SKUs) list contains individual SKUs, or Item-variants, with their SKU-level data
+: (array) The Stock Keeping Units (SKUs) is returned as an empty array that will be used to contains individual SKUs, or Item-variants, with their SKU-level data.  [see Create Sku](#product_suppliercreate_sku)
 
 restrict_from_marketplaces
-: (list) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
+: (array) The Restrict From Marketplaces parameter indicates the marketplaces where sales for this Item are not permitted
 
 supplier
 : (object) The Supplier object contains the uuid for the Supplier and the Supplier name
@@ -136,7 +175,10 @@ msrp_range
 : (object) The Manufacturer's Suggested Retail Price Range object contains the minimum and maximum MSRPs for the Item, based on the available variants (SKUs).
 
 product_images
-: (list) The Product Images list stores a list of images for the item, based on the available variants (SKUs)
+: (array) The Product Images list stores a list of images for the item, based on the available variants (SKUs)
+
+categories
+: (array) The Categories array contains objects that describe the path to the item.  It is structured like categories=[{'path': ['home', 'garden'], description: 'some string'}] where the item would exist in the garden category which has home as it's parent. Not implemented yet is passing in the category path description, so an empty string will currently be returned for description.
 
 created
 : (string) The Created parameter is the date when the Item was added to our system.
@@ -180,237 +222,64 @@ fba_certified
 custom_attributes
 : (object) The Custom Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
 
-categories
-: (list) The Categories list contains a list of the categories, as provided by the Supplier, for this Item.
-
-#### SKU Object:
-
-uuid
-: (string) The Universal Unique Identifier for the SKU
-
-restrictions
-: (string) The Restrictions imposed on the SKU
-
-condition
-: (string) The Condition of the SKU; these include "new", "used", and "refurb"
-
-distinguishing_attributes
-: (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
-
-minimum_advertised_price
-: (number) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price.
-
-msrp
-: (number) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling.
-
-price_tiers
-: (list) The list of Price Tier objects on this SKU including shipping_cost, minimum_tier_quantity, cost, shipping_cost_is_estimate.
-
-product_images
-: (list) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
-
-measurements
-: (object) The Measurements object contains sku measurements object and a package measurements object.
-
-product_identifiers
-: (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
-
-inventory_lists
-: (list) The Inventory Lists list contains all of the Inventory List objects where this SKU currently resides.
-
-created
-: (string) The Created parameter indicates the date the SKU was Created in our system.
-
-last_updated
-: (string) The Last Updated parameter indicates the date the SKU was Last Updated in our system.
-
-sku_id
-: (string) The SKU Identifier for the SKU as provided by the Supplier
-
-quantity_in_stock
-: (number) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
-
-quantity_on_backorder
-: (number) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
-
-number_of_units_bundled
-: (number) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
-minimum_advertised_price_currency
-: (string) The Minimum Advertised Price Currency parameter indicates what currency the MAP is based on.
-
-msrp_currency
-: (string) The Manufacturer's Suggested Retail Price Currency parameter indicates what currency the MSRP is based on.
-
-item
-: (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
-
-#### Price Tier Object:
-
-shipping_cost
-: (number) The Shipping Cost per the SKU per the Price Tier
-
-minimum_tier_quantity
-: (number) The Minimum Tier Quantity per the SKU per the Price Tier
-
-cost
-: (number) The Cost per the SKU per the Price Tier
-
-shipping_cost_is_estimate
-: (boolean) The Shipping Cost is Estimate parameter answers the question whether the shipping cost is an estimate per the SKU per the Price Tier.
-
-#### Product Image Object:
-
-uuid
-: (string) The Universal Unique Identifier for the SKU Product Image
-
-url
-: (string) The URL for the SKU Product Image
-
-width
-: (number) The Image Width in pixels for the SKU Product Image
-
-height
-: (number) The Image Height in pixels for the SKU Product Image
-
-#### SKU Measurements Object:
-
-weight
-: (number) The Weight of the SKU in the "weight_units"
-
-weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
-
-length
-: (number) The Length of the SKU in "dimension_units"
-
-width
-: (number) The Width of the SKU in "dimension_units"
-
-height
-: (number) The Height of the SKU in "dimension_units"
-
-dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
-
-#### Package Measurements Object:
-
-weight
-: (number) The Weight of the packaged SKU in "weight_units"
-
-weight_units
-: (string) The units utilized by the supplier for weight ('g', 'kg', 'lb', and 'oz' are potential options, where 'g' is the default)
-
-length
-: (number) The Length of the packaged SKU in "dimension_units"
-
-width
-: (number) The Width of the packaged SKU in "dimension_units"
-
-height
-: (number) The Height of the packaged SKU in "dimension_units"
-
-dimension_units
-: (string) The units utilized by the supplier for dimensions ('cm', 'm', 'in', and 'ft' are potential options, where 'cm' is the default)
-
-#### Product Identifiers Object:
-
-upca
-: (string) The Universal Product Code type A (UPCA) is an 11-digit code used to identify the SKU.
-
-ean13
-: (string) The 13-digit European Article Number (EAN13) also known as the International Article Number is a 13-digit code used to identify the SKU.
-
-gtin14
-: (string) The 14-digit Global Trade Identification Number (GTIN14) also known as the Global Trade Item Number is a 14-digit code used to identify the SKU.
-
-isbn
-: (string) The International Standard Book Number (ISBN) is a unique numberic commercial book identifier. If the SKU is a book or can be classified as a book in some way shape or form, then an ISBN may be available for it.
-
-asin
-: (string) Amazon Standard Identification Number (ASIN) is the unique ID provided by the Amazon company. This number may be used to identify and match this SKU up to the proper listing on Amazon.com.
-
-mpn
-: (string) Manufacturer Part Number (MPN) is an identifier given to a part by the manufacturer. This number may be used to identify products such as car parts or computer parts that generally have sofisticated systems and readily available software for product management.
-
-#### Inventory List Object:
-
-uuid
-: (string) The Universal Unique Identifier for the Inventory List
-
-name
-: (string) The Name your company has given to this Inventory List
-
 #### Supplier Object:
 
-uuid
-: (string) The Universal Unique Identifier for the Supplier
-
-name
-: (string) The Supplier Name
+{% include product/response/supplier_minimal.md %}
 
 #### Cost Range Object:
 
-min
-: (number) The Minimum price for one of the SKUs or Item-variants
-
-max
-: (number) The Maximum price for one of the SKUs or Item-variants
+{% include product/response/cost_range.md %}
 
 #### Minimum Advertized Price Range Object:
 
-min
-: (number) The Minimum MAP for one of the SKUs or Item-variants
-
-max
-: (number) The Maximum MAP for one of the SKUs or Item-variants
+{% include product/response/map_range.md %}
 
 #### Manufacturer's Suggested Retail Price (MSRP) Range Object:
 
-min
-: (number) The Minimum MSRP for one of the SKUs or Item-variants
+{% include product/response/msrp_range.md %}
 
-max
-: (number) The Maximum MSRP for one of the SKUs or Item-variants
+#### Product Images Object:
 
-#### Item Product Images Object:
+{% include product/response/image.md %}
 
-uuid
-: (string) The Universal Unique Identifier for the Item Product Image
 
-url
-: (string) The URL for the Item Product Image
+#### Custom Attributes Object
 
-width
-: (number) The Image Width in pixels for the Item Product Image
+{% include objects/attributes.md %}
 
-height
-: (number) The Image Height in pixels for the Item Product Image
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+### Expected Response Codes
 
+{% include links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn'"'"'t already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
+  "categories": [
+    {
+      "path": [
+        "home",
+        "garden"
+      ]
+    },
+    {
+      "path": [
+        "home",
+        "outdoor",
+        "furniture"
+      ]
+    }
+  ],
   "shipping_origin_country": "US",
   "country_of_origin": "CN",
-  "item_id": "RtfiaeIRXj",
+  "item_id": "BhPTOJNOMT",
   "brand": "The Brand",
   "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
   "fba_certified": false,
-  "title": "The Item Title - XkuKRGySts",
+  "title": "The Item Title - sQAPYParbG",
   "custom_attributes": {
     "Color": "black",
     "Size": "15\\" x 15\\" x 18\\""
@@ -425,16 +294,32 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \
 
 ~~~ bash
 http --json POST 'https://api-sandbox.cruxconnect.com/products/items/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
+    categories:="[
+  {
+    \"path\": [
+      \"home\",
+      \"garden\"
+    ],
+    \"description\": \"garden description\"
+  },
+  {
+    \"path\": [
+      \"home\",
+      \"outdoor\",
+      \"furniture\"
+    ]
+  }
+]" \
     shipping_origin_country="US" \
     country_of_origin="CN" \
-    item_id="RtfiaeIRXj" \
+    item_id="BhPTOJNOMT" \
     brand="The Brand" \
     other_marketplace_restriction="eBay, Amazon, Sears, Walmart" \
     fba_certified:=false \
-    title="The Item Title - XkuKRGySts" \
+    title="The Item Title - sQAPYParbG" \
     custom_attributes:="{
   \"Color\": \"black\",
   \"Size\": \"15\\\" x 15\\\" x 18\\\"\"
@@ -462,17 +347,33 @@ def send_request():
         response = requests.post(
             url="https://api-sandbox.cruxconnect.com/products/items/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
+    categories:="[
+  {
+    \"path\": [
+      \"home\",
+      \"garden\"
+    ],
+    \"description\": \"garden description\"
+  },
+  {
+    \"path\": [
+      \"home\",
+      \"outdoor\",
+      \"furniture\"
+    ]
+  }
+]" \
     shipping_origin_country="US" \
     country_of_origin="CN" \
-    item_id="RtfiaeIRXj" \
+    item_id="BhPTOJNOMT" \
     brand="The Brand" \
     other_marketplace_restriction="eBay, Amazon, Sears, Walmart" \
     fba_certified:=false \
-    title="The Item Title - XkuKRGySts" \
+    title="The Item Title - sQAPYParbG" \
     custom_attributes:="{
   \"Color\": \"black\",
   \"Size\": \"15\\\" x 15\\\" x 18\\\"\"
@@ -503,7 +404,7 @@ def send_request():
         port: '443',
         path: '/products/items/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -531,7 +432,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_id\":\"RtfiaeIRXj\",\"title\":\"The Item Title - XkuKRGySts\",\"description\":\"This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.\",\"warranty\":\"The warranty information is included here\",\"return_policy\":\"The return policy is included here\",\"manufacturer\":\"The Manufacturer\",\"brand\":\"The Brand\",\"country_of_origin\":\"CN\",\"shipping_origin_country\":\"US\",\"other_marketplace_restriction\":\"eBay, Amazon, Sears, Walmart\",\"fba_certified\":false,\"custom_attributes\":{\"Color\":\"black\",\"Size\":\"15\\\" x 15\\\" x 18\\\"\"}}")
+    request.write("{\"item_id\":\"BhPTOJNOMT\",\"title\":\"The Item Title - sQAPYParbG\",\"description\":\"This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.\",\"warranty\":\"The warranty information is included here\",\"return_policy\":\"The return policy is included here\",\"manufacturer\":\"The Manufacturer\",\"brand\":\"The Brand\",\"country_of_origin\":\"CN\",\"shipping_origin_country\":\"US\",\"other_marketplace_restriction\":\"eBay, Amazon, Sears, Walmart\",\"fba_certified\":false,\"custom_attributes\":{\"Color\":\"black\",\"Size\":\"15\\\" x 15\\\" x 18\\\"\"},\"categories\":[{\"path\":[\"home\",\"garden\"],\"description\":\"garden description\"},{\"path\":[\"home\",\"outdoor\",\"furniture\"]}]}")
     request.end();
 
 

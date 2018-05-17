@@ -22,7 +22,7 @@ right_code: |
 ---
 This API call requires that you have first recieved an email containing an invitatation link. That link will contain an invitation token. Alternatively in a development environment, you may use the token included in the response to the (["Reset Password" API call](#organizationpassword-reset)).
 
-This call will check to see if the token is valid. If the token is found, but has expired, a 201 response will be received and a new invitation email will be sent.
+This call will check to see if the token is valid. If the token is found, but has expired, a 201 response will be received and a new invitation email will be sent. The invitation token expires two hours after issuance.
 
 ### URL Parameters:
 

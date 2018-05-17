@@ -12,46 +12,71 @@ collections:
   documentation:
     visibility: all
     title: Documentation
-    position: 1
+    position: 1.0
   file_specs_documentation:
     visibility: file-specs
     title: Item File Specifications
-    position: 2
+    position: 1.1
     type: fs
   sku_specs_documentation:
     visibility: file-specs
     title: SKU File Specifications
-    position: 3
+    position: 1.2
     type: fs
   organization:
     visibility: public
     title: Organization
-    position: 4
+    position: 2
     type: api
   accounting:
     visibility: public
     title: Accounting
-    position: 5
+    position: 3
+    type: api
+  product:
+    visibility: all
+    title: Product
+    position: 4
     type: api
   product_retailer:
-    visibility: public
+    visibility: all
     title: Product for Retailers
-    position: 6
+    position: 4.1
     type: api
   product_supplier:
     visibility: public
     title: Product for Supplier
-    position: 7
+    position: 4.2
     type: api
   ordering:
     visibility: public
     title: Ordering
-    position: 8
+    position: 5
     type: api
-  export:
+  ordering_retailer:
     visibility: public
-    title: Export
-    position: 9
+    title: Ordering for Retailer
+    position: 5.1
+    type: api
+  ordering_supplier:
+    visibility: public
+    title: Ordering for Supplier
+    position: 5.2
+    type: api
+  discovery:
+    visibility: public
+    title: Discovery
+    position: 6
+    type: api
+  discovery_retailer:
+    visibility: public
+    title: Discovery Retailer
+    position: 6.1
+    type: api
+  files:
+    visibility: public
+    title: Files
+    position: 7
     type: api
   tools:
     visibility: internal

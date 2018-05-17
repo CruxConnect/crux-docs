@@ -16,7 +16,7 @@ right_code: |
 
 
 ---
-This API call requires that you have first requested to reset your password (["Reset Password" API call](#organizationpassword-reset)) and validated that request (["Validate Password Reset"](#organizationpassword-reset)). To create a new password, you provide the "reset token" that you received in an email sent by the ["Reset Password" API call](#organizationpassword-reset) and provide the password you'd like to use.
+This API call requires that you have first requested to reset your password (["Reset Password" API call](#organizationpassword-reset)) and validated that request (["Validate Password Reset"](#organizationpassword-reset)). To create a new password, you provide the "reset token" that you received in an email sent by the ["Reset Password" API call](#organizationpassword-reset) and provide the password you'd like to use. The reset token expires two hours after issuance.
 
 ### Request Parameters:
 

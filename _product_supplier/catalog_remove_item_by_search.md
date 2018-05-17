@@ -1,7 +1,7 @@
 ---
-title: /products/catalogs/&ltcatalog_uuid&gt/remove-items-by-search/
+title: /products/catalogs/&lt;catalog_uuid&gt;/remove-items-by-search/
 name: Catalog Remove Item by Search
-position: 2.08
+position: 12.05
 visibility: public
 method: post
 description: Remove Items from an existing Catalog by Search
@@ -33,7 +33,12 @@ right_code: |
 
 
 ---
-Remove Items from an existing Catalog by Search. This allows you to Remove Items with all associated SKUs via a Search to a Catalog. By providing your catalog_uuid and search criteria, you can successfully remove them from the indicated Catalog.
+Remove Items from an existing Catalog by Search. This allows you to Remove Items with all associated SKUs via by providing your catalog_uuid and search criteria, you can successfully remove them from the indicated Catalog.
+
+### URL Parameters:
+
+catalog_uuid
+: (string) Universal Unique Identifier for the selected catalog
 
 ### Request Parameters:
 
@@ -52,20 +57,26 @@ sort
 pagination
 : (object) The Pagination object includes start and limit which allow you to receive a manageable amount of data back from your API call.
 
-| Code | Name                   | Meaning                                                                      |
-|------|-------------------------------------------------------------------------------------------------------|
-| 200  | OK                     | The API call was received and response is provided                           |
-| 400  | Bad Request            | Generally, something required for the request is missing                     |
-| 401  | Unauthorized           | Generally, the username or password is incorrect                             |
-| 403  | Permission Denied      | Generally, the user does not have permission to perform the requested action |
-| 404  | Not Found              | Generally, the call is not sent to the correct URL                           |
-| 405  | Method Not Allowed     | Generally, the HTTP verb is not correct for the intended call                |
-| 415  | Unsupported Media Type | Generally, this is a syntax problem                                          |
+#### Filters Object:
+
+{% include product/filters.md %}
+
+#### Facets Object:
+
+{% include product/facets.md %}
+
+#### Pagination Object:
+
+{% include product/request/pagination.md %}
+
+### Expected Response Codes:
+
+{% include links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/5f8b63d8-8afc-469a-894a-10548a21ce94/remove-items-by-search/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "search_term": "",
@@ -93,8 +104,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-0
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/5f8b63d8-8afc-469a-894a-10548a21ce94/remove-items-by-search/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     search_term="" \
     filters:="{
@@ -129,13 +140,13 @@ import json
 
 def send_request():
     # Catalog Remove Item by Search
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/
+    # POST https://api-sandbox.cruxconnect.com/products/catalogs/5f8b63d8-8afc-469a-894a-10548a21ce94/remove-items-by-search/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/",
+            url="https://api-sandbox.cruxconnect.com/products/catalogs/5f8b63d8-8afc-469a-894a-10548a21ce94/remove-items-by-search/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    search_term="" \
@@ -178,9 +189,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/9f987473-03e7-46aa-97e8-63d385703ce3/remove-items-by-search/',
+        path: '/products/catalogs/5f8b63d8-8afc-469a-894a-10548a21ce94/remove-items-by-search/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
