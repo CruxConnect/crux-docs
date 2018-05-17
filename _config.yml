@@ -24,7 +24,7 @@ collections:
     position: 1.2
     type: fs
   organization:
-    visibility: public
+    visibility: api
     title: Organization
     position: 2
     type: api
@@ -34,12 +34,12 @@ collections:
     position: 3
     type: api
   product:
-    visibility: all
+    visibility: public
     title: Product
     position: 4
     type: api
   product_retailer:
-    visibility: all
+    visibility: public
     title: Product for Retailers
     position: 4.1
     type: api
@@ -81,7 +81,7 @@ collections:
   tools:
     visibility: internal
     title: Operations Tools
-    position: 10
+    position: 8
     type: api
 
 plugins:

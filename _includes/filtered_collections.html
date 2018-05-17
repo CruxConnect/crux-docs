@@ -1,23 +1,31 @@
 <!-- begin setting filtered collections -->
-{% if page.path == 'knowledgebase.html' %}
-  {% assign visibility = 'knowledgebase' %}
-  {% assign filtered_collections = site.collections | where_exp:"item", "item.visibility == visibility" %}
-{% else %}
+{% assign filtered_collections = "" | split,"" %}
+
+{% if page.path == 'index.html' or page.path == 'internal.html' %}
   {% if page.path == 'internal.html' %}
     {% assign visibility = 'internal' %}
-  {% elsif page.path == 'file-specs.html' %}
-    {% assign visibility = 'file-specs' %}
   {% else %}
     {% assign visibility = 'public' %}
   {% endif %}
 
-  {% assign filtered_collections = "" | split,"" %}
+  {% for collection in site.collections %}
+    {% if collection.visibility contains "all" or collection.visibility contains "api" or collection.visibility contains visibility %}
+      {% assign filtered_collections = filtered_collections | push:collection %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% if page.path == 'knowledgebase.html' %}
+    {% assign visibility = 'knowledgebase' %}
+  {% elsif page.path == 'file-specs.html' %}
+    {% assign visibility = 'file-specs' %}
+  {% endif %}
+
   {% for collection in site.collections %}
     {% if collection.visibility contains "all" or collection.visibility contains visibility %}
       {% assign filtered_collections = filtered_collections | push:collection %}
     {% endif %}
   {% endfor %}
-
 {% endif %}
+
 {% assign sorted_collections = filtered_collections | sort: "position" %}
 <!-- end setting filtered collections -->
