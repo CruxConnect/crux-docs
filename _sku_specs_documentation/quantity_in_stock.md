@@ -2,7 +2,7 @@
 title: quantity_in_stock
 name: quantity_in_stock
 position: 4
-visibility: all
+visibility: file-specs
 method: required
 description: Quantity currently available to be shipped.
 right_code: |

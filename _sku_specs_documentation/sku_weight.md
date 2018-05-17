@@ -2,7 +2,7 @@
 title: sku_weight
 name: sku_weight
 position: 9
-visibility: all
+visibility: file-specs
 method: required
 description: The product weight.
 right_code: |

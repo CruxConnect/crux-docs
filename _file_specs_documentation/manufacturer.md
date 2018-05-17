@@ -2,7 +2,7 @@
 title: manufacturer
 name: manufacturer
 position: 6
-visibility: all
+visibility: file-specs
 method: optional
 description: Manufacturer of the product.
 right_code: |

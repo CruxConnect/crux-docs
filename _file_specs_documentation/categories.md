@@ -2,7 +2,7 @@
 title: categories
 name: categories
 position: 10
-visibility: all
+visibility: file-specs
 method: required
 description: The division in which you place your item based on shared characteristics.
 right_code: |

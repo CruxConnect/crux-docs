@@ -2,7 +2,7 @@
 title: country_of_origin
 name: country_of_origin
 position: 8
-visibility: all
+visibility: file-specs
 method: optional
 description: The country where the product was manufactured. Must be a 2-digit ISO country code.
 right_code: |

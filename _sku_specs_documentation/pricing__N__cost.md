@@ -2,7 +2,7 @@
 title: pricing.[N].cost
 name: pricing.[N].cost
 position: 31
-visibility: all
+visibility: file-specs
 method: required
 description: Cost of the product.
 right_code: |

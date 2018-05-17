@@ -2,7 +2,7 @@
 title: quantity_on_backorder
 name: quantity_on_backorder
 position: 5
-visibility: all
+visibility: file-specs
 method: optional
 description: Current order of a product that is out of stock.
 right_code: |

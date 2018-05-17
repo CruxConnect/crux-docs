@@ -2,7 +2,7 @@
 title: package_length
 name: package_length
 position: 17
-visibility: all
+visibility: file-specs
 method: preferred
 description: The length of the product when packaged for shipping.
 right_code: |

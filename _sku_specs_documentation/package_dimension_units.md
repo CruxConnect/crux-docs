@@ -2,7 +2,7 @@
 title: package_dimension_units
 name: package_dimension_units
 position: 20
-visibility: all
+visibility: file-specs
 method: preferred
 description: The unit of measurement used to provide the length, width, and height of the product.
 right_code: |

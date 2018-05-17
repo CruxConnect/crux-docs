@@ -2,7 +2,7 @@
 title: brand
 name: brand
 position: 7
-visibility: all
+visibility: file-specs
 method: optional
 description: Brand name of the product.
 right_code: |

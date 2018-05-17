@@ -2,9 +2,9 @@
 title: item_id
 name: item_id
 position: 1
-visibility: all
+visibility: file-specs
 method: required
-description: Unique identifier for the parent product. 
+description: Unique identifier for the parent product.
 right_code: |
   ~~~ bash
   AF-DSHD

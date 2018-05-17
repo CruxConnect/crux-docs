@@ -2,7 +2,7 @@
 title: package_weight
 name: package_weight
 position: 15
-visibility: all
+visibility: file-specs
 method: preferred
 description: The weight of the product when packaged for shipping.
 right_code: |

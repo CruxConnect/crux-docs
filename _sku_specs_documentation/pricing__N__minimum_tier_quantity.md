@@ -2,7 +2,7 @@
 title: pricing.[N].minimum_tier_quantity
 name: pricing.[N].minimum_tier_quantity
 position: 30
-visibility: all
+visibility: file-specs
 method: required
 description: null
 right_code: |

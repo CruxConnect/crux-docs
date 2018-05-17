@@ -9,20 +9,20 @@ permalink: pretty
 baseurl: ""
 
 collections:
-  file_specs_documentation:
-    visibility: all
-    title: Item File Specifications
-    position: 1
-    type: fs
-  sku_specs_documentation:
-    visibility: all
-    title: SKU File Specifications
-    position: 2
-    type: fs
   documentation:
     visibility: all
     title: Documentation
+    position: 1
+  file_specs_documentation:
+    visibility: file-specs
+    title: Item File Specifications
+    position: 2
+    type: fs
+  sku_specs_documentation:
+    visibility: file-specs
+    title: SKU File Specifications
     position: 3
+    type: fs
   organization:
     visibility: public
     title: Organization

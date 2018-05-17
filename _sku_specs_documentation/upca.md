@@ -2,7 +2,7 @@
 title: upca
 name: upca
 position: 21
-visibility: all
+visibility: file-specs
 method: preferred
 description: UPC (technically refers to UPC-A) consists of 12 numeric digits, that are uniquely assigned to each trade item.
 right_code: |

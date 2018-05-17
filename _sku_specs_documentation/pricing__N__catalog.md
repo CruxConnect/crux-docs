@@ -2,7 +2,7 @@
 title: pricing.[N].catalog
 name: pricing.[N].catalog
 position: 34
-visibility: all
+visibility: file-specs
 method: required
 description: Used to organize the product into a particular catalog.
 right_code: |

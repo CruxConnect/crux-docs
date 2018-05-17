@@ -2,7 +2,7 @@
 title: sku_id
 name: sku_id
 position: 1
-visibility: all
+visibility: file-specs
 method: required
 description: Unique identifier for the product.
 right_code: |

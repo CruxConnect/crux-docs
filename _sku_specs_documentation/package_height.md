@@ -2,7 +2,7 @@
 title: package_height
 name: package_height
 position: 19
-visibility: all
+visibility: file-specs
 method: preferred
 description: The height of the product when packaged for shipping.
 right_code: |

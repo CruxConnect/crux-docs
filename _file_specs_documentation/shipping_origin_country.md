@@ -2,7 +2,7 @@
 title: shipping_origin_country
 name: shipping_origin_country
 position: 9
-visibility: all
+visibility: file-specs
 method: optional
 description: ISO country code where the product is shipping from.
 right_code: |

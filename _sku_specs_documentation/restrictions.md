@@ -2,7 +2,7 @@
 title: restrictions
 name: restrictions
 position: 2
-visibility: all
+visibility: file-specs
 method: optional
 description: Current status of the the product if it is not in stock.
 right_code: |

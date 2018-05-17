@@ -2,7 +2,7 @@
 title: distinguishing_attribute.[N].value
 name: distinguishing_attribute.[N].value
 position: 28
-visibility: all
+visibility: file-specs
 method: optional
 description: The value that is associated with the custom attribute name and type.
 right_code: |

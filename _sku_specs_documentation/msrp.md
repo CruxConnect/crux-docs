@@ -2,7 +2,7 @@
 title: msrp
 name: msrp
 position: 8
-visibility: all
+visibility: file-specs
 method: required
 description: Manufacturer's Suggested Retail Price is the price at which the manufacturer recommends that the retailer sell the product.
 right_code: |

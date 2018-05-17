@@ -2,7 +2,7 @@
 title: custom_attribute.[N].name
 name: custom_attribute.[N].name
 position: 14
-visibility: all
+visibility: file-specs
 method: preferred
 description: The identifier for distinctive information about the item that describes its features that is associated with the corresponding value and type. These could range from Tax Codes to Item Materials.
 right_code: |

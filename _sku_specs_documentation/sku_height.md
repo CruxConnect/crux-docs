@@ -2,7 +2,7 @@
 title: sku_height
 name: sku_height
 position: 13
-visibility: all
+visibility: file-specs
 method: required
 description: The height of the product.
 right_code: |

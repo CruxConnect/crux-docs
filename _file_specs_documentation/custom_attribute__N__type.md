@@ -2,7 +2,7 @@
 title: custom_attribute.[N].type
 name: custom_attribute.[N].type
 position: 16
-visibility: all
+visibility: file-specs
 method: preferred
 description: The data type that is associated with the custom attribute name and value.
 right_code: |

@@ -2,7 +2,7 @@
 title: condition
 name: condition
 position: 3
-visibility: all
+visibility: file-specs
 method: required
 description: The state in which the item is being sold at.
 right_code: |

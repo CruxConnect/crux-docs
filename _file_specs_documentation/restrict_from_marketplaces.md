@@ -2,7 +2,7 @@
 title: restrict_from_marketplaces
 name: restrict_from_marketplaces
 position: 11
-visibility: all
+visibility: file-specs
 method: optional
 description: null
 right_code: |

@@ -2,7 +2,7 @@
 title: package_width
 name: package_width
 position: 18
-visibility: all
+visibility: file-specs
 method: preferred
 description: The width of the product when packaged for shipping.
 right_code: |

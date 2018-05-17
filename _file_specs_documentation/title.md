@@ -2,7 +2,7 @@
 title: title
 name: title
 position: 2
-visibility: all
+visibility: file-specs
 method: required
 description: Name of the product.
 right_code: |

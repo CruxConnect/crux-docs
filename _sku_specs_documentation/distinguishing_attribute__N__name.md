@@ -2,7 +2,7 @@
 title: distinguishing_attribute.[N].name
 name: distinguishing_attribute.[N].name
 position: 27
-visibility: all
+visibility: file-specs
 method: optional
 description: The name identified for distinguishing information about the item that describes its features associated with the corresponding value and type.
 right_code: |

@@ -2,7 +2,7 @@
 title: fba_certified
 name: fba_certified
 position: 13
-visibility: all
+visibility: file-specs
 method: optional
 description: Fulfillment by Amazon ceritifed.
 right_code: |

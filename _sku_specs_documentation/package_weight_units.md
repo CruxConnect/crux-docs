@@ -2,9 +2,9 @@
 title: package_weight_units
 name: package_weight_units
 position: 16
-visibility: all
+visibility: file-specs
 method: preferred
-description: The unit of measurement used to provide a weight value to the `package_weight` field. 
+description: The unit of measurement used to provide a weight value to the `package_weight` field.
 right_code: |
   ~~~ bash
   lb

@@ -2,7 +2,7 @@
 title: sku_width
 name: sku_width
 position: 12
-visibility: all
+visibility: file-specs
 method: required
 description: The width of the product.
 right_code: |

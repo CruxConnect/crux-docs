@@ -2,7 +2,7 @@
 title: pricing.[N].shipping_cost
 name: pricing.[N].shipping_cost
 position: 32
-visibility: all
+visibility: file-specs
 method: required
 description: Cost to ship the packaged product.
 right_code: |

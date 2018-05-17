@@ -2,7 +2,7 @@
 title: product_images_for_sku
 name: product_images_for_sku
 position: 35
-visibility: all
+visibility: file-specs
 method: required
 description: Image provide to offer a visual of the product. Duplicate URLs across a sku or item will reference the same Product Image.
 right_code: |

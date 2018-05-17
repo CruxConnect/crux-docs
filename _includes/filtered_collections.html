@@ -1,13 +1,12 @@
 <!-- begin setting filtered collections -->
-{% if page.path == 'file-specs.html' %}
-  {% assign visibility = 'file-specs' %}
-  {% assign filtered_collections = site.collections | where_exp:"item", "item.visibility == visibility" %}
-{% elsif page.path == 'knowledgebase.html' %}
+{% if page.path == 'knowledgebase.html' %}
   {% assign visibility = 'knowledgebase' %}
   {% assign filtered_collections = site.collections | where_exp:"item", "item.visibility == visibility" %}
 {% else %}
   {% if page.path == 'internal.html' %}
     {% assign visibility = 'internal' %}
+  {% elsif page.path == 'file-specs.html' %}
+    {% assign visibility = 'file-specs' %}
   {% else %}
     {% assign visibility = 'public' %}
   {% endif %}

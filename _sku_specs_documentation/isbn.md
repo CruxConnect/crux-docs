@@ -2,7 +2,7 @@
 title: isbn
 name: isbn
 position: 24
-visibility: all
+visibility: file-specs
 method: preferred
 description: The International Standard Book Number (ISBN) is a unique numeric commercial book identifier. An ISBN is assigned to each edition and variation (except reprintings) of a book.
 right_code: |

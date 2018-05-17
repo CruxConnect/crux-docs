@@ -2,7 +2,7 @@
 title: return_policy
 name: return_policy
 position: 5
-visibility: all
+visibility: file-specs
 method: required
 description: Rules to establish a process in which customers can return or exchange unwanted or defective items.
 right_code: |

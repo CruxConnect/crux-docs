@@ -2,7 +2,7 @@
 title: warranty
 name: warranty
 position: 4
-visibility: all
+visibility: file-specs
 method: preferred
 description: Product specific warranty.
 right_code: |
