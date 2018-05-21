@@ -160,15 +160,15 @@ asin
 mpn
 : (string(128)) Product Identifier
 
-#### Distinguishing Attributes
+#### SKU Distinguishing Attributes
 
-distinguishing_attribute.[N].name
+sku_distinguishing_attribute.[N].name
 : (string(max 128)) Distinguishing Attribute Name
 
-distinguishing_attribute.[N].value
+sku_distinguishing_attribute.[N].value
 : (string(max 256)) Distinguishing Attribute Value
 
-distinguishing_attribute.[N].type
+sku_distinguishing_attribute.[N].type
 : (string) Distinguishing Attribute Type.  Can be one of 'str', 'int', 'float', 'bool'
 
 #### Pricing

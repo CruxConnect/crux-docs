@@ -250,7 +250,7 @@ item_attributes
 
 {% include product/response/video.md %}
 
-#### Custom Attributes Object
+#### Item Attributes Object
 
 {% include objects/attributes.md %}
 

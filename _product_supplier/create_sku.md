@@ -182,7 +182,7 @@ number_of_units_bundled
 : (integer) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
 
-#### Distinguishing Attributes Object:
+#### SKU Distinguishing Attributes Object:
 
 {% include objects/attributes.md %}
 
