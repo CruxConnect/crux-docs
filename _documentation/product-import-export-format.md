@@ -65,7 +65,7 @@ custom_attribute.[N].type
 : (string) Custom Attribute Type.  Can be one of: 'str', 'int', 'float', 'bool'
 
 product_images_for_item
-: (string) Urls for the product image.  Individual URLs are comma separated urls. Duplicate urls across sku or item will reference the same ProductImage
+: (string) Uris for the product image.  Individual URIs are comma separated uris. Duplicate uris across sku or item will reference the same ProductImage
 
 ### SKU Level Info
 
@@ -94,7 +94,7 @@ msrp
 : (float) Manufacturer Suggested Retail Price
 
 product_images_for_sku
-: (string) Urls for the product image.  Individual URLs are comma separated urls. Duplicate urls across sku or item will reference the same ProductImage
+: (string) URIs for the product image.  Individual URIs are comma separated uris. Duplicate uris across sku or item will reference the same ProductImage
 
 inventory_lists
 : (string) [**RETAILER-ONLY**, **EXPORT-ONLY**] Comma seperated Inventory List UUIDs.  Example: '03e697-6a17-4dd1-939b-3d7ca9676b1c, 266a9a41-58a0-429e-8275-791f169789d1'
