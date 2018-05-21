@@ -64,8 +64,8 @@ other_marketplace_restriction
 fba_certified
 : (boolean) The Fulfillment By Amazon (FBA) Certified parameter indicates whether this supplier has FBA set up on this Item.
 
-custom_attributes
-: (object) The Custom Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
+item_attributes
+: (object) The Item Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
 
 categories
 : (array) Array of categories, as provided by the Supplier, for the Item.

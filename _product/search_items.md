@@ -96,7 +96,7 @@ right_code: |
         "shipping_origin_country": "BV",
         "other_marketplace_restriction": null,
         "fba_certified": null,
-        "custom_attributes": {
+        "item_attributes": {
           "hardness": 19,
           "diameter": 9
         },

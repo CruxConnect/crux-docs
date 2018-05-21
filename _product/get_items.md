@@ -15,7 +15,7 @@ right_code: |
           "uuid": "43113405-4964-4086-b5cc-9beea7cb127e",
           "restrictions": null,
           "condition": "new",
-          "distinguishing_attributes": {
+          "sku_distinguishing_attributes": {
             "size": 9,
             "color": "azure"
           },
@@ -160,7 +160,7 @@ right_code: |
       "shipping_origin_country": "TZ",
       "other_marketplace_restriction": null,
       "fba_certified": null,
-      "custom_attributes": {
+      "item_attributes": {
         "hardness": 12,
         "hair-color": "brown"
       }

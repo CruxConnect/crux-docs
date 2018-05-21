@@ -7,8 +7,8 @@ restrictions
 condition
 : (string) The Condition of the SKU; these include "new", "used", and "refurb"
 
-distinguishing_attributes
-: (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
+sku_distinguishing_attributes
+: (object) The SKU Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
 
 minimum_advertised_price
 : (decimal) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price. (2 decimal places)

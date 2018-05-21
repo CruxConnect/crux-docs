@@ -19,7 +19,7 @@ right_code: |
     "shipping_origin_country": "US",
     "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
     "fba_certified": false,
-    "custom_attributes": {
+    "item_attributes": {
       "Color": "black",
       "Size": "15\" x 15\" x 18\""
     },
@@ -98,7 +98,7 @@ right_code: |
     "shipping_origin_country": "US",
     "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
     "fba_certified": false,
-    "custom_attributes": {
+    "item_attributes": {
       "Size": "15\" x 15\" x 18\"",
       "Color": "black"
     }
@@ -149,8 +149,8 @@ fba_certified
 categories
 : (array) The Categories array contains objects that describe the path to the item.  It is structured like categories=[{'path': ['home', 'garden']}] where the item would exist in the garden category which has home as it's parent. Not implemented yet is passing in the category path description, although a blank description is passed back in the response.
 
-custom_attributes
-: (object) The Custom Attributes object parameter contains any special attributes you would like to include in a key-value pair
+item_attributes
+: (object) The Item Attributes object parameter contains any special attributes you would like to include in a key-value pair
 
 ### Response Parameters:
 
@@ -223,8 +223,8 @@ other_marketplace_restriction
 fba_certified
 : (boolean) The Fulfillment By Amazon (FBA) Certified parameter indicates whether this supplier has FBA set up on this Item.
 
-custom_attributes
-: (object) The Custom Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
+item_attributes
+: (object) The Item Attributes object contains any special or custom-created attributes provided by the Supplier for this Item.
 
 #### Supplier Object:
 
@@ -287,7 +287,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \
   "other_marketplace_restriction": "eBay, Amazon, Sears, Walmart",
   "fba_certified": false,
   "title": "The Item Title - sQAPYParbG",
-  "custom_attributes": {
+  "item_attributes": {
     "Color": "black",
     "Size": "15\\" x 15\\" x 18\\""
   },
@@ -327,7 +327,7 @@ http --json POST 'https://api-sandbox.cruxconnect.com/products/items/' \
     other_marketplace_restriction="eBay, Amazon, Sears, Walmart" \
     fba_certified:=false \
     title="The Item Title - sQAPYParbG" \
-    custom_attributes:="{
+    item_attributes:="{
   \"Color\": \"black\",
   \"Size\": \"15\\\" x 15\\\" x 18\\\"\"
 }" \
@@ -381,7 +381,7 @@ def send_request():
     other_marketplace_restriction="eBay, Amazon, Sears, Walmart" \
     fba_certified:=false \
     title="The Item Title - sQAPYParbG" \
-    custom_attributes:="{
+    item_attributes:="{
   \"Color\": \"black\",
   \"Size\": \"15\\\" x 15\\\" x 18\\\"\"
 }" \
@@ -439,7 +439,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_id\":\"BhPTOJNOMT\",\"title\":\"The Item Title - sQAPYParbG\",\"description\":\"This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.\",\"warranty\":\"The warranty information is included here\",\"return_policy\":\"The return policy is included here\",\"manufacturer\":\"The Manufacturer\",\"brand\":\"The Brand\",\"country_of_origin\":\"CN\",\"shipping_origin_country\":\"US\",\"other_marketplace_restriction\":\"eBay, Amazon, Sears, Walmart\",\"fba_certified\":false,\"custom_attributes\":{\"Color\":\"black\",\"Size\":\"15\\\" x 15\\\" x 18\\\"\"},\"categories\":[{\"path\":[\"home\",\"garden\"],\"description\":\"garden description\"},{\"path\":[\"home\",\"outdoor\",\"furniture\"]}]}")
+    request.write("{\"item_id\":\"BhPTOJNOMT\",\"title\":\"The Item Title - sQAPYParbG\",\"description\":\"This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.\",\"warranty\":\"The warranty information is included here\",\"return_policy\":\"The return policy is included here\",\"manufacturer\":\"The Manufacturer\",\"brand\":\"The Brand\",\"country_of_origin\":\"CN\",\"shipping_origin_country\":\"US\",\"other_marketplace_restriction\":\"eBay, Amazon, Sears, Walmart\",\"fba_certified\":false,\"item_attributes\":{\"Color\":\"black\",\"Size\":\"15\\\" x 15\\\" x 18\\\"\"},\"categories\":[{\"path\":[\"home\",\"garden\"],\"description\":\"garden description\"},{\"path\":[\"home\",\"outdoor\",\"furniture\"]}]}")
     request.end();
 
 

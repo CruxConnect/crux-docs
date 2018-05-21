@@ -17,7 +17,7 @@ right_code: |
     "quantity_in_stock": "500",
     "quantity_on_backorder": "100",
     "number_of_units_bundled": "2",
-    "distinguishing_attributes": {
+    "sku_distinguishing_attributes": {
       "color": "blue"
     },
     "minimum_advertised_price": "40.00",
@@ -33,7 +33,7 @@ right_code: |
     "uuid": "7be0e3de-4108-4b08-85b4-19ddd0adcae4",
     "restrictions": "tmpunavail",
     "condition": "used",
-    "distinguishing_attributes": {
+    "sku_distinguishing_attributes": {
       "color": "blue"
     },
     "item": {
@@ -112,8 +112,8 @@ quantity_on_backorder
 number_of_units_bundled
 : (integer) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
 
-distinguishing_attributes
-: (array) The Distinguishing Attributes are attributes objects based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
+sku_distinguishing_attributes
+: (array) The SKU Distinguishing Attributes are attributes objects based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
 
 
 minimum_advertised_price
@@ -133,8 +133,8 @@ restrictions
 condition
 : (string) The Condition of the SKU; these include "new", "used", and "refurb"
 
-distinguishing_attributes
-: (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
+sku_distinguishing_attributes
+: (object) The SKU Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
 
 item
 : (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
@@ -236,7 +236,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
   "minimum_advertised_price": "40.00",
   "msrp_currency": "USD",
   "quantity_on_backorder": "100",
-  "distinguishing_attributes": {
+  "sku_distinguishing_attributes": {
     "color": "blue"
   }
 }'
@@ -261,7 +261,7 @@ http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
     minimum_advertised_price="40.00" \
     msrp_currency="USD" \
     quantity_on_backorder="100" \
-    distinguishing_attributes:="{
+    sku_distinguishing_attributes:="{
   \"color\": \"blue\"
 }"
 
@@ -300,7 +300,7 @@ def send_request():
     minimum_advertised_price="40.00" \
     msrp_currency="USD" \
     quantity_on_backorder="100" \
-    distinguishing_attributes:="{
+    sku_distinguishing_attributes:="{
   \"color\": \"blue\"
 }")
         )
@@ -354,7 +354,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item\":{\"uuid\":\"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"},\"sku_id\":\"LYsNxu-iIhTgvti-X3qj0ade\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"distinguishing_attributes\":{\"color\":\"blue\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
+    request.write("{\"item\":{\"uuid\":\"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"},\"sku_id\":\"LYsNxu-iIhTgvti-X3qj0ade\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"sku_distinguishing_attributes\":{\"color\":\"blue\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
     request.end();
 
 

@@ -12,7 +12,7 @@ right_code: |
       "uuid": "95848455-d19b-48f8-8f53-5791818ddeca",
       "restrictions": null,
       "condition": "refurb",
-      "distinguishing_attributes": {
+      "sku_distinguishing_attributes": {
         "size": 9,
         "color": "antiquewhite"
       },
