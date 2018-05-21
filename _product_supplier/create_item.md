@@ -65,6 +65,7 @@ right_code: |
       "min": null
     },
     "product_images": [],
+    "product_videos": [],
     "categories": [
       {
         "uuid": "1ac4fa91-61bd-47e5-8cb0-5422a4769322",
@@ -177,6 +178,9 @@ msrp_range
 product_images
 : (array) The Product Images list stores a list of images for the item, based on the available variants (SKUs)
 
+product_videos
+: (array) The Product videos list stores a list of videos for the item, based on the available variants (SKUs)
+
 categories
 : (array) The Categories array contains objects that describe the path to the item.  It is structured like categories=[{'path': ['home', 'garden'], description: 'some string'}] where the item would exist in the garden category which has home as it's parent. Not implemented yet is passing in the category path description, so an empty string will currently be returned for description.
 
@@ -242,6 +246,9 @@ custom_attributes
 
 {% include product/response/image.md %}
 
+#### Product Videos Object:
+
+{% include product/response/video.md %}
 
 #### Custom Attributes Object
 

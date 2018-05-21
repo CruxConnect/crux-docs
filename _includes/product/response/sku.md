@@ -20,7 +20,10 @@ price_tiers
 : (array) Array of Price Tier objects on this SKU
 
 product_images
-: (array) Array of product image objects for the SKU. Each object contains a uuid, url, width, and height of the image.
+: (array) Array of product image objects for the SKU. Each object contains a uuid, uri, uri_type, width, and height of the image.
+
+product_videos
+: (array) Array of product video objects for the SKU. Each object contains a uuid, uri, and uri_type of the video.
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.

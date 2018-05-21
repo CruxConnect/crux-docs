@@ -43,6 +43,7 @@ right_code: |
     "msrp": 55.99,
     "price_tiers": [],
     "product_images": [],
+    "product_videos": [],
     "measurements": {
       "sku": {
         "weight_units": null,
@@ -148,7 +149,10 @@ price_tiers
 : (array) The list of Price Tier objects on this SKU
 
 product_images
-: (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
+: (array) The Product Images are a list of product image objects for the SKU which contain a uuid, uri, uri_type, width, and height of the image.
+
+product_videos
+: (array) The Product Videos list stores a list of videos for the item, based on the available variants (SKUs)
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.
@@ -189,6 +193,10 @@ number_of_units_bundled
 #### Product Image Object:
 
 {% include product/response/image.md %}
+
+#### Product Videos Object:
+
+{% include product/response/video.md %}
 
 #### SKU Measurements Object:
 

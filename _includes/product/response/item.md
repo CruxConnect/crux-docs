@@ -22,6 +22,9 @@ msrp_range
 product_images
 : (array) Array of product images for the item.
 
+product_videos
+: (array) Array of product videos for the item.
+
 created
 : (string) The Created parameter is the date when the Item was added to our system.
 

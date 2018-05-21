@@ -40,8 +40,16 @@ right_code: |
         {
           "uuid": "97fa6aad-b160-4dea-9740-3eaa98886ccd",
           "url": "https://picsum.photos/285/?image=17",
+          "uri_type": "url",
           "width": 285,
           "height": 285
+        },
+      ],
+      "product_videos": [
+        {
+          "uuid": "94726495-b160-4dea-9740-3eaa98886ccd",
+          "url": "https://somewhere.videos/285/?video=17",
+          "uri_type": "url",
         },
       ],
       "measurements": {
@@ -109,6 +117,10 @@ An array of SKU Objects
 #### Product Image Object:
 
 {% include product/response/image.md %}
+
+#### Product Video Object:
+
+{% include product/response/video.md %}
 
 #### SKU Measurements Object:
 

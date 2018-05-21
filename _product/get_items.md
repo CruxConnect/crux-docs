@@ -40,8 +40,16 @@ right_code: |
             {
               "uuid": "49123741-26e0-4f48-9fcf-78f6e84cfdc1",
               "url": "https://picsum.photos/155/?image=15",
+              "uri_type": "url",
               "width": 155,
               "height": 155
+            },
+          ],
+          "product_videos": [
+            {
+              "uuid": "84736294-26e0-4f48-9fcf-78f6e84cfdc1",
+              "url": "https://somewhere.videos/155/?video=15",
+              "uri_type": "url",
             },
           ],
           "measurements": {
@@ -121,6 +129,14 @@ right_code: |
           "height": 155
         },
       ],
+      "product_videos": [
+        {
+          "uuid": "846284309-26e0-4f48-9fcf-78f6e84cfdc1",
+          "url": "https://somewhere.videos/155/?video=15",
+          "width": 155,
+          "height": 155
+        },
+      ],
       "categories": [
         {
           "uuid": "266a9a41-58a0-429e-8275-791f169789d1",
@@ -176,6 +192,10 @@ An array of item objects is returned
 
 {% include product/response/image.md %}
 
+#### Product Videos Object:
+
+{% include product/response/video.md %}
+
 #### SKU Measurements Object:
 
 {% include product/response/measurements_sku.md %}
@@ -211,6 +231,10 @@ An array of item objects is returned
 #### Item Product Images Object:
 
 {% include product/response/image.md %}
+
+#### Item Product Videos Object:
+
+{% include product/response/video.md %}
 
 # Expected Response Codes
 
