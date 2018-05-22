@@ -18,6 +18,9 @@ right_code: |
           "size": 9,
           "color": "azure"
         },
+        "sku_nondistinguishing_attributes": {
+          "diameter_in_inches": 3.6,
+        },
         "minimum_advertised_price": 10,
         "msrp": 113.42,
         "price_tiers": [

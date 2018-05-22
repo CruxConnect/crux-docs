@@ -16,6 +16,9 @@ right_code: |
         "size": 9,
         "color": "antiquewhite"
       },
+      "sku_nondistinguishing_attributes": {
+        "diameter_in_inches": 3.6,
+      },
       "item": {
         "uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
       },
