@@ -171,6 +171,17 @@ sku_distinguishing_attribute.[N].value
 sku_distinguishing_attribute.[N].type
 : (string) Distinguishing Attribute Type.  Can be one of 'str', 'int', 'float', 'bool'
 
+#### SKU Non Distinguishing Attributes
+
+sku_nondistinguishing_attribute.[N].name
+: (string(max 128)) Non-Distinguishing Attribute Name
+
+sku_nondistinguishing_attribute.[N].value
+: (string(max 256)) Non-Distinguishing Attribute Value
+
+sku_nondistinguishing_attribute.[N].type
+: (string) Non-Distinguishing Attribute Type.  Can be one of 'str', 'int', 'float', 'bool'
+
 #### Pricing
 
 pricing.[N].catalog NAME
