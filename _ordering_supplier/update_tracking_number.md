@@ -1,48 +1,41 @@
 ---
-title: /orders/tracking/&lt;order_uuid&gt;/
+title: /orders/tracking/&lt;order_uuid&gt;/&lt;tracking_number&gt;/
 name: Add Order Tracking
-position: 5.2.1
+position: 5.2.2
 visibility: public
-method: post
-description: Add a Tracking number or multiple Tacking numbers to an Order
+method: put
+description: Update an Order's Tracking number information
 right_code: |
   ~~~ json
   {
-    tracking_numbers: [
+    "tracking": "123mytrack",
+    "ship_cost": 34.38,
+    "carrier": "UPS",
+    "method": "Ground",
+    "weight": 17.2,
+    "line_items": [
       {
-        "tracking": "123mytrack",
-        "ship_cost": 34.38,
-        "carrier": "UPS",
-        "method": "Ground",
-        "weight": 17.2,
-        "line_items": [
-          {
-            "quantity": "1",
-            "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc",
-            "sku_cost": "27"
-          }
-        ]
-      },
+        "quantity": "1",
+        "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc",
+        "sku_cost": "27"
+      }
     ]
   }
   ~~~
   {: title="Request" }
 
-
 ---
-Add a Tracking number or multiple Tacking numbers to an Order. Essentially adding tracking to the entire order or a portion of the order by providing the order_uuid and providing the tracking, ship_cost, carrier, method, weight, and line_items with item_uuid and quantity.
+It simply supplies the updated changes to a tracking object. The entire object need not, but can be supplied. All changes that are supplied will be changed, including the tracking_number.
 
 ### URL Parameters
 
 order_uuid
 : (string) The Universal Unique Identifier for the Order
 
+tracking_number
+: (string) The tracking number to be updated
+
 ### Request Parameters:
-
-tracking_numbers
-: (array) An array of Tracking Number objects
-
-#### Tracking Number Object
 
 {% include orders/request/tracking_number.md %}
 
@@ -56,7 +49,7 @@ tracking_numbers
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/" \
+curl -X "PUT" "https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -78,7 +71,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c4
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/' \
+http --json PUT 'https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/123mytrack/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     ship_cost:=34.38 \
@@ -107,11 +100,11 @@ import json
 
 def send_request():
     # Add Order Tracking - Supplier
-    # POST https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/
+    # PUT https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/
 
     try:
-        response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/",
+        response = requests.put(
+            url="https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/123mytrack/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -149,8 +142,8 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/',
-        method: 'POST',
+        path: '/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/123mytrack/',
+        method: 'PUT',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
