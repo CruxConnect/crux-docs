@@ -65,7 +65,7 @@ custom_attribute.[N].type
 : (string) Custom Attribute Type.  Can be one of: 'str', 'int', 'float', 'bool'
 
 product_images_for_item
-: (string) Uris for the product image.  Individual URIs are comma separated uris. Duplicate uris across sku or item will reference the same ProductImage
+: (string) Uri(s) for the product image.  Individual URIs are comma separated uris. Duplicate uris across sku or item will reference the same product image
 
 ### SKU Level Info
 
