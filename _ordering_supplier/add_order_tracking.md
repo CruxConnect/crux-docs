@@ -8,7 +8,7 @@ description: Add a Tracking number or multiple Tacking numbers to an Order
 right_code: |
   ~~~ json
   {
-    tracking_numbers: [
+    "tracking_numbers": [
       {
         "tracking": "123mytrack",
         "ship_cost": 34.38,
@@ -60,17 +60,19 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c4
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "ship_cost": 34.38,
-  "tracking": "123mytrack",
-  "carrier": "UPS",
-  "method": "Ground",
-  "weight": 17.2,
-  "line_items": [
-    {
-      "sku_cost": "27",
-      "quantity": "1",
-      "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc"
-    }
+  tracking_numbers: [
+    "ship_cost": 34.38,
+    "tracking": "123mytrack",
+    "carrier": "UPS",
+    "method": "Ground",
+    "weight": 17.2,
+    "line_items": [
+      {
+        "sku_cost": "27",
+        "quantity": "1",
+        "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc"
+      }
+    ]
   ]
 }'
 
@@ -81,18 +83,21 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c4
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
-    ship_cost:=34.38 \
-    tracking="123mytrack" \
-    carrier="UPS" \
-    method="Ground" \
-    weight:=17.2 \
-    line_items:="[
-  {
-    \"sku_cost\": \"27\",
-    \"quantity\": \"1\",
-    \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
-  }
+    tracking_numbers:="[
+      ship_cost:=34.38 \
+      tracking="123mytrack" \
+      carrier="UPS" \
+      method="Ground" \
+      weight:=17.2 \
+      line_items:="[
+    {
+      \"sku_cost\": \"27\",
+      \"quantity\": \"1\",
+      \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
+    }
+  ]"
 ]"
+
 
 ~~~
 {: title="HTTPie" }
@@ -116,18 +121,22 @@ def send_request():
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    ship_cost:=34.38 \
-    tracking="123mytrack" \
-    carrier="UPS" \
-    method="Ground" \
-    weight:=17.2 \
-    line_items:="[
-  {
-    \"sku_cost\": \"27\",
-    \"quantity\": \"1\",
-    \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
-  }
-]")
+            data=json.dumps(
+      tracking_numbers:="[
+          ship_cost:=34.38 \
+          tracking="123mytrack" \
+          carrier="UPS" \
+          method="Ground" \
+          weight:=17.2 \
+          line_items:="[
+        {
+          \"sku_cost\": \"27\",
+          \"quantity\": \"1\",
+          \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
+        }
+      ]"
+    ]"
+)
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -179,7 +188,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"tracking\":\"123mytrack\",\"ship_cost\":34.38,\"carrier\":\"UPS\",\"method\":\"Ground\",\"weight\":17.2,\"line_items\":[{\"quantity\":\"1\",\"line_item_uuid\":\"e2c1bcab-43ef-48b8-9aa7-513755a92abc\",\"sku_cost\":\"27\"}]}")
+    request.write("\"tracking_numbers\":[{\"tracking\":\"123mytrack\",\"ship_cost\":34.38,\"carrier\":\"UPS\",\"method\":\"Ground\",\"weight\":17.2,\"line_items\":[{\"quantity\":\"1\",\"line_item_uuid\":\"e2c1bcab-43ef-48b8-9aa7-513755a92abc\",\"sku_cost\":\"27\"}]}]")
     request.end();
 
 

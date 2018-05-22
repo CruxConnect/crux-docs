@@ -1,6 +1,6 @@
 ---
 title: /orders/tracking/&lt;order_uuid&gt;/&lt;tracking_number&gt;/
-name: Add Order Tracking
+name: Update Order Tracking
 position: 5.2.2
 visibility: public
 method: put
