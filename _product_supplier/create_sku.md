@@ -97,11 +97,11 @@ Create a SKU to add to a specified item_uuid.
 
 ### Request Parameters:
 
-{% include product/request/sku.md}
+{% include product/request/sku.md %}
 
 ### Response Parameters:
 
-{% include product/response/sku.md}
+{% include product/response/sku.md %}
 
 #### SKU Distinguishing Attributes Object:
 
