@@ -70,8 +70,16 @@ right_code: |
           {
             "uuid": "a8f55104-b70e-4740-bf9b-e366c938544c",
             "url": "https://picsum.photos/80/?image=5",
+            "uri_type": "url",
             "width": 80,
             "height": 80
+          },
+        ],
+        "product_videos": [
+          {
+            "uuid": "84926340-b70e-4740-bf9b-e366c938544c",
+            "url": "https://somewhere.videos/80/?video=3",
+            "uri_type": "url",
           },
         ],
         "sku_count": 10,
@@ -88,7 +96,7 @@ right_code: |
         "shipping_origin_country": "BV",
         "other_marketplace_restriction": null,
         "fba_certified": null,
-        "custom_attributes": {
+        "item_attributes": {
           "hardness": 19,
           "diameter": 9
         },
@@ -307,6 +315,10 @@ sort
 
 {% include product/response/image.md %}
 
+#### Product Video Object:
+
+{% include product/response/video.md %}
+
 #### SKU Measurements Object:
 
 {% include product/response/measurements_sku.md %}
@@ -342,6 +354,10 @@ sort
 #### Item Product Images Object:
 
 {% include product/response/image.md %}
+
+#### Product Videos Object:
+
+{% include product/response/video.md %}
 
 #### Facets Object:
 

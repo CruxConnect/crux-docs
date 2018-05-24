@@ -65,7 +65,7 @@ custom_attribute.[N].type
 : (string) Custom Attribute Type.  Can be one of: 'str', 'int', 'float', 'bool'
 
 product_images_for_item
-: (string) Urls for the product image.  Individual URLs are comma separated urls. Duplicate urls across sku or item will reference the same ProductImage
+: (string) Uri(s) for the product image.  Individual URIs are comma separated uris. Duplicate uris across sku or item will reference the same product image
 
 ### SKU Level Info
 
@@ -94,7 +94,7 @@ msrp
 : (float) Manufacturer Suggested Retail Price
 
 product_images_for_sku
-: (string) Urls for the product image.  Individual URLs are comma separated urls. Duplicate urls across sku or item will reference the same ProductImage
+: (string) URIs for the product image.  Individual URIs are comma separated uris. Duplicate uris across sku or item will reference the same product image
 
 inventory_lists
 : (string) [**RETAILER-ONLY**, **EXPORT-ONLY**] Comma seperated Inventory List UUIDs.  Example: '03e697-6a17-4dd1-939b-3d7ca9676b1c, 266a9a41-58a0-429e-8275-791f169789d1'
@@ -160,16 +160,27 @@ asin
 mpn
 : (string(128)) Product Identifier
 
-#### Distinguishing Attributes
+#### SKU Distinguishing Attributes
 
-distinguishing_attribute.[N].name
+sku_distinguishing_attribute.[N].name
 : (string(max 128)) Distinguishing Attribute Name
 
-distinguishing_attribute.[N].value
+sku_distinguishing_attribute.[N].value
 : (string(max 256)) Distinguishing Attribute Value
 
-distinguishing_attribute.[N].type
+sku_distinguishing_attribute.[N].type
 : (string) Distinguishing Attribute Type.  Can be one of 'str', 'int', 'float', 'bool'
+
+#### SKU Non Distinguishing Attributes
+
+sku_nondistinguishing_attribute.[N].name
+: (string(max 128)) Non-Distinguishing Attribute Name
+
+sku_nondistinguishing_attribute.[N].value
+: (string(max 256)) Non-Distinguishing Attribute Value
+
+sku_nondistinguishing_attribute.[N].type
+: (string) Non-Distinguishing Attribute Type.  Can be one of 'str', 'int', 'float', 'bool'
 
 #### Pricing
 

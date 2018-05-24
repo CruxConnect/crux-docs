@@ -15,9 +15,12 @@ right_code: |
           "uuid": "43113405-4964-4086-b5cc-9beea7cb127e",
           "restrictions": null,
           "condition": "new",
-          "distinguishing_attributes": {
+          "sku_distinguishing_attributes": {
             "size": 9,
             "color": "azure"
+          },
+          "sku_nondistinguishing_attributes": {
+            "diameter_in_inches": 3.6,
           },
           "minimum_advertised_price": 10,
           "msrp": 113.42,
@@ -40,8 +43,16 @@ right_code: |
             {
               "uuid": "49123741-26e0-4f48-9fcf-78f6e84cfdc1",
               "url": "https://picsum.photos/155/?image=15",
+              "uri_type": "url",
               "width": 155,
               "height": 155
+            },
+          ],
+          "product_videos": [
+            {
+              "uuid": "84736294-26e0-4f48-9fcf-78f6e84cfdc1",
+              "url": "https://somewhere.videos/155/?video=15",
+              "uri_type": "url",
             },
           ],
           "measurements": {
@@ -121,6 +132,14 @@ right_code: |
           "height": 155
         },
       ],
+      "product_videos": [
+        {
+          "uuid": "846284309-26e0-4f48-9fcf-78f6e84cfdc1",
+          "url": "https://somewhere.videos/155/?video=15",
+          "width": 155,
+          "height": 155
+        },
+      ],
       "categories": [
         {
           "uuid": "266a9a41-58a0-429e-8275-791f169789d1",
@@ -144,7 +163,7 @@ right_code: |
       "shipping_origin_country": "TZ",
       "other_marketplace_restriction": null,
       "fba_certified": null,
-      "custom_attributes": {
+      "item_attributes": {
         "hardness": 12,
         "hair-color": "brown"
       }
@@ -175,6 +194,10 @@ An array of item objects is returned
 #### Product Image Object:
 
 {% include product/response/image.md %}
+
+#### Product Videos Object:
+
+{% include product/response/video.md %}
 
 #### SKU Measurements Object:
 
@@ -211,6 +234,10 @@ An array of item objects is returned
 #### Item Product Images Object:
 
 {% include product/response/image.md %}
+
+#### Item Product Videos Object:
+
+{% include product/response/video.md %}
 
 # Expected Response Codes
 

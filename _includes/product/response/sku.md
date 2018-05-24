@@ -7,8 +7,11 @@ restrictions
 condition
 : (string) The Condition of the SKU; these include "new", "used", and "refurb"
 
-distinguishing_attributes
-: (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
+sku_distinguishing_attributes
+: (array) Attributes that help to distinquish one sku from another. It may also be empty, as per the Suppliers' discretion. For example, the `color: blue` is a distinquishing attribute if another another sku of the same item is `color: green`
+
+sku_nondistinguishing_attributes
+: (array) Attributes that are particular to the individual sku and do not necessarily distinquish a sku from other skus. It may also be empty, as per the Suppliers' discretion.  For example, the `color: blue` is a non-distinquishing attribute if another sku(s) of the same item has the attribute `color: blue`.  If all the skus of an item share the same non-distinguishing attribute, then it is preferrable to list that attribute as part of `item_attributes`.
 
 minimum_advertised_price
 : (decimal) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price. (2 decimal places)
@@ -20,7 +23,10 @@ price_tiers
 : (array) Array of Price Tier objects on this SKU
 
 product_images
-: (array) Array of product image objects for the SKU. Each object contains a uuid, url, width, and height of the image.
+: (array) Array of product image objects for the SKU. Each object contains a uuid, uri, uri_type, width, and height of the image.
+
+product_videos
+: (array) Array of product video objects for the SKU. Each object contains a uuid, uri, and uri_type of the video.
 
 measurements
 : (object) The Measurements object contains sku measurements object and a package measurements object.

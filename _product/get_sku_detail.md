@@ -36,9 +36,12 @@ right_code: |
     "uuid": "95848455-d19b-48f8-8f53-5791818ddeca",
     "restrictions": null,
     "condition": "refurb",
-    "distinguishing_attributes": {
+    "sku_distinguishing_attributes": {
       "size": 9,
       "color": "antiquewhite"
+    },
+    "sku_nondistinguishing_attributes": {
+      "diameter_in_inches": 3.6,
     },
     "item": {
       "uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
@@ -64,8 +67,16 @@ right_code: |
       {
         "uuid": "97fa6aad-b160-4dea-9740-3eaa98886ccd",
         "url": "https://picsum.photos/285/?image=17",
+        "uri_type": "url",
         "width": 285,
         "height": 285
+      },
+    ],
+    "product_videos": [
+      {
+        "uuid": "84730687-b160-4dea-9740-3eaa98886ccd",
+        "url": "https://somewhere.videos/285/?video=32",
+        "uri_type": "url",
       },
     ],
     "measurements": {
@@ -133,6 +144,10 @@ sku_uuid
 #### Product Image Object:
 
 {% include product/response/image.md %}
+
+#### Product Video Object:
+
+{% include product/response/video.md %}
 
 #### SKU Measurements Object:
 

@@ -8,17 +8,21 @@ description: Add a Tracking number or multiple Tacking numbers to an Order
 right_code: |
   ~~~ json
   {
-    "tracking": "123mytrack",
-    "ship_cost": 34.38,
-    "carrier": "UPS",
-    "method": "Ground",
-    "weight": 17.2,
-    "line_items": [
+    "tracking_numbers": [
       {
-        "quantity": "1",
-        "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc",
-        "sku_cost": "27"
-      }
+        "tracking": "123mytrack",
+        "ship_cost": 34.38,
+        "carrier": "UPS",
+        "method": "Ground",
+        "weight": 17.2,
+        "line_items": [
+          {
+            "quantity": "1",
+            "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc",
+            "sku_cost": "27"
+          }
+        ]
+      },
     ]
   }
   ~~~
@@ -30,39 +34,21 @@ Add a Tracking number or multiple Tacking numbers to an Order. Essentially addin
 
 ### URL Parameters
 
-uuid
+order_uuid
 : (string) The Universal Unique Identifier for the Order
 
 ### Request Parameters:
 
-tracking
-: (string) The Tracking number for the entire Order or a portion of the Order
+tracking_numbers
+: (array) An array of Tracking Number objects
 
-ship_cost
-: (decimal) The Shipping Cost for the entire Order or a portion of the Order as per the tracking  (2 decimal places)
+#### Tracking Number Object
 
-carrier
-: (string) The Shipping Carrier who provided the Tracking Number
-
-method
-: (string) The Shipping Method associated with the Tracking Number
-
-weight
-: (decimal) The Shipping Weight in pounds (lbs.) (2 decimal places)
-
-line_items
-: (array) Line Items contains an array of Line Item objects containing line_item_uuid and quantity
+{% include orders/request/tracking_number.md %}
 
 #### Line Item Object:
 
-line_item_uuid
-: (string) The Universal Unique Identifier for the Item
-
-quantity
-: (integer) The Quantity of the Item included in the shipment associated with the Tracking Number
-
-sku_cost
-: (decimal) The SKU cost (2 decimal places)
+{% include orders/request/line_item.md %}
 
 ### Expected Response Codes
 
@@ -74,17 +60,19 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c4
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "ship_cost": 34.38,
-  "tracking": "123mytrack",
-  "carrier": "UPS",
-  "method": "Ground",
-  "weight": 17.2,
-  "line_items": [
-    {
-      "sku_cost": "27",
-      "quantity": "1",
-      "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc"
-    }
+  tracking_numbers: [
+    "ship_cost": 34.38,
+    "tracking": "123mytrack",
+    "carrier": "UPS",
+    "method": "Ground",
+    "weight": 17.2,
+    "line_items": [
+      {
+        "sku_cost": "27",
+        "quantity": "1",
+        "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc"
+      }
+    ]
   ]
 }'
 
@@ -95,18 +83,21 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c4
 http --json POST 'https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c45-454d-b2ef-bb6b5ed387c3/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
-    ship_cost:=34.38 \
-    tracking="123mytrack" \
-    carrier="UPS" \
-    method="Ground" \
-    weight:=17.2 \
-    line_items:="[
-  {
-    \"sku_cost\": \"27\",
-    \"quantity\": \"1\",
-    \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
-  }
+    tracking_numbers:="[
+      ship_cost:=34.38 \
+      tracking="123mytrack" \
+      carrier="UPS" \
+      method="Ground" \
+      weight:=17.2 \
+      line_items:="[
+    {
+      \"sku_cost\": \"27\",
+      \"quantity\": \"1\",
+      \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
+    }
+  ]"
 ]"
+
 
 ~~~
 {: title="HTTPie" }
@@ -130,18 +121,22 @@ def send_request():
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    ship_cost:=34.38 \
-    tracking="123mytrack" \
-    carrier="UPS" \
-    method="Ground" \
-    weight:=17.2 \
-    line_items:="[
-  {
-    \"sku_cost\": \"27\",
-    \"quantity\": \"1\",
-    \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
-  }
-]")
+            data=json.dumps(
+      tracking_numbers:="[
+          ship_cost:=34.38 \
+          tracking="123mytrack" \
+          carrier="UPS" \
+          method="Ground" \
+          weight:=17.2 \
+          line_items:="[
+        {
+          \"sku_cost\": \"27\",
+          \"quantity\": \"1\",
+          \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
+        }
+      ]"
+    ]"
+)
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -193,7 +188,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"tracking\":\"123mytrack\",\"ship_cost\":34.38,\"carrier\":\"UPS\",\"method\":\"Ground\",\"weight\":17.2,\"line_items\":[{\"quantity\":\"1\",\"line_item_uuid\":\"e2c1bcab-43ef-48b8-9aa7-513755a92abc\",\"sku_cost\":\"27\"}]}")
+    request.write("\"tracking_numbers\":[{\"tracking\":\"123mytrack\",\"ship_cost\":34.38,\"carrier\":\"UPS\",\"method\":\"Ground\",\"weight\":17.2,\"line_items\":[{\"quantity\":\"1\",\"line_item_uuid\":\"e2c1bcab-43ef-48b8-9aa7-513755a92abc\",\"sku_cost\":\"27\"}]}]")
     request.end();
 
 

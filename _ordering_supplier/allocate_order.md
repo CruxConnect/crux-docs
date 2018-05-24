@@ -1,7 +1,7 @@
 ---
 title: /orders/allocation/&lt;order-uuid&gt;/
 name: Allocate Order
-position: 5.2.2
+position: 5.2.3
 visibility: public
 method: put
 description: Allocate stock for a Retailer Order

@@ -14,9 +14,12 @@ right_code: |
         "uuid": "43113405-4964-4086-b5cc-9beea7cb127e",
         "restrictions": null,
         "condition": "new",
-        "distinguishing_attributes": {
+        "sku_distinguishing_attributes": {
           "size": 9,
           "color": "azure"
+        },
+        "sku_nondistinguishing_attributes": {
+          "diameter_in_inches": 3.6,
         },
         "minimum_advertised_price": 10,
         "msrp": 113.42,
@@ -38,10 +41,18 @@ right_code: |
         "product_images": [
           {
             "uuid": "49123741-26e0-4f48-9fcf-78f6e84cfdc1",
-            "url": "https://picsum.photos/155/?image=15",
+            "uri": "https://picsum.photos/155/?image=15",
+            "uri_type": "url",
             "width": 155,
             "height": 155
           },
+        ],
+        "product_videos": [
+          {
+            "uuid": "9d827373-6a17-4dd1-939b-3d7ca9676b1c",
+            "uri": "https://something.videos/155/?video=10",
+            "uri_type": "url",
+        },
         ],
         "measurements": {
           "package": {
@@ -111,9 +122,17 @@ right_code: |
     "product_images": [
       {
         "uuid": "8103e697-6a17-4dd1-939b-3d7ca9676b1c",
-        "url": "https://picsum.photos/155/?image=10",
+        "uri": "https://picsum.photos/155/?image=10",
+        "uri_type": "url",
         "width": 155,
         "height": 155
+      },
+    ],
+    "product_videos": [
+      {
+        "uuid": "19193e697-6a17-4dd1-939b-3d7ca9676b1c",
+        "uri": "https://something.videos/155/?video=10",
+        "uri_type": "url",
       },
     ],
     "categories": [
@@ -139,7 +158,7 @@ right_code: |
     "shipping_origin_country": "TZ",
     "other_marketplace_restriction": null,
     "fba_certified": null,
-    "custom_attributes": {
+    "item_attributes": {
       "hardness": 12,
       "hair-color": "brown"
     }
@@ -170,6 +189,10 @@ item_uuid
 #### Product Image Object:
 
 {% include product/response/image.md %}
+
+#### Product Video Object:
+
+{% include product/response/video.md %}
 
 #### SKU Measurements Object:
 
@@ -206,6 +229,10 @@ item_uuid
 #### Item Product Images Object:
 
 {% include product/response/image.md %}
+
+#### Item Product Videos Object:
+
+{% include product/response/video.md %}
 
 # Expected Response Codes
 
