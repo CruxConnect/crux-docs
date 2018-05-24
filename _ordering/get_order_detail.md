@@ -131,11 +131,7 @@ user
 
 #### Requested Shipping Object:
 
-shipping_carrier
-: (string) The Shipping Carrier to deliver the order
-
-shipping_method
-: (string) The Shipping Method used by the Shipping Carrier to deliver the order
+{% include orders/response/requested_shipping.md %}
 
 #### Line Item Object:
 
