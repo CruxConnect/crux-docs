@@ -65,7 +65,6 @@ right_code: |
         "requested_shipping": {
           "shipping_carrier": "UPS",
           "shipping_method": "Ground",
-          "shipping_cost": "4.95",
         },
         "line_items": [
           {
