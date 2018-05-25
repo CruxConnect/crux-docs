@@ -4,33 +4,31 @@ name: Add Order Tracking
 position: 5.2.1
 visibility: public
 method: post
-description: Add a Tracking number or multiple Tacking numbers to an Order
+description: Add a Tracking number to an Order
 right_code: |
   ~~~ json
   {
-    "tracking_numbers": [
-      {
-        "tracking": "123mytrack",
-        "ship_cost": 34.38,
-        "carrier": "UPS",
-        "method": "Ground",
-        "weight": 17.2,
-        "line_items": [
-          {
-            "quantity": "1",
-            "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc",
-            "sku_cost": "27"
-          }
-        ]
-      },
-    ]
+    {
+      "tracking": "123mytrack",
+      "ship_cost": 34.38,
+      "carrier": "UPS",
+      "method": "Ground",
+      "weight": 17.2,
+      "line_items": [
+        {
+          "quantity": "1",
+          "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc",
+          "sku_cost": "27"
+        }
+      ]
+    },
   }
   ~~~
   {: title="Request" }
 
 
 ---
-Add a Tracking number or multiple Tacking numbers to an Order. Essentially adding tracking to the entire order or a portion of the order by providing the order_uuid and providing the tracking, ship_cost, carrier, method, weight, and line_items with item_uuid and quantity.
+Add a Tracking number to an Order. Essentially adding tracking to the entire order or a portion of the order by providing the order_uuid and providing the tracking, ship_cost, carrier, method, weight, and line_items with item_uuid and quantity.
 
 ### URL Parameters
 
@@ -38,11 +36,6 @@ order_uuid
 : (string) The Universal Unique Identifier for the Order
 
 ### Request Parameters:
-
-tracking_numbers
-: (array) An array of Tracking Number objects
-
-#### Tracking Number Object
 
 {% include orders/request/tracking_number.md %}
 
@@ -60,9 +53,8 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c4
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  tracking_numbers: [
-    "ship_cost": 34.38,
     "tracking": "123mytrack",
+    "ship_cost": 34.38,
     "carrier": "UPS",
     "method": "Ground",
     "weight": 17.2,
@@ -73,7 +65,6 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/tracking/0e63ac67-7c4
         "line_item_uuid": "e2c1bcab-43ef-48b8-9aa7-513755a92abc"
       }
     ]
-  ]
 }'
 
 ~~~
@@ -122,9 +113,9 @@ def send_request():
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(
-      tracking_numbers:="[
-          ship_cost:=34.38 \
+          "
           tracking="123mytrack" \
+          ship_cost:=34.38 \
           carrier="UPS" \
           method="Ground" \
           weight:=17.2 \
@@ -135,7 +126,7 @@ def send_request():
           \"line_item_uuid\": \"e2c1bcab-43ef-48b8-9aa7-513755a92abc\"
         }
       ]"
-    ]"
+    "
 )
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -188,7 +179,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("\"tracking_numbers\":[{\"tracking\":\"123mytrack\",\"ship_cost\":34.38,\"carrier\":\"UPS\",\"method\":\"Ground\",\"weight\":17.2,\"line_items\":[{\"quantity\":\"1\",\"line_item_uuid\":\"e2c1bcab-43ef-48b8-9aa7-513755a92abc\",\"sku_cost\":\"27\"}]}]")
+    request.write({\"tracking\":\"123mytrack\",\"ship_cost\":34.38,\"carrier\":\"UPS\",\"method\":\"Ground\",\"weight\":17.2,\"line_items\":[{\"quantity\":\"1\",\"line_item_uuid\":\"e2c1bcab-43ef-48b8-9aa7-513755a92abc\",\"sku_cost\":\"27\"}")
     request.end();
 
 
