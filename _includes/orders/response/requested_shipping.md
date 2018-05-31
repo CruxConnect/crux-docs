@@ -4,5 +4,6 @@ shipping_carrier
 shipping_method
 : (string) The Shipping Method used by the Shipping Carrier to deliver the order
 
-shipping_cost
-: (string) The Shipping Cost
+<!-- task-github-168 Update order detail response -->
+<!-- shipping_cost
+: (string) The Shipping Cost -->
