@@ -184,14 +184,14 @@ sku_nondistinguishing_attribute.[N].type
 
 #### Pricing
 
-pricing.[N].catalog NAME
-: (string) [**SUPPLIER-ONLY**] Catalog Name
+pricing.[N].catalog
+: (string) [**SUPPLIER-ONLY**  REQUIRED] Catalog Name
 
 pricing.[N].minimum_tier_quantity
-: (int) Minimum Tier Quantity
+: (int) [REQUIRED] Minimum Tier Quantity
 
 pricing.[N].cost
-: (float) Cost
+: (float) [REQUIRED] Cost
 
 pricing.[N].shipping_cost
 : (float) Shipping Cost
