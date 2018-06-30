@@ -1,9 +1,11 @@
 <!-- begin setting filtered collections -->
-{% if page.path == 'internal.html' %}
-  {% assign excluded_visibility = 'public' %}
+{% if page.path == 'future.html' %}
+  {% assign visibility = 'future' %}
+{% elsif page.path == 'internal.html' %}
+  {% assign visibility = 'internal' %}
 {% else %}
-  {% assign excluded_visibility = 'internal' %}
+  {% assign visibility = 'public' %}
 {% endif %}
-{% assign filtered_collections = site.collections | where_exp:"item", "item.visibility != excluded_visibility" %}
+{% assign filtered_collections = site.collections | where_exp:"item", "item.visibility == visibility" %}
 {% assign sorted_collections = filtered_collections | sort: "position" %}
 <!-- end setting filtered collections -->

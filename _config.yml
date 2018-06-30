@@ -10,11 +10,11 @@ baseurl: ""
 
 collections:
   documentation:
-    visibility: all
+    visibility: public
     title: Documentation
     position: 1
   organization:
-    visibility: all
+    visibility: public
     title: Organization
     position: 2
     type: api
@@ -24,12 +24,12 @@ collections:
     position: 3
     type: api
   product:
-    visibility: all
+    visibility: public
     title: Product
     position: 4
     type: api
   product_retailer:
-    visibility: all
+    visibility: public
     title: Product for Retailers
     position: 4.1
     type: api
@@ -39,7 +39,7 @@ collections:
     position: 4.2
     type: api
   ordering:
-    visibility: public
+    visibility: puplic
     title: Ordering
     position: 5
     type: api
@@ -69,10 +69,141 @@ collections:
     position: 7
     type: api
   tools:
+    visibility:
+    title: Operations Tools
+    position: 8
+    type: api
+###### Internal Collections
+  internal_documentation:
+    visibility: internal
+    title: Documentation
+    position: 1
+  internal_organization:
+    visibility: internal
+    title: Organization
+    position: 2
+    type: api
+  internal_accounting:
+    visibility:
+    title: Accounting
+    position: 3
+    type: api
+  internal_product:
+    visibility:
+    title: Product
+    position: 4
+    type: api
+  internal_product_retailer:
+    visibility:
+    title: Product for Retailers
+    position: 4.1
+    type: api
+  internal_product_supplier:
+    visibility:
+    title: Product for Supplier
+    position: 4.2
+    type: api
+  internal_ordering:
+    visibility:
+    title: Ordering
+    position: 5
+    type: api
+  internal_ordering_retailer:
+    visibility:
+    title: Ordering for Retailer
+    position: 5.1
+    type: api
+  internal_ordering_supplier:
+    visibility:
+    title: Ordering for Supplier
+    position: 5.2
+    type: api
+  internal_discovery:
+    visibility:
+    title: Discovery
+    position: 6
+    type: api
+  internal_discovery_retailer:
+    visibility:
+    title: Discovery Retailer
+    position: 6.1
+    type: api
+  internal_files:
+    visibility:
+    title: Files
+    position: 7
+    type: api
+  internal_tools:
     visibility: internal
     title: Operations Tools
     position: 8
     type: api
+### Future Collections
+  future_documentation:
+    visibility: future
+    title: Documentation
+    position: 1
+  future_organization:
+    visibility:
+    title: Organization
+    position: 2
+    type: api
+  future_accounting:
+    visibility:
+    title: Accounting
+    position: 3
+    type: api
+  future_product:
+    visibility:
+    title: Product
+    position: 4
+    type: api
+  future_product_retailer:
+    visibility:
+    title: Product for Retailers
+    position: 4.1
+    type: api
+  future_product_supplier:
+    visibility:
+    title: Product for Supplier
+    position: 4.2
+    type: api
+  future_ordering:
+    visibility:
+    title: Ordering
+    position: 5
+    type: api
+  future_ordering_retailer:
+    visibility:
+    title: Ordering for Retailer
+    position: 5.1
+    type: api
+  future_ordering_supplier:
+    visibility:
+    title: Ordering for Supplier
+    position: 5.2
+    type: api
+  future_discovery:
+    visibility:
+    title: Discovery
+    position: 6
+    type: api
+  future_discovery_retailer:
+    visibility:
+    title: Discovery Retailer
+    position: 6.1
+    type: api
+  future_files:
+    visibility:
+    title: Files
+    position: 7
+    type: api
+  future_tools:
+    visibility:
+    title: Operations Tools
+    position: 8
+    type: api
+
 
 plugins:
   - jekyll-sitemap

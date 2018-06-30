@@ -2,7 +2,7 @@
 title: /organizations/user-login/
 name: Retrieve Auth Token
 position: 1.00
-visibility: all
+visibility: public
 method: post
 description: Login to receive an authentication token
 right_code: |

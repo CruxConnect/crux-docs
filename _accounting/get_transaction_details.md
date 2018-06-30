@@ -2,6 +2,7 @@
 title: /accounting/transactions/&lttransaction_id&gt/
 name: Get Transaction Details
 position: 1.1
+visibility: public
 method: get
 description: Get Transaction Details for specific transactions
 right_code: |
