@@ -8,7 +8,7 @@ google_analytics_key:
 permalink: pretty
 baseurl: ""
 
-collections:
+collections:  ### if there are no documents in a collection, it's a placeholder and visiblity is blank
   documentation:
     visibility: public
     title: Documentation
@@ -73,7 +73,7 @@ collections:
     title: Operations Tools
     position: 8
     type: api
-###### Internal Collections
+###### Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
   internal_documentation:
     visibility: internal
     title: Documentation
@@ -138,7 +138,7 @@ collections:
     title: Operations Tools
     position: 8
     type: api
-### Future Collections
+### Future Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
   future_documentation:
     visibility: future
     title: Documentation
