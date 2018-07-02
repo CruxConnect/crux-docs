@@ -10,6 +10,7 @@ Following are the API Endpoints planned for future release:
 
 ##### New
 
+* Supplier - Update Order Tracking: (PUT) /orders/tracking/{order_uuid}/{old_tracking_number}
 * Supplier or Retailer - Get Orders Attributes: (POST) /orders/attributes/{order_uuid}
 * Supplier - Create Invoices - (POST) /orders/{order_uuid}/invoices/
 * Retailer - Get Invoices - (GET) /orders/{order_uuid}/invoices/
@@ -21,7 +22,6 @@ Following are the API Endpoints planned for future release:
 * Retailer - Create Order: (POST) /orders/create
 * Supplier - Allocate Order: (PUT) /orders/allocation/{order_uuid}
 * Supplier - Add Order Tracking: (POST) /orders/tracking/{order_uuid}
-* Supplier - Update Order Tracking: (PUT) /orders/tracking/{order_uuid}/{old_tracking_number}
 * Supplier or Retailer - Get Orders Fees: (PATCH) /orders/fees/{order_uuid}
 
 ##### Depricated

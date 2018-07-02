@@ -1,24 +1,13 @@
 ---
 title: /orders/allocation/e20cd2a8-7940-4817-9c83-6d60cb984279/
-name: Supplier - Allocate Order
+name: Allocate Order
 position: 1.00
 visibility: future
 method: put
 description: Allocate stock for a Retailer Order
 right_code: |
   ~~~ json
-  {
-    "line_items": [
-      {
-        "line_item_uuid": "87da5a01-d7bf-4187-9364-5dffb5562a5c",
-        "allocation": {
-          "quantity_accepted": "4",
-          "quantity_rejected": "0",
-          "quantity_backordered": "0"
-        }
-      }
-    ]
-  }
+    null
   ~~~
   {: title="Request" }
 

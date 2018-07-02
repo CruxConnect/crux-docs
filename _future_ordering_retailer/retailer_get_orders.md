@@ -1,37 +1,15 @@
 ---
 title: /orders/create/
-name: Retailer - Create Order
+name: Create Order
 position: 1.00
 visibility: future
 method: post
 description: Create an Order on your account
 right_code: |
   ~~~ json
-  {}
+    null
   ~~~
   {: title="Request" }
-
-  ~~~ json
-  {
-    "skus": [
-      "This field is required."
-    ],
-    "shipping_carrier": [
-      "This field is required."
-    ],
-    "shipping_method": [
-      "This field is required."
-    ],
-    "address": [
-      "This field is required."
-    ],
-    "purchase_order_id": [
-      "This field is required."
-    ]
-  }
-  ~~~
-  {: title="Response" }
-
 ---
 Create an Order on your account. By providing the SKU(s), quantity ordered, destination, etc. you may create an order for fulfillment.
 
@@ -290,5 +268,3 @@ line_items
 ### Expected Response Codes
 
 {% include links/response_codes.md %}
-
-
