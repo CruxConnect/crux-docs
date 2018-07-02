@@ -30,27 +30,27 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     type: api
   product_retailer:
     visibility: public
-    title: Product for Retailers
+    title: Product - Retailers
     position: 4.1
     type: api
   product_supplier:
     visibility: public
-    title: Product for Supplier
+    title: Product - Supplier
     position: 4.2
     type: api
   ordering:
-    visibility: puplic
-    title: Ordering
+    visibility: public
+    title: Orders
     position: 5
     type: api
   ordering_retailer:
     visibility: public
-    title: Ordering for Retailer
+    title: Orders - Retailer
     position: 5.1
     type: api
   ordering_supplier:
     visibility: public
-    title: Ordering for Supplier
+    title: Orders - Supplier
     position: 5.2
     type: api
   discovery:
@@ -60,7 +60,7 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     type: api
   discovery_retailer:
     visibility: public
-    title: Discovery Retailer
+    title: Discovery - Retailer
     position: 6.1
     type: api
   files:
@@ -93,40 +93,15 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     title: Product
     position: 4
     type: api
-  internal_product_retailer:
-    visibility:
-    title: Product for Retailers
-    position: 4.1
-    type: api
-  internal_product_supplier:
-    visibility:
-    title: Product for Supplier
-    position: 4.2
-    type: api
   internal_ordering:
     visibility:
-    title: Ordering
+    title: Orders
     position: 5
-    type: api
-  internal_ordering_retailer:
-    visibility:
-    title: Ordering for Retailer
-    position: 5.1
-    type: api
-  internal_ordering_supplier:
-    visibility:
-    title: Ordering for Supplier
-    position: 5.2
     type: api
   internal_discovery:
     visibility:
     title: Discovery
     position: 6
-    type: api
-  internal_discovery_retailer:
-    visibility:
-    title: Discovery Retailer
-    position: 6.1
     type: api
   internal_files:
     visibility:
@@ -143,67 +118,30 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     visibility: future
     title: Documentation
     position: 1
-  future_organization:
-    visibility:
-    title: Organization
-    position: 2
-    type: api
-  future_accounting:
-    visibility:
-    title: Accounting
-    position: 3
-    type: api
-  future_product:
-    visibility:
-    title: Product
-    position: 4
-    type: api
-  future_product_retailer:
-    visibility:
-    title: Product for Retailers
-    position: 4.1
-    type: api
-  future_product_supplier:
-    visibility:
-    title: Product for Supplier
-    position: 4.2
-    type: api
   future_ordering:
-    visibility:
-    title: Ordering
+    visibility: future
+    title: Orders
     position: 5
     type: api
   future_ordering_retailer:
-    visibility:
-    title: Ordering for Retailer
+    visibility: future
+    title: Orders - Retailer
     position: 5.1
     type: api
   future_ordering_supplier:
-    visibility:
-    title: Ordering for Supplier
+    visibility: future
+    title: Orders - Supplier
     position: 5.2
     type: api
-  future_discovery:
-    visibility:
-    title: Discovery
-    position: 6
-    type: api
-  future_discovery_retailer:
-    visibility:
-    title: Discovery Retailer
-    position: 6.1
-    type: api
-  future_files:
-    visibility:
-    title: Files
-    position: 7
-    type: api
-  future_tools:
-    visibility:
-    title: Operations Tools
-    position: 8
-    type: api
-
+### Future Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
+  future_internal_documentation:
+    visibility: future_internal
+    title: Documentation
+    position: 1
+  future_internal_orders:
+    visibility: future_internal
+    title: Orders
+    position: 5
 
 plugins:
   - jekyll-sitemap
