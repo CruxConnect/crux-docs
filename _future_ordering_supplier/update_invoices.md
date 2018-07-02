@@ -1,5 +1,5 @@
 ---
-title: /&lteorder_uuid&gte/invoices/
+title: /&ltorder_uuid&gt/invoices/
 name: Update Order Invoices
 position: 9.03
 visibility: public
@@ -36,7 +36,7 @@ line_items
 
 #### Line Item Object
 
-line_item_uuid 
+line_item_uuid
 : (string) ***Required*** Line Item Universal Unique Identifier
 
 quanty_shipped

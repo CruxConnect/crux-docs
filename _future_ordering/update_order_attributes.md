@@ -1,5 +1,5 @@
 ---
-title: /orders/attributes/&lteorder_uuid&gte
+title: /orders/attributes/&ltorder_uuid&gt/
 name: Update Order Attributes
 position: 1.01
 visibility: public

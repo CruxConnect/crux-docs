@@ -1,5 +1,5 @@
 ---
-title: /orders/allocation/e20cd2a8-7940-4817-9c83-6d60cb984279/
+title: /orders/allocation/&ltorder_uuid&gt/
 name: Allocate Order
 position: 1.00
 visibility: future

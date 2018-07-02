@@ -1,5 +1,5 @@
 ---
-title: /orders/fees/&lteorder_uuid&gte
+title: /orders/fees/&ltorder_uuid&gt/
 name: Get Order Fees
 position: 1.00
 visibility: public

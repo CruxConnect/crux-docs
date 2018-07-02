@@ -1,5 +1,5 @@
 ---
-title: /orders/tracking/e20cd2a8-7940-4817-9c83-6d60cb984279/123mytrack/
+title: /orders/tracking/&ltorder_uuid&gt/&lttracking_number&gt/
 name: Update Order With New Tracking Number - Supplier
 position: 1.01
 visibility: public
