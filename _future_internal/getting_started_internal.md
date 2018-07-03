@@ -1,7 +1,7 @@
 ---
 title: Future CruxConnect API
 position: 1
-visibility: internal
+visibility: future-internal
 right_code: |
   ~~~ bash
   https://api-sandbox.cruxconnect.com

@@ -1,13 +1,13 @@
 ---
 title: /orders/acknowledge/
-name: Acknowledge Orders - Internal
+name: Acknowledge Orders
 position: 1.02
-visibility: public
+visibility: future-internal
 method: patch
 description: Acknowledge Orders
 right_code: |
   ~~~ json
-
+  null
   ~~~
   {: title="Request" }
 

@@ -134,12 +134,12 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     position: 5.2
     type: api
 ### Future Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
-  future_internal_documentation:
-    visibility: future_internal
-    title: Documentation
+  future_internal:
+    visibility: future-internal
+    title: API
     position: 1
-  future_internal_orders:
-    visibility: future_internal
+  future_internal_ordering:
+    visibility: future-internal
     title: Orders
     position: 5
 

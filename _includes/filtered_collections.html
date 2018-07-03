@@ -3,6 +3,8 @@
   {% assign visibility = 'future' %}
 {% elsif page.path == 'internal.html' %}
   {% assign visibility = 'internal' %}
+{% elsif page.path == 'future_internal.html' %}
+  {% assign visibility = 'future-internal' %}
 {% else %}
   {% assign visibility = 'public' %}
 {% endif %}
