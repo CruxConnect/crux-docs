@@ -31,5 +31,4 @@ order_uuid
 
 ### Expected Response Codes
 
-For standard response codes see: <a href="{{ site.baseurl}}/#documentationresponse_codes/" target="_blank" >Response Codes</a>
-
+{% include links/response_codes.md %}

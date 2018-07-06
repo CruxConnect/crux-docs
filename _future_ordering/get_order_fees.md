@@ -1,10 +1,10 @@
 ---
 title: /orders/fees/&ltorder_uuid&gt/
-name: Get Order Fees
+name: Set Order Fees
 position: 1.00
 visibility: public
 method: put
-description: Get the Fees for a potential Order.
+description: Set the Fees for an existing order.
 right_code: |
   ~~~ json
     null
