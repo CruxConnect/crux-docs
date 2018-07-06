@@ -44,7 +44,7 @@ supplier_provided_method
 : (string) Supplier provided shipping method (e.g. Ground)
 
 package_weight
-: (decimal) Package wieght
+: (string) Package wieght
 
 package_ship_date
 : (string) package shipp date
