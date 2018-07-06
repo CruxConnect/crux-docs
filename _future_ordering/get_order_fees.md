@@ -12,7 +12,7 @@ right_code: |
   {: title="Request" }
 
 ---
-Allows supplier and retailer to specify their respective order fees.
+Allows supplier and retailer to specify their respective order fees. There are no additional CruxConnection fees.
 
 ### URL Parameters
 
