@@ -3,7 +3,7 @@ title: /orders/fees/&ltorder_uuid&gt/
 name: Get Order Fees
 position: 1.00
 visibility: public
-method: patch
+method: put
 description: Get the Fees for a potential Order.
 right_code: |
   ~~~ json
@@ -12,7 +12,7 @@ right_code: |
   {: title="Request" }
 
 ---
-Before placing an order, use this call to return the total Fees for the Order.
+Allows supplier and retailer to specify their respective order fees.
 
 ### URL Parameters
 

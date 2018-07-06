@@ -3,7 +3,7 @@ title: /orders/acknowledge/
 name: Acknowledge Orders
 position: 1.02
 visibility: future-internal
-method: patch
+method: put
 description: Acknowledge Orders
 right_code: |
   ~~~ json
@@ -31,4 +31,5 @@ order_uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+For standard response codes see: <a href="{{ site.baseurl}}/#documentationresponse_codes/" target="_blank" >Response Codes</a>
+

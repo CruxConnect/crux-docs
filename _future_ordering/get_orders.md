@@ -148,7 +148,7 @@ uuid
 : (string) Universal Unique Identifier for the Line Item
 
 status
-:(string) The Status for the Line Item. Possible Values are: Unallocated, Allocated, Rejected, HasTracking, Backordered, Cancelled
+: (string) The Status for the Line Item. Possible Values are: Unallocated, Allocated, Rejected, HasTracking, Backordered, Cancelled
 
 item_uuid
 : (string) Universal Unique Identifier for the Item
