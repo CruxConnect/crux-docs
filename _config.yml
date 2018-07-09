@@ -8,13 +8,13 @@ google_analytics_key:
 permalink: pretty
 baseurl: ""
 
-collections:
+collections:  ### if there are no documents in a collection, it's a placeholder and visiblity is blank
   documentation:
-    visibility: all
+    visibility: public
     title: Documentation
     position: 1
   organization:
-    visibility: all
+    visibility: public
     title: Organization
     position: 2
     type: api
@@ -24,33 +24,33 @@ collections:
     position: 3
     type: api
   product:
-    visibility: all
+    visibility: public
     title: Product
     position: 4
     type: api
   product_retailer:
-    visibility: all
-    title: Product for Retailers
+    visibility: public
+    title: Product - Retailers
     position: 4.1
     type: api
   product_supplier:
     visibility: public
-    title: Product for Supplier
+    title: Product - Supplier
     position: 4.2
     type: api
   ordering:
     visibility: public
-    title: Ordering
+    title: Orders
     position: 5
     type: api
   ordering_retailer:
     visibility: public
-    title: Ordering for Retailer
+    title: Orders - Retailer
     position: 5.1
     type: api
   ordering_supplier:
     visibility: public
-    title: Ordering for Supplier
+    title: Orders - Supplier
     position: 5.2
     type: api
   discovery:
@@ -60,7 +60,7 @@ collections:
     type: api
   discovery_retailer:
     visibility: public
-    title: Discovery Retailer
+    title: Discovery - Retailer
     position: 6.1
     type: api
   files:
@@ -69,10 +69,79 @@ collections:
     position: 7
     type: api
   tools:
+    visibility:
+    title: Operations Tools
+    position: 8
+    type: api
+###### Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
+  internal_documentation:
+    visibility: internal
+    title: Documentation
+    position: 1
+  internal_organization:
+    visibility: internal
+    title: Organization
+    position: 2
+    type: api
+  internal_accounting:
+    visibility:
+    title: Accounting
+    position: 3
+    type: api
+  internal_product:
+    visibility:
+    title: Product
+    position: 4
+    type: api
+  internal_ordering:
+    visibility:
+    title: Orders
+    position: 5
+    type: api
+  internal_discovery:
+    visibility:
+    title: Discovery
+    position: 6
+    type: api
+  internal_files:
+    visibility:
+    title: Files
+    position: 7
+    type: api
+  internal_tools:
     visibility: internal
     title: Operations Tools
     position: 8
     type: api
+### Future Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
+  future_documentation:
+    visibility: future
+    title: Documentation
+    position: 1
+  future_ordering:
+    visibility: future
+    title: Orders
+    position: 5
+    type: api
+  future_ordering_retailer:
+    visibility: future
+    title: Orders - Retailer
+    position: 5.1
+    type: api
+  future_ordering_supplier:
+    visibility: future
+    title: Orders - Supplier
+    position: 5.2
+    type: api
+### Future Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
+  future_internal:
+    visibility: future-internal
+    title: API
+    position: 1
+  future_internal_ordering:
+    visibility: future-internal
+    title: Orders
+    position: 5
 
 plugins:
   - jekyll-sitemap

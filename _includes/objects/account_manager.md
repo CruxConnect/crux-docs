@@ -10,5 +10,5 @@ person
 
 <!-- task-github-127
 job_title
-:(string) Job title of the contact.
+: (string) Job title of the contact.
 -->

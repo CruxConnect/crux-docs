@@ -2,6 +2,7 @@
 title: /accounting/transactions/export/
 name: Get Transactions Export
 position: 1.4
+visibility: public
 method: post
 description: Get Transactions Export allows you to receive an email with the current Transactions on your account
 right_code: |

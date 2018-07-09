@@ -1,1 +1,2 @@
-For standard response codes see: [Response Codes](#documentationresponse_codes)
+For standard response codes see:
+<a href="{{ site.baseurl }}/#documentationresponse_codes">Response Codes</a>
