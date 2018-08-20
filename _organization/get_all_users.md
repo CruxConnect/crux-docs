@@ -7,11 +7,6 @@ method: get
 description: Get all users, with user details, specific to your account
 right_code: |
   ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
   [
     {
       "uuid": "c3fb688d-4aca-42d4-9db1-cc268c465892",
@@ -57,18 +52,18 @@ To view orgainzation users, you must be assigned the 'view_org_users' permission
 
 ### Response Parameters:
 
-{% include objects/user.md %}
+{% include timp/objects/user.md %}
 
-{% include objects/permissions_assignment.md %}
+{% include timp/objects/permissions_assignment.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/timp/organizations/users/all/" \
-     -H 'Authorization: Token 5d6a1ef8c07df5ccf818aea56a1c23fce89212b0' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -77,7 +72,7 @@ curl "https://api-sandbox.cruxconnect.com/timp/organizations/users/all/" \
 
 ~~~ bash
 http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/users/all/' \
-    'Authorization':'Token 5d6a1ef8c07df5ccf818aea56a1c23fce89212b0' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -100,7 +95,7 @@ def send_request():
         response = requests.get(
             url="https://api-sandbox.cruxconnect.com/timp/organizations/users/all/",
             headers={
-                "Authorization": "Token 5d6a1ef8c07df5ccf818aea56a1c23fce89212b0",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -127,7 +122,7 @@ def send_request():
         port: '443',
         path: '/timp/organizations/users/all/',
         method: 'GET',
-        headers: {"Authorization":"Token 5d6a1ef8c07df5ccf818aea56a1c23fce89212b0","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

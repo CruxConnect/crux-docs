@@ -1,5 +1,5 @@
 ---
-title: /organizations/users/detail/&lt;user_uuid&gt;/
+title: /timp/organizations/users/detail/&lt;user_uuid&gt;/
 name: Get User
 position: 2.05
 visibility: public
@@ -62,7 +62,7 @@ URL Endpoint: `/api/timp/organizations/users/detail/<user_uuid>/`
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/" \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -71,7 +71,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/c3fb688d-4a
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -89,11 +89,11 @@ import json
 
 def send_request():
     # Get User
-    # GET https://api-sandbox.cruxconnect.com/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -120,7 +120,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/',
+        path: 'timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

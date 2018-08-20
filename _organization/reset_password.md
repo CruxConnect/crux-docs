@@ -29,7 +29,7 @@ reset_token
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
@@ -123,7 +123,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"email\":\"nick@dobaretailer.com\"}")
+    request.write("{\"email\":\"some@one.com\"}")
     request.end();
 
 
