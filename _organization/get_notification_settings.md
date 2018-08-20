@@ -1,7 +1,7 @@
 ---
-title: /notifications/notification-settings/
+title: /timp/notifications/notification-settings/
 name: Get Notification Settings
-position: 1.13
+position: 2.12
 visibility: public
 method: get
 description: Get Notification Settings specific to your user account
@@ -9,60 +9,13 @@ right_code: |
   ~~~ json
   [
     {
-      "uuid": "d72ffed5-6409-4c23-a88a-1f86043e8b0e",
-      "notification_name": "Nearing Credit Limit",
-      "notification_domain": "Billing",
-      "notification_type": [
-        {
-          "notification_via": "Dashboard",
-          "notification_frequency": "Daily",
-          "enabled": true
-        },
-        {
-          "notification_via": "email",
-          "notification_frequency": "Daily",
-          "enabled": true
-        }
-      ],
-      "org_user": {
-        "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49"
-      }
+      "uuid": "d1b86ae6-8b70-41a0-afaa-1bc7d0bdec31",
+      "notification_display_name": "Order Created",
+      "notification_name": "orders/created",
+      "notification_domain": "Orders",
+      "notification_type": [],
+      "org_user": null
     },
-    {
-      "uuid": "58506ba8-d0a7-4419-9bbe-f5d67371fac0",
-      "notification_name": "Invoice Due",
-      "notification_domain": "Billing",
-      "notification_type": [
-        {
-          "notification_via": "Dashboard",
-          "notification_frequency": "Daily",
-          "enabled": false
-        },
-        {
-          "notification_via": "email",
-          "notification_frequency": "Daily",
-          "enabled": true
-        }
-      ],
-      "org_user": {
-        "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49"
-      }
-    },
-    {
-      "uuid": "e944adff-5498-449c-9786-faec23b89cac",
-      "notification_name": "Order Paid",
-      "notification_domain": "Billing",
-      "notification_type": [
-        {
-          "notification_via": "Email",
-          "notification_frequency": "Twice a day",
-          "enabled": true
-        }
-      ],
-      "org_user": {
-        "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49"
-      }
-    }
   ]
   ~~~
   {: title="Response" }
@@ -72,6 +25,7 @@ Get all the current Notification Settings specific to your user account. This re
 
 To view notification settings, you must be assigned the 'view_notifications_settings' permission
 {: .info }
+
 
 ### Response Parameters:
 
@@ -101,11 +55,14 @@ notification_frequency
 enabled
 : (boolean) Enabled indicates if the Notification has been enabled for your account
 
-{% include links/response_codes.md %}
+### Expected Response Codes
+
+{% include timp/links/response_codes.md %}
+
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/notifications/notification-settings/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-sandbox.cruxconnect.com/timp/notifications/notification-settings/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -113,8 +70,8 @@ curl "https://api-sandbox.cruxconnect.com/notifications/notification-settings/" 
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/notifications/notification-settings/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/notifications/notification-settings/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -131,13 +88,13 @@ import json
 
 def send_request():
     # Get Notification Settings
-    # GET https://api-sandbox.cruxconnect.com/notifications/notification-settings/
+    # GET https://api-sandbox.cruxconnect.com/timp/notifications/notification-settings/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/notifications/notification-settings/",
+            url="https://api-sandbox.cruxconnect.com/timp/notifications/notification-settings/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -162,9 +119,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/notifications/notification-settings/',
+        path: '/timp/notifications/notification-settings/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
