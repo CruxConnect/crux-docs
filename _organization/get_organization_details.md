@@ -1,18 +1,19 @@
 ---
-title: /organizations/
+title: /timp/organizations/
 name: Get Organization Details
-position: 1.11
+position: 2.10
 visibility: public
 method: get
 description: Get Organization Details specific to your organization
 right_code: |
   ~~~ json
   {
-    "uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
-    "name": "Crux Supplier A",
-    "org_type": "SUPPLIER",
+    "uuid": "f5d2aea7-dcd0-4bb4-bedd-c642ce6fc7a0",
+    "name": "Doba Retailer",
+    "website": "dobaretailer.com",
+    "org_type": "RETAILER",
     "status": "ACTIVE",
-    "created_date": "2018-02-09T17:02:13Z",
+    "created_date": "2018-04-06T16:04:33Z",
     "active_date": null,
     "account_manager": {
       "uuid": "6c249798-7564-468d-83de-d98ae8b0b7cf",
@@ -24,7 +25,9 @@ right_code: |
         "phone": "(267)977-0572x195",
         "job_title": null
       }
-    }
+    },
+    "retailer_uuid": "cda6b5c7-addf-43d7-bdb3-2fe6a0420c42",
+    "supplier_uuid": ""
   }
   ~~~
   {: title="Response" }
@@ -34,23 +37,25 @@ Get the Details about your Organization including the uuid, name, organization t
 
 ### Response Parameters:
 
-{% include objects/organization.md %}
+{% include timp/objects/organization.md %}
 
-{% include objects/account_manager.md %}
+{% include timp/objects/account_manager.md %}
+
+### Expected Response Codes
 
 {% include links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/" \
+     -H 'Authorization: Token 1234567890'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api-sandbox.cruxconnect.com/organizations/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
+http GET 'https://api-sandbox.cruxconnect.com/timp/organizations/' \
+    'Authorization':'Token 1234567890'
 
 ~~~
 {: title="HTTPie" }
@@ -64,13 +69,13 @@ import requests
 
 def send_request():
     # Get Organization Details
-    # GET https://api-sandbox.cruxconnect.com/organizations/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
             },
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -93,9 +98,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/',
+        path: '/timp/organizations/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d"}
+        headers: {"Authorization":"Token 1234567890"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

@@ -1,5 +1,5 @@
 ---
-title: /organizations/users/permissions/&lt;user-uuid&gt;/
+title: /timp/organizations/users/permissions/&lt;user-uuid&gt;/
 name: Add User Permissions
 position: 2.08
 visibility: public
@@ -39,7 +39,7 @@ permission_uuids
 
 
 ~~~ bash
-curl -X "PATCH" "https://api-sandbox.cruxconnect.com/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/" \
+curl -X "PATCH" "https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -53,7 +53,7 @@ curl -X "PATCH" "https://api-sandbox.cruxconnect.com/organizations/users/permiss
 {: title="Curl" }
 
 ~~~ bash
-http --json PATCH 'https://api-sandbox.cruxconnect.com/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/' \
+http --json PATCH 'https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     permission_uuids:="[
@@ -74,11 +74,11 @@ import json
 
 def send_request():
     # Add User Permissions
-    # PATCH https://api-sandbox.cruxconnect.com/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/
+    # PATCH https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/
 
     try:
         response = requests.patch(
-            url="https://api-sandbox.cruxconnect.com/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -99,7 +99,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Add User Permissions 
+// request Add User Permissions
 (function(callback) {
     'use strict';
 
@@ -108,7 +108,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/',
+        path: '/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/',
         method: 'PATCH',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
