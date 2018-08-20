@@ -1,10 +1,10 @@
 <!-- begin setting filtered collections -->
-{% if page.path == 'future.html' %}
-  {% assign visibility = 'future' %}
+{% if page.path == 'v1.html' %}
+  {% assign visibility = 'v1' %}
 {% elsif page.path == 'internal.html' %}
   {% assign visibility = 'internal' %}
-{% elsif page.path == 'future_internal.html' %}
-  {% assign visibility = 'future-internal' %}
+{% elsif page.path == 'v1_internal.html' %}
+  {% assign visibility = 'v1-internal' %}
 {% else %}
   {% assign visibility = 'public' %}
 {% endif %}
