@@ -2,7 +2,7 @@
 title: /accounting/payment-methods/
 name: Get Payment Methods
 position: 1.06
-visibility: v1
+visibility:
 method: get
 description: Get Payment Methods available on your account
 right_code: |

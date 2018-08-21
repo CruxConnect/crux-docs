@@ -19,11 +19,6 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     title: Organization
     position: 2
     type: api
-  accounting:
-    visibility: public
-    title: Accounting
-    position: 3
-    type: api
   product:
     visibility: public
     title: Product
@@ -125,7 +120,7 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     position: 2
     type: api
   v1_accounting:
-    visibility: v1
+    visibility:
     title: Accounting
     position: 3
     type: api
