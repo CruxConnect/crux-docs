@@ -1,7 +1,7 @@
 ---
-title: /orders/
+title: /timp/orders/
 name: Get Orders
-position: 5.0
+position: 4.0
 visibility: public
 method: post
 description: Get the Orders for your organization
@@ -133,7 +133,7 @@ org_uuids
 
 ##### Sort Object:
 
-{% include objects/sort.md %}
+{% include timp/objects/sort.md %}
 
 ### Response Parameters:
 
@@ -145,11 +145,11 @@ orders
 
 #### Order Object:
 
-{% include orders/response/orders.md %}
+{% include timp/orders/response/orders.md %}
 
 #### Fees Object:
 
-{% include objects/fees.md %}
+{% include timp/objects/fees.md %}
 
 #### Retailer Object:
 
@@ -164,31 +164,31 @@ user
 
 #### Address Object:
 
-{% include objects/address_business.md %}
+{% include timp/objects/address_business.md %}
 
 #### Requested Shipping Object:
 
-{% include orders/response/requested_shipping.md %}
+{% include timp/orders/response/requested_shipping.md %}
 
 #### Line Item Object:
 
-{% include objects/line_item.md %}
+{% include timp/objects/line_item.md %}
 
 #### Tracking Numbers Object:
 
-{% include objects/tracking_number.md %}
+{% include timp/objects/tracking_number.md %}
 
 #### Allocation Object:
 
-{% include objects/allocation.md %}
+{% include timp/objects/allocation.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/orders/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -214,7 +214,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/orders/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/orders/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     org_uuids:="[]" \
@@ -247,11 +247,11 @@ import json
 
 def send_request():
     # Get Orders
-    # POST https://api-sandbox.cruxconnect.com/orders/
+    # POST https://api-sandbox.cruxconnect.com/timp/orders/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/orders/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -293,7 +293,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/orders/',
+        path: '/timp/orders/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
