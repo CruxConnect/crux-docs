@@ -1,7 +1,7 @@
 ---
-title: /orders/search/export/
+title: /timp/orders/search/export/
 name: Get Orders By Search
-position: 5.03
+position: 4.03
 visibility: public
 method: post
 description: Get the Orders for your organization
@@ -30,7 +30,7 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "9ff96aea-885c-4dc1-8a09-8e50fbe33119"
+    "uuid": "5ebdba7f-36a6-40ca-a79a-6da76a631734"
   }
   ~~~
   {: title="Response" }
@@ -90,11 +90,11 @@ orders
 
 ### Expected Response Codes
 
-Expected responses include 200, 400, 401, 403, or 404.
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/search/export/" \
+curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/search/export/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -120,7 +120,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/search/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/orders/search/export/' \
+http --json POST 'https://api-dev.cruxconnect.com/timp/orders/search/export/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     org_uuids:="[]" \
@@ -153,11 +153,11 @@ import json
 
 def send_request():
     # Get Orders By Search
-    # POST https://api-sandbox.cruxconnect.com/orders/search/export/
+    # POST https://api-dev.cruxconnect.com/timp/orders/search/export/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/orders/search/export/",
+            url="https://api-dev.cruxconnect.com/timp/orders/search/export/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -197,9 +197,9 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
+        hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/orders/search/export/',
+        path: '/timp/orders/search/export/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
