@@ -1,7 +1,7 @@
 ---
-title: /orders/export/
+title: /timp/orders/export/
 name: Get Orders Export
-position: 5.02
+position: 4.02
 visibility: public
 method: post
 description: Get an Export of the Order List via an email
@@ -9,7 +9,7 @@ right_code: |
   ~~~ json
   {
     "uuids": [
-      "1ab8e55f-ea7e-4a58-b7d3-db723272dbbd"
+      "319bba9f-71b1-4a93-8abf-67a45b8fdd5c"
     ]
   }
   ~~~
@@ -17,7 +17,7 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "521c8baa-1c44-4ca7-88ce-f4eadba37bc0"
+    "uuid": "dccef0e0-52ff-4704-a279-3e5b0f92990e"
   }
   ~~~
   {: title="Response" }
@@ -41,16 +41,16 @@ uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/export/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/export/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "uuids": [
-    "1ab8e55f-ea7e-4a58-b7d3-db723272dbbd"
+    "319bba9f-71b1-4a93-8abf-67a45b8fdd5c"
   ]
 }'
 
@@ -58,11 +58,11 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/orders/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/orders/export/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json POST 'https://api-dev.cruxconnect.com/timp/orders/export/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     uuids:="[
-  \"1ab8e55f-ea7e-4a58-b7d3-db723272dbbd\"
+  \"319bba9f-71b1-4a93-8abf-67a45b8fdd5c\"
 ]"
 
 ~~~
@@ -78,17 +78,17 @@ import json
 
 def send_request():
     # Get Orders Export
-    # POST https://api-sandbox.cruxconnect.com/orders/export/
+    # POST https://api-dev.cruxconnect.com/timp/orders/export/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/orders/export/",
+            url="https://api-dev.cruxconnect.com/timp/orders/export/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    uuids:="[
-  \"1ab8e55f-ea7e-4a58-b7d3-db723272dbbd\"
+  \"319bba9f-71b1-4a93-8abf-67a45b8fdd5c\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -109,11 +109,11 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
+        hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/orders/export/',
+        path: '/timp/orders/export/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -141,7 +141,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"uuids\":[\"1ab8e55f-ea7e-4a58-b7d3-db723272dbbd\"]}")
+    request.write("{\"uuids\":[\"319bba9f-71b1-4a93-8abf-67a45b8fdd5c\"]}")
     request.end();
 
 
