@@ -1,7 +1,7 @@
 ---
-title: /orders/&ltorder-uuid&gt/
+title: timp/orders/&ltorder-uuid&gt/
 name: Get Order Detail
-position: 5.01
+position: 4.01
 visibility: public
 method: get
 description: Get the Details for a specified Order
@@ -112,7 +112,7 @@ line_items
 
 #### Fees Object:
 
-{% include objects/fees.md %}
+{% include timp/objects/fees.md %}
 
 #### Retailer Object:
 
@@ -127,31 +127,31 @@ user
 
 #### Address Object:
 
-{% include objects/address_business.md %}
+{% include timp/objects/address_business.md %}
 
 #### Requested Shipping Object:
 
-{% include orders/response/requested_shipping.md %}
+{% include timp/orders/response/requested_shipping.md %}
 
 #### Line Item Object:
 
-{% include objects/line_item.md %}
+{% include timp/objects/line_item.md %}
 
 #### User Object
 
-{% include objects/user_simple.md %}
+{% include timp/objects/user_simple.md %}
 
 #### Tracking Number Object:
 
-{% include objects/tracking_number.md %}
+{% include timp/objects/tracking_number.md %}
 
 #### Allocation Object:
 
-{% include objects/allocation.md %}
+{% include timp/objects/allocation.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
