@@ -1,69 +1,81 @@
 ---
-title: timp/orders/&ltorder-uuid&gt/
+title: /timp/orders/&ltuuid&gt/
 name: Get Order Detail
 position: 4.01
 visibility: public
 method: get
 description: Get the Details for a specified Order
 right_code: |
-
   ~~~ json
   {
-    "uuid": "49bd2a6d-fe6b-4145-a059-9439289801ae",
-    "is_allocated": false,
-    "purchase_order_id": "po-5fkQo2ET",
-    "created_date": "2018-03-08T22:20:25.311697Z",
-    "notes": "here are some notes",
-    "fees": {
-      "estimated_shipping_cost": 0,
-      "drop_ship_fee": 0,
-      "order_fee": 0
-    },
-    "retailer": {
-      "name": "Crux Retailer",
-      "uuid": "93204006-fcdc-458c-8f81-13a7337992ae",
-      "user": {
-        "name": "Crux User",
-        "email": "user@mycompany.com"
-      }
-    },
+    "order_uuid": "f7bc1028-844c-44ca-82df-fe76282d2a8b",
+    "po_number": "po-5527771067",
+    "created_date": "2018-08-23T16:07:35.864274Z",
     "address": {
       "name": "Bob Iger",
-      "business_name": "Disney",
-      "address1": "1955 Mickey Mouse Lane",
+      "business_name": "NBC",
+      "address1": "30 Rockefeller Plaza",
       "address2": "STE 123",
-      "city": "Anaheim",
-      "state": "CA",
-      "postal_code": "92802",
-      "phone_number": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10112",
+      "phone_number": "801-555-1212",
       "country": null
     },
-    "requested_shipping": {
-      "shipping_carrier": "UPS",
-      "shipping_method": "Ground"
+    "sent_to_supplier": false,
+    "retailer": {
+      "uuid": "ebf3657c-2abb-4aff-be70-69082acc9302",
+      "organization_name": "projectthanos",
+      "order_submitted_by": null
     },
+    "retailer_provided_notes": "jelly donuts for everyone",
+    "retailer_provided_fees": {
+      "order_fee": 0.99,
+      "order_tax": 2.97,
+      "shipping_cost": 7.99,
+      "dropship_fee": 0.5
+    },
+    "retailer_provided_order_attributes": null,
+    "invoices": [
+      {
+        "invoice_items": null
+      }
+    ],
     "line_items": [
       {
-        "uuid": "9af950c1-5dac-4da4-a86c-f1a0f3bdff40",
+        "line_item_uuid": "5e91d918-67e8-4957-a69a-df9d2072ad9b",
         "status": "Unallocated",
-        "item_uuid": "a904832e-2ad4-4ad7-8339-e4b0877a42bd",
-        "item_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
-        "sku_uuid": "f9ded77b-35b2-45e1-a071-2eec8e99f581",
-        "sku_id": "000106",
-        "sku_name": "PulseTech Xtreme Charger Auto  100X010 XC100-P",
-        "sku_title_variants": "PulseTech Xtreme Charger Auto  100X010 XC100-P {}",
-        "sku_special_instructions": null,
-        "cost": 66.05,
-        "supplier_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
-        "supplier_name": "Crux Supplier A",
-        "tracking_numbers": [],
-        "allocation": {
-          "quantity_ordered": 202,
-          "quantity_allocated": 0,
-          "quantity_backordered": 0,
-          "quantity_rejected": 0,
-          "backorder_date": null
-        }
+        "line_item_designation": null,
+        "item_uuid": "3bb5ef3b-2f1e-41da-bd85-1d6c746b0fa8",
+        "item_name": null,
+        "sku_uuid": "841ca56b-26f8-4d45-ac25-5b40d1da7354",
+        "sku_id": "7FZvMyg0BjfewNJJ",
+        "sku_name": null,
+        "sku_title_variants": "None {}",
+        "product_codes": {
+          "upca": null,
+          "ean13": null,
+          "isbn": null,
+          "gtin14": null,
+          "asin": null,
+          "mpn": null
+        },
+        "retailer_provided_line_item_notes": null,
+        "retailer_provided_sku_cost": 27.2,
+        "supplier": {
+          "uuid": "d6ac857d-c844-4312-8485-6d121d065308",
+          "organization_name": "Stevens, Smith and Krause",
+          "order_submitted_by": null
+        },
+        "supplier_provided_line_item_notes": null,
+        "supplier_provided_attributes": [
+          {
+            "attribute_name": "donut",
+            "attribute_value": "jelly"
+          }
+        ],
+        "tracking": [],
+        "allocation": null
       }
     ]
   }
@@ -131,7 +143,11 @@ user
 
 #### Requested Shipping Object:
 
-{% include timp/orders/response/requested_shipping.md %}
+shipping_carrier
+: (string) The Shipping Carrier to deliver the order
+
+shipping_method
+: (string) The Shipping Method used by the Shipping Carrier to deliver the order
 
 #### Line Item Object:
 
@@ -155,15 +171,19 @@ user
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/orders/49bd2a6d-fe6b-4145-a059-9439289801ae/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
+curl "https://api-dev.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/" \
+     -H 'Authorization: Token 1234567890' \
+     -H 'Content-Type: application/json; charset=utf-8' \
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api-sandbox.cruxconnect.com/orders/49bd2a6d-fe6b-4145-a059-9439289801ae/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d'
+http --json GET 'https://api-dev.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/' \
+    'Authorization':'Token 1234567890' \
+    'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -173,18 +193,21 @@ http GET 'https://api-sandbox.cruxconnect.com/orders/49bd2a6d-fe6b-4145-a059-943
 # `pip install requests`
 
 import requests
+import json
 
 
 def send_request():
     # Get Order Detail
-    # GET https://api-sandbox.cruxconnect.com/orders/49bd2a6d-fe6b-4145-a059-9439289801ae/
+    # GET https://api-dev.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/orders/49bd2a6d-fe6b-4145-a059-9439289801ae/",
+            url="https://api-dev.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
+                "Content-Type": "application/json; charset=utf-8",
             },
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -204,11 +227,11 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
+        hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/orders/49bd2a6d-fe6b-4145-a059-9439289801ae/',
+        path: '/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -236,7 +259,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("")
+    request.write("{}")
     request.end();
 
 

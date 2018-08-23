@@ -1,7 +1,7 @@
 ---
-title: /orders/allocation/&lt;order-uuid&gt;/
+title: /timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/
 name: Allocate Order
-position: 5.2.3
+position: 6.00
 visibility: public
 method: put
 description: Allocate stock for a Retailer Order
@@ -10,11 +10,12 @@ right_code: |
   {
     "line_items": [
       {
-        "line_item_uuid": "d3842ec4-d1f8-4cf1-860b-b9eeb8a35680",
+        "line_item_uuid": "b84ccd3c-88f8-4050-accf-e049163052e3",
         "allocation": {
-          "quantity_accepted": "22",
+          "quantity_accepted": "5",
           "quantity_rejected": "0",
-          "quantity_backordered": "0"
+          "quantity_backordered": "1",
+          "backorder_date": "2019-01-01"
         }
       }
     ]
@@ -25,7 +26,7 @@ right_code: |
   ~~~ json
   [
     {
-      "d3842ec4-d1f8-4cf1-860b-b9eeb8a35680": "Allocated"
+      "b84ccd3c-88f8-4050-accf-e049163052e3": "Allocated"
     }
   ]
   ~~~
@@ -34,56 +35,134 @@ right_code: |
 ---
 Allocate stock for a Retailer Order. Essentially accepting the entire order or a portion of the order by providing the order_uuid and providing the order_item_id and associated quantities per the allocation types.
 
+
 ### URL Parameters:
 
 order_uuid
 : (string) Universal Unique Identifier for the Order
 
 ### Request Parameters:
-#### Optional
 
 line_items
-: (array) The Order Items array contains the individual Order Item objects
+: (array) ***Required*** The Order Line Items array contains the individual Order Item objects
 
 #### Order Item Object
 
 line_item_uuid
-: (string) The line item uuid for the product purchased by the Retailer
+: (string) ***Required*** The line item uuid for the product purchased by the Retailer
 
 allocation
-: (object) The Allocation Object parameter includes the quantites accepted, rejected, and backordered.
+: (object) ***Required*** The Allocation Object parameter includes the quantites accepted, rejected, and backordered.
 
 #### Allocation Object
 
-{% include objects/allocation.md %}
+quantity_accepted
+: (integer) ***Required*** The Quantiy Accepted by the supplier
+
+quantity_rejected
+: (integer) ***Required*** The Quantity Rejected by the Supplier is the Quantity that they cannot fulfill.
+
+quantity_backordered
+: (integer) ***Required*** The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state.
+
+backorder_date
+: (string) The Date that the Backordered SKU will be available for shipment. String format: yyyy-mmm-ddd
 
 ### Response Parameters
 
-Array of allocation objects structured as { uuid: status } key:value pairs where
+line_items
+: (array) Array of line item objects
 
-uuid
-: (string) Universal Unique Idenfitier for the allocated item
+#### Line Item Objects
 
-status
-: (string) Status of the allocated Item.  Can be "Allocated", "Backordered", "Cancelled", "Rejected", or "Item Not Found"
+line_item_uuid
+: (string) The Universal Unique Identifier for the Item
+
+quantity_shipped
+: (integer) The Quantity of the Item included in the shipment associated with the Tracking Number
+
+supplier_provided_sku_cost
+: (decimal) The SKU cost (2 decimal places)
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
+
+### Expected Response Codes
+
+# Short Description
+Allocate stock for a Retailer Order
+
+# Long Description
+Allocate stock for a Retailer Order. Essentially accepting the entire order or a portion of the order by providing the order_uuid and providing the order_item_id and associated quantities per the allocation types.
+
+
+### URL Parameters:
+
+order_uuid
+: (string) Universal Unique Identifier for the Order
+
+### Request Parameters:
+
+line_items
+: (array) ***Required*** The Order Line Items array contains the individual Order Item objects
+
+#### Order Item Object
+
+line_item_uuid
+: (string) ***Required*** The line item uuid for the product purchased by the Retailer
+
+allocation
+: (object) ***Required*** The Allocation Object parameter includes the quantites accepted, rejected, and backordered.
+
+#### Allocation Object
+
+quantity_accepted
+: (integer) ***Required*** The Quantiy Accepted by the supplier
+
+quantity_rejected
+: (integer) ***Required*** The Quantity Rejected by the Supplier is the Quantity that they cannot fulfill.
+
+quantity_backordered
+: (integer) ***Required*** The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state.
+
+backorder_date
+: (string) The Date that the Backordered SKU will be available for shipment. String format: yyyy-mmm-ddd
+
+### Response Parameters
+
+line_items
+: (array) Array of line item objects
+
+#### Line Item Objects
+
+line_item_uuid
+: (string) The Universal Unique Identifier for the Item
+
+quantity_shipped
+: (integer) The Quantity of the Item included in the shipment associated with the Tracking Number
+
+supplier_provided_sku_cost
+: (decimal) The SKU cost (2 decimal places)
+
+### Expected Response Codes
+
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "PUT" "https://api-sandbox.cruxconnect.com/orders/allocation/1ab8e55f-ea7e-4a58-b7d3-db723272dbbd/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "PUT" "https://api-dev.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "line_items": [
     {
-      "line_item_uuid": "d3842ec4-d1f8-4cf1-860b-b9eeb8a35680",
+      "line_item_uuid": "b84ccd3c-88f8-4050-accf-e049163052e3",
       "allocation": {
-        "quantity_backordered": "0",
-        "quantity_accepted": "22",
-        "quantity_rejected": "0"
+        "backorder_date": "2019-01-01",
+        "quantity_rejected": "0",
+        "quantity_accepted": "5",
+        "quantity_backordered": "1"
       }
     }
   ]
@@ -93,16 +172,17 @@ curl -X "PUT" "https://api-sandbox.cruxconnect.com/orders/allocation/1ab8e55f-ea
 {: title="Curl" }
 
 ~~~ bash
-http --json PUT 'https://api-sandbox.cruxconnect.com/orders/allocation/1ab8e55f-ea7e-4a58-b7d3-db723272dbbd/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json PUT 'https://api-dev.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     line_items:="[
   {
-    \"line_item_uuid\": \"d3842ec4-d1f8-4cf1-860b-b9eeb8a35680\",
+    \"line_item_uuid\": \"b84ccd3c-88f8-4050-accf-e049163052e3\",
     \"allocation\": {
-      \"quantity_backordered\": \"0\",
-      \"quantity_accepted\": \"22\",
-      \"quantity_rejected\": \"0\"
+      \"backorder_date\": \"2019-01-01\",
+      \"quantity_rejected\": \"0\",
+      \"quantity_accepted\": \"5\",
+      \"quantity_backordered\": \"1\"
     }
   }
 ]"
@@ -119,23 +199,24 @@ import json
 
 
 def send_request():
-    # Allocate Order - Supplier
-    # PUT https://api-sandbox.cruxconnect.com/orders/allocation/1ab8e55f-ea7e-4a58-b7d3-db723272dbbd/
+    # Allocate Order
+    # PUT https://api-dev.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/
 
     try:
         response = requests.put(
-            url="https://api-sandbox.cruxconnect.com/orders/allocation/1ab8e55f-ea7e-4a58-b7d3-db723272dbbd/",
+            url="https://api-dev.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    line_items:="[
   {
-    \"line_item_uuid\": \"d3842ec4-d1f8-4cf1-860b-b9eeb8a35680\",
+    \"line_item_uuid\": \"b84ccd3c-88f8-4050-accf-e049163052e3\",
     \"allocation\": {
-      \"quantity_backordered\": \"0\",
-      \"quantity_accepted\": \"22\",
-      \"quantity_rejected\": \"0\"
+      \"backorder_date\": \"2019-01-01\",
+      \"quantity_rejected\": \"0\",
+      \"quantity_accepted\": \"5\",
+      \"quantity_backordered\": \"1\"
     }
   }
 ]")
@@ -151,18 +232,18 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Allocate Order - Supplier
+// request Allocate Order
 (function(callback) {
     'use strict';
 
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
+        hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/orders/allocation/1ab8e55f-ea7e-4a58-b7d3-db723272dbbd/',
+        path: '/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/',
         method: 'PUT',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -190,7 +271,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"line_items\":[{\"line_item_uuid\":\"d3842ec4-d1f8-4cf1-860b-b9eeb8a35680\",\"allocation\":{\"quantity_accepted\":\"22\",\"quantity_rejected\":\"0\",\"quantity_backordered\":\"0\"}}]}")
+    request.write("{\"line_items\":[{\"line_item_uuid\":\"b84ccd3c-88f8-4050-accf-e049163052e3\",\"allocation\":{\"quantity_accepted\":\"5\",\"quantity_rejected\":\"0\",\"quantity_backordered\":\"1\",\"backorder_date\":\"2019-01-01\"}}]}")
     request.end();
 
 

@@ -1,4 +1,3 @@
-
 ---
 title: /timp/orders/create/
 name: Create Order
@@ -12,16 +11,16 @@ right_code: |
     "skus": [
       {
         "quantity": "2",
-        "sku_id": "841ca56b-26f8-4d45-ac25-5b40d1da7354",
-        "supplier_org_uuid": "904e880a-0f8b-4e25-86ff-e63588914c95",
+        "sku_id": "7FZvMyg0BjfewNJJ",
+        "supplier_org_uuid": "d6ac857d-c844-4312-8485-6d121d065308",
         "retailer_provided_shipping_carrier": "UPS",
         "retailer_provided_shipping_method": "Ground",
         "retailer_line_item_instructions": "Ship seperately as available",
         "retailer_provided_sku_cost": 27.2,
         "retailer_provided_line_item_attributes": [
           {
-            "name": "donut",
-            "value": "jelly"
+            "attribute_name": "donut",
+            "attribute_value": "jelly"
           }
         ]
       }
@@ -36,15 +35,15 @@ right_code: |
       "postal_code": "10112",
       "phone_number": "801-555-1212"
     },
-    "po_number": "po-BKrxV4jG",
+    "po_number": "po-5717483544",
     "retailer_provided_order_fee": 0.99,
     "retailer_provided_tax": 2.97,
     "retailer_provided_shipping_cost": 7.99,
     "retailer_provided_dropship_fee": 0.5,
     "retailer_provided_order_attributes": [
       {
-        "name": "donut",
-        "value": "jelly"
+        "attribute_name": "donut",
+        "attribute_value": "jelly"
       }
     ],
     "retailer_provided_notes": "jelly donuts for everyone"
@@ -54,8 +53,8 @@ right_code: |
 
   ~~~ json
   {
-    "order_uuid": "83c0227e-c19d-4220-a5d8-d78bff44ae87",
-    "messages": ""
+    "order_uuid": "f7bc1028-844c-44ca-82df-fe76282d2a8b",
+    "messages": []
   }
   ~~~
   {: title="Response" }
@@ -167,7 +166,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/create/" \
     "name": "Bob Iger",
     "address2": "STE 123"
   },
-  "po_number": "po-BKrxV4jG",
+  "po_number": "po-5717483544",
   "retailer_provided_order_fee": 0.99,
   "retailer_provided_tax": 2.97,
   "retailer_provided_dropship_fee": 0.5,
@@ -175,24 +174,24 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/create/" \
   "retailer_provided_shipping_cost": 7.99,
   "retailer_provided_order_attributes": [
     {
-      "name": "donut",
-      "value": "jelly"
+      "attribute_value": "jelly",
+      "attribute_name": "donut"
     }
   ],
   "skus": [
     {
-      "sku_id": "841ca56b-26f8-4d45-ac25-5b40d1da7354",
+      "sku_id": "7FZvMyg0BjfewNJJ",
       "quantity": "2",
       "retailer_provided_shipping_carrier": "UPS",
       "retailer_line_item_instructions": "Ship seperately as available",
       "retailer_provided_sku_cost": 27.2,
       "retailer_provided_line_item_attributes": [
         {
-          "name": "donut",
-          "value": "jelly"
+          "attribute_value": "jelly",
+          "attribute_name": "donut"
         }
       ],
-      "supplier_org_uuid": "904e880a-0f8b-4e25-86ff-e63588914c95",
+      "supplier_org_uuid": "d6ac857d-c844-4312-8485-6d121d065308",
       "retailer_provided_shipping_method": "Ground"
     }
   ]
@@ -215,7 +214,7 @@ http --json POST 'https://api-dev.cruxconnect.com/timp/orders/create/' \
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    po_number="po-BKrxV4jG" \
+    po_number="po-5717483544" \
     retailer_provided_order_fee:=0.99 \
     retailer_provided_tax:=2.97 \
     retailer_provided_dropship_fee:=0.5 \
@@ -223,24 +222,24 @@ http --json POST 'https://api-dev.cruxconnect.com/timp/orders/create/' \
     retailer_provided_shipping_cost:=7.99 \
     retailer_provided_order_attributes:="[
   {
-    \"name\": \"donut\",
-    \"value\": \"jelly\"
+    \"attribute_value\": \"jelly\",
+    \"attribute_name\": \"donut\"
   }
 ]" \
     skus:="[
   {
-    \"sku_id\": \"841ca56b-26f8-4d45-ac25-5b40d1da7354\",
+    \"sku_id\": \"7FZvMyg0BjfewNJJ\",
     \"quantity\": \"2\",
     \"retailer_provided_shipping_carrier\": \"UPS\",
     \"retailer_line_item_instructions\": \"Ship seperately as available\",
     \"retailer_provided_sku_cost\": 27.2,
     \"retailer_provided_line_item_attributes\": [
       {
-        \"name\": \"donut\",
-        \"value\": \"jelly\"
+        \"attribute_value\": \"jelly\",
+        \"attribute_name\": \"donut\"
       }
     ],
-    \"supplier_org_uuid\": \"904e880a-0f8b-4e25-86ff-e63588914c95\",
+    \"supplier_org_uuid\": \"d6ac857d-c844-4312-8485-6d121d065308\",
     \"retailer_provided_shipping_method\": \"Ground\"
   }
 ]"
@@ -277,7 +276,7 @@ def send_request():
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    po_number="po-BKrxV4jG" \
+    po_number="po-5717483544" \
     retailer_provided_order_fee:=0.99 \
     retailer_provided_tax:=2.97 \
     retailer_provided_dropship_fee:=0.5 \
@@ -285,24 +284,24 @@ def send_request():
     retailer_provided_shipping_cost:=7.99 \
     retailer_provided_order_attributes:="[
   {
-    \"name\": \"donut\",
-    \"value\": \"jelly\"
+    \"attribute_value\": \"jelly\",
+    \"attribute_name\": \"donut\"
   }
 ]" \
     skus:="[
   {
-    \"sku_id\": \"841ca56b-26f8-4d45-ac25-5b40d1da7354\",
+    \"sku_id\": \"7FZvMyg0BjfewNJJ\",
     \"quantity\": \"2\",
     \"retailer_provided_shipping_carrier\": \"UPS\",
     \"retailer_line_item_instructions\": \"Ship seperately as available\",
     \"retailer_provided_sku_cost\": 27.2,
     \"retailer_provided_line_item_attributes\": [
       {
-        \"name\": \"donut\",
-        \"value\": \"jelly\"
+        \"attribute_value\": \"jelly\",
+        \"attribute_name\": \"donut\"
       }
     ],
-    \"supplier_org_uuid\": \"904e880a-0f8b-4e25-86ff-e63588914c95\",
+    \"supplier_org_uuid\": \"d6ac857d-c844-4312-8485-6d121d065308\",
     \"retailer_provided_shipping_method\": \"Ground\"
   }
 ]")
@@ -357,7 +356,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"skus\":[{\"quantity\":\"2\",\"sku_id\":\"841ca56b-26f8-4d45-ac25-5b40d1da7354\",\"supplier_org_uuid\":\"904e880a-0f8b-4e25-86ff-e63588914c95\",\"retailer_provided_shipping_carrier\":\"UPS\",\"retailer_provided_shipping_method\":\"Ground\",\"retailer_line_item_instructions\":\"Ship seperately as available\",\"retailer_provided_sku_cost\":27.2,\"retailer_provided_line_item_attributes\":[{\"name\":\"donut\",\"value\":\"jelly\"}]}],\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"},\"po_number\":\"po-BKrxV4jG\",\"retailer_provided_order_fee\":0.99,\"retailer_provided_tax\":2.97,\"retailer_provided_shipping_cost\":7.99,\"retailer_provided_dropship_fee\":0.5,\"retailer_provided_order_attributes\":[{\"name\":\"donut\",\"value\":\"jelly\"}],\"retailer_provided_notes\":\"jelly donuts for everyone\"}")
+    request.write("{\"skus\":[{\"quantity\":\"2\",\"sku_id\":\"7FZvMyg0BjfewNJJ\",\"supplier_org_uuid\":\"d6ac857d-c844-4312-8485-6d121d065308\",\"retailer_provided_shipping_carrier\":\"UPS\",\"retailer_provided_shipping_method\":\"Ground\",\"retailer_line_item_instructions\":\"Ship seperately as available\",\"retailer_provided_sku_cost\":27.2,\"retailer_provided_line_item_attributes\":[{\"attribute_name\":\"donut\",\"attribute_value\":\"jelly\"}]}],\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"},\"po_number\":\"po-5717483544\",\"retailer_provided_order_fee\":0.99,\"retailer_provided_tax\":2.97,\"retailer_provided_shipping_cost\":7.99,\"retailer_provided_dropship_fee\":0.5,\"retailer_provided_order_attributes\":[{\"attribute_name\":\"donut\",\"attribute_value\":\"jelly\"}],\"retailer_provided_notes\":\"jelly donuts for everyone\"}")
     request.end();
 
 

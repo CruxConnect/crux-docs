@@ -1,7 +1,7 @@
 ---
-title: /organizations/connections/request/&ltuuid&gt/
+title: /timp/organizations/connections/request/&ltuuid&gt/
 name: Get Requested Connection Detail
-position: 3.04
+position: 1.02
 visibility: public
 method: get
 description: Get details of a specific connection request
@@ -136,7 +136,7 @@ person
 
 #### Person
 
-{% include objects/contact.md %}
+{% include timp/objects/contact.md %}
 
 <!-- task-github-127 Create File include file -->
 #### File Object
@@ -145,11 +145,11 @@ person
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/" \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/" \
      -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
      -H 'Authorization: Token 1234567890'
 
@@ -157,7 +157,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/connections/request/6c82
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api-sandbox.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/' \
+http GET 'https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/' \
     'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
     'Authorization':'Token 1234567890'
 
@@ -173,11 +173,11 @@ import requests
 
 def send_request():
     # Get Requested Connection Detail
-    # GET https://api-sandbox.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/",
             headers={
                 "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
                 "Authorization": "Token 1234567890",
@@ -203,7 +203,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/',
+        path: '/timp/organizations/connections/request/6c822de1-8f9a-48ca-87c1-c5c788a6caf3/',
         method: 'GET',
         headers: {"Cookie":"sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp","Authorization":"Token 1234567890"}
     };

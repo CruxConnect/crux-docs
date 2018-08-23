@@ -1,7 +1,7 @@
 ---
-title: /orders/fees/
+title: timp/orders/fees/
 name: Get Order Fees
-position: 5.1.2
+position: 6.0
 visibility: public
 method: post
 description: Get the Fees for a potential Order.
