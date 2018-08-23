@@ -1,7 +1,7 @@
 ---
 title: /timp/orders/create/
 name: Create Order
-position: 5.00
+position: 5.1.0
 visibility: public
 method: post
 description: Create an Order on your account
@@ -35,7 +35,7 @@ right_code: |
       "postal_code": "10112",
       "phone_number": "801-555-1212"
     },
-    "po_number": "po-5717483544",
+    "po_number": "po-6607685321",
     "retailer_provided_order_fee": 0.99,
     "retailer_provided_tax": 2.97,
     "retailer_provided_shipping_cost": 7.99,
@@ -53,7 +53,7 @@ right_code: |
 
   ~~~ json
   {
-    "order_uuid": "f7bc1028-844c-44ca-82df-fe76282d2a8b",
+    "order_uuid": "7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d",
     "messages": []
   }
   ~~~
@@ -153,7 +153,7 @@ messages
 
 ~~~ bash
 curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/create/" \
-     -H 'Authorization: Token 1234567890' \
+     -H 'Authorization: Token 45e4123d425bc0b1aa11988355c1d3eb986085e7' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "address": {
@@ -166,7 +166,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/create/" \
     "name": "Bob Iger",
     "address2": "STE 123"
   },
-  "po_number": "po-5717483544",
+  "po_number": "po-6607685321",
   "retailer_provided_order_fee": 0.99,
   "retailer_provided_tax": 2.97,
   "retailer_provided_dropship_fee": 0.5,
@@ -202,7 +202,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/create/" \
 
 ~~~ bash
 http --json POST 'https://api-dev.cruxconnect.com/timp/orders/create/' \
-    'Authorization':'Token 1234567890' \
+    'Authorization':'Token 45e4123d425bc0b1aa11988355c1d3eb986085e7' \
     'Content-Type':'application/json; charset=utf-8' \
     address:="{
   \"state\": \"NY\",
@@ -214,7 +214,7 @@ http --json POST 'https://api-dev.cruxconnect.com/timp/orders/create/' \
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    po_number="po-5717483544" \
+    po_number="po-6607685321" \
     retailer_provided_order_fee:=0.99 \
     retailer_provided_tax:=2.97 \
     retailer_provided_dropship_fee:=0.5 \
@@ -263,7 +263,7 @@ def send_request():
         response = requests.post(
             url="https://api-dev.cruxconnect.com/timp/orders/create/",
             headers={
-                "Authorization": "Token 1234567890",
+                "Authorization": "Token 45e4123d425bc0b1aa11988355c1d3eb986085e7",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    address:="{
@@ -276,7 +276,7 @@ def send_request():
   \"name\": \"Bob Iger\",
   \"address2\": \"STE 123\"
 }" \
-    po_number="po-5717483544" \
+    po_number="po-6607685321" \
     retailer_provided_order_fee:=0.99 \
     retailer_provided_tax:=2.97 \
     retailer_provided_dropship_fee:=0.5 \
@@ -328,7 +328,7 @@ def send_request():
         port: '443',
         path: '/timp/orders/create/',
         method: 'POST',
-        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 45e4123d425bc0b1aa11988355c1d3eb986085e7","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -356,7 +356,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"skus\":[{\"quantity\":\"2\",\"sku_id\":\"7FZvMyg0BjfewNJJ\",\"supplier_org_uuid\":\"d6ac857d-c844-4312-8485-6d121d065308\",\"retailer_provided_shipping_carrier\":\"UPS\",\"retailer_provided_shipping_method\":\"Ground\",\"retailer_line_item_instructions\":\"Ship seperately as available\",\"retailer_provided_sku_cost\":27.2,\"retailer_provided_line_item_attributes\":[{\"attribute_name\":\"donut\",\"attribute_value\":\"jelly\"}]}],\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"},\"po_number\":\"po-5717483544\",\"retailer_provided_order_fee\":0.99,\"retailer_provided_tax\":2.97,\"retailer_provided_shipping_cost\":7.99,\"retailer_provided_dropship_fee\":0.5,\"retailer_provided_order_attributes\":[{\"attribute_name\":\"donut\",\"attribute_value\":\"jelly\"}],\"retailer_provided_notes\":\"jelly donuts for everyone\"}")
+    request.write("{\"skus\":[{\"quantity\":\"2\",\"sku_id\":\"7FZvMyg0BjfewNJJ\",\"supplier_org_uuid\":\"d6ac857d-c844-4312-8485-6d121d065308\",\"retailer_provided_shipping_carrier\":\"UPS\",\"retailer_provided_shipping_method\":\"Ground\",\"retailer_line_item_instructions\":\"Ship seperately as available\",\"retailer_provided_sku_cost\":27.2,\"retailer_provided_line_item_attributes\":[{\"attribute_name\":\"donut\",\"attribute_value\":\"jelly\"}]}],\"address\":{\"name\":\"Bob Iger\",\"business_name\":\"NBC\",\"address1\":\"30 Rockefeller Plaza\",\"address2\":\"STE 123\",\"city\":\"New York\",\"state\":\"NY\",\"postal_code\":\"10112\",\"phone_number\":\"801-555-1212\"},\"po_number\":\"po-6607685321\",\"retailer_provided_order_fee\":0.99,\"retailer_provided_tax\":2.97,\"retailer_provided_shipping_cost\":7.99,\"retailer_provided_dropship_fee\":0.5,\"retailer_provided_order_attributes\":[{\"attribute_name\":\"donut\",\"attribute_value\":\"jelly\"}],\"retailer_provided_notes\":\"jelly donuts for everyone\"}")
     request.end();
 
 

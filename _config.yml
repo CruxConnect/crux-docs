@@ -34,17 +34,17 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     title: Product - Supplier
     position: 4.2
     type: api
-  ordering:
+  order:
     visibility: public
     title: Orders
     position: 5
     type: api
-  ordering_retailer:
+  order_retailer:
     visibility: public
     title: Orders - Retailer
     position: 5.1
     type: api
-  ordering_supplier:
+  order_supplier:
     visibility: public
     title: Orders - Supplier
     position: 5.2

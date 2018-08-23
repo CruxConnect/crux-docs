@@ -1,37 +1,49 @@
 ---
-title: /orders/items/cancel/&ltorder_item_uuid&gt/
-name: Cancel Order Item - Retailer
-position: 5.1.4
+title: /timp/orders/cancel/
+name: Cancel Order
+position: 5.1.3
 visibility: public
-method: delete
-description: Cancel an item on a pending Order
+method: patch
+description: Cancel a pending Order (for Retailers)
 right_code: |
+  ~~~ json
+  {
+    "order_uuid": "521a91e5-058d-4474-aeee-f0c148594a00"
+  }
+  ~~~
+  {: title="Request" }
+
 
 ---
 Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, your request to cancel an order is sent to the pertinent supplier(s).
 
-#### URL Parameters
 
-order_item_uuid>
-: (string) The Universal Unique Identifier for the item which you intend to cancel
+### Request Parameters:
+
+order_uuid
+: (string) The Universal Unique Identifier for the Order which you intend to cancel
+
+### Expected Response Codes
 
 {% include links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "DELETE" "https://api-sandbox.cruxconnect.com/orders/items/cancel//" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "PATCH" "https://api-sandbox.cruxconnect.com/timp/orders/cancel/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{}'
+     -d $'{
+  "order_uuid": "521a91e5-058d-4474-aeee-f0c148594a00"
+}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json DELETE 'https://api-sandbox.cruxconnect.com/orders/items/cancel//' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
-    'Content-Type':'application/json; charset=utf-8'
-
+http --json PATCH 'https://api-sandbox.cruxconnect.com/timp/orders/cancel/' \
+    'Authorization':'Token 1234567890' \
+    'Content-Type':'application/json; charset=utf-8' \
+    order_uuid="521a91e5-058d-4474-aeee-f0c148594a00"
 
 ~~~
 {: title="HTTPie" }
@@ -45,17 +57,17 @@ import json
 
 
 def send_request():
-    # Cancel Order Item - Retailer
-    # DELETE https://api-sandbox.cruxconnect.com/orders/items/cancel//
+    # Cancel Order
+    # PATCH https://api-sandbox.cruxconnect.com/timp/orders/cancel/
 
     try:
-        response = requests.delete(
-            url="https://api-sandbox.cruxconnect.com/orders/items/cancel//",
+        response = requests.patch(
+            url="https://api-sandbox.cruxconnect.com/timp/orders/cancel/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps()
+            data=json.dumps(    order_uuid="521a91e5-058d-4474-aeee-f0c148594a00")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -68,7 +80,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Cancel Order Item - Retailer
+// request Cancel Order
 (function(callback) {
     'use strict';
 
@@ -77,9 +89,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/orders/items/cancel//',
-        method: 'DELETE',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        path: '/timp/orders/cancel/',
+        method: 'PATCH',
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -107,7 +119,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{}")
+    request.write("{\"order_uuid\":\"521a91e5-058d-4474-aeee-f0c148594a00\"}")
     request.end();
 
 

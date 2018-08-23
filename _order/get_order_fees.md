@@ -1,41 +1,76 @@
 ---
-title: /timp/organizations/all_permissions/
-name: Get All Permissions
-position: 2.03
+title: /timp/orders/&lt;order_uuid&gt;/fees/
+name: Get Order Fees
+position: 4.04
 visibility: public
 method: get
-description: Get all available Permissions
+description: Get the Fees for a potential Order.
 right_code: |
-  ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
 
   ~~~ json
-  [
-    {
-      "uuid": "68b1647d-b6a7-48b1-9ec2-bf2f1003b6cc",
-      "name": "view_org_users",
-      "display_name": "View Users",
-      "description": "Ability to see the users in an organization",
-      "visibility": "BOTH",
-      "grouping": "ORGUSERS"
-    },
-  ]
+  {
+    "retailer_provided_tax": 2.97,
+    "retailer_provided_order_fee": 0.99,
+    "retailer_provided_shipping_cost": 7.99,
+    "retailer_provided_dropship_fee": null,
+    "supplier_provided_dropship_fee": null,
+    "supplier_provided_order_fee": 0.25,
+    "supplier_provided_tax": 1.25,
+    "supplier_provided_po_number": null,
+    "supplier_provided_order_total": 150,
+    "line_items": [
+      {
+        "line_item_uuid": "0505d71f-4360-4055-b3e8-0caf51c93491",
+        "supplier_provided_sku_cost": 0
+      }
+    ]
+  }
   ~~~
   {: title="Response" }
 
 ---
-Get all of the available Permissions based on the type of account requested on. These change based on Retailer or Supplier accounts.
+Before placing an order, use this call to return the total Fees for the Order. This may be used a number of ways. Perhaps you would like to make sure you are charging enough for an order and would like a "sanity check" on the price before committing to the potential buyer. This API call allows you to get the full, all-inclusive price for the Order.
 
-To view orgainzation users, you must be assigned the 'view_org_users' permission.
-{: .info }
-
-{% include timp/links/available_permissions.md %}
 
 ### Response Parameters:
 
-{% include timp/objects/permission.md %}
+supplier_provided_drop_ship_fee
+: (decimal) Supplier provided drop ship fee (2 decimal positions)
+
+supplier_provided_order_fee
+: (decimal) Supplier provided order fee (2 decimal places)
+
+supplier_provided_tax
+: (decimal) Supplier provided tax (2 decimal places)
+
+supplier_po_number
+: (string) Supplier provided purchase order number
+
+supplier_provided_order_total
+: (decimal) Supplier provided (2 decimal places)
+
+line_items
+: (array) Array of line item objects
+
+retailer_provided_tax
+: (decimal) Retail provided tax (2 decimal places)
+
+retailer_provided_order_fee
+: (decimal) Retailer provided fee (2 decimal places)
+
+retailer_provided_shipping_cost
+: (decimal) Retailer provided shipping cost (2 decimal places)
+
+retailer_provided_drop_ship_fee
+: (decimal) Retail provided drop ship fee (2 decimal places)
+
+#### Line Item Object
+
+line_item_uuid
+: (string) Line item universal unique identifier
+
+supplier_provided_sku_cost
+: decimal Supplier provide sku cost(2 decimal places)
 
 ### Expected Response Codes
 
@@ -43,7 +78,7 @@ To view orgainzation users, you must be assigned the 'view_org_users' permission
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/timp/organizations/all_permissions/" \
+curl "https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -52,7 +87,7 @@ curl "https://api-dev.cruxconnect.com/timp/organizations/all_permissions/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-dev.cruxconnect.com/timp/organizations/all_permissions/' \
+http --json GET 'https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -69,12 +104,12 @@ import json
 
 
 def send_request():
-    # Get All Permissions
-    # GET https://api-dev.cruxconnect.com/timp/organizations/all_permissions/
+    # Get Order Fees
+    # GET https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/timp/organizations/all_permissions/",
+            url="https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -92,7 +127,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get All Permissions
+// request Get Order Fees
 (function(callback) {
     'use strict';
 
@@ -101,7 +136,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/timp/organizations/all_permissions/',
+        path: '/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
