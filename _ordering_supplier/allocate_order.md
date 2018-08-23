@@ -46,10 +46,10 @@ order_uuid
 line_items
 : (array) ***Required*** The Order Line Items array contains the individual Order Item objects
 
-#### Order Item Object
+#### Line Item Object
 
 line_item_uuid
-: (string) ***Required*** The line item uuid for the product purchased by the Retailer
+: (string) ***Required*** The line Item UUID for the product purchased by the Retailer
 
 allocation
 : (object) ***Required*** The Allocation Object parameter includes the quantites accepted, rejected, and backordered.
@@ -73,16 +73,16 @@ backorder_date
 line_items
 : (array) Array of line item objects
 
-#### Line Item Objects
+#### Line Item Object
 
 line_item_uuid
-: (string) The Universal Unique Identifier for the Item
+: (string) The Universal Unique Identifier for the Line Item
 
-quantity_shipped
-: (integer) The Quantity of the Item included in the shipment associated with the Tracking Number
+line_item_status
+: (string) Line Item status
 
-supplier_provided_sku_cost
-: (decimal) The SKU cost (2 decimal places)
+line_item_designation
+: (string) Line Item designation
 
 ### Expected Response Codes
 
@@ -107,10 +107,10 @@ order_uuid
 line_items
 : (array) ***Required*** The Order Line Items array contains the individual Order Item objects
 
-#### Order Item Object
+#### Line Item Object
 
 line_item_uuid
-: (string) ***Required*** The line item uuid for the product purchased by the Retailer
+: (string) ***Required*** The line Item UUID for the product purchased by the Retailer
 
 allocation
 : (object) ***Required*** The Allocation Object parameter includes the quantites accepted, rejected, and backordered.
@@ -134,16 +134,16 @@ backorder_date
 line_items
 : (array) Array of line item objects
 
-#### Line Item Objects
+#### Line Item Object
 
 line_item_uuid
-: (string) The Universal Unique Identifier for the Item
+: (string) The Universal Unique Identifier for the Line Item
 
-quantity_shipped
-: (integer) The Quantity of the Item included in the shipment associated with the Tracking Number
+line_item_status
+: (string) Line Item status
 
-supplier_provided_sku_cost
-: (decimal) The SKU cost (2 decimal places)
+line_item_designation
+: (string) Line Item designation
 
 ### Expected Response Codes
 
