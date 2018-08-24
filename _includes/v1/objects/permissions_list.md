@@ -6,4 +6,4 @@ assigned
 permission
 : (object) Permission is an object detailing a specific Permission with a uuid, name, display name, and description
 
-{% include objects/permission.md %}
+{% include v1/objects/permission.md %}

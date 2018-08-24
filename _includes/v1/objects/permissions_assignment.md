@@ -9,4 +9,4 @@ org_user
 status
 : (string) User's account status which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
 
-{% include objects/permissions_list.md %}
+{% include v1/objects/permissions_list.md %}

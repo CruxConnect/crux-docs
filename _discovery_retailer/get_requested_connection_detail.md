@@ -141,7 +141,7 @@ person
 <!-- task-github-127 Create File include file -->
 #### File Object
 
-{% include objects/file_upload.md %}
+{% include timp/objects/file_upload.md %}
 
 ### Expected Response Codes
 

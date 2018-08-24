@@ -6,7 +6,7 @@ uuid
 person
 : (object) Person is an object containing a uuid, first name, last name, email, and phone number
 
-{% include objects/person.md %}
+{% include v1/objects/person.md %}
 
 <!-- task-github-127
 job_title

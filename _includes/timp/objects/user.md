@@ -12,4 +12,4 @@ permission_assignments
 status
 : (string) User's account status which can be "CONFIRMATION WAITING", "ACTIVE", or "DEACTIVATED"
 
-{% include objects/person.md %}
+{% include timp/objects/person.md %}

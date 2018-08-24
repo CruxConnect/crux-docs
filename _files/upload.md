@@ -27,7 +27,7 @@ For this request the the content-type header should be `multipart/form-data`.
 
 ### Request Parameters
 
-{% include objects/file_upload.md %}
+{% include timp/objects/file_upload.md %}
 
 ### Response Parameters:
 
