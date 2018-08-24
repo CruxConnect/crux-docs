@@ -1,7 +1,7 @@
 ---
 title: /timp/orders/&lt;order_uuid&gt/invoices/
 name: Update Order Invoices
-position: 9.04
+position: 5.2.3
 visibility: public
 method: post
 description: Update Order attributes
