@@ -7,11 +7,6 @@ method: get
 description: Get all direct Connections specific to your account
 right_code: |
   ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
   [
     {
       "uuid": "c3081fd8-202b-47f2-9347-63d3c27028f1",

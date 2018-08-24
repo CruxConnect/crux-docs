@@ -1,5 +1,5 @@
 ---
-title: /timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/
+title: /timp/orders/allocation/&lt;order_uuid&gt;/
 name: Allocate Order
 position: 5.2.0
 visibility: public

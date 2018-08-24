@@ -7,11 +7,6 @@ method: get
 description: Get all available Permissions
 right_code: |
   ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
   [
     {
       "uuid": "68b1647d-b6a7-48b1-9ec2-bf2f1003b6cc",
