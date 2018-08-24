@@ -1,7 +1,7 @@
 ---
-title: /products/inventory-lists/
+title: /timp/products/inventory-lists/
 name: Get Inventory Lists
-position: 11.00
+position: 4.00
 visibility: public
 method: get
 description: Get the Inventory Lists for your account
@@ -108,7 +108,7 @@ description
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -117,7 +117,7 @@ curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/inventory-lists/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -135,11 +135,11 @@ import json
 
 def send_request():
     # Get List of Inventory Lists
-    # GET https://api-sandbox.cruxconnect.com/products/inventory-lists/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/",
             headers={
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
@@ -166,7 +166,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/',
+        path: '/timp/products/inventory-lists/',
         method: 'GET',
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };

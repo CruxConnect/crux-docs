@@ -1,7 +1,7 @@
 ---
-title: /products/skus/&ltsku_uuid&gt/
+title: /timp/products/skus/&ltsku_uuid&gt/
 name: Get Sku Detail
-position: 4.08
+position: 3.08
 visibility: public
 method: get
 description: Get Details about a SKU
@@ -174,7 +174,7 @@ sku_uuid
 {% include links/response_codes.md %}
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -207,7 +207,7 @@ curl "https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     address:="{
@@ -247,11 +247,11 @@ import json
 
 def send_request():
     # Get Sku Detail
-    # GET https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -300,7 +300,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/',
+        path: '/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

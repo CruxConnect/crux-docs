@@ -1,7 +1,7 @@
 ---
 title: /timp/products/catalogs/
 name: Get Catalogs
-position: 2.00
+position: 3.00
 visibility: public
 method: get
 description: Get the Catalogs you have access to

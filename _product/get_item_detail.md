@@ -1,7 +1,7 @@
 ---
 title: /products/items/&lt;item_uuid&gt;/
 name: Get Item Detail
-position: 4.03
+position: 3.03
 visibility: public
 method: get
 description: Get Details about an Item and the SKUs associated to it.

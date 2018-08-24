@@ -1,7 +1,7 @@
 ---
-title: /products/skus/
+title: /timp/products/skus/
 name: Get SKUs
-position: 4.07
+position: 3.07
 visibility: public
 method: get
 description: Get SKUs allows you to return a complete list of SKUs you are interested in.
@@ -150,7 +150,7 @@ An array of SKU Objects
 {% include links/response_codes.md %}
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/skus/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/skus/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -159,7 +159,7 @@ curl "https://api-sandbox.cruxconnect.com/products/skus/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/products/skus/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -177,11 +177,11 @@ import json
 
 def send_request():
     # Get SKUs
-    # GET https://api-sandbox.cruxconnect.com/products/skus/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/skus/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/skus/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/skus/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -208,7 +208,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/skus/',
+        path: '/timp/products/skus/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

@@ -1,7 +1,7 @@
 ---
-title: /products/items/
+title: /timp/products/items/
 name: Get Items
-position: 4.02
+position: 3.02
 visibility: public
 method: get
 description: Get Items allows you to return a complete list of items you are interested in.
@@ -245,7 +245,7 @@ An array of item objects is returned
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/items/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/items/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -254,7 +254,7 @@ curl "https://api-sandbox.cruxconnect.com/products/items/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/items/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/products/items/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -272,11 +272,11 @@ import json
 
 def send_request():
     # Get Items
-    # GET https://api-sandbox.cruxconnect.com/products/items/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/items/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/items/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/items/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -303,7 +303,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/items/',
+        path: '/timp/products/items/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
