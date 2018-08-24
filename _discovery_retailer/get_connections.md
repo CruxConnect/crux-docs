@@ -163,7 +163,7 @@ account_manager
 
 #### Contact Object
 
-{% include objects/contact.md %}
+{% include timp/objects/contact.md %}
 
 #### Account Manager Object:
 
@@ -175,11 +175,11 @@ person
 
 #### Person Object:
 
-{% include objects/contact.md %}
+{% include timp/objects/contact.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash

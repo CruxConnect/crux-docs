@@ -89,8 +89,9 @@ uuid
 : (string) Permission UUID
 
 name
-: (string) Permission Name.
-: {% include links/available_permissions.md %}
+: (string) Permission Name
+
+{% include timp/links/available_permissions.md %}
 
 display_name
 : (string) Permission Display Name
@@ -111,7 +112,7 @@ uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash

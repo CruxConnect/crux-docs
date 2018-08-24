@@ -63,7 +63,7 @@ uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash

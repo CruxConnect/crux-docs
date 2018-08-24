@@ -39,7 +39,7 @@ Get the Permissions on a specified User. This call returns the Permissions in a 
 To view orgainzation users, you must be assigned the 'view_org_users' permission.
 {: .info }
 
-{% include links/available_permissions.md %}
+{% include timp/links/available_permissions.md %}
 
 ### URL Parameters
 

@@ -38,7 +38,7 @@ created_at
 type
 : (string) The Type parameter indicates where the notification is sent. For this call it should always say "Dashboard".
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/timp/notifications/" \

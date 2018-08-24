@@ -98,10 +98,10 @@ sku_id
 : (string) The SKU ID is the SKU provided by the supplier which identifies that product you are purchasing
 
 quantity
-: (integer) ***Required*** The Quantity ordered of the SKU ID
+: (integer) **Required** The Quantity ordered of the SKU ID
 
 supplier_org_uuid
-: (string) ***Required*** The Supplier Identifier is the ID associated with the Supplier providing the SKU
+: (string) **Required** The Supplier Identifier is the ID associated with the Supplier providing the SKU
 
 retailer_provided_shipping_carrier
 : (string) The Retailer provided shipping carrier

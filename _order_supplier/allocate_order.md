@@ -105,26 +105,26 @@ order_uuid
 ### Request Parameters:
 
 line_items
-: (array) ***Required*** The Order Line Items array contains the individual Order Item objects
+: (array) **Required** The Order Line Items array contains the individual Order Item objects
 
 #### Line Item Object
 
 line_item_uuid
-: (string) ***Required*** The line Item UUID for the product purchased by the Retailer
+: (string) **Required** The line Item UUID for the product purchased by the Retailer
 
 allocation
-: (object) ***Required*** The Allocation Object parameter includes the quantites accepted, rejected, and backordered.
+: (object) ***Required** The Allocation Object parameter includes the quantites accepted, rejected, and backordered.
 
 #### Allocation Object
 
 quantity_accepted
-: (integer) ***Required*** The Quantiy Accepted by the supplier
+: (integer) **Required** The Quantiy Accepted by the supplier
 
 quantity_rejected
-: (integer) ***Required*** The Quantity Rejected by the Supplier is the Quantity that they cannot fulfill.
+: (integer) **Required** The Quantity Rejected by the Supplier is the Quantity that they cannot fulfill.
 
 quantity_backordered
-: (integer) ***Required*** The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state.
+: (integer) **Required** The Quantity Backordered is the quantity of the order that cannot be shipped because it is currently in a "backordered" state.
 
 backorder_date
 : (string) The Date that the Backordered SKU will be available for shipment. String format: yyyy-mmm-ddd

@@ -15,7 +15,7 @@ Cancel a pending Order. Granted that the supplier(s) can accept a cancellation, 
 order_item_uuid>
 : (string) The Universal Unique Identifier for the item which you intend to cancel
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash

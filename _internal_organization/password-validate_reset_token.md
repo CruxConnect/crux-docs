@@ -1,5 +1,5 @@
 ---
-title: /organizations/complete-password/
+title: /timp/organizations/complete-password/
 name: Validate Password Token
 position: 1.02
 visibility: internal
@@ -14,18 +14,18 @@ This API call requires that you have first requested to reset your password (["R
 token
 : (string) The reset token delivered to the email that was provided in the "Reset Password" API call
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01" \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01" \
      -H 'Content-Type: application/octet-stream'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api-sandbox.cruxconnect.com/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01' \
+http GET 'https://api-sandbox.cruxconnect.com/timp/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01' \
     'Content-Type':'application/octet-stream'
 
 ~~~
@@ -40,11 +40,11 @@ import requests
 
 def send_request():
     # Validate Password Token
-    # GET https://api-sandbox.cruxconnect.com/organizations/complete-password/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/complete-password/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/complete-password/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/complete-password/",
             params={
                 "token": "VBnQ8wmbEuJdoqpAFh01",
             },
@@ -72,7 +72,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01',
+        path: '/timp/organizations/complete-password/?token=VBnQ8wmbEuJdoqpAFh01',
         method: 'GET',
         headers: {"Content-Type":"application/octet-stream"}
     };
