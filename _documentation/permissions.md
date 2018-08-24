@@ -1,7 +1,7 @@
 ---
 title: Permissions
 visibility: public
-position: 3
+position: 4
 ---
 
 User access to areas of the site are based on specific permmissions being authorized. Access also depends on if the user is from a Retailer or Supplier organization.
