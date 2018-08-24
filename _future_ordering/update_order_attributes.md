@@ -48,9 +48,9 @@ supplier_provided_order_attributes
 
 #### Retailer and Supplier Order Attribute Object
 
-{% include orders/attributes.md %}
+{% include timp/orders/attributes.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 

@@ -102,11 +102,11 @@ phone_number
 
 #### Order Attributes
 
-{% include orders/attributes.md %}
+{% include timp/orders/attributes.md %}
 
 #### Line Item Attributes
 
-{% include orders/attributes.md %}
+{% include timp/orders/attributes.md %}
 
 ### Response Parameters:
 
@@ -157,15 +157,15 @@ submitted_by_user
 
 #### Address Object:
 
-{% include objects/address_business.md %}
+{% include timp/objects/address_business.md %}
 
 #### Retailer Provided Fees Object:
 
-{% include orders/response/retailer_fees.md %}
+{% include timp/orders/response/retailer_fees.md %}
 
 #### Attributes Object
 
-{% include orders/attributes.md %}
+{% include timp/orders/attributes.md %}
 
 #### Invoice Object
 
@@ -267,4 +267,4 @@ line_items
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}

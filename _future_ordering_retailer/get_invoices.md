@@ -59,7 +59,7 @@ supplier_provided_order_total
 
 #### Address Object
 
-{% include orders/address.md %}
+{% include timp/orders/address.md %}
 
 #### Line Item Object
 
@@ -86,7 +86,7 @@ supplier_provided_order_attributes
 
 ##### Retailer and Supplier Attribute Objects
 
-{% include orders/attributes.md %}
+{% include timp/orders/attributes.md %}
 
 ### Response Parameters:
 
@@ -95,4 +95,4 @@ invoice_uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
