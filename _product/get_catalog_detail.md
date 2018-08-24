@@ -44,7 +44,7 @@ catalog_uuid
 
 ### Response Parameters:
 
-{% include product/response/catalog.md %}
+{% include timp/product/response/catalog.md %}
 
 #### Supplier Object
 
@@ -63,7 +63,7 @@ uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash

@@ -135,43 +135,43 @@ sku_uuid
 
 ### Response Parameters:
 
-{% include product/response/sku.md %}
+{% include timp/product/response/sku.md %}
 
 #### Price Tier Object:
 
-{% include product/response/price_tier.md %}
+{% include timp/product/response/price_tier.md %}
 
 #### Product Image Object:
 
-{% include product/response/image.md %}
+{% include timp/product/response/image.md %}
 
 #### Product Video Object:
 
-{% include product/response/video.md %}
+{% include timp/product/response/video.md %}
 
 #### SKU Measurements Object:
 
-{% include product/response/measurements_sku.md %}
+{% include timp/product/response/measurements_sku.md %}
 
 #### Package Measurements Object:
 
-{% include product/response/measurements_package.md %}
+{% include timp/product/response/measurements_package.md %}
 
 #### Product Identifiers Object:
 
-{% include product/response/product_identifiers.md %}
+{% include timp/product/response/product_identifiers.md %}
 
 #### Inventory List Object:
 
-{% include product/response/inventory_list_minimal.md %}
+{% include timp/product/response/inventory_list_minimal.md %}
 
 #### Supplier Object:
 
-{% include product/response/supplier_minimal.md %}
+{% include timp/product/response/supplier_minimal.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
 curl "https://api-sandbox.cruxconnect.com/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/" \

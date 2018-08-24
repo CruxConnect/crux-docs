@@ -228,36 +228,36 @@ item_attributes
 
 #### Supplier Object:
 
-{% include product/response/supplier_minimal.md %}
+{% include timp/product/response/supplier_minimal.md %}
 
 #### Cost Range Object:
 
-{% include product/response/cost_range.md %}
+{% include timp/product/response/cost_range.md %}
 
 #### Minimum Advertized Price Range Object:
 
-{% include product/response/map_range.md %}
+{% include timp/product/response/map_range.md %}
 
 #### Manufacturer's Suggested Retail Price (MSRP) Range Object:
 
-{% include product/response/msrp_range.md %}
+{% include timp/product/response/msrp_range.md %}
 
 #### Product Images Object:
 
-{% include product/response/image.md %}
+{% include timp/product/response/image.md %}
 
 #### Product Videos Object:
 
-{% include product/response/video.md %}
+{% include timp/product/response/video.md %}
 
 #### Item Attributes Object
 
-{% include objects/attributes.md %}
+{% include timp/objects/attributes.md %}
 
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/" \

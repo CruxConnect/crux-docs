@@ -181,67 +181,67 @@ An array of item objects is returned
 
 #### Item Object
 
-{% include product/response/item.md %}
+{% include timp/product/response/item.md %}
 
 #### SKU Object:
 
-{% include product/response/sku.md %}
+{% include timp/product/response/sku.md %}
 
 #### Price Tier Object:
 
-{% include product/response/price_tier.md %}
+{% include timp/product/response/price_tier.md %}
 
 #### Product Image Object:
 
-{% include product/response/image.md %}
+{% include timp/product/response/image.md %}
 
 #### Product Videos Object:
 
-{% include product/response/video.md %}
+{% include timp/product/response/video.md %}
 
 #### SKU Measurements Object:
 
-{% include product/response/measurements_sku.md %}
+{% include timp/product/response/measurements_sku.md %}
 
 #### Package Measurements Object:
 
-{% include product/response/measurements_package.md %}
+{% include timp/product/response/measurements_package.md %}
 
 #### Product Identifiers Object:
 
-{% include product/response/product_identifiers.md %}
+{% include timp/product/response/product_identifiers.md %}
 
 #### Inventory List Object:
 
-{% include product/response/inventory_list_minimal.md %}
+{% include timp/product/response/inventory_list_minimal.md %}
 
 #### Supplier Object:
 
-{% include product/response/supplier_minimal.md %}
+{% include timp/product/response/supplier_minimal.md %}
 
 #### Cost Range Object:
 
-{% include product/response/cost_range.md %}
+{% include timp/product/response/cost_range.md %}
 
 #### Minimum Advertized Price Range Object:
 
-{% include product/response/map_range.md %}
+{% include timp/product/response/map_range.md %}
 
 #### Manufacturer's Suggested Retail Price (MSRP) Range Object:
 
-{% include product/response/msrp_range.md %}
+{% include timp/product/response/msrp_range.md %}
 
 #### Item Product Images Object:
 
-{% include product/response/image.md %}
+{% include timp/product/response/image.md %}
 
 #### Item Product Videos Object:
 
-{% include product/response/video.md %}
+{% include timp/product/response/video.md %}
 
 # Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash

@@ -43,7 +43,7 @@ uuid
 : (string) The Universal Unique Identifier for the Export.
 
 #### Expected Response Codes
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/export/" \

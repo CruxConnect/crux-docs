@@ -97,47 +97,47 @@ Create a SKU to add to a specified item_uuid.
 
 ### Request Parameters:
 
-{% include product/request/sku.md %}
+{% include timp/product/request/sku.md %}
 
 ### Response Parameters:
 
-{% include product/response/sku.md %}
+{% include timp/product/response/sku.md %}
 
 #### SKU Distinguishing Attributes Object:
 
-{% include objects/attributes.md %}
+{% include timp/objects/attributes.md %}
 
 #### Price Tier Object:
 
-{% include objects/price_tier.md %}
+{% include timp/objects/price_tier.md %}
 
 #### Product Image Object:
 
-{% include product/response/image.md %}
+{% include timp/product/response/image.md %}
 
 #### Product Videos Object:
 
-{% include product/response/video.md %}
+{% include timp/product/response/video.md %}
 
 #### SKU Measurements Object:
 
-{% include product/response/measurements_sku.md %}
+{% include timp/product/response/measurements_sku.md %}
 
 #### Package Measurements Object:
 
-{% include product/response/measurements_package.md %}
+{% include timp/product/response/measurements_package.md %}
 
 #### Product Identifiers Object:
 
-{% include product/response/product_identifiers.md %}
+{% include timp/product/response/product_identifiers.md %}
 
 #### Catalog Object:
 
-{% include product/response/catalog_simple.md %}
+{% include timp/product/response/catalog_simple.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
