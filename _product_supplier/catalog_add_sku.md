@@ -1,7 +1,7 @@
 ---
-title: /products/catalogs/&ltcatalog-uuid&gt/add-skus/
+title: /timp/products/catalogs/&lt;catalog_uuid&gt;/add-skus/
 name: Catalog Add SKU
-position: 12.06
+position: 11.06
 visibility: public
 method: post
 description: Add already existing SKUs to a Catalog
@@ -9,12 +9,16 @@ right_code: |
   ~~~ json
   {
     "sku_uuids": [
-      "12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d"
+      ""
     ]
   }
   ~~~
   {: title="Request" }
 
+  ~~~ json
+  null
+  ~~~
+  {: title="Response" }
 
 ---
 Add already existing SKUs to a Catalog for Retailers to access. By providing your catalog_uuid in the URL and array of sku_uuids, you can successfully add them to items previously included in the indicated Catalog.
@@ -35,12 +39,12 @@ sku_uuids
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "POST" "https://api-dev.cruxconnect.com/timp/products/catalogs/f3603476-1f48-4ef9-a76c-0ec2f9c612fc/add-skus/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "sku_uuids": [
-    "12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d"
+    ""
   ]
 }'
 
@@ -48,11 +52,11 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json POST 'https://api-dev.cruxconnect.com/timp/products/catalogs/f3603476-1f48-4ef9-a76c-0ec2f9c612fc/add-skus/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_uuids:="[
-  \"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"
+  \"\"
 ]"
 
 ~~~
@@ -68,17 +72,17 @@ import json
 
 def send_request():
     # Catalog Add SKU
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/
+    # POST https://api-dev.cruxconnect.com/timp/products/catalogs/f3603476-1f48-4ef9-a76c-0ec2f9c612fc/add-skus/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/",
+            url="https://api-dev.cruxconnect.com/timp/products/catalogs/f3603476-1f48-4ef9-a76c-0ec2f9c612fc/add-skus/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    sku_uuids:="[
-  \"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"
+  \"\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -99,11 +103,11 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
+        hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/add-skus/',
+        path: '/timp/products/catalogs/f3603476-1f48-4ef9-a76c-0ec2f9c612fc/add-skus/',
         method: 'POST',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -131,7 +135,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"sku_uuids\":[\"12bfdcde-c9f2-4c70-b39c-6b9f5b884c4d\"]}")
+    request.write("{\"sku_uuids\":[\"\"]}")
     request.end();
 
 

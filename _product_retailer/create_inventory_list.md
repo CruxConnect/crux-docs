@@ -1,7 +1,7 @@
 ---
 title: /timp/products/inventory-lists/
 name: Create Inventory List
-position: 11.02
+position: 10.02
 visibility: public
 method: post
 description: Create an Inventory List for your account

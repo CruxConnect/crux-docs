@@ -7,12 +7,31 @@ method: get
 description: Get the Catalogs you have access to
 right_code: |
   ~~~ json
-
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
-  []
+  {
+    "pagination": {
+      "total_count": 150,
+      "start": 30,
+      "limit": 10,
+    },
+    "catalogs": [
+      {
+        "uuid": "f3603476-1f48-4ef9-a76c-0ec2f9c612fc",
+        "supplier": {
+          "uuid": "ed0eb521-1a0a-4526-a155-31daa726e66c"
+        },
+        "skus": [],
+        "num_skus": 0,
+        "default_shipping_cost": 5.33,
+        "default_handling_cost": 1.89,
+        "retailers": [],
+        "created": "2018-08-24T01:00:53.219760Z",
+        "last_updated": "2018-08-24T01:00:53.219813Z",
+        "name": "Crux  Worldwide Connection QCSKlNstIhIpYPB1CKsh2H3ECh4ttVLD",
+        "description": "Crux Worldwide Connection is a test catalog for the purposes of testing",
+        "is_discoverable": null
+      },
+    ]
+  }
   ~~~
   {: title="Response" }
 
@@ -22,9 +41,17 @@ Get the Catalogs you have access to.
 
 ### Response Parameters:
 
-An array of catalog objects is returned
+pagination
+: (object) Pagination Object
 
-### Catalog Object
+catalogs
+: (array) An array of Catalog objects
+
+#### Pagination Object
+
+{% include timp/product/response/pagination.md %}
+
+#### Catalog Object
 
 {% include timp/product/response/catalog.md %}
 
@@ -34,15 +61,15 @@ An array of catalog objects is returned
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/timp/products/catalogs/" \
-     -H 'Authorization: Token 1234567890'
+curl "https://api-dev.cruxconnect.com/timp/products/catalogs/" \
+     -H 'Authorization: Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api-sandbox.cruxconnect.com/timp/products/catalogs/' \
-    'Authorization':'Token 1234567890'
+http GET 'https://api-dev.cruxconnect.com/timp/products/catalogs/' \
+    'Authorization':'Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad'
 
 ~~~
 {: title="HTTPie" }
@@ -56,13 +83,13 @@ import requests
 
 def send_request():
     # Get Catalogs
-    # GET https://api-sandbox.cruxconnect.com/timp/products/catalogs/
+    # GET https://api-dev.cruxconnect.com/timp/products/catalogs/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/timp/products/catalogs/",
+            url="https://api-dev.cruxconnect.com/timp/products/catalogs/",
             headers={
-                "Authorization": "Token 1234567890",
+                "Authorization": "Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad",
             },
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -83,11 +110,11 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
+        hostname: 'api-dev.cruxconnect.com',
         port: '443',
         path: '/timp/products/catalogs/',
         method: 'GET',
-        headers: {"Authorization":"Token 1234567890"}
+        headers: {"Authorization":"Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

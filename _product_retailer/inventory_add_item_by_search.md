@@ -1,7 +1,7 @@
 ---
 title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/add-items-by-search/
 name: Inventory Add Item by Search
-position: 11.05
+position: 10.05
 visibility: public
 method: post
 description: Add Items to an existing Inventory List by Search

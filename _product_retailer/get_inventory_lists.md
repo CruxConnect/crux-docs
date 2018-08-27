@@ -1,7 +1,7 @@
 ---
 title: /timp/products/inventory-lists/
 name: Get Inventory Lists
-position: 4.00
+position: 10.00
 visibility: public
 method: get
 description: Get the Inventory Lists for your account

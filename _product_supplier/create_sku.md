@@ -1,7 +1,7 @@
 ---
-title: /products/skus/
+title: /timp/products/skus/
 name: Create SKU
-position: 12.07
+position: 11.07
 visibility: public
 method: post
 description: Create a SKU to add to a specified item_uuid
@@ -9,19 +9,16 @@ right_code: |
   ~~~ json
   {
     "item": {
-      "uuid": "c278fcc7-ff5e-4494-9ccf-36d6d6d167c8"
+      "uuid": "905c3e4b-ef10-4f77-b07e-03d4ecb743a0"
     },
-    "sku_id": "LYsNxu-iIhTgvti-X3qj0ade",
+    "sku_id": "Lvfnsf-jwoQ0qLQ-H3tUmrVi",
     "restrictions": "tmpunavail",
     "condition": "used",
     "quantity_in_stock": "500",
     "quantity_on_backorder": "100",
     "number_of_units_bundled": "2",
-    "sku_distinguishing_attributes": {
+    "distinguishing_attributes": {
       "color": "blue"
-    },
-    "sku_nondistinguishing_attributes": {
-      "diameter_in_inches": 3.4,
     },
     "minimum_advertised_price": "40.00",
     "msrp": "55.99",
@@ -33,17 +30,12 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "7be0e3de-4108-4b08-85b4-19ddd0adcae4",
+    "uuid": "4c443958-eb6f-4043-8cbc-b227e044334e",
     "restrictions": "tmpunavail",
     "condition": "used",
-    "sku_distinguishing_attributes": {
-      "color": "blue"
-    },
-    "sku_nondistinguishing_attributes": {
-      "diameter_in_inches": 3.4,
-    },
+    "sku_distinguishing_attributes": {},
     "item": {
-      "uuid": "2bce11c2-e60c-47a0-899b-81edfa90f666"
+      "uuid": "905c3e4b-ef10-4f77-b07e-03d4ecb743a0"
     },
     "minimum_advertised_price": 40,
     "msrp": 55.99,
@@ -52,20 +44,20 @@ right_code: |
     "product_videos": [],
     "measurements": {
       "sku": {
-        "weight_units": null,
         "weight": null,
-        "height": null,
+        "weight_units": null,
+        "length": null,
         "width": null,
-        "dimension_units": null,
-        "length": null
+        "height": null,
+        "dimension_units": null
       },
       "package": {
-        "weight_units": null,
         "weight": null,
-        "height": null,
+        "weight_units": null,
+        "length": null,
         "width": null,
-        "dimension_units": null,
-        "length": null
+        "height": null,
+        "dimension_units": null
       }
     },
     "product_identifiers": {
@@ -78,22 +70,27 @@ right_code: |
     },
     "catalogs": [
       {
-        "uuid": "81bd100e-e347-4ee3-9dfd-79a7a59aaa72",
+        "uuid": "96ce2c9d-044f-4208-9148-5e4b5b2771cb",
         "name": "__master__"
       }
     ],
-    "created": "2018-04-25T22:24:27.631175Z",
-    "last_updated": "2018-04-25T22:24:27.631223Z",
-    "sku_id": "DtMEqi-mWpAhAe5-qLuMx5Rc",
+    "created": "2018-08-24T22:45:10.623218Z",
+    "last_updated": "2018-08-24T22:45:10.623271Z",
+    "sku_id": "AKpvhb-UhLREqWn-cO3bLy4P",
     "quantity_in_stock": 500,
     "quantity_on_backorder": 100,
-    "number_of_units_bundled": 2
+    "number_of_units_bundled": 2,
+    "sku_nondistinguishing_attributes": {}
   }
   ~~~
   {: title="Response" }
 
 ---
 Create a SKU to add to a specified item_uuid.
+
+### Request Parameters:
+
+{% include timp/product/request/sku.md %}
 
 ### Request Parameters:
 
@@ -139,8 +136,65 @@ Create a SKU to add to a specified item_uuid.
 
 {% include timp/links/response_codes.md %}
 
+### Expected Response Codes
+
+# Short Description
+Create a SKU to add to a specified item_uuid
+
+# Long Description
+Create a SKU to add to a specified item_uuid.
+
+### Request Parameters:
+
+{% include timp/product/request/sku.md %}
+
+### Request Parameters:
+
+{% include timp/product/request/sku.md %}
+
+### Response Parameters:
+
+{% include timp/product/response/sku.md %}
+
+#### SKU Distinguishing Attributes Object:
+
+{% include timp/objects/attributes.md %}
+
+#### Price Tier Object:
+
+{% include timp/objects/price_tier.md %}
+
+#### Product Image Object:
+
+{% include timp/product/response/image.md %}
+
+#### Product Videos Object:
+
+{% include timp/product/response/video.md %}
+
+#### SKU Measurements Object:
+
+{% include timp/product/response/measurements_sku.md %}
+
+#### Package Measurements Object:
+
+{% include timp/product/response/measurements_package.md %}
+
+#### Product Identifiers Object:
+
+{% include timp/product/response/product_identifiers.md %}
+
+#### Catalog Object:
+
+{% include timp/product/response/catalog_simple.md %}
+
+### Expected Response Codes
+
+{% include timp/links/response_codes.md %}
+
+
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
+curl -X "POST" "https://api-dev.cruxconnect.com/timp/products/skus/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -149,27 +203,24 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
   "condition": "used",
   "minimum_advertised_price_currency": "USD",
   "item": {
-    "uuid": "c278fcc7-ff5e-4494-9ccf-36d6d6d167c8"
+    "uuid": "905c3e4b-ef10-4f77-b07e-03d4ecb743a0"
   },
-  "sku_id": "LYsNxu-iIhTgvti-X3qj0ade",
+  "sku_id": "Lvfnsf-jwoQ0qLQ-H3tUmrVi",
   "msrp": "55.99",
   "quantity_in_stock": "500",
   "minimum_advertised_price": "40.00",
   "msrp_currency": "USD",
   "quantity_on_backorder": "100",
-  "sku_distinguishing_attributes": {
+  "distinguishing_attributes": {
     "color": "blue"
-  },
-  "sku_nondistinguishing_attributes": {
-    "diameter_in_inches": 3.4,
-  },
+  }
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
+http --json POST 'https://api-dev.cruxconnect.com/timp/products/skus/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     restrictions="tmpunavail" \
@@ -177,19 +228,16 @@ http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
     condition="used" \
     minimum_advertised_price_currency="USD" \
     item:="{
-  \"uuid\": \"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"
+  \"uuid\": \"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"
 }" \
-    sku_id="LYsNxu-iIhTgvti-X3qj0ade" \
+    sku_id="Lvfnsf-jwoQ0qLQ-H3tUmrVi" \
     msrp="55.99" \
     quantity_in_stock="500" \
     minimum_advertised_price="40.00" \
     msrp_currency="USD" \
     quantity_on_backorder="100" \
-    sku_distinguishing_attributes:="{
+    distinguishing_attributes:="{
   \"color\": \"blue\"
-}"
-    sku_nondistinguishing_attributes:="{
-  \"diameter_in_inches\": \"3.5\"
 }"
 
 ~~~
@@ -205,11 +253,11 @@ import json
 
 def send_request():
     # Create SKU
-    # POST https://api-sandbox.cruxconnect.com/products/skus/
+    # POST https://api-dev.cruxconnect.com/timp/products/skus/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/skus/",
+            url="https://api-dev.cruxconnect.com/timp/products/skus/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -219,18 +267,15 @@ def send_request():
     condition="used" \
     minimum_advertised_price_currency="USD" \
     item:="{
-  \"uuid\": \"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"
+  \"uuid\": \"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"
 }" \
-    sku_id="LYsNxu-iIhTgvti-X3qj0ade" \
+    sku_id="Lvfnsf-jwoQ0qLQ-H3tUmrVi" \
     msrp="55.99" \
     quantity_in_stock="500" \
     minimum_advertised_price="40.00" \
     msrp_currency="USD" \
     quantity_on_backorder="100" \
-    sku_nondistinguishing_attributes:="{
-  \"diameter_in_inches\": \"3.5\"
-}" \
-    sku_distinguishing_attributes:="{
+    distinguishing_attributes:="{
   \"color\": \"blue\"
 }")
         )
@@ -252,9 +297,9 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-sandbox.cruxconnect.com',
+        hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/products/skus/',
+        path: '/timp/products/skus/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
@@ -284,7 +329,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item\":{\"uuid\":\"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"},\"sku_id\":\"LYsNxu-iIhTgvti-X3qj0ade\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"sku_distinguishing_attributes\":{\"color\":\"blue\"},\"sku_nondistinguishing_attributes\":{\"diameter_in_inches\":\"3.5\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
+    request.write("{\"item\":{\"uuid\":\"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"},\"sku_id\":\"Lvfnsf-jwoQ0qLQ-H3tUmrVi\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"distinguishing_attributes\":{\"color\":\"blue\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
     request.end();
 
 

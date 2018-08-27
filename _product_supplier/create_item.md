@@ -483,7 +483,7 @@ custom_attributes
 
 ~~~ bash
 curl -X "POST" "https://api-dev.cruxconnect.com/timp/products/items/" \
-     -H 'Authorization: Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad' \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "description": "This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn'"'"'t already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc.",
@@ -517,7 +517,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/products/items/" \
 
 ~~~ bash
 http --json POST 'https://api-dev.cruxconnect.com/timp/products/items/' \
-    'Authorization':'Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
     categories:="[
@@ -563,7 +563,7 @@ def send_request():
         response = requests.post(
             url="https://api-dev.cruxconnect.com/timp/products/items/",
             headers={
-                "Authorization": "Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    description="This is the default description. In this description the product is explained in detail. The idea with the description is to include everything that isn't already included elsewhere in the item attributes, such as manufacturer, brand, country_of_origin, shipping_origin_country, marketplace_restrictions, fba_certified, etc." \
@@ -613,7 +613,7 @@ def send_request():
         port: '443',
         path: '/timp/products/items/',
         method: 'POST',
-        headers: {"Authorization":"Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
