@@ -8,14 +8,10 @@ description: Add a Tracking number or multiple Tacking numbers to an Order.
 right_code: |
   ~~~ json
   {
-    "tracking_number": "trackme-0073",
-    "supplier_provided _carrier": "UPS",
-    "supplier_provided_method": "Ground",
-    "package_weight": 1.38,
-    "package_ship_date": "2018-09-01",
+    "tracking_number": "t01",
     "line_items": [
       {
-        "line_item_uuid": "0505d71f-4360-4055-b3e8-0caf51c93491",
+        "line_item_uuid": "71b8b807-3c6b-49c8-91dd-5798896f5253",
         "quantity_shipped": 2,
         "supplier_provided_sku_cost": 13.98
       }
@@ -36,7 +32,7 @@ order_uuid
 ### Request Parameters:
 
 tracking_number
-: (string) **Required** Order tracking number
+: (string) ***Required*** Order tracking number
 
 supplier_provided_carrier
 : (string) Supplier provided carrier
@@ -54,15 +50,15 @@ package_ship_date
 : (string) Package ship date
 
 line_items
-: (array) **Required** An array of line item objects
+: (array) ***Required*** An array of line item objects
 
 #### Line Item Object
 
 line_item_uuid
-: (string) **Required** The Universal Unique Identifier for the line item
+: (string) ***Required*** The Universal Unique Identifier for the line item
 
 quantity_shipped
-: (integer) **Required** Quantity shipped
+: (integer) ***Required*** Quantity shipped
 
 supplier_provided_sku_cost
 : (decimal) Supplier provided SKU cost (2 decimal places)
@@ -136,43 +132,35 @@ package_uuid
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/tracking/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/" \
+curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
-  "supplier_provided _carrier": "UPS",
-  "package_ship_date": "2018-09-01",
-  "supplier_provided_method": "Ground",
-  "package_weight": 1.38,
   "line_items": [
     {
       "quantity_shipped": 2,
-      "line_item_uuid": "0505d71f-4360-4055-b3e8-0caf51c93491",
+      "line_item_uuid": "71b8b807-3c6b-49c8-91dd-5798896f5253",
       "supplier_provided_sku_cost": 13.98
     }
   ],
-  "tracking_number": "trackme-0073"
+  "tracking_number": "t01"
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/timp/orders/tracking/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/' \
+http --json POST 'https://api-dev.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
-    supplier_provided _carrier="UPS" \
-    package_ship_date="2018-09-01" \
-    supplier_provided_method="Ground" \
-    package_weight:=1.38 \
     line_items:="[
   {
     \"quantity_shipped\": 2,
-    \"line_item_uuid\": \"0505d71f-4360-4055-b3e8-0caf51c93491\",
+    \"line_item_uuid\": \"71b8b807-3c6b-49c8-91dd-5798896f5253\",
     \"supplier_provided_sku_cost\": 13.98
   }
 ]" \
-    tracking_number="trackme-0073"
+    tracking_number="t01"
 
 ~~~
 {: title="HTTPie" }
@@ -187,27 +175,23 @@ import json
 
 def send_request():
     # Add Order Tracking - Supplier
-    # POST https://api-dev.cruxconnect.com/timp/orders/tracking/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/
+    # POST https://api-dev.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/timp/orders/tracking/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/",
+            url="https://api-dev.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    supplier_provided _carrier="UPS" \
-    package_ship_date="2018-09-01" \
-    supplier_provided_method="Ground" \
-    package_weight:=1.38 \
-    line_items:="[
+            data=json.dumps(    line_items:="[
   {
     \"quantity_shipped\": 2,
-    \"line_item_uuid\": \"0505d71f-4360-4055-b3e8-0caf51c93491\",
+    \"line_item_uuid\": \"71b8b807-3c6b-49c8-91dd-5798896f5253\",
     \"supplier_provided_sku_cost\": 13.98
   }
 ]" \
-    tracking_number="trackme-0073")
+    tracking_number="t01")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -229,7 +213,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-dev.cruxconnect.com',
         port: '443',
-        path: '/timp/orders/tracking/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/',
+        path: '/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
@@ -259,7 +243,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"tracking_number\":\"trackme-0073\",\"supplier_provided _carrier\":\"UPS\",\"supplier_provided_method\":\"Ground\",\"package_weight\":1.38,\"package_ship_date\":\"2018-09-01\",\"line_items\":[{\"line_item_uuid\":\"0505d71f-4360-4055-b3e8-0caf51c93491\",\"quantity_shipped\":2,\"supplier_provided_sku_cost\":13.98}]}")
+    request.write("{\"tracking_number\":\"t01\",\"line_items\":[{\"line_item_uuid\":\"71b8b807-3c6b-49c8-91dd-5798896f5253\",\"quantity_shipped\":2,\"supplier_provided_sku_cost\":13.98}]}")
     request.end();
 
 

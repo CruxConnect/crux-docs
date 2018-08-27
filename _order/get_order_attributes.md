@@ -1,4 +1,4 @@
----
+<!-- ---
 title: /timp/orders/&lt;order_uuid&gt;/attributes/
 name: Get Order attributes
 position: 4.06
@@ -182,4 +182,4 @@ def send_request():
 });
 
 ~~~
-{: title="Node.js" }
+{: title="Node.js" } -->
