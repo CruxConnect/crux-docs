@@ -57,7 +57,7 @@ item_uuids
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -70,7 +70,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/products/catalogs/baffb36f-
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
@@ -90,11 +90,11 @@ import json
 
 def send_request():
     # Catalog Remove Items
-    # POST https://api-dev.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -121,7 +121,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/',
         method: 'POST',

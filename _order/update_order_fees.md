@@ -72,7 +72,7 @@ supplier_provided_sku_cost
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -87,7 +87,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     supplier_provided_po_number="8e5b1ccb-0221-4e26-a343-cd566bfe7419" \
@@ -109,11 +109,11 @@ import json
 
 def send_request():
     # Update Order Fees
-    # POST https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/
+    # POST https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -142,7 +142,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/fees/',
         method: 'POST',

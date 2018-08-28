@@ -186,7 +186,7 @@ request_date
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/timp/organizations/connections/request/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/" \
      -H 'Authorization: Token `1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -H 'Cookie: sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
@@ -224,7 +224,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/organizations/connections/r
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/timp/organizations/connections/request/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/' \
     'Authorization':'Token `1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     'Cookie':'sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
@@ -269,11 +269,11 @@ import json
 
 def send_request():
     # Request Connection
-    # POST https://api-dev.cruxconnect.com/timp/organizations/connections/request/
+    # POST https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/timp/organizations/connections/request/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/",
             headers={
                 "Authorization": "Token `1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -325,7 +325,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/organizations/connections/request/',
         method: 'POST',

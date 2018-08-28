@@ -171,7 +171,7 @@ shipping_method
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/" \
+curl "https://api-sandbox.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -180,7 +180,7 @@ curl "https://api-dev.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe7628
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-dev.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -198,11 +198,11 @@ import json
 
 def send_request():
     # Get Order Detail
-    # GET https://api-dev.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/
+    # GET https://api-sandbox.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -227,7 +227,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/f7bc1028-844c-44ca-82df-fe76282d2a8b/',
         method: 'GET',

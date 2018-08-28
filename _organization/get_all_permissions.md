@@ -38,7 +38,7 @@ To view orgainzation users, you must be assigned the 'view_org_users' permission
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/timp/organizations/all_permissions/" \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/all_permissions/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -47,7 +47,7 @@ curl "https://api-dev.cruxconnect.com/timp/organizations/all_permissions/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-dev.cruxconnect.com/timp/organizations/all_permissions/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/all_permissions/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -65,11 +65,11 @@ import json
 
 def send_request():
     # Get All Permissions
-    # GET https://api-dev.cruxconnect.com/timp/organizations/all_permissions/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/all_permissions/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/timp/organizations/all_permissions/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/all_permissions/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -94,7 +94,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/organizations/all_permissions/',
         method: 'GET',

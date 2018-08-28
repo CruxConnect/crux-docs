@@ -45,7 +45,7 @@ uuid
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/export/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/orders/export/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -58,7 +58,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/timp/orders/export/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/orders/export/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     uuids:="[
@@ -78,11 +78,11 @@ import json
 
 def send_request():
     # Get Orders Export
-    # POST https://api-dev.cruxconnect.com/timp/orders/export/
+    # POST https://api-sandbox.cruxconnect.com/timp/orders/export/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/timp/orders/export/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/export/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -109,7 +109,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/export/',
         method: 'POST',

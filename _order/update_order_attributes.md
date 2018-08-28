@@ -72,7 +72,7 @@ supplier_provided_order_attributes
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/" \
      -H 'Authorization: Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -H 'Cookie: sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
@@ -102,7 +102,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/3885adeb-3497-4a70-b
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/' \
     'Authorization':'Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad' \
     'Content-Type':'application/json; charset=utf-8' \
     'Cookie':'sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
@@ -139,11 +139,11 @@ import json
 
 def send_request():
     # Update Order Attributes
-    # POST https://api-dev.cruxconnect.com/timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/
+    # POST https://api-sandbox.cruxconnect.com/timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/",
             headers={
                 "Authorization": "Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad",
                 "Content-Type": "application/json; charset=utf-8",
@@ -187,7 +187,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/',
         method: 'POST',

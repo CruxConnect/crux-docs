@@ -151,7 +151,7 @@ line_item_designation
 
 
 ~~~ bash
-curl -X "PUT" "https://api-dev.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/" \
+curl -X "PUT" "https://api-sandbox.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -172,7 +172,7 @@ curl -X "PUT" "https://api-dev.cruxconnect.com/timp/orders/allocation/319bba9f-7
 {: title="Curl" }
 
 ~~~ bash
-http --json PUT 'https://api-dev.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/' \
+http --json PUT 'https://api-sandbox.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     line_items:="[
@@ -200,11 +200,11 @@ import json
 
 def send_request():
     # Allocate Order
-    # PUT https://api-dev.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/
+    # PUT https://api-sandbox.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/
 
     try:
         response = requests.put(
-            url="https://api-dev.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -239,7 +239,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/allocation/319bba9f-71b1-4a93-8abf-67a45b8fdd5c/',
         method: 'PUT',

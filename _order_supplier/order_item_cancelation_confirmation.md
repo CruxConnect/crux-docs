@@ -21,7 +21,7 @@ order_item_uuid
 
 
 ~~~ bash
-curl -X "PATCH" "https://api-dev.cruxconnect.com/timp/orders/items/cancel/2350a349-2441-4c32-b7f6-99b7e4540b94/confirm/" \
+curl -X "PATCH" "https://api-sandbox.cruxconnect.com/timp/orders/items/cancel/2350a349-2441-4c32-b7f6-99b7e4540b94/confirm/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -H 'Cookie: sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
@@ -31,7 +31,7 @@ curl -X "PATCH" "https://api-dev.cruxconnect.com/timp/orders/items/cancel/2350a3
 {: title="Curl" }
 
 ~~~ bash
-http --json PATCH 'https://api-dev.cruxconnect.com/timp/orders/items/cancel/2350a349-2441-4c32-b7f6-99b7e4540b94/confirm/' \
+http --json PATCH 'https://api-sandbox.cruxconnect.com/timp/orders/items/cancel/2350a349-2441-4c32-b7f6-99b7e4540b94/confirm/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     'Cookie':'sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz'
@@ -50,11 +50,11 @@ import json
 
 def send_request():
     # Cancel Order Item
-    # PATCH https://api-dev.cruxconnect.com/timp/orders/items/cancel/2350a349-2441-4c32-b7f6-99b7e4540b94/confirm/
+    # PATCH https://api-sandbox.cruxconnect.com/timp/orders/items/cancel/2350a349-2441-4c32-b7f6-99b7e4540b94/confirm/
 
     try:
         response = requests.patch(
-            url="https://api-dev.cruxconnect.com/timp/orders/items/cancel/2350a349-2441-4c32-b7f6-99b7e4540b94/confirm/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/items/cancel/2350a349-2441-4c32-b7f6-99b7e4540b94/confirm/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -80,7 +80,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/items/cancel/2350a349-2441-4c32-b7f6-99b7e4540b94/confirm/',
         method: 'PATCH',

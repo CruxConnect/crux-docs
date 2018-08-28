@@ -78,7 +78,7 @@ attribute_value
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/attributes/" \
+curl "https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/attributes/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -H 'Cookie: sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
@@ -88,7 +88,7 @@ curl "https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0b
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/attributes/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/attributes/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     'Cookie':'sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz'
@@ -107,11 +107,11 @@ import json
 
 def send_request():
     # Get Order attributes
-    # GET https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/attributes/
+    # GET https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/attributes/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/attributes/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/attributes/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -137,7 +137,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/attributes/',
         method: 'GET',

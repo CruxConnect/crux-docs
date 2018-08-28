@@ -132,7 +132,7 @@ package_uuid
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -150,7 +150,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/tracking/25d6eb53-e5
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     line_items:="[
@@ -175,11 +175,11 @@ import json
 
 def send_request():
     # Add Order Tracking - Supplier
-    # POST https://api-dev.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/
+    # POST https://api-sandbox.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -211,7 +211,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/',
         method: 'POST',
