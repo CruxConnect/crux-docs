@@ -6,11 +6,6 @@ visibility: public
 method: patch
 description: Cancel Order
 right_code: |
-  ~~~ json
-  {}
-  ~~~
-  {: title="Request" }
-
 
 ---
 Cancel Order

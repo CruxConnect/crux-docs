@@ -6,10 +6,7 @@ visibility: public
 method: patch
 description: Confirm Order cancelation
 right_code: |
-  ~~~ json
 
-  ~~~
-  {: title="Request" }
 
 
 ---

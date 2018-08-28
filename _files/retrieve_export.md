@@ -19,6 +19,8 @@ right_code: |
 ---
 Retrieve a previously requested Export via the export_uuid. By calling this API Endpoint with the export_uuid in the URL, you can retrieve a previously requested Export.
 
+Note: this endpoint does not include 'timp' in the path
+
 ### URL Parameters
 
 export_uuid
