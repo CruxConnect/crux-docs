@@ -91,7 +91,7 @@ attribute_value
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/invoices/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/invoices/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -H 'Cookie: sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
@@ -115,7 +115,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/invoices/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/invoices/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     'Cookie':'sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
@@ -146,11 +146,11 @@ import json
 
 def send_request():
     # Update Order Invoices
-    # POST https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/invoices/
+    # POST https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/invoices/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/invoices/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/invoices/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -188,7 +188,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/7d16d838-b4f2-4c88-a66c-f8eb0bcbbe4d/invoices/',
         method: 'POST',

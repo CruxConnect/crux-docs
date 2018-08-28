@@ -9,7 +9,7 @@ permalink: pretty
 baseurl: ""
 
 collections:  ### if there are no documents in a collection, it's a placeholder and visiblity is blank
-#### Timpanogas Release
+#### Timpanogos Release
   documentation:
     visibility: public
     title: Documentation
@@ -69,7 +69,7 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     title: Operations Tools
     position: 8
     type: api
-###### Timpanogas Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
+###### Timpanogos Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
   internal_documentation:
     visibility: internal
     title: Documentation

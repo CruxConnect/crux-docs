@@ -61,14 +61,14 @@ catalogs
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/timp/products/catalogs/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/catalogs/" \
      -H 'Authorization: Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'https://api-dev.cruxconnect.com/timp/products/catalogs/' \
+http GET 'https://api-sandbox.cruxconnect.com/timp/products/catalogs/' \
     'Authorization':'Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad'
 
 ~~~
@@ -83,11 +83,11 @@ import requests
 
 def send_request():
     # Get Catalogs
-    # GET https://api-dev.cruxconnect.com/timp/products/catalogs/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/catalogs/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/timp/products/catalogs/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/catalogs/",
             headers={
                 "Authorization": "Token a9e51a13fc4c02c5dcc02c3f41bf4f5fb9aa36ad",
             },
@@ -110,7 +110,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/products/catalogs/',
         method: 'GET',

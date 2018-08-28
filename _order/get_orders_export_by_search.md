@@ -94,7 +94,7 @@ orders
 
 
 ~~~ bash
-curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/search/export/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/orders/search/export/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -120,7 +120,7 @@ curl -X "POST" "https://api-dev.cruxconnect.com/timp/orders/search/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-dev.cruxconnect.com/timp/orders/search/export/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/orders/search/export/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     org_uuids:="[]" \
@@ -153,11 +153,11 @@ import json
 
 def send_request():
     # Get Orders By Search
-    # POST https://api-dev.cruxconnect.com/timp/orders/search/export/
+    # POST https://api-sandbox.cruxconnect.com/timp/orders/search/export/
 
     try:
         response = requests.post(
-            url="https://api-dev.cruxconnect.com/timp/orders/search/export/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/search/export/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -197,7 +197,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/search/export/',
         method: 'POST',

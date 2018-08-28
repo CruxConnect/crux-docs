@@ -343,7 +343,7 @@ person
 
 
 ~~~ bash
-curl "https://api-dev.cruxconnect.com/timp/organizations/connections/" \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/connections/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -352,7 +352,7 @@ curl "https://api-dev.cruxconnect.com/timp/organizations/connections/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-dev.cruxconnect.com/timp/organizations/connections/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/connections/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -370,11 +370,11 @@ import json
 
 def send_request():
     # Get Connections
-    # GET https://api-dev.cruxconnect.com/timp/organizations/connections/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/connections/
 
     try:
         response = requests.get(
-            url="https://api-dev.cruxconnect.com/timp/organizations/connections/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/connections/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -399,7 +399,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/organizations/connections/',
         method: 'GET',

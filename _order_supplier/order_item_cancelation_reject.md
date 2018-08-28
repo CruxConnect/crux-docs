@@ -22,7 +22,7 @@ order_item_uuid
 
 
 ~~~ bash
-curl -X "PATCH" "https://api-dev.cruxconnect.com/timp/orders/items/cancel/4efca041-22e1-4e35-96d1-8495273a5868/reject/" \
+curl -X "PATCH" "https://api-sandbox.cruxconnect.com/timp/orders/items/cancel/4efca041-22e1-4e35-96d1-8495273a5868/reject/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Cookie: sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz'
 
@@ -30,7 +30,7 @@ curl -X "PATCH" "https://api-dev.cruxconnect.com/timp/orders/items/cancel/4efca0
 {: title="Curl" }
 
 ~~~ bash
-http PATCH 'https://api-dev.cruxconnect.com/timp/orders/items/cancel/4efca041-22e1-4e35-96d1-8495273a5868/reject/' \
+http PATCH 'https://api-sandbox.cruxconnect.com/timp/orders/items/cancel/4efca041-22e1-4e35-96d1-8495273a5868/reject/' \
     'Authorization':'Token 1234567890' \
     'Cookie':'sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz'
 
@@ -46,11 +46,11 @@ import requests
 
 def send_request():
     # Reject Order Item Cancelation
-    # PATCH https://api-dev.cruxconnect.com/timp/orders/items/cancel/4efca041-22e1-4e35-96d1-8495273a5868/reject/
+    # PATCH https://api-sandbox.cruxconnect.com/timp/orders/items/cancel/4efca041-22e1-4e35-96d1-8495273a5868/reject/
 
     try:
         response = requests.patch(
-            url="https://api-dev.cruxconnect.com/timp/orders/items/cancel/4efca041-22e1-4e35-96d1-8495273a5868/reject/",
+            url="https://api-sandbox.cruxconnect.com/timp/orders/items/cancel/4efca041-22e1-4e35-96d1-8495273a5868/reject/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Cookie": "sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz",
@@ -74,7 +74,7 @@ def send_request():
     const httpTransport = require('https');
     const responseEncoding = 'utf8';
     const httpOptions = {
-        hostname: 'api-dev.cruxconnect.com',
+        hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
         path: '/timp/orders/items/cancel/4efca041-22e1-4e35-96d1-8495273a5868/reject/',
         method: 'PATCH',
