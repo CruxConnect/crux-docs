@@ -1,5 +1,5 @@
 ---
-title: /api/data/export/&ltexport-uuid&gt/
+title: /timp/api/data/export/&ltexport-uuid&gt/
 name: Retrieve Export
 position: 5.00
 visibility: public
@@ -19,8 +19,6 @@ right_code: |
 ---
 Retrieve a previously requested Export via the export_uuid. By calling this API Endpoint with the export_uuid in the URL, you can retrieve a previously requested Export.
 
-Note: this endpoint does not include 'timp' in the path
-
 ### URL Parameters
 
 export_uuid
@@ -37,7 +35,7 @@ uuid
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/" \
+curl "https://api-sandbox.cruxconnect.com/timp/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -46,7 +44,7 @@ curl "https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b87
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -64,11 +62,11 @@ import json
 
 def send_request():
     # Retrieve Export
-    # GET https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/
+    # GET https://api-sandbox.cruxconnect.com/timp/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/",
+            url="https://api-sandbox.cruxconnect.com/timp/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/",
             headers={
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
@@ -95,7 +93,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/',
+        path: '/timp/api/data/export/d54c7721-0a6a-425c-b874-507437af3e11/',
         method: 'GET',
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
