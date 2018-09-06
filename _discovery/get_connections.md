@@ -1,7 +1,7 @@
 ---
-title: /organizations/connections/
+title: /timp/organizations/connections/
 name: Get Connections
-position: 3.01
+position: 5.04
 visibility: public
 method: get
 description: Get all direct Connections specific to your account
@@ -9,73 +9,239 @@ right_code: |
   ~~~ json
   [
     {
-      "uuid": "6c25c0e3-7c6d-4931-bec9-f4da17c0d743",
+      "uuid": "c3081fd8-202b-47f2-9347-63d3c27028f1",
       "retailer": {
-        "uuid": "7c8ceed8-86c3-4c4f-9b45-8bda5aa665b2",
+        "uuid": "a5daa91c-79e7-4d79-a7b2-04519d6feba1",
         "organization": {
-          "uuid": "359204cc-c2d9-4827-b739-64c335f9fbd1",
-          "name": "Retail Me",
-          "website": "retailer.com",
+          "uuid": "ebf3657c-2abb-4aff-be70-69082acc9302",
+          "name": "projectthanos",
+          "website": "projectthanos.com",
           "org_type": "RETAILER",
           "status": "ACTIVE",
-          "created_date": "2018-04-06T01:11:40.090603Z",
+          "created_date": "2018-06-28T12:55:17.774287Z",
           "active_date": null,
           "account_manager": {
-            "uuid": "6cf0bb8b-442e-43c4-8bbe-bc823e17981e",
+            "uuid": "80abd247-9cc7-4219-97a9-d74fec7e55d2",
             "person": {
-              "uuid": "cfcc3db3-dbfd-4019-be0a-2858e08a760a",
+              "uuid": "6f6c0a1d-38ea-445d-a616-c025ffb18a73",
               "first_name": "Joe",
               "last_name": "Account",
               "email": "joe@cruxaccountmanager.com",
-              "phone": "717.334.5425x58894",
+              "phone": "07365022005",
               "job_title": "Account Manager"
             }
-          }
+          },
+          "retailer_uuid": "a5daa91c-79e7-4d79-a7b2-04519d6feba1",
+          "supplier_uuid": ""
         },
         "contact": {
-          "uuid": "2bccd690-9ba3-4e9e-bed2-96fe02185031",
+          "uuid": "9024e5ed-d25b-4a12-b1ac-4f833486a7ee",
           "first_name": "owner",
           "last_name": "user",
-          "email": "owneruser7@retailer.com",
-          "phone": "1-042-505-7676x449",
+          "email": "owneruser7@projectthanos.com",
+          "phone": "929-954-4549x827",
           "job_title": "Account Manager"
         }
       },
       "supplier": {
-        "uuid": "88971331-5e51-47be-a762-536499ad0366",
+        "uuid": "ed0eb521-1a0a-4526-a155-31daa726e66c",
         "organization": {
-          "uuid": "963e4549-712b-42d7-8bd9-34eb21d15ea9",
-          "name": "Supply Me",
-          "website": "supplier.com",
+          "uuid": "fddc07e7-4383-4e63-929f-f10c3b0864f0",
+          "name": "projectzuul",
+          "website": "projectzuul.com",
           "org_type": "SUPPLIER",
           "status": "ACTIVE",
-          "created_date": "2018-04-06T01:11:42.840360Z",
+          "created_date": "2018-06-28T12:55:20.293262Z",
           "active_date": null,
-          "account_manager": null
+          "account_manager": null,
+          "retailer_uuid": "",
+          "supplier_uuid": "ed0eb521-1a0a-4526-a155-31daa726e66c"
         },
         "contact": {
-          "uuid": "c10a3649-2c2c-4e65-b610-870529d79dce",
+          "uuid": "1098f5e9-a343-4adc-9969-c63a184250db",
           "first_name": "owner",
           "last_name": "user",
-          "email": "owneruser8@supplier.com",
-          "phone": "(971)270-6745",
+          "email": "owneruser8@projectzuul.com",
+          "phone": "1-638-579-0251x5182",
           "job_title": "Account Manager"
         }
       },
       "status": "ACTIVE",
       "account_manager": {
-        "uuid": "6cf0bb8b-442e-43c4-8bbe-bc823e17981e",
+        "uuid": "80abd247-9cc7-4219-97a9-d74fec7e55d2",
         "person": {
-          "uuid": "cfcc3db3-dbfd-4019-be0a-2858e08a760a",
+          "uuid": "6f6c0a1d-38ea-445d-a616-c025ffb18a73",
           "first_name": "Joe",
           "last_name": "Account",
           "email": "joe@cruxaccountmanager.com",
-          "phone": "717.334.5425x58894",
+          "phone": "07365022005",
           "job_title": "Account Manager"
         }
       },
-      "suppliers_retailer_account_number": "38473",
-      "retailers_supplier_account_number": "59830"
+      "allocation_type": null,
+      "suppliers_retailer_account_number": null,
+      "retailers_supplier_account_number": null,
+      "deactivated_date": null
+    },
+    {
+      "uuid": "6b062210-6f5f-45bb-bf9a-100574368013",
+      "retailer": {
+        "uuid": "a5daa91c-79e7-4d79-a7b2-04519d6feba1",
+        "organization": {
+          "uuid": "ebf3657c-2abb-4aff-be70-69082acc9302",
+          "name": "projectthanos",
+          "website": "projectthanos.com",
+          "org_type": "RETAILER",
+          "status": "ACTIVE",
+          "created_date": "2018-06-28T12:55:17.774287Z",
+          "active_date": null,
+          "account_manager": {
+            "uuid": "80abd247-9cc7-4219-97a9-d74fec7e55d2",
+            "person": {
+              "uuid": "6f6c0a1d-38ea-445d-a616-c025ffb18a73",
+              "first_name": "Joe",
+              "last_name": "Account",
+              "email": "joe@cruxaccountmanager.com",
+              "phone": "07365022005",
+              "job_title": "Account Manager"
+            }
+          },
+          "retailer_uuid": "a5daa91c-79e7-4d79-a7b2-04519d6feba1",
+          "supplier_uuid": ""
+        },
+        "contact": {
+          "uuid": "9024e5ed-d25b-4a12-b1ac-4f833486a7ee",
+          "first_name": "owner",
+          "last_name": "user",
+          "email": "owneruser7@projectthanos.com",
+          "phone": "929-954-4549x827",
+          "job_title": "Account Manager"
+        }
+      },
+      "supplier": {
+        "uuid": "904e880a-0f8b-4e25-86ff-e63588914c95",
+        "organization": {
+          "uuid": "d6ac857d-c844-4312-8485-6d121d065308",
+          "name": "Stevens, Smith and Krause",
+          "website": "rojas.com",
+          "org_type": "SUPPLIER",
+          "status": "ACTIVE",
+          "created_date": "2018-06-28T12:55:15.811874Z",
+          "active_date": null,
+          "account_manager": null,
+          "retailer_uuid": "",
+          "supplier_uuid": "904e880a-0f8b-4e25-86ff-e63588914c95"
+        },
+        "contact": {
+          "uuid": "f1b298cf-c4a3-4a69-a098-5ee2e590512c",
+          "first_name": "Natalie",
+          "last_name": "Berger",
+          "email": "drosales@smith.org",
+          "phone": "169-160-4019",
+          "job_title": "Account Manager"
+        }
+      },
+      "status": "ACTIVE",
+      "account_manager": {
+        "uuid": "80abd247-9cc7-4219-97a9-d74fec7e55d2",
+        "person": {
+          "uuid": "6f6c0a1d-38ea-445d-a616-c025ffb18a73",
+          "first_name": "Joe",
+          "last_name": "Account",
+          "email": "joe@cruxaccountmanager.com",
+          "phone": "07365022005",
+          "job_title": "Account Manager"
+        }
+      },
+      "allocation_type": null,
+      "suppliers_retailer_account_number": null,
+      "retailers_supplier_account_number": null,
+      "deactivated_date": null
+    },
+    {
+      "uuid": "0db8f846-cd78-4b13-b6b4-3e2880fc7eac",
+      "retailer": {
+        "uuid": "a5daa91c-79e7-4d79-a7b2-04519d6feba1",
+        "organization": {
+          "uuid": "ebf3657c-2abb-4aff-be70-69082acc9302",
+          "name": "projectthanos",
+          "website": "projectthanos.com",
+          "org_type": "RETAILER",
+          "status": "ACTIVE",
+          "created_date": "2018-06-28T12:55:17.774287Z",
+          "active_date": null,
+          "account_manager": {
+            "uuid": "80abd247-9cc7-4219-97a9-d74fec7e55d2",
+            "person": {
+              "uuid": "6f6c0a1d-38ea-445d-a616-c025ffb18a73",
+              "first_name": "Joe",
+              "last_name": "Account",
+              "email": "joe@cruxaccountmanager.com",
+              "phone": "07365022005",
+              "job_title": "Account Manager"
+            }
+          },
+          "retailer_uuid": "a5daa91c-79e7-4d79-a7b2-04519d6feba1",
+          "supplier_uuid": ""
+        },
+        "contact": {
+          "uuid": "9024e5ed-d25b-4a12-b1ac-4f833486a7ee",
+          "first_name": "owner",
+          "last_name": "user",
+          "email": "owneruser7@projectthanos.com",
+          "phone": "929-954-4549x827",
+          "job_title": "Account Manager"
+        }
+      },
+      "supplier": {
+        "uuid": "14b1afb6-6bbc-47ca-90c4-6a3925aa654c",
+        "organization": {
+          "uuid": "97248615-43ab-43e9-bd3c-acd59ca642b0",
+          "name": "shagster",
+          "website": "shagster.com",
+          "org_type": "SUPPLIER",
+          "status": "PENDING",
+          "created_date": "2018-08-07T16:44:41.358121Z",
+          "active_date": null,
+          "account_manager": {
+            "uuid": "80abd247-9cc7-4219-97a9-d74fec7e55d2",
+            "person": {
+              "uuid": "6f6c0a1d-38ea-445d-a616-c025ffb18a73",
+              "first_name": "Joe",
+              "last_name": "Account",
+              "email": "joe@cruxaccountmanager.com",
+              "phone": "07365022005",
+              "job_title": "Account Manager"
+            }
+          },
+          "retailer_uuid": "",
+          "supplier_uuid": "14b1afb6-6bbc-47ca-90c4-6a3925aa654c"
+        },
+        "contact": {
+          "uuid": "55cc72aa-b6cb-4d21-88eb-3b17f8fafe01",
+          "first_name": "shag",
+          "last_name": "theshag",
+          "email": "shag@shagster.com",
+          "phone": null,
+          "job_title": null
+        }
+      },
+      "status": "ACTIVE",
+      "account_manager": {
+        "uuid": "80abd247-9cc7-4219-97a9-d74fec7e55d2",
+        "person": {
+          "uuid": "6f6c0a1d-38ea-445d-a616-c025ffb18a73",
+          "first_name": "Joe",
+          "last_name": "Account",
+          "email": "joe@cruxaccountmanager.com",
+          "phone": "07365022005",
+          "job_title": "Account Manager"
+        }
+      },
+      "allocation_type": null,
+      "suppliers_retailer_account_number": "",
+      "retailers_supplier_account_number": "",
+      "deactivated_date": null
     }
   ]
   ~~~
@@ -138,8 +304,7 @@ uuid
 name
 : (string) Name of the Organization
 
-website
-: (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
+website : (string) Browser-ready URL for supplier's public-facing website. A URL is 'browser-ready' if we can put it in an internet browser and the website loads. (For some websites that means that the protocol needs to be specified, eg, 'https://www.awesome.com'; for others, the protocol is not required, eg, 'www.verycool.com'.)
 
 org_type
 : (string) Organization Type defines if the organization is a "RETAILER" or a "SUPPLIER"
@@ -158,7 +323,7 @@ account_manager
 
 #### Contact Object
 
-{% include objects/contact.md %}
+{% include timp/objects/contact.md %}
 
 #### Account Manager Object:
 
@@ -170,15 +335,15 @@ person
 
 #### Person Object:
 
-{% include objects/contact.md %}
+{% include timp/objects/contact.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/connections/" \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/connections/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -187,7 +352,7 @@ curl "https://api-sandbox.cruxconnect.com/organizations/connections/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/organizations/connections/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/connections/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -205,11 +370,11 @@ import json
 
 def send_request():
     # Get Connections
-    # GET https://api-sandbox.cruxconnect.com/organizations/connections/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/connections/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/connections/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/connections/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -236,7 +401,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/connections/',
+        path: '/timp/organizations/connections/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

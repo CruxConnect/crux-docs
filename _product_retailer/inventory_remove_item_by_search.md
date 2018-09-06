@@ -1,7 +1,7 @@
 ---
 title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/remove-items-by-search/
 name: Inventory Remove Item by Search
-position: 11.06
+position: 10.06
 visibility: public
 method: post
 description: Remove Items from an existing Inventory List by Search
@@ -72,18 +72,18 @@ pagination
 
 #### Filters Object
 
-{% include product/filters.md %}
+{% include timp/product/filters.md %}
 
 #### Facets Object
 
-{% include product/facets.md %}
+{% include timp/product/facets.md %}
 
 #### Pagination Object
-{% include product/request/pagination.md %}
+{% include timp/product/request/pagination.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash

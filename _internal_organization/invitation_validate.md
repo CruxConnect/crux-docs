@@ -1,5 +1,5 @@
 ---
-title: /organizations/accept-invite/&lt;invitation-token&gt;/
+title: /timp/organizations/accept-invite/&lt;invitation-token&gt;/
 name: Validate Crux Invite
 position: 1.04
 visibility: internal
@@ -45,17 +45,17 @@ token
 | 201  | Created   | The token has expired. A new email was sent. |
 | 404  | Not Found | The token is invalid                         |
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl "http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/"
+curl "http://localhost/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/"
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http GET 'http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/'
+http GET 'http://localhost/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/'
 
 ~~~
 {: title="HTTPie" }
@@ -69,11 +69,11 @@ import requests
 
 def send_request():
     # Validate Invitation
-    # GET http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/
+    # GET http://localhost/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/
 
     try:
         response = requests.get(
-            url="http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/",
+            url="http://localhost/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/",
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -95,7 +95,7 @@ def send_request():
     const httpOptions = {
         hostname: 'localhost',
         port: '80',
-        path: '/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/',
+        path: '/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/',
         method: 'GET',
         headers: {}
     };

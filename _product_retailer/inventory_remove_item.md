@@ -1,7 +1,7 @@
 ---
 title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/remove-items/
 name: Inventory Remove Item
-position: 11.04
+position: 10.04
 visibility: public
 method: post
 description: Remove Items from an existing Inventory List for your account
@@ -31,7 +31,7 @@ item_uuids
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash

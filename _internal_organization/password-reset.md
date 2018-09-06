@@ -1,5 +1,5 @@
 ---
-title: /organizations/reset-password/
+title: /timp/organizations/reset-password/
 name: Reset Password
 position: 1.01
 visibility: internal
@@ -28,11 +28,11 @@ Should you need to reset your password, you may initiate the process via this ca
 email
 : (string) The email you provided for your account
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/reset-password/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/organizations/reset-password/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "email": "user@mycompany.com"
@@ -42,7 +42,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/reset-password
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/organizations/reset-password/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/organizations/reset-password/' \
     'Content-Type':'application/json; charset=utf-8' \
     email="user@mycompany.com"
 
@@ -59,11 +59,11 @@ import json
 
 def send_request():
     # Reset Password
-    # POST https://api-sandbox.cruxconnect.com/organizations/reset-password/
+    # POST https://api-sandbox.cruxconnect.com/timp/organizations/reset-password/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/organizations/reset-password/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/reset-password/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
@@ -89,7 +89,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/reset-password/',
+        path: '/timp/organizations/reset-password/',
         method: 'POST',
         headers: {"Content-Type":"application/json; charset=utf-8"}
     };

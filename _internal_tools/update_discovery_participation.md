@@ -1,5 +1,5 @@
 ---
-title: /discovery/participation/&lt;org_uuid&gt;/
+title: /timp/discovery/participation/&lt;org_uuid&gt;/
 name: Update Discovery Participation
 visibility: internal
 position: 8.10
@@ -31,7 +31,7 @@ discovery_catalog_uuid
 
 - 409 Conflict (when the org_uuid relates to a retailer not a supplier)
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/catalog/update" \

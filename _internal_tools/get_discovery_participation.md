@@ -1,5 +1,5 @@
 ---
-title: /discovery/participation/&ltuuid&gt/
+title: /timp/discovery/participation/&ltuuid&gt/
 name: Get Discovery Participation
 position: 8.00
 visibility: internal
@@ -65,7 +65,7 @@ approved_by
 #### Requested By
 <!-- task-github-127 use Person include file -->
 
-{% include objects/contact.md %}
+{% include timp/objects/contact.md %}
 
 #### Approved By
 
@@ -77,15 +77,15 @@ person
 
 #### Person
 
-{% include objects/contact.md %}
+{% include timp/objects/contact.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/" \
+curl "https://api-sandbox.cruxconnect.com/timp/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/" \
      -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
      -H 'Authorization: Token 01234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
@@ -95,7 +95,7 @@ curl "https://api-sandbox.cruxconnect.com/discovery/participation/963e4549-712b-
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/' \
     'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
     'Authorization':'Token 01234567890' \
     'Content-Type':'application/json; charset=utf-8'
@@ -114,11 +114,11 @@ import json
 
 def send_request():
     # Get Discovery Participation
-    # GET https://api-sandbox.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/
+    # GET https://api-sandbox.cruxconnect.com/timp/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/",
+            url="https://api-sandbox.cruxconnect.com/timp/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/",
             headers={
                 "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
                 "Authorization": "Token 01234567890",
@@ -146,7 +146,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/',
+        path: '/timp/discovery/participation/963e4549-712b-42d7-8bd9-34eb21d15ea9/',
         method: 'GET',
         headers: {"Cookie":"sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp","Authorization":"Token 01234567890","Content-Type":"application/json; charset=utf-8"}
     };

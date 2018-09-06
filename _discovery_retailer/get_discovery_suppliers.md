@@ -1,7 +1,7 @@
 ---
-title: /discovery/suppliers/
+title: /timp/discovery/suppliers/
 name: Discovery Supplier List
-position: 3.00
+position: 1.05
 visibility: public
 method: post
 description: A list of all suppliers available to you in the discovery catalog
@@ -76,7 +76,7 @@ sort
 start
 : (int) Element number of the first supplier that will be displayed on a page. (The available suppliers are returned in an ordered list, numbered from 0 to Number-of-suppliers, with each supplier an element in the list.) Used for paginating results. Default: 0. If greater than or equal to the number of available suppliers, 'start' is forced to the Number-of-suppliers (which will yield zero results).
 
-{% include objects/sort.md %}
+{% include timp/objects/sort.md %}
 
 ### Response Parameters:
 
@@ -117,19 +117,19 @@ contact
 
 #### Contact Object
 
-{% include objects/contact.md %}
+{% include timp/objects/contact.md %}
 
 #### Pagination Object
 
-{% include objects/response_pagination.md %}
+{% include timp/objects/response_pagination.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/discovery/suppliers/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/discovery/suppliers/" \
      -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
@@ -150,7 +150,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/discovery/suppliers/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/discovery/suppliers/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/discovery/suppliers/' \
     'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
@@ -178,11 +178,11 @@ import json
 
 def send_request():
     # Discovery Supplier List
-    # POST https://api-sandbox.cruxconnect.com/discovery/suppliers/
+    # POST https://api-sandbox.cruxconnect.com/timp/discovery/suppliers/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/discovery/suppliers/",
+            url="https://api-sandbox.cruxconnect.com/timp/discovery/suppliers/",
             headers={
                 "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
                 "Authorization": "Token 1234567890",
@@ -219,7 +219,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/discovery/suppliers/',
+        path: '/timp/discovery/suppliers/',
         method: 'POST',
         headers: {"Cookie":"sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp","Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

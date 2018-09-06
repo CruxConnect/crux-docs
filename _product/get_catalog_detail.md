@@ -1,7 +1,7 @@
 ---
-title: /products/catalogs/&lt;catalog_uuid&gt;/
+title: /timp/products/catalogs/&lt;catalog_uuid&gt;/
 name: Get Catalog Detail
-position: 4.01
+position: 3.01
 visibility: public
 method: get
 description: Get the Details of a particular Catalog you have access to
@@ -44,7 +44,7 @@ catalog_uuid
 
 ### Response Parameters:
 
-{% include product/response/catalog.md %}
+{% include timp/product/response/catalog.md %}
 
 #### Supplier Object
 
@@ -63,11 +63,11 @@ uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -76,7 +76,7 @@ curl "https://api-sandbox.cruxconnect.com/products/catalogs/38504ca3-27ea-4478-8
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -94,11 +94,11 @@ import json
 
 def send_request():
     # Get Catalog Detail
-    # GET https://api-sandbox.cruxconnect.com/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -125,7 +125,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/',
+        path: '/timp/products/catalogs/38504ca3-27ea-4478-85a2-25f01cde1652/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

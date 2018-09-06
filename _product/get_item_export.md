@@ -1,7 +1,7 @@
 ---
 title: /products/items/export/
 name: Get Item Export
-position: 4.04
+position: 3.04
 visibility: public
 method: post
 description: Get Item Export allows you to export the item you are interested.
@@ -44,7 +44,7 @@ uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash

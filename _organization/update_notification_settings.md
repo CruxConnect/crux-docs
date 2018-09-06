@@ -1,7 +1,7 @@
 ---
-title: /notifications/notification-settings/
+title: /timp/notifications/notification-settings/
 name: Update Notification Settings
-position: 1.14
+position: 2.13
 visibility: public
 method: put
 description: Update Notification Settings allows you to update a single notification's settings
@@ -11,7 +11,7 @@ right_code: |
     "notification_via": "Dashboard",
     "enabled": "True",
     "notification_frequency": "Daily",
-    "uuid": "daf247dc-68c3-4ab8-93fc-024ae471bb91"
+    "uuid": "d1b86ae6-8b70-41a0-afaa-1bc7d0bdec31"
   }
   ~~~
   {: title="Request" }
@@ -25,6 +25,7 @@ To view notification settings, you must be assigned the 'view_notifications_sett
 
 To edit email notification preferences, you must be assigned the 'edit_email_notifications_preferences' permission
 {: .info }
+
 
 ### Request Parameters:
 
@@ -40,30 +41,33 @@ enabled
 notification_frequency
 : (string) The Notification Frequency refers to how often you'll be notified. Possible values are "Real-time", "Twice a day", and "Daily"
 
-{% include links/response_codes.md %}
+### Expected Response Codes
+
+{% include timp/links/response_codes.md %}
+
 
 ~~~ bash
-curl -X "PUT" "https://api-sandbox.cruxconnect.com/notifications/notification-settings/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "PUT" "https://api-sandbox.cruxconnect.com/timp/notifications/notification-settings/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "notification_via": "Dashboard",
   "enabled": "True",
   "notification_frequency": "Daily",
-  "uuid": "daf247dc-68c3-4ab8-93fc-024ae471bb91"
+  "uuid": "d1b86ae6-8b70-41a0-afaa-1bc7d0bdec31"
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json PUT 'https://api-sandbox.cruxconnect.com/notifications/notification-settings/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json PUT 'https://api-sandbox.cruxconnect.com/timp/notifications/notification-settings/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     notification_via="Dashboard" \
     enabled="True" \
     notification_frequency="Daily" \
-    uuid="daf247dc-68c3-4ab8-93fc-024ae471bb91"
+    uuid="d1b86ae6-8b70-41a0-afaa-1bc7d0bdec31"
 
 ~~~
 {: title="HTTPie" }
@@ -78,19 +82,19 @@ import json
 
 def send_request():
     # Update Notification Settings
-    # PUT https://api-sandbox.cruxconnect.com/notifications/notification-settings/
+    # PUT https://api-sandbox.cruxconnect.com/timp/notifications/notification-settings/
 
     try:
         response = requests.put(
-            url="https://api-sandbox.cruxconnect.com/notifications/notification-settings/",
+            url="https://api-sandbox.cruxconnect.com/timp/notifications/notification-settings/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    notification_via="Dashboard" \
     enabled="True" \
     notification_frequency="Daily" \
-    uuid="daf247dc-68c3-4ab8-93fc-024ae471bb91")
+    uuid="d1b86ae6-8b70-41a0-afaa-1bc7d0bdec31")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -112,9 +116,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/notifications/notification-settings/',
+        path: '/timp/notifications/notification-settings/',
         method: 'PUT',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -142,7 +146,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"notification_via\":\"Dashboard\",\"enabled\":\"True\",\"notification_frequency\":\"Daily\",\"uuid\":\"daf247dc-68c3-4ab8-93fc-024ae471bb91\"}")
+    request.write("{\"notification_via\":\"Dashboard\",\"enabled\":\"True\",\"notification_frequency\":\"Daily\",\"uuid\":\"d1b86ae6-8b70-41a0-afaa-1bc7d0bdec31\"}")
     request.end();
 
 

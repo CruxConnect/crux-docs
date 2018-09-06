@@ -1,5 +1,5 @@
 ---
-title: /organizations/complete-password/
+title: /timp/organizations/complete-password/
 name: Create New Password
 position: 1.03
 visibility: internal
@@ -26,11 +26,11 @@ password
 token
 : (string) This is the "reset_token" you received from your "Reset Password" API call
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-password/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/organizations/complete-password/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "token": "VBnQ8wmbEuJdoqpAFh01",
@@ -41,7 +41,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/complete-passw
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/organizations/complete-password/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/organizations/complete-password/' \
     'Content-Type':'application/json; charset=utf-8' \
     token="VBnQ8wmbEuJdoqpAFh01" \
     password="crux_is_awesome"
@@ -59,11 +59,11 @@ import json
 
 def send_request():
     # Create New Password
-    # POST https://api-sandbox.cruxconnect.com/organizations/complete-password/
+    # POST https://api-sandbox.cruxconnect.com/timp/organizations/complete-password/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/organizations/complete-password/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/complete-password/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
@@ -90,7 +90,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/complete-password/',
+        path: '/timp/organizations/complete-password/',
         method: 'POST',
         headers: {"Content-Type":"application/json; charset=utf-8"}
     };

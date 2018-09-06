@@ -1,6 +1,6 @@
 ---
 title: Authentication
-position: 2
+position: 3
 visibility: public
 right_code: |
   ~~~ bash

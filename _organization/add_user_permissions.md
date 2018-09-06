@@ -1,7 +1,7 @@
 ---
-title: /organizations/users/permissions/&ltuser_uuid&gt/
+title: /timp/organizations/users/permissions/&lt;user-uuid&gt;/
 name: Add User Permissions
-position: 1.08
+position: 2.08
 visibility: public
 method: patch
 description: Add User Permissions for a user of your organization
@@ -9,8 +9,8 @@ right_code: |
   ~~~ json
   {
     "permission_uuids": [
-      "2a0295b6-dd74-4239-9988-24fcdb1adcea",
-      "05a46c58-9d13-4912-9167-7effc2cc7482"
+      "5188d840-188d-4066-af79-e073a91eb5a3",
+      "e04aec97-79de-450e-b619-8f909e862495"
     ]
   }
   ~~~
@@ -33,16 +33,19 @@ user_uuid
 permission_uuids
 : (string list) The list of permission uuids you wish to remove from a user
 
-{% include links/response_codes.md %}
+### Expected Response Codes
+
+{% include timp/links/response_codes.md %}
+
 
 ~~~ bash
-curl -X "PATCH" "https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl -X "PATCH" "https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "permission_uuids": [
-    "2a0295b6-dd74-4239-9988-24fcdb1adcea",
-    "05a46c58-9d13-4912-9167-7effc2cc7482"
+    "5188d840-188d-4066-af79-e073a91eb5a3",
+    "e04aec97-79de-450e-b619-8f909e862495"
   ]
 }'
 
@@ -50,12 +53,12 @@ curl -X "PATCH" "https://api-sandbox.cruxconnect.com/organizations/users/permiss
 {: title="Curl" }
 
 ~~~ bash
-http --json PATCH 'https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json PATCH 'https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     permission_uuids:="[
-  \"2a0295b6-dd74-4239-9988-24fcdb1adcea\",
-  \"05a46c58-9d13-4912-9167-7effc2cc7482\"
+  \"5188d840-188d-4066-af79-e073a91eb5a3\",
+  \"e04aec97-79de-450e-b619-8f909e862495\"
 ]"
 
 ~~~
@@ -71,18 +74,18 @@ import json
 
 def send_request():
     # Add User Permissions
-    # PATCH https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/
+    # PATCH https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/
 
     try:
         response = requests.patch(
-            url="https://api-sandbox.cruxconnect.com/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    permission_uuids:="[
-  \"2a0295b6-dd74-4239-9988-24fcdb1adcea\",
-  \"05a46c58-9d13-4912-9167-7effc2cc7482\"
+  \"5188d840-188d-4066-af79-e073a91eb5a3\",
+  \"e04aec97-79de-450e-b619-8f909e862495\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -105,9 +108,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/users/permissions/5de38a8e-800e-4cba-84c5-ee6c27f304d8/',
+        path: '/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/',
         method: 'PATCH',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -135,7 +138,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"permission_uuids\":[\"2a0295b6-dd74-4239-9988-24fcdb1adcea\",\"05a46c58-9d13-4912-9167-7effc2cc7482\"]}")
+    request.write("{\"permission_uuids\":[\"5188d840-188d-4066-af79-e073a91eb5a3\",\"e04aec97-79de-450e-b619-8f909e862495\"]}")
     request.end();
 
 

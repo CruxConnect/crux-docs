@@ -1,7 +1,7 @@
 ---
-title: /products/catalogs/
+title: /timp/products/catalogs/
 name: Create Catalog
-position: 12.00
+position: 11.00
 visibility: public
 method: post
 description: Create a Catalog
@@ -107,11 +107,11 @@ retailer_uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/catalogs/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -125,7 +125,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/catalogs/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     default_handling_cost="1.89" \
@@ -146,11 +146,11 @@ import json
 
 def send_request():
     # Create Catalog
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/catalogs/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/catalogs/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -180,7 +180,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/',
+        path: '/timp/products/catalogs/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

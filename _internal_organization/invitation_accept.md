@@ -1,5 +1,5 @@
 ---
-title: /organizations/accept-invite/&lt;invitation-token&gt;/
+title: /timp/organizations/accept-invite/&lt;invitation-token&gt;/
 name: Accept Crux Invite
 position: 1.05
 visibility: internal
@@ -36,11 +36,11 @@ password
 | 204  | No Content | The invitation was completed                 |
 | 404  | Not Found  | The token is invalid                         |
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/" \
+curl -X "POST" "http://localhost/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "password": "crux_is_awesome"
@@ -50,7 +50,7 @@ curl -X "POST" "http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1un
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/' \
+http --json POST 'http://localhost/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/' \
     'Content-Type':'application/json; charset=utf-8' \
     password="crux_is_awesome"
 
@@ -67,11 +67,11 @@ import json
 
 def send_request():
     # Accept Invitation
-    # POST http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/
+    # POST http://localhost/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/
 
     try:
         response = requests.post(
-            url="http://localhost/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/",
+            url="http://localhost/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/",
             headers={
                 "Content-Type": "application/json; charset=utf-8",
             },
@@ -97,7 +97,7 @@ def send_request():
     const httpOptions = {
         hostname: 'localhost',
         port: '80',
-        path: '/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/',
+        path: '/timp/organizations/accept-invite/KUMJLpo0tzFVeC5w1uni/',
         method: 'POST',
         headers: {"Content-Type":"application/json; charset=utf-8"}
     };

@@ -1,7 +1,11 @@
 ---
 title: API Versions
-position: 1.1
+position: 2
 visibility: public
+---
 
-To help you with your CruxConnect integration planing, we provide you access to both the current API endpoint (<a href="{{ site.baseurl}}">Current API</a>). And, to future changes to the API endpoints (<a href="{{ site.baseurl}}/future/">Future API</a>).
+The most current version of the CruxConnect platform is named after the **Timpanogos** peak in the Wastach mountain range (and visible from our offices).
 
+The endpoints on this page document the Timpanogos release and start with `/timp/`
+
+If you require access to the previous release, you an find it documented at: <a href="{{ site.baseurl}}/v1/">V1 API</a>.
