@@ -32,39 +32,11 @@ For this request the the content-type header should be `multipart/form-data`.
 ### Response Parameters:
 
 uuid
-: (string) The Universal Unique Identifier for the uploaded file. (For clarity: the UUID goes with the upload, not the file. If you upload the exact same file more than once, each upload will have its own UUID.)
-
-### Expected Response Codes
-
-{% include timp/links/response_codes.md %}
-
-### Expected Response Codes
-
-# Short Description
-Upload A File
-
-# Long Description
-Upload a File
-
-For this request the content-type header should be `multipart/form-data`.
-
-### Request Parameters
-
-file
-: (string) The file contents for upload
-
-filename
-: (string) The filename for upload
-
-### Response Parameters:
-
-uuid
 : (string) The Universal Unique Identifier for the uploaded file
 
 ### Expected Response Codes
 
 {% include timp/links/response_codes.md %}
-
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/organizations/files/upload/" \

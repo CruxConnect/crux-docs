@@ -11,7 +11,7 @@ right_code: |
     "item": {
       "uuid": "905c3e4b-ef10-4f77-b07e-03d4ecb743a0"
     },
-    "sku_id": "Lvfnsf-jwoQ0qLQ-H3tUmrVi",
+    "sku_id": "iKcYUL-LmEOGvTg-GL3kecYL",
     "restrictions": "tmpunavail",
     "condition": "used",
     "quantity_in_stock": "500",
@@ -92,10 +92,6 @@ Create a SKU to add to a specified item_uuid.
 
 {% include timp/product/request/sku.md %}
 
-### Request Parameters:
-
-{% include timp/product/request/sku.md %}
-
 ### Response Parameters:
 
 {% include timp/product/response/sku.md %}
@@ -135,63 +131,6 @@ Create a SKU to add to a specified item_uuid.
 ### Expected Response Codes
 
 {% include timp/links/response_codes.md %}
-
-### Expected Response Codes
-
-# Short Description
-Create a SKU to add to a specified item_uuid
-
-# Long Description
-Create a SKU to add to a specified item_uuid.
-
-### Request Parameters:
-
-{% include timp/product/request/sku.md %}
-
-### Request Parameters:
-
-{% include timp/product/request/sku.md %}
-
-### Response Parameters:
-
-{% include timp/product/response/sku.md %}
-
-#### SKU Distinguishing Attributes Object:
-
-{% include timp/objects/attributes.md %}
-
-#### Price Tier Object:
-
-{% include timp/objects/price_tier.md %}
-
-#### Product Image Object:
-
-{% include timp/product/response/image.md %}
-
-#### Product Videos Object:
-
-{% include timp/product/response/video.md %}
-
-#### SKU Measurements Object:
-
-{% include timp/product/response/measurements_sku.md %}
-
-#### Package Measurements Object:
-
-{% include timp/product/response/measurements_package.md %}
-
-#### Product Identifiers Object:
-
-{% include timp/product/response/product_identifiers.md %}
-
-#### Catalog Object:
-
-{% include timp/product/response/catalog_simple.md %}
-
-### Expected Response Codes
-
-{% include timp/links/response_codes.md %}
-
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/skus/" \
@@ -205,7 +144,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/skus/" \
   "item": {
     "uuid": "905c3e4b-ef10-4f77-b07e-03d4ecb743a0"
   },
-  "sku_id": "Lvfnsf-jwoQ0qLQ-H3tUmrVi",
+  "sku_id": "iKcYUL-LmEOGvTg-GL3kecYL",
   "msrp": "55.99",
   "quantity_in_stock": "500",
   "minimum_advertised_price": "40.00",
@@ -230,7 +169,7 @@ http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/skus/' \
     item:="{
   \"uuid\": \"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"
 }" \
-    sku_id="Lvfnsf-jwoQ0qLQ-H3tUmrVi" \
+    sku_id="iKcYUL-LmEOGvTg-GL3kecYL" \
     msrp="55.99" \
     quantity_in_stock="500" \
     minimum_advertised_price="40.00" \
@@ -269,7 +208,7 @@ def send_request():
     item:="{
   \"uuid\": \"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"
 }" \
-    sku_id="Lvfnsf-jwoQ0qLQ-H3tUmrVi" \
+    sku_id="iKcYUL-LmEOGvTg-GL3kecYL" \
     msrp="55.99" \
     quantity_in_stock="500" \
     minimum_advertised_price="40.00" \
@@ -329,7 +268,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item\":{\"uuid\":\"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"},\"sku_id\":\"Lvfnsf-jwoQ0qLQ-H3tUmrVi\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"distinguishing_attributes\":{\"color\":\"blue\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
+    request.write("{\"item\":{\"uuid\":\"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"},\"sku_id\":\"iKcYUL-LmEOGvTg-GL3kecYL\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"distinguishing_attributes\":{\"color\":\"blue\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
     request.end();
 
 

@@ -33,28 +33,6 @@ item_uuids
 
 {% include timp/links/response_codes.md %}
 
-### Expected Response Codes
-
-# Short Description
-Remove Items to a Catalog
-
-# Long Description
-Remove Items from the specified Catalog for Retailers to access. This allows you to remove Items and all associated SKUs from a Catalog.
-
-### URL Parameters
-
-catalog_uuid
-: (string) Universal Unique Identifier for the selected catalog
-
-### Request Parameters:
-
-item_uuids
-: (array) The Item UUIDs list parameter holds item_uuids for all of the items you wish to remove from your Catalog
-
-### Expected Response Codes
-
-{% include timp/links/response_codes.md %}
-
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/" \

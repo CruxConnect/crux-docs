@@ -55,12 +55,10 @@ Initiate a connection request between a retailer and a supplier
 For ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
 organization_name:
-: (string) The name of supplier.
+: (string) **Required** The name of supplier.
 
 primary_contact_name:
-: (string) The name of the primary contact for the supplier.
-
-### Optional
+: (string) **Required** The name of the primary contact for the supplier.
 
 primary_contact_phone:
 : (string) The phone number for the primary contact.
@@ -111,79 +109,6 @@ request_date
 ### Response Code:
 
 {% include timp/links/response_codes.md %}
-
-### Expected Response Codes
-
-# Short Description
-
-Initiate a connection request between a retailer and a supplier
-
-# Long Description
-
-Initiate a connection request between a retailer and a supplier
-
-### Request Parameters:
-
-For ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
-
-organization_name:
-: (string) The name of supplier.
-
-primary_contact_name:
-: (string) The name of the primary contact for the supplier.
-
-### Optional
-
-primary_contact_phone:
-: (string) The phone number for the primary contact.
-
-primary_contact_email:
-: (string) The email address for the primary contact.
-
-organization_account_number:
-: (string) The retailer's account number in the supplier's system.
-
-additional_information:
-: (string) Links to any sample files or specification documentation you may have.
-
-requested_integrations:
-: (array) Array of Integration Objects
-
-uploaded_files:
-: (array) Array of File Objects previously uploaded by the [#upload endpoint](#filesupload). Sample files or documentation.
-
-#### Integration Objects
-type:
-: (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
-
-update_frequency:
-: (string) A cron representation of the update frequency for the integration
-
-file_locations:
-: (string) Locations (URLs) where the files for this integration can be retrieved
-
-file_specs:
-: (string) Specifications of the files
-
-rules:
-: (string) Rules and business logic for the integration
-
-#### File Object
-
-{% include timp/objects/file_upload.md %}
-
-### Response Parameters:
-
-uuid
-: (string) Universal Unique Identifier for the connection
-
-request_date
-: (string) Date and time the request to connect was received. Formatted as UTC following ISO 8601.
-
-### Response Code:
-
-{% include timp/links/response_codes.md %}
-
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/" \

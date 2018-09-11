@@ -68,68 +68,9 @@ supplier_provided_sku_cost
 package_uuid
 : (string) Package Universal Unique Identifier
 
-
 ### Expected Response Codes
 
 {% include timp/links/response_codes.md %}
-
-### Expected Response Codes
-
-# Short Description
-Add a Tracking number or multiple Tacking numbers to an Order.
-
-# Long Description
-Add a Tracking number or multiple Tacking numbers to an Order. Essentially adding tracking to the entire order or a portion of the order by providing the order_uuid and providing the tracking, ship_cost, carrier, method, weight, and line_items with item_uuid and quantity.
-
-### URL Parameters
-
-order_uuid
-: (string) The Universal Unique Identifier for the Order
-
-### Request Parameters:
-
-tracking_number
-: (string) ***Required*** Order tracking number
-
-supplier_provided_carrier
-: (string) Supplier provided carrier
-
-supplier_provided_method
-: (string) Supplier provided shipping method
-
-package_weight
-: (decimal) Package weight
-
-package_ship_cost
-: (decimal) Package shipping cost (2 decimal places)
-
-package_ship_date
-: (string) Package ship date
-
-line_items
-: (array) ***Required*** An array of line item objects
-
-#### Line Item Object
-
-line_item_uuid
-: (string) ***Required*** The Universal Unique Identifier for the line item
-
-quantity_shipped
-: (integer) ***Required*** Quantity shipped
-
-supplier_provided_sku_cost
-: (decimal) Supplier provided SKU cost (2 decimal places)
-
-### Response Parameters
-
-package_uuid
-: (string) Package Universal Unique Identifier
-
-
-### Expected Response Codes
-
-{% include timp/links/response_codes.md %}
-
 
 ~~~ bash
 curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/orders/tracking/25d6eb53-e5c0-4019-8cf4-7330f1894e41/" \
