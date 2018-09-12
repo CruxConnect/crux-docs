@@ -1,5 +1,5 @@
 ---
-title: /products/items/&lt;item_uuid&gt;/
+title: /timp/products/items/&lt;item_uuid&gt;/
 name: Get Item Detail
 position: 3.03
 visibility: public
@@ -239,7 +239,7 @@ item_uuid
 {% include timp/links/response_codes.md %}
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -248,7 +248,7 @@ curl "https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -266,11 +266,11 @@ import json
 
 def send_request():
     # Get Item Detail
-    # GET https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -297,7 +297,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/',
+        path: '/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
