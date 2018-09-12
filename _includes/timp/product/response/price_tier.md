@@ -16,6 +16,9 @@ cost
 cost_per_unit
 : (decimal) Unit cost for an item at the price tier (2 decimal places)
 
+shipping_cost
+: (decimal) Unit shipping cost
+
 minimum_tier_quantity
 : (integer) Minimum quantity purchased to qualify for the price tier
 
