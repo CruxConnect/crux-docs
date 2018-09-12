@@ -1,5 +1,5 @@
 ---
-title: /products/items/search/export/
+title: /timp/products/items/search/export/
 name: Get Item Export by Search
 position: 4.06
 visibility: public
@@ -46,7 +46,7 @@ uuid
 {% include timp/links/response_codes.md %}
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/export/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/items/search/export/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -60,7 +60,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/search/export
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/items/search/export/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/items/search/export/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
@@ -81,11 +81,11 @@ import json
 
 def send_request():
     # Get Item Export by Search
-    # POST https://api-sandbox.cruxconnect.com/products/items/search/export/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/items/search/export/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/items/search/export/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/items/search/export/",
             headers={
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
@@ -115,7 +115,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/items/search/export/',
+        path: '/timp/products/items/search/export/',
         method: 'POST',
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };

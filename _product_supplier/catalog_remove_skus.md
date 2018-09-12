@@ -1,5 +1,5 @@
 ---
-title: /products/catalogs/&ltcatalog-uuid&gt/remove-skus/
+title: /timp/products/catalogs/&ltcatalog-uuid&gt/remove-skus/
 name: Catalog Remove SKU
 position: 12.08
 visibility: public
@@ -35,7 +35,7 @@ sku_uuids
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/" \
      -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -48,7 +48,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/' \
     'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_uuids:="[
@@ -68,11 +68,11 @@ import json
 
 def send_request():
     # Catalog Remove SKU
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/",
             headers={
                 "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
                 "Content-Type": "application/json; charset=utf-8",
@@ -101,7 +101,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/',
+        path: '/timp/products/catalogs/7c973d2d-e888-4aa6-878d-5b62253cf0ea/remove-skus/',
         method: 'POST',
         headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
     };
