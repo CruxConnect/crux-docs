@@ -9,9 +9,10 @@ right_code: |
   ~~~ json
   {
     "pagination": {
-      "total_count": 150,
-      "start": 30,
-      "limit": 10,
+      "total_count": 400,
+      "start": 0,
+      "limit": 200,
+      "next_start_index": 200
     },
     "items": [
       {
