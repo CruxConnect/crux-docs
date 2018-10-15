@@ -1,8 +1,5 @@
 <!-- begin setting filtered collections -->
-{% if page.path == 'knowledgebase.html' %}
-  {% assign visibility = 'knowledgebase' %}
-  {% assign filtered_docs = collection.docs | where_exp:"item", "item.visibility == visibility" %}
-{% elsif page.path == 'file-specs.html' %}
+{% if page.path == 'file-specs.html' %}
   {% assign visibility = 'file-specs' %}
   {% assign filtered_docs = collection.docs | where_exp:"item", "item.visibility == visibility" %}
 {% else %}

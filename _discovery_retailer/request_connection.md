@@ -1,7 +1,7 @@
 ---
-title: /organizations/connections/request/
+title: /timp/organizations/connections/request/
 name: Request Connection
-position: 3.02
+position: 1.00
 visibility: public
 method: post
 description: Initiate a connection request between a retailer and a supplier
@@ -34,26 +34,15 @@ right_code: |
         "rules": "No Rules, Just Fun"
       }
     ],
-    "uploaded_files": [
-      {
-        "name": "Example Item File",
-        "uuid": "555b68e5-e407-4b15-b200-6fade8980596",
-      },{
-        "name": "Example Order File",
-        "uuid": "8988ff95-e82d-4b28-b55f-057c3208c00e",
-      },{
-        "name": "Example Allocation File",
-        "uuid": "a55897c4-3d86-4804-851a-b89654a1d309",
-      }
-    ]
+    "uploaded_files": []
   }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "request_uuid": "b60dc695-cd0f-4538-9211-ea9c4933e0e4",
-    "request_date": "2018-04-12 23:38:06.923137+00:00"
+    "request_uuid": "d0d0b571-4839-47e2-9f30-4db9df584529",
+    "request_date": "2018-08-21 23:38:33.070681+00:00"
   }
   ~~~
   {: title="Response" }
@@ -66,12 +55,10 @@ Initiate a connection request between a retailer and a supplier
 For ease of description, we describe these endpoints as a retailer requesting a connection to a supplier.
 
 organization_name:
-: (string) The name of supplier.
+: (string) **Required** The name of supplier.
 
 primary_contact_name:
-: (string) The name of the primary contact for the supplier.
-
-### Optional
+: (string) **Required** The name of the primary contact for the supplier.
 
 primary_contact_phone:
 : (string) The phone number for the primary contact.
@@ -93,7 +80,7 @@ uploaded_files:
 
 #### Integration Objects
 type:
-: (string) Type of the integration. Options: "item", "order", "allocation", "tracking", "other"
+: (string) Type of the integration. Options: `item`, `order`, `allocation`, `tracking`, `other`
 
 update_frequency:
 : (string) A cron representation of the update frequency for the integration
@@ -109,7 +96,7 @@ rules:
 
 #### File Object
 
-{% include objects/file_upload.md %}
+{% include timp/objects/file_upload.md %}
 
 ### Response Parameters:
 
@@ -119,17 +106,15 @@ uuid
 request_date
 : (string) Date and time the request to connect was received. Formatted as UTC following ISO 8601.
 
-### Expected Response Codes
+### Response Code:
 
-201 Created
-
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/connections/request/" \
-     -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
-     -H 'Authorization: Token 1234567890' \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/" \
+     -H 'Authorization: Token `1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
+     -H 'Cookie: sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
      -d $'{
   "integrations": [
     {
@@ -152,18 +137,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/connections/re
       "update_frequency": "ftp://foo:bar@baz.blerg"
     }
   ],
-  "uploaded_files": [
-          {
-        name: 'Example Item File',
-        uuid: '555b68e5-e407-4b15-b200-6fade8980596',
-      },{
-        name: 'Example Order File',
-        uuid: '8988ff95-e82d-4b28-b55f-057c3208c00e',
-      },{
-        name: 'Example Allocation File',
-        uuid: 'a55897c4-3d86-4804-851a-b89654a1d309',
-      }
-  ],
+  "uploaded_files": [],
   "additional_information": "Oh, It'"'"'s you Bob",
   "primary_contact_name": "Bob Brown",
   "primary_contact_phone": "801-555-1212",
@@ -175,10 +149,10 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/connections/re
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/organizations/connections/request/' \
-    'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
-    'Authorization':'Token 1234567890' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/' \
+    'Authorization':'Token `1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
+    'Cookie':'sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
     integrations:="[
   {
     \"rules\": \"No winers\",
@@ -200,18 +174,7 @@ http --json POST 'https://api-sandbox.cruxconnect.com/organizations/connections/
     \"update_frequency\": \"ftp://foo:bar@baz.blerg\"
   }
 ]" \
-    uploaded_files:="[
-      {
-        name: 'Example Item File',
-        uuid: '555b68e5-e407-4b15-b200-6fade8980596',
-      },{
-        name: 'Example Order File',
-        uuid: '8988ff95-e82d-4b28-b55f-057c3208c00e',
-      },{
-        name: 'Example Allocation File',
-        uuid: 'a55897c4-3d86-4804-851a-b89654a1d309',
-      }
-    ]" \
+    uploaded_files:="[]" \
     additional_information="Oh, It's you Bob" \
     primary_contact_name="Bob Brown" \
     primary_contact_phone="801-555-1212" \
@@ -231,15 +194,15 @@ import json
 
 def send_request():
     # Request Connection
-    # POST https://api-sandbox.cruxconnect.com/organizations/connections/request/
+    # POST https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/organizations/connections/request/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/",
             headers={
-                "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
-                "Authorization": "Token 1234567890",
+                "Authorization": "Token `1234567890",
                 "Content-Type": "application/json; charset=utf-8",
+                "Cookie": "sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz",
             },
             data=json.dumps(    integrations:="[
   {
@@ -262,18 +225,7 @@ def send_request():
     \"update_frequency\": \"ftp://foo:bar@baz.blerg\"
   }
 ]" \
-    uploaded_files:="[
-      {
-        name: "Example Item File",
-        uuid: "555b68e5-e407-4b15-b200-6fade8980596",
-      },{
-        name: "Example Order File",
-        uuid: "8988ff95-e82d-4b28-b55f-057c3208c00e",
-      },{
-        name: "Example Allocation File",
-        uuid: "a55897c4-3d86-4804-851a-b89654a1d309",
-      }
-    ]" \
+    uploaded_files:="[]" \
     additional_information="Oh, It's you Bob" \
     primary_contact_name="Bob Brown" \
     primary_contact_phone="801-555-1212" \
@@ -300,9 +252,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/connections/request/',
+        path: '/timp/organizations/connections/request/',
         method: 'POST',
-        headers: {"Cookie":"sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp","Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token `1234567890","Content-Type":"application/json; charset=utf-8","Cookie":"sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

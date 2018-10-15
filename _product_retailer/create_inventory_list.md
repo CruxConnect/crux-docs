@@ -1,7 +1,7 @@
 ---
-title: /products/inventory-lists/
+title: /timp/products/inventory-lists/
 name: Create Inventory List
-position: 11.02
+position: 10.02
 visibility: public
 method: post
 description: Create an Inventory List for your account
@@ -72,11 +72,11 @@ description
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -88,7 +88,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     name="New Test Inventory List Name FXu6XvYOGskXhn1v5SAL17IW7AeTImhA" \
@@ -107,11 +107,11 @@ import json
 
 def send_request():
     # Create Inventory List
-    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -139,7 +139,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/',
+        path: '/timp/products/inventory-lists/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

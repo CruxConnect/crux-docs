@@ -1,7 +1,7 @@
 ---
-title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/remove-skus/
+title: /timp/products/inventory-lists/&lt;inventory_list_uuid&gt;/remove-skus/
 name: Inventory Remove SKU
-position: 11.08
+position: 10.08
 visibility: public
 method: post
 description: Remove SKUs from an existing Inventory List for your account
@@ -31,11 +31,11 @@ skus
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -48,7 +48,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/054
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     sku_uuids:="[
@@ -68,11 +68,11 @@ import json
 
 def send_request():
     # Inventory Remove SKU
-    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -101,7 +101,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/',
+        path: '/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/remove-skus/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

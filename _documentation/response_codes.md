@@ -1,7 +1,7 @@
 ---
 title: Response Codes
-visibility: all
-position: 4
+visibility: public
+position: 5
 ---
 
 Expected response that you might see returned.  If there is an additional response code that might occur, we'll identify it in the associated document.

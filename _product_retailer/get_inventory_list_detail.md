@@ -1,7 +1,7 @@
 ---
-title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/
+title: /timp/products/inventory-lists/&lt;inventory_list_uuid&gt;/
 name: Get Inventory List Detail
-position: 11.01
+position: 4.01
 visibility: public
 method: get
 description: Get the Details of a particular Inventory List you have access to
@@ -58,11 +58,11 @@ description
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -71,7 +71,7 @@ curl "https://api-sandbox.cruxconnect.com/products/inventory-lists/fef4116d-7a13
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -89,11 +89,11 @@ import json
 
 def send_request():
     # Get Inventory List Detail
-    # GET https://api-sandbox.cruxconnect.com/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -120,7 +120,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/',
+        path: '/timp/products/inventory-lists/fef4116d-7a13-4dcf-a40c-10faa19f562c/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

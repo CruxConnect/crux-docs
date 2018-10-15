@@ -1,7 +1,7 @@
 ---
-title: /products/skus/&ltsku_uuid&gt/
+title: /timp/products/skus/&ltsku_uuid&gt/
 name: Get Sku Detail
-position: 4.08
+position: 3.08
 visibility: public
 method: get
 description: Get Details about a SKU
@@ -36,9 +36,12 @@ right_code: |
     "uuid": "95848455-d19b-48f8-8f53-5791818ddeca",
     "restrictions": null,
     "condition": "refurb",
-    "distinguishing_attributes": {
+    "sku_distinguishing_attributes": {
       "size": 9,
       "color": "antiquewhite"
+    },
+    "sku_nondistinguishing_attributes": {
+      "diameter_in_inches": 3.6,
     },
     "item": {
       "uuid": "5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4"
@@ -64,8 +67,16 @@ right_code: |
       {
         "uuid": "97fa6aad-b160-4dea-9740-3eaa98886ccd",
         "url": "https://picsum.photos/285/?image=17",
+        "uri_type": "url",
         "width": 285,
         "height": 285
+      },
+    ],
+    "product_videos": [
+      {
+        "uuid": "84730687-b160-4dea-9740-3eaa98886ccd",
+        "url": "https://somewhere.videos/285/?video=32",
+        "uri_type": "url",
       },
     ],
     "measurements": {
@@ -124,42 +135,46 @@ sku_uuid
 
 ### Response Parameters:
 
-{% include product/response/sku.md %}
+{% include timp/product/response/sku.md %}
 
 #### Price Tier Object:
 
-{% include product/response/price_tier.md %}
+{% include timp/product/response/price_tier.md %}
 
 #### Product Image Object:
 
-{% include product/response/image.md %}
+{% include timp/product/response/image.md %}
+
+#### Product Video Object:
+
+{% include timp/product/response/video.md %}
 
 #### SKU Measurements Object:
 
-{% include product/response/measurements_sku.md %}
+{% include timp/product/response/measurements_sku.md %}
 
 #### Package Measurements Object:
 
-{% include product/response/measurements_package.md %}
+{% include timp/product/response/measurements_package.md %}
 
 #### Product Identifiers Object:
 
-{% include product/response/product_identifiers.md %}
+{% include timp/product/response/product_identifiers.md %}
 
 #### Inventory List Object:
 
-{% include product/response/inventory_list_minimal.md %}
+{% include timp/product/response/inventory_list_minimal.md %}
 
 #### Supplier Object:
 
-{% include product/response/supplier_minimal.md %}
+{% include timp/product/response/supplier_minimal.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -192,7 +207,7 @@ curl "https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     address:="{
@@ -232,11 +247,11 @@ import json
 
 def send_request():
     # Get Sku Detail
-    # GET https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -285,7 +300,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/',
+        path: '/timp/products/skus/95848455-d19b-48f8-8f53-5791818ddeca/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

@@ -1,19 +1,20 @@
 ---
-title: /organizations/users/detail/&ltuuid&gt/
+title: /timp/organizations/users/detail/&lt;user_uuid&gt;/
 name: Get User
-position: 1.05
+position: 2.05
 visibility: public
 method: get
 description: Get all details about a single user on your account
 right_code: |
+
   ~~~ json
   {
-    "uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff",
+    "uuid": "c3fb688d-4aca-42d4-9db1-cc268c465892",
     "person": {
-      "uuid": "4b4e8ea4-a3cf-4c63-b34e-e1b9047c1340",
-      "first_name": "Crux",
-      "last_name": "User",
-      "email": "user@mycompany.com",
+      "uuid": "2975ae8b-844c-4480-90da-635debc15342",
+      "first_name": "Nick",
+      "last_name": "Coleman",
+      "email": "nick@dobaretailer.com",
       "phone": null,
       "job_title": null
     },
@@ -30,23 +31,13 @@ right_code: |
             "grouping": "ORGUSERS"
           }
         },
-        {
-          "assigned": true,
-          "permission": {
-            "uuid": "293d9373-c318-4724-881c-a4e5b0b3e952",
-            "name": "edit_org_users",
-            "display_name": "Edit Users",
-            "description": "Ability to edit/change/delete users in an organization",
-            "visibility": "BOTH",
-            "grouping": "ORGUSERS"
-          }
-        },
       ],
       "org_user": {
-        "uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff"
+        "uuid": "c3fb688d-4aca-42d4-9db1-cc268c465892"
       }
     },
-    "status": "ACTIVE"
+    "status": "ACTIVE",
+    "token": null
   }
   ~~~
   {: title="Response" }
@@ -57,20 +48,22 @@ Get all the details about a specific user on your Retailer or Supplier account. 
 To view orgainzation users, you must be assigned the 'view_org_users' permission.
 {: .info }
 
-URL Endpoint: `/api/organizations/users/detail/<user_uuid>/`
+URL Endpoint: `/api/timp/organizations/users/detail/<user_uuid>/`
 
 ### Response Parameters:
 
-{% include objects/user.md %}
+{% include timp/objects/user.md %}
 
-{% include objects/permissions_assignment.md %}
+{% include timp/objects/permissions_assignment.md %}
 
-{% include links/response_codes.md %}
+### Expected Response Codes
+
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -78,8 +71,8 @@ curl "https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-54
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -96,13 +89,13 @@ import json
 
 def send_request():
     # Get User
-    # GET https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -127,9 +120,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/users/detail/52d13dc7-5463-4f90-9e5b-5b8ec97228ff/',
+        path: 'timp/organizations/users/detail/c3fb688d-4aca-42d4-9db1-cc268c465892/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

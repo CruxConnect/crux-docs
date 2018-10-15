@@ -49,7 +49,6 @@ There are several different documentation pages:
 * `/` - The general public API documentation
 * `/internal/` - The internal "undocumented" (unsupported) API documentation
 * `/file-specs/` - Specifications for the "Crux Blessed" feed formats
-* `/knowledgebase/` - General help knowledge
 
 ### Visibility
 
@@ -62,7 +61,6 @@ The possible choices are:
 * `public` - Item will appear only on public facing `/` page
 * `internal` - Item will appear only on `/internal/` page
 * `file-specs` - Item will appear only on `/file-spec/` page
-* `knowledgebase` - Item will appear only on `/knowledgebase/` page
 
 Any other value will cause the item to be hidden.
 

@@ -1,7 +1,7 @@
 ---
-title: /products/items/export/
+title: /timp/products/items/export/
 name: Get Item Export
-position: 4.04
+position: 3.04
 visibility: public
 method: post
 description: Get Item Export allows you to export the item you are interested.
@@ -44,11 +44,11 @@ uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/export/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/items/export/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -61,7 +61,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/items/export/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/items/export/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/items/export/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
@@ -81,11 +81,11 @@ import json
 
 def send_request():
     # Get Item Export
-    # POST https://api-sandbox.cruxconnect.com/products/items/export/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/items/export/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/items/export/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/items/export/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -114,7 +114,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/items/export/',
+        path: '/timp/products/items/export/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

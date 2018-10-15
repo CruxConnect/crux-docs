@@ -1,7 +1,7 @@
 ---
-title: /products/skus/
+title: /timp/products/skus/
 name: Create SKU
-position: 12.07
+position: 11.07
 visibility: public
 method: post
 description: Create a SKU to add to a specified item_uuid
@@ -9,9 +9,9 @@ right_code: |
   ~~~ json
   {
     "item": {
-      "uuid": "c278fcc7-ff5e-4494-9ccf-36d6d6d167c8"
+      "uuid": "905c3e4b-ef10-4f77-b07e-03d4ecb743a0"
     },
-    "sku_id": "LYsNxu-iIhTgvti-X3qj0ade",
+    "sku_id": "iKcYUL-LmEOGvTg-GL3kecYL",
     "restrictions": "tmpunavail",
     "condition": "used",
     "quantity_in_stock": "500",
@@ -30,35 +30,34 @@ right_code: |
 
   ~~~ json
   {
-    "uuid": "7be0e3de-4108-4b08-85b4-19ddd0adcae4",
+    "uuid": "4c443958-eb6f-4043-8cbc-b227e044334e",
     "restrictions": "tmpunavail",
     "condition": "used",
-    "distinguishing_attributes": {
-      "color": "blue"
-    },
+    "sku_distinguishing_attributes": {},
     "item": {
-      "uuid": "2bce11c2-e60c-47a0-899b-81edfa90f666"
+      "uuid": "905c3e4b-ef10-4f77-b07e-03d4ecb743a0"
     },
     "minimum_advertised_price": 40,
     "msrp": 55.99,
     "price_tiers": [],
     "product_images": [],
+    "product_videos": [],
     "measurements": {
       "sku": {
-        "weight_units": null,
         "weight": null,
-        "height": null,
+        "weight_units": null,
+        "length": null,
         "width": null,
-        "dimension_units": null,
-        "length": null
+        "height": null,
+        "dimension_units": null
       },
       "package": {
-        "weight_units": null,
         "weight": null,
-        "height": null,
+        "weight_units": null,
+        "length": null,
         "width": null,
-        "dimension_units": null,
-        "length": null
+        "height": null,
+        "dimension_units": null
       }
     },
     "product_identifiers": {
@@ -71,16 +70,17 @@ right_code: |
     },
     "catalogs": [
       {
-        "uuid": "81bd100e-e347-4ee3-9dfd-79a7a59aaa72",
+        "uuid": "96ce2c9d-044f-4208-9148-5e4b5b2771cb",
         "name": "__master__"
       }
     ],
-    "created": "2018-04-25T22:24:27.631175Z",
-    "last_updated": "2018-04-25T22:24:27.631223Z",
-    "sku_id": "DtMEqi-mWpAhAe5-qLuMx5Rc",
+    "created": "2018-08-24T22:45:10.623218Z",
+    "last_updated": "2018-08-24T22:45:10.623271Z",
+    "sku_id": "AKpvhb-UhLREqWn-cO3bLy4P",
     "quantity_in_stock": 500,
     "quantity_on_backorder": 100,
-    "number_of_units_bundled": 2
+    "number_of_units_bundled": 2,
+    "sku_nondistinguishing_attributes": {}
   }
   ~~~
   {: title="Response" }
@@ -90,128 +90,50 @@ Create a SKU to add to a specified item_uuid.
 
 ### Request Parameters:
 
-item
-: (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
-
-sku_id
-: (string) The SKU Identifier for the SKU as provided by the Supplier
-
-restrictions
-: (string) The Restrictions imposed on the SKU which can include "tmpunavail" (temporary unavailable) or "discontd" (dicontinued)
-
-condition
-: (string) The Condition of the SKU; these include "new", "used", and "refurb" (refurbished)
-
-quantity_in_stock
-: (integer) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
-
-quantity_on_backorder
-: (number) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
-
-number_of_units_bundled
-: (integer) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
-distinguishing_attributes
-: (array) The Distinguishing Attributes are attributes objects based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
-
-
-minimum_advertised_price
-: (decimal) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price. (2 decmial places)
-
-msrp
-: (decimal) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling. (2 decmial places)
+{% include timp/product/request/sku.md %}
 
 ### Response Parameters:
 
-uuid
-: (string) The Universal Unique Identifier for the SKU
+{% include timp/product/response/sku.md %}
 
-restrictions
-: (string) The Restrictions imposed on the SKU
+#### SKU Distinguishing Attributes Object:
 
-condition
-: (string) The Condition of the SKU; these include "new", "used", and "refurb"
-
-distinguishing_attributes
-: (object) The Distinguishing Attributes are attributes which based on a category or product line may be necessary to include. It may also be empty, as per the Suppliers' discretion.
-
-item
-: (object) The Item object contains the item_uuid; the item_uuid is the parent identifer for the sku_uuid.
-
-minimum_advertised_price
-: (decimal) The Minimum Advertised Price (MAP) is a price floor for advertisement on the SKU. You may not legally list the SKU for sale at a lower price. (2 decmial places)
-
-msrp
-: (decimal) The Manufacturer's Suggested Retail Price for the SKU. This is only a suggestion. It is not a price floor nor is it a price ceiling. (2 decmial places)
-
-price_tiers
-: (array) The list of Price Tier objects on this SKU
-
-product_images
-: (array) The Product Images are a list of product image objects for the SKU which contain a uuid, url, width, and height of the image.
-
-measurements
-: (object) The Measurements object contains sku measurements object and a package measurements object.
-
-product_identifiers
-: (object) The Product Identifiers object contains the upca, ean13, gtin14, isbn, asin, and mpn for the SKU.
-
-catalogs
-: (array) An array containing all of the catalog objects where this SKU currently resides.
-
-created
-: (string) The Created parameter indicates the date the SKU was Created in our system.
-
-last_updated
-: (string) The Last Updated parameter indicates the date the SKU was Last Updated in our system.
-
-sku_id
-: (string) The SKU Identifier for the SKU as provided by the Supplier
-
-quantity_in_stock
-: (integer) The Quantity In-Stock parameter indicates how many SKUs are currently available for purchase.
-
-quantity_on_backorder
-: (integer) The Quantity on Backorder parameter indicates how many of this particular SKU are going to be replenished. It can be considered a tentative quantity to be added to the current quantity in-stock.
-
-number_of_units_bundled
-: (integer) The Number of Units Bundled parameter indicates how many SKUs are in a single bundle.
-
-
-#### Distinguishing Attributes Object:
-
-{% include objects/attributes.md %}
+{% include timp/objects/attributes.md %}
 
 #### Price Tier Object:
 
-{% include objects/price_tier.md %}
+{% include timp/objects/price_tier.md %}
 
 #### Product Image Object:
 
-{% include product/response/image.md %}
+{% include timp/product/response/image.md %}
+
+#### Product Videos Object:
+
+{% include timp/product/response/video.md %}
 
 #### SKU Measurements Object:
 
-{% include product/response/measurements_sku.md %}
+{% include timp/product/response/measurements_sku.md %}
 
 #### Package Measurements Object:
 
-{% include product/response/measurements_package.md %}
+{% include timp/product/response/measurements_package.md %}
 
 #### Product Identifiers Object:
 
-{% include product/response/product_identifiers.md %}
+{% include timp/product/response/product_identifiers.md %}
 
 #### Catalog Object:
 
-{% include product/response/catalog_simple.md %}
+{% include timp/product/response/catalog_simple.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/skus/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -220,9 +142,9 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
   "condition": "used",
   "minimum_advertised_price_currency": "USD",
   "item": {
-    "uuid": "c278fcc7-ff5e-4494-9ccf-36d6d6d167c8"
+    "uuid": "905c3e4b-ef10-4f77-b07e-03d4ecb743a0"
   },
-  "sku_id": "LYsNxu-iIhTgvti-X3qj0ade",
+  "sku_id": "iKcYUL-LmEOGvTg-GL3kecYL",
   "msrp": "55.99",
   "quantity_in_stock": "500",
   "minimum_advertised_price": "40.00",
@@ -237,7 +159,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/skus/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/skus/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     restrictions="tmpunavail" \
@@ -245,9 +167,9 @@ http --json POST 'https://api-sandbox.cruxconnect.com/products/skus/' \
     condition="used" \
     minimum_advertised_price_currency="USD" \
     item:="{
-  \"uuid\": \"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"
+  \"uuid\": \"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"
 }" \
-    sku_id="LYsNxu-iIhTgvti-X3qj0ade" \
+    sku_id="iKcYUL-LmEOGvTg-GL3kecYL" \
     msrp="55.99" \
     quantity_in_stock="500" \
     minimum_advertised_price="40.00" \
@@ -270,11 +192,11 @@ import json
 
 def send_request():
     # Create SKU
-    # POST https://api-sandbox.cruxconnect.com/products/skus/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/skus/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/skus/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/skus/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -284,9 +206,9 @@ def send_request():
     condition="used" \
     minimum_advertised_price_currency="USD" \
     item:="{
-  \"uuid\": \"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"
+  \"uuid\": \"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"
 }" \
-    sku_id="LYsNxu-iIhTgvti-X3qj0ade" \
+    sku_id="iKcYUL-LmEOGvTg-GL3kecYL" \
     msrp="55.99" \
     quantity_in_stock="500" \
     minimum_advertised_price="40.00" \
@@ -316,7 +238,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/skus/',
+        path: '/timp/products/skus/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
@@ -346,7 +268,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item\":{\"uuid\":\"c278fcc7-ff5e-4494-9ccf-36d6d6d167c8\"},\"sku_id\":\"LYsNxu-iIhTgvti-X3qj0ade\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"distinguishing_attributes\":{\"color\":\"blue\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
+    request.write("{\"item\":{\"uuid\":\"905c3e4b-ef10-4f77-b07e-03d4ecb743a0\"},\"sku_id\":\"iKcYUL-LmEOGvTg-GL3kecYL\",\"restrictions\":\"tmpunavail\",\"condition\":\"used\",\"quantity_in_stock\":\"500\",\"quantity_on_backorder\":\"100\",\"number_of_units_bundled\":\"2\",\"distinguishing_attributes\":{\"color\":\"blue\"},\"minimum_advertised_price\":\"40.00\",\"msrp\":\"55.99\",\"minimum_advertised_price_currency\":\"USD\",\"msrp_currency\":\"USD\"}")
     request.end();
 
 

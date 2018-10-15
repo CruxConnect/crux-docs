@@ -1,7 +1,7 @@
 ---
-title: /notifications/
+title: /timp/notifications/
 name: Get Dashboard Notifications
-position: 1.12
+position: 2.11
 visibility: public
 method: get
 description: Get the Dashboard Notifications for your account
@@ -38,11 +38,11 @@ created_at
 type
 : (string) The Type parameter indicates where the notification is sent. For this call it should always say "Dashboard".
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/notifications/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-sandbox.cruxconnect.com/timp/notifications/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "user_uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49"
@@ -52,8 +52,8 @@ curl "https://api-sandbox.cruxconnect.com/notifications/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/notifications/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/notifications/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     user_uuid="3a7acb28-ab13-437e-8c35-46cf4f0bea49"
 
@@ -70,13 +70,13 @@ import json
 
 def send_request():
     # Get Dashboard Notifications
-    # GET https://api-sandbox.cruxconnect.com/notifications/
+    # GET https://api-sandbox.cruxconnect.com/timp/notifications/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/notifications/",
+            url="https://api-sandbox.cruxconnect.com/timp/notifications/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    user_uuid="3a7acb28-ab13-437e-8c35-46cf4f0bea49")
@@ -101,9 +101,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/notifications/',
+        path: '/timp/notifications/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

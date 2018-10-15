@@ -1,7 +1,7 @@
 ---
-title: /products/inventory-lists/&lt;inventory_list_uuid&gt;/add-items/
+title: /timp/products/inventory-lists/&lt;inventory_list_uuid&gt;/add-items/
 name: Inventory Add Item
-position: 11.03
+position: 10.03
 visibility: public
 method: post
 description: Add Items to an existing Inventory List for your account
@@ -35,11 +35,11 @@ item_uuids
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
@@ -52,7 +52,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/inventory-lists/054
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
@@ -72,11 +72,11 @@ import json
 
 def send_request():
     # Inventory Add Item
-    # POST https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -105,7 +105,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/',
+        path: '/timp/products/inventory-lists/054c051c-891d-4063-a299-62d6e5036e53/add-items/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

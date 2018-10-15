@@ -1,27 +1,27 @@
 ---
-title: /organizations/user-login/
+title: /timp/organizations/user-login/
 name: Retrieve Auth Token
-position: 1.00
-visibility: all
+position: 2.00
+visibility: public
 method: post
 description: Login to receive an authentication token
 right_code: |
   ~~~ json
   {
-    "username": "user@mycompany.com",
-    "password": "crux_is_awesome"
+    "username": "nick@dobaretailer.com",
+    "password": "thanos_rocks"
   }
   ~~~
   {: title="Request" }
 
   ~~~ json
   {
-    "auth_token": "47d4yfbwymedhiudj384702984nakju4hajh395d",
-    "org_uuid": "757ce28d-fbd6-4b9f-8051-f847482e169f",
-    "user_uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff",
-    "retailer_uuid": "",
-    "supplier_uuid": "b5f05054-dce4-4286-96fc-b9424d6b2137",
-    "org_type": "SUPPLIER",
+    "auth_token": "5d6a1ef8c07df5ccf818aea56a1c23fce89212b0",
+    "org_uuid": "f5d2aea7-dcd0-4bb4-bedd-c642ce6fc7a0",
+    "user_uuid": "c3fb688d-4aca-42d4-9db1-cc268c465892",
+    "retailer_uuid": "cda6b5c7-addf-43d7-bdb3-2fe6a0420c42",
+    "supplier_uuid": "",
+    "org_type": "RETAILER",
     "permission_assignments": {
       "permissions": [
         {
@@ -35,20 +35,9 @@ right_code: |
             "grouping": "ORGUSERS"
           }
         },
-        {
-          "assigned": true,
-          "permission": {
-            "uuid": "293d9373-c318-4724-881c-a4e5b0b3e952",
-            "name": "edit_org_users",
-            "display_name": "Edit Users",
-            "description": "Ability to edit/change/delete users in an organization",
-            "visibility": "BOTH",
-            "grouping": "ORGUSERS"
-          }
-        },
       ],
       "org_user": {
-        "uuid": "52d13dc7-5463-4f90-9e5b-5b8ec97228ff"
+        "uuid": "c3fb688d-4aca-42d4-9db1-cc268c465892"
       }
     }
   }
@@ -69,7 +58,7 @@ password
 ### Response Parameters:
 
 auth_token
-: (string) Authentication Token to be used for subsequent API calls
+: (string) Authentication Token to be used for subsequent API calls (note: authentication tokens expire after two hours of being issued)
 
 org_uuid
 : (string) Organization Universal Unique Identifier for the organization
@@ -100,8 +89,9 @@ uuid
 : (string) Permission UUID
 
 name
-: (string) Permission Name.
-: {% include links/available_permissions.md %}
+: (string) Permission Name
+
+{% include timp/links/available_permissions.md %}
 
 display_name
 : (string) Permission Display Name
@@ -120,26 +110,29 @@ grouping
 uuid
 : (string) User's Organization UUID
 
-{% include links/response_codes.md %}
+### Expected Response Codes
+
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/user-login/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/organizations/user-login/" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -u ':' \
      -d $'{
-  "username": "user@mycompany.com",
-  "password": "crux_is_awesome"
+  "username": "nick@dobaretailer.com",
+  "password": "thanos_rocks"
 }'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/organizations/user-login/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/organizations/user-login/' \
+    'Authorization':'Basic Og==' \
     'Content-Type':'application/json; charset=utf-8' \
-    username="user@mycompany.com" \
-    password="crux_is_awesome"
+    username="nick@dobaretailer.com" \
+    password="thanos_rocks"
 
 ~~~
 {: title="HTTPie" }
@@ -153,17 +146,18 @@ import json
 
 
 def send_request():
-    # Login
-    # POST https://api-sandbox.cruxconnect.com/organizations/user-login/
+    # Retrieve Auth Token
+    # POST https://api-sandbox.cruxconnect.com/timp/organizations/user-login/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/organizations/user-login/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/user-login/",
             headers={
+                "Authorization": "Basic Og==",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    username="user@mycompany.com" \
-    password="crux_is_awesome")
+            data=json.dumps(    username="nick@dobaretailer.com" \
+    password="thanos_rocks")
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -176,7 +170,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Login
+// request Retrieve Auth Token
 (function(callback) {
     'use strict';
 
@@ -185,9 +179,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/user-login/',
+        path: '/timp/organizations/user-login/',
         method: 'POST',
-        headers: {"Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Basic Og==","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -216,7 +210,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"username\":\"user@mycompany.com\",\"password\":\"crux_is_awesome\"}")
+    request.write("{\"username\":\"nick@dobaretailer.com\",\"password\":\"thanos_rocks\"}")
     request.end();
 
 

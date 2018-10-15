@@ -1,7 +1,7 @@
 ---
 title: Authentication
-position: 2
-visibility: all
+position: 3
+visibility: public
 right_code: |
   ~~~ bash
   curl "https://api-sandbox.cruxconnect.com/path/to/api/endpoint/" \

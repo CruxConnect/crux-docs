@@ -1,7 +1,7 @@
 ---
-title: /products/catalogs/&lt;catalog_uuid&gt;/remove-items/
+title: /timp/products/catalogs/&lt;catalog_uuid&gt;/remove-items/
 name: Catalog Remove Items
-position: 12.04
+position: 11.05
 visibility: public
 method: post
 description: Remove Items to a Catalog
@@ -9,7 +9,7 @@ right_code: |
   ~~~ json
   {
     "item_uuids": [
-      "6dc3646a-8719-483e-8b4c-617215fb1bf0"
+      "147c1a2d-6a2f-4ee4-b3e5-f8e2ca726f47"
     ]
   }
   ~~~
@@ -19,7 +19,7 @@ right_code: |
 ---
 Remove Items from the specified Catalog for Retailers to access. This allows you to remove Items and all associated SKUs from a Catalog.
 
-### URL Parameters:
+### URL Parameters
 
 catalog_uuid
 : (string) Universal Unique Identifier for the selected catalog
@@ -27,20 +27,20 @@ catalog_uuid
 ### Request Parameters:
 
 item_uuids
-: (aray) The Item UUIDs array holds item_uuids for all of the items you wish to remove from your Catalog
+: (array) The Item UUIDs list parameter holds item_uuids for all of the items you wish to remove from your Catalog
 
-### Expected Response Codes:
+### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{
   "item_uuids": [
-    "6dc3646a-8719-483e-8b4c-617215fb1bf0"
+    "147c1a2d-6a2f-4ee4-b3e5-f8e2ca726f47"
   ]
 }'
 
@@ -48,11 +48,11 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/products/catalogs/19d9210f-6
 {: title="Curl" }
 
 ~~~ bash
-http --json POST 'https://api-sandbox.cruxconnect.com/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/' \
+http --json POST 'https://api-sandbox.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8' \
     item_uuids:="[
-  \"6dc3646a-8719-483e-8b4c-617215fb1bf0\"
+  \"147c1a2d-6a2f-4ee4-b3e5-f8e2ca726f47\"
 ]"
 
 ~~~
@@ -68,17 +68,17 @@ import json
 
 def send_request():
     # Catalog Remove Items
-    # POST https://api-sandbox.cruxconnect.com/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/
+    # POST https://api-sandbox.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps(    item_uuids:="[
-  \"6dc3646a-8719-483e-8b4c-617215fb1bf0\"
+  \"147c1a2d-6a2f-4ee4-b3e5-f8e2ca726f47\"
 ]")
         )
         print('Response HTTP Status Code: {status_code}'.format(
@@ -101,7 +101,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/catalogs/19d9210f-667a-4961-82ee-2d290c4bd604/remove-items/',
+        path: '/timp/products/catalogs/baffb36f-0bdd-46d7-9413-7b8a1cc8fe3e/remove-items/',
         method: 'POST',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
@@ -131,7 +131,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"item_uuids\":[\"6dc3646a-8719-483e-8b4c-617215fb1bf0\"]}")
+    request.write("{\"item_uuids\":[\"147c1a2d-6a2f-4ee4-b3e5-f8e2ca726f47\"]}")
     request.end();
 
 

@@ -1,7 +1,7 @@
 ---
-title: /products/items/&lt;item_uuid&gt;/
+title: /timp/products/items/&lt;item_uuid&gt;/
 name: Get Item Detail
-position: 4.03
+position: 3.03
 visibility: public
 method: get
 description: Get Details about an Item and the SKUs associated to it.
@@ -14,9 +14,12 @@ right_code: |
         "uuid": "43113405-4964-4086-b5cc-9beea7cb127e",
         "restrictions": null,
         "condition": "new",
-        "distinguishing_attributes": {
+        "sku_distinguishing_attributes": {
           "size": 9,
           "color": "azure"
+        },
+        "sku_nondistinguishing_attributes": {
+          "diameter_in_inches": 3.6,
         },
         "minimum_advertised_price": 10,
         "msrp": 113.42,
@@ -38,10 +41,18 @@ right_code: |
         "product_images": [
           {
             "uuid": "49123741-26e0-4f48-9fcf-78f6e84cfdc1",
-            "url": "https://picsum.photos/155/?image=15",
+            "uri": "https://picsum.photos/155/?image=15",
+            "uri_type": "url",
             "width": 155,
             "height": 155
           },
+        ],
+        "product_videos": [
+          {
+            "uuid": "9d827373-6a17-4dd1-939b-3d7ca9676b1c",
+            "uri": "https://something.videos/155/?video=10",
+            "uri_type": "url",
+        },
         ],
         "measurements": {
           "package": {
@@ -111,9 +122,17 @@ right_code: |
     "product_images": [
       {
         "uuid": "8103e697-6a17-4dd1-939b-3d7ca9676b1c",
-        "url": "https://picsum.photos/155/?image=10",
+        "uri": "https://picsum.photos/155/?image=10",
+        "uri_type": "url",
         "width": 155,
         "height": 155
+      },
+    ],
+    "product_videos": [
+      {
+        "uuid": "19193e697-6a17-4dd1-939b-3d7ca9676b1c",
+        "uri": "https://something.videos/155/?video=10",
+        "uri_type": "url",
       },
     ],
     "categories": [
@@ -139,7 +158,7 @@ right_code: |
     "shipping_origin_country": "TZ",
     "other_marketplace_restriction": null,
     "fba_certified": null,
-    "custom_attributes": {
+    "item_attributes": {
       "hardness": 12,
       "hair-color": "brown"
     }
@@ -157,62 +176,70 @@ item_uuid
 
 ### Response Parameters:
 
-{% include product/response/item.md %}
+{% include timp/product/response/item.md %}
 
 #### SKU Object:
 
-{% include product/response/sku.md %}
+{% include timp/product/response/sku.md %}
 
 #### Price Tier Object:
 
-{% include product/response/price_tier.md %}
+{% include timp/product/response/price_tier.md %}
 
 #### Product Image Object:
 
-{% include product/response/image.md %}
+{% include timp/product/response/image.md %}
+
+#### Product Video Object:
+
+{% include timp/product/response/video.md %}
 
 #### SKU Measurements Object:
 
-{% include product/response/measurements_sku.md %}
+{% include timp/product/response/measurements_sku.md %}
 
 #### Package Measurements Object:
 
-{% include product/response/measurements_package.md %}
+{% include timp/product/response/measurements_package.md %}
 
 #### Product Identifiers Object:
 
-{% include product/response/product_identifiers.md %}
+{% include timp/product/response/product_identifiers.md %}
 
 #### Inventory List Object:
 
-{% include product/response/inventory_list_minimal.md %}
+{% include timp/product/response/inventory_list_minimal.md %}
 
 #### Supplier Object:
 
-{% include product/response/supplier_minimal.md %}
+{% include timp/product/response/supplier_minimal.md %}
 
 #### Cost Range Object:
 
-{% include product/response/cost_range.md %}
+{% include timp/product/response/cost_range.md %}
 
 #### Minimum Advertized Price Range Object:
 
-{% include product/response/map_range.md %}
+{% include timp/product/response/map_range.md %}
 
 #### Manufacturer's Suggested Retail Price (MSRP) Range Object:
 
-{% include product/response/msrp_range.md %}
+{% include timp/product/response/msrp_range.md %}
 
 #### Item Product Images Object:
 
-{% include product/response/image.md %}
+{% include timp/product/response/image.md %}
+
+#### Item Product Videos Object:
+
+{% include timp/product/response/video.md %}
 
 # Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/" \
+curl "https://api-sandbox.cruxconnect.com/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
@@ -221,7 +248,7 @@ curl "https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
@@ -239,11 +266,11 @@ import json
 
 def send_request():
     # Get Item Detail
-    # GET https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/
+    # GET https://api-sandbox.cruxconnect.com/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/",
+            url="https://api-sandbox.cruxconnect.com/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/",
             headers={
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
@@ -270,7 +297,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/',
+        path: '/timp/products/items/5a5fe856-a4bd-4dd2-ac5e-e3c9c29e5ed4/',
         method: 'GET',
         headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };

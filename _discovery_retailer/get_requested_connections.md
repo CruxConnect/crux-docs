@@ -1,58 +1,16 @@
 ---
-title: /organizations/connections/request/
-name: Get Requested Connections Detail
-position: 3.03
+title: /timp/organizations/connections/request/
+name: Get Requested Connections
+position: 1.01
 visibility: public
 method: get
 description: Get a list of requested connections
 right_code: |
   ~~~ json
   {
-    "start": 0,
-    "limit": 50
-  }
-  ~~~
-  {: title="Request" }
-
-  ~~~ json
-  {
-    "requests": [
-      {
-        "integrations": [
-          {
-            "record_uuid": "3a438d7e-1234-46e1-96d2-efd9dac561d9",
-            "integration_type": "items",
-            "update_frequency": "* 20 12 3 8,9 *",
-            "feed_source_file_locations": null,
-            "file_specs": null,
-            "rules": null,
-            "date_created": "2018-04-10"
-          }
-        ],
-        "uploaded_files": [],
-        "record_uuid": "d0041bf9-ee07-4298-8298-26eee419db2d",
-        "org_name": "Thomas-Perkins",
-        "org_contact_full_name": "owner user",
-        "primary_contact_phone": "1-541-219-3109x433",
-        "primary_contact_email": "owneruser1@romero.com",
-        "retailer_account_number": "384857",
-        "additional_information": "I think, therefore I am",
-        "request_date": "2018-04-10",
-        "is_approved": true,
-        "approved_by": {
-          "uuid": "6cf0bb8b-442e-43c4-8bbe-bc823e17981e",
-          "person": {
-            "uuid": "cfcc3db3-dbfd-4019-be0a-2858e08a760a",
-            "first_name": "Joe",
-            "last_name": "Account",
-            "email": "joe@cruxaccountmanager.com",
-            "phone": "717.334.5425x58894",
-            "job_title": "Account Manager"
-          },
-      }
-    ],
+    "requests": [],
     "pagination": {
-      "total_count": 9,
+      "total_count": 0,
       "start": 0,
       "limit": 50
     }
@@ -80,14 +38,14 @@ requests
 pagination
 : (object) The Pagination object parameter includes the total_count, start, and limit for your Search.
 
-
+<!-- task-github-127 Create Connection Request include file -->
 #### Connection Request Object:
 
 integrations
-: (object) Integrations to including `item`, `order`, `allocation`, `tracking`, `other`
+: (object) Integrations to the including `item`, `order`, `allocation`, `tracking`, `other`
 
-uploaded_files:
-: (array) Array of File Objects previously uploaded by the [#upload endpoint](#filesupload). Sample files or documentation.
+uploaded_files
+: (object) Uploaded files including the file name the file's UUID.
 
 record_uuid
 : (string) UUID of the connection request
@@ -107,9 +65,6 @@ primary_contact_email
 retailer_account_number
 : (string) Account number for the retailer
 
-supplier_account_number
-: (string) Account number for the supplier
-
 additional_information
 : (string) Additional information
 
@@ -120,12 +75,13 @@ is_approved
 : (boolean) Approval status of the connection request
 
 approved_by
-: (object) Crux employee who approved the supplier's visibility in the Discovery Marketplace
+: (object) Crux employee who approved the supplier's visibility in the Discovery Marketplace.
 
 
-{% include objects/response_pagination.md %}
+{% include timp/objects/response_pagination.md %}
 
 #### Integration Objects
+
 record_uuid
 : (object) UUID for the integration
 
@@ -147,45 +103,41 @@ rules
 date_created
 : (string) Date the integration was created
 
-rules:
-: (string) Rules and business logic for the integration
 
 #### Approved By
-
 uuid
 : (string) The Universal Unique Identifier
-
 person
-: (object) Person who approved the discovery participation request
+: (object) Person Object for the Crux employee who approved the supplier's visibility in the Discovery Marketplace.
 
 #### Person
 
-{% include objects/contact.md %}
+{% include timp/objects/contact.md %}
 
 #### File Object
 
-{% include objects/file_upload.md %}
+{% include timp/objects/file_upload.md %}
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
 
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/connections/request/" \
-     -H 'Cookie: sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/" \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
+     -H 'Cookie: sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz' \
      -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/organizations/connections/request/' \
-    'Cookie':'sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/' \
     'Authorization':'Token 1234567890' \
-    'Content-Type':'application/json; charset=utf-8'
+    'Content-Type':'application/json; charset=utf-8' \
+    'Cookie':'sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz'
 
 
 ~~~
@@ -200,16 +152,16 @@ import json
 
 
 def send_request():
-    # Get Requested Connections Detail
-    # GET https://api-sandbox.cruxconnect.com/organizations/connections/request/
+    # Get Requested Connections
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/connections/request/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/connections/request/",
             headers={
-                "Cookie": "sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp",
                 "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
+                "Cookie": "sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz",
             },
             data=json.dumps()
         )
@@ -224,7 +176,7 @@ def send_request():
 {: title="Python (requests)" }
 
 ~~~ javascript
-// request Get Requested Connections Detail
+// request Get Requested Connections
 (function(callback) {
     'use strict';
 
@@ -233,9 +185,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/connections/request/',
+        path: '/timp/organizations/connections/request/',
         method: 'GET',
-        headers: {"Cookie":"sessionid=fi1us4q9rlphkjbscpo0dtz9iltj7ovp","Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8","Cookie":"sessionid=h9qjyhleectu7aef5pkwma0jn2gxgitz"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 

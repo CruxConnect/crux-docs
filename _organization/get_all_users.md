@@ -1,7 +1,7 @@
 ---
-title: /organizations/users/all/
+title: /timp/organizations/users/all/
 name: Get All Users
-position: 1.04
+position: 2.04
 visibility: public
 method: get
 description: Get all users, with user details, specific to your account
@@ -9,95 +9,36 @@ right_code: |
   ~~~ json
   [
     {
-      "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49",
+      "uuid": "c3fb688d-4aca-42d4-9db1-cc268c465892",
       "person": {
-        "uuid": "2e0ecb7e-9426-4e66-a8a9-e69cd8c806c0",
-        "first_name": "Crux ",
-        "last_name": "User",
-        "email": "user@mycompany.com",
-        "phone": "1-722-036-2568x9442"
+        "uuid": "2975ae8b-844c-4480-90da-635debc15342",
+        "first_name": "Nick",
+        "last_name": "Coleman",
+        "email": "nick@dobaretailer.com",
+        "phone": null,
+        "job_title": null
       },
       "permission_assignments": {
         "permissions": [
           {
             "assigned": true,
             "permission": {
-              "uuid": "51690784-8e22-44f2-a6b6-ae3fdb556051",
-              "name": "create_org",
-              "display_name": "Create Organization",
-              "description": "Ability to create an org"
+              "uuid": "68b1647d-b6a7-48b1-9ec2-bf2f1003b6cc",
+              "name": "view_org_users",
+              "display_name": "View Users",
+              "description": "Ability to see the users in an organization",
+              "visibility": "BOTH",
+              "grouping": "ORGUSERS"
             }
           },
-          {
-            "assigned": true,
-            "permission": {
-              "uuid": "f3854a65-cb5c-4ea6-a0b6-e352328f3f92",
-              "name": "update_org_status",
-              "display_name": "Update Org Status",
-              "description": "Update the org status pending, active, or deactive"
-            }
-          },
-          {
-            "assigned": true,
-            "permission": {
-              "uuid": "d3826e60-0f8d-4ca5-b89c-2d2022ece698",
-              "name": "create_relationships",
-              "display_name": "Create Relationship",
-              "description": "Add a relationship between organizaitons, such as supplier to retailer"
-            }
-          }
         ],
         "org_user": {
-          "uuid": "3a7acb28-ab13-437e-8c35-46cf4f0bea49"
+          "uuid": "c3fb688d-4aca-42d4-9db1-cc268c465892"
         }
       },
-      "status": "ACTIVE"
-    },
-    {
-      "uuid": "cefc9200-91eb-40dd-8937-d8edaa8f955f",
-      "person": {
-        "uuid": "2de10d50-c595-48c3-8cb2-029afd221637",
-        "first_name": "Crux",
-        "last_name": "User",
-        "email": "user@mycompany.com",
-        "phone": "(617)395-2696"
-      },
-      "permission_assignments": {
-        "permissions": [
-          {
-            "assigned": true,
-            "permission": {
-              "uuid": "51690784-8e22-44f2-a6b6-ae3fdb556051",
-              "name": "create_org",
-              "display_name": "Create Organization",
-              "description": "Ability to create an org"
-            }
-          },
-          {
-            "assigned": true,
-            "permission": {
-              "uuid": "f3854a65-cb5c-4ea6-a0b6-e352328f3f92",
-              "name": "update_org_status",
-              "display_name": "Update Org Status",
-              "description": "Update the org status pending, active, or deactive"
-            }
-          },
-          {
-            "assigned": true,
-            "permission": {
-              "uuid": "d3826e60-0f8d-4ca5-b89c-2d2022ece698",
-              "name": "create_relationships",
-              "display_name": "Create Relationship",
-              "description": "Add a relationship between organizaitons, such as supplier to retailer"
-            }
-          }
-        ],
-        "org_user": {
-          "uuid": "cefc9200-91eb-40dd-8937-d8edaa8f955f"
-        }
-      },
-      "status": "ACTIVE"
-    },
+      "status": "ACTIVE",
+      "token": null
+    }
   ]
   ~~~
   {: title="Response" }
@@ -108,17 +49,21 @@ Get all the details about the users on your account. This displays their name, e
 To view orgainzation users, you must be assigned the 'view_org_users' permission.
 {: .info }
 
+
 ### Response Parameters:
 
-{% include objects/user.md %}
+{% include timp/objects/user.md %}
 
-{% include objects/permissions_assignment.md %}
+{% include timp/objects/permissions_assignment.md %}
 
-{% include links/response_codes.md %}
+### Expected Response Codes
+
+{% include timp/links/response_codes.md %}
+
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/users/all/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -126,9 +71,10 @@ curl "https://api-sandbox.cruxconnect.com/organizations/users/all/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/all/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/users/all/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -143,13 +89,13 @@ import json
 
 def send_request():
     # Get All Users
-    # GET https://api-sandbox.cruxconnect.com/organizations/users/all/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/users/all/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/users/all/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/users/all/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -174,9 +120,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/users/all/',
+        path: '/timp/organizations/users/all/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -204,6 +150,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
+    request.write("{}")
     request.end();
 
 

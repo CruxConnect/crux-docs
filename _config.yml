@@ -8,9 +8,10 @@ google_analytics_key:
 permalink: pretty
 baseurl: ""
 
-collections:
+collections:  ### if there are no documents in a collection, it's a placeholder and visiblity is blank
+#### Timpanogos Release
   documentation:
-    visibility: all
+    visibility: public
     title: Documentation
     position: 1.0
   file_specs_documentation:
@@ -24,14 +25,9 @@ collections:
     position: 1.2
     type: fs
   organization:
-    visibility: api
+    visibility: public
     title: Organization
     position: 2
-    type: api
-  accounting:
-    visibility: public
-    title: Accounting
-    position: 3
     type: api
   product:
     visibility: public
@@ -40,27 +36,27 @@ collections:
     type: api
   product_retailer:
     visibility: public
-    title: Product for Retailers
+    title: Product - Retailers
     position: 4.1
     type: api
   product_supplier:
     visibility: public
-    title: Product for Supplier
+    title: Product - Supplier
     position: 4.2
     type: api
-  ordering:
+  order:
     visibility: public
-    title: Ordering
+    title: Orders
     position: 5
     type: api
-  ordering_retailer:
+  order_retailer:
     visibility: public
-    title: Ordering for Retailer
+    title: Orders - Retailer
     position: 5.1
     type: api
-  ordering_supplier:
+  order_supplier:
     visibility: public
-    title: Ordering for Supplier
+    title: Orders - Supplier
     position: 5.2
     type: api
   discovery:
@@ -70,7 +66,7 @@ collections:
     type: api
   discovery_retailer:
     visibility: public
-    title: Discovery Retailer
+    title: Discovery - Retailer
     position: 6.1
     type: api
   files:
@@ -79,10 +75,185 @@ collections:
     position: 7
     type: api
   tools:
+    visibility:
+    title: Operations Tools
+    position: 8
+    type: api
+###### Timpanogos Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
+  internal_documentation:
+    visibility: internal
+    title: Documentation
+    position: 1
+  internal_organization:
+    visibility: internal
+    title: Organization
+    position: 2
+    type: api
+  internal_accounting:
+    visibility:
+    title: Accounting
+    position: 3
+    type: api
+  internal_product:
+    visibility:
+    title: Product
+    position: 4
+    type: api
+  internal_ordering:
+    visibility:
+    title: Orders
+    position: 5
+    type: api
+  internal_discovery:
+    visibility:
+    title: Discovery
+    position: 6
+    type: api
+  internal_files:
+    visibility:
+    title: Files
+    position: 7
+    type: api
+  internal_tools:
     visibility: internal
     title: Operations Tools
     position: 8
     type: api
+### Release Version 1 collections
+  v1_documentation:
+    visibility: v1
+    title: Documentation
+    position: 1
+  v1_organization:
+    visibility: v1
+    title: Organization
+    position: 2
+    type: api
+  v1_accounting:
+    visibility:
+    title: Accounting
+    position: 3
+    type: api
+  v1_product:
+    visibility: v1
+    title: Product
+    position: 4
+    type: api
+  v1_product_retailer:
+    visibility: v1
+    title: Product - Retailers
+    position: 4.1
+    type: api
+  v1_product_supplier:
+    visibility: v1
+    title: Product - Supplier
+    position: 4.2
+    type: api
+  v1_ordering:
+    visibility: v1
+    title: Orders
+    position: 5
+    type: api
+  v1_ordering_retailer:
+    visibility: v1
+    title: Orders - Retailer
+    position: 5.1
+    type: api
+  v1_ordering_supplier:
+    visibility: v1
+    title: Orders - Supplier
+    position: 5.2
+    type: api
+  v1_discovery:
+    visibility: v1
+    title: Discovery
+    position: 6
+    type: api
+  v1_discovery_retailer:
+    visibility: v1
+    title: Discovery - Retailer
+    position: 6.1
+    type: api
+  v1_files:
+    visibility: v1
+    title: Files
+    position: 7
+    type: api
+  v1_tools:
+    visibility:
+    title: Operations Tools
+    position: 8
+    type: api
+###### Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
+  v1_internal_documentation:
+    visibility: v1_internal
+    title: Documentation
+    position: 1
+  v1_internal_organization:
+    visibility: v1_internal
+    title: Organization
+    position: 2
+    type: api
+  v1_internal_accounting:
+    visibility:
+    title: Accounting
+    position: 3
+    type: api
+  v1_internal_product:
+    visibility:
+    title: Product
+    position: 4
+    type: api
+  v1_internal_ordering:
+    visibility:
+    title: Orders
+    position: 5
+    type: api
+  v1_internal_discovery:
+    visibility:
+    title: Discovery
+    position: 6
+    type: api
+  v1_internal_files:
+    visibility:
+    title: Files
+    position: 7
+    type: api
+  v1_internal_tools:
+    visibility: v1_internal
+    title: Operations Tools
+    position: 8
+    type: api
+
+### Future Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
+  future_documentation:
+    visibility: future
+    title: Documentation
+    position: 1
+  future_ordering:
+    visibility: future
+    title: Orders
+    position: 5
+    type: api
+  future_ordering_retailer:
+    visibility: future
+    title: Orders - Retailer
+    position: 5.1
+    type: api
+  future_ordering_supplier:
+    visibility: future
+    title: Orders - Supplier
+    position: 5.2
+    type: api
+### Future Internal Collections - if there are no documents in a collection, it's a placeholder and visiblity is blank
+  future_internal:
+    visibility: future-internal
+    title: API
+    position: 1
+  future_internal_ordering:
+    visibility: future-internal
+    title: Orders
+    position: 5
 
 plugins:
   - jekyll-sitemap

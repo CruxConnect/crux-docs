@@ -1,5 +1,5 @@
 ---
-title: /organizations/files/upload/
+title: /timp/organizations/files/upload/
 name: Upload a File
 position: 9.00
 visibility: public
@@ -27,34 +27,7 @@ For this request the the content-type header should be `multipart/form-data`.
 
 ### Request Parameters
 
-{% include objects/file_upload.md %}
-
-### Response Parameters:
-
-uuid
-: (string) The Universal Unique Identifier for the uploaded file. (For clarity: the UUID goes with the upload, not the file. If you upload the exact same file more than once, each upload will have its own UUID.)
-
-### Expected Response Codes
-
-{% include links/response_codes.md %}
-
-### Expected Response Codes
-
-# Short Description
-Upload A File
-
-# Long Description
-Upload a File
-
-For this request the content-type header should be `multipart/form-data`.
-
-### Request Parameters
-
-file
-: (string) The file contents for upload
-
-filename
-: (string) The filename for upload
+{% include timp/objects/file_upload.md %}
 
 ### Response Parameters:
 
@@ -63,11 +36,10 @@ uuid
 
 ### Expected Response Codes
 
-{% include links/response_codes.md %}
-
+{% include timp/links/response_codes.md %}
 
 ~~~ bash
-curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/files/upload/" \
+curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/organizations/files/upload/" \
      -H 'Cookie: sessionid=6tkaww9xmbj4d3fnw89zp4hewosvb94u' \
      -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: multipart/form-data; charset=utf-8; boundary=__X_PAW_BOUNDARY__' \
@@ -86,7 +58,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/organizations/files/upload/"
 
 ~~~ bash
 # note: HTTPie will post as form url-encoded if no file is specified
-http --form POST 'https://api-sandbox.cruxconnect.com/organizations/files/upload/' \
+http --form POST 'https://api-sandbox.cruxconnect.com/timp/organizations/files/upload/' \
     'Cookie':'sessionid=6tkaww9xmbj4d3fnw89zp4hewosvb94u' \
     'Authorization':'Token 1234567890' \
     'Content-Type':'multipart/form-data; charset=utf-8; boundary=__X_PAW_BOUNDARY__' \
@@ -112,11 +84,11 @@ import requests
 
 def send_request():
     # Upload a File
-    # POST https://api-sandbox.cruxconnect.com/organizations/files/upload/
+    # POST https://api-sandbox.cruxconnect.com/timp/organizations/files/upload/
 
     try:
         response = requests.post(
-            url="https://api-sandbox.cruxconnect.com/organizations/files/upload/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/files/upload/",
             headers={
                 "Cookie": "sessionid=6tkaww9xmbj4d3fnw89zp4hewosvb94u",
                 "Authorization": "Token 1234567890",
@@ -154,7 +126,7 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/files/upload/',
+        path: '/timp/organizations/files/upload/',
         method: 'POST',
         headers: {"Cookie":"sessionid=6tkaww9xmbj4d3fnw89zp4hewosvb94u","Authorization":"Token 1234567890","Content-Type":"multipart/form-data; charset=utf-8; boundary=__X_PAW_BOUNDARY__"}
     };

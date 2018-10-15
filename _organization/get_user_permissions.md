@@ -1,18 +1,23 @@
 ---
-title: /organizations/users/permissions/&ltuser_uuid&gt/
+title: /timp/organizations/users/permissions/&lt;user-uuid&gt;/
 name: Get User Permissions
-position: 1.07
+position: 2.07
 visibility: public
 method: get
 description: Get User Permissions for a particular User
 right_code: |
+  ~~~ json
+  {}
+  ~~~
+  {: title="Request" }
+
   ~~~ json
   {
     "permissions": [
       {
         "assigned": true,
         "permission": {
-          "uuid": "ccd415a0-b72d-4f9e-8a3d-aa2fd2b327ed",
+          "uuid": "68b1647d-b6a7-48b1-9ec2-bf2f1003b6cc",
           "name": "view_org_users",
           "display_name": "View Users",
           "description": "Ability to see the users in an organization",
@@ -20,28 +25,9 @@ right_code: |
           "grouping": "ORGUSERS"
         }
       },
-      {
-        "assigned": true,
-        "permission": {
-          "uuid": "96501d33-b805-418a-b185-267279876ff3",
-          "name": "edit_org_users",
-          "display_name": "Edit Users",
-          "description": "Ability to edit/change/delete users in an organization",
-          "visibility": "BOTH",
-          "grouping": "ORGUSERS"
-        }
-      },
-      {
-        "assigned": true,
-        "permission": {
-          "uuid": "f814f6f3-47b5-4cd4-991e-c56858021217",
-          "name": "view_org_subscription_plan",
-          "display_name": "View Subscription Plan",
-          "description": "View the subscription plan info for an organization",
-          "visibility": "BOTH",
-          "grouping": "ORGSUB"
-        }
-      }
+    ],
+    "org_user": {
+      "uuid": "c3fb688d-4aca-42d4-9db1-cc268c465892"
     }
   }
   ~~~
@@ -53,7 +39,7 @@ Get the Permissions on a specified User. This call returns the Permissions in a 
 To view orgainzation users, you must be assigned the 'view_org_users' permission.
 {: .info }
 
-{% include links/available_permissions.md %}
+{% include timp/links/available_permissions.md %}
 
 ### URL Parameters
 
@@ -62,32 +48,27 @@ user_uuid
 
 ### Response Parameters:
 
-{% include objects/permissions_list.md %}
+{% include timp/objects/permissions_list.md %}
 
-{% include links/response_codes.md %}
+### Expected Response Codes
+
+{% include timp/links/response_codes.md %}
+
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
-     -d $'{
-  "notification_via": "email",
-  "enabled": "true",
-  "notification_frequency": "daily",
-  "notification_setting_name": "Foo"
-}'
+     -d $'{}'
 
 ~~~
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
-    'Content-Type':'application/json; charset=utf-8' \
-    notification_via="email" \
-    enabled="true" \
-    notification_frequency="daily" \
-    notification_setting_name="Foo"
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/' \
+    'Authorization':'Token 1234567890' \
+    'Content-Type':'application/json; charset=utf-8'
+
 
 ~~~
 {: title="HTTPie" }
@@ -102,19 +83,16 @@ import json
 
 def send_request():
     # Get User Permissions
-    # GET https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
-            data=json.dumps(    notification_via="email" \
-    enabled="true" \
-    notification_frequency="daily" \
-    notification_setting_name="Foo")
+            data=json.dumps()
         )
         print('Response HTTP Status Code: {status_code}'.format(
             status_code=response.status_code))
@@ -136,9 +114,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/users/permissions/3a7acb28-ab13-437e-8c35-46cf4f0bea49/',
+        path: '/timp/organizations/users/permissions/c3fb688d-4aca-42d4-9db1-cc268c465892/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
@@ -166,7 +144,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"notification_setting_name\":\"Foo\",\"notification_via\":\"email\",\"enabled\":\"true\",\"notification_frequency\":\"daily\"}")
+    request.write("{}")
     request.end();
 
 

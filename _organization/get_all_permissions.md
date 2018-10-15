@@ -1,7 +1,7 @@
 ---
-title: /organizations/all_permissions/
+title: /timp/organizations/all_permissions/
 name: Get All Permissions
-position: 1.06
+position: 2.03
 visibility: public
 method: get
 description: Get all available Permissions
@@ -9,28 +9,12 @@ right_code: |
   ~~~ json
   [
     {
-      "uuid": "5b7906fd-23dd-4fe1-8e50-778819d145ad",
+      "uuid": "68b1647d-b6a7-48b1-9ec2-bf2f1003b6cc",
       "name": "view_org_users",
       "display_name": "View Users",
       "description": "Ability to see the users in an organization",
       "visibility": "BOTH",
       "grouping": "ORGUSERS"
-    },
-    {
-      "uuid": "191b95cc-5555-4947-8085-286d167931ca",
-      "name": "edit_org_users",
-      "display_name": "Edit Users",
-      "description": "Ability to edit/change/delete users in an organization",
-      "visibility": "BOTH",
-      "grouping": "ORGUSERS"
-    },
-    {
-      "uuid": "64b53e87-01bf-4416-affb-937beea1661e",
-      "name": "view_org_subscription_plan",
-      "display_name": "View Subscription Plan",
-      "description": "View the subscription plan info for an organization",
-      "visibility": "BOTH",
-      "grouping": "ORGSUB"
     },
   ]
   ~~~
@@ -42,19 +26,20 @@ Get all of the available Permissions based on the type of account requested on. 
 To view orgainzation users, you must be assigned the 'view_org_users' permission.
 {: .info }
 
-{% include links/available_permissions.md %}
+{% include timp/links/available_permissions.md %}
 
 ### Response Parameters:
 
-{% include objects/permission.md %}
+{% include timp/objects/permission.md %}
 
-{% include links/response_codes.md %}
+### Expected Response Codes
 
-{% include links/response_codes.md %}
+{% include timp/links/response_codes.md %}
+
 
 ~~~ bash
-curl "https://api-sandbox.cruxconnect.com/organizations/all_permissions/" \
-     -H 'Authorization: Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+curl "https://api-sandbox.cruxconnect.com/timp/organizations/all_permissions/" \
+     -H 'Authorization: Token 1234567890' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 
@@ -62,8 +47,8 @@ curl "https://api-sandbox.cruxconnect.com/organizations/all_permissions/" \
 {: title="Curl" }
 
 ~~~ bash
-http --json GET 'https://api-sandbox.cruxconnect.com/organizations/all_permissions/' \
-    'Authorization':'Token 47d4yfbwymedhiudj384702984nakju4hajh395d' \
+http --json GET 'https://api-sandbox.cruxconnect.com/timp/organizations/all_permissions/' \
+    'Authorization':'Token 1234567890' \
     'Content-Type':'application/json; charset=utf-8'
 
 
@@ -80,13 +65,13 @@ import json
 
 def send_request():
     # Get All Permissions
-    # GET https://api-sandbox.cruxconnect.com/organizations/all_permissions/
+    # GET https://api-sandbox.cruxconnect.com/timp/organizations/all_permissions/
 
     try:
         response = requests.get(
-            url="https://api-sandbox.cruxconnect.com/organizations/all_permissions/",
+            url="https://api-sandbox.cruxconnect.com/timp/organizations/all_permissions/",
             headers={
-                "Authorization": "Token 47d4yfbwymedhiudj384702984nakju4hajh395d",
+                "Authorization": "Token 1234567890",
                 "Content-Type": "application/json; charset=utf-8",
             },
             data=json.dumps()
@@ -111,9 +96,9 @@ def send_request():
     const httpOptions = {
         hostname: 'api-sandbox.cruxconnect.com',
         port: '443',
-        path: '/organizations/all_permissions/',
+        path: '/timp/organizations/all_permissions/',
         method: 'GET',
-        headers: {"Authorization":"Token 47d4yfbwymedhiudj384702984nakju4hajh395d","Content-Type":"application/json; charset=utf-8"}
+        headers: {"Authorization":"Token 1234567890","Content-Type":"application/json; charset=utf-8"}
     };
     httpOptions.headers['User-Agent'] = 'node ' + process.version;
 
