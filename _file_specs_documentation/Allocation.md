@@ -1,0 +1,22 @@
+---
+title: Allocation
+name:
+position: 5
+visibility: file-specs
+method:
+description: Allocation Stuff
+right_code: |
+  ~~~ bash
+  No Questions Asked
+  ~~~
+  {: title="Return Policy Example" }
+---
+
+#### Allocation
+_Supplier Fields_
+
+order_uuid
+: (string) Universal Unique Identifier for the order
+
+line_items ***Required***
+: (object) Order Line Items array contains the individual Order Item objects

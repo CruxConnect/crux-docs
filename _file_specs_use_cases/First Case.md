@@ -1,9 +1,9 @@
 ---
-title: return_policy
-name: return_policy
+title: First
+name:
 position: 5
 visibility: file-specs
-method: required
+method:
 description: Rules to establish a process in which customers can return or exchange unwanted or defective items.
 right_code: |
   ~~~ bash
