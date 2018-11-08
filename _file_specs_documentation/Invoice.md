@@ -6,15 +6,7 @@ visibility: file-specs
 method:
 description: The country where the product was manufactured. Must be a 2-digit ISO country code.
 right_code: |
-  ~~~ bash
-  SS
-  ~~~
-  {: title="2-digit ISO Country Code" }
 
-  ~~~ bash
-   [ISO Country Cody List]({http://www.nationsonline.org/oneworld/country_code_list.htm})
-  ~~~
-  {: title="ISO Country Code List" }
 ---
 
 #### Invoice

@@ -6,10 +6,7 @@ visibility: file-specs
 method:
 description: Product specific warranty.
 right_code: |
-  ~~~ bash
-  90-day warranty.
-  ~~~
-  {: title="Warranty Example" }
+
 ---
 
 #### Line Item

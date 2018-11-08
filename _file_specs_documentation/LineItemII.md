@@ -6,10 +6,7 @@ visibility: file-specs
 method:
 description: Line Item II
 right_code: |
-  ~~~ bash
-  South Sudan tribespeople, circa 1905
-  ~~~
-  {: title="Manufacturer Example" }
+
 ---
 
 #### Line Item

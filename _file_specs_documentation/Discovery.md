@@ -6,15 +6,7 @@ visibility: file-specs
 method:
 description: Discovering stuff
 right_code: |
-  ~~~ bash
-  US
-  ~~~
-  {: title="2-digit ISO Country Code" }
 
-  ~~~ bash
-   [ISO Country Cody List]({http://www.nationsonline.org/oneworld/country_code_list.htm})
-  ~~~
-  {: title="ISO Country Code List" }
 ---
 
 #### Discovery

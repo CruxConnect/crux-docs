@@ -42,10 +42,10 @@ shipping_origin_country
 : (string) ISO country code where the product is shipping from.
 
 categories
-: (string) The division in which you place your item based on shared characteristics.
+: (array) The division in which items are organized based on shared characteristics.
 
 restrict_from_marketplaces
-: (string) ***Accepted Values***
+: (string) Accepted Values below
 - amazon
 - ebay
 - newegg
@@ -53,13 +53,10 @@ restrict_from_marketplaces
 - walmart
 
 other_marketplace_restrictions
-: (string) Marketplaces that your items cannot be listed that don't fit in the accepted values of `restrict_from_marketplaces` field.
+: (string) Marketplaces that items cannot be listed and don't fit in the accepted values of `restrict_from_marketplaces` field.
 
 fba_certified
 : (boolean) Fulfillment by Amazon ceritifed.
-
-categories
-: (array) The division in which you place your item based on shared characteristics.
 
 #### Supplier (object)
 _Supplier Fields_

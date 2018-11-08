@@ -4,12 +4,9 @@ name:
 position: 2
 visibility: file-specs
 method:
-description: The sku section covers all item related parameters. The sku parameters relate to the Child Product.
+description: The sku section covers all sku related parameters. The sku parameters relate to the Child Product.
 right_code: |
-  ~~~ bash
-  African Dinka Shield
-  ~~~
-  {: title="Title Example" }
+
 ---
 
 #### SKU

@@ -6,10 +6,7 @@ visibility: file-specs
 method:
 description: Allocation Stuff
 right_code: |
-  ~~~ bash
-  No Questions Asked
-  ~~~
-  {: title="Return Policy Example" }
+
 ---
 
 #### Allocation

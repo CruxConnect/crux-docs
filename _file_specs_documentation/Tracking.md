@@ -6,10 +6,7 @@ visibility: file-specs
 method:
 description: Tracking Stuff
 right_code: |
-  ~~~ bash
-  Nuer
-  ~~~
-  {: title="Brand Example" }
+
 ---
 
 #### Tracking

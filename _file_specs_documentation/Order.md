@@ -4,12 +4,9 @@ name:
 position: 3
 visibility: file-specs
 method:
-description:
+description: The order section relates to the retailer fields
 right_code: |
-  ~~~ bash
-  African Dinka Shield from South Sudan, Early 20th Century on a Base.
-  ~~~
-  {: title="Description Example" }
+
 ---
 
 #### fees (object)
