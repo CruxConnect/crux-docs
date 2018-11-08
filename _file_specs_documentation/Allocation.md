@@ -15,5 +15,5 @@ _Supplier Fields_
 order_uuid
 : (string) Universal Unique Identifier for the order
 
-line_items ***Required***
-: (object) Order Line Items array contains the individual Order Item objects
+line_items
+: (object) ***Required*** Order Line Items array contains the individual Order Item objects
