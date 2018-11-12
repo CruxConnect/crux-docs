@@ -13,9 +13,14 @@
               <span class="endpoint PATCH">PATCH</span>
               <span class="endpoint DELETE">DELETE</span>
             </li>
+          {% elsif collection.type == 'fs' %}
+            <li class="fs-key">
+              <span class="endpoint SUPPLIER">SUPPLIER</span>
+              <span class="endpoint RETAILER">RETAILER</span>
+              <span class="endpoint BOTH">BOTH</span>
+            </li>
           {% endif %}
-          {% assign filtered_docs = collection.docs | where_exp:"item", "item.visibility != excluded_visibility" %}
-          {% assign sorted_docs = filtered_docs | sort: "position" %}
+          {% include filtered_docs.html %}
           {% for doc in sorted_docs %}
             <li>
               <a

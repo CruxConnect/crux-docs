@@ -1,1 +1,20 @@
-todo; remove
+<!-- begin setting filtered collections -->
+{% if page.path == 'file-specs.html' %}
+  {% assign visibility = 'file-specs' %}
+  {% assign filtered_docs = collection.docs | where_exp:"item", "item.visibility == visibility" %}
+{% else %}
+  {% if page.path == 'internal.html' %}
+    {% assign visibility = 'internal' %}
+  {% else %}
+    {% assign visibility = 'public' %}
+  {% endif %}
+
+  {% assign filtered_docs = "" | split,"" %}
+  {% for doc in collection.docs %}
+    {% if doc.visibility contains "all" or doc.visibility contains visibility %}
+      {% assign filtered_docs = filtered_docs | push:doc %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% assign sorted_docs = filtered_docs | sort: "position" %}
+<!-- end setting filtered collections -->

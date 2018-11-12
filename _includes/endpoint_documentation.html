@@ -1,6 +1,5 @@
 {% for collection in sorted_collections %}
-  {% assign filtered_docs = collection.docs | where_exp:"item", "item.visibility != excluded_visibility" %}
-  {% assign sorted_docs = filtered_docs | sort: "position" %}
+  {% include filtered_docs.html %}
   {% for doc in sorted_docs %}
     <section class="doc-content">
       <section class="left-docs">

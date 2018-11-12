@@ -5,6 +5,8 @@
   {% assign visibility = 'internal' %}
 {% elsif page.path == 'v1_internal.html' %}
   {% assign visibility = 'v1-internal' %}
+{% elsif page.path == 'file-specs.html' %}
+  {% assign visibility = 'file-specs' %}
 {% else %}
   {% assign visibility = 'public' %}
 {% endif %}

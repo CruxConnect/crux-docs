@@ -42,11 +42,27 @@ extension is then used to generated the markdown file for each endpoint.
 * Set the order of the documents inside a collection by setting the position in front matter.
 * Messages may be added to the documentation with the following classes: `info`, `error`, `success`, `warning`
 
+### Pages
+
+There are several different documentation pages:
+
+* `/` - The general public API documentation
+* `/internal/` - The internal "undocumented" (unsupported) API documentation
+* `/file-specs/` - Specifications for the "Crux Blessed" feed formats
+
 ### Visibility
 
-Each collection or endpoint may have a `visiblity` setting.
-`public` and `internal` are the standard choices.
-Any other value will cause the item to appear in both internal and public api docs.
+Each collection or endpoint should have a `visiblity` setting.
+
+The possible choices are:
+
+* `all` - Item will appear on all pages
+* `api` - Item will appear on both public facing `/` and internal `/internal/` pages
+* `public` - Item will appear only on public facing `/` page
+* `internal` - Item will appear only on `/internal/` page
+* `file-specs` - Item will appear only on `/file-spec/` page
+
+Any other value will cause the item to be hidden.
 
 ## Proposing API Changes
 
