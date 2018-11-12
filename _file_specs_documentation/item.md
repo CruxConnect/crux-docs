@@ -1,9 +1,9 @@
 ---
 title: Item
-name:
+name: Item
 position: 1
 visibility: file-specs
-method:
+method: supplier
 description: The Item section covers all item related parameters. The item parameters relate to the Parent Product.
 right_code: |
 

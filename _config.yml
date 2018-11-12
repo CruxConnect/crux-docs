@@ -21,9 +21,9 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     type:
   file_specs_documentation:
     visibility: file-specs
-    title: File Specifications - Supplier/Retailer
+    title: Parameters - Supplier & Retailer
     position: 1.2
-    type:
+    type: fs
   file_specs_use_cases:
     visibility: file-specs
     title: Use Cases

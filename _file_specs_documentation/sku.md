@@ -1,9 +1,9 @@
 ---
 title: SKU
-name:
+name: SKU
 position: 2
 visibility: file-specs
-method:
+method: both
 description: The sku section covers all sku related parameters. The sku parameters relate to the Child Product.
 right_code: |
 

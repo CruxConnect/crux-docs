@@ -1,10 +1,10 @@
 ---
 title: Invoice
-name:
+name: Invoice
 position: 8
 visibility: file-specs
-method:
-description: The country where the product was manufactured. Must be a 2-digit ISO country code.
+method: both
+description: The details issued for the sales transaction from a seller to a buyer.
 right_code: |
 
 ---

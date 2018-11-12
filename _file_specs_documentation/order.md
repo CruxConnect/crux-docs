@@ -1,9 +1,9 @@
 ---
 title: Order
-name:
+name: Order
 position: 3
 visibility: file-specs
-method:
+method: retailer
 description: The order section relates to the retailer fields
 right_code: |
 

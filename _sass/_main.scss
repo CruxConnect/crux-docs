@@ -283,17 +283,17 @@ h3 .endpoint {
   color: $color-delete;
   border-color: $color-delete;
 }
-.REQUIRED, .required {
-  color: $color-required;
-  border-color: $color-required;
+.SUPPLIER, .supplier {
+  color: $color-supplier;
+  border-color: $color-supplier;
 }
-.PREFERRED, .preferred {
-  color: $color-preferred;
-  border-color: $color-preferred;
+.RETAILER, .retailer {
+  color: $color-retailer;
+  border-color: $color-retailer;
 }
-.OPTIONAL, .optional {
-  color: $color-optional;
-  border-color: $color-optional;
+.BOTH, .both {
+  color: $color-both;
+  border-color: $color-both;
 }
 
 .main {

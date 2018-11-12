@@ -1,10 +1,10 @@
 ---
 title: Allocation
-name:
+name: Allocation
 position: 5
 visibility: file-specs
-method:
-description: Allocation Stuff
+method: supplier
+description: Items status within the suppliers inventory.
 right_code: |
 
 ---

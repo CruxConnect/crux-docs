@@ -1,10 +1,10 @@
 ---
 title: Tracking
-name:
+name: Tracking
 position: 7
 visibility: file-specs
-method:
-description: Tracking Stuff
+method: supplier
+description: Provides the tracking and package information.
 right_code: |
 
 ---

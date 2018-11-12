@@ -1,10 +1,10 @@
 ---
 title: Discovery
-name:
+name: Discovery
 position: 9
 visibility: file-specs
-method:
-description: Discovering stuff
+method: retailer
+description: This will provided the parameters need for an item to be searchable within Crux.
 right_code: |
 
 ---

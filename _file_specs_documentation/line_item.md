@@ -1,10 +1,10 @@
 ---
 title: Line Item
-name:
+name: Line Item
 position: 4
 visibility: file-specs
-method:
-description: Product specific warranty.
+method: both
+description: The details of an item within Item(Parent) & SKU(Child).
 right_code: |
 
 ---

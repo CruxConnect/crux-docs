@@ -1,10 +1,10 @@
 ---
 title: Line Item
-name:
+name: Line Item
 position: 6
 visibility: file-specs
-method:
-description: Line Item II
+method: supplier
+description: The details of an item within Item(Parent) & SKU(Child).
 right_code: |
 
 ---
