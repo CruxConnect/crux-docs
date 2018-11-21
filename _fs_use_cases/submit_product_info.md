@@ -4,17 +4,22 @@ name:
 position: 1
 visibility: file-specs
 method:
-description: How do I submit product information to my catalog
+description: How do I submit product information?
 right_code: |
   ~~~ bash
   item_id
   title
   sku_id
-  pricing.[N].catalog
-  pricing.[N].minimum_tier_quantity
-  pricing.[N].cost
+  pricing.1.catalog
+  pricing.1.minimum_tier_quantity
+  pricing.1.cost
   ~~~
   {: title="Required Fields" }
+
+  ~~~ bash
+  pricing.1.shipping_cost_is_estimate
+  ~~~
+  {: title="Dependent Fields" }
 
   ~~~ bash
   warranty
@@ -33,8 +38,8 @@ right_code: |
   quantity_on_backorder
   backorder_date
   number_of_units_bundled
-  pricing.[N].shipping_cost
-  pricing.[N].shipping_cost_is_estimate
+  pricing.1.shipping_cost
+  pricing.1.shipping_cost_is_estimate
   minimum_advertised_price
   msrp
   sku_weight
@@ -57,45 +62,48 @@ right_code: |
   mpn
   product_images_for_item
   product_images_for_sku
-  item_attribute.[N].name
-  item_attribute.[N].value
-  sku_distinguishing_attribute.[N].name
-  sku_distinguishing_attribute.[N].value
-  sku_nondistinguishing_attribute.[N].name
-  sku_nondistinguishing_attribute.[N].value
+  item_attribute.1.name
+  item_attribute.1.value
+  sku_distinguishing_attribute.1.name
+  sku_distinguishing_attribute.1.value
+  sku_nondistinguishing_attribute.1.name
+  sku_nondistinguishing_attribute.1.value
   description
   ~~~
   {: title="Preferred Fields" }
-  ~~~ bash
-  ~~~
-  {: title="Desired Fields" }
 
 ---
 ----
 ### File Sample
 
-* <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/create_catalog_detail.xlsx">Create Catalog Download</a>
+* ***csv*** <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/csv/product_sample.csv">Product Sample Download</a>
+* ***xlsx*** <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/xlsx/product_sample.xlsx">Product Sample Download</a>
 
 ----
-### File Details
-  When there is an **[N]** in the field name it will be represented by a number to group related fields together
-    - _e.g. Name, Value, and Type._
+### Submitting Files - FTP
 
-  Fields that use the **[N]** value are the:
-  * 5 pricing options
-  * 10 sku distinguishing attributes
-  * 10 sku non distinguishing attributes
+#### File Details
+
+##### Naming convention
+
+filetype_date.csv
+{: .info }
+filetype_date.xlsx
+{: .info }
+
+- Character encoding (UTF-8)
+- Line Feed (\n) preferred
+- Proper naming conventions. (file names must not include spaces)
+
+#### FTP Upload
+1.	Create your file based on our sample files and specs, including all required fields.
+2.	Log into your Crux-provided FTP
+3.	Upload file inside ***/in*** directory
 
 ----
-### Best Practices
-
-The **create_catalog.csv** allows the user to create a catalog with items and skus.
+### Notes
 
   * The default unit of measurement metric values are **cm** & **g**
-  * Always add a value in `pricing.[N].shipping_cost_is_estimate` otherwise the system will ignore the `pricing.[N].shipping_cost` field.
-
-#### Suggested Uses
-
   * item_attribute
     - Used when it's a parent attribute. - _e.g. features, or fabric_
   * sku_distinguishing_attribute
