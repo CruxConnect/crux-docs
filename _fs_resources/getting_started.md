@@ -4,7 +4,7 @@ name:
 position: 0.8
 visibility: file-specs
 method:
-description: This will go into the details
+description:
 right_code: |
 
 ---
