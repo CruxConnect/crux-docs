@@ -34,12 +34,6 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     title: Order Data
     position: 1.4
     type:
-#### Hiding for now
-  fs_parameters:
-    visibility:
-    title: Parameters - Supplier & Retailer
-    position: 1.5
-    type: fs
   organization:
     visibility: public
     title: Organization
