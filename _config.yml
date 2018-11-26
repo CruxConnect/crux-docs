@@ -14,20 +14,25 @@ collections:  ### if there are no documents in a collection, it's a placeholder 
     visibility: public
     title: Documentation
     position: 1.0
-  file_specs_resources:
+  fs_resources:
     visibility: file-specs
     title: Resources
     position: 1.1
     type:
-  file_specs_documentation:
-    visibility: file-specs
-    title: Parameters - Supplier & Retailer
-    position: 1.2
-    type: fs
-  file_specs_use_cases:
+  fs_use_cases:
     visibility: file-specs
     title: Use Cases
+    position: 1.2
+    type:
+  fs_product_data:
+    visibility: file-specs
+    title: Product Data
     position: 1.3
+    type:
+  fs_order_data:
+    visibility: file-specs
+    title: Order Data
+    position: 1.4
     type:
   organization:
     visibility: public
