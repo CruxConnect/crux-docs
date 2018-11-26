@@ -1,5 +1,5 @@
 upca
-: (string) The Universal Product Code type A (UPCA) is an 11-digit code used to identify the SKU.
+: (string) The Universal Product Code type A (UPCA) is a 12-digit code used to identify the SKU.
 
 ean13
 : (string) The 13-digit European Article Number (EAN13) also known as the International Article Number is a 13-digit code used to identify the SKU.
