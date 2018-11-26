@@ -4,13 +4,13 @@ name:
 position: 5
 visibility: file-specs
 method:
-description: The Item section covers all item related parameters. The item parameters relate to the Parent Product.
+description:
 right_code: |
 
 ---
 
 supplier_po
-: (string) Supplier provided purchase order number
+: (string) ***Required*** Supplier provided purchase order number
 
 supplier_provided_drop_ship_fee
 : (decimal) Supplier provided drop ship fee (2 decimal positions)

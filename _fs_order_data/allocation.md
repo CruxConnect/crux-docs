@@ -4,7 +4,7 @@ name:
 position: 1
 visibility: file-specs
 method:
-description: The Allocation file
+description:
 right_code: |
 
 ---
@@ -16,7 +16,7 @@ retailer_po
 : (string) Required The Purchase Order ID that you provide to identify your order
 
 sku_id
-: (string) Name of the product.
+: (string) ***Required*** Name of the product.
 
 quantity_accepted
 : (object) Required The Quantity Accepted by the supplier

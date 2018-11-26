@@ -10,13 +10,13 @@ right_code: |
 ---
 
 item_id
-: (string) Unique identifier for the parent product.
+: (string) ***Required*** Unique identifier for the parent product.
 
 sku_id
-: (string) Name of the product.
+: (string) ***Required*** Name of the product.
 
 title
-: (string) Summary of the product information and/or specifications. Valid HTML is allowed, ensure that all tags are closed.
+: (string) ***Required*** Summary of the product information and/or specifications. Valid HTML is allowed, ensure that all tags are closed.
 
 warranty
 : (string) Product specific warranty.
@@ -73,13 +73,13 @@ number_of_units_bundled
 : (integer) The combined amount of units in the product bundle
 
 pricing.1.catalog
-: (string) Used to organize the product into a particular catalog.
+: (string) ***Required*** Used to organize the product into a particular catalog.
 
 pricing.1.minimum_tier_quantity
-: (integer)
+: (integer) ***Required***
 
 pricing.1_cost
-: (float) Cost of the product.
+: (float) ***Required*** Cost of the product.
 
 pricing.1.shipping_cost
 : (float) Cost to ship the packaged product.
@@ -169,7 +169,7 @@ item_attribute.1.name
 item_attribute.1.value
 : (string) Value used for a parent attribute. - e.g. wireless, or linen
 
-Up to 20 `item_attribute` fields can be present.
+20 `item_attribute` fields must be present.
 {: .info }
 
 sku_distinguishing_attribute.1.name
@@ -178,7 +178,7 @@ sku_distinguishing_attribute.1.name
 sku_distinguishing_attribute.1.value
 : (string) Value used when it’s an absolute variant on the parent object. - e.g. green or medium
 
-Up to 5 `sku_distinguishing_attribute` fields can be present.
+5 `sku_distinguishing_attribute` fields must be present.
 {: .info }
 
 sku_nondistinguishing_attribute.1.name
@@ -187,5 +187,5 @@ sku_nondistinguishing_attribute.1.name
 sku_nondistinguishing_attribute.1.value
 : (string) Value used when it’s at the sku level, but is a companion to an already distinguishing attribute. - e.g. you’ve set color as a `sku_distinguishing_attribute`, then `color_code` can be set to `sku_distinguishing_attribute`
 
-Up to 10 `sku_nondistinguishing_attribute` fields can be present.
+10 `sku_nondistinguishing_attribute` fields must be present.
 {: .info }

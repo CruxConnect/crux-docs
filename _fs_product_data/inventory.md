@@ -10,10 +10,10 @@ right_code: |
 ---
 
 item_id
-: (string) Unique identifier for the parent product.
+: (string) ***Required*** Unique identifier for the parent product.
 
 sku_id
-: (string) sku as provided by the Supplier
+: (string) ***Required*** sku as provided by the Supplier
 
 quantity_in_stock
-: (integer) Quantity currently available to be shipped
+: (integer) ***Required*** Quantity currently available to be shipped

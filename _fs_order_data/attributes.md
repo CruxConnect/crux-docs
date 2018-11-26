@@ -4,7 +4,7 @@ name:
 position: 4
 visibility: file-specs
 method:
-description: The Item section covers all item related parameters. The item parameters relate to the Parent Product.
+description:
 right_code: |
 
 ---

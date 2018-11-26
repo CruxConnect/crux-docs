@@ -10,19 +10,19 @@ right_code: |
 ---
 
 retailer_org_uuid
-: (string) Retailers Organization Universal Unique Identifier for the organization
+: (string) ***Required*** Retailers Organization Universal Unique Identifier for the organization
 
 retailer_po
-: (string) Retailer provided purchase order number
+: (string) ***Required*** Retailer provided purchase order number
 
 tracking_number
 : (string) ***Required*** Order tracking number
 
 sku_id
-: (string) The SKU Identifier for the SKU as provided by the Supplier
+: (string) ***Required*** The SKU Identifier for the SKU as provided by the Supplier
 
 quantity_shipped
-: (integer) ***Required*** Quantity shipped
+: (integer) Quantity shipped
 
 supplier_provided_sku_cost
 : (decimal) Supplier provided SKU cost (2 decimal places)
