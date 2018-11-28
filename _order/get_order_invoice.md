@@ -1,5 +1,5 @@
 ---
-title: /timp/invoices/&lt;order_uuid&gt;/
+title: /timp/orders/&lt;order_uuid&gt;/invoices/
 name: Get Order Invoices
 position: 5.2
 visibility: public
