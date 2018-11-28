@@ -9,9 +9,10 @@ right_code: |
   ~~~ json
   {
     "pagination": {
-      "total_count": 150,
-      "start": 30,
-      "limit": 10,
+      "total_count": 10,
+      "start": 0,
+      "limit": 25,
+      "next_start_index": null
     },
     "skus": [
       {
@@ -112,9 +113,48 @@ right_code: |
 ---
 Return a complete list of SKUs
 
+### Request Parameters:
+
+limit
+: (int) 1-500. The number of skus to return
+
+start
+: (int) Used for pagination when retrieving greater than 500 skus. Default 0
+
+item_verbosity
+: (string) If `item_verbosity=complete` all item details will be included. Default null.
+
+supplier_uuids
+: (array) Return only skus for these suppliers. May be a single value, comma separated or duplicated params
+
+#### Usage Examples
+
+~~~ bash
+http GET "http://localhost/timp/products/skus/?limit=<25>"
+~~~
+{: title="limit" }
+~~~
+http GET "http://localhost/timp/products/skus/?start=<0>"
+~~~
+{: title="start" }
+~~~
+http GET "http://localhost/timp/products/skus/?item_verbosity=complete"
+~~~
+{: title="item_verbosity" }
+~~~
+http GET "http://localhost/timp/products/skus/?supplier_uuids=<uuid1>"
+http GET "http://localhost/timp/products/skus/?supplier_uuids=<uuid1>,<uuid2>"
+http GET "http://localhost/timp/products/skus/?supplier_uuids=<uuid1>&supplier_uuids=<uuid2>"
+~~~
+{: title="supplier_uuids" }
+~~~
+http GET "http://localhost/timp/products/skus/?supplier_uuids=<uuid1>&item_verbosity=complete&limit=500"
+~~~
+{: title="Combined Requests" }
+
 ### Response Parameters:
 
-An array of SKU Objects
+An array of up to 500 SKU Objects in a single call
 
 #### SKU Object
 
