@@ -1,7 +1,7 @@
 ---
-title: /timp/orders/&lt;order_uuid&gt;/
+title: /timp/invoices/&lt;order_uuid&gt;/
 name: Get Order Invoices
-position: 5.2.2
+position: 5.2
 visibility: public
 method: get
 description: Get Order attributes

@@ -23,15 +23,15 @@ right_code: |
   {: title="Dependent Fields" }
 
   ~~~ bash
-supplier_po
-supplier_provided_notes
-supplier_provided_order_attributes
-supplier_provided_drop_ship_fee
-supplier_provided_order_fee
-supplier_provided_tax
-supplier_provided_order_total
-supplier_provided_sku_cost
-supplier_provided_shipping_cost
+  supplier_po
+  supplier_provided_notes
+  supplier_provided_order_attributes
+  supplier_provided_drop_ship_fee
+  supplier_provided_order_fee
+  supplier_provided_tax
+  supplier_provided_order_total
+  supplier_provided_sku_cost
+  supplier_provided_shipping_cost
   ~~~
   {: title="Desired Fields" }
 
