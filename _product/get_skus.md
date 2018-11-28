@@ -113,11 +113,21 @@ right_code: |
 ---
 Return a complete list of SKUs
 
-### Response Parameters:
-
-An array of up to 500 SKU Objects in a single call
-
 ### Request Parameters:
+
+limit
+: (int) 1-500. The number of skus to return
+
+start
+: (int) Used for pagination when retrieving greater than 500 skus. Default 0
+
+item_verbosity
+: (string) If `item_verbosity=complete` all item details will be included. Default null.
+
+supplier_uuids
+: (array) Return only skus for these suppliers. May be a single value, comma separated or duplicated params
+
+#### Usage Examples
 
 ~~~ bash
 http GET "http://localhost/timp/products/skus/?limit=<25>"
@@ -141,6 +151,10 @@ http GET "http://localhost/timp/products/skus/?supplier_uuids=<uuid1>&supplier_u
 http GET "http://localhost/timp/products/skus/?supplier_uuids=<uuid1>&item_verbosity=complete&limit=500"
 ~~~
 {: title="Combined Requests" }
+
+### Response Parameters:
+
+An array of up to 500 SKU Objects in a single call
 
 #### SKU Object
 
