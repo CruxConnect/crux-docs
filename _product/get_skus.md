@@ -120,7 +120,7 @@ An array of up to 500 SKU Objects in a single call
 ### Request Parameters:
 
 ~~~ bash
-http GET "http://localhost/timp/products/skus?limit=<25>"
+http GET "http://localhost/timp/products/skus/?limit=<25>"
 ~~~
 {: title="limit" }
 ~~~
