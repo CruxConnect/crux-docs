@@ -78,7 +78,7 @@ pricing.1.catalog
 pricing.1.minimum_tier_quantity
 : (integer) ***Required***
 
-pricing.1_cost
+pricing.1.cost
 : (float) ***Required*** Cost of the product.
 
 pricing.1.shipping_cost
