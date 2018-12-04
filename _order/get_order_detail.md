@@ -28,7 +28,8 @@ right_code: |
       "organization_name": "projectthanos",
       "order_submitted_by": null
     },
-    "retailer_provided_notes": "jelly donuts for everyone",
+    "retailer_provided_order_notes": null,
+    "supplier_provided_order_notes": null,
     "retailer_provided_fees": {
       "order_fee": 0.99,
       "order_tax": 2.97,
@@ -36,11 +37,32 @@ right_code: |
       "dropship_fee": 0.5
     },
     "retailer_provided_order_attributes": null,
+    "supplier_provided_order_attributes": null,
     "invoices": [
-      {
-        "invoice_items": null
-      }
-    ],
+    {
+      "invoice_items": [
+        {
+          "sku_id": "56",
+          "quantity_ordered": 10,
+          "quantity_invoiced": 6,
+          "supplier_order_number": "third",
+          "invoice_item_attributes": [
+            {
+              "attribute_name": "invoice item name",
+              "attribute_value": "can't believe we need invoice item attribute names and values"
+            }
+          ]
+        }
+      ],
+      "invoice_number": "abcdef-ghi",
+      "invoice_attributes": [
+        {
+          "attribute_name": "invoice attribute name",
+          "attribute_value": "invoice attribute value"
+        }
+      ]
+    }
+  ],
     "line_items": [
       {
         "line_item_uuid": "5e91d918-67e8-4957-a69a-df9d2072ad9b",
@@ -60,21 +82,39 @@ right_code: |
           "asin": null,
           "mpn": null
         },
-        "retailer_provided_line_item_notes": null,
+        "supplier_item_notes": null,
+        "retailer_item_notes": null,
         "retailer_provided_sku_cost": 27.2,
         "supplier": {
           "uuid": "d6ac857d-c844-4312-8485-6d121d065308",
           "organization_name": "Stevens, Smith and Krause",
           "order_submitted_by": null
         },
-        "supplier_provided_line_item_notes": null,
-        "supplier_provided_attributes": [
+        "supplier_provided_item_attributes": null,
+        "retailer_provided_item_attributes": [
           {
             "attribute_name": "donut",
             "attribute_value": "jelly"
           }
         ],
-        "tracking": [],
+        "tracking": [
+        {
+          "tracking_number": "12345",
+          "shipping_carrier": "UPS",
+          "shipping_method": "Speedy Ground",
+          "shipping_weight": null,
+          "shipping_cost": 3,
+          "shipping_date": "2018-11-12",
+          "created_date": "2018-11-10T17:47:07.872391Z",
+          "quantity": 10,
+          "package_attributes": [
+            {
+              "attribute_name": "package attribute name",
+              "attribute_value": "package attribute value"
+            }
+          ]
+        }
+      ],
         "allocation": null
       }
     ]
@@ -104,8 +144,11 @@ purchase_order_id
 created_date
 : (string) The Date when the order was created. It will always be the same day as when you send in the request to Create the Order.
 
-notes
+retailer_provided_order_notes
 : (string) The notes you provided from your request to create the Order.
+
+supplier_provided_order_notes
+: (string) The notes provided from the supplier.
 
 fees
 : (object) The Fees object contains the estimated shipping cost, drop ship fee, and order fee

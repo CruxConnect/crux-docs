@@ -9,20 +9,34 @@ right_code: |
   ~~~ json
   {
     "retailer_provided_notes": "Jelly donuts for all",
+    "supplier_provided_notes": "Jelly donuts for all",
     "retailer_provided_order_attributes": [
       {
         "attribute_name": "dog",
         "attribute_value": "poodle"
       }
     ],
+    "supplier_provided_order_attributes": [
+      {
+        "attribute_name": "cat",
+        "attribute_value": "siamese"
+      }
+    ],
     "line_items": [
       {
         "line_item_uuid": "2c9e67fb-6012-43c4-9bd2-6d6b3129d667",
         "supplier_provided_notes": "Fritters for all",
+        "retailer_provided_notes": "Apple Fritters for all",
         "supplier_provided_order_attributes": [
           {
             "attribute_name": "fritter_type",
             "attribute_value": "apple"
+          }
+        ],
+        "retailer_provided_order_attributes": [
+          {
+            "attribute_name": "fritter_type",
+            "attribute_value": "apple raspberry"
           }
         ]
       }

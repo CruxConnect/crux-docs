@@ -13,14 +13,26 @@ right_code: |
       {
         "line_item_uuid": "0505d71f-4360-4055-b3e8-0caf51c93491",
         "quantity_invoiced": 1,
-        "supplier_provided_sku_cost": 47.98
+        "supplier_provided_sku_cost": 47.98,
+        "invoice_item_attributes": [
+            {
+              "attribute_name": "invoice item level attribute name",
+              "attribute_value": "invoice item level attribute value"
+            }
+        ]
       }
     ],
     "supplier_provided_drop_ship_fee": 0.84,
     "supplier_provided_order_fee": 1.24,
     "supplier_provided_tax": 2.83,
     "supplier_provided_order_total": 348.92,
-    "supplier_provided_shipping_cost": 5.03
+    "supplier_provided_shipping_cost": 5.03,
+    "invoice_attributes": [
+        {
+          "attribute_name": "invoice level attribute name",
+          "attribute_value": "invoice level attribute value"
+        }
+      ]
   }
   ~~~
   {: title="Request" }
