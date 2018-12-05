@@ -59,8 +59,14 @@ order_uuid
 retailer_provided_notes
 : (string) Retailer provided notes
 
+supplier_provided_notes
+: (string) Supplier provided notes
+
 retailer_provided_order_attributes
-: (array) Array of retail provided Order Attribute objects
+: (array) Array of retailer provided Order Attribute objects
+
+supplier_provided_order_attributes
+: (array) Array of supplier provided Order Attribute objects
 
 line_items
 : (array) Array of line item objects
@@ -73,8 +79,14 @@ line_item_uuid
 supplier_provided_notes
 : (string) Supplier provided notes
 
+retailer_provided_notes
+: (string) Retailer provided notes
+
 supplier_provided_order_attributes
 : (array) Array of supplier provided order attribute objects
+
+retailer_provided_order_attributes
+: (array) Array of retailer provided order attribute objects
 
 #### Retailer and Supplier Order Attribute Object
 

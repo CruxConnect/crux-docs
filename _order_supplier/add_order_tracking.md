@@ -58,6 +58,9 @@ package_ship_date
 line_items
 : (array) ***Required*** An array of line item objects
 
+package_attributes
+: (array) Supplier provided array of key/value attributes for the package
+
 #### Line Item Object
 
 line_item_uuid

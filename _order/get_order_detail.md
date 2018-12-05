@@ -162,6 +162,12 @@ address
 requested_shipping
 : (object) The Requested Shipping object contains the shipping carrier and shipping method from the request to create the Order.
 
+retailer_provided_order_attributes
+: (array) Retailer provided key/value pair of attributes related to the order
+
+supplier_provided_order_attributes
+: (array) Supplier provided key/value pair of attributes related to the order
+
 line_items
 : (list) The Line Items list contains line item objects with their uuid, item uuid, item name, sku uuid, sku id, sku name, cost, supplier uuid, supplier name, tracking numbers list, and allocation object.
 

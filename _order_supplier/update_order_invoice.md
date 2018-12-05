@@ -76,6 +76,9 @@ supplier_provided_order_total
 supplier_provided_shipping_cost
 : (decimal) Supplier provided shipping cost (2 decimal places)
 
+invoice_attributes
+: (array) Supplier provided key/value pair of attributes for the invoice
+
 
 #### Line Item Object
 
@@ -87,6 +90,9 @@ quantity_invoiced
 
 supplier_provided_sku_cost
 : (decimal) Supplier provided SKU cost (2 decimal places)
+
+invoice_item_attributes
+: (array) Supplier provided key/value pair of attributes for the invoice item
 
 
 #### Attribute Object

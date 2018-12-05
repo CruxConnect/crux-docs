@@ -168,6 +168,9 @@ end_date
 term
 : (string) Term can be Order UUID, PO Number or SKU ID
 
+sent_to_supplier
+: (boolean) True/False to request orders that have been sent to the supplier for fullfillment
+
 org_uuids
 : (array) An array of Organization Universal Unique Identifiers
 

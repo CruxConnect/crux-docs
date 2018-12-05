@@ -18,3 +18,6 @@ shipping_date
 
 quantity
 : (integer) The number of items in the shipment
+
+package_attributes
+: (array) Array of key/value pair attributes related to the package

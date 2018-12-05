@@ -10,8 +10,11 @@ purchase_order_id
 created_date
 : (string) The Date when the order was created. It will always be the same day as when you send in the request to Create the Order.
 
-notes
+retailer_provided_order_notes
 : (string) The notes you provided from your request to create the Order.
+
+supplier_provided_order_notes
+: (string) The notes provided from the supplier.
 
 fees
 : (object) The Fees object contains the estimated shipping cost, drop ship fee, and order fee
@@ -27,3 +30,9 @@ requested_shipping
 
 line_items
 : (array) The Line Items list contains line items with their uuid, item uuid, item name, status, sku uuid, sku id, sku name, cost, supplier uuid, supplier name, tracking numbers object, and allocation object.
+
+retailer_provided_order_attributes
+: (array) Retailer provided key/value pair of attributes related to the order
+
+supplier_provided_order_attributes
+: (array) Supplier provided key/value pair of attributes related to the order
