@@ -1,5 +1,5 @@
 ---
-title: /timp/orders/3885adeb-3497-4a70-b3fe-4e690aa0a04b/attributes/
+title: /timp/orders/<order_uuid>/attributes/
 name: Update Order Attributes
 position: 4.07
 visibility: public
