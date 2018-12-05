@@ -15,6 +15,12 @@ right_code: |
         "quantity_shipped": 2,
         "supplier_provided_sku_cost": 13.98
       }
+    ],
+    "package_attributes": [
+      {
+        "attribute_name": "package level attribute name",
+        "attribute_value": "package level attribute value"
+      }
     ]
   }
   ~~~
@@ -51,6 +57,9 @@ package_ship_date
 
 line_items
 : (array) ***Required*** An array of line item objects
+
+package_attributes
+: (array) Supplier provided array of key/value attributes for the package
 
 #### Line Item Object
 

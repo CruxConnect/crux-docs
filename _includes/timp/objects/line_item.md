@@ -39,3 +39,9 @@ tracking_numbers
 
 allocation
 : (object) The Allocation object contains quantity ordered, quantity allocated, quantity backordered, quantity rejected, and backorder date.
+
+supplier_provided_item_attributes
+: (array) Supplier provided key/value pair of attributes related to the line item
+
+retailer_provided_item_attributes
+: (array) Retailer provided key/value pair of attributes related to the line item

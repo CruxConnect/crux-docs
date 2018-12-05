@@ -23,7 +23,10 @@ right_code: |
         "is_allocated": false,
         "purchase_order_id": "8e5b1ccb-0221-4e26-a343-cd566bfe7419",
         "created_date": "2018-06-28T12:57:30.359784Z",
-        "notes": "Eaque aut inventore itaque commodi est quas laborum.",
+        "retailer_provided_order_notes": null,
+        "supplier_provided_order_notes": null,
+        "retailer_provided_order_attributes": null,
+        "supplier_provided_order_attributes": null,
         "fees": {
           "estimated_shipping_cost": 0,
           "drop_ship_fee": 0,
@@ -52,35 +55,85 @@ right_code: |
           "shipping_carrier": "UPS",
           "shipping_method": "Ground"
         },
+        "invoices": [
+        {
+          "invoice_items": [
+            {
+              "sku_id": "56",
+              "quantity_ordered": 10,
+              "quantity_invoiced": 6,
+              "supplier_order_number": "third",
+              "invoice_item_attributes": [
+                {
+                  "attribute_name": "invoice item name",
+                  "attribute_value": "can't believe we need invoice item attribute names and values"
+                }
+              ]
+            }
+          ],
+          "invoice_number": "abcdef-ghi",
+          "invoice_attributes": [
+            {
+              "attribute_name": "invoice attribute name",
+              "attribute_value": "invoice attribute value"
+            }
+          ]
+        }
+      ],
         "line_items": [
+      {
+        "line_item_uuid": "5e91d918-67e8-4957-a69a-df9d2072ad9b",
+        "status": "Unallocated",
+        "line_item_designation": null,
+        "item_uuid": "3bb5ef3b-2f1e-41da-bd85-1d6c746b0fa8",
+        "item_name": null,
+        "sku_uuid": "841ca56b-26f8-4d45-ac25-5b40d1da7354",
+        "sku_id": "7FZvMyg0BjfewNJJ",
+        "sku_name": null,
+        "sku_title_variants": "None {}",
+        "product_codes": {
+          "upca": null,
+          "ean13": null,
+          "isbn": null,
+          "gtin14": null,
+          "asin": null,
+          "mpn": null
+        },
+        "supplier_item_notes": null,
+        "retailer_item_notes": null,
+        "retailer_provided_sku_cost": 27.2,
+        "supplier": {
+          "uuid": "d6ac857d-c844-4312-8485-6d121d065308",
+          "organization_name": "Stevens, Smith and Krause",
+          "order_submitted_by": null
+        },
+        "supplier_provided_item_attributes": null,
+        "retailer_provided_item_attributes": [
           {
-            "uuid": "b84ccd3c-88f8-4050-accf-e049163052e3",
-            "status": "Unallocated",
-            "item_uuid": "2aeabb83-938a-4d15-a48a-da84fca11d0e",
-            "item_name": "The elementary seed item",
-            "sku_uuid": "a7f2cdb3-f84f-463d-91dd-51de21b119b4",
-            "sku_id": "q7FSuuTXgawxPxzDs3r",
-            "sku_name": "The elementary seed item",
-            "unit_ship_cost": 1.99,
-            "sku_title_variants": null,
-            "line_item_special_instructions": null,
-            "cost": 0,
-            "supplier_uuid": "fddc07e7-4383-4e63-929f-f10c3b0864f0",
-            "supplier_name": "projectzuul",
-            "tracking_numbers": [],
-            "allocation": {
-              "quantity_ordered": 5,
-              "quantity_allocated": 0,
-              "quantity_backordered": 0,
-              "quantity_rejected": 0,
-              "reject_reason": null,
-              "backorder_date": null
-            },
-            "line_item_designation": []
-          },
-        ]
+            "attribute_name": "donut",
+            "attribute_value": "jelly"
+          }
+        ],
+        "tracking": [
+        {
+          "tracking_number": "12345",
+          "shipping_carrier": "UPS",
+          "shipping_method": "Speedy Ground",
+          "shipping_weight": null,
+          "shipping_cost": 3,
+          "shipping_date": "2018-11-12",
+          "created_date": "2018-11-10T17:47:07.872391Z",
+          "quantity": 10,
+          "package_attributes": [
+            {
+              "attribute_name": "package attribute name",
+              "attribute_value": "package attribute value"
+            }
+          ]
+        }
+      ],
+        "allocation": null
       }
-    ]
   }
   ~~~
   {: title="Response" }
@@ -114,6 +167,9 @@ end_date
 
 term
 : (string) Term can be Order UUID, PO Number or SKU ID
+
+sent_to_supplier
+: (boolean) True/False to request orders that have been sent to the supplier for fullfillment
 
 org_uuids
 : (array) An array of Organization Universal Unique Identifiers

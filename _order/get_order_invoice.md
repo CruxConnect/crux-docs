@@ -41,6 +41,12 @@ right_code: |
         "invoice_items": null
       }
     ],
+    "invoice_attributes": [
+     {
+       "attribute_name": "invoice level attribute name",
+       "attribute_value": "invoice level attribute value"
+     }
+    ]
     "line_items": [
       {
         "line_item_uuid": "b84ccd3c-88f8-4050-accf-e049163052e3",
@@ -67,6 +73,13 @@ right_code: |
           "uuid": "fddc07e7-4383-4e63-929f-f10c3b0864f0",
           "organization_name": "projectzuul",
           "order_submitted_by": null
+        },
+        "invoice_item_attributes": [
+          {
+            "attribute_name": "invoice item level attribute name",
+            "attribute_value": "invoice item level attribute value"
+          }
+         ]
         },
         "supplier_provided_line_item_notes": null,
         "supplier_provided_attributes": null,
