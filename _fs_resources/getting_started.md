@@ -11,7 +11,7 @@ right_code: |
 
 Welcome to your file guide.
 
-Here you will find the details to the parameters we require, prefer, and desire to in order to connect to both Supplier & Retailer. Additionally you will find specific use cases for everything from getting your product information into your catalog to submitting the invoice.
+Here you will find details for our parameters we require, prefer, and desire in order to connect to both Supplier & Retailer. Additionally you have use case examples for everything from getting your product information into your catalog to submitting the invoice.
 
 ----
 ### Submitting Files - FTP
