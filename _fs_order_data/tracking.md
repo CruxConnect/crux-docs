@@ -36,6 +36,9 @@ supplier_provided_notes
 supplier_provided_order_attributes
 : (array) Array of supplier provided Order Attribute objects
 
+supplier_provided_line_item_attributes
+: (array) Array of supplier provided Line Item objects
+
 supplier_provided_drop_ship_fee
 : (decimal) Supplier provided dropship fee (2 decimal places)
 
