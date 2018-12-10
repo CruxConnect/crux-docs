@@ -31,13 +31,18 @@ brand
 : (string) Brand name of the product.
 
 country_of_origin
-: (string) The country where the product was manufactured. Must be a 2-digit ISO country code.
+: (string, ISO Alpha-2) The country where the product was manufactured. Must be a <a href="https://www.nationsonline.org/oneworld/country_code_list.htm" target="_blank">2-digit ISO country code</a>.
 
 shipping_origin_country
-: (string) ISO country code where the product is shipping from.
+: (string, ISO Alpha-2) The country where the product is shipping from. Must be a <a href="https://www.nationsonline.org/oneworld/country_code_list.htm" target="_blank">2-digit ISO country code</a>.
 
 categories
 : (array) The division in which items are organized based on shared characteristics.
+
+`>` = Category Path Separator
+{: .info }
+`|` = Category Separator
+{: .info }
 
 restrict_from_marketplaces
 : (string) Marketplaces in which the item can not be listed.
@@ -73,7 +78,7 @@ number_of_units_bundled
 : (integer) The combined amount of units in the product bundle
 
 pricing.1.catalog
-: (string) ***Required*** Used to organize the product into a particular catalog.
+: (string, alphanumeric, underscores) ***Required*** Used to organize the product into a particular catalog.
 
 pricing.1.minimum_tier_quantity
 : (integer) ***Required***
