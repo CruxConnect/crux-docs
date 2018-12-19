@@ -160,13 +160,16 @@ line_item_designation
 : (string) Line item status designation.  One of the following : `HasTracking`, `NeedsTracking`, `Backordered`, `Rejected`, `Cancelled`
 
 start_date
-: (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
+: (string) The Start Date for your search results. The date must be written in the following format "YYYY-MM-DD hh:mm:ss"
 
 end_date
-: (string) The End Date for your search results. The date must be written in the following format "YYYY-MM-DDThh:mm:ss.000Z"
+: (string) The End Date for your search results. The date must be written in the following format "YYYY-MM-DD hh:mm:ss"
 
 term
-: (string) Term can be Order UUID, PO Number or SKU ID
+: (string) Term can be a word in the description of the sku to search for
+
+po_number
+: (string) The Retailer PO Number on the order
 
 sent_to_supplier
 : (boolean) True/False to request orders that have been sent to the supplier for fullfillment
