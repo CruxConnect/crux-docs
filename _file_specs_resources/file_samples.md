@@ -18,7 +18,7 @@ right_code: |
 
 * <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/item_sample.csv">Item Sample Download</a>
 
-* <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/order_sample.csv">Order Sample Download</a>
+* <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/csv/orders_sample.csv">Order Sample Download</a>
 
 * <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/order_attributes_sample.csv">Order Attributes Sample Download</a>
 
