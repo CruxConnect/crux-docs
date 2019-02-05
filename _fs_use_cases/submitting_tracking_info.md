@@ -46,13 +46,14 @@ right_code: |
 
 ##### Naming convention
 
-filetype_date.csv
+tracking_date.csv
 {: .info }
-filetype_date.xlsx
+tracking_date.xlsx
 {: .info }
 
+- Acceptable characters, [A-Za-z0-9-_]
 - Character encoding (UTF-8)
-- Line Feed (\n) preferred
+- Line Feed (\n) required
 - Proper naming conventions. (file names must not include spaces)
 
 #### FTP Upload
