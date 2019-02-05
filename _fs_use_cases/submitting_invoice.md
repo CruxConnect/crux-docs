@@ -40,11 +40,12 @@ right_code: |
 
 ##### Naming convention
 
-invoice[anythingcangohere].csv
+invoice_date.csv
 {: .info }
-invoice[anythingcangohere].xlsx
+invoice_date.xlsx
 {: .info }
 
+- Acceptable characters, [A-Za-z0-9-_]
 - Character encoding (UTF-8)
 - Line Feed (\n) required
 - Proper naming conventions. (file names must not include spaces)

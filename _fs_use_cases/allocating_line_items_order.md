@@ -49,11 +49,12 @@ right_code: |
 
 ##### Naming convention
 
-allocation[anythingcangohere].csv
+allocation_date.csv
 {: .info }
-allocation[anythingcangohere].xlsx
+allocation_date.xlsx
 {: .info }
 
+- Acceptable characters, [A-Za-z0-9-_]
 - Character encoding (UTF-8)
 - Line Feed (\n) required
 - Proper naming conventions. (file names must not include spaces)

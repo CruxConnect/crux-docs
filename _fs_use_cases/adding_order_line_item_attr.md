@@ -31,11 +31,12 @@ right_code: |
 
 ##### Naming convention
 
-attributes[anythingcangohere].csv
+attributes_date.csv
 {: .info }
-attributes[anythingcangohere].xlsx
+attributes_date.xlsx
 {: .info }
 
+- Acceptable characters, [A-Za-z0-9-_]
 - Character encoding (UTF-8)
 - Line Feed (\n) required
 - Proper naming conventions. (file names must not include spaces)

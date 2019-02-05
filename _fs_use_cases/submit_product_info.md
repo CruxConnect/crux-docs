@@ -86,11 +86,12 @@ right_code: |
 
 ##### Naming convention
 
-product[anythingcangohere].csv
+product_date.csv
 {: .info }
-product[anythingcangohere].xlsx
+product_date.xlsx
 {: .info }
 
+- Acceptable characters, [A-Za-z0-9-_]
 - Character encoding (UTF-8)
 - Line Feed (\n) required
 - Proper naming conventions. (file names must not include spaces)

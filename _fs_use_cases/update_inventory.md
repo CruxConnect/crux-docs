@@ -35,11 +35,12 @@ right_code: |
 
 ##### Naming convention
 
-inventory[anythingcangohere].csv
+inventory_date.csv
 {: .info }
-inventory[anythingcangohere].xlsx
+inventory_date.xlsx
 {: .info }
 
+- Acceptable characters, [A-Za-z0-9-_]
 - Character encoding (UTF-8)
 - Line Feed (\n) required
 - Proper naming conventions. (file names must not include spaces)
