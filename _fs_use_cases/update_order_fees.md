@@ -34,13 +34,13 @@ right_code: |
 
 ##### Naming convention
 
-filetype_date.csv
+fees[anythingcangohere].csv
 {: .info }
-filetype_date.xlsx
+fees[anythingcangohere].xlsx
 {: .info }
 
 - Character encoding (UTF-8)
-- Line Feed (\n) preferred
+- Line Feed (\n) required
 - Proper naming conventions. (file names must not include spaces)
 
 #### FTP Upload
