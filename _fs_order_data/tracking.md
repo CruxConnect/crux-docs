@@ -53,3 +53,6 @@ supplier_provided_order_total
 
 supplier_provided_shipping_cost
 : (decimal) Retailer provided shipping cost (2 decimal places)
+
+package_attributes
+: (array) Package name and value attribute. (format: 'NAME':'VALUE';;'NAME':'VALUE')
