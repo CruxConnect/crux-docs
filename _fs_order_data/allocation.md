@@ -56,6 +56,3 @@ supplier_provided_order_total
 
 supplier_provided_sku_cost
 : (decimal) Supplier provided SKU cost (2 decimal places)
-
-supplier_provided_shipping_cost
-: (decimal) Supplier provided shipping cost (2 decimal places)

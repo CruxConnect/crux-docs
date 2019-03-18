@@ -28,7 +28,6 @@ right_code: |
   supplier_provided_order_fee
   supplier_provided_tax
   supplier_provided_order_total
-  supplier_provided_shipping_cost
   ~~~
   {: title="Desired Fields" }
 
