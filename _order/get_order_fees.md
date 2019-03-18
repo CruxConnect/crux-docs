@@ -4,7 +4,7 @@ name: Get Order Fees
 position: 4.04
 visibility: public
 method: get
-description: Get the Fees for a potential Order.
+description: Get the Fees for an Order.
 right_code: |
 
   ~~~ json

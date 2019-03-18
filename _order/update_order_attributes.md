@@ -1,5 +1,5 @@
 ---
-title: /timp/orders/<order_uuid>/attributes/
+title: /timp/orders/&lt;order_uuid&gt;/attributes/
 name: Update Order Attributes
 position: 4.07
 visibility: public
@@ -27,13 +27,13 @@ right_code: |
         "line_item_uuid": "2c9e67fb-6012-43c4-9bd2-6d6b3129d667",
         "supplier_provided_notes": "Fritters for all",
         "retailer_provided_notes": "Apple Fritters for all",
-        "supplier_provided_order_attributes": [
+        "supplier_provided_item_attributes": [
           {
             "attribute_name": "fritter_type",
             "attribute_value": "apple"
           }
         ],
-        "retailer_provided_order_attributes": [
+        "retailer_provided_item_attributes": [
           {
             "attribute_name": "fritter_type",
             "attribute_value": "apple raspberry"
@@ -82,10 +82,10 @@ supplier_provided_notes
 retailer_provided_notes
 : (string) Retailer provided notes
 
-supplier_provided_order_attributes
+supplier_provided_item_attributes
 : (array) Array of supplier provided order attribute objects
 
-retailer_provided_order_attributes
+retailer_provided_item_attributes
 : (array) Array of retailer provided order attribute objects
 
 #### Retailer and Supplier Order Attribute Object
@@ -112,7 +112,7 @@ curl -X "POST" "https://api-sandbox.cruxconnect.com/timp/orders/3885adeb-3497-4a
   "retailer_provided_notes": "Jelly donuts for all",
   "line_items": [
     {
-      "supplier_provided_order_attributes": [
+      "supplier_provided_item_attributes": [
         {
           "attribute_value": "apple",
           "attribute_name": "fritter_type"
@@ -141,7 +141,7 @@ http --json POST 'https://api-sandbox.cruxconnect.com/timp/orders/3885adeb-3497-
     retailer_provided_notes="Jelly donuts for all" \
     line_items:="[
   {
-    \"supplier_provided_order_attributes\": [
+    \"supplier_provided_item_attributes\": [
       {
         \"attribute_value\": \"apple\",
         \"attribute_name\": \"fritter_type\"
@@ -184,7 +184,7 @@ def send_request():
     retailer_provided_notes="Jelly donuts for all" \
     line_items:="[
   {
-    \"supplier_provided_order_attributes\": [
+    \"supplier_provided_item_attributes\": [
       {
         \"attribute_value\": \"apple\",
         \"attribute_name\": \"fritter_type\"
@@ -246,7 +246,7 @@ def send_request():
     .on('error', (error) => {
         callback(error);
     });
-    request.write("{\"retailer_provided_notes\":\"Jelly donuts for all\",\"retailer_provided_order_attributes\":[{\"attribute_name\":\"dog\",\"attribute_value\":\"poodle\"}],\"line_items\":[{\"line_item_uuid\":\"2c9e67fb-6012-43c4-9bd2-6d6b3129d667\",\"supplier_provided_notes\":\"Fritters for all\",\"supplier_provided_order_attributes\":[{\"attribute_name\":\"fritter_type\",\"attribute_value\":\"apple\"}]}]}")
+    request.write("{\"retailer_provided_notes\":\"Jelly donuts for all\",\"retailer_provided_order_attributes\":[{\"attribute_name\":\"dog\",\"attribute_value\":\"poodle\"}],\"line_items\":[{\"line_item_uuid\":\"2c9e67fb-6012-43c4-9bd2-6d6b3129d667\",\"supplier_provided_notes\":\"Fritters for all\",\"supplier_provided_item_attributes\":[{\"attribute_name\":\"fritter_type\",\"attribute_value\":\"apple\"}]}]}")
     request.end();
 
 

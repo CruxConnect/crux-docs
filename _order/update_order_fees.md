@@ -1,10 +1,10 @@
 ---
-title: /timp/orders/&lt;order_uuid&gt;/
+title: /timp/orders/&lt;order_uuid&gt;/fees/
 name: Update Order Fees
 position: 4.05
 visibility: public
 method: post
-description: Get the Fees for a potential Order.
+description: Update the Fees for an Order.
 right_code: |
   ~~~ json
   {
