@@ -11,7 +11,7 @@ right_code: |
 ----
 ### File Sample
 
-* ***csv*** <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/csv/orders_sample.csv">Order Sample Download</a>
+* ***csv*** <a href="/files/file-samples/csv/order_sample.csv">Order Sample Download</a>
 
 ----
 ### Retrieving Files - FTP

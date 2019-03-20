@@ -28,16 +28,16 @@ supplier_provided_sku_cost
 : (decimal) Supplier provided SKU cost (2 decimal places)
 
 package_weight
-: (string) <!-- TODO -->
+: (string) The weight of the product when packaged for shipping
 
 package_ship_date
-: (string) <!-- TODO -->
+: (string) Date that the packaged SKU will be available for shipment.
 
 supplier_provided_method
-: (string) <!-- TODO -->
+: (string) Shipping method provided upon order.
 
 supplier_provided_carrier
-: (string) <!-- TODO -->
+: (string) Shipping carrier provided upon order.
 
 package_attributes
 : (array) Package name and value attribute. (format: 'NAME':'VALUE';;'NAME':'VALUE')
