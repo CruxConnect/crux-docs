@@ -27,8 +27,6 @@ right_code: |
 
 * <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/xlsx/attributes_sample.xlsx">Attributes Sample Download</a>
 
-* <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/xlsx/fees_sample.xlsx">Fees Sample Download</a>
-
 ----
 ### .csv File Samples
 
@@ -45,7 +43,5 @@ right_code: |
 * <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/csv/invoice_sample.csv">Invoice Sample Download</a>
 
 * <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/csv/attributes_sample.csv">Attributes Sample Download</a>
-
-* <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/csv/fees_sample.csv">Fees Sample Download</a>
 
 * <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/csv/orders_sample.csv">Orders Sample Download</a>

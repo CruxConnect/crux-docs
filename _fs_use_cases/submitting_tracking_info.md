@@ -24,10 +24,6 @@ right_code: |
   supplier_po
   supplier_provided_notes
   supplier_provided_order_attributes
-  supplier_provided_drop_ship_fee
-  supplier_provided_order_fee
-  supplier_provided_tax
-  supplier_provided_order_total
   ~~~
   {: title="Desired Fields" }
 
