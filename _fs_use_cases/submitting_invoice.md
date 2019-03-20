@@ -30,8 +30,8 @@ right_code: |
 ----
 ### File Sample
 
-* ***csv*** <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/csv/invoice_sample.csv">Invoice Sample Download</a>
-* ***xlsx*** <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/xlsx/invoice_sample.xlsx">Invoice Sample Download</a>
+* ***csv*** <a href="/files/file-samples/csv/invoice_sample.csv">Invoice Sample Download</a>
+* ***xlsx*** <a href="/files/file-samples/xlsx/invoice_sample.xlsx">Invoice Sample Download</a>
 
 ----
 ### Submitting Files - FTP

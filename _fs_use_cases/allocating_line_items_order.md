@@ -26,12 +26,6 @@ right_code: |
   supplier_po
   supplier_provided_notes
   supplier_provided_order_attributes
-  supplier_provided_drop_ship_fee
-  supplier_provided_order_fee
-  supplier_provided_tax
-  supplier_provided_order_total
-  supplier_provided_sku_cost
-  supplier_provided_shipping_cost
   ~~~
   {: title="Desired Fields" }
 
@@ -39,8 +33,8 @@ right_code: |
 ----
 ### File Sample
 
-* ***csv*** <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/csv/allocation_sample.csv">Allocation Sample Download</a>
-* ***xlsx*** <a href="https://s3-us-west-2.amazonaws.com/crux-kb/file-samples/supplier-use-cases/xlsx/allocation_sample.xlsx">Allocation Sample Download</a>
+* ***csv*** <a href="/files/file-samples/csv/allocation_sample.csv">Allocation Sample Download</a>
+* ***xlsx*** <a href="/files/file-samples/xlsx/allocation_sample.xlsx">Allocation Sample Download</a>
 
 ----
 ### Submitting Files - FTP

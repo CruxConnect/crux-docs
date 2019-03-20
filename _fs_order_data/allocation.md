@@ -41,21 +41,3 @@ supplier_provided_order_attributes
 
 supplier_provided_line_item_attributes
 : (array) Array of supplier provided Line Item objects
-
-supplier_provided_drop_ship_fee
-: (decimal) Supplier provided dropship fee (2 decimal places)
-
-supplier_provided_order_fee
-: (decimal) Supplier provided order fee (2 decimal places)
-
-supplier_provided_tax
-: (decimal) Supplier provided tax (2 decimal places)
-
-supplier_provided_order_total
-: (decimal) Supplier provided order total (2 decimal places)
-
-supplier_provided_sku_cost
-: (decimal) Supplier provided SKU cost (2 decimal places)
-
-supplier_provided_shipping_cost
-: (decimal) Supplier provided shipping cost (2 decimal places)
