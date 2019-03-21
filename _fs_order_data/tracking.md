@@ -43,7 +43,7 @@ package_attributes
 : (array) Package name and value attribute. (format: 'NAME':'VALUE';;'NAME':'VALUE')
 
 supplier_po
-: (string) Required The Purchase Order ID that you provide to identify your order
+: (string) ***Required*** The Purchase Order ID that you provide to identify your order
 
 supplier_provided_notes
 : (string) Supplier provided notes
