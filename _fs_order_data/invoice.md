@@ -48,7 +48,7 @@ invoice_line_item_attributes
 : (array) Array of Invoice Item Attribute objects
 
 supplier_po
-: (string) Required The Purchase Order ID that you provide to identify your order
+: (string) ***Required*** The Purchase Order ID that you provide to identify your order
 
 supplier_provided_notes
 : (string) Supplier provided notes

@@ -10,7 +10,7 @@ right_code: |
 ---
 
 retailer_po
-: (string) Required The Purchase Order ID that you provide to identify your order
+: (string) ***Required*** The Purchase Order ID that you provide to identify your order
 
 order_uuid
 : (string) Universal Unique Identifier for the Order
